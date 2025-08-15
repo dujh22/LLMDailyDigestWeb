@@ -33,9 +33,9 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan Chang
 最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output
 20250604｜新泛化跨领域推理框架：General-Reasoner https://mp.weixin.qq.com/s/GDe5Dm17ekCCbUwKO475iA 2025-06-09 10:47:26 Monday ｜Unleashing the Reasoning Potential of Pre-trained LLMs by Critique Fine-Tuning on One Problem 标题 ： 通过对一个问题的批评微调来释放预训练LLM的推理潜力 链接 ：https://arxiv.org/abs/2506.03295 作者 ： Yubo Wang, Ping Nie, Kai Zou, Lijun Wu, Wenhu Chen 摘要 ：我们已经见证了强大的LLM，如Qwen-Math，MiMo和Phi-4拥有从预训练阶段继承的巨大推理潜力。通过强化学习（RL），这些模型可以显着改善推理任务。最近的研究表明，即使是针对单个问题的强化学习也可以释放这些模型的推理能力。然而，RL不仅昂贵而且不稳定。即使是一次性的RL也需要数百个GPU小时。这就提出了一个关键问题：是否有更有效的方法来释放这些强大的基础LLM的推理潜力？在这项工作中，我们证明， 批判微调（CFT）只有一个问题，可以有效地释放LLM的推理潜力 。我们的方法通过收集不同的模型生成的解决方案，以一个单一的问题，并使用教师LLM提供详细的批评，构建批判数据。我们微调Qwen和Llama家族模型，从1.5B到14 B参数，在CFT数据上，并观察到在不同推理任务中的显着性能增益。例如，仅用5个GPU小时的训练，Qwen-Math-7 B-CFT在六个数学基准测试中平均提高了15%， 在三个逻辑推理基准测试中平均提高了16% 。这些结果与RL的结果相当，甚至超过RL的结果，但计算量减少了20倍。消融研究揭示了单次CFT在不同提示问题中的稳健性。这些结果突出了一次性CFT作为一种简单，通用和计算效率高的方法来释放现代LLM的推理能力。">
-  <meta itemprop="datePublished" content="2025-08-12T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2025-08-12T00:00:00+08:00">
-  <meta itemprop="wordCount" content="2345"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigest.github.io/topic/%E6%8E%A8%E7%90%86/">
+  <meta itemprop="datePublished" content="2025-08-15T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-08-15T00:00:00+08:00">
+  <meta itemprop="wordCount" content="2357"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigest.github.io/topic/%E6%8E%A8%E7%90%86/">
   <meta property="og:site_name" content="LLM-DailyDigest">
   <meta property="og:title" content="推理">
   <meta property="og:description" content="推理 一般推理 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
@@ -49,8 +49,8 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="topic">
-    <meta property="article:published_time" content="2025-08-12T00:00:00+08:00">
-    <meta property="article:modified_time" content="2025-08-12T00:00:00+08:00">
+    <meta property="article:published_time" content="2025-08-15T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-08-15T00:00:00+08:00">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="推理">
@@ -65,7 +65,7 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigest.github.io/topic/%E6%8E%A8%E7%90%86/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigest.github.io/topic/%E6%95%B0%E6%8D%AE/" /><link rel="next" href="https://dujh22.github.io/LLMDailyDigest.github.io/topic/%E5%BA%94%E7%94%A8/" /><link rel="stylesheet" href="/LLMDailyDigest.github.io/css/style.min.css"><link rel="preload" href="/LLMDailyDigest.github.io/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigest.github.io/topic/%E6%8E%A8%E7%90%86/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigest.github.io/topic/%E6%96%B0%E6%A8%A1%E5%9E%8B/" /><link rel="next" href="https://dujh22.github.io/LLMDailyDigest.github.io/topic/%E5%BA%94%E7%94%A8/" /><link rel="stylesheet" href="/LLMDailyDigest.github.io/css/style.min.css"><link rel="preload" href="/LLMDailyDigest.github.io/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigest.github.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigest.github.io/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigest.github.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -76,8 +76,8 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigest.github.io\/topic\/%E6%8E%A8%E7%90%86\/"
-    },"genre": "topic","wordcount":  2345 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigest.github.io\/topic\/%E6%8E%A8%E7%90%86\/","datePublished": "2025-08-12T00:00:00+08:00","dateModified": "2025-08-12T00:00:00+08:00","publisher": {
+    },"genre": "topic","wordcount":  2357 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigest.github.io\/topic\/%E6%8E%A8%E7%90%86\/","datePublished": "2025-08-15T00:00:00+08:00","dateModified": "2025-08-15T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -173,7 +173,7 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       </span></span></div>
-      <div class="post-meta-line"><span title="published on 2025-08-12 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-12">2025-08-12</time></span>&nbsp;<span title="Updated on 2025-08-12 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-12">2025-08-12</time></span>&nbsp;<span title="2345 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>12 minutes</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="published on 2025-08-15 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-15">2025-08-15</time></span>&nbsp;<span title="Updated on 2025-08-15 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-15">2025-08-15</time></span>&nbsp;<span title="2357 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>12 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -200,6 +200,11 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
             <li><a href="#形式化推理">形式化推理</a>
               <ul>
                 <li><a href="#stepfun-formalizer通过知识推理融合释放-llms-的自动形式化潜力">StepFun-Formalizer：通过知识推理融合释放 LLMs 的自动形式化潜力</a></li>
+                <li><a href="#普林斯顿团队领衔发布最强开源数学定理证明模型32b性能大幅超越前代sota-deepseek-671b">普林斯顿团队领衔发布最强开源数学定理证明模型：32B性能大幅超越前代SOTA DeepSeek 671B</a></li>
+                <li><a href="#kimi新模型数学超越deepseek了-在定理证明这块即便模型参数72b也能超越deepseek-prover-v2的671b版本实现sota"><strong>Kimi新模型数学超越DeepSeek了</strong> ，在定理证明这块，即便模型参数72B也能超越DeepSeek-Prover-V2的671B版本，实现SOTA。</a></li>
+                <li><a href="#matp-bench-can-mllm-be-a-good-automated-theorem-prover-for-multimodal--problems">MATP-BENCH: Can MLLM Be a Good Automated Theorem Prover for Multimodal  Problems?</a></li>
+                <li><a href="#goedel-prover-v2通过分阶段数据合成与自我纠正扩展形式定理证明">Goedel-Prover-V2：通过分阶段数据合成与自我纠正扩展形式定理证明</a></li>
+                <li><a href="#模仿人类推理修正过程阶跃星辰提出形式化证明新范式--开源"><a href="https://mp.weixin.qq.com/s/if5yJybrsYG5DhYRrS4oCA">模仿人类推理修正过程，阶跃星辰提出形式化证明新范式 | 开源</a></a></li>
               </ul>
             </li>
           </ul>
@@ -243,15 +248,6 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
         <li><a href="#分层推理模型hrm">分层推理模型（HRM）</a>
           <ul>
             <li><a href="#前沿模拟下一代大语言模型推理系统"><a href="https://papers.cool/arxiv/2508.03148">前沿：模拟下一代大语言模型推理系统</a></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#定理证明">定理证明</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#goedel-prover-v2通过分阶段数据合成与自我纠正扩展形式定理证明">Goedel-Prover-V2：通过分阶段数据合成与自我纠正扩展形式定理证明</a></li>
           </ul>
         </li>
       </ul>
@@ -467,6 +463,38 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 <p><a href="https://arxiv.org/abs/2508.04440"target="_blank" rel="external nofollow noopener noreferrer">#17</a><a href="https://papers.cool/arxiv/2508.04440"target="_blank" rel="external nofollow noopener noreferrer">StepFun-Formalizer: Unlocking the Autoformalization Potential of LLMs through Knowledge-Reasoning Fusion </a></p>
 <p>自动形式化旨在将自然语言的数学陈述翻译成形式语言。虽然 LLMs 加速了该领域的进展，但现有方法仍存在准确率低的问题。我们确定了有效自动形式化的两个关键能力：对形式语言领域知识的全面掌握，以及自然语言问题理解和非正式-正式对齐的推理能力。缺乏前者，模型无法识别正确的形式对象；缺乏后者，模型难以解释现实世界的语境并将其精确映射为形式表达。为解决这些不足，我们引入了 ThinkingF，一种数据合成和训练流程，提升这两种能力。首先，我们构建了两个数据集：一个通过提炼和筛选大量富含形式知识的示例，另一个通过专家设计的模板指导生成非正式到正式的推理轨迹。随后，我们利用这些数据集进行 SFT 和 RLVR 训练，进一步融合和优化这两种能力。最终得到的 7B 和 32B 模型既具备全面的形式知识，又拥有强大的非正式到正式推理能力。 值得注意的是，StepFun-Formalizer-32B 在 FormalMATH-Lite 上取得了 40.5% 的 SOTA BEq@1 分数，在 ProverBench 上取得了 26.7%，超越了所有先前的通用和专用模型。</p>
 <p>发布时间：2025-08-06 13:28:22 UTC</p>
+<h5 id="普林斯顿团队领衔发布最强开源数学定理证明模型32b性能大幅超越前代sota-deepseek-671b">普林斯顿团队领衔发布最强开源数学定理证明模型：32B性能大幅超越前代SOTA DeepSeek 671B</h5>
+<p>2025-07-18 14:06:45 Friday ｜ 近日，由普林斯顿大学牵头，联合清华大学、北京大学、上海交通大学、斯坦福大学，以及英伟达、亚马逊、Meta FAIR 等多家顶尖机构的研究者共同推出了新一代开源数学定理证明模型——Goedel-Prover-V2。https://mp.weixin.qq.com/s/MMBc9dUEg8Kzv6CzXcyLUQ</p>
+<h5 id="kimi新模型数学超越deepseek了-在定理证明这块即便模型参数72b也能超越deepseek-prover-v2的671b版本实现sota"><strong>Kimi新模型数学超越DeepSeek了</strong> ，在定理证明这块，即便模型参数72B也能超越DeepSeek-Prover-V2的671B版本，实现SOTA。</h5>
+<p>2025-07-17 11:02:51 Thursday ｜  <a href="https://mp.weixin.qq.com/s/TH4IuRg7ILfTJwoJymOqbQ"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/TH4IuRg7ILfTJwoJymOqbQ</a></p>
+<h5 id="matp-bench-can-mllm-be-a-good-automated-theorem-prover-for-multimodal--problems">MATP-BENCH: Can MLLM Be a Good Automated Theorem Prover for Multimodal  Problems?</h5>
+<p>2025-06-10 10:57:06 Tuesday</p>
+<ol>
+<li><strong>标题</strong> ： MATT-BENCH：MLLM能否成为多峰问题的良好自动定理证明器？</li>
+<li><strong>链接</strong> ：https://arxiv.org/abs/2506.06034</li>
+<li><strong>摘要</strong> ：许多定理，如几何中的定理，经常以多模态形式呈现（例如，图表）。人类在这样的环境中受益于视觉推理，使用图表来获得直觉并指导证明过程。现代多模态大型语言模型（MLLM）在解决广泛的数学问题方面表现出卓越的能力。然而，MLLM作为 <strong>自动定理证明器（ATP）</strong> 的潜力，特别是在多模态领域，仍然有待探索。在本文中，我们介绍了多模态自动定理证明基准（MATP-BENCH），一个新的多模态，多层次，多语言的基准，旨在评估MLLM在这个角色作为多模态自动定理证明。MATP-BENCH由1056个多模态定理组成，这些定理来自高中、大学和竞赛级数学。所有这些多模态问题都伴随着Lean 4，Coq和Isabelle中的形式化，从而使基准与广泛的定理证明框架兼容。MATP-BENCH要求模型将复杂的视觉理解与广泛的数学知识和严格的符号推理相结合，以生成正式的证明。我们使用MATP-BENCH来评估各种先进的多模态语言模型。现有的方法只能解决有限数量的MATP-BENCH问题，这表明该基准对自动定理证明的研究提出了挑战。</li>
+</ol>
+<h5 id="goedel-prover-v2通过分阶段数据合成与自我纠正扩展形式定理证明">Goedel-Prover-V2：通过分阶段数据合成与自我纠正扩展形式定理证明</h5>
+<p><a href="https://arxiv.org/abs/2508.03613"target="_blank" rel="external nofollow noopener noreferrer">#63</a> <a href="https://papers.cool/arxiv/2508.03613"target="_blank" rel="external nofollow noopener noreferrer">Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction</a></p>
+<p>我们介绍了 Goedel-Prover-V2，一系列开源语言模型，在自动定理证明领域树立了新的最先进水平。基于标准的专家迭代和强化学习流程，我们的方法包含三项关键创新：（1）分阶段数据合成：我们生成难度逐渐增加的合成任务，训练模型掌握越来越复杂的定理；（2）验证器引导的自我修正：我们使模型能够利用 Lean 编译器的反馈，迭代修订其证明；（3）模型平均：我们合并模型检查点，以缓解训练后期模型输出多样性的下降。我们的小型模型 Goedel-Prover-V2-8B 在 MiniF2F 上达到 84.6%的 pass@32 表现，且在相同指标下优于 DeepSeek-Prover-V2-671B，尽管体积小 80 倍。我们的旗舰模型 Goedel-Prover-V2-32B 在标准模式下于 MiniF2F 达到 88.1%的 pass@32，在自我修正模式下达到 90.4%，大幅超越之前的最先进水平。 此外，我们的旗舰模型在 PutnamBench 上以 pass@184 解决了 86 个问题，在排行榜上位列开源模型第一，远超 DeepSeek-Prover-V2-671B 以 pass@1024 解决 47 个问题的记录，且模型规模和计算预算显著更小。发布时（2025 年 7 月至 8 月），Goedel-Prover-V2 在所有开源定理证明器中表现最强。它还在受限的测试时计算预算下，位列包括公开报告性能的闭源系统在内的顶级模型之列。我们的模型、代码和数据已发布于 <a href="https://github.com/Goedel-LM/Goedel-Prover-V2"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Goedel-LM/Goedel-Prover-V2</a>。</p>
+<p>发布时间：2025-08-05 16:28:22 UTC</p>
+<h5 id="模仿人类推理修正过程阶跃星辰提出形式化证明新范式--开源"><a href="https://mp.weixin.qq.com/s/if5yJybrsYG5DhYRrS4oCA"target="_blank" rel="external nofollow noopener noreferrer">模仿人类推理修正过程，阶跃星辰提出形式化证明新范式 | 开源</a></h5>
+<p>2025-08-15</p>
+<ol>
+<li>阶跃星辰正式发布并开源了形式化定理证明大模型：StepFun-Prover-Preview-7B和StepFun-Prover-Preview-32B。</li>
+<li>StepFun-Prover采用基于环境反馈的强化学习训练流程，能像人类一样在推理过程中通过与环境的实时交互逐步修正和完善形式化证明。
+<ol>
+<li>两阶段监督微调（Two-stage SFT）</li>
+<li>工具集成强化学习（Tool-integrated RL）</li>
+</ol>
+</li>
+<li>Github：https://github.com/stepfun-ai/StepFun-Prover-Preview
+<ol>
+<li>Huggingface：https://huggingface.co/stepfun-ai/StepFun-Prover-Preview-32B</li>
+<li>技术报告：https://arxiv.org/abs/2507.20199</li>
+</ol>
+</li>
+</ol>
 <h3 id="规则推理">规则推理</h3>
 <p>2025-06-12 13:36:22 Thursday ｜</p>
 <p>RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic  Sampling
@@ -733,19 +761,6 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 <p><a href="https://arxiv.org/abs/2508.03148"target="_blank" rel="external nofollow noopener noreferrer">#113</a> <a href="https://papers.cool/arxiv/2508.03148"target="_blank" rel="external nofollow noopener noreferrer">Frontier: Simulating the Next Generation of LLM Inference Systems</a></p>
 <p>大型语言模型（LLM）推理随着专家混合（MoE）模型和解耦组件（如预填充/解码（PD）或注意力/前馈网络（AF））的异构扩展架构的兴起，变得日益复杂。现有的模拟器设计用于共置的密集模型，无法捕捉这些新兴范式的复杂系统动态。我们提出了 Frontier，一款从零开始为这一新环境设计的高保真模拟器。Frontier 引入了一个统一框架，既能模拟共置系统，也能模拟解耦系统，原生支持带有专家并行（EP）的 MoE 推理。它能够模拟复杂的工作流程，如跨集群专家路由和用于隐藏延迟的高级流水线策略。为了确保准确性和可用性，Frontier 整合了精细化的算子模型以提升精度。Frontier 赋能社区设计和优化未来大规模 LLM 推理。</p>
 <p>发布时间：2025-08-05 06:53:28 UTC</p>
-<h2 id="定理证明">定理证明</h2>
-<p>2025-07-18 14:06:45 Friday ｜ 普林斯顿团队领衔发布最强开源数学定理证明模型：32B性能大幅超越前代SOTA DeepSeek 671B ：近日，由普林斯顿大学牵头，联合清华大学、北京大学、上海交通大学、斯坦福大学，以及英伟达、亚马逊、Meta FAIR 等多家顶尖机构的研究者共同推出了新一代开源数学定理证明模型——Goedel-Prover-V2。https://mp.weixin.qq.com/s/MMBc9dUEg8Kzv6CzXcyLUQ</p>
-<p>2025-07-17 11:02:51 Thursday ｜  <strong>Kimi新模型数学超越DeepSeek了</strong> ，在定理证明这块，即便模型参数72B也能超越DeepSeek-Prover-V2的671B版本，实现SOTA。<a href="https://mp.weixin.qq.com/s/TH4IuRg7ILfTJwoJymOqbQ"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/TH4IuRg7ILfTJwoJymOqbQ</a></p>
-<p>2025-06-10 10:57:06 Tuesday ｜ MATP-BENCH: Can MLLM Be a Good Automated Theorem Prover for Multimodal  Problems?</p>
-<ol>
-<li><strong>标题</strong> ： MATT-BENCH：MLLM能否成为多峰问题的良好自动定理证明器？</li>
-<li><strong>链接</strong> ：https://arxiv.org/abs/2506.06034</li>
-<li><strong>摘要</strong> ：许多定理，如几何中的定理，经常以多模态形式呈现（例如，图表）。人类在这样的环境中受益于视觉推理，使用图表来获得直觉并指导证明过程。现代多模态大型语言模型（MLLM）在解决广泛的数学问题方面表现出卓越的能力。然而，MLLM作为 <strong>自动定理证明器（ATP）</strong> 的潜力，特别是在多模态领域，仍然有待探索。在本文中，我们介绍了多模态自动定理证明基准（MATP-BENCH），一个新的多模态，多层次，多语言的基准，旨在评估MLLM在这个角色作为多模态自动定理证明。MATP-BENCH由1056个多模态定理组成，这些定理来自高中、大学和竞赛级数学。所有这些多模态问题都伴随着Lean 4，Coq和Isabelle中的形式化，从而使基准与广泛的定理证明框架兼容。MATP-BENCH要求模型将复杂的视觉理解与广泛的数学知识和严格的符号推理相结合，以生成正式的证明。我们使用MATP-BENCH来评估各种先进的多模态语言模型。现有的方法只能解决有限数量的MATP-BENCH问题，这表明该基准对自动定理证明的研究提出了挑战。</li>
-</ol>
-<h4 id="goedel-prover-v2通过分阶段数据合成与自我纠正扩展形式定理证明">Goedel-Prover-V2：通过分阶段数据合成与自我纠正扩展形式定理证明</h4>
-<p><a href="https://arxiv.org/abs/2508.03613"target="_blank" rel="external nofollow noopener noreferrer">#63</a> <a href="https://papers.cool/arxiv/2508.03613"target="_blank" rel="external nofollow noopener noreferrer">Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction</a></p>
-<p>我们介绍了 Goedel-Prover-V2，一系列开源语言模型，在自动定理证明领域树立了新的最先进水平。基于标准的专家迭代和强化学习流程，我们的方法包含三项关键创新：（1）分阶段数据合成：我们生成难度逐渐增加的合成任务，训练模型掌握越来越复杂的定理；（2）验证器引导的自我修正：我们使模型能够利用 Lean 编译器的反馈，迭代修订其证明；（3）模型平均：我们合并模型检查点，以缓解训练后期模型输出多样性的下降。我们的小型模型 Goedel-Prover-V2-8B 在 MiniF2F 上达到 84.6%的 pass@32 表现，且在相同指标下优于 DeepSeek-Prover-V2-671B，尽管体积小 80 倍。我们的旗舰模型 Goedel-Prover-V2-32B 在标准模式下于 MiniF2F 达到 88.1%的 pass@32，在自我修正模式下达到 90.4%，大幅超越之前的最先进水平。 此外，我们的旗舰模型在 PutnamBench 上以 pass@184 解决了 86 个问题，在排行榜上位列开源模型第一，远超 DeepSeek-Prover-V2-671B 以 pass@1024 解决 47 个问题的记录，且模型规模和计算预算显著更小。发布时（2025 年 7 月至 8 月），Goedel-Prover-V2 在所有开源定理证明器中表现最强。它还在受限的测试时计算预算下，位列包括公开报告性能的闭源系统在内的顶级模型之列。我们的模型、代码和数据已发布于 <a href="https://github.com/Goedel-LM/Goedel-Prover-V2"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Goedel-LM/Goedel-Prover-V2</a>。</p>
-<p>发布时间：2025-08-05 16:28:22 UTC</p>
 <h2 id="数据选择">数据选择</h2>
 <p>2025-07-03 11:39:50 Thursday ｜</p>
 <p><strong><a href="https://papers.cool/arxiv/2507.01921"target="_blank" rel="external nofollow noopener noreferrer">NaturalThoughts：为一般推理任务选择和提炼推理轨迹</a></strong> <strong>[PDF(3)]</strong> <strong>[Copy]</strong> <strong>[Kimi()]</strong> <strong>[REL]</strong></p>
