@@ -8,6 +8,10 @@
     <title>推理 - LLM-DailyDigest</title><meta name="author" content="">
 <meta name="author-link" content="">
 <meta name="description" content="推理
+综述
+
+清华、上海AI Lab等顶级团队发布推理模型RL超全综述，探索通往超级智能之路 2025-09
+
 一般推理
 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
 数学题干带猫AI就不会了！错误率翻300%，DeepSeek、o1都不能幸免https://mp.weixin.qq.com/s/qesEHt47UQNdjnryMLHwGA
@@ -15,57 +19,46 @@
 2025-06-30 19:09:50 Monday ｜
 从思考到输出：推理语言模型中的思维链和文本生成特征 [PDF(2)] [Copy] [Kimi(3)] [REL]
 Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan Chang
-最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output
-
-20250604｜新泛化跨领域推理框架：General-Reasoner https://mp.weixin.qq.com/s/GDe5Dm17ekCCbUwKO475iA
-2025-06-09 10:47:26 Monday ｜Unleashing the Reasoning Potential of Pre-trained LLMs by Critique  Fine-Tuning on One Problem
-标题 ： 通过对一个问题的批评微调来释放预训练LLM的推理潜力
-链接 ：https://arxiv.org/abs/2506.03295
-
-作者 ： Yubo Wang,  Ping Nie,  Kai Zou,  Lijun Wu,  Wenhu Chen
-摘要 ：我们已经见证了强大的LLM，如Qwen-Math，MiMo和Phi-4拥有从预训练阶段继承的巨大推理潜力。通过强化学习（RL），这些模型可以显着改善推理任务。最近的研究表明，即使是针对单个问题的强化学习也可以释放这些模型的推理能力。然而，RL不仅昂贵而且不稳定。即使是一次性的RL也需要数百个GPU小时。这就提出了一个关键问题：是否有更有效的方法来释放这些强大的基础LLM的推理潜力？在这项工作中，我们证明， 批判微调（CFT）只有一个问题，可以有效地释放LLM的推理潜力 。我们的方法通过收集不同的模型生成的解决方案，以一个单一的问题，并使用教师LLM提供详细的批评，构建批判数据。我们微调Qwen和Llama家族模型，从1.5B到14 B参数，在CFT数据上，并观察到在不同推理任务中的显着性能增益。例如，仅用5个GPU小时的训练，Qwen-Math-7 B-CFT在六个数学基准测试中平均提高了15%， 在三个逻辑推理基准测试中平均提高了16% 。这些结果与RL的结果相当，甚至超过RL的结果，但计算量减少了20倍。消融研究揭示了单次CFT在不同提示问题中的稳健性。这些结果突出了一次性CFT作为一种简单，通用和计算效率高的方法来释放现代LLM的推理能力。" /><meta name="keywords" content='Hugo, FixIt' />
+最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output" /><meta name="keywords" content='Hugo, FixIt' />
   <meta itemprop="name" content="推理">
-  <meta itemprop="description" content="推理 一般推理 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
+  <meta itemprop="description" content="推理 综述 清华、上海AI Lab等顶级团队发布推理模型RL超全综述，探索通往超级智能之路 2025-09 一般推理 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
 数学题干带猫AI就不会了！错误率翻300%，DeepSeek、o1都不能幸免https://mp.weixin.qq.com/s/qesEHt47UQNdjnryMLHwGA
 物理学家靠生物揭开AI创造力来源：起因竟是“技术缺陷” https://mp.weixin.qq.com/s/Lmh2oX-h4xOOyKPeNjxJGg
 2025-06-30 19:09:50 Monday ｜
 从思考到输出：推理语言模型中的思维链和文本生成特征 [PDF(2)] [Copy] [Kimi(3)] [REL]
 Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan Chang
-最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output
-20250604｜新泛化跨领域推理框架：General-Reasoner https://mp.weixin.qq.com/s/GDe5Dm17ekCCbUwKO475iA 2025-06-09 10:47:26 Monday ｜Unleashing the Reasoning Potential of Pre-trained LLMs by Critique Fine-Tuning on One Problem 标题 ： 通过对一个问题的批评微调来释放预训练LLM的推理潜力 链接 ：https://arxiv.org/abs/2506.03295 作者 ： Yubo Wang, Ping Nie, Kai Zou, Lijun Wu, Wenhu Chen 摘要 ：我们已经见证了强大的LLM，如Qwen-Math，MiMo和Phi-4拥有从预训练阶段继承的巨大推理潜力。通过强化学习（RL），这些模型可以显着改善推理任务。最近的研究表明，即使是针对单个问题的强化学习也可以释放这些模型的推理能力。然而，RL不仅昂贵而且不稳定。即使是一次性的RL也需要数百个GPU小时。这就提出了一个关键问题：是否有更有效的方法来释放这些强大的基础LLM的推理潜力？在这项工作中，我们证明， 批判微调（CFT）只有一个问题，可以有效地释放LLM的推理潜力 。我们的方法通过收集不同的模型生成的解决方案，以一个单一的问题，并使用教师LLM提供详细的批评，构建批判数据。我们微调Qwen和Llama家族模型，从1.5B到14 B参数，在CFT数据上，并观察到在不同推理任务中的显着性能增益。例如，仅用5个GPU小时的训练，Qwen-Math-7 B-CFT在六个数学基准测试中平均提高了15%， 在三个逻辑推理基准测试中平均提高了16% 。这些结果与RL的结果相当，甚至超过RL的结果，但计算量减少了20倍。消融研究揭示了单次CFT在不同提示问题中的稳健性。这些结果突出了一次性CFT作为一种简单，通用和计算效率高的方法来释放现代LLM的推理能力。">
-  <meta itemprop="datePublished" content="2025-08-15T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2025-08-15T00:00:00+08:00">
-  <meta itemprop="wordCount" content="2357"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/">
+最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output">
+  <meta itemprop="datePublished" content="2025-09-14T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-09-14T00:00:00+08:00">
+  <meta itemprop="wordCount" content="2383"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/">
   <meta property="og:site_name" content="LLM-DailyDigest">
   <meta property="og:title" content="推理">
-  <meta property="og:description" content="推理 一般推理 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
+  <meta property="og:description" content="推理 综述 清华、上海AI Lab等顶级团队发布推理模型RL超全综述，探索通往超级智能之路 2025-09 一般推理 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
 数学题干带猫AI就不会了！错误率翻300%，DeepSeek、o1都不能幸免https://mp.weixin.qq.com/s/qesEHt47UQNdjnryMLHwGA
 物理学家靠生物揭开AI创造力来源：起因竟是“技术缺陷” https://mp.weixin.qq.com/s/Lmh2oX-h4xOOyKPeNjxJGg
 2025-06-30 19:09:50 Monday ｜
 从思考到输出：推理语言模型中的思维链和文本生成特征 [PDF(2)] [Copy] [Kimi(3)] [REL]
 Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan Chang
-最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output
-20250604｜新泛化跨领域推理框架：General-Reasoner https://mp.weixin.qq.com/s/GDe5Dm17ekCCbUwKO475iA 2025-06-09 10:47:26 Monday ｜Unleashing the Reasoning Potential of Pre-trained LLMs by Critique Fine-Tuning on One Problem 标题 ： 通过对一个问题的批评微调来释放预训练LLM的推理潜力 链接 ：https://arxiv.org/abs/2506.03295 作者 ： Yubo Wang, Ping Nie, Kai Zou, Lijun Wu, Wenhu Chen 摘要 ：我们已经见证了强大的LLM，如Qwen-Math，MiMo和Phi-4拥有从预训练阶段继承的巨大推理潜力。通过强化学习（RL），这些模型可以显着改善推理任务。最近的研究表明，即使是针对单个问题的强化学习也可以释放这些模型的推理能力。然而，RL不仅昂贵而且不稳定。即使是一次性的RL也需要数百个GPU小时。这就提出了一个关键问题：是否有更有效的方法来释放这些强大的基础LLM的推理潜力？在这项工作中，我们证明， 批判微调（CFT）只有一个问题，可以有效地释放LLM的推理潜力 。我们的方法通过收集不同的模型生成的解决方案，以一个单一的问题，并使用教师LLM提供详细的批评，构建批判数据。我们微调Qwen和Llama家族模型，从1.5B到14 B参数，在CFT数据上，并观察到在不同推理任务中的显着性能增益。例如，仅用5个GPU小时的训练，Qwen-Math-7 B-CFT在六个数学基准测试中平均提高了15%， 在三个逻辑推理基准测试中平均提高了16% 。这些结果与RL的结果相当，甚至超过RL的结果，但计算量减少了20倍。消融研究揭示了单次CFT在不同提示问题中的稳健性。这些结果突出了一次性CFT作为一种简单，通用和计算效率高的方法来释放现代LLM的推理能力。">
+最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="topic">
-    <meta property="article:published_time" content="2025-08-15T00:00:00+08:00">
-    <meta property="article:modified_time" content="2025-08-15T00:00:00+08:00">
+    <meta property="article:published_time" content="2025-09-14T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-09-14T00:00:00+08:00">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="推理">
-  <meta name="twitter:description" content="推理 一般推理 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
+  <meta name="twitter:description" content="推理 综述 清华、上海AI Lab等顶级团队发布推理模型RL超全综述，探索通往超级智能之路 2025-09 一般推理 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
 数学题干带猫AI就不会了！错误率翻300%，DeepSeek、o1都不能幸免https://mp.weixin.qq.com/s/qesEHt47UQNdjnryMLHwGA
 物理学家靠生物揭开AI创造力来源：起因竟是“技术缺陷” https://mp.weixin.qq.com/s/Lmh2oX-h4xOOyKPeNjxJGg
 2025-06-30 19:09:50 Monday ｜
 从思考到输出：推理语言模型中的思维链和文本生成特征 [PDF(2)] [Copy] [Kimi(3)] [REL]
 Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan Chang
-最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output
-20250604｜新泛化跨领域推理框架：General-Reasoner https://mp.weixin.qq.com/s/GDe5Dm17ekCCbUwKO475iA 2025-06-09 10:47:26 Monday ｜Unleashing the Reasoning Potential of Pre-trained LLMs by Critique Fine-Tuning on One Problem 标题 ： 通过对一个问题的批评微调来释放预训练LLM的推理潜力 链接 ：https://arxiv.org/abs/2506.03295 作者 ： Yubo Wang, Ping Nie, Kai Zou, Lijun Wu, Wenhu Chen 摘要 ：我们已经见证了强大的LLM，如Qwen-Math，MiMo和Phi-4拥有从预训练阶段继承的巨大推理潜力。通过强化学习（RL），这些模型可以显着改善推理任务。最近的研究表明，即使是针对单个问题的强化学习也可以释放这些模型的推理能力。然而，RL不仅昂贵而且不稳定。即使是一次性的RL也需要数百个GPU小时。这就提出了一个关键问题：是否有更有效的方法来释放这些强大的基础LLM的推理潜力？在这项工作中，我们证明， 批判微调（CFT）只有一个问题，可以有效地释放LLM的推理潜力 。我们的方法通过收集不同的模型生成的解决方案，以一个单一的问题，并使用教师LLM提供详细的批评，构建批判数据。我们微调Qwen和Llama家族模型，从1.5B到14 B参数，在CFT数据上，并观察到在不同推理任务中的显着性能增益。例如，仅用5个GPU小时的训练，Qwen-Math-7 B-CFT在六个数学基准测试中平均提高了15%， 在三个逻辑推理基准测试中平均提高了16% 。这些结果与RL的结果相当，甚至超过RL的结果，但计算量减少了20倍。消融研究揭示了单次CFT在不同提示问题中的稳健性。这些结果突出了一次性CFT作为一种简单，通用和计算效率高的方法来释放现代LLM的推理能力。">
+最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%96%B0%E6%A8%A1%E5%9E%8B/" /><link rel="next" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E5%BA%94%E7%94%A8/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -76,8 +69,8 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E6%8E%A8%E7%90%86\/"
-    },"genre": "topic","wordcount":  2357 ,
-    "url": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E6%8E%A8%E7%90%86\/","datePublished": "2025-08-15T00:00:00+08:00","dateModified": "2025-08-15T00:00:00+08:00","publisher": {
+    },"genre": "topic","wordcount":  2383 ,
+    "url": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E6%8E%A8%E7%90%86\/","datePublished": "2025-09-14T00:00:00+08:00","dateModified": "2025-09-14T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -173,12 +166,13 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       </span></span></div>
-      <div class="post-meta-line"><span title="published on 2025-08-15 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-15">2025-08-15</time></span>&nbsp;<span title="Updated on 2025-08-15 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-15">2025-08-15</time></span>&nbsp;<span title="2357 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>12 minutes</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="published on 2025-09-14 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-09-14">2025-09-14</time></span>&nbsp;<span title="Updated on 2025-09-14 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-09-14">2025-09-14</time></span>&nbsp;<span title="2383 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>12 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#综述">综述</a></li>
     <li><a href="#一般推理">一般推理</a>
       <ul>
         <li>
@@ -194,7 +188,7 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
                 <li><a href="#2025imo竞赛">2025IMO竞赛</a></li>
               </ul>
             </li>
-            <li><a href="#综述">综述</a></li>
+            <li><a href="#综述-1">综述</a></li>
             <li><a href="#学习机制">学习机制</a></li>
             <li><a href="#教师模型引导">教师模型引导</a></li>
             <li><a href="#形式化推理">形式化推理</a>
@@ -212,6 +206,11 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
         <li><a href="#规则推理">规则推理</a></li>
         <li><a href="#空间推理">空间推理</a></li>
         <li><a href="#游戏推理">游戏推理</a></li>
+        <li><a href="#类比推理">类比推理</a>
+          <ul>
+            <li><a href="#模拟类比和类比推理连接认知科学理论和自然语言处理研究"><a href="https://papers.cool/arxiv/2509.09381">模拟类比和类比推理：连接认知科学理论和自然语言处理研究</a></a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#类o系列模型">类o系列模型</a>
@@ -268,6 +267,10 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
       
       
     ><h1 id="推理">推理</h1>
+<h2 id="综述">综述</h2>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s/CkKlHplf-kO30L6B_ucv1g"target="_blank" rel="external nofollow noopener noreferrer">清华、上海AI Lab等顶级团队发布推理模型RL超全综述，探索通往超级智能之路</a> 2025-09</li>
+</ol>
 <h2 id="一般推理">一般推理</h2>
 <p>研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。<a href="https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ</a></p>
 <p>数学题干带猫AI就不会了！错误率翻300%，DeepSeek、o1都不能幸免<a href="https://mp.weixin.qq.com/s/qesEHt47UQNdjnryMLHwGA"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/qesEHt47UQNdjnryMLHwGA</a></p>
@@ -424,7 +427,7 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 </ol>
 </li>
 </ol>
-<h4 id="综述">综述</h4>
+<h4 id="综述-1">综述</h4>
 <p>2025-06-12 12:04:01 Thursday｜A Survey on Large Language Models for Mathematical Reasoning
 <strong>标题</strong> ： 数学推理大型语言模型研究
 <strong>链接</strong> ：https://arxiv.org/abs/2506.08446</p>
@@ -520,6 +523,12 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 <li>论文链接：https://arxiv.org/abs/2506.08011</li>
 <li>项目主页：https://yunfeixie233.github.io/ViGaL/</li>
 </ul>
+<h3 id="类比推理">类比推理</h3>
+<h4 id="模拟类比和类比推理连接认知科学理论和自然语言处理研究"><a href="https://papers.cool/arxiv/2509.09381"target="_blank" rel="external nofollow noopener noreferrer">模拟类比和类比推理：连接认知科学理论和自然语言处理研究</a></h4>
+<p><strong>Authors</strong>: <a href="https://arxiv.org/search/?searchtype=author&amp;query=Molly%20R%20Petersen"target="_blank" rel="external nofollow noopener noreferrer">Molly R Petersen</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Claire%20E%20Stevenson"target="_blank" rel="external nofollow noopener noreferrer">Claire E Stevenson</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Lonneke%20van%20der%20Plas"target="_blank" rel="external nofollow noopener noreferrer">Lonneke van der Plas</a></p>
+<p><strong>类比推理是人类认知的一个重要方面。在本文中，我们总结了认知科学文献中关于类比推理背后过程的关键理论，并将其与当前自然语言处理的研究联系起来。虽然这些过程可以很容易地与 NLP 中的概念联系起来，但通常不会通过认知视角来看待它们。此外，我们展示了这些概念如何与NLP研究中的几个主要挑战相关，与类比求解没有直接关系。这可能会指导研究人员更好地优化文本中的关系理解，而不是严重依赖实体级相似性。</strong></p>
+<p><strong>主题</strong>: <a href="https://papers.cool/arxiv/cs.CL"target="_blank" rel="external nofollow noopener noreferrer">计算和语言</a></p>
+<p><strong>发布</strong>: 2025-09-11 11：57：58 UTC</p>
 <h2 id="类o系列模型">类o系列模型</h2>
 <p>2025-06-12 11:53:24 Thursday |</p>
 <p>Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via  Reinforcement Learning
