@@ -31,7 +31,7 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 最近，大型语言模型 （LLM） 取得了显着进展，表明它们在复杂推理方面的能力不断增强。然而，现有的研究在很大程度上忽视了 对这些模型的推理过程和输出的彻底和系统的比较 ，特别是关于它们的自我反思模式（也称为“顿悟时刻”）和不同领域的相互联系。本文提出了一种新的框架，用于使用关键词统计和 LLM 作为判断范式分析四种尖端大型推理模型（GPT-o1、DeepSeek-R1、Kimi-k1.5 和 Grok-3）的推理特征。我们的方法将他们的内部思考过程与最终产出联系起来。多样化的数据集由基于真实场景的问题组成，涵盖逻辑推论、因果推理和多步骤问题解决。此外，还提出了一组指标来评估推理的连贯性和输出的准确性。研究结果揭示了这些模型如何在推理过程中平衡探索和开发、处理问题和得出结论的各种模式。通过定量和定性比较，确定了这些模型在推理深度、对中间步骤的依赖以及它们的思维过程和输出模式与 GPT-o1 的相似程度等方面的差异。这项工作为计算效率和推理鲁棒性之间的权衡提供了有价值的见解，并为在实际应用中加强模型设计和评估提供了实用建议。我们在以下位置公开发布我们的项目： https://github.com/ChangWenhan/FromThinking2Output">
   <meta itemprop="datePublished" content="2025-09-15T00:00:00+08:00">
   <meta itemprop="dateModified" content="2025-09-15T00:00:00+08:00">
-  <meta itemprop="wordCount" content="2399"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/">
+  <meta itemprop="wordCount" content="2432"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/">
   <meta property="og:site_name" content="LLM-DailyDigest">
   <meta property="og:title" content="推理">
   <meta property="og:description" content="推理 综述 清华、上海AI Lab等顶级团队发布推理模型RL超全综述，探索通往超级智能之路 2025-09 大型推理模型的强化学习研究综述（95▲） 一般推理 研究发现，只有用强化学习（RL）训练的模型才能将数学推理技能广泛迁移到其他任务上。而用监督微调（SFT）训练的模型则表现出有限的迁移甚至没有迁移。https://mp.weixin.qq.com/s/L1vwB7Lj_JcvSfD7cQ5eSQ
@@ -59,7 +59,7 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%96%B0%E6%A8%A1%E5%9E%8B/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%96%B0%E6%A8%A1%E5%9E%8B/" /><link rel="next" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -70,7 +70,7 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E6%8E%A8%E7%90%86\/"
-    },"genre": "topic","wordcount":  2399 ,
+    },"genre": "topic","wordcount":  2432 ,
     "url": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E6%8E%A8%E7%90%86\/","datePublished": "2025-09-15T00:00:00+08:00","dateModified": "2025-09-15T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -167,7 +167,7 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       </span></span></div>
-      <div class="post-meta-line"><span title="published on 2025-09-15 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-09-15">2025-09-15</time></span>&nbsp;<span title="Updated on 2025-09-15 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-09-15">2025-09-15</time></span>&nbsp;<span title="2399 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>12 minutes</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="published on 2025-09-15 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-09-15">2025-09-15</time></span>&nbsp;<span title="Updated on 2025-09-15 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-09-15">2025-09-15</time></span>&nbsp;<span title="2432 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2500 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>12 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -256,6 +256,23 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
     <li><a href="#数据选择">数据选择</a></li>
     <li><a href="#推理的泛化性">（推理的）泛化性</a></li>
     <li><a href="#推理的可解释性">推理的可解释性</a></li>
+    <li><a href="#推理的不确定性">推理的不确定性</a>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="#77不确定性下的推理探索法学硕士的概率推理能力-pdf-copy-kimi1-rel"><a href="https://arxiv.org/abs/2509.10739">#77</a><a href="https://papers.cool/arxiv/2509.10739">不确定性下的推理：探索法学硕士的概率推理能力</a> [PDF] [Copy] [Kimi1] [REL]</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#其他推理">其他推理</a>
       <ul>
         <li><a href="#心智推理">心智推理</a></li>
@@ -833,6 +850,12 @@ Authors : Junhao Liu, Zhenhao Xu, Yuxin Fang, Yichuan Chen, Zuobin Ying, Wenhan 
 <p><strong><a href="https://papers.cool/arxiv/2506.19143"target="_blank" rel="external nofollow noopener noreferrer">Thought Anchors：哪些 LLM 推理步骤很重要？</a></strong> <strong>[PDF()]</strong> <strong>[Copy]</strong> <strong>[Kimi(1)]</strong> <strong>[REL]</strong></p>
 <p><strong>Authors</strong> : <a href="https://arxiv.org/search/?searchtype=author&amp;query=Paul%20C.%20Bogdan"target="_blank" rel="external nofollow noopener noreferrer">Paul C. Bogdan</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Uzay%20Macar"target="_blank" rel="external nofollow noopener noreferrer">Uzay Macar</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Neel%20Nanda"target="_blank" rel="external nofollow noopener noreferrer">Neel Nanda</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Arthur%20Conmy"target="_blank" rel="external nofollow noopener noreferrer">Arthur Conmy</a></p>
 <p>推理大型语言模型最近在许多领域都取得了最先进的性能。然而，他们的长篇思维链推理带来了可解释性挑战，因为每个生成的令牌都依赖于所有先前的令牌，这使得计算更难分解。我们认为，在句子层面分析推理轨迹是理解推理过程的一种很有前途的方法。我们提出了三种互补的归因方法：（1） 一种黑盒方法，通过比较 100 次推出的最终答案来衡量每个句子的反事实重要性，这些答案以生成该句子的模型或具有不同含义的模型为条件;（2） 一种白盒方法，在成对的句子之间聚合注意力模式，它识别出 “广播” 的句子，这些句子通过 “接收者” 的注意力头从所有未来的句子中受到不成比例的关注;（3） 因果归因方法，通过抑制对一个句子的关注并测量对每个未来句子的标记的影响来衡量句子之间的逻辑联系。每种方法都为思维锚的存在提供了证据，这些推理步骤具有极其重要性，并且不成比例地影响了随后的推理过程。这些思想锚通常是计划或回溯句子。我们提供了一个开源工具 （www.thought-anchors.com） 来可视化我们方法的输出，并提供了一个案例研究，展示了映射模型如何执行多步骤推理的方法的收敛模式。方法之间的一致性证明了句子级分析在更深入地理解推理模型方面的潜力。</p>
+<h2 id="推理的不确定性">推理的不确定性</h2>
+<h6 id="77不确定性下的推理探索法学硕士的概率推理能力-pdf-copy-kimi1-rel"><a href="https://arxiv.org/abs/2509.10739"target="_blank" rel="external nofollow noopener noreferrer">#77</a><a href="https://papers.cool/arxiv/2509.10739"target="_blank" rel="external nofollow noopener noreferrer">不确定性下的推理：探索法学硕士的概率推理能力</a> [PDF] [Copy] [Kimi1] [REL]</h6>
+<p><strong>Authors</strong>: <a href="https://arxiv.org/search/?searchtype=author&amp;query=Mobina%20Pournemat"target="_blank" rel="external nofollow noopener noreferrer">Mobina Pournemat</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Keivan%20Rezaei"target="_blank" rel="external nofollow noopener noreferrer">Keivan Rezaei</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Gaurang%20Sriramanan"target="_blank" rel="external nofollow noopener noreferrer">Gaurang Sriramanan</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Arman%20Zarei"target="_blank" rel="external nofollow noopener noreferrer">Arman Zarei</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Jiaxiang%20Fu"target="_blank" rel="external nofollow noopener noreferrer">Jiaxiang Fu</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Yang%20Wang"target="_blank" rel="external nofollow noopener noreferrer">Yang Wang</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Hamid%20Eghbalzadeh"target="_blank" rel="external nofollow noopener noreferrer">Hamid Eghbalzadeh</a>, <a href="https://arxiv.org/search/?searchtype=author&amp;query=Soheil%20Feizi"target="_blank" rel="external nofollow noopener noreferrer">Soheil Feizi</a></p>
+<p><strong>尽管在语言理解和生成方面取得了广泛的成功，但大型语言模型 （LLM） 在面对需要概率推理的任务时表现出不明确且往往不一致的行为。在这项工作中，我们首次全面研究了法学硕士在显式离散概率分布上的推理能力。根据概率分布的观察结果，我们评估模型在三个精心设计的任务上，即模式识别、最大似然估计和样本生成，提示它们对有关联合分布或其条件的查询做出响应。因此，这些任务探索了一系列概率技能，包括频率分析、边缘化和生成行为。通过全面的实证评估，我们证明较小的模型和较大的模型之间存在明显的性能差距，后者在样本生成方面表现出更强的推理能力和令人惊讶的能力。此外，我们的调查揭示了显着的局限性，包括对用于表示概率结果的符号变化的敏感性，以及随着上下文长度的增加，性能下降超过 60%。总之，我们的结果提供了对法学硕士概率推理能力的详细理解，并确定了未来改进的关键方向。</strong></p>
+<p><strong>主题</strong>: <a href="https://papers.cool/arxiv/cs.CL"target="_blank" rel="external nofollow noopener noreferrer">计算和语言</a></p>
+<p><strong>发布</strong>: 2025-09-12 22：58：05 UTC</p>
 <h2 id="其他推理">其他推理</h2>
 <h3 id="心智推理">心智推理</h3>
 <p>2025-06-25 09:56:06 Wednesday ｜ ToMAP：赋予大模型「读心术」，打造更聪明的AI说服者 <a href="https://mp.weixin.qq.com/s/oxSc45AVlff7s3YbYrBZGg"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/oxSc45AVlff7s3YbYrBZGg</a></p>
