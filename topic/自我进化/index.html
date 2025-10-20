@@ -8,39 +8,77 @@
     <title>自我进化 Self-Evolve - LLM-DailyDigest</title><meta name="author" content="">
 <meta name="author-link" content="">
 <meta name="description" content="Self-Evolve
+2025-10-20
+
+🌈 斯坦福：智能体在交互中实时进化
+
+In-the-Flow Agentic System Optimization for Effective Planning and Tool Use
+它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化
+论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路
+https://agentflow.stanford.edu/
+
+
+Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险 （主要是安全相关）
+
+Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents
+这篇论文揭示了一个令人警醒的现象： 自进化过程并非总是良性的 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为
+
+Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。
+进化过程是一个循环：代理接收任务→生成执行轨迹→获得反馈→更新自身组件。
+
+模型进化：自我训练导致安全对齐退化
+记忆进化：经验积累引发目标偏移与奖励破解——代理学会利用历史成功经验中的“捷径”，即使这些捷径违背用户真实目标。
+工具进化：工具创建与复用中的安全漏洞
+工作流进化：性能优化牺牲安全性
+
+
+
+
+解决办法：引入安全护栏、进行有效验证/安全性检查
+
+
+「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习、微调已死？Agentic上下文工程登场，无需微调实现模型进化
+
+Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升
+
+生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。
+ACE 的核心设计理念是：将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词。
+
+
+
+
+推理银行：具有推理记忆的自进化代理
+
+ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
+随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。
+基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。
+
+
+
 2025-08-08
 R-Zero：从零数据自我进化推理 LLM
-#65 R-Zero: Self-Evolving Reasoning LLM from Zero Data
-Authors: Chengsong Huang、Wenhao Yu、Xiaoyang Wang、Hongming Zhang、Zongxia Li、Ruosen Li、Jiaxin Huang、Haitao Mi、Dong Yu
-Self-evolving Large Language Models (LLMs) offer a scalable path toward super-intelligence by autonomously generating, refining, and learning from their own experiences. However, existing methods for training such models still rely heavily on vast human-curated tasks and labels, typically via fine-tuning or reinforcement learning, which poses a fundamental bottleneck to advancing AI systems toward capabilities beyond human intelligence. To overcome this limitation, we introduce R-Zero, a fully autonomous framework that generates its own training data from scratch. Starting from a single base LLM, R-Zero initializes two independent models with distinct roles, a Challenger and a Solver. These models are optimized separately and co-evolve through interaction: the Challenger is rewarded for proposing tasks near the edge of the Solver capability, and the Solver is rewarded for solving increasingly challenging tasks posed by the Challenger. This process yields a targeted, self-improving curriculum without any pre-existing tasks and labels. Empirically, R-Zero substantially improves reasoning capability across different backbone LLMs, e.g., boosting the Qwen3-4B-Base by &#43;6.49 on math-reasoning benchmarks and &#43;7.54 on general-domain reasoning benchmarks.
-自我进化的大型语言模型（LLMs）通过自主生成、改进并从自身经验中学习，提供了一条通往超智能的可扩展路径。然而，现有训练此类模型的方法仍然在很大程度上依赖大量人工策划的任务和标签，通常通过微调或强化学习来实现，这对将人工智能系统推进到超越人类智能的能力构成了根本性瓶颈。" /><meta name="keywords" content='Hugo, FixIt' />
+#65 R-Zero: Self-Evolving Reasoning LLM from Zero Data" /><meta name="keywords" content='Hugo, FixIt' />
   <meta itemprop="name" content="自我进化 Self-Evolve">
-  <meta itemprop="description" content="Self-Evolve 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data
-Authors: Chengsong Huang、Wenhao Yu、Xiaoyang Wang、Hongming Zhang、Zongxia Li、Ruosen Li、Jiaxin Huang、Haitao Mi、Dong Yu
-Self-evolving Large Language Models (LLMs) offer a scalable path toward super-intelligence by autonomously generating, refining, and learning from their own experiences. However, existing methods for training such models still rely heavily on vast human-curated tasks and labels, typically via fine-tuning or reinforcement learning, which poses a fundamental bottleneck to advancing AI systems toward capabilities beyond human intelligence. To overcome this limitation, we introduce R-Zero, a fully autonomous framework that generates its own training data from scratch. Starting from a single base LLM, R-Zero initializes two independent models with distinct roles, a Challenger and a Solver. These models are optimized separately and co-evolve through interaction: the Challenger is rewarded for proposing tasks near the edge of the Solver capability, and the Solver is rewarded for solving increasingly challenging tasks posed by the Challenger. This process yields a targeted, self-improving curriculum without any pre-existing tasks and labels. Empirically, R-Zero substantially improves reasoning capability across different backbone LLMs, e.g., boosting the Qwen3-4B-Base by &#43;6.49 on math-reasoning benchmarks and &#43;7.54 on general-domain reasoning benchmarks. 自我进化的大型语言模型（LLMs）通过自主生成、改进并从自身经验中学习，提供了一条通往超智能的可扩展路径。然而，现有训练此类模型的方法仍然在很大程度上依赖大量人工策划的任务和标签，通常通过微调或强化学习来实现，这对将人工智能系统推进到超越人类智能的能力构成了根本性瓶颈。">
-  <meta itemprop="datePublished" content="2025-08-13T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2025-08-13T00:00:00+08:00">
-  <meta itemprop="wordCount" content="840"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/">
+  <meta itemprop="description" content="Self-Evolve 2025-10-20 🌈 斯坦福：智能体在交互中实时进化 In-the-Flow Agentic System Optimization for Effective Planning and Tool Use 它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化 论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路 https://agentflow.stanford.edu/ Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险 （主要是安全相关） Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents 这篇论文揭示了一个令人警醒的现象： 自进化过程并非总是良性的 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为 Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。 进化过程是一个循环：代理接收任务→生成执行轨迹→获得反馈→更新自身组件。 模型进化：自我训练导致安全对齐退化 记忆进化：经验积累引发目标偏移与奖励破解——代理学会利用历史成功经验中的“捷径”，即使这些捷径违背用户真实目标。 工具进化：工具创建与复用中的安全漏洞 工作流进化：性能优化牺牲安全性 解决办法：引入安全护栏、进行有效验证/安全性检查 「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习、微调已死？Agentic上下文工程登场，无需微调实现模型进化 Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升 生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。 ACE 的核心设计理念是：将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词。 推理银行：具有推理记忆的自进化代理 ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory 随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。 基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data">
+  <meta itemprop="datePublished" content="2025-10-20T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-10-20T00:00:00+08:00">
+  <meta itemprop="wordCount" content="915"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/">
   <meta property="og:site_name" content="LLM-DailyDigest">
   <meta property="og:title" content="自我进化 Self-Evolve">
-  <meta property="og:description" content="Self-Evolve 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data
-Authors: Chengsong Huang、Wenhao Yu、Xiaoyang Wang、Hongming Zhang、Zongxia Li、Ruosen Li、Jiaxin Huang、Haitao Mi、Dong Yu
-Self-evolving Large Language Models (LLMs) offer a scalable path toward super-intelligence by autonomously generating, refining, and learning from their own experiences. However, existing methods for training such models still rely heavily on vast human-curated tasks and labels, typically via fine-tuning or reinforcement learning, which poses a fundamental bottleneck to advancing AI systems toward capabilities beyond human intelligence. To overcome this limitation, we introduce R-Zero, a fully autonomous framework that generates its own training data from scratch. Starting from a single base LLM, R-Zero initializes two independent models with distinct roles, a Challenger and a Solver. These models are optimized separately and co-evolve through interaction: the Challenger is rewarded for proposing tasks near the edge of the Solver capability, and the Solver is rewarded for solving increasingly challenging tasks posed by the Challenger. This process yields a targeted, self-improving curriculum without any pre-existing tasks and labels. Empirically, R-Zero substantially improves reasoning capability across different backbone LLMs, e.g., boosting the Qwen3-4B-Base by &#43;6.49 on math-reasoning benchmarks and &#43;7.54 on general-domain reasoning benchmarks. 自我进化的大型语言模型（LLMs）通过自主生成、改进并从自身经验中学习，提供了一条通往超智能的可扩展路径。然而，现有训练此类模型的方法仍然在很大程度上依赖大量人工策划的任务和标签，通常通过微调或强化学习来实现，这对将人工智能系统推进到超越人类智能的能力构成了根本性瓶颈。">
+  <meta property="og:description" content="Self-Evolve 2025-10-20 🌈 斯坦福：智能体在交互中实时进化 In-the-Flow Agentic System Optimization for Effective Planning and Tool Use 它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化 论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路 https://agentflow.stanford.edu/ Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险 （主要是安全相关） Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents 这篇论文揭示了一个令人警醒的现象： 自进化过程并非总是良性的 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为 Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。 进化过程是一个循环：代理接收任务→生成执行轨迹→获得反馈→更新自身组件。 模型进化：自我训练导致安全对齐退化 记忆进化：经验积累引发目标偏移与奖励破解——代理学会利用历史成功经验中的“捷径”，即使这些捷径违背用户真实目标。 工具进化：工具创建与复用中的安全漏洞 工作流进化：性能优化牺牲安全性 解决办法：引入安全护栏、进行有效验证/安全性检查 「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习、微调已死？Agentic上下文工程登场，无需微调实现模型进化 Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升 生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。 ACE 的核心设计理念是：将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词。 推理银行：具有推理记忆的自进化代理 ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory 随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。 基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="topic">
-    <meta property="article:published_time" content="2025-08-13T00:00:00+08:00">
-    <meta property="article:modified_time" content="2025-08-13T00:00:00+08:00">
+    <meta property="article:published_time" content="2025-10-20T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-10-20T00:00:00+08:00">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="自我进化 Self-Evolve">
-  <meta name="twitter:description" content="Self-Evolve 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data
-Authors: Chengsong Huang、Wenhao Yu、Xiaoyang Wang、Hongming Zhang、Zongxia Li、Ruosen Li、Jiaxin Huang、Haitao Mi、Dong Yu
-Self-evolving Large Language Models (LLMs) offer a scalable path toward super-intelligence by autonomously generating, refining, and learning from their own experiences. However, existing methods for training such models still rely heavily on vast human-curated tasks and labels, typically via fine-tuning or reinforcement learning, which poses a fundamental bottleneck to advancing AI systems toward capabilities beyond human intelligence. To overcome this limitation, we introduce R-Zero, a fully autonomous framework that generates its own training data from scratch. Starting from a single base LLM, R-Zero initializes two independent models with distinct roles, a Challenger and a Solver. These models are optimized separately and co-evolve through interaction: the Challenger is rewarded for proposing tasks near the edge of the Solver capability, and the Solver is rewarded for solving increasingly challenging tasks posed by the Challenger. This process yields a targeted, self-improving curriculum without any pre-existing tasks and labels. Empirically, R-Zero substantially improves reasoning capability across different backbone LLMs, e.g., boosting the Qwen3-4B-Base by &#43;6.49 on math-reasoning benchmarks and &#43;7.54 on general-domain reasoning benchmarks. 自我进化的大型语言模型（LLMs）通过自主生成、改进并从自身经验中学习，提供了一条通往超智能的可扩展路径。然而，现有训练此类模型的方法仍然在很大程度上依赖大量人工策划的任务和标签，通常通过微调或强化学习来实现，这对将人工智能系统推进到超越人类智能的能力构成了根本性瓶颈。">
+  <meta name="twitter:description" content="Self-Evolve 2025-10-20 🌈 斯坦福：智能体在交互中实时进化 In-the-Flow Agentic System Optimization for Effective Planning and Tool Use 它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化 论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路 https://agentflow.stanford.edu/ Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险 （主要是安全相关） Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents 这篇论文揭示了一个令人警醒的现象： 自进化过程并非总是良性的 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为 Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。 进化过程是一个循环：代理接收任务→生成执行轨迹→获得反馈→更新自身组件。 模型进化：自我训练导致安全对齐退化 记忆进化：经验积累引发目标偏移与奖励破解——代理学会利用历史成功经验中的“捷径”，即使这些捷径违背用户真实目标。 工具进化：工具创建与复用中的安全漏洞 工作流进化：性能优化牺牲安全性 解决办法：引入安全护栏、进行有效验证/安全性检查 「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习、微调已死？Agentic上下文工程登场，无需微调实现模型进化 Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升 生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。 ACE 的核心设计理念是：将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词。 推理银行：具有推理记忆的自进化代理 ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory 随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。 基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/" /><link rel="next" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" /><link rel="next" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -51,8 +89,8 @@ Self-evolving Large Language Models (LLMs) offer a scalable path toward super-in
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96\/"
-    },"genre": "topic","wordcount":  840 ,
-    "url": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96\/","datePublished": "2025-08-13T00:00:00+08:00","dateModified": "2025-08-13T00:00:00+08:00","publisher": {
+    },"genre": "topic","wordcount":  915 ,
+    "url": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96\/","datePublished": "2025-10-20T00:00:00+08:00","dateModified": "2025-10-20T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -148,12 +186,13 @@ Self-evolving Large Language Models (LLMs) offer a scalable path toward super-in
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       </span></span></div>
-      <div class="post-meta-line"><span title="published on 2025-08-13 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-13">2025-08-13</time></span>&nbsp;<span title="Updated on 2025-08-13 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-13">2025-08-13</time></span>&nbsp;<span title="840 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 900 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="published on 2025-10-20 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-20">2025-10-20</time></span>&nbsp;<span title="Updated on 2025-10-20 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-20">2025-10-20</time></span>&nbsp;<span title="915 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1000 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>5 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#2025-10-20">2025-10-20</a></li>
     <li><a href="#2025-08-08">2025-08-08</a>
       <ul>
         <li>
@@ -247,6 +286,53 @@ Self-evolving Large Language Models (LLMs) offer a scalable path toward super-in
       
       
     ><h1 id="self-evolve">Self-Evolve</h1>
+<h2 id="2025-10-20">2025-10-20</h2>
+<ol>
+<li>🌈 <a href="https://www.xiaohongshu.com/explore/68ed0fbf000000000703a76d?app_platform=ios&amp;app_version=9.3.2&amp;share_from_user_hidden=true&amp;xsec_source=app_share&amp;type=normal&amp;xsec_token=CBakWZ_sYEytSZ39pf6Sou3VUy2h8AMfiTcSsu3CDAlNQ=&amp;author_share=1&amp;xhsshare=WeixinSession&amp;shareRedId=ODZFOTRHNU02NzUyOTgwNjY0OTc0Oko7&amp;apptime=1760442715&amp;share_id=9a9a7f61ee934765a01d3b21b7fdf2e9&amp;wechatWid=e071d48db6d5ec0f08890ce3658fa485&amp;wechatOrigin=menu"target="_blank" rel="external nofollow noopener noreferrer">斯坦福：智能体在交互中实时进化</a>
+<ol>
+<li><a href="https://arxiv.org/abs/2510.05592v1"target="_blank" rel="external nofollow noopener noreferrer">In-the-Flow Agentic System Optimization for Effective Planning and Tool Use</a></li>
+<li>它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化</li>
+<li>论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路</li>
+<li><a href="https://agentflow.stanford.edu/"target="_blank" rel="external nofollow noopener noreferrer">https://agentflow.stanford.edu/</a></li>
+</ol>
+</li>
+<li><a href="https://mp.weixin.qq.com/s/uGiJaCLtUOd727b_PIoA8g?scene=1&amp;click_id=9"target="_blank" rel="external nofollow noopener noreferrer">Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险</a> （主要是安全相关）
+<ol>
+<li><a href="https://arxiv.org/pdf/2509.26354"target="_blank" rel="external nofollow noopener noreferrer">Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents</a></li>
+<li>这篇论文揭示了一个令人警醒的现象： <strong>自进化过程并非总是良性的</strong> 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为
+<ol>
+<li>Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。</li>
+<li>进化过程是一个循环：代理接收任务→生成执行轨迹→获得反馈→更新自身组件。
+<ol>
+<li>模型进化：自我训练导致安全对齐退化</li>
+<li>记忆进化：经验积累引发目标偏移与奖励破解——代理学会利用历史成功经验中的“捷径”，即使这些捷径违背用户真实目标。</li>
+<li>工具进化：工具创建与复用中的安全漏洞</li>
+<li>工作流进化：性能优化牺牲安全性</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>解决办法：引入安全护栏、进行有效验证/安全性检查</li>
+</ol>
+</li>
+<li><a href="https://mp.weixin.qq.com/s/EFFtMwU5asva_IzY2sS79A?scene=1&amp;click_id=10"target="_blank" rel="external nofollow noopener noreferrer">「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习</a>、<a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2650994884&amp;idx=1&amp;sn=eafeb1b68efba3fe53ade590368792dd&amp;chksm=84e73cbab390b5ac30daa23a665a6b70731f8b4591c16dfdcfc96cd5272d37cdfb1229ea458d&amp;cur_album_id=3661496204539314177&amp;scene=189#wechat_redirect"target="_blank" rel="external nofollow noopener noreferrer">微调已死？Agentic上下文工程登场，无需微调实现模型进化</a>
+<ol>
+<li><a href="https://www.arxiv.org/abs/2510.04618"target="_blank" rel="external nofollow noopener noreferrer">Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models</a>、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升
+<ol>
+<li>生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。</li>
+<li>ACE 的核心设计理念是：<strong>将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词</strong>。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="https://www.xiaohongshu.com/explore/68db76f3000000000503ad6d?app_platform=ios&amp;app_version=9.2&amp;share_from_user_hidden=true&amp;xsec_source=app_share&amp;type=normal&amp;xsec_token=CBdmV3zWfsM8r78BYr5Nqt5SPlS6J24N2jHCox508C1VE=&amp;author_share=1&amp;xhsshare=WeixinSession&amp;shareRedId=ODZFOTRHNU02NzUyOTgwNjY0OTc0Oko7&amp;apptime=1759229927&amp;share_id=209cc868e5f648129e0d7cfe341e2f19&amp;wechatWid=e071d48db6d5ec0f08890ce3658fa485&amp;wechatOrigin=menu"target="_blank" rel="external nofollow noopener noreferrer">推理银行：具有推理记忆的自进化代理</a>
+<ol>
+<li><a href="https://arxiv.org/abs/2509.25140"target="_blank" rel="external nofollow noopener noreferrer">ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory</a></li>
+<li>随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。</li>
+<li>基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。</li>
+</ol>
+</li>
+</ol>
 <h2 id="2025-08-08">2025-08-08</h2>
 <h4 id="r-zero从零数据自我进化推理-llm">R-Zero：从零数据自我进化推理 LLM</h4>
 <p><a href="https://arxiv.org/abs/2508.05004"target="_blank" rel="external nofollow noopener noreferrer">#65</a> <a href="https://papers.cool/arxiv/2508.05004"target="_blank" rel="external nofollow noopener noreferrer">R-Zero: Self-Evolving Reasoning LLM from Zero Data</a></p>
