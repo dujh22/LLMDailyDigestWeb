@@ -18,5 +18,5 @@ updates/ 目录主要用于存储项目的更新日志和学术日报。这些�
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/readme/  
+> URL: http://localhost:1313/updates/readme/  
 

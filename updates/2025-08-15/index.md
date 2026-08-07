@@ -3428,5 +3428,5 @@ In this paper, we present a novel model architecture for optimizing personalized
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-08-15/  
+> URL: http://localhost:1313/updates/2025-08-15/  
 

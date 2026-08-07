@@ -276,5 +276,5 @@ https://arxiv.org/pdf/2503.05613
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E5%85%83/  
+> URL: http://localhost:1313/topic/%E5%85%83/  
 

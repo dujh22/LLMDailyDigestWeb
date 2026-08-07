@@ -3359,5 +3359,5 @@ Grasping has been a long-standing challenge in facilitating the final interface 
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-08-14/  
+> URL: http://localhost:1313/updates/2025-08-14/  
 

@@ -67,5 +67,5 @@
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/resources/papers/  
+> URL: http://localhost:1313/resources/papers/  
 

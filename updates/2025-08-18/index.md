@@ -2432,5 +2432,5 @@ Converging evidence suggests that common complex diseases with the same or simil
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-08-18/  
+> URL: http://localhost:1313/updates/2025-08-18/  
 

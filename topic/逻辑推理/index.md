@@ -675,5 +675,5 @@ FLARE方法结合逻辑辅助提高推理能力，团队公布论文将发表于
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/  
+> URL: http://localhost:1313/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/  
 

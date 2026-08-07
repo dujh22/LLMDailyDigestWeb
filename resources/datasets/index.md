@@ -206,5 +206,5 @@
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/resources/datasets/  
+> URL: http://localhost:1313/resources/datasets/  
 

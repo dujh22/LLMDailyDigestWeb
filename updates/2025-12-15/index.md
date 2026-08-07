@@ -1904,5 +1904,5 @@ Understanding how AI systems are used by people in real situations that mirror a
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-12-15/  
+> URL: http://localhost:1313/updates/2025-12-15/  
 

@@ -3716,5 +3716,5 @@ Video generation has made significant strides with the development of diffusion 
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-08-06/  
+> URL: http://localhost:1313/updates/2025-08-06/  
 

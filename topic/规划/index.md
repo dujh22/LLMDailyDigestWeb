@@ -38,5 +38,5 @@
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E8%A7%84%E5%88%92/  
+> URL: http://localhost:1313/topic/%E8%A7%84%E5%88%92/  
 

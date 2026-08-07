@@ -418,5 +418,5 @@ AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/  
+> URL: http://localhost:1313/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/  
 

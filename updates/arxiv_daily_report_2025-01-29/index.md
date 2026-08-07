@@ -5731,5 +5731,5 @@ O. S. 巴扬迪娜
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/arxiv_daily_report_2025-01-29/  
+> URL: http://localhost:1313/updates/arxiv_daily_report_2025-01-29/  
 

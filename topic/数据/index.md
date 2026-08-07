@@ -25,5 +25,5 @@
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE/  
+> URL: http://localhost:1313/topic/%E6%95%B0%E6%8D%AE/  
 

@@ -2023,5 +2023,5 @@ Sora 等视频生成技术的发展使得制作高保真人工智能生成视频
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-08-04/  
+> URL: http://localhost:1313/updates/2025-08-04/  
 

@@ -255,5 +255,5 @@ vivo突破手机AI部署难题，绕开MoE架构限制，骁龙8 Elite流畅运�
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E6%96%B0%E6%A8%A1%E5%9E%8B/  
+> URL: http://localhost:1313/topic/%E6%96%B0%E6%A8%A1%E5%9E%8B/  
 

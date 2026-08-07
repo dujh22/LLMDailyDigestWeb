@@ -5904,5 +5904,5 @@ A M G 科克斯公司/品牌
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/arxiv_daily_report_2025-01-30/  
+> URL: http://localhost:1313/updates/arxiv_daily_report_2025-01-30/  
 

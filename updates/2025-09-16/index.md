@@ -4032,5 +4032,5 @@ QuantAgent：用于高频交易的价格驱动多代理大型语言模型（4 �
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-09-16/  
+> URL: http://localhost:1313/updates/2025-09-16/  
 

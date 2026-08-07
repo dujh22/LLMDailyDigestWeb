@@ -86,5 +86,5 @@ https://arxiv.org/abs/2506.20639
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E6%96%B0%E8%B6%8B%E5%8A%BF/  
+> URL: http://localhost:1313/topic/%E6%96%B0%E8%B6%8B%E5%8A%BF/  
 

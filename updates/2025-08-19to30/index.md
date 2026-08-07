@@ -2272,5 +2272,5 @@ Lean Meets Theoretical Computer Science: Scalable Synthesis of Theorem Proving C
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-08-19to30/  
+> URL: http://localhost:1313/updates/2025-08-19to30/  
 

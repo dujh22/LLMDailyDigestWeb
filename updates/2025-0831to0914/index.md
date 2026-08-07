@@ -1681,5 +1681,5 @@ Designed by [kexue.fm](https://kexue.fm/) | Powered by .ai](https://kimi.moonsho
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-0831to0914/  
+> URL: http://localhost:1313/updates/2025-0831to0914/  
 

@@ -23459,5 +23459,5 @@ R. A. 奥尔特斯先生/女士。
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/arxiv_daily_report_summary_2025-02-06/  
+> URL: http://localhost:1313/updates/arxiv_daily_report_summary_2025-02-06/  
 

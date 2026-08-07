@@ -208,5 +208,5 @@ Chai-2的重磅发布，意味着：在今年年底，AI设计药物有望进入
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E5%BA%94%E7%94%A8/  
+> URL: http://localhost:1313/topic/%E5%BA%94%E7%94%A8/  
 

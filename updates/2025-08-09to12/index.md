@@ -6914,5 +6914,5 @@ We are surrounded by robots helping us perform complex tasks. Robots have a wide
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/updates/2025-08-09to12/  
+> URL: http://localhost:1313/updates/2025-08-09to12/  
 

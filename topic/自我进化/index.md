@@ -335,5 +335,5 @@ SRT 概览。在 RLVR 方法中，系统通过真实验证器生成用于强化�
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/  
+> URL: http://localhost:1313/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/  
 

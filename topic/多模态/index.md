@@ -203,5 +203,5 @@ https://mp.weixin.qq.com/s/sIa9qIzPuykCysAVgeGxew
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/  
+> URL: http://localhost:1313/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/  
 
