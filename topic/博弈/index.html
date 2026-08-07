@@ -7,24 +7,31 @@
     <meta name="robots" content="noodp" />
     <title>博弈 Self-Play - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
 <meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
-<meta name="description" content="博弈 Self-Play
-强化学习
-SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐」
-2025-08-05
+<meta name="description" content="2025-08-05
 
 
-研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体
+
+
+更有趣的是，当结合多个游戏训练时，技能产生协同效应。
+
+
+2025-08-08" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="博弈 Self-Play">
-  <meta itemprop="description" content="博弈 Self-Play 强化学习 SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐」 2025-08-05
-研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体">
+  <meta itemprop="description" content="2025-08-05
+研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体
+更有趣的是，当结合多个游戏训练时，技能产生协同效应。
+2025-08-08">
   <meta itemprop="datePublished" content="2025-08-08T00:00:00+08:00">
   <meta itemprop="dateModified" content="2025-08-08T00:00:00+08:00">
-  <meta itemprop="wordCount" content="912">
+  <meta itemprop="wordCount" content="64">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E5%8D%9A%E5%BC%88/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="博弈 Self-Play">
-  <meta property="og:description" content="博弈 Self-Play 强化学习 SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐」 2025-08-05
-研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体">
+  <meta property="og:description" content="2025-08-05
+研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体
+更有趣的是，当结合多个游戏训练时，技能产生协同效应。
+2025-08-08">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="topic">
@@ -35,8 +42,10 @@ SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐�
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="博弈 Self-Play">
-  <meta name="twitter:description" content="博弈 Self-Play 强化学习 SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐」 2025-08-05
-研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体">
+  <meta name="twitter:description" content="2025-08-05
+研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体
+更有趣的是，当结合多个游戏训练时，技能产生协同效应。
+2025-08-08">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E5%8D%9A%E5%BC%88/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7/" /><link rel="next" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -49,7 +58,7 @@ SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/topic\/%E5%8D%9A%E5%BC%88\/"
-    },"genre": "topic","wordcount":  912 ,
+    },"genre": "topic","wordcount":  64 ,
     "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/topic\/%E5%8D%9A%E5%BC%88\/","datePublished": "2025-08-08T00:00:00+08:00","dateModified": "2025-08-08T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -183,8 +192,7 @@ SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐�
   </div><nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/topic/" title="Topics">Topics</a></li><li class="breadcrumb-item active" aria-current="page">博弈 Self-Play</li>
     </ol>
-  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside>
+  </nav><main class="container"><aside class="toc" id="toc-auto"></aside>
 
   <aside class="aside-custom">
     </aside>
@@ -194,104 +202,22 @@ SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2025-08-08 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-08">2025-08-08</time></span>&nbsp;<span title="更新于 2025-08-08 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-08">2025-08-08</time></span>&nbsp;<span title="912 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
-    </div><div class="details toc" id="toc-static" data-kept="false">
-        <div class="details-summary toc-title">
-          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#强化学习">强化学习</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#spiral零和游戏自对弈成为语言模型推理训练的免费午餐"><a href="https://mp.weixin.qq.com/s/jAaM3hD46gFEFGFJdLVVJg">SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐」</a></a></li>
-            <li><a href="#无需外部数据ai自问自答实现推理能力进化"><a href="https://mp.weixin.qq.com/s/Q3fc95LXM3PuytdEBnUCSA">无需外部数据！AI自问自答实现推理能力进化</a></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#主动学习">主动学习</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#atgen主动文本生成框架"><strong><a href="https://papers.cool/arxiv/2506.23342">ATGen：主动文本生成框架</a></strong></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-      </div><div
+      <div class="post-meta-line"><span title="发布于 2025-08-08 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-08">2025-08-08</time></span>&nbsp;<span title="更新于 2025-08-08 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-08">2025-08-08</time></span>&nbsp;<span title="64 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div
       class="content"
       id="content"
       
       
-    ><h1 id="博弈-self-play">博弈 Self-Play</h1>
-<h2 id="强化学习">强化学习</h2>
-<h4 id="spiral零和游戏自对弈成为语言模型推理训练的免费午餐"><a href="https://mp.weixin.qq.com/s/jAaM3hD46gFEFGFJdLVVJg"target="_blank" rel="external nofollow noopener noreferrer">SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐」<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
-<p>2025-08-05</p>
+    ><p>2025-08-05</p>
 <ol>
 <li>
 <p><strong>研究方向为可扩展的自主提升，致力于构建能在未知环境中智能决策的自主智能体</strong></p>
 </li>
 <li>
-<p>通过基于结果的奖励机制，强化学习使模型能够发展出可泛化的推理策略，在复杂问题上取得了监督微调难以企及的进展。</p>
-</li>
-<li>
-<p>本文通过让模型在零和游戏中与自己对弈，自主发现并强化可泛化的推理模式，完全摆脱了对人工监督的依赖。</p>
-</li>
-<li>
-<p><strong>论文标题：</strong> SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning</p>
-</li>
-<li>
-<p>论文链接：https://huggingface.co/papers/2506.24119</p>
-</li>
-<li>
-<p>代码链接：https://github.com/spiral-rl/spiral</p>
-</li>
-<li>
-<p>研究团队的核心洞察是：如果强化学习能够从预训练语言模型中选择出可泛化的思维链（Chain-of-Thought, CoT）模式，那么游戏为这一过程提供了完美的<strong>试炼场</strong>：它们通过输赢结果提供廉价、可验证的奖励，无需人工标注。通过在这些游戏上进行自对弈，强化学习能够自动发现哪些 CoT 模式在多样化的竞争场景中获得成功，并逐步强化这些模式，创造了一个自主的推理能力提升系统。</p>
-</li>
-<li>
-<p>实验发现，不同游戏确实培养了专门化的认知能力：</p>
-</li>
-</ol>
-<ul>
-<li>井字棋专家在空间推理游戏 Snake 上达到 56% 胜率。</li>
-<li>库恩扑克大师在概率游戏 Pig Dice 上取得惊人的 91.7% 胜率。</li>
-<li>简单谈判专家在战略优化游戏上表现出色。</li>
-</ul>
-<ol start="9">
-<li>
 <p>更有趣的是，当结合多个游戏训练时，技能产生协同效应。</p>
 </li>
-<li>
-<p>SPIRAL 验证了一个关键假设：预训练模型中已经包含了各种推理模式，强化学习的作用是从这些模式中筛选和强化那些真正可泛化的思维链。</p>
-</li>
-<li>
-<p>未来的研究开辟了新方向：</p>
-<ul>
-<li>混合博弈类型：结合零和、合作和混合动机游戏，可能培养更全面的推理能力。</li>
-<li>元游戏学习：让模型不仅玩游戏，还能创造新游戏，实现真正的创造性推理。</li>
-<li>跨模态游戏：将语言游戏扩展到包含视觉、音频等多模态信息，培养更丰富的认知能力。</li>
-</ul>
-</li>
 </ol>
-<h4 id="无需外部数据ai自问自答实现推理能力进化"><a href="https://mp.weixin.qq.com/s/Q3fc95LXM3PuytdEBnUCSA"target="_blank" rel="external nofollow noopener noreferrer">无需外部数据！AI自问自答实现推理能力进化<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
 <p>2025-08-08</p>
-<ol>
-<li>
-<p>卡内基梅隆大学团队提出的新框架 <strong>SQLM</strong> ——一种无需外部数据的自我提问模型。</p>
-<ol>
-<li>该框架包含提问者（proposer）和解答者（solver）两个角色，提问者生成与给定主题相关的问题，解答者旨在解决问题。</li>
-</ol>
-</li>
-<li>
-<p>研究者提出了 <strong>SQLM框架</strong> ，一种非对称的自我博弈框架。</p>
-</li>
-</ol>
-<h2 id="主动学习">主动学习</h2>
-<h4 id="atgen主动文本生成框架"><strong><a href="https://papers.cool/arxiv/2506.23342"target="_blank" rel="external nofollow noopener noreferrer">ATGen：主动文本生成框架<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></strong></h4>
 </div><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>相关消息（按子主题自动聚合）</h2><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>主动学习 <sup>1</sup></h3><article class="archive-item">
@@ -323,12 +249,46 @@ SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐�
                 <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2507.00814" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-12/#llm-2" class="archive-item-link">从辩论到均衡：基于贝叶斯纳什均衡的信念驱动多智能体 LLM 推理</a>
                 <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08292" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/tmlr-group/ECON" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励机制 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-7" class="archive-item-link">结果奖励驱动可泛化推理策略</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>心智理论 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-26/#decrypto" class="archive-item-link">Decrypto：多智能体推理与心智理论基准测试</a>
                 <span class="archive-item-date" title='2025-06-26'>06-26</span>&nbsp;<a href="https://arxiv.org/abs/2506.20664" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我博弈 <sup>1</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理强化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#spiral-4" class="archive-item-link">SPIRAL：强化学习筛选并强化可泛化推理模式</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>未来方向 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-14" class="archive-item-link">无需外部数据！AI自问自答实现推理能力进化</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型对抗 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#grok-4-gemini" class="archive-item-link">Grok 4晋级大模型对抗赛决赛，Gemini全军覆没</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#o3-4-0-grok-4" class="archive-item-link">o3 以 4:0 横扫 Grok 4，夺得首届大模型对抗赛冠军</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>能力迁移 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-12" class="archive-item-link">不同游戏训练会形成专门化认知能力</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自博弈 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#spiral-2" class="archive-item-link">SPIRAL：通过多智能体多轮强化学习在零和博弈自博弈中激励推理</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自对弈 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#spiral" class="archive-item-link">SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐」</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-8" class="archive-item-link">零和博弈自对弈驱动模型自主学习推理</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-11" class="archive-item-link">以游戏自对弈筛选可泛化思维链</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我博弈 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#spiral-3" class="archive-item-link">SPIRAL 强化学习代码仓库</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://github.com/spiral-rl/spiral" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#sqlm-2" class="archive-item-link">SQLM：非对称自我博弈框架</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-30/#spiral" class="archive-item-link">SPIRAL：零和博弈自博弈激发可迁移推理能力</a>
-                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.24119" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div></section></article></main><footer class="footer">
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.24119" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我提问 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#sqlm" class="archive-item-link">SQLM：无需外部数据的自我提问模型框架</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div></section></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
               <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>

@@ -9,26 +9,23 @@
 <meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
 <meta name="description" content="
 
-A Survey of Reinforcement Learning for Large Reasoning Models
-
-强化学习展现出卓越的泛化能力，SFT主要是记忆能力
-RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励设计的显著影响
-监督微调与强化学习的统一或交替范式： 强化学习（RL）倾向于在可验证任务和显著分布偏移下实现“真正的泛化”，但它并非万能药。改进的监督微调（SFT）有助于弥补泛化方面的剩余差距。
+标题： RewardBench 2：高级奖励模型评估
 
 
+链接：https://arxiv.org/abs/2506.01937
 
-现状" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="强化学习">
-  <meta itemprop="description" content="A Survey of Reinforcement Learning for Large Reasoning Models
-强化学习展现出卓越的泛化能力，SFT主要是记忆能力 RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励设计的显著影响 监督微调与强化学习的统一或交替范式： 强化学习（RL）倾向于在可验证任务和显著分布偏移下实现“真正的泛化”，但它并非万能药。改进的监督微调（SFT）有助于弥补泛化方面的剩余差距。 现状">
+  <meta itemprop="description" content="标题： RewardBench 2：高级奖励模型评估
+链接：https://arxiv.org/abs/2506.01937">
   <meta itemprop="datePublished" content="2025-11-06T00:00:00+08:00">
   <meta itemprop="dateModified" content="2025-11-06T00:00:00+08:00">
-  <meta itemprop="wordCount" content="2898">
+  <meta itemprop="wordCount" content="49">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="强化学习">
-  <meta property="og:description" content="A Survey of Reinforcement Learning for Large Reasoning Models
-强化学习展现出卓越的泛化能力，SFT主要是记忆能力 RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励设计的显著影响 监督微调与强化学习的统一或交替范式： 强化学习（RL）倾向于在可验证任务和显著分布偏移下实现“真正的泛化”，但它并非万能药。改进的监督微调（SFT）有助于弥补泛化方面的剩余差距。 现状">
+  <meta property="og:description" content="标题： RewardBench 2：高级奖励模型评估
+链接：https://arxiv.org/abs/2506.01937">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="topic">
@@ -39,8 +36,8 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="强化学习">
-  <meta name="twitter:description" content="A Survey of Reinforcement Learning for Large Reasoning Models
-强化学习展现出卓越的泛化能力，SFT主要是记忆能力 RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励设计的显著影响 监督微调与强化学习的统一或交替范式： 强化学习（RL）倾向于在可验证任务和显著分布偏移下实现“真正的泛化”，但它并非万能药。改进的监督微调（SFT）有助于弥补泛化方面的剩余差距。 现状">
+  <meta name="twitter:description" content="标题： RewardBench 2：高级奖励模型评估
+链接：https://arxiv.org/abs/2506.01937">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/" /><link rel="next" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -53,7 +50,7 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/topic\/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0\/"
-    },"genre": "topic","wordcount":  2898 ,
+    },"genre": "topic","wordcount":  49 ,
     "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/topic\/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0\/","datePublished": "2025-11-06T00:00:00+08:00","dateModified": "2025-11-06T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -187,8 +184,7 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
   </div><nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/topic/" title="Topics">Topics</a></li><li class="breadcrumb-item active" aria-current="page">强化学习</li>
     </ol>
-  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside>
+  </nav><main class="container"><aside class="toc" id="toc-auto"></aside>
 
   <aside class="aside-custom">
     </aside>
@@ -198,74 +194,13 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2025-11-06 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-06">2025-11-06</time></span>&nbsp;<span title="更新于 2025-11-06 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-06">2025-11-06</time></span>&nbsp;<span title="2898 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 6 分钟</span>&nbsp;</div>
-    </div><div class="details toc" id="toc-static" data-kept="false">
-        <div class="details-summary toc-title">
-          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#多模态数学">多模态数学</a>
-          <ul>
-            <li><a href="#grpo">GRPO</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#垂直领域">垂直领域</a>
-      <ul>
-        <li><a href="#具身">具身</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-      </div><div
+      <div class="post-meta-line"><span title="发布于 2025-11-06 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-06">2025-11-06</time></span>&nbsp;<span title="更新于 2025-11-06 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-06">2025-11-06</time></span>&nbsp;<span title="49 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div
       class="content"
       id="content"
       
       
     ><ol>
-<li>
-<p><a href="https://arxiv.org/abs/2509.08827"target="_blank" rel="external nofollow noopener noreferrer">A Survey of Reinforcement Learning for Large Reasoning Models<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<ol>
-<li>强化学习展现出卓越的泛化能力，SFT主要是记忆能力</li>
-<li>RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励设计的显著影响</li>
-<li><strong>监督微调与强化学习的统一或交替范式：</strong> 强化学习（RL）倾向于在可验证任务和显著分布偏移下实现“真正的泛化”，但它并非万能药。改进的监督微调（SFT）有助于弥补泛化方面的剩余差距。</li>
-</ol>
-</li>
-<li>
-<p>现状</p>
-<ol>
-<li>验证方式verified：基于规则、基于模型</li>
-<li>奖励模型：LLM-as-a-Judge（时延较大）、基于人为/合成数据时对应的标准进行奖励判断、奖励和生成模型放在一个模型中、奖励和生成模型在训练中协同更新</li>
-<li>奖励的粒度（稀疏➡️密集）：trajectory——step / turn（agent tool use）——token、对奖励进行归一化以解决奖励方差的问题</li>
-<li>奖励的角度：正确性（内容、格式）、熵/置信度、长度</li>
-<li>训练的阶段：预训练（自监督的奖励）、优化（在线&amp;离线）、正则化（KL散度：传统但不是很必要、熵entropy regularization、长度惩罚）、重要性采样（过滤掉全对or全错、蒙特卡洛采样）</li>
-</ol>
-</li>
-<li>
-<p>挑战</p>
-<ol>
-<li>在base上直接SFT和RL效果差不多，怎样最好？</li>
-<li>Tricks or Traps? A deep dive into RL for LLM Reasoning——trick不是一定必要的，要发现RL的scaling law</li>
-<li>结果奖励，附加过程奖励</li>
-<li>如果持续强化学习、基于记忆的强化学习、真实场景的强化学习</li>
-<li>Diffusion LMs：扩散（隐空间的推理反思）比自回归（序列的推理反思）更高效</li>
-<li>Self-adapting language model (self-evolution）</li>
-<li>更高效的架构、更高效架构中的强化学习</li>
-<li>下一个范式maybe：In-Context RL 上下文强化学习、Traditional AI for RL</li>
-</ol>
-</li>
-<li>
-<p>资源</p>
-<ol>
-<li>环境——从静态到动态：动态RL环境用于LLM的RL训练。数据源图例：RD =读取数据，RS = 基于规则的合成，MS= 基于模型的合成。规模图例：训练/测试集。纵向分为：基于规则、基于代码、基于游戏、基于模型、基于集成学习、
-<img loading="lazy" src="https://gitee.com/dujh22/pic/raw/master/RL/algorithm.PNG" srcset="https://gitee.com/dujh22/pic/raw/master/RL/algorithm.PNG?size=small, https://gitee.com/dujh22/pic/raw/master/RL/algorithm.PNG?size=medium 1.5x, https://gitee.com/dujh22/pic/raw/master/RL/algorithm.PNG?size=large 2x" sizes="auto" data-title="https://gitee.com/dujh22/pic/raw/master/RL/algorithm.PNG" data-alt="https://gitee.com/dujh22/pic/raw/master/RL/algorithm.PNG" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></li>
-<li>训练框架：用于LLM后训练的开源RL基础设施。状态图例：✓ = 原生，  **× ** =不支持，P = 部分。纵向分为主要开发和二次开发，横向分为运行时（异步、代理、多代理、多模态）、服务（vLLM、SGLang）、训练支持（Deepseed、Megatron、FSDP）
-<img loading="lazy" src="https://gitee.com/dujh22/pic/raw/master/RL/framework.png" srcset="https://gitee.com/dujh22/pic/raw/master/RL/framework.png?size=small, https://gitee.com/dujh22/pic/raw/master/RL/framework.png?size=medium 1.5x, https://gitee.com/dujh22/pic/raw/master/RL/framework.png?size=large 2x" sizes="auto" data-title="https://gitee.com/dujh22/pic/raw/master/RL/framework.png" data-alt="https://gitee.com/dujh22/pic/raw/master/RL/framework.png" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></li>
-</ol>
-</li>
 <li>
 <p>标题： RewardBench 2：高级奖励模型评估</p>
 </li>
@@ -273,66 +208,6 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
 <p>链接：<a href="https://arxiv.org/abs/2506.01937"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2506.01937<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </li>
 </ol>
-<p><strong>标题</strong> ： 响应级别奖励就是LLM在线强化学习所需的一切：数学的角度
-<strong>链接</strong> ：https://arxiv.org/abs/2506.02553
-<strong>摘要</strong> ：我们研究了大型语言模型（LLM）强化学习中的一个常见挑战：零回报假设，其中非终端动作（即，中间令牌生成）接收零任务特定的立即奖励，而只有最终令牌接收整个响应的奖励。这种假设在实践中经常出现，因为在LLM应用程序中获得精确的令牌级奖励通常是困难或不可行的。在这项工作中，我们提供了一个统一的理论观点。我们引入了 <strong>轨迹策略梯度定理</strong> ，该定理表明，对于REINFORCE和Actor-Critic家族中的算法，基于真实的未知令牌级奖励的策略梯度可以仅使用响应级奖励模型进行无偏估计，而不管零奖励假设是否成立。这一结果表明，PPO、GRPO、ReMax和RLOO等广泛使用的方法本质上具有对令牌级奖励信号建模的能力，为响应级奖励方法提供了理论依据。我们的研究结果为更实用，更有效的LLM微调铺平了道路，允许开发人员将训练算法视为黑箱，并专注于使用辅助子模型改进响应级奖励模型。我们还对流行的RL和非RL方法进行了详细分析，比较了它们在常见LLM任务中的理论基础和实践优势。最后，我们提出了一种新的算法：令牌增强策略优化（TRePO），这是一种理论上的方法，比PPO更简单，在内存效率上与GRPO相匹配，并具有广泛的适用性。</p>
-<p>🌈 2025-06-10 10:15:31 Tuesday ｜ 推理模型如何攻克数学难题？Epoch AI新研究发现，o3-mini-high不仅具备渊博学识，还会基于直觉解题。然而，它的推理风格过于依赖直觉，缺乏严谨性和创造力，甚至偶尔「投机取巧」。https://mp.weixin.qq.com/s/Bi-EpYpJ_7damcdRPtzCmA  <a href="https://mp.weixin.qq.com/s/IfTQQ-XAFDxap6B7_OHC1g"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/IfTQQ-XAFDxap6B7_OHC1g<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<ol>
-<li>
-<p>❗这里提到了alphaproof，有必要学习一下 <a href="https://zhuanlan.zhihu.com/p/2711128759"target="_blank" rel="external nofollow noopener noreferrer">AlphaProof 技术解析 | IMO 系列<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<ol>
-<li>是用类似 AlphaZero 的办法训的（和自己下围棋），所以应该用了 MCTS</li>
-<li>finetune 了 gemini 来做自动形式化（autoformalization），把自然语言的问题转换为形式语言。</li>
-<li>要用 lean 这种形式化证明的工具，这样子就可以获得来自 proof assistant 的精确的反馈。</li>
-</ol>
-</li>
-<li>
-<p>AlphaGeometry 和 Alphaproof 还是挺不一样的，它的推理部分应该用了很多传统方法(也用了吴文俊提出的方法作为基准 吴文俊，把几何问题转换成代数问题来自动解决)。</p>
-<ol>
-<li>它的点在于合成数据(而非利用人类数据)和生成辅助线(这个传统方法不大会)。</li>
-<li>它合成数据的时候先采样一堆前提，然后用传统方法在上面一通推理，可以得到一堆结论对于每个结论都可以找到一个最小的前提集合可以恰好推出它，这样就造出来一道几何题。其中前提集合里和结论无关的就是辅助线，然后就可以拿来给llm学学学了。</li>
-</ol>
-</li>
-<li>
-<p>DeepMind 的 FunSearch 通过搜索优先级的方法，发现了目前最大的 Cap Set。Cap Set 问题是一个组合数学问题，FunSearch 的成功在此问题上展示了其在离散数学领域的强大推理能力。</p>
-</li>
-</ol>
-<h3 id="多模态数学">多模态数学</h3>
-<ol>
-<li><a href="https://mp.weixin.qq.com/s/8XfVIRaLfgViBCPNVew0jA"target="_blank" rel="external nofollow noopener noreferrer">字节&amp;MAP重塑大模型推理算法优化重点，强化学习重在高效探索助力LLM提升上限<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>
-<ol>
-<li>
-<p>强化学习（RL）范式虽然显著提升了大语言模型（LLM）在复杂任务中的表现，但其在实际应用中仍面临传统RL框架下固有的探索难题。一个普遍存在的现象是：在训练过程中，模型的熵值迅速下降，推理路径趋于固化，导致“利用（exploitation）”远超“探索（exploration）”，严重失衡。</p>
-</li>
-<li>
-<p>受OpenAI经典论文《First Return, Then Explore》中“先返回，再探索”思想的启发，来自字节跳动、MAP，曼彻斯特大学的联合团队提出了一种全新的结构化探索框架：First Return, Entropy-Eliciting Explore（FR3E）。</p>
-<ol>
-<li>该方法通过识别推理轨迹中具有高不确定性的关键token，并以此为锚点引导后续的多样化展开，系统性地重建了LLM在强化学习中的探索机制，旨在实现利用与探索之间的动态平衡，从而释放RL训练的更高潜力。</li>
-<li>FR3E的算法框架分为两个阶段：
-<ol>
-<li>第一阶段：First Return</li>
-<li>第二阶段：Entropy-Eliciting Explore：FR3E在GRPO++（融合了拒绝采样与Clip-Higher机制的GRPO变体）的基础上，进一步引入动态优势调制机制，以更精细地调控学习信号</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>论文地址：https://arxiv.org/pdf/2507.07017</p>
-</li>
-</ol>
-</li>
-</ol>
-<h4 id="grpo">GRPO</h4>
-<ol>
-<li><a href="https://mp.weixin.qq.com/s/YSlp-SXzi7bSW2Y-shJ8ww"target="_blank" rel="external nofollow noopener noreferrer">DeepSeek的GRPO会导致模型崩溃？看下Qwen3新范式GSPO<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>
-<ol>
-<li>发表了一篇博客，题为《Qwen Team Proposes GSPO for Qwen3, Claims DeepSeek&rsquo;s GRPO is Ill-Posed》，对 Qwen 团队为 Qwen3 模型提出的 GSPO 算法进行了详尽的介绍与分析。 <a href="https://blog.netmind.ai/article/Qwen_Team_Proposes_GSPO_for_Qwen3%2C_Claims_DeepSeek%27s_GRPO_is_Ill-Posed"target="_blank" rel="external nofollow noopener noreferrer">https://blog.netmind.ai/article/Qwen_Team_Proposes_GSPO_for_Qwen3%2C_Claims_DeepSeek's_GRPO_is_Ill-Posed<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
-<li>组序列策略优化（Group Sequence Policy Optimization, GSPO）。GSPO 的方法有两点创新：将重要性采样从 token 级别提升到序列级别，并通过序列长度进行归一化处理；显著降低了方差，同时消除了对「路由技巧」（如 Routing Replay）等辅助策略的依赖；</li>
-</ol>
-</li>
-</ol>
-<h2 id="垂直领域">垂直领域</h2>
-<h3 id="具身">具身</h3>
 </div><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>相关消息（按子主题自动聚合）</h2><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>GUI探索 <sup>1</sup></h3><article class="archive-item">
@@ -346,6 +221,9 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
                 <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.20512" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/GAIR-NLP/OctoThinker" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/OctoThinker" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-25/#octothinker" class="archive-item-link">OctoThinker：中期训练促进强化学习规模化</a>
                 <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.20512" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>代码修复 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#swe-swiss" class="archive-item-link">北大、字节跳动等发布 SWE-Swiss：面向代码修复的开源训练方案</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://github.com/zhenyuhe00/SWE-Swiss" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/SWE-Swiss" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>价值权衡 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-25/#llm" class="archive-item-link">你内心有许多狼：运用认知模型解读 LLM 中的价值权衡</a>
                 <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.20666" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
@@ -358,12 +236,24 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>偏好优化 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-15/#sft-dpo" class="archive-item-link">隐式奖励作为桥梁：SFT 与 DPO 连接的统一视图</a>
                 <span class="archive-item-date" title='2025-06-15'>06-15</span>&nbsp;<a href="https://arxiv.org/abs/2507.00018" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>元认知 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#mera-cspo" class="archive-item-link">MERA：通过推理-控制分离与 CSPO 实现元认知控制</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>具身规划 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-07-01/#embodied-planner-r1-llm" class="archive-item-link">Embodied Planner-R1：通过强化学习释放 LLM 的具身任务规划能力</a>
                 <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.23127" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>内在反馈 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#rlif" class="archive-item-link">RLIF：利用模型内在置信度实现无外部监督的强化学习</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>内生奖励 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-05-26/#learning-to-reason-without-external-rewa" class="archive-item-link">Learning to Reason without External Rewards：无需外部奖励的推理学习</a>
+                <span class="archive-item-date" title='2025-05-26'>05-26</span>&nbsp;<a href="https://arxiv.org/pdf/2505.19590" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>决策解释 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-05-16/#item-1" class="archive-item-link">使用强化学习训练大型语言模型解释人类决策</a>
                 <span class="archive-item-date" title='2025-05-16'>05-16</span>&nbsp;<a href="https://arxiv.org/abs/2505.11614" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>前沿挑战 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-54" class="archive-item-link">大模型强化学习的关键挑战与下一代范式</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>医疗AI <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-08-11/#baichuan-m2-32b-healthbench-gpt-oss-120b" class="archive-item-link">百川开源医疗推理模型 Baichuan-M2-32B，HealthBench 超越 GPT-OSS-120B</a>
                 <span class="archive-item-date" title='2025-08-11'>08-11</span></article></div><div style="margin:1rem 0;">
@@ -392,6 +282,9 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
                 <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/pdf/2505.17063" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/gydpku/Data_Synthesis_RL" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-05-23/#item-1" class="archive-item-link">合成数据强化学习：任务定义即你所需</a>
                 <span class="archive-item-date" title='2025-05-23'>05-23</span>&nbsp;<a href="https://arxiv.org/abs/2505.17063" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/gydpku/Data_Synthesis_RL/" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>合成训练 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#synthetic-data-rl" class="archive-item-link">Synthetic Data RL：仅凭任务定义生成数据并强化学习</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>同声传译 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-07-01/#seqpo-simt" class="archive-item-link">SeqPO-SiMT：序贯策略优化让同传性能直逼离线翻译</a>
                 <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/pdf/2505.20622" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
@@ -412,7 +305,9 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多模态训练 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-24/#cpgd-o1" class="archive-item-link">CPGD：仅用数学训练，跨学科推理超越 o1并缓解强化学习训练崩溃</a>
                 <span class="archive-item-date" title='2025-06-24'>06-24</span>&nbsp;<a href="https://arxiv.org/abs/2503.07365%0ahttps://arxiv.org/abs/2505.12504%0ahttps://arxiv.org/abs/2505.13427" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/ModalMinds/MM-EUREKA%0ahttps://github.com/ModalMinds/MM-EUREKA/tree/mm-prm" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/datasets/FanqingM/MMK12" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励建模 <sup>6</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励建模 <sup>7</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#llm-2" class="archive-item-link">响应级奖励就是 LLM 在线强化学习所需的一切：数学视角</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2506.02553" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-29/#item-2" class="archive-item-link">通才奖励模型：从大型语言模型中发现内生奖励</a>
                 <span class="archive-item-date" title='2025-06-29'>06-29</span>&nbsp;<a href="https://arxiv.org/abs/2506.23235" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-28/#spct" class="archive-item-link">通才奖励建模的推理时间缩放：SPCT</a>
@@ -425,6 +320,11 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
                 <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2506.16024" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-04/#item-7" class="archive-item-link">大语言模型在线强化学习仅需响应级奖励：数学视角</a>
                 <span class="archive-item-date" title='2025-06-04'>06-04</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励机制 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-7" class="archive-item-link">结果奖励驱动可泛化推理策略</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-53" class="archive-item-link">强化学习奖励机制现状：验证、粒度与训练策略</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励模型 <sup>4</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-07-03/#llm-2" class="archive-item-link">周志华团队理论证明：LLM中可挖掘内源性通用奖励模型</a>
                 <span class="archive-item-date" title='2025-07-03'>07-03</span>&nbsp;<a href="https://arxiv.org/pdf/2506.23235" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
@@ -449,7 +349,17 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>对齐优化 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-09-16/#item-1" class="archive-item-link">基于动态奖励加权的多目标对齐优化学习</a>
                 <span class="archive-item-date" title='2025-09-16'>09-16</span>&nbsp;<a href="https://arxiv.org/abs/2509.11452" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>并行推理 <sup>2</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>工具训练 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#tooltrain" class="archive-item-link">ToolTrain：借助代码库检索工具提升大模型问题定位能力</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#mcp-rl" class="archive-item-link">MCP·RL：用强化学习训练智能体自主发现并调用工具</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://github.com/OpenPipe/ART?tab=readme-ov-file#-notebooks" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>工具调用 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-120" class="archive-item-link">多工具智能体的全自动推理轨迹生成与训练</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>并行推理 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#ai-lab-parallel-r1" class="archive-item-link">腾讯AI Lab俞栋团队开源首个并行思考强化学习框架 Parallel-R1</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-09-17/#parallel-r1" class="archive-item-link">Parallel-R1：通过强化学习让大模型学会并行思维</a>
                 <span class="archive-item-date" title='2025-09-17'>09-17</span>&nbsp;<a href="https://arxiv.org/abs/2509.07980" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/zhengkid/Parallel-R1" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-08-01/#imo-gemini-2-5-deep-think" class="archive-item-link">谷歌发布 IMO 金牌级模型 Gemini 2.5 Deep Think</a>
@@ -460,15 +370,26 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>弱点合成 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-12/#sws-llm" class="archive-item-link">SwS：LLM 推理强化学习中的自我感知弱点驱动问题合成</a>
                 <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08989" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>强化学习 <sup>1</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>强化学习 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#ai-lab" class="archive-item-link">清华、上海AI Lab等团队发布推理模型强化学习综述</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-09-11/#item-1" class="archive-item-link">大型推理模型的强化学习研究综述</a>
                 <span class="archive-item-date" title='2025-09-11'>09-11</span>&nbsp;<a href="https://arxiv.org/abs/2509.08827" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>强化训练 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-13/#magistral-mistral" class="archive-item-link">Magistral：Mistral 首个推理模型与可扩展强化学习管线</a>
                 <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10910" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>形式化证明 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#stepfun-prover-2" class="archive-item-link">StepFun-Prover：基于环境反馈的形式化证明训练</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>形式证明 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#alphaproof-lean" class="archive-item-link">AlphaProof 技术解析：结合强化学习、自动形式化与 Lean 证明反馈</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>成本优化 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-24/#dynscaling" class="archive-item-link">DynScaling：基于动态集成采样的无验证器高效推理扩展</a>
                 <span class="archive-item-date" title='2025-06-24'>06-24</span>&nbsp;<a href="https://arxiv.org/abs/2506.16043" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>扩展瓶颈 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#orion" class="archive-item-link">Orion性能未达预期，三大瓶颈制约模型扩展</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>扩散模型 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-25/#diffucoder" class="archive-item-link">DiffuCoder：理解并改进用于代码生成的掩码扩散模型</a>
                 <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.20639" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/apple/ml-diffucoder" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
@@ -478,18 +399,38 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理优化 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-18/#llm" class="archive-item-link">直接推理优化：LLM 自我奖励并完善开放式任务推理</a>
                 <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13351" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理强化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#spiral-4" class="archive-item-link">SPIRAL：强化学习筛选并强化可泛化推理模式</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理模型 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-52" class="archive-item-link">大推理模型强化学习综述</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2509.08827" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理迁移 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-07-01/#llm-2" class="archive-item-link">数学推理训练能否提升 LLM 的通用能力？推理能力的可转移性研究</a>
                 <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2507.00432" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>提示合成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#promptcot-2-0-em" class="archive-item-link">PromptCoT 2.0：以 EM 循环合成高难度推理任务</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://github.com/inclusionAI/PromptCoT" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>搜索推理 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-09/#r-search" class="archive-item-link">R-Search：通过多奖励强化学习与搜索增强大模型推理</a>
                 <span class="archive-item-date" title='2025-06-09'>06-09</span>&nbsp;<a href="https://arxiv.org/abs/2506.04185" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/QingFei1/R-Search" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/QingFei1/R-Search" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数学推理 <sup>1</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数学推理 <sup>5</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#miromind-m1-qwen-2-5" class="archive-item-link">MiroMind-M1：基于 Qwen-2.5 的开源数学推理模型</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#deepmind-funsearch-cap-set" class="archive-item-link">DeepMind FunSearch 发现目前最大的 Cap Set</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#openai-deepmind-imo-2025-5" class="archive-item-link">OpenAI与DeepMind在IMO 2025中均攻克5道题</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-18/#acereason-nemotron-1-1-sft-rl" class="archive-item-link">AceReason-Nemotron 1.1：通过 SFT 与 RL 协同提升数学和代码推理</a>
-                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13284" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/nvidia/AceReason-Nemotron-1.1-7B" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13284" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/nvidia/AceReason-Nemotron-1.1-7B" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-10/#item-5" class="archive-item-link">数学推理大型语言模型研究综述</a>
+                <span class="archive-item-date" title='2025-06-10'>06-10</span>&nbsp;<a href="https://arxiv.org/abs/2506.08446" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数学数据 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-12/#deepmath-103k-10-3" class="archive-item-link">DeepMath-103K：用 10.3 万道高难数学题突破大模型推理瓶颈</a>
                 <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/pdf/2504.11456" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/zwhe99/DeepMath" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://hf.co/datasets/zwhe99/DeepMath-103K" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数据合成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#alphageometry" class="archive-item-link">AlphaGeometry：用合成数据学习几何辅助线生成</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数据泄露 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-07-18/#item-3" class="archive-item-link">真相大白！RL不是魔法，随机奖励有效只是由于数据泄露</a>
                 <span class="archive-item-date" title='2025-07-18'>07-18</span></article></div><div style="margin:1rem 0;">
@@ -535,6 +476,9 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>测试生成 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-10/#codecontests" class="archive-item-link">CodeContests&#43;：为竞技编程生成高质量测试用例</a>
                 <span class="archive-item-date" title='2025-06-10'>06-10</span>&nbsp;<a href="https://arxiv.org/abs/2506.05817" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>深度研究 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#miromind-odr-2" class="archive-item-link">MiroMind ODR：开放深度研究全流程项目</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>混合微调 <sup>2</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-07-03/#srft" class="archive-item-link">SRFT：单阶段融合监督与强化学习的大模型微调方法</a>
                 <span class="archive-item-date" title='2025-07-03'>07-03</span></article><article class="archive-item">
@@ -547,28 +491,57 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
                 <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://www.arxiv.org/pdf/2506.08011" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-09/#item-4" class="archive-item-link">玩以致泛化：通过游戏学习推理</a>
                 <span class="archive-item-date" title='2025-06-09'>06-09</span>&nbsp;<a href="https://arxiv.org/abs/2506.08011" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>研究观点 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-101" class="archive-item-link">强化学习之父：大语言模型是一个错误的起点</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>空间心智 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-27/#mindcube" class="archive-item-link">MindCube：从有限视图构建空间心智模型</a>
                 <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://papers.cool/arxiv/2506.21458" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>答案验证 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#compassverifier" class="archive-item-link">CompassVerifier：面向多领域答案评估与奖励的轻量级验证模型</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://github.com/open-compass/CompassVerifier" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/open-compass/CompassVerifier" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>策略优化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#qwen3-gspo-grpo" class="archive-item-link">Qwen3 提出 GSPO：从序列级重要性采样改进 GRPO</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>算法对比 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-20/#dpo-grpo" class="archive-item-link">DPO 与 GRPO 在自回归图像生成中的系统性对比</a>
                 <span class="archive-item-date" title='2025-06-20'>06-20</span>&nbsp;<a href="https://arxiv.org/abs/2505.17017" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/ZiyuGuo99/Image-Generation-CoT" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>结构推理 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-26/#item-13" class="archive-item-link">通过结构化推理增强大语言模型</a>
                 <span class="archive-item-date" title='2025-06-26'>06-26</span>&nbsp;<a href="https://arxiv.org/abs/2506.20241" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我博弈 <sup>1</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自博弈 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#spiral-2" class="archive-item-link">SPIRAL：通过多智能体多轮强化学习在零和博弈自博弈中激励推理</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自对弈 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#spiral" class="archive-item-link">SPIRAL：零和游戏自对弈成为语言模型推理训练的「免费午餐」</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-8" class="archive-item-link">零和博弈自对弈驱动模型自主学习推理</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-11" class="archive-item-link">以游戏自对弈筛选可泛化思维链</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我博弈 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#spiral-3" class="archive-item-link">SPIRAL 强化学习代码仓库</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://github.com/spiral-rl/spiral" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-30/#spiral" class="archive-item-link">SPIRAL：零和博弈自博弈激发可迁移推理能力</a>
                 <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.24119" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我奖励 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-12/#llm" class="archive-item-link">一致的路径通向真理：面向LLM推理的自我奖励强化学习</a>
                 <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08745" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/sastpg/CoVo" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我学习 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#mit-seal" class="archive-item-link">MIT SEAL：通过自生成数据与权重更新实现模型自我适应</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我确定 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-145" class="archive-item-link">用 KL 散度衡量模型的「自我确定性」</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2502.18581" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我纠错 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-13/#pag" class="archive-item-link">PAG：以策略作为生成式验证器的多轮强化学习自我纠错</a>
                 <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10406" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我训练 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-05-27/#cmu-srt" class="archive-item-link">CMU 提出自我奖励训练 SRT：大模型能否实现无标签自训练？</a>
                 <span class="archive-item-date" title='2025-05-27'>05-27</span>&nbsp;<a href="https://arxiv.org/abs/2505.21444" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/tajwarfahim/srt" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/collections/ftajwar/self-rewarding-llm-training-6835218091832c3664176553" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我进化 <sup>3</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我进化 <sup>4</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-126" class="archive-item-link">动态反馈推动智能体持续自我优化</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-10-11/#meta" class="archive-item-link">Meta：智能体无需奖励或模仿，利用早期经验主动学习</a>
                 <span class="archive-item-date" title='2025-10-11'>10-11</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-23/#ml-agent-7b-9" class="archive-item-link">ML-Agent：7B智能体仅用9个任务训练实现自主机器学习工程</a>
@@ -609,6 +582,9 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>负向微调 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-23/#nft" class="archive-item-link">NFT：利用隐式负向策略提升数学推理能力</a>
                 <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/pdf/2505.18116" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/NVlabs/NFT" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>资源图谱 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#llm" class="archive-item-link">LLM强化学习环境与开源训练框架资源图谱</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>过程奖励 <sup>3</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-07-02/#spro" class="archive-item-link">SPRO：使用掩码步骤优势进行自我引导的过程奖励优化</a>
                 <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/abs/2507.01551" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
@@ -616,14 +592,23 @@ RL并非万能：强化学习的泛化能力受初始数据分布和验证奖励
                 <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2506.15498" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-04/#item-5" class="archive-item-link">从数学推理到代码：测试时扩展中过程奖励模型的泛化</a>
                 <span class="archive-item-date" title='2025-06-04'>06-04</span>&nbsp;<a href="https://arxiv.org/abs/2506.00027" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>进化搜索 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#llm-4" class="archive-item-link">LLM 引导的进化搜索：通向超级智能混合系统的新方向</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>通用推理 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-28/#rlpr-rlvr" class="archive-item-link">RLPR：无需验证器将RLVR扩展到通用领域</a>
                 <span class="archive-item-date" title='2025-06-28'>06-28</span>&nbsp;<a href="https://github.com/OpenBMB/RLPR/blob/main/RLPR_paper.pdf" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/OpenBMB/RLPR" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>问题定位 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#tooltrain-2" class="archive-item-link">ToolTrain：面向代码问题定位的两阶段工具集成训练框架</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>预训练 <sup>2</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-30/#item-12" class="archive-item-link">强化学习也能预训练？潜在意图与流匹配带来最高20倍提升</a>
                 <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.08902" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-12/#next-token" class="archive-item-link">「Next-Token」范式改变：强化学习预训练来了</a>
                 <span class="archive-item-date" title='2025-06-12'>06-12</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>高效探索 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#map-fr3e" class="archive-item-link">字节跳动与MAP提出FR3E：以结构化高效探索提升大模型强化学习上限</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/pdf/2507.07017" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>高效推理 <sup>2</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2025-06-13/#item-9" class="archive-item-link">简单问题快速答，困难问题深入想：基于幂次长度惩罚的高效推理</a>
                 <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10446" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
