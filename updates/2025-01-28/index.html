@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>2025-01-28科研追新(公众号) - LLM-DailyDigest</title><meta name="author" content="">
-<meta name="author-link" content="">
+    <title>2025-01-28科研追新(公众号) - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
 <meta name="description" content="2025-01-28
 统计1-27-11:00～1-28-9:00的相关新进展
 1 公众号
@@ -16,113 +16,35 @@
 有预测表明，2025年是人形机器人量产的开始。
 
 
-毫无疑问，2025技术侧已经能看见火花的重要趋势，必然有因OpenAI o1掀起的Scaling新范式：Inference-Scaling。
-与1年前技术领域普遍信仰的传统Scaling Law不同，Inference-Scaling强调了后训练（post-training）和推理阶段（inference-time）计算投入的重要性，与之对应的结果是模型推理能力的大幅提升。
-这就意味着大模型资源开始向Post-training和推理算力倾斜。
-也意味着新一轮竞赛的开始。
-单看国内，短短几个月内已经有昆仑万维Skywork o1、阿里通义QVQ、智谱华章GLM-Zero-Preview、阶跃星辰Step R-mini、深度求索DeepSeek-R1、月之暗面Kimi k1.5、百川智能Baichuan-M1-preview等多个推理模型问世。
-需要重点关注的是，OpenAI CEO山姆·奥特曼非常明确地对外宣称，“o1只是推理模型的GPT-2时刻”。
-
-
-除了DeepSeek之外，阿里云Qwen首次将开源Qwen模型的上下文扩展到1M长度，发布模型Qwen2.5-7B-Instruct-1M和Qwen2.5-14B-Instruct-1M。 https://qwenlm.github.io/blog/qwen2.5-1m/
-
-
-在上下文长度高达 100万Tokens的 “大海捞针” 式任务 ——Passkey Retrieval（密钥检索）中，Qwen2.5-1M系列模型展现出卓越性能，能够精准地从长度为1M的文档里检索出隐藏信息。
-
-
-对于更复杂的长上下文理解任务，研究团队选择了RULER、LV-Eval和LongbenchChat等测试集。
-
-
-
-
-
-实习细节：
-
-使用Adjusted Base Frequency的方案，将RoPE基础频率从10,000提高到10,000,000
-引入了Dual Chunk Attention (DCA)，该方法通过将过大的相对位置，重新映射为较小的值，解决基于旋转位置编码的大型语言模型会在长上下文任务中产生性能下降。
-基于MInference的稀疏注意力优化。
-
-
-
-
-
-1.2 机器之心
-
-
-关于deepseek R1的相关复现进展
-
-𝕏 博主 @Charbax 总结了 DeepSeek 文档中没有介绍的地方以及复现 R1 的一些难点。
-
-训练流程的细节。虽然其技术报告中介绍了强化学习阶段和蒸馏，但省略了关键的实现细节，包括超参数（例如，学习率、批量大小、奖励缩放因子）、用于生成合成训练数据的数据管道（例如，如何编排 800K 蒸馏样本）、需要人类偏好对齐的任务的奖励模型架构（多语言输出的「语言一致性奖励」）。
-冷启动数据生成。报告中虽然提到了创建「高质量冷启动数据」（例如，人工标准、少样本提示）的过程，但缺乏具体的示例或数据集。
-硬件和基础设施。没有关于计算资源（例如，GPU 集群、训练时间）或软件堆栈优化（例如，DeepSeek-V3 的 AMD ROCM 集成）的详细信息。
-复现难题。缺少多阶段强化学习的脚本等组件。
-
-
-
-
-
-近期，字节智能创作 AR 团队联合豆包大模型团队开发的 Video Depth Anything（VDA） 成功解决单目深度估计模型在视频领域的时间一致性问题。https://mp.weixin.qq.com/s/Pd2UyOiLmy0aBJwaEPEGDQ" /><meta name="keywords" content='Hugo, FixIt' />
+毫无疑问，2025技术侧已经能看见火花的重要趋势，必然有因OpenAI o1掀起的Scaling新范式：Inference-Scaling。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2025-01-28科研追新(公众号)">
   <meta itemprop="description" content="2025-01-28 统计1-27-11:00～1-28-9:00的相关新进展
 1 公众号 1.1 量子位 有预测表明，2025年是人形机器人量产的开始。
-毫无疑问，2025技术侧已经能看见火花的重要趋势，必然有因OpenAI o1掀起的Scaling新范式：Inference-Scaling。
-与1年前技术领域普遍信仰的传统Scaling Law不同，Inference-Scaling强调了后训练（post-training）和推理阶段（inference-time）计算投入的重要性，与之对应的结果是模型推理能力的大幅提升。
-这就意味着大模型资源开始向Post-training和推理算力倾斜。
-也意味着新一轮竞赛的开始。
-单看国内，短短几个月内已经有昆仑万维Skywork o1、阿里通义QVQ、智谱华章GLM-Zero-Preview、阶跃星辰Step R-mini、深度求索DeepSeek-R1、月之暗面Kimi k1.5、百川智能Baichuan-M1-preview等多个推理模型问世。
-需要重点关注的是，OpenAI CEO山姆·奥特曼非常明确地对外宣称，“o1只是推理模型的GPT-2时刻”。
-除了DeepSeek之外，阿里云Qwen首次将开源Qwen模型的上下文扩展到1M长度，发布模型Qwen2.5-7B-Instruct-1M和Qwen2.5-14B-Instruct-1M。 https://qwenlm.github.io/blog/qwen2.5-1m/
-在上下文长度高达 100万Tokens的 “大海捞针” 式任务 ——Passkey Retrieval（密钥检索）中，Qwen2.5-1M系列模型展现出卓越性能，能够精准地从长度为1M的文档里检索出隐藏信息。
-对于更复杂的长上下文理解任务，研究团队选择了RULER、LV-Eval和LongbenchChat等测试集。
-实习细节：
-使用Adjusted Base Frequency的方案，将RoPE基础频率从10,000提高到10,000,000 引入了Dual Chunk Attention (DCA)，该方法通过将过大的相对位置，重新映射为较小的值，解决基于旋转位置编码的大型语言模型会在长上下文任务中产生性能下降。 基于MInference的稀疏注意力优化。 1.2 机器之心 关于deepseek R1的相关复现进展
-𝕏 博主 @Charbax 总结了 DeepSeek 文档中没有介绍的地方以及复现 R1 的一些难点。 训练流程的细节。虽然其技术报告中介绍了强化学习阶段和蒸馏，但省略了关键的实现细节，包括超参数（例如，学习率、批量大小、奖励缩放因子）、用于生成合成训练数据的数据管道（例如，如何编排 800K 蒸馏样本）、需要人类偏好对齐的任务的奖励模型架构（多语言输出的「语言一致性奖励」）。 冷启动数据生成。报告中虽然提到了创建「高质量冷启动数据」（例如，人工标准、少样本提示）的过程，但缺乏具体的示例或数据集。 硬件和基础设施。没有关于计算资源（例如，GPU 集群、训练时间）或软件堆栈优化（例如，DeepSeek-V3 的 AMD ROCM 集成）的详细信息。 复现难题。缺少多阶段强化学习的脚本等组件。 近期，字节智能创作 AR 团队联合豆包大模型团队开发的 Video Depth Anything（VDA） 成功解决单目深度估计模型在视频领域的时间一致性问题。https://mp.weixin.qq.com/s/Pd2UyOiLmy0aBJwaEPEGDQ">
+毫无疑问，2025技术侧已经能看见火花的重要趋势，必然有因OpenAI o1掀起的Scaling新范式：Inference-Scaling。">
   <meta itemprop="datePublished" content="2025-01-28T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2025-01-28T00:00:00+08:00">
-  <meta itemprop="wordCount" content="135"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/updates/2025-01-28/">
-  <meta property="og:site_name" content="LLM-DailyDigest">
+  <meta itemprop="dateModified" content="2025-08-07T17:02:13+08:00">
+  <meta itemprop="wordCount" content="2381">
+  <meta itemprop="image" content="http://localhost:1313/images/logo.svg"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/updates/2025-01-28/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2025-01-28科研追新(公众号)">
   <meta property="og:description" content="2025-01-28 统计1-27-11:00～1-28-9:00的相关新进展
 1 公众号 1.1 量子位 有预测表明，2025年是人形机器人量产的开始。
-毫无疑问，2025技术侧已经能看见火花的重要趋势，必然有因OpenAI o1掀起的Scaling新范式：Inference-Scaling。
-与1年前技术领域普遍信仰的传统Scaling Law不同，Inference-Scaling强调了后训练（post-training）和推理阶段（inference-time）计算投入的重要性，与之对应的结果是模型推理能力的大幅提升。
-这就意味着大模型资源开始向Post-training和推理算力倾斜。
-也意味着新一轮竞赛的开始。
-单看国内，短短几个月内已经有昆仑万维Skywork o1、阿里通义QVQ、智谱华章GLM-Zero-Preview、阶跃星辰Step R-mini、深度求索DeepSeek-R1、月之暗面Kimi k1.5、百川智能Baichuan-M1-preview等多个推理模型问世。
-需要重点关注的是，OpenAI CEO山姆·奥特曼非常明确地对外宣称，“o1只是推理模型的GPT-2时刻”。
-除了DeepSeek之外，阿里云Qwen首次将开源Qwen模型的上下文扩展到1M长度，发布模型Qwen2.5-7B-Instruct-1M和Qwen2.5-14B-Instruct-1M。 https://qwenlm.github.io/blog/qwen2.5-1m/
-在上下文长度高达 100万Tokens的 “大海捞针” 式任务 ——Passkey Retrieval（密钥检索）中，Qwen2.5-1M系列模型展现出卓越性能，能够精准地从长度为1M的文档里检索出隐藏信息。
-对于更复杂的长上下文理解任务，研究团队选择了RULER、LV-Eval和LongbenchChat等测试集。
-实习细节：
-使用Adjusted Base Frequency的方案，将RoPE基础频率从10,000提高到10,000,000 引入了Dual Chunk Attention (DCA)，该方法通过将过大的相对位置，重新映射为较小的值，解决基于旋转位置编码的大型语言模型会在长上下文任务中产生性能下降。 基于MInference的稀疏注意力优化。 1.2 机器之心 关于deepseek R1的相关复现进展
-𝕏 博主 @Charbax 总结了 DeepSeek 文档中没有介绍的地方以及复现 R1 的一些难点。 训练流程的细节。虽然其技术报告中介绍了强化学习阶段和蒸馏，但省略了关键的实现细节，包括超参数（例如，学习率、批量大小、奖励缩放因子）、用于生成合成训练数据的数据管道（例如，如何编排 800K 蒸馏样本）、需要人类偏好对齐的任务的奖励模型架构（多语言输出的「语言一致性奖励」）。 冷启动数据生成。报告中虽然提到了创建「高质量冷启动数据」（例如，人工标准、少样本提示）的过程，但缺乏具体的示例或数据集。 硬件和基础设施。没有关于计算资源（例如，GPU 集群、训练时间）或软件堆栈优化（例如，DeepSeek-V3 的 AMD ROCM 集成）的详细信息。 复现难题。缺少多阶段强化学习的脚本等组件。 近期，字节智能创作 AR 团队联合豆包大模型团队开发的 Video Depth Anything（VDA） 成功解决单目深度估计模型在视频领域的时间一致性问题。https://mp.weixin.qq.com/s/Pd2UyOiLmy0aBJwaEPEGDQ">
+毫无疑问，2025技术侧已经能看见火花的重要趋势，必然有因OpenAI o1掀起的Scaling新范式：Inference-Scaling。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2025-01-28T00:00:00+08:00">
-    <meta property="article:modified_time" content="2025-01-28T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-08-07T17:02:13+08:00">
+    <meta property="og:image" content="http://localhost:1313/images/logo.svg">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/logo.svg">
   <meta name="twitter:title" content="2025-01-28科研追新(公众号)">
   <meta name="twitter:description" content="2025-01-28 统计1-27-11:00～1-28-9:00的相关新进展
 1 公众号 1.1 量子位 有预测表明，2025年是人形机器人量产的开始。
-毫无疑问，2025技术侧已经能看见火花的重要趋势，必然有因OpenAI o1掀起的Scaling新范式：Inference-Scaling。
-与1年前技术领域普遍信仰的传统Scaling Law不同，Inference-Scaling强调了后训练（post-training）和推理阶段（inference-time）计算投入的重要性，与之对应的结果是模型推理能力的大幅提升。
-这就意味着大模型资源开始向Post-training和推理算力倾斜。
-也意味着新一轮竞赛的开始。
-单看国内，短短几个月内已经有昆仑万维Skywork o1、阿里通义QVQ、智谱华章GLM-Zero-Preview、阶跃星辰Step R-mini、深度求索DeepSeek-R1、月之暗面Kimi k1.5、百川智能Baichuan-M1-preview等多个推理模型问世。
-需要重点关注的是，OpenAI CEO山姆·奥特曼非常明确地对外宣称，“o1只是推理模型的GPT-2时刻”。
-除了DeepSeek之外，阿里云Qwen首次将开源Qwen模型的上下文扩展到1M长度，发布模型Qwen2.5-7B-Instruct-1M和Qwen2.5-14B-Instruct-1M。 https://qwenlm.github.io/blog/qwen2.5-1m/
-在上下文长度高达 100万Tokens的 “大海捞针” 式任务 ——Passkey Retrieval（密钥检索）中，Qwen2.5-1M系列模型展现出卓越性能，能够精准地从长度为1M的文档里检索出隐藏信息。
-对于更复杂的长上下文理解任务，研究团队选择了RULER、LV-Eval和LongbenchChat等测试集。
-实习细节：
-使用Adjusted Base Frequency的方案，将RoPE基础频率从10,000提高到10,000,000 引入了Dual Chunk Attention (DCA)，该方法通过将过大的相对位置，重新映射为较小的值，解决基于旋转位置编码的大型语言模型会在长上下文任务中产生性能下降。 基于MInference的稀疏注意力优化。 1.2 机器之心 关于deepseek R1的相关复现进展
-𝕏 博主 @Charbax 总结了 DeepSeek 文档中没有介绍的地方以及复现 R1 的一些难点。 训练流程的细节。虽然其技术报告中介绍了强化学习阶段和蒸馏，但省略了关键的实现细节，包括超参数（例如，学习率、批量大小、奖励缩放因子）、用于生成合成训练数据的数据管道（例如，如何编排 800K 蒸馏样本）、需要人类偏好对齐的任务的奖励模型架构（多语言输出的「语言一致性奖励」）。 冷启动数据生成。报告中虽然提到了创建「高质量冷启动数据」（例如，人工标准、少样本提示）的过程，但缺乏具体的示例或数据集。 硬件和基础设施。没有关于计算资源（例如，GPU 集群、训练时间）或软件堆栈优化（例如，DeepSeek-V3 的 AMD ROCM 集成）的详细信息。 复现难题。缺少多阶段强化学习的脚本等组件。 近期，字节智能创作 AR 团队联合豆包大模型团队开发的 Video Depth Anything（VDA） 成功解决单目深度估计模型在视频领域的时间一致性问题。https://mp.weixin.qq.com/s/Pd2UyOiLmy0aBJwaEPEGDQ">
+毫无疑问，2025技术侧已经能看见火花的重要趋势，必然有因OpenAI o1掀起的Scaling新范式：Inference-Scaling。">
 <meta name="application-name" content="LLM-DailyDigest">
-<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/updates/2025-01-28/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/updates/arxiv_daily_report_2025-01-27/" /><link rel="next" href="http://localhost:1313/LLMDailyDigestWeb/updates/arxiv_daily_report_2025-01-28/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/updates/2025-01-28/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/updates/arxiv_daily_report_2025-01-27/" /><link rel="next" href="http://localhost:1313/LLMDailyDigestWeb/updates/arxiv_daily_report_2025-01-28/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -133,19 +55,19 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/updates\/2025-01-28\/"
-    },"genre": "updates","wordcount":  135 ,
-    "url": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/updates\/2025-01-28\/","datePublished": "2025-01-28T00:00:00+08:00","dateModified": "2025-01-28T00:00:00+08:00","publisher": {
+    },"genre": "updates","wordcount":  2381 ,
+    "url": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/updates\/2025-01-28\/","datePublished": "2025-01-28T00:00:00+08:00","dateModified": "2025-08-07T17:02:13+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
-        "name": "Author"
+        "name": "LLM-DailyDigest"
       },"description": ""
   }
   </script></head>
   <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
-  <div class="header-wrapper">
+  <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest"><img loading="lazy" src="/LLMDailyDigestWeb/fixit.svg" data-title="LLM-DailyDigest" data-alt="LLM-DailyDigest" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span id="typeit-header-desktop" class="typeit"></span></a><span class="header-subtitle"></span></div>
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -153,25 +75,36 @@
                 href="/LLMDailyDigestWeb/posts/llmdailydigest"
                 
                 
-              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/LLMDailyDigestWeb/resources/"
-                
-                
-              >资源</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/LLMDailyDigestWeb/topic/"
-                
-                
-              >主题</a></li><li class="menu-item">
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/LLMDailyDigestWeb/updates/"
                 
                 
-              >日报</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="Switch Theme">
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
           <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li></ul>
     </nav>
@@ -180,46 +113,70 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest"><img loading="lazy" src="/LLMDailyDigestWeb/fixit.svg" data-title="/LLMDailyDigestWeb/fixit.svg" data-alt="/LLMDailyDigestWeb/fixit.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span id="typeit-header-title-mobile" class="typeit"></span></a><span class="header-subtitle"></span></div>
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
     </div>
     <nav>
-      <ul class="menu" id="menu-mobile"><li
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
               class="menu-item"
             ><a
                   class="menu-link"
                   href="/LLMDailyDigestWeb/posts/llmdailydigest"
                   
                   
-                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/LLMDailyDigestWeb/resources/"
-                  
-                  
-                >资源</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/LLMDailyDigestWeb/topic/"
-                  
-                  
-                >主题</a></li><li
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
               class="menu-item"
             ><a
                   class="menu-link"
                   href="/LLMDailyDigestWeb/updates/"
                   
                   
-                >日报</a></li><li class="menu-item menu-system">
-          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
       </ul>
     </nav>
   </div>
-</header><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/updates/" title="Updates">Updates</a></li><li class="breadcrumb-item active" aria-current="page">2025-01-28科研追新(公众号)</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
@@ -228,12 +185,12 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>2025-01-28科研追新(公众号)</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      </span></span></div>
-      <div class="post-meta-line"><span title="published on 2025-01-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-01-28">2025-01-28</time></span>&nbsp;<span title="Updated on 2025-01-28 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-01-28">2025-01-28</time></span>&nbsp;<span title="135 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    LLM-DailyDigest</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2025-01-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-01-28">2025-01-28</time></span>&nbsp;<span title="更新于 2025-08-07 17:02:13"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-07">2025-08-07</time></span>&nbsp;<span title="2381 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 5 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
-          <span>Contents</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-公众号">1 公众号</a></li>
@@ -274,7 +231,7 @@
 <p><strong>需要重点关注的是，OpenAI CEO山姆·奥特曼非常明确地对外宣称，“o1只是推理模型的GPT-2时刻”。</strong></p>
 </li>
 <li>
-<p>除了DeepSeek之外，阿里云Qwen首次将<strong>开源Qwen模型</strong>的上下文扩展到<strong>1M长度</strong>，发布模型Qwen2.5-7B-Instruct-1M和Qwen2.5-14B-Instruct-1M。 <a href="https://qwenlm.github.io/blog/qwen2.5-1m/"target="_blank" rel="external nofollow noopener noreferrer">https://qwenlm.github.io/blog/qwen2.5-1m/</a></p>
+<p>除了DeepSeek之外，阿里云Qwen首次将<strong>开源Qwen模型</strong>的上下文扩展到<strong>1M长度</strong>，发布模型Qwen2.5-7B-Instruct-1M和Qwen2.5-14B-Instruct-1M。 <a href="https://qwenlm.github.io/blog/qwen2.5-1m/"target="_blank" rel="external nofollow noopener noreferrer">https://qwenlm.github.io/blog/qwen2.5-1m/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <ol>
 <li>
 <p>在上下文长度高达 100万Tokens的 “大海捞针” 式任务 ——Passkey Retrieval（密钥检索）中，Qwen2.5-1M系列模型展现出卓越性能，能够精准地从长度为1M的文档里检索出隐藏信息。</p>
@@ -283,7 +240,7 @@
 <p>对于更复杂的长上下文理解任务，研究团队选择了RULER、LV-Eval和LongbenchChat等测试集。</p>
 </li>
 <li>
-<p><img loading="lazy" src="./picture/image-20250128094942050.png" srcset="./picture/image-20250128094942050.png?size=small, ./picture/image-20250128094942050.png?size=medium 1.5x, ./picture/image-20250128094942050.png?size=large 2x" sizes="auto" data-title="image-20250128094942050" data-alt="image-20250128094942050" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><a class="lightgallery" href="./picture/image-20250128094942050.png?size=large" data-thumbnail="./picture/image-20250128094942050.png?size=small" data-sub-html="<h2>image-20250128094942050</h2>"><img loading="lazy" src="./picture/image-20250128094942050.png" srcset="./picture/image-20250128094942050.png?size=small, ./picture/image-20250128094942050.png?size=medium 1.5x, ./picture/image-20250128094942050.png?size=large 2x" sizes="auto" data-title="image-20250128094942050" data-alt="image-20250128094942050" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 </li>
 <li>
 <p>实习细节：</p>
@@ -332,11 +289,11 @@
 <p>论文标题：WebWalker: Benchmarking LLMs in Web Traversal</p>
 <p>论文地址：https://arxiv.org/pdf/2501.07572</p>
 <p>Homepage 地址：https://alibaba-nlp.github.io/WebWalker/</p>
-<p>Modelscope Demo 地址: <a href="https://www.modelscope.cn/studios/jialongwu/WebWalker"target="_blank" rel="external nofollow noopener noreferrer">https://www.modelscope.cn/studios/jialongwu/WebWalker</a></p>
-<p>Huggingface Demo 地址: <a href="https://huggingface.co/spaces/callanwu/WebWalker"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/spaces/callanwu/WebWalker</a></p>
-<p>Dataset 地址: <a href="https://huggingface.co/datasets/callanwu/WebWalkerQA"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/datasets/callanwu/WebWalkerQA</a></p>
-<p>Leaderboard 地址: <a href="https://huggingface.co/spaces/callanwu/WebWalkerQALeadeboard"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/spaces/callanwu/WebWalkerQALeadeboard</a></p>
-<p>Github 地址: <a href="https://github.com/Alibaba-NLP/WebWalker"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Alibaba-NLP/WebWalker</a></p>
+<p>Modelscope Demo 地址: <a href="https://www.modelscope.cn/studios/jialongwu/WebWalker"target="_blank" rel="external nofollow noopener noreferrer">https://www.modelscope.cn/studios/jialongwu/WebWalker<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>Huggingface Demo 地址: <a href="https://huggingface.co/spaces/callanwu/WebWalker"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/spaces/callanwu/WebWalker<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>Dataset 地址: <a href="https://huggingface.co/datasets/callanwu/WebWalkerQA"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/datasets/callanwu/WebWalkerQA<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>Leaderboard 地址: <a href="https://huggingface.co/spaces/callanwu/WebWalkerQALeadeboard"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/spaces/callanwu/WebWalkerQALeadeboard<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>Github 地址: <a href="https://github.com/Alibaba-NLP/WebWalker"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Alibaba-NLP/WebWalker<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </li>
 <li>
 <p>WebWalkerQA 专门设计来评估大模型处理复杂、多步骤网页交互中嵌入查询能力的基准测试。其聚焦于文本推理能力，采用问答格式来评估大模型在网页场景中的问题解决能力，并且将动作限制为「Click 点击」，以更精准地评估智能体的导航和信息寻求能力，这种范式更加贴合实际应用场景。</p>
@@ -352,21 +309,21 @@
 <h3 id="211-计算和语言">2.1.1 计算和语言</h3>
 <h4 id="1-方向1-数据">1. 方向1: 数据</h4>
 <ol>
-<li>可比语料库：新研究方向的机会 <a href="https://arxiv.org/abs/2501.14721"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2501.14721</a> ： 简单汇总了包括cc在内的语料库的发展和未来方向</li>
-<li>WanJuanSiLu：适用于低资源语言的高质量开源 Webtext 数据集 <a href="https://arxiv.org/abs/2501.14506"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2501.14506</a>：本文介绍了开源数据集 WanJuanSiLu，旨在为低资源语言提供高质量的训练语料，从而推进多语言模型的研发。为了实现这一目标，我们开发了一个为低资源语言量身定制的系统性数据处理框架。该框架包括数据提取、语料库清理、内容重复数据删除、安全过滤、质量评估和主题分类等关键阶段。通过实施此框架，我们显著提高了数据集的质量和安全性，同时保持了其语言多样性。截至目前，所有五种语言的数据都已完全开源。数据集可访问，GitHub 存储库可获取【checking】</li>
+<li>可比语料库：新研究方向的机会 <a href="https://arxiv.org/abs/2501.14721"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2501.14721<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> ： 简单汇总了包括cc在内的语料库的发展和未来方向</li>
+<li>WanJuanSiLu：适用于低资源语言的高质量开源 Webtext 数据集 <a href="https://arxiv.org/abs/2501.14506"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2501.14506<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>：本文介绍了开源数据集 WanJuanSiLu，旨在为低资源语言提供高质量的训练语料，从而推进多语言模型的研发。为了实现这一目标，我们开发了一个为低资源语言量身定制的系统性数据处理框架。该框架包括数据提取、语料库清理、内容重复数据删除、安全过滤、质量评估和主题分类等关键阶段。通过实施此框架，我们显著提高了数据集的质量和安全性，同时保持了其语言多样性。截至目前，所有五种语言的数据都已完全开源。数据集可访问，GitHub 存储库可获取【checking】</li>
 </ol>
 <h4 id="2-方向2-传统nlp任务的泛化">2. 方向2: 传统NLP任务的泛化</h4>
 <ol>
-<li>研究自然到正式语言转换中大型语言模型的（反）组合能力 <a href="https://arxiv.org/abs/2501.14649"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2501.14649</a>： 形式语言中的组合功能在LLM上的测试与泛化</li>
+<li>研究自然到正式语言转换中大型语言模型的（反）组合能力 <a href="https://arxiv.org/abs/2501.14649"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2501.14649<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>： 形式语言中的组合功能在LLM上的测试与泛化</li>
 </ol>
 </div></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">Public - 2026</span><span class="author" itemprop="copyrightHolder">
-              <a href="/LLMDailyDigestWeb/"></a></span></div><div class="footer-line statistics"></div></div>
-  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
-        </div></div><div id="mask"></div><noscript>
-    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="run-times ms-1">网站运行中……</span></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-desktop":"LLM-DailyDigest 大模型研究日报","typeit-header-title-mobile":"LLM-DailyDigest 大模型研究日报"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-desktop":["typeit-header-desktop"],"typeit-header-title-mobile":["typeit-header-title-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2025-08-07T14:49:03+08:00","typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
 </html>

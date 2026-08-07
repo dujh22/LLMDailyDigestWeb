@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>自我进化 Self-Evolve - LLM-DailyDigest</title><meta name="author" content="">
-<meta name="author-link" content="">
+    <title>自我进化 Self-Evolve - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
 <meta name="description" content="Self-Evolve
 2025-10-20
 
@@ -57,13 +57,14 @@ ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
 
 2025-08-08
 R-Zero：从零数据自我进化推理 LLM
-#65 R-Zero: Self-Evolving Reasoning LLM from Zero Data" /><meta name="keywords" content='Hugo, FixIt' />
+#65 R-Zero: Self-Evolving Reasoning LLM from Zero Data" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="自我进化 Self-Evolve">
   <meta itemprop="description" content="Self-Evolve 2025-10-20 🌈 斯坦福：智能体在交互中实时进化 In-the-Flow Agentic System Optimization for Effective Planning and Tool Use 它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化 论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路 https://agentflow.stanford.edu/ Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险 （主要是安全相关） Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents 这篇论文揭示了一个令人警醒的现象： 自进化过程并非总是良性的 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为 Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。 进化过程是一个循环：代理接收任务→生成执行轨迹→获得反馈→更新自身组件。 模型进化：自我训练导致安全对齐退化 记忆进化：经验积累引发目标偏移与奖励破解——代理学会利用历史成功经验中的“捷径”，即使这些捷径违背用户真实目标。 工具进化：工具创建与复用中的安全漏洞 工作流进化：性能优化牺牲安全性 解决办法：引入安全护栏、进行有效验证/安全性检查 「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习、微调已死？Agentic上下文工程登场，无需微调实现模型进化 Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升 生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。 ACE 的核心设计理念是：将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词。 推理银行：具有推理记忆的自进化代理 ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory 随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。 基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data">
   <meta itemprop="datePublished" content="2025-10-20T00:00:00+08:00">
   <meta itemprop="dateModified" content="2025-10-20T00:00:00+08:00">
-  <meta itemprop="wordCount" content="915"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/">
-  <meta property="og:site_name" content="LLM-DailyDigest">
+  <meta itemprop="wordCount" content="13890">
+  <meta itemprop="image" content="http://localhost:1313/images/logo.svg"><meta property="og:url" content="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="自我进化 Self-Evolve">
   <meta property="og:description" content="Self-Evolve 2025-10-20 🌈 斯坦福：智能体在交互中实时进化 In-the-Flow Agentic System Optimization for Effective Planning and Tool Use 它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化 论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路 https://agentflow.stanford.edu/ Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险 （主要是安全相关） Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents 这篇论文揭示了一个令人警醒的现象： 自进化过程并非总是良性的 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为 Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。 进化过程是一个循环：代理接收任务→生成执行轨迹→获得反馈→更新自身组件。 模型进化：自我训练导致安全对齐退化 记忆进化：经验积累引发目标偏移与奖励破解——代理学会利用历史成功经验中的“捷径”，即使这些捷径违背用户真实目标。 工具进化：工具创建与复用中的安全漏洞 工作流进化：性能优化牺牲安全性 解决办法：引入安全护栏、进行有效验证/安全性检查 「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习、微调已死？Agentic上下文工程登场，无需微调实现模型进化 Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升 生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。 ACE 的核心设计理念是：将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词。 推理银行：具有推理记忆的自进化代理 ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory 随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。 基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data">
   <meta property="og:locale" content="zh_CN">
@@ -71,14 +72,14 @@ R-Zero：从零数据自我进化推理 LLM
     <meta property="article:section" content="topic">
     <meta property="article:published_time" content="2025-10-20T00:00:00+08:00">
     <meta property="article:modified_time" content="2025-10-20T00:00:00+08:00">
+    <meta property="og:image" content="http://localhost:1313/images/logo.svg">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/logo.svg">
   <meta name="twitter:title" content="自我进化 Self-Evolve">
   <meta name="twitter:description" content="Self-Evolve 2025-10-20 🌈 斯坦福：智能体在交互中实时进化 In-the-Flow Agentic System Optimization for Effective Planning and Tool Use 它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化 论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路 https://agentflow.stanford.edu/ Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险 （主要是安全相关） Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents 这篇论文揭示了一个令人警醒的现象： 自进化过程并非总是良性的 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为 Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。 进化过程是一个循环：代理接收任务→生成执行轨迹→获得反馈→更新自身组件。 模型进化：自我训练导致安全对齐退化 记忆进化：经验积累引发目标偏移与奖励破解——代理学会利用历史成功经验中的“捷径”，即使这些捷径违背用户真实目标。 工具进化：工具创建与复用中的安全漏洞 工作流进化：性能优化牺牲安全性 解决办法：引入安全护栏、进行有效验证/安全性检查 「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习、微调已死？Agentic上下文工程登场，无需微调实现模型进化 Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升 生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。 ACE 的核心设计理念是：将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词。 推理银行：具有推理记忆的自进化代理 ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory 随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。 基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。 2025-08-08 R-Zero：从零数据自我进化推理 LLM #65 R-Zero: Self-Evolving Reasoning LLM from Zero Data">
 <meta name="application-name" content="LLM-DailyDigest">
-<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E5%BA%94%E7%94%A8/" /><link rel="next" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96/" /><link rel="prev" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/" /><link rel="next" href="http://localhost:1313/LLMDailyDigestWeb/topic/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -89,19 +90,19 @@ R-Zero：从零数据自我进化推理 LLM
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96\/"
-    },"genre": "topic","wordcount":  915 ,
+    },"genre": "topic","wordcount":  13890 ,
     "url": "http:\/\/localhost:1313\/LLMDailyDigestWeb\/topic\/%E8%87%AA%E6%88%91%E8%BF%9B%E5%8C%96\/","datePublished": "2025-10-20T00:00:00+08:00","dateModified": "2025-10-20T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
-        "name": "Author"
+        "name": "LLM-DailyDigest"
       },"description": ""
   }
   </script></head>
   <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
-  <div class="header-wrapper">
+  <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest"><img loading="lazy" src="/LLMDailyDigestWeb/fixit.svg" data-title="LLM-DailyDigest" data-alt="LLM-DailyDigest" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span id="typeit-header-desktop" class="typeit"></span></a><span class="header-subtitle"></span></div>
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -109,25 +110,36 @@ R-Zero：从零数据自我进化推理 LLM
                 href="/LLMDailyDigestWeb/posts/llmdailydigest"
                 
                 
-              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/LLMDailyDigestWeb/resources/"
-                
-                
-              >资源</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/LLMDailyDigestWeb/topic/"
-                
-                
-              >主题</a></li><li class="menu-item">
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/LLMDailyDigestWeb/updates/"
                 
                 
-              >日报</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="Switch Theme">
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
           <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li></ul>
     </nav>
@@ -136,46 +148,70 @@ R-Zero：从零数据自我进化推理 LLM
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest"><img loading="lazy" src="/LLMDailyDigestWeb/fixit.svg" data-title="/LLMDailyDigestWeb/fixit.svg" data-alt="/LLMDailyDigestWeb/fixit.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span id="typeit-header-title-mobile" class="typeit"></span></a><span class="header-subtitle"></span></div>
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
     </div>
     <nav>
-      <ul class="menu" id="menu-mobile"><li
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
               class="menu-item"
             ><a
                   class="menu-link"
                   href="/LLMDailyDigestWeb/posts/llmdailydigest"
                   
                   
-                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/LLMDailyDigestWeb/resources/"
-                  
-                  
-                >资源</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/LLMDailyDigestWeb/topic/"
-                  
-                  
-                >主题</a></li><li
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
               class="menu-item"
             ><a
                   class="menu-link"
                   href="/LLMDailyDigestWeb/updates/"
                   
                   
-                >日报</a></li><li class="menu-item menu-system">
-          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
       </ul>
     </nav>
   </div>
-</header><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/topic/" title="Topics">Topics</a></li><li class="breadcrumb-item active" aria-current="page">自我进化 Self-Evolve</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
@@ -184,12 +220,12 @@ R-Zero：从零数据自我进化推理 LLM
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>自我进化 Self-Evolve</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      </span></span></div>
-      <div class="post-meta-line"><span title="published on 2025-10-20 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-20">2025-10-20</time></span>&nbsp;<span title="Updated on 2025-10-20 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-20">2025-10-20</time></span>&nbsp;<span title="915 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1000 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>5 minutes</span>&nbsp;</div>
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    LLM-DailyDigest</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2025-10-20 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-20">2025-10-20</time></span>&nbsp;<span title="更新于 2025-10-20 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-20">2025-10-20</time></span>&nbsp;<span title="13890 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 13900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 28 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
-          <span>Contents</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#2025-10-20">2025-10-20</a></li>
@@ -288,17 +324,17 @@ R-Zero：从零数据自我进化推理 LLM
     ><h1 id="self-evolve">Self-Evolve</h1>
 <h2 id="2025-10-20">2025-10-20</h2>
 <ol>
-<li>🌈 <a href="https://www.xiaohongshu.com/explore/68ed0fbf000000000703a76d?app_platform=ios&amp;app_version=9.3.2&amp;share_from_user_hidden=true&amp;xsec_source=app_share&amp;type=normal&amp;xsec_token=CBakWZ_sYEytSZ39pf6Sou3VUy2h8AMfiTcSsu3CDAlNQ=&amp;author_share=1&amp;xhsshare=WeixinSession&amp;shareRedId=ODZFOTRHNU02NzUyOTgwNjY0OTc0Oko7&amp;apptime=1760442715&amp;share_id=9a9a7f61ee934765a01d3b21b7fdf2e9&amp;wechatWid=e071d48db6d5ec0f08890ce3658fa485&amp;wechatOrigin=menu"target="_blank" rel="external nofollow noopener noreferrer">斯坦福：智能体在交互中实时进化</a>
+<li>🌈 <a href="https://www.xiaohongshu.com/explore/68ed0fbf000000000703a76d?app_platform=ios&amp;app_version=9.3.2&amp;share_from_user_hidden=true&amp;xsec_source=app_share&amp;type=normal&amp;xsec_token=CBakWZ_sYEytSZ39pf6Sou3VUy2h8AMfiTcSsu3CDAlNQ=&amp;author_share=1&amp;xhsshare=WeixinSession&amp;shareRedId=ODZFOTRHNU02NzUyOTgwNjY0OTc0Oko7&amp;apptime=1760442715&amp;share_id=9a9a7f61ee934765a01d3b21b7fdf2e9&amp;wechatWid=e071d48db6d5ec0f08890ce3658fa485&amp;wechatOrigin=menu"target="_blank" rel="external nofollow noopener noreferrer">斯坦福：智能体在交互中实时进化<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>
 <ol>
-<li><a href="https://arxiv.org/abs/2510.05592v1"target="_blank" rel="external nofollow noopener noreferrer">In-the-Flow Agentic System Optimization for Effective Planning and Tool Use</a></li>
+<li><a href="https://arxiv.org/abs/2510.05592v1"target="_blank" rel="external nofollow noopener noreferrer">In-the-Flow Agentic System Optimization for Effective Planning and Tool Use<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 <li>它通过不断演进的记忆协调四个模块（规划器、执行器、验证器、生成器），并在多轮循环中直接对其规划器进行优化</li>
 <li>论文为如何将强化学习有效应用于模块化的智能体系统提供了一个成功的蓝图，解决了以往此类系统难以从实时交互中学习的痛点，且Flow-GRPO的“奖励广播”机制为解决其他领域的稀疏奖励、长时程RL问题提供了极具启发性的新思路</li>
-<li><a href="https://agentflow.stanford.edu/"target="_blank" rel="external nofollow noopener noreferrer">https://agentflow.stanford.edu/</a></li>
+<li><a href="https://agentflow.stanford.edu/"target="_blank" rel="external nofollow noopener noreferrer">https://agentflow.stanford.edu/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 </ol>
 </li>
-<li><a href="https://mp.weixin.qq.com/s/uGiJaCLtUOd727b_PIoA8g?scene=1&amp;click_id=9"target="_blank" rel="external nofollow noopener noreferrer">Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险</a> （主要是安全相关）
+<li><a href="https://mp.weixin.qq.com/s/uGiJaCLtUOd727b_PIoA8g?scene=1&amp;click_id=9"target="_blank" rel="external nofollow noopener noreferrer">Self-evolving Agents过程并非总是良性的，要警惕这些“错误进化”风险<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> （主要是安全相关）
 <ol>
-<li><a href="https://arxiv.org/pdf/2509.26354"target="_blank" rel="external nofollow noopener noreferrer">Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents</a></li>
+<li><a href="https://arxiv.org/pdf/2509.26354"target="_blank" rel="external nofollow noopener noreferrer">Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 <li>这篇论文揭示了一个令人警醒的现象： <strong>自进化过程并非总是良性的</strong> 。代理在进化过程中可能“跑偏”，产生意料之外的有害行为
 <ol>
 <li>Misevolution被定义为：代理在自进化过程中偏离预期方向，导致不良或有害结果的现象。</li>
@@ -315,9 +351,9 @@ R-Zero：从零数据自我进化推理 LLM
 <li>解决办法：引入安全护栏、进行有效验证/安全性检查</li>
 </ol>
 </li>
-<li><a href="https://mp.weixin.qq.com/s/EFFtMwU5asva_IzY2sS79A?scene=1&amp;click_id=10"target="_blank" rel="external nofollow noopener noreferrer">「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习</a>、<a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2650994884&amp;idx=1&amp;sn=eafeb1b68efba3fe53ade590368792dd&amp;chksm=84e73cbab390b5ac30daa23a665a6b70731f8b4591c16dfdcfc96cd5272d37cdfb1229ea458d&amp;cur_album_id=3661496204539314177&amp;scene=189#wechat_redirect"target="_blank" rel="external nofollow noopener noreferrer">微调已死？Agentic上下文工程登场，无需微调实现模型进化</a>
+<li><a href="https://mp.weixin.qq.com/s/EFFtMwU5asva_IzY2sS79A?scene=1&amp;click_id=10"target="_blank" rel="external nofollow noopener noreferrer">「微调已死」再添筹码，谷歌扩展AI自我进化范式，成功经验与失败教训双向学习<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>、<a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2650994884&amp;idx=1&amp;sn=eafeb1b68efba3fe53ade590368792dd&amp;chksm=84e73cbab390b5ac30daa23a665a6b70731f8b4591c16dfdcfc96cd5272d37cdfb1229ea458d&amp;cur_album_id=3661496204539314177&amp;scene=189#wechat_redirect"target="_blank" rel="external nofollow noopener noreferrer">微调已死？Agentic上下文工程登场，无需微调实现模型进化<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>
 <ol>
-<li><a href="https://www.arxiv.org/abs/2510.04618"target="_blank" rel="external nofollow noopener noreferrer">Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models</a>、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升
+<li><a href="https://www.arxiv.org/abs/2510.04618"target="_blank" rel="external nofollow noopener noreferrer">Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>、**Agentic Context Engineering（智能体 / 主动式上下文工程）**的技术，让语言模型无需微调也能实现自我提升
 <ol>
 <li>生成器首先会针对新任务生成推理轨迹，揭示出有效策略与常见陷阱；反思器对这些轨迹进行评析，提炼经验并可多轮迭代优化；整编器再将这些经验整合为紧凑的增量条目（delta entries），并通过轻量的、非 LLM 的逻辑机制合并至现有上下文中。</li>
 <li>ACE 的核心设计理念是：<strong>将上下文表示为结构化的条目集合（bullets），而非单一的整体提示词</strong>。</li>
@@ -325,9 +361,9 @@ R-Zero：从零数据自我进化推理 LLM
 </li>
 </ol>
 </li>
-<li><a href="https://www.xiaohongshu.com/explore/68db76f3000000000503ad6d?app_platform=ios&amp;app_version=9.2&amp;share_from_user_hidden=true&amp;xsec_source=app_share&amp;type=normal&amp;xsec_token=CBdmV3zWfsM8r78BYr5Nqt5SPlS6J24N2jHCox508C1VE=&amp;author_share=1&amp;xhsshare=WeixinSession&amp;shareRedId=ODZFOTRHNU02NzUyOTgwNjY0OTc0Oko7&amp;apptime=1759229927&amp;share_id=209cc868e5f648129e0d7cfe341e2f19&amp;wechatWid=e071d48db6d5ec0f08890ce3658fa485&amp;wechatOrigin=menu"target="_blank" rel="external nofollow noopener noreferrer">推理银行：具有推理记忆的自进化代理</a>
+<li><a href="https://www.xiaohongshu.com/explore/68db76f3000000000503ad6d?app_platform=ios&amp;app_version=9.2&amp;share_from_user_hidden=true&amp;xsec_source=app_share&amp;type=normal&amp;xsec_token=CBdmV3zWfsM8r78BYr5Nqt5SPlS6J24N2jHCox508C1VE=&amp;author_share=1&amp;xhsshare=WeixinSession&amp;shareRedId=ODZFOTRHNU02NzUyOTgwNjY0OTc0Oko7&amp;apptime=1759229927&amp;share_id=209cc868e5f648129e0d7cfe341e2f19&amp;wechatWid=e071d48db6d5ec0f08890ce3658fa485&amp;wechatOrigin=menu"target="_blank" rel="external nofollow noopener noreferrer">推理银行：具有推理记忆的自进化代理<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>
 <ol>
-<li><a href="https://arxiv.org/abs/2509.25140"target="_blank" rel="external nofollow noopener noreferrer">ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory</a></li>
+<li><a href="https://arxiv.org/abs/2509.25140"target="_blank" rel="external nofollow noopener noreferrer">ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 <li>随着大型语言模型代理在持久的现实角色中越来越多地被采用，它们自然会遇到源源不断的任务流。然而，一个关键限制是它们未能从累积的交互历史中学习，迫使它们舍弃有价值的见解并重复过去的错误。我们提出了** ReasoningBank，一种新颖的记忆框架，用以从代理自我评判的成功和失败经验中提炼出可泛化的推理策略**。在测试时，代理从 ReasoningBank 检索相关记忆以指导其交互，然后将新的学习成果整合回去，使其随时间变得更有能力。</li>
 <li>基于这一强大的经验学习器，我们进一步引入了面向记忆的测试时扩展（MaTTS），通过扩展代理的交互经验加速并多样化这一学习过程。通过为每个任务分配更多计算，代理生成丰富且多样的经验，这些经验为合成更高质量记忆提供了丰富的对比信号。反过来，更好的记忆又能指导更有效的扩展，在记忆与测试时扩展之间建立起强大的协同效应。 在网页浏览和软件工程基准测试中，ReasoningBank 一直优于那些仅存储原始轨迹或仅保存成功任务流程的现有记忆机制，在提高效果和效率方面均有提升；MaTTS 进一步放大了这些收益。这些发现确立了以记忆驱动的经验扩展作为一种新的扩展维度，使智能体能够自我进化，并自然地出现新兴行为。</li>
 </ol>
@@ -335,16 +371,16 @@ R-Zero：从零数据自我进化推理 LLM
 </ol>
 <h2 id="2025-08-08">2025-08-08</h2>
 <h4 id="r-zero从零数据自我进化推理-llm">R-Zero：从零数据自我进化推理 LLM</h4>
-<p><a href="https://arxiv.org/abs/2508.05004"target="_blank" rel="external nofollow noopener noreferrer">#65</a> <a href="https://papers.cool/arxiv/2508.05004"target="_blank" rel="external nofollow noopener noreferrer">R-Zero: Self-Evolving Reasoning LLM from Zero Data</a></p>
+<p><a href="https://arxiv.org/abs/2508.05004"target="_blank" rel="external nofollow noopener noreferrer">#65<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://papers.cool/arxiv/2508.05004"target="_blank" rel="external nofollow noopener noreferrer">R-Zero: Self-Evolving Reasoning LLM from Zero Data<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <p><strong>Authors</strong>: Chengsong Huang、Wenhao Yu、Xiaoyang Wang、Hongming Zhang、Zongxia Li、Ruosen Li、Jiaxin Huang、Haitao Mi、Dong Yu</p>
 <p>Self-evolving Large Language Models (LLMs) offer a scalable path toward super-intelligence by autonomously generating, refining, and learning from their own experiences. However, existing methods for training such models still rely heavily on vast human-curated tasks and labels, typically via fine-tuning or reinforcement learning, which poses a fundamental bottleneck to advancing AI systems toward capabilities beyond human intelligence. To overcome this limitation, we introduce R-Zero, a fully autonomous framework that generates its own training data from scratch. Starting from a single base LLM, R-Zero initializes two independent models with distinct roles, a Challenger and a Solver. These models are optimized separately and co-evolve through interaction: the Challenger is rewarded for proposing tasks near the edge of the Solver capability, and the Solver is rewarded for solving increasingly challenging tasks posed by the Challenger. This process yields a targeted, self-improving curriculum without any pre-existing tasks and labels. Empirically, R-Zero substantially improves reasoning capability across different backbone LLMs, e.g., boosting the Qwen3-4B-Base by +6.49 on math-reasoning benchmarks and +7.54 on general-domain reasoning benchmarks.
 自我进化的大型语言模型（LLMs）通过自主生成、改进并从自身经验中学习，提供了一条通往超智能的可扩展路径。然而，现有训练此类模型的方法仍然在很大程度上依赖大量人工策划的任务和标签，通常通过微调或强化学习来实现，这对将人工智能系统推进到超越人类智能的能力构成了根本性瓶颈。</p>
 <p>为克服这一限制，我们提出了 R-Zero，一个完全自主的框架，能够从零开始生成自己的训练数据。R-Zero 从单一基础 LLM 出发，初始化了两个具有不同角色的独立模型：挑战者（Challenger）和解答者（Solver）。这两个模型分别进行优化并通过交互共同进化：挑战者在提出接近解答者能力边界的任务时会获得奖励，而解答者在解决挑战者提出的越来越具挑战性的任务时会获得奖励。</p>
 <p>该过程在没有任何预先存在的任务和标签的情况下生成了一个有针对性、自我改进的课程。 在实证上，R-Zero 在不同的骨干 LLMs 上显著提升推理能力，例如在数学推理基准上将 Qwen3-4B-Base 提升了 +6.49，在通用领域推理基准上提升了 +7.54。</p>
-<p><a href="https://huggingface.co/papers/2508.05004?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2025-08-08"target="_blank" rel="external nofollow noopener noreferrer">R-Zero：零数据自进化推理LLM（63▲） </a></p>
+<p><a href="https://huggingface.co/papers/2508.05004?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2025-08-08"target="_blank" rel="external nofollow noopener noreferrer">R-Zero：零数据自进化推理LLM（63▲） <i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <h2 id="2025-08-07">2025-08-07</h2>
 <h4 id="seagent具备自主经验学习的自我进化计算机使用代理">SEAgent：具备自主经验学习的自我进化计算机使用代理</h4>
-<p><a href="https://arxiv.org/abs/2508.04700"target="_blank" rel="external nofollow noopener noreferrer">#68</a><a href="https://papers.cool/arxiv/2508.04700"target="_blank" rel="external nofollow noopener noreferrer">SEAgent: Self-Evolving Computer Use Agent with Autonomous Learning from Experience</a>  #68</p>
+<p><a href="https://arxiv.org/abs/2508.04700"target="_blank" rel="external nofollow noopener noreferrer">#68<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a><a href="https://papers.cool/arxiv/2508.04700"target="_blank" rel="external nofollow noopener noreferrer">SEAgent: Self-Evolving Computer Use Agent with Autonomous Learning from Experience<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>  #68</p>
 <ol>
 <li>将大型视觉语言模型（LVLMs）重新用作计算机使用代理（CUAs）已带来重大突破，这主要依赖于人工标注数据。然而，这些模型在处理新颖和专业的软件时常常表现不佳，尤其是在缺乏人工注释的场景中。为了解决这一挑战，我们提出了 SEAgent，一种代理自我进化框架，使 CUAs 能够通过与陌生软件的交互自主进化。具体而言，SEAgent 使计算机使用代理能够通过体验式学习自主掌握新软件环境，代理通过探索新软件、反复试错学习，并逐步完成从简单到复杂自动生成的任务。
 <ol>
@@ -358,9 +394,9 @@ R-Zero：从零数据自我进化推理 LLM
 </li>
 </ol>
 <p>发布时间：2025-08-06 17:58:46 UTC</p>
-<p><a href="https://huggingface.co/papers/2508.04700?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2025-08-07"target="_blank" rel="external nofollow noopener noreferrer">SEAgent：具有从经验中自主学习的自进化计算机使用代理（37▲） </a></p>
+<p><a href="https://huggingface.co/papers/2508.04700?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2025-08-07"target="_blank" rel="external nofollow noopener noreferrer">SEAgent：具有从经验中自主学习的自进化计算机使用代理（37▲） <i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <h4 id="sea带有逐步奖励的自我进化代理用于计算机使用">SEA：带有逐步奖励的自我进化代理用于计算机使用</h4>
-<p><a href="https://arxiv.org/abs/2508.04037"target="_blank" rel="external nofollow noopener noreferrer">#24</a><a href="https://papers.cool/arxiv/2508.04037"target="_blank" rel="external nofollow noopener noreferrer">SEA: Self-Evolution Agent with Step-wise Reward for Computer Use</a></p>
+<p><a href="https://arxiv.org/abs/2508.04037"target="_blank" rel="external nofollow noopener noreferrer">#24<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a><a href="https://papers.cool/arxiv/2508.04037"target="_blank" rel="external nofollow noopener noreferrer">SEA: Self-Evolution Agent with Step-wise Reward for Computer Use<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <ol>
 <li>计算机使用代理是人工智能中的一个新兴领域，旨在操作计算机以完成用户任务，吸引了工业界和学术界的广泛关注。然而，目前的代理性能距离实际应用仍有较大差距。本文提出了用于计算机使用的自我进化代理（Self-Evolution Agent，SEA），并在数据生成、强化学习和模型增强方面提出了创新方法。
 <ol>
@@ -374,11 +410,11 @@ R-Zero：从零数据自我进化推理 LLM
 <p>发布时间：2025-08-06 02:57:22 UTC</p>
 <h2 id="2025-08-06">2025-08-06</h2>
 <h4 id="eoh-s利用-llms-进化启发式集合以实现自动化启发式设计">EoH-S：利用 LLMs 进化启发式集合以实现自动化启发式设计</h4>
-<p><a href="https://arxiv.org/abs/2508.03082"target="_blank" rel="external nofollow noopener noreferrer">#30</a> <a href="https://papers.cool/arxiv/2508.03082"target="_blank" rel="external nofollow noopener noreferrer">EoH-S: Evolution of Heuristic Set using LLMs for Automated Heuristic Design</a></p>
+<p><a href="https://arxiv.org/abs/2508.03082"target="_blank" rel="external nofollow noopener noreferrer">#30<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://papers.cool/arxiv/2508.03082"target="_blank" rel="external nofollow noopener noreferrer">EoH-S: Evolution of Heuristic Set using LLMs for Automated Heuristic Design<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <p>近年来，利用大型语言模型（LLMs）进行自动启发式设计（AHD）取得了显著成功。尽管现有方法效果显著，但它们仅设计单一启发式以服务所有问题实例，往往导致在不同分布或设置下泛化能力较差。为了解决这一问题，我们提出了自动启发式集合设计（AHSD），这是一种基于 LLM 驱动的 AHD 的新型表述。AHSD 的目标是自动生成一个小规模的互补启发式集合，以服务多样化的问题实例，使得每个问题实例至少能被该集合中的一个启发式优化。我们证明了 AHSD 的目标函数是单调且超模的。随后，我们提出了启发式集合进化（EoH-S）方法，将 AHSD 表述应用于 LLM 驱动的 AHD。通过互补种群管理和互补感知的混合搜索两种新机制，EoH-S 能够有效生成一组高质量且互补的启发式。 在涵盖不同规模和分布的多样实例的三项 AHD 任务上的全面实验结果表明，EoH-S 始终优于现有的最先进 AHD 方法，性能提升高达 60%。</p>
 <p>发布时间：2025-08-05 04:55:03 UTC</p>
 <h2 id="2025-08-05">2025-08-05</h2>
-<h4 id="1-deepmind哈萨比斯ai能建模所有进化而来的事物">1. <a href="https://mp.weixin.qq.com/s/4vuQrBPHZvjFHiKZhSHFnw"target="_blank" rel="external nofollow noopener noreferrer">DeepMind哈萨比斯：AI能建模所有进化而来的事物</a></h4>
+<h4 id="1-deepmind哈萨比斯ai能建模所有进化而来的事物">1. <a href="https://mp.weixin.qq.com/s/4vuQrBPHZvjFHiKZhSHFnw"target="_blank" rel="external nofollow noopener noreferrer">DeepMind哈萨比斯：AI能建模所有进化而来的事物<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
 <ol>
 <li>任何能够通过进化形成的事物，都能被AI<strong>高效建模</strong>。
 <ol>
@@ -405,16 +441,16 @@ R-Zero：从零数据自我进化推理 LLM
 </ol>
 </li>
 </ol>
-<h4 id="2-一篇自进化agents技术最新综述迈向人工超级智能">2. <a href="https://mp.weixin.qq.com/s/7YiTpBuLtCqOeGn4YyIARA"target="_blank" rel="external nofollow noopener noreferrer">一篇自进化Agents技术最新综述：迈向人工超级智能</a></h4>
+<h4 id="2-一篇自进化agents技术最新综述迈向人工超级智能">2. <a href="https://mp.weixin.qq.com/s/7YiTpBuLtCqOeGn4YyIARA"target="_blank" rel="external nofollow noopener noreferrer">一篇自进化Agents技术最新综述：迈向人工超级智能<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
 <ol>
 <li>A Survey of Self-Evolving Agents: On Path to Artificial Super Intelligence
 <ol>
-<li><a href="https://arxiv.org/abs/2507.21046"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2507.21046</a></li>
-<li>Github Repo: <a href="https://github.com/CharlesQ9/Self-Evolving-Agents"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/CharlesQ9/Self-Evolving-Agents</a></li>
+<li><a href="https://arxiv.org/abs/2507.21046"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2507.21046<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li>Github Repo: <a href="https://github.com/CharlesQ9/Self-Evolving-Agents"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/CharlesQ9/Self-Evolving-Agents<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 <li>首次系统地回顾了自进化智能体（<strong>Self-Evolving Agents</strong>）的研究进展。围绕“<strong>什么要进化</strong>”“<strong>何时进化</strong>”“<strong>如何进化</strong>”三个核心问题展开，为AI领域中从静态模型向动态、自适应智能体系统的发展提供理论框架和实践指导。</li>
 </ol>
 </li>
-<li>【自我进化agent！普林斯顿王梦迪团队新综述 - 大模型知识分享 | 小红书 - 你的生活兴趣社区】 😆 UmKNhR6TrJrnV0I 😆 <a href="https://www.xiaohongshu.com/discovery/item/688c6ad300000000220224db?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CB2UhBnXfvzR0e27jac2hdP7wE8J9Y_4kWRrXWM3i3D5k=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/688c6ad300000000220224db?source=webshare&xhsshare=pc_web&xsec_token=CB2UhBnXfvzR0e27jac2hdP7wE8J9Y_4kWRrXWM3i3D5k=&xsec_source=pc_share</a>
+<li>【自我进化agent！普林斯顿王梦迪团队新综述 - 大模型知识分享 | 小红书 - 你的生活兴趣社区】 😆 UmKNhR6TrJrnV0I 😆 <a href="https://www.xiaohongshu.com/discovery/item/688c6ad300000000220224db?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CB2UhBnXfvzR0e27jac2hdP7wE8J9Y_4kWRrXWM3i3D5k=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/688c6ad300000000220224db?source=webshare&xhsshare=pc_web&xsec_token=CB2UhBnXfvzR0e27jac2hdP7wE8J9Y_4kWRrXWM3i3D5k=&xsec_source=pc_share<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>
 <ol>
 <li>主要内容：本质上，大语言模型（LLM）是静态的，无法根据新任务、不断发展的知识领域或动态交互环境调整其内部参数。随着 LLM 越来越多地被部署在开放式、交互式环境中，这种静态特性已成为关键瓶颈，迫切需要能够<strong>实时适应性推理、行动和进化</strong>的智能体（agent）。</li>
 <li>这一范式转变——从扩展静态模型转向开发自我进化 agent——引发了对能够从数据、交互和经验中实现持续学习与适应的架构和方法的日益关注。</li>
@@ -428,13 +464,13 @@ R-Zero：从零数据自我进化推理 LLM
 </ol>
 </li>
 </ol>
-<h4 id="3-108k-star一个能够随你不断成长进化的超级ai助手">3. <a href="https://mp.weixin.qq.com/s/Ug9g8P5RlFZ_t1fsAp55_w?scene=1&amp;click_id=43"target="_blank" rel="external nofollow noopener noreferrer">10.8k Star！一个能够随你不断成长、进化的超级AI助手！</a></h4>
+<h4 id="3-108k-star一个能够随你不断成长进化的超级ai助手">3. <a href="https://mp.weixin.qq.com/s/Ug9g8P5RlFZ_t1fsAp55_w?scene=1&amp;click_id=43"target="_blank" rel="external nofollow noopener noreferrer">10.8k Star！一个能够随你不断成长、进化的超级AI助手！<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
 <ol>
 <li><strong>Agent Zero</strong>，一款独具特色的开源 AI 框架。</li>
 <li>Agent Zero 并非针对特定任务预先编程，而是作为通用个人助手存在。用户给它分配任务后，它会<strong>收集信息</strong>、<strong>执行命令和代码</strong>、<strong>与其他代理实例协作</strong>，尽力完成任务。</li>
 <li>每个代理都可以创建下级代理来帮助分解和解决子任务，这样有助于保持所有代理的上下文清晰和专注。</li>
 </ol>
-<h4 id="4-ai彻底不当人了anthropic这波自我进化骚操作看得我人已麻">4. <a href="https://mp.weixin.qq.com/s/nd-yYr9VOW2AMShvffBe_g?scene=1&amp;click_id=45"target="_blank" rel="external nofollow noopener noreferrer">AI彻底不当人了？Anthropic这波“自我进化”骚操作，看得我人已麻</a></h4>
+<h4 id="4-ai彻底不当人了anthropic这波自我进化骚操作看得我人已麻">4. <a href="https://mp.weixin.qq.com/s/nd-yYr9VOW2AMShvffBe_g?scene=1&amp;click_id=45"target="_blank" rel="external nofollow noopener noreferrer">AI彻底不当人了？Anthropic这波“自我进化”骚操作，看得我人已麻<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
 <ol>
 <li>**AI学会了自己教自己，还能自己给自己打分、自己纠错，彻底把人类导师给踹了！**这不就是武侠小说里的“左脚踩右脚上天”的现实版
 <ol>
@@ -450,7 +486,7 @@ R-Zero：从零数据自我进化推理 LLM
 </ol>
 </li>
 </ol>
-<h4 id="5-自主进化的多智能体evoagentx自动工作流生成多种进化算法任务调度mcp支持">5. <a href="https://mp.weixin.qq.com/s/7H8xCIUxm3DTgalVlwRB8g?scene=1&amp;click_id=46"target="_blank" rel="external nofollow noopener noreferrer">自主进化的多智能体！EvoAgentX：自动工作流生成、多种进化算法、任务调度、MCP支持！</a></h4>
+<h4 id="5-自主进化的多智能体evoagentx自动工作流生成多种进化算法任务调度mcp支持">5. <a href="https://mp.weixin.qq.com/s/7H8xCIUxm3DTgalVlwRB8g?scene=1&amp;click_id=46"target="_blank" rel="external nofollow noopener noreferrer">自主进化的多智能体！EvoAgentX：自动工作流生成、多种进化算法、任务调度、MCP支持！<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
 <ol>
 <li>
 <p>工具：<strong>EvoAgentX</strong>，一个具备自我进化能力的多智能体自动化系统！ GitHub 项目地址：https://github.com/EvoAgentX/EvoAgentX</p>
@@ -470,7 +506,7 @@ R-Zero：从零数据自我进化推理 LLM
 </ul>
 </li>
 </ol>
-<h4 id="6-这一天真的来了谷歌让ai实现自我进化-alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery">6. <a href="https://mp.weixin.qq.com/s/j91-BLE5gUYYPum22HCMTQ?scene=1&amp;click_id=47"target="_blank" rel="external nofollow noopener noreferrer">这一天真的来了？谷歌让AI实现自我进化！</a> AlphaEvolve: A coding agent for scientific and algorithmic discovery</h4>
+<h4 id="6-这一天真的来了谷歌让ai实现自我进化-alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery">6. <a href="https://mp.weixin.qq.com/s/j91-BLE5gUYYPum22HCMTQ?scene=1&amp;click_id=47"target="_blank" rel="external nofollow noopener noreferrer">这一天真的来了？谷歌让AI实现自我进化！<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> AlphaEvolve: A coding agent for scientific and algorithmic discovery</h4>
 <ol>
 <li>一句话概括，谷歌把大语言模型塞进进化算法里搞出个赛博炼丹炉，让AI在代码层面开启自我迭代，最终完成&quot;内卷式进化&quot;。</li>
 <li>研究动机
@@ -493,7 +529,7 @@ R-Zero：从零数据自我进化推理 LLM
 </ol>
 </li>
 </ol>
-<h4 id="7-uc伯克利新作颠覆认知llm靠自信爆表学会推理无需外部奖励超进化">7. <a href="https://mp.weixin.qq.com/s/uEJY6sn_MQUovuMewY51Ow"target="_blank" rel="external nofollow noopener noreferrer">UC伯克利新作颠覆认知：LLM靠「自信爆表」学会推理？无需外部奖励超进化</a></h4>
+<h4 id="7-uc伯克利新作颠覆认知llm靠自信爆表学会推理无需外部奖励超进化">7. <a href="https://mp.weixin.qq.com/s/uEJY6sn_MQUovuMewY51Ow"target="_blank" rel="external nofollow noopener noreferrer">UC伯克利新作颠覆认知：LLM靠「自信爆表」学会推理？无需外部奖励超进化<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
 <ol>
 <li>Learning to Reason without External Rewards 论文地址：https://arxiv.org/pdf/2505.19590</li>
 <li>在考试中，人们往往对自己有信心的问题，回答得更准确。这种「信心≈正确性」的模型，对LLM是否也适用呢？
@@ -508,20 +544,20 @@ R-Zero：从零数据自我进化推理 LLM
 </ol>
 </li>
 </ol>
-<h4 id="8-metaagent通过工具元学习走向自我进化的代理">8. <a href="https://papers.cool/arxiv/2508.00271"target="_blank" rel="external nofollow noopener noreferrer">MetaAgent：通过工具元学习走向自我进化的代理</a></h4>
+<h4 id="8-metaagent通过工具元学习走向自我进化的代理">8. <a href="https://papers.cool/arxiv/2508.00271"target="_blank" rel="external nofollow noopener noreferrer">MetaAgent：通过工具元学习走向自我进化的代理<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></h4>
 <ol>
 <li>在这项工作中，我们提出了 MetaAgent，这是一种受<strong>边做边学</strong>原则启发的代理范式，其中专业知识是通过实践和持续的自我完善来发展的。</li>
 <li>MetaAgent 从最小的工作流程开始，仅配备基本推理和自适应寻求帮助的能力。当遇到知识差距时，MetaAgent 会生成自然语言帮助请求，这些请求由专用工具路由器路由到最合适的外部工具。当 MetaAgent 解决任务时，它会不断进行自我反思和答案验证，将可作的经验提炼成简洁的文本，并动态地融入到未来的任务环境中。此外，MetaAgent 通过组织其工具使用历史记录，自主构建内部工具和持久的知识库，进一步增强其检索和整合相关信息的能力我们将这种持续的、数据驱动的过程称为 \textit{<strong>meta tool learning</strong>}，通过该过程，MetaAgent 可以逐步完善其推理和工具使用策略，而无需更改模型参数或需要进一步的后训练。</li>
 <li>在具有挑战性的知识发现基准（包括 GAIA、WebWalkerQA 和 BrowseCamp）上进行评估后，MetaAgent 的性能始终优于基于工作流程的基线，并匹配或超过端到端训练的代理，展示了自我进化的代理系统在强大的通用知识发现方面的前景。</li>
-<li>我们以 <a href="https://github.com/qhjqhj00/MetaAgent"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/qhjqhj00/MetaAgent</a> 提供源代码。</li>
+<li>我们以 <a href="https://github.com/qhjqhj00/MetaAgent"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/qhjqhj00/MetaAgent<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> 提供源代码。</li>
 </ol>
 <h4 id="9-ai学会自我进化">9. AI学会自我进化</h4>
-<p>【新热文，AI学会自我进化！潜在的领域大突破 - 老陆起来了 | 小红书 - 你的生活兴趣社区】 😆 pOsxmIW03oolYEc 😆 <a href="https://www.xiaohongshu.com/discovery/item/688610a50000000013012e9f?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CBSAuqZOOotQ5DP4g119NA0xcgcZLdEm1yDhgXf3JMwcg=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/688610a50000000013012e9f?source=webshare&xhsshare=pc_web&xsec_token=CBSAuqZOOotQ5DP4g119NA0xcgcZLdEm1yDhgXf3JMwcg=&xsec_source=pc_share</a></p>
+<p>【新热文，AI学会自我进化！潜在的领域大突破 - 老陆起来了 | 小红书 - 你的生活兴趣社区】 😆 pOsxmIW03oolYEc 😆 <a href="https://www.xiaohongshu.com/discovery/item/688610a50000000013012e9f?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CBSAuqZOOotQ5DP4g119NA0xcgcZLdEm1yDhgXf3JMwcg=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/688610a50000000013012e9f?source=webshare&xhsshare=pc_web&xsec_token=CBSAuqZOOotQ5DP4g119NA0xcgcZLdEm1yDhgXf3JMwcg=&xsec_source=pc_share<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <ol>
 <li>AlphaGo Moment for Model Architecture Discovery
 <ol>
-<li><a href="https://github.com/GAIR-NLP/ASI-Arch"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/GAIR-NLP/ASI-Arch</a></li>
-<li><a href="https://arxiv.org/abs/2507.18074"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2507.18074</a></li>
+<li><a href="https://github.com/GAIR-NLP/ASI-Arch"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/GAIR-NLP/ASI-Arch<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://arxiv.org/abs/2507.18074"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2507.18074<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 </ol>
 </li>
 <li>传统的神经网络架构搜索（NAS）主要是在人类预先定义的空间里寻找最优解，就好比在一个给定形状的乐高盒子里搭出最好的模型。  而 ASI-ARCH 实现了，自动化创新，它能像真正的科学家一样，自主提出新颖的架构概念，将它们编码实现，然后进行严谨的实验验证。这就像它能自己设计新的乐高积木，甚至发明新的拼搭规则，并找出这些新积木和新规则能搭出什么更好的东西。这是 AI 领域的一大范式转变，从简单的优化走向了更深层次的创造。</li>
@@ -531,12 +567,12 @@ R-Zero：从零数据自我进化推理 LLM
 <li>一些局限： 1. 整个发现过程耗费了大量的计算资源（超过 20,000 GPU 小时），这表明这类研究需要强大的计算支持。 2. 尽管成果显著，但目前主要集中在线性注意力架构领域 3. 文章提到，他们目前没有投入大量工作去为新发现的架构编写定制的加速内核（如使用 Triton）。</li>
 </ol>
 <h4 id="10-元代理通过自我进化的代理元学习工具">10. 元代理：通过自我进化的代理元学习工具</h4>
-<p>【元代理：通过自我进化的代理元学习工具 - 搬砖小牛马 | 小红书 - 你的生活兴趣社区】 😆 O6Y2LYjbq9n8lJB 😆 <a href="https://www.xiaohongshu.com/discovery/item/689020cd00000000230272af?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CBzadlrcDTMxPZL3qy16EkiiNKvR1ap5n_BADi3h3lzSY=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/689020cd00000000230272af?source=webshare&xhsshare=pc_web&xsec_token=CBzadlrcDTMxPZL3qy16EkiiNKvR1ap5n_BADi3h3lzSY=&xsec_source=pc_share</a></p>
+<p>【元代理：通过自我进化的代理元学习工具 - 搬砖小牛马 | 小红书 - 你的生活兴趣社区】 😆 O6Y2LYjbq9n8lJB 😆 <a href="https://www.xiaohongshu.com/discovery/item/689020cd00000000230272af?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CBzadlrcDTMxPZL3qy16EkiiNKvR1ap5n_BADi3h3lzSY=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/689020cd00000000230272af?source=webshare&xhsshare=pc_web&xsec_token=CBzadlrcDTMxPZL3qy16EkiiNKvR1ap5n_BADi3h3lzSY=&xsec_source=pc_share<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <ol>
 <li>MetaAgent: Toward Self-Evolving Agent via Tool Meta-Learning
 <ol>
-<li><a href="https://arxiv.org/abs/2508.00271"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2508.00271</a></li>
-<li><a href="https://github.com/qhjqhj00/MetaAgent"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/qhjqhj00/MetaAgent</a></li>
+<li><a href="https://arxiv.org/abs/2508.00271"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2508.00271<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://github.com/qhjqhj00/MetaAgent"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/qhjqhj00/MetaAgent<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 </ol>
 </li>
 <li>这篇论文提出了一个名为 MetaAgent 的新型代理（agent）范式，旨在解决大型语言模型（LLMs）在处理复杂任务时面临的挑战，特别是在需要多步推理和动态工具使用的情境下。具体来说，它试图解决以下几个关键问题：
@@ -549,22 +585,22 @@ R-Zero：从零数据自我进化推理 LLM
 </li>
 </ol>
 <h4 id="11-ai界重磅突破llm终于学会自我进化了">11. AI界重磅突破！LLM终于学会”自我进化”了</h4>
-<p>【AI界重磅突破！LLM终于学会”自我进化”了 - 宇宙幻想Oscar | 小红书 - 你的生活兴趣社区】 😆 wGVuZrvWH7PEygf 😆 <a href="https://www.xiaohongshu.com/discovery/item/684bd83f000000000f03ab1e?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CBUG1vzUlF1rW0Z8oNl-MMg_V0nvFE_VO9qqDogj4vhhc=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/684bd83f000000000f03ab1e?source=webshare&xhsshare=pc_web&xsec_token=CBUG1vzUlF1rW0Z8oNl-MMg_V0nvFE_VO9qqDogj4vhhc=&xsec_source=pc_share</a></p>
+<p>【AI界重磅突破！LLM终于学会”自我进化”了 - 宇宙幻想Oscar | 小红书 - 你的生活兴趣社区】 😆 wGVuZrvWH7PEygf 😆 <a href="https://www.xiaohongshu.com/discovery/item/684bd83f000000000f03ab1e?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CBUG1vzUlF1rW0Z8oNl-MMg_V0nvFE_VO9qqDogj4vhhc=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/684bd83f000000000f03ab1e?source=webshare&xhsshare=pc_web&xsec_token=CBUG1vzUlF1rW0Z8oNl-MMg_V0nvFE_VO9qqDogj4vhhc=&xsec_source=pc_share<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <ol>
 <li>Self-Adapting Language Models
 <ol>
-<li><a href="https://arxiv.org/abs/2506.10943"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2506.10943</a></li>
-<li><a href="https://jyopari.github.io/posts/seal"target="_blank" rel="external nofollow noopener noreferrer">https://jyopari.github.io/posts/seal</a></li>
+<li><a href="https://arxiv.org/abs/2506.10943"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2506.10943<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://jyopari.github.io/posts/seal"target="_blank" rel="external nofollow noopener noreferrer">https://jyopari.github.io/posts/seal<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 </ol>
 </li>
-<li>MIT最新研究SEAL让我眼前一亮！传统大语言模型就像是”死记硬背”的学霸，遇到新知识只能重新训练，成本巨大。 而SEAL框架实现了真正的”<strong>举一反三</strong>”——模型能根据新输入自动生成训练数据，然后<strong>更新自己的权重参数</strong>。就像人类学习新技能时会自我反思和调整一样。 最巧妙的是，它用强化学习让模型以自己的表现作为”老师”，不断优化自我编辑能力。这意味着未来AI助手能更快适应你的个人需求，而不需要每次都从零开始。 <a href="https://www.xiaohongshu.com/search_result?keyword=AI%E6%8A%80%E6%9C%AF&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#AI技术</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#机器学习</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#人工智能</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E7%A7%91%E6%8A%80%E5%89%8D%E6%B2%BF&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#科技前沿</a> <a href="https://www.xiaohongshu.com/search_result?keyword=MIT%E7%A0%94%E7%A9%B6&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#MIT研究</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#大语言模型</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#深度学习</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#技术分享</a> <a href="https://www.xiaohongshu.com/search_result?keyword=AI%E5%8F%91%E5%B1%95&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#AI发展</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E7%A7%91%E6%8A%80%E5%88%9B%E6%96%B0&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#科技创新</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#自适应学习</a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E6%99%BA%E8%83%BD%E8%BF%9B%E5%8C%96&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#智能进化</a></li>
+<li>MIT最新研究SEAL让我眼前一亮！传统大语言模型就像是”死记硬背”的学霸，遇到新知识只能重新训练，成本巨大。 而SEAL框架实现了真正的”<strong>举一反三</strong>”——模型能根据新输入自动生成训练数据，然后<strong>更新自己的权重参数</strong>。就像人类学习新技能时会自我反思和调整一样。 最巧妙的是，它用强化学习让模型以自己的表现作为”老师”，不断优化自我编辑能力。这意味着未来AI助手能更快适应你的个人需求，而不需要每次都从零开始。 <a href="https://www.xiaohongshu.com/search_result?keyword=AI%E6%8A%80%E6%9C%AF&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#AI技术<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#机器学习<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#人工智能<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E7%A7%91%E6%8A%80%E5%89%8D%E6%B2%BF&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#科技前沿<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=MIT%E7%A0%94%E7%A9%B6&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#MIT研究<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#大语言模型<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#深度学习<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#技术分享<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=AI%E5%8F%91%E5%B1%95&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#AI发展<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E7%A7%91%E6%8A%80%E5%88%9B%E6%96%B0&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#科技创新<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#自适应学习<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://www.xiaohongshu.com/search_result?keyword=%E6%99%BA%E8%83%BD%E8%BF%9B%E5%8C%96&amp;type=54&amp;source=web_note_detail_r10"target="_blank" rel="external nofollow noopener noreferrer">#智能进化<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 </ol>
 <h4 id="12-darwin-gödel-machine自我进化智能体">12. Darwin Gödel Machine:自我进化智能体</h4>
-<p>【Darwin Gödel Machine:自我进化智能体 - 无影寺 | 小红书 - 你的生活兴趣社区】 😆 xr8PKkHY4kEQFD4 😆 <a href="https://www.xiaohongshu.com/discovery/item/683d989b0000000023011be8?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CBdhZvj0hBWK2jIolVAn_QBy4B2zccgAgWdZ_-h8v2I0Q=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/683d989b0000000023011be8?source=webshare&xhsshare=pc_web&xsec_token=CBdhZvj0hBWK2jIolVAn_QBy4B2zccgAgWdZ_-h8v2I0Q=&xsec_source=pc_share</a></p>
+<p>【Darwin Gödel Machine:自我进化智能体 - 无影寺 | 小红书 - 你的生活兴趣社区】 😆 xr8PKkHY4kEQFD4 😆 <a href="https://www.xiaohongshu.com/discovery/item/683d989b0000000023011be8?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=CBdhZvj0hBWK2jIolVAn_QBy4B2zccgAgWdZ_-h8v2I0Q=&amp;xsec_source=pc_share"target="_blank" rel="external nofollow noopener noreferrer">https://www.xiaohongshu.com/discovery/item/683d989b0000000023011be8?source=webshare&xhsshare=pc_web&xsec_token=CBdhZvj0hBWK2jIolVAn_QBy4B2zccgAgWdZ_-h8v2I0Q=&xsec_source=pc_share<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <ol>
 <li>Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents
 <ol>
-<li><a href="https://arxiv.org/abs/2505.22954"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2505.22954</a></li>
+<li><a href="https://arxiv.org/abs/2505.22954"target="_blank" rel="external nofollow noopener noreferrer">https://arxiv.org/abs/2505.22954<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 </ol>
 </li>
 <li>Darwin Gödel Machine:自我进化智能体
@@ -586,9 +622,9 @@ R-Zero：从零数据自我进化推理 LLM
 </ol>
 <h2 id="2025-07-01">2025-07-01</h2>
 <h4 id="谷歌的alphaevolve">谷歌的AlphaEvolve</h4>
-<p>在5月中旬，谷歌扔出的这个炸弹（号称是数学界AlphaGo的「第37步」时刻），就在不断冲击人们的认知——AI，已经拥有了自我进化能力！——史诗时刻！AlphaGo神之一手突现，谷歌AI颠覆科研极限？ <a href="https://mp.weixin.qq.com/s/aHfHSrx3Iz1tKnOd0oqg6g"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/aHfHSrx3Iz1tKnOd0oqg6g</a></p>
-<p>随后，不断有开发者用代码证实，AlphaEvolve的矩阵乘法突破为真！一个开发者成功证明，它仅用了48次乘法，就正确完成了4×4矩阵的乘法运算。 ——震撼全网，AlphaEvolve矩阵乘法突破被证明为真！开发者用代码证实 <a href="https://mp.weixin.qq.com/s/fOOyNSCqxFYp_g3oqDBLOg"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/fOOyNSCqxFYp_g3oqDBLOg</a></p>
-<p>最新，用基于AlphaEvolve论文的开源实现OpenEvolve，成功自动发现了高性能的GPU内核算法 <a href="https://mp.weixin.qq.com/s/WMxnoWgz37V16_McpVo2zg"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/WMxnoWgz37V16_McpVo2zg</a> 具体来说，通过自我进化代码，它自动发现了一套在Apple Silicon上远超手动优化的GPU Metal核函数。</p>
+<p>在5月中旬，谷歌扔出的这个炸弹（号称是数学界AlphaGo的「第37步」时刻），就在不断冲击人们的认知——AI，已经拥有了自我进化能力！——史诗时刻！AlphaGo神之一手突现，谷歌AI颠覆科研极限？ <a href="https://mp.weixin.qq.com/s/aHfHSrx3Iz1tKnOd0oqg6g"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/aHfHSrx3Iz1tKnOd0oqg6g<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>随后，不断有开发者用代码证实，AlphaEvolve的矩阵乘法突破为真！一个开发者成功证明，它仅用了48次乘法，就正确完成了4×4矩阵的乘法运算。 ——震撼全网，AlphaEvolve矩阵乘法突破被证明为真！开发者用代码证实 <a href="https://mp.weixin.qq.com/s/fOOyNSCqxFYp_g3oqDBLOg"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/fOOyNSCqxFYp_g3oqDBLOg<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>最新，用基于AlphaEvolve论文的开源实现OpenEvolve，成功自动发现了高性能的GPU内核算法 <a href="https://mp.weixin.qq.com/s/WMxnoWgz37V16_McpVo2zg"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/WMxnoWgz37V16_McpVo2zg<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> 具体来说，通过自我进化代码，它自动发现了一套在Apple Silicon上远超手动优化的GPU Metal核函数。</p>
 <h2 id="2025-06-14">2025-06-14</h2>
 <h4 id="llm已能自我更新权重自适应知识整合能力大幅提升ai醒了">LLM已能自我更新权重，自适应、知识整合能力大幅提升，AI醒了？</h4>
 <p>🔗：https://mp.weixin.qq.com/s/WvC7kX1_XfNO218YBsAa8g</p>
@@ -601,12 +637,12 @@ R-Zero：从零数据自我进化推理 LLM
 <p>该模型的训练目标是：可以使用模型上下文中提供的数据，通过生成 token 来直接生成这些自编辑（SE）。</p>
 <p>自编辑生成需要通过强化学习来学习实现，其中当模型生成的自编辑在应用后可以提升模型在目标任务上的性能时，就会给予模型奖励。</p>
 <p>因此，可以将 SEAL 理解为一个包含两个嵌套循环的算法：一个外部 RL 循环，用于优化自编辑生成；以及一个内部更新循环，它使用生成的自编辑通过梯度下降更新模型。</p>
-<p><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><a class="lightgallery" href="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large" data-thumbnail="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small" data-sub-html="<h2>https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA</h2>"><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmY2MGZhZmJkMDAxMTdiZGU4NGMxZmI3ZTRjYzgwYTZfbFZLMkhYM0R1cXlzSERyd0VIRHVnbGpmWXVaN05KNHJfVG9rZW46WmdmbmJLM0dFb0lGb1J4alA4WGM5eFZTbmhOXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <p>该团队尝试了各种在线策略方法，例如组相对策略优化 (GRPO) 和近端策略优化 (PPO) ，但发现训练不稳定。</p>
 <p>最终，他们选择了来自 DeepMind 论文《Beyond human data: Scaling self-training for problem-solving with language models.》的  <strong>ReST^EM</strong> ，这是一种基于已过滤行为克隆的更简单的方法 —— 也就是「 <strong>拒绝采样 + SFT</strong> 」。</p>
 <h2 id="2025-06-10">2025-06-10</h2>
 <h4 id="无需人类数据让大语言模型通过左右互搏自我进化spin算法详解">无需人类数据，让大语言模型通过&quot;左右互搏&quot;自我进化：SPIN算法详解</h4>
-<p><a href="https://mp.weixin.qq.com/s/jgGE30DGJ1qwB-5RElrP3w"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/jgGE30DGJ1qwB-5RElrP3w</a></p>
+<p><a href="https://mp.weixin.qq.com/s/jgGE30DGJ1qwB-5RElrP3w"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/jgGE30DGJ1qwB-5RElrP3w<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <h2 id="2025-06-02">2025-06-02</h2>
 <h4 id="lstm之父22年前构想将成真一周内ai自我进化论文集中发布新趋势涌现">LSTM之父22年前构想将成真？一周内AI「自我进化」论文集中发布，新趋势涌现</h4>
 <p>🔗：https://mp.weixin.qq.com/s/0PPw4t2YCwu-7zrxpjglcA</p>
@@ -621,9 +657,9 @@ R-Zero：从零数据自我进化推理 LLM
 <li>论文链接：https://arxiv.org/abs/2505.22954</li>
 <li>博客：https://sakana.ai/dgm/</li>
 </ol>
-<p><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><a class="lightgallery" href="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large" data-thumbnail="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small" data-sub-html="<h2>https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA</h2>"><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=MTk3MzhjZjc0MjkxODAxNWQ1NDA3YWE2MzM4MmZlM2ZfZjQ5UGs3R2JJSDhhR1lWUEtWNTRoNktOZVAwNnNOOUZfVG9rZW46WWxxUGJVMDY4b0FIckl4dlJBSmNxaGpxbkViXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <p>达尔文哥德尔机是一种通过重写自身代码来提升编程任务性能的自我改进型编程智能体。它能实现多种自我改进，包括：增加补丁验证步骤、优化文件查看功能、增强编辑工具、生成并排序多个解决方案以选择最优选项，以及在实施新修改时记录历史尝试记录（包括失败原因）。</p>
-<p><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><a class="lightgallery" href="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large" data-thumbnail="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small" data-sub-html="<h2>https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA</h2>"><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmQ5NDYwYTc3MDdjMTA2ZWMxMmNiZGU1ZDI0YWJkMDdfSjlnYWZBcmxLNVAxRjFwZE93dWl4NENmR0dmUzhMeG5fVG9rZW46WE5KQWJsbFdub1ExTW14Y1JJSGNVVEp3bk9iXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <p>达尔文哥德尔机通过运用开放式探索原则，逐步构建起一个不断扩增的智能体库。该系统通过交替执行自我修改与下游任务评估的方式，持续创建新智能体并对其进行评分。</p>
 </li>
 <li>
@@ -634,7 +670,7 @@ R-Zero：从零数据自我进化推理 LLM
 <p>代码地址：https://github.com/tajwarfahim/srt</p>
 <p>数据集：https://huggingface.co/collections/ftajwar/self-rewarding-llm-training-6835218091832c3664176553</p>
 <p>受先前基于一致性自我提升研究的启发，研究团队引入了一种简单而有效的自我训练强化学习方法论，称为自我奖励训练（Self-Rewarded Training，SRT）。<strong>该方法在强化学习训练期间，通过模型生成的多个解决方案之间的一致性来评估正确性，从而在没有标注数据的情况下提供自监督信号。</strong></p>
-<p><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><a class="lightgallery" href="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large" data-thumbnail="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small" data-sub-html="<h2>https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA</h2>"><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2RjYTZlNmFjMjc1ZmE1MThhMzhiZmYyZWM2ODRmMmFfbHRoTjVKNXNrWXhZeURkZXEzZ0FZRFNOREhQMDllSEZfVG9rZW46SHJLUWIzbmV0b2JEczd4UXlqSGNhNkVabk5nXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 </li>
 </ol>
 <p>SRT 概览。在 RLVR 方法中，系统通过真实验证器生成用于强化学习训练的奖励信号。与之相反，SRT 方法并不依赖真实验证器，而是通过模型自身生成结果的多数投票机制来估算真实值，并利用这一替代性奖励信号来训练模型。</p>
@@ -652,22 +688,22 @@ R-Zero：从零数据自我进化推理 LLM
 <p>项目地址：https://github.com/Euphoria16/UI-Genie</p>
 </li>
 </ol>
-<p><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><a class="lightgallery" href="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large" data-thumbnail="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small" data-sub-html="<h2>https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA</h2>"><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdlYmQ3YzJjZjJkY2QyM2E4MzQ3ZDkxOGZhMTQwYTVfeFRFMTE2VkhUN29JR2prMndQYUYzRlUwNERhQmM3OGdfVG9rZW46VUVIN2Jiamt0bzJqS1J4ZEU0SWN5QmVablZmXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <p><strong>该奖励模型，即 UI-Genie-RM，采用了一种图文交错的架构，能够高效处理历史上下文信息，并统一了动作级别和任务级别的奖励：</strong></p>
 <ul>
 <li>通过迭代式合成轨迹生成，消除人工标注</li>
 <li>通过自改进循环，共同演进智能体和奖励模型</li>
 <li>无需人工干预即可生成高质量数据集</li>
 </ul>
-<p><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><a class="lightgallery" href="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large" data-thumbnail="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small" data-sub-html="<h2>https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA</h2>"><img loading="lazy" src="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" srcset="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=small, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=medium 1.5x, https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA&amp;size=large 2x" sizes="auto" data-title="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" data-alt="https://zhipu-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OGY0ODczNGE4NWIwNTQ5NzEyYTY4ZDBhMGJhN2QzMDdfeUZQUXVuZ3JUbTR4SFF3NFBCcW5vY0Ywa1BHSXpzTEFfVG9rZW46VmNsRWJMS3VBb1dncWh4TXEwSGNxY0JibmpXXzE3NTQ0NjMzMDI6MTc1NDQ2NjkwMl9WNA" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 </div></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">Public - 2026</span><span class="author" itemprop="copyrightHolder">
-              <a href="/LLMDailyDigestWeb/"></a></span></div><div class="footer-line statistics"></div></div>
-  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
-        </div></div><div id="mask"></div><noscript>
-    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="run-times ms-1">网站运行中……</span></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-desktop":"LLM-DailyDigest 大模型研究日报","typeit-header-title-mobile":"LLM-DailyDigest 大模型研究日报"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-desktop":["typeit-header-desktop"],"typeit-header-title-mobile":["typeit-header-title-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2025-08-07T14:49:03+08:00","typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
 </html>
