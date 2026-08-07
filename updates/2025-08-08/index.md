@@ -3323,5 +3323,5 @@ We have devised an artificial intelligence algorithm with machine reinforcement 
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/updates/2025-08-08/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/updates/2025-08-08/  
 

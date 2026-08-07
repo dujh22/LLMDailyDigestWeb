@@ -667,5 +667,5 @@ Generative AI is no longer a peripheral tool in higher education. It is rapidly 
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/topic/%E6%99%BA%E8%83%BD%E4%BD%93/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/  
 

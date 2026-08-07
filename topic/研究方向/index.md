@@ -72,5 +72,5 @@ Large Language Models and Emergence: A Complex Systems Perspective
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/topic/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/  
 

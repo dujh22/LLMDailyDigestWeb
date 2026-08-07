@@ -82,5 +82,5 @@
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/updates/2025-09-18to26/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/updates/2025-09-18to26/  
 

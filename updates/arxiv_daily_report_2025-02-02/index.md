@@ -3848,5 +3848,5 @@ D. Kotlorz
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/updates/arxiv_daily_report_2025-02-02/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/updates/arxiv_daily_report_2025-02-02/  
 

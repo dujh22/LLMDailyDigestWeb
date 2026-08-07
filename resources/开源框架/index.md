@@ -174,5 +174,5 @@ https://github.com/Unakar/Logic-RL
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/resources/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/resources/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/  
 

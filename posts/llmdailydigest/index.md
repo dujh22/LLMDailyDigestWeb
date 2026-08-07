@@ -58,5 +58,5 @@
 ---
 
 > 作者: <no value>  
-> URL: http://localhost:1313/posts/llmdailydigest/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/posts/llmdailydigest/  
 

@@ -66,5 +66,5 @@ https://mp.weixin.qq.com/s/7t1sJlLnA_ardC2cK_EEfg
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/topic/%E6%96%B0%E9%97%BB/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%96%B0%E9%97%BB/  
 

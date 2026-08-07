@@ -90,5 +90,5 @@ Arxiv 链接: https://arxiv.org/abs/2506.05554
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/topic/%E5%85%B7%E8%BA%AB/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB/  
 

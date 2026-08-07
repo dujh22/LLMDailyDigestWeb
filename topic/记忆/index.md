@@ -74,5 +74,5 @@ https://huggingface.co/papers/2509.04664?utm_source=digest-papers&utm_medium=ema
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/topic/%E8%AE%B0%E5%BF%86/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E8%AE%B0%E5%BF%86/  
 

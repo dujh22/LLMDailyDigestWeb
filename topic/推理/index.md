@@ -781,5 +781,5 @@ ProtoReasoning：原型作为 LLMs 可泛化推理的基础
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/topic/%E6%8E%A8%E7%90%86/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/  
 

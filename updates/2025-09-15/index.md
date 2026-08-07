@@ -2699,5 +2699,5 @@ The rapid adoption of generative AI-powered search engines like ChatGPT, Perplex
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/updates/2025-09-15/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/updates/2025-09-15/  
 

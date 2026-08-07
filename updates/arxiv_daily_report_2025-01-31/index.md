@@ -6611,5 +6611,5 @@ Piezo1离子通道是一种受拉伸激活的离子通道，参与多种重要�
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/updates/arxiv_daily_report_2025-01-31/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/updates/arxiv_daily_report_2025-01-31/  
 

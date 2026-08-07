@@ -386,5 +386,5 @@ Gherkin 场景（Gherkin Scenario） 是行为驱动开发（BDD，Behavior-Driv
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: http://localhost:1313/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/  
 
