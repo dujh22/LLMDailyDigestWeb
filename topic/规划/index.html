@@ -16,7 +16,7 @@ o1
   <meta itemprop="description" content="规划 训练 o1 “神经-符号”融合规划器 “神经-符号”融合规划器性能显著超越o1：借鉴人类运动学习机制｜中国科学院磐石研发团队">
   <meta itemprop="datePublished" content="2025-08-07T00:00:00+08:00">
   <meta itemprop="dateModified" content="2025-08-07T00:00:00+08:00">
-  <meta itemprop="wordCount" content="1062">
+  <meta itemprop="wordCount" content="532">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E8%A7%84%E5%88%92/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="规划">
@@ -44,7 +44,7 @@ o1
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/topic\/%E8%A7%84%E5%88%92\/"
-    },"genre": "topic","wordcount":  1062 ,
+    },"genre": "topic","wordcount":  532 ,
     "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/topic\/%E8%A7%84%E5%88%92\/","datePublished": "2025-08-07T00:00:00+08:00","dateModified": "2025-08-07T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -189,7 +189,7 @@ o1
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2025-08-07 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-07">2025-08-07</time></span>&nbsp;<span title="更新于 2025-08-07 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-07">2025-08-07</time></span>&nbsp;<span title="1062 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2025-08-07 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-07">2025-08-07</time></span>&nbsp;<span title="更新于 2025-08-07 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-07">2025-08-07</time></span>&nbsp;<span title="532 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -200,16 +200,6 @@ o1
         <li><a href="#o1">o1</a>
           <ul>
             <li><a href="#神经-符号融合规划器"><strong>“神经-符号”融合规划器</strong></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#评测">评测</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#planbench-用于评估大语言模型规划性能的基准数据集"><strong>PlanBench</strong> <em>（用于评估大语言模型规划性能的基准数据集）</em></a></li>
-            <li><a href="#看似简单的规划问题实际上计算复杂倒计时游戏">看似简单的规划问题实际上计算复杂：倒计时游戏</a></li>
           </ul>
         </li>
       </ul>
@@ -242,15 +232,99 @@ o1
 <li>
 <p>还能只在正向规划器需要时，自动激活反馈接收，在规划覆盖率和规划效率上均显著优于 <strong>OpenAI o1</strong> 。</p>
 </li>
-<li></li>
 </ol>
-<h2 id="评测">评测</h2>
-<h4 id="planbench-用于评估大语言模型规划性能的基准数据集"><strong>PlanBench</strong> <em>（用于评估大语言模型规划性能的基准数据集）</em></h4>
-<h4 id="看似简单的规划问题实际上计算复杂倒计时游戏">看似简单的规划问题实际上计算复杂：倒计时游戏</h4>
-<p><a href="https://arxiv.org/abs/2508.02900"target="_blank" rel="external nofollow noopener noreferrer">#46<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a><a href="https://papers.cool/arxiv/2508.02900"target="_blank" rel="external nofollow noopener noreferrer">Seemingly Simple Planning Problems are Computationally Challenging: The Countdown Game<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<p><strong>普遍认为，当前基础模型和智能体无法制定长期计划是其主要局限之一。然而，现有的规划基准测试远远不足以真正衡量它们的规划能力。大多数现有基准测试要么侧重于像旅行规划这样定义模糊的任务，要么最终利用国际规划竞赛中的现有领域和问题。前者任务难以形式化和验证，后者则专门设计用来测试和挑战现有自动规划器的弱点。为了解决这些不足，我们提出了一种创建以名为 Countdown 的游戏为核心的规划基准测试的方法，该游戏要求玩家通过算术运算从一组输入数字中形成目标数字。我们讨论了该问题如何满足与理想规划能力评估基准相关的多项期望条件。 具体来说，该领域允许对每个问题实例进行直观的自然语言描述，计算上具有挑战性（NP 完全），且实例空间足够丰富，因此我们无需担心记忆问题。我们进行了广泛的理论分析，确立了计算复杂性结果，并展示了我们的实例生成程序相较于公共基准的优势。我们评估了多种现有的 LLM 辅助规划方法在使用我们程序生成的实例上的表现。结果表明，与 24 点游戏（Countdown 的一个特例）等其他领域不同，我们提出的动态基准对现有基于 LLM 的方法仍然极具挑战性。</strong></p>
-<p><strong>发布：2025-08-04 21:01:03 UTC</strong></p>
-</div></article></main><footer class="footer">
+</div><section class="page archive" style="margin-top:2rem;">
+        <h2 class="single-title"><i class="fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>相关消息（按子主题自动聚合）</h2><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>世界模型 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#peva" class="archive-item-link">PEVA：基于全身动作条件的第一视角视频预测世界模型</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/pdf/2506.21552" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://dannytran123.github.io/PEVA/" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>世界模拟 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-25/#bookworld" class="archive-item-link">让小说角色“活”起来：复旦 BookWorld 打造沉浸式小说世界模拟系统</a>
+                <span class="archive-item-date" title='2025-06-25'>06-25</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>具身规划 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#embodied-planner-r1-llm" class="archive-item-link">Embodied Planner-R1：通过强化学习释放 LLM 的具身任务规划能力</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.23127" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>分层推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#hrm-cot" class="archive-item-link">HRM：无需预训练或 CoT 数据的分层推理模型</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.21734" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>动作推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-18/#chain-of-action" class="archive-item-link">Chain-of-Action：通过轨迹自回归实现动作推理的模仿学习新范式</a>
+                <span class="archive-item-date" title='2025-07-18'>07-18</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>博弈评估 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-07/#game-arena-ai" class="archive-item-link">Game Arena：以游戏评估 AI 的复杂推理与规划能力</a>
+                <span class="archive-item-date" title='2025-08-07'>08-07</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>原型推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#protoreasoning" class="archive-item-link">ProtoReasoning：以推理原型提升大模型跨领域泛化能力</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2506.15211" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多智能体 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-14/#token-anthropic" class="archive-item-link">多智能体正在“燃烧”Token：Anthropic 公开研究系统构建经验</a>
+                <span class="archive-item-date" title='2025-06-14'>06-14</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-12/#llm-2" class="archive-item-link">从辩论到均衡：基于贝叶斯纳什均衡的信念驱动多智能体 LLM 推理</a>
+                <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08292" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/tmlr-group/ECON" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多模态搜索 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-26/#mmsearch-r1" class="archive-item-link">MMSearch-R1：激励大型多模态模型自主搜索</a>
+                <span class="archive-item-date" title='2025-06-26'>06-26</span>&nbsp;<a href="https://arxiv.org/abs/2506.20670" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励评估 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#agent-rewardbench" class="archive-item-link">Agent-RewardBench：面向现实世界多模态智能体的统一奖励建模基准</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.21252" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数据科学 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#automind" class="archive-item-link">AutoMind：用于自动化数据科学的自适应知识智能体</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10974" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体训练 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#item-25" class="archive-item-link">L0：面向通用智能体的可扩展端到端强化学习训练系统</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.23667" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/cmriat/l0" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体评估 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#ale-bench-np-2" class="archive-item-link">ALE-Bench：编程智能体跻身 NP 难题竞赛前 2%</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.09050" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/SakanaAI/ALE-Bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/datasets/SakanaAI/ALE-Bench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-05/#textatari-10-atari" class="archive-item-link">TextAtari：使用语言智能体挑战10万步Atari游戏</a>
+                <span class="archive-item-date" title='2025-06-05'>06-05</span>&nbsp;<a href="https://arxiv.org/abs/2506.04098" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体进化 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-14/#agentflow" class="archive-item-link">斯坦福 AgentFlow：智能体在交互中实时进化</a>
+                <span class="archive-item-date" title='2025-10-14'>10-14</span>&nbsp;<a href="https://arxiv.org/abs/2510.05592v1" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-06/#sea" class="archive-item-link">SEA：面向计算机使用的自我进化代理</a>
+                <span class="archive-item-date" title='2025-08-06'>08-06</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#metaagent" class="archive-item-link">MetaAgent：无需参数更新的自我进化智能体范式</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型发布 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-19/#gemini-2-5-pro" class="archive-item-link">Gemini 2.5 Pro 稳定版全面可用</a>
+                <span class="archive-item-date" title='2025-06-19'>06-19</span>&nbsp;<a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>游戏评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#lmgame-bench" class="archive-item-link">LMGame-Bench：用经典游戏评测大模型感知、记忆与推理能力</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/pdf/2505.15146" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>电脑控制 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-18/#cradle" class="archive-item-link">Cradle：赋能基础智能体实现通用计算机控制</a>
+                <span class="archive-item-date" title='2025-07-18'>07-18</span>&nbsp;<a href="https://arxiv.org/abs/2403.03186" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自主Agent <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#kimi-researcher-agent-sota" class="archive-item-link">月之暗面推出 Kimi-Researcher，自主 Agent 在“人类最后一场考试”取得 SOTA</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我进化 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#ml-master-openai-mle-bench" class="archive-item-link">上交大推出机器学习智能体 ML-Master，登顶 OpenAI MLE-bench</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/pdf/2506.16499" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/sjtu-sai-agents/ML-Master" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-05-27/#alita" class="archive-item-link">ALITA：以最少预定义和最大自我进化实现可扩展智能体推理</a>
+                <span class="archive-item-date" title='2025-05-27'>05-27</span>&nbsp;<a href="https://arxiv.org/abs/2505.20286" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/CharlesQ9/Alita" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-05-14/#deepmind-alphaevolve" class="archive-item-link">DeepMind 发布 AlphaEvolve，以进化算法广度探索解空间</a>
+                <span class="archive-item-date" title='2025-05-14'>05-14</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自进化代理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-06/#seagent" class="archive-item-link">SEAgent：从经验中自主学习的自进化计算机使用代理</a>
+                <span class="archive-item-date" title='2025-08-06'>08-06</span>&nbsp;<a href="https://huggingface.co/papers/2508.04700" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>航天控制 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-03/#mit-llama" class="archive-item-link">MIT研究：大语言模型自主操控飞船，Llama实现零失败率</a>
+                <span class="archive-item-date" title='2025-07-03'>07-03</span>&nbsp;<a href="https://arxiv.org/pdf/2505.19896" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>规划评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-04/#item-1" class="archive-item-link">看似简单的规划问题也具计算挑战：倒计时游戏基准</a>
+                <span class="archive-item-date" title='2025-08-04'>08-04</span>&nbsp;<a href="https://arxiv.org/abs/2508.02900" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视觉导航 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-26/#vln-r1" class="archive-item-link">VLN-R1：基于第一人称视觉的连续具身导航</a>
+                <span class="archive-item-date" title='2025-06-26'>06-26</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视频理解 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#deep-video-discovery" class="archive-item-link">微软推出长视频探索智能体 Deep Video Discovery</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/pdf/2505.18079" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>谜题生成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#genescape" class="archive-item-link">GenEscape：分层多智能体生成密室逃脱谜题</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.21839" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>逻辑推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-04/#item-15" class="archive-item-link">清华推出“AI数学家”：可自主调用定理并构建证明思路</a>
+                <span class="archive-item-date" title='2025-06-04'>06-04</span></article></div></section></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
               <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
