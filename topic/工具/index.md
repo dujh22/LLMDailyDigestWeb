@@ -1,7 +1,9 @@
 # 工具
 
 
-1. https://mp.weixin.qq.com/s/1ektvvMVp_9z2VGgaK1_bw
+# 工具
+
+> 历史条目已迁入对应日报，本页「相关消息」自动聚合。
 
 
 ---
