@@ -9,47 +9,32 @@
 <meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
 <meta name="description" content="LogicEvolve
 
-研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑/多步推理上持续自我改进。
-公开相关资源
-代码 / 框架
-
-Logic-LLM — 用符号化求解器增强 LLM 逻辑推理
-mem-kk-logic — LLM 逻辑推理中的记忆研究（本站已 fork）
-SE-Agent — LLM 代码智能体自进化框架
-Reasoning-Self-Evolution-Survey — 配套复杂推理自进化综述的资源仓库
-self-improvement-llm (Zesearch) — 系统级自我改进语言模型技术整理
-Awesome-Agentic-Reasoning — Agent 推理论文（含自我进化专题）
-Awesome-LLM-Reasoning-with-NeSy (LAMDA) — 神经符号学习提升 LLM 推理合集
-LogicBench — 25 种推理模式的逻辑推理基准数据集
-Neuro-Symbolic Large Models — 符号引导 LLM 推理资源页
-
-论文" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑 / 多步推理上持续自我改进。
+研究范畴
+大型语言模型的逻辑推理能力自我进化，关注让模型在形式逻辑、多步 / 组合推理上持续自我改进。本方向涵盖：神经符号（neuro-symbolic）推理、逻辑推理基准、自我验证 / 自我校正，以及 System 1 → System 2 的能力跃迁。社区关注的核心问题包括：推理过程的逻辑忠实度（faithfulness）与可验证性、组合泛化与分布外泛化及推理鲁棒性、符号求解器 / 验证器如何与神经网络互补，以及自我进化是否会放大逻辑错误（幻觉沿推理链传播）。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="LogicEvolve">
-  <meta itemprop="description" content="LogicEvolve 研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑/多步推理上持续自我改进。
-公开相关资源 代码 / 框架
-Logic-LLM — 用符号化求解器增强 LLM 逻辑推理 mem-kk-logic — LLM 逻辑推理中的记忆研究（本站已 fork） SE-Agent — LLM 代码智能体自进化框架 Reasoning-Self-Evolution-Survey — 配套复杂推理自进化综述的资源仓库 self-improvement-llm (Zesearch) — 系统级自我改进语言模型技术整理 Awesome-Agentic-Reasoning — Agent 推理论文（含自我进化专题） Awesome-LLM-Reasoning-with-NeSy (LAMDA) — 神经符号学习提升 LLM 推理合集 LogicBench — 25 种推理模式的逻辑推理基准数据集 Neuro-Symbolic Large Models — 符号引导 LLM 推理资源页 论文">
+  <meta itemprop="description" content="LogicEvolve 研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑 / 多步推理上持续自我改进。
+研究范畴 大型语言模型的逻辑推理能力自我进化，关注让模型在形式逻辑、多步 / 组合推理上持续自我改进。本方向涵盖：神经符号（neuro-symbolic）推理、逻辑推理基准、自我验证 / 自我校正，以及 System 1 → System 2 的能力跃迁。社区关注的核心问题包括：推理过程的逻辑忠实度（faithfulness）与可验证性、组合泛化与分布外泛化及推理鲁棒性、符号求解器 / 验证器如何与神经网络互补，以及自我进化是否会放大逻辑错误（幻觉沿推理链传播）。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-08-07T19:02:55+08:00">
-  <meta itemprop="wordCount" content="576">
+  <meta itemprop="dateModified" content="2026-08-12T15:31:43+08:00">
+  <meta itemprop="wordCount" content="877">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/logicevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="LogicEvolve">
-  <meta property="og:description" content="LogicEvolve 研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑/多步推理上持续自我改进。
-公开相关资源 代码 / 框架
-Logic-LLM — 用符号化求解器增强 LLM 逻辑推理 mem-kk-logic — LLM 逻辑推理中的记忆研究（本站已 fork） SE-Agent — LLM 代码智能体自进化框架 Reasoning-Self-Evolution-Survey — 配套复杂推理自进化综述的资源仓库 self-improvement-llm (Zesearch) — 系统级自我改进语言模型技术整理 Awesome-Agentic-Reasoning — Agent 推理论文（含自我进化专题） Awesome-LLM-Reasoning-with-NeSy (LAMDA) — 神经符号学习提升 LLM 推理合集 LogicBench — 25 种推理模式的逻辑推理基准数据集 Neuro-Symbolic Large Models — 符号引导 LLM 推理资源页 论文">
+  <meta property="og:description" content="LogicEvolve 研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑 / 多步推理上持续自我改进。
+研究范畴 大型语言模型的逻辑推理能力自我进化，关注让模型在形式逻辑、多步 / 组合推理上持续自我改进。本方向涵盖：神经符号（neuro-symbolic）推理、逻辑推理基准、自我验证 / 自我校正，以及 System 1 → System 2 的能力跃迁。社区关注的核心问题包括：推理过程的逻辑忠实度（faithfulness）与可验证性、组合泛化与分布外泛化及推理鲁棒性、符号求解器 / 验证器如何与神经网络互补，以及自我进化是否会放大逻辑错误（幻觉沿推理链传播）。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-08-07T19:02:55+08:00">
+    <meta property="article:modified_time" content="2026-08-12T15:31:43+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="LogicEvolve">
-  <meta name="twitter:description" content="LogicEvolve 研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑/多步推理上持续自我改进。
-公开相关资源 代码 / 框架
-Logic-LLM — 用符号化求解器增强 LLM 逻辑推理 mem-kk-logic — LLM 逻辑推理中的记忆研究（本站已 fork） SE-Agent — LLM 代码智能体自进化框架 Reasoning-Self-Evolution-Survey — 配套复杂推理自进化综述的资源仓库 self-improvement-llm (Zesearch) — 系统级自我改进语言模型技术整理 Awesome-Agentic-Reasoning — Agent 推理论文（含自我进化专题） Awesome-LLM-Reasoning-with-NeSy (LAMDA) — 神经符号学习提升 LLM 推理合集 LogicBench — 25 种推理模式的逻辑推理基准数据集 Neuro-Symbolic Large Models — 符号引导 LLM 推理资源页 论文">
+  <meta name="twitter:description" content="LogicEvolve 研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑 / 多步推理上持续自我改进。
+研究范畴 大型语言模型的逻辑推理能力自我进化，关注让模型在形式逻辑、多步 / 组合推理上持续自我改进。本方向涵盖：神经符号（neuro-symbolic）推理、逻辑推理基准、自我验证 / 自我校正，以及 System 1 → System 2 的能力跃迁。社区关注的核心问题包括：推理过程的逻辑忠实度（faithfulness）与可验证性、组合泛化与分布外泛化及推理鲁棒性、符号求解器 / 验证器如何与神经网络互补，以及自我进化是否会放大逻辑错误（幻觉沿推理链传播）。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/research/logicevolve/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/research/swarmevolve/" /><link rel="next" href="https://dujh22.github.io/LLMDailyDigestWeb/research/harnessevolve/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -62,8 +47,8 @@ Logic-LLM — 用符号化求解器增强 LLM 逻辑推理 mem-kk-logic — LLM 
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/logicevolve\/"
-    },"genre": "research","wordcount":  576 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/logicevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-08-07T19:02:55+08:00","publisher": {
+    },"genre": "research","wordcount":  877 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/logicevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-08-12T15:31:43+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -238,13 +223,30 @@ Logic-LLM — 用符号化求解器增强 LLM 逻辑推理 mem-kk-logic — LLM 
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#公开相关资源">公开相关资源</a></li>
+    <li><a href="#研究范畴">研究范畴</a></li>
+    <li><a href="#研究挑战">研究挑战</a></li>
+    <li><a href="#自研项目">自研项目</a></li>
+    <li><a href="#相关工作">相关工作</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h1 id="logicevolve">LogicEvolve</h1>
 <blockquote>
-<p>研究方向：大型语言模型的<strong>逻辑推理能力自我进化</strong>——让模型在逻辑/多步推理上持续自我改进。</p></blockquote>
-<h2 id="公开相关资源">公开相关资源</h2>
+<p>研究方向：大型语言模型的<strong>逻辑推理能力自我进化</strong>——让模型在逻辑 / 多步推理上持续自我改进。</p></blockquote>
+<h2 id="研究范畴">研究范畴</h2>
+<p>大型语言模型的<strong>逻辑推理能力自我进化</strong>，关注让模型在形式逻辑、多步 / 组合推理上持续自我改进。本方向涵盖：神经符号（neuro-symbolic）推理、逻辑推理基准、自我验证 / 自我校正，以及 System 1 → System 2 的能力跃迁。社区关注的核心问题包括：推理过程的逻辑忠实度（faithfulness）与可验证性、组合泛化与分布外泛化及推理鲁棒性、符号求解器 / 验证器如何与神经网络互补，以及自我进化是否会放大逻辑错误（幻觉沿推理链传播）。</p>
+<h2 id="研究挑战">研究挑战</h2>
+<ul>
+<li>逻辑正确性的自动验证困难、ground truth 成本高。</li>
+<li>基准污染与&quot;模式匹配&quot;伪推理。</li>
+<li>符号化方法的可扩展性与工程复杂度。</li>
+<li>评测有效性：区分真实推理与记忆。</li>
+</ul>
+<h2 id="自研项目">自研项目</h2>
+<ul>
+<li><a href="https://github.com/dujh22/CLUB-benchmark"target="_blank" rel="external nofollow noopener noreferrer">CLUB-benchmark<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://github.com/dujh22/EvolveLLM"target="_blank" rel="external nofollow noopener noreferrer">EvolveLLM<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+</ul>
+<h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
 <ul>
 <li><a href="https://github.com/teacherpeterpan/Logic-LLM"target="_blank" rel="external nofollow noopener noreferrer">Logic-LLM<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 用符号化求解器增强 LLM 逻辑推理</li>
