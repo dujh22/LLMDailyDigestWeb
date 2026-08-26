@@ -1,7 +1,7 @@
-# 代理评测
+# 智能体评测
 
 
-# 代理评测
+# 智能体评测
 
 > 本主题由提交工具自动创建，可在此补充洞察与资料。
 
@@ -9,5 +9,5 @@
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E4%BB%A3%E7%90%86%E8%AF%84%E6%B5%8B/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E6%B5%8B/  
 
