@@ -5,30 +5,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>无需训练的循环 Transformer｜Training-Free Looped Transformers - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+    <title>无需训练的循环 Transformer - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
 <meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
-<meta name="description" content="
+<meta name="description" content="Training-Free Looped Transformers
+
 一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
-  <meta itemprop="name" content="无需训练的循环 Transformer｜Training-Free Looped Transformers">
-  <meta itemprop="description" content="一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
+  <meta itemprop="name" content="无需训练的循环 Transformer">
+  <meta itemprop="description" content="Training-Free Looped Transformers 一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
   <meta itemprop="datePublished" content="2026-08-26T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-08-26T10:49:10+08:00">
-  <meta itemprop="wordCount" content="4827">
+  <meta itemprop="dateModified" content="2026-08-26T10:56:16+08:00">
+  <meta itemprop="wordCount" content="4855">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/papers/training-free-looped-transformers/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
-  <meta property="og:title" content="无需训练的循环 Transformer｜Training-Free Looped Transformers">
-  <meta property="og:description" content="一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
+  <meta property="og:title" content="无需训练的循环 Transformer">
+  <meta property="og:description" content="Training-Free Looped Transformers 一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="papers">
     <meta property="article:published_time" content="2026-08-26T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-08-26T10:49:10+08:00">
+    <meta property="article:modified_time" content="2026-08-26T10:56:16+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
-  <meta name="twitter:title" content="无需训练的循环 Transformer｜Training-Free Looped Transformers">
-  <meta name="twitter:description" content="一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
+  <meta name="twitter:title" content="无需训练的循环 Transformer">
+  <meta name="twitter:description" content="Training-Free Looped Transformers 一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/papers/training-free-looped-transformers/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -36,13 +37,13 @@
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "无需训练的循环 Transformer｜Training-Free Looped Transformers",
+    "headline": "无需训练的循环 Transformer",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/training-free-looped-transformers\/"
-    },"genre": "papers","wordcount":  4827 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/training-free-looped-transformers\/","datePublished": "2026-08-26T00:00:00+08:00","dateModified": "2026-08-26T10:49:10+08:00","publisher": {
+    },"genre": "papers","wordcount":  4855 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/training-free-looped-transformers\/","datePublished": "2026-08-26T00:00:00+08:00","dateModified": "2026-08-26T10:56:16+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -199,15 +200,16 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/papers/" title="论文">论文</a></li><li class="breadcrumb-item active" aria-current="page">无需训练的循环 Transformer｜Training-Free Looped Transformers</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/papers/" title="论文">论文</a></li><li class="breadcrumb-item active" aria-current="page">无需训练的循环 Transformer</li>
     </ol>
   </nav><main class="container"><article class="page single special">
-    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">无需训练的循环 Transformer｜Training-Free Looped Transformers</h1></div><div
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">无需训练的循环 Transformer</h1></div><div
       class="content"
       id="content"
       
       
-    ><blockquote>
+    ><h1 id="training-free-looped-transformers">Training-Free Looped Transformers</h1>
+<blockquote>
 <p><strong>一句话速读</strong>：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro <strong>+2.64 pp</strong>，87% 测试单元格非负）。</p></blockquote>
 <h2 id="论文信息">论文信息</h2>
 <ul>
@@ -216,7 +218,7 @@
 <li><strong>方向标签</strong>：免训练 ‧ 循环架构 ‧ 推理时计算 ‧ 深度循环（looping） ‧ ODE 数值视角</li>
 </ul>
 <h2 id="q1这篇论文试图解决什么问题">Q1：这篇论文试图解决什么问题？</h2>
-<p>核心问题：** 如何在不进行任何额外训练、微调、持续训练或架构修改的情况下，将循环（recurrence/looping）机制应用于现成的（frozen）预训练 Transformer，以提升推理性能。** 具体针对四个挑战：</p>
+<p>核心问题：<strong>如何在不进行任何额外训练、微调、持续训练或架构修改的情况下，将循环（recurrence/looping）机制应用于现成的（frozen）预训练 Transformer，以提升推理性能</strong>。具体针对四个挑战：</p>
 <ol>
 <li><strong>训练时循环与现成模型的不匹配</strong>。传统循环 Transformer（Universal Transformers、Deep Equilibrium Models 等）需要在训练阶段就把循环结构嵌入架构和权重；而绝大多数公开发布的模型（Qwen3、Llama-3.2、DeepSeek 等）按标准多阶段流水线（持续预训练 → SFT → RLHF/DPO）训练发布，并未考虑循环结构，现成 checkpoint 无法直接套用这些方法。</li>
 <li><strong>朴素循环导致性能退化</strong>。直接在推理时对冻结模型块朴素重复应用（naive reapplication）通常显著掉点：预训练模型的后循环层（post-loop layers）被训练为接收特定时间步（t=1）的隐藏状态，朴素循环会把状态推进到 t=K，造成分布偏移。</li>
@@ -227,19 +229,23 @@
 <p><strong>CoT 类推理时计算</strong>：本文方法不修改输出序列长度，而是在<strong>单次前向传播内</strong>通过循环中间层增加每 token 的计算量。</p>
 <p><strong>数值分析方法</strong>：</p>
 <ul>
-<li>残差块作为 ODE 前向欧拉步：将预归一化 Transformer 层视为残差 ODE ẋ = F_g(x) 的离散化，步长 h=1。</li>
+<li>残差块作为 ODE 前向欧拉步：将预归一化 Transformer 层视为残差 ODE $\dot{x} = F_g(x)$ 的离散化，步长 $h=1$。</li>
 <li>固定点加速算法：Anderson Acceleration、Heavy-ball、Aitken Δ² 外推；以及高阶 Runge-Kutta 求解器（RK4、Heun、中点法）。</li>
 <li><strong>关键发现</strong>：这些经典固定点加速方法在循环 Transformer 块上并不稳健，因为该块并非压缩映射（contractive map）；相比之下，简单的阻尼子步或 K 阶段 Runge-Kutta 更有效。</li>
 </ul>
 <p><strong>训练无关的深度操作</strong>（ShortGPT 等层跳过/删除/交换/重复研究显示中间层有冗余和鲁棒性）：本文是<strong>首个</strong>将中间层循环与层模式迭代（针对 MoE 路由稳定性）结合，并在现代多架构 checkpoint（密集、MoE、MLA）上验证的训练无关方法。</p>
 <h2 id="q3论文如何解决这个问题">Q3：论文如何解决这个问题？</h2>
 <h3 id="1-将-transformer-块重新解释为-ode-积分步">1. 将 Transformer 块重新解释为 ODE 积分步</h3>
-<p>对循环窗口算子 g = L_b ∘ ⋯ ∘ L_a，定义残差场 F_g(x) := g(x) − x，对应 ODE ẋ = F_g(x)。单次前向传播 g(x) = x + F_g(x) 等价于步长 h=1 的前向欧拉步。</p>
-<p>核心问题识别：朴素循环执行 K 次完整步长（h=1）迭代，相当于积分到时间 t=K，但后循环层只在 t=1 附近训练过——这是分布外问题。</p>
-<p><strong>正确视角</strong>：循环不应是推进到 t=K，而是对<strong>同一积分终点 x(t=1)</strong> 的更精确近似——把一个大步拆成 K 个步长 h=1/K 的阻尼子步：</p>
-<p>$$
-x_{k+1} = \left(1-\tfrac{1}{K}\right)x_k + \tfrac{1}{K},g(x_k)
-$$</p>
+<p>对循环窗口算子 $g = L_b \circ \cdots \circ L_a$，定义残差场 $F_g(x) := g(x) - x$，对应 ODE $\dot{x} = F_g(x)$。单次前向传播 $g(x) = x + F_g(x)$ 等价于步长 $h=1$ 的前向欧拉步。</p>
+<p>核心问题识别：朴素循环执行 $K$ 次完整步长（$h=1$）迭代，相当于积分到时间 $t=K$，但后循环层只在 $t=1$ 附近训练过——这是分布外问题。</p>
+<p><strong>正确视角</strong>：循环不应是推进到 $t=K$，而是对<strong>同一积分终点</strong> $x(t=1)$ 的更精确近似——把一个大步拆成 $K$ 个步长 $h=1/K$ 的阻尼子步：</p>
+<div class="fi-row">
+
+$$
+x_{k+1} = \left(1-\tfrac{1}{K}\right)x_k + \tfrac{1}{K}\,g(x_k)
+$$
+
+</div>
 <h3 id="2-迭代模式块模式-vs-层模式">2. 迭代模式：块模式 vs 层模式</h3>
 <ul>
 <li><strong>块模式（block-mode）</strong>：整块层循环 K 次后再进入后续层；适合密集模型。</li>
@@ -351,11 +357,11 @@ $$</p>
 </ul>
 <h2 id="q5有什么可以进一步探索的点">Q5：有什么可以进一步探索的点？</h2>
 <ol>
-<li><strong>自适应与动态循环机制</strong>：基于隐藏状态收敛性（‖x_{k+1}−x_k‖ &lt; ε）或置信度阈值的动态停止准则替代固定 K；按输入复杂度自适应调整循环窗口；分层循环策略（不同层不同 K，非均匀时间离散化）。</li>
-<li><strong>训练与推理的混合范式</strong>：仅微调循环策略中的少量参数（β 插值权重、步长 α），主体保持冻结；循环感知蒸馏；持续预训练阶段渐进引入循环。</li>
+<li><strong>自适应与动态循环机制</strong>：基于隐藏状态收敛性（$\lVert x_{k+1}-x_k \rVert &lt; \varepsilon$）或置信度阈值的动态停止准则替代固定 $K$；按输入复杂度自适应调整循环窗口；分层循环策略（不同层不同 $K$，非均匀时间离散化）。</li>
+<li><strong>训练与推理的混合范式</strong>：仅微调循环策略中的少量参数（$\beta$ 插值权重、步长 $\alpha$），主体保持冻结；循环感知蒸馏；持续预训练阶段渐进引入循环。</li>
 <li><strong>非解码器架构扩展</strong>：编码器-解码器（T5/BART）；状态空间模型（Mamba/RetNet——线性注意力是否支持类似 ODE 解释）；多模态架构（CLIP/LLaVA 的跨模态对齐层循环）。</li>
 <li><strong>长上下文与记忆机制</strong>：循环作为上下文压缩（将历史信息压缩进固定大小循环状态）；长度外推；循环迭代替代部分历史 KV 缓存的内存-计算新权衡。</li>
-<li><strong>理论分析与可解释性</strong>：刻画 F_g(x) 的李普希茨性质与曲率，解释固定点加速为何失效；用 tuned lens / 因果中介分析追踪循环中信息流动的子空间；探索 K 增大时&quot;精炼 → 幻觉&quot;的相变点。</li>
+<li><strong>理论分析与可解释性</strong>：刻画 $F_g(x)$ 的李普希茨性质与曲率，解释固定点加速为何失效；用 tuned lens / 因果中介分析追踪循环中信息流动的子空间；探索 $K$ 增大时「精炼 → 幻觉」的相变点。</li>
 <li><strong>失败案例的深入理解</strong>：次 1B 模型失效机制（层冗余不足？表示维度限制？）；&ldquo;循环适用性&quot;的元特征（哪些任务/学科受益）；蒸馏小模型 vs 原生预训练模型的循环敏感性差异。</li>
 <li><strong>硬件与系统优化</strong>：speculative execution / 并行化多迭代步降低墙钟时间；轻量循环近似（小网络预测循环终点）；利用迭代确定性模式的 GPU 能效优化。</li>
 <li><strong>与其他推理方法协同</strong>：循环作为 CoT 的&quot;内循环&quot;形成层次化推理；循环迭代中集成工具调用；多路径循环 + 自一致性投票。</li>
@@ -363,7 +369,7 @@ $$</p>
 <blockquote>
 <p>其中<strong>自适应循环机制</strong>与<strong>跨架构扩展</strong>（特别是状态空间模型）可能具有最高的即时研究价值，理论刻画则有助于建立更坚实的数值分析基础。</p></blockquote>
 <h2 id="q6总结">Q6：总结</h2>
-<p><strong>方法</strong>：Training-Free Looped Transformers 允许直接对冻结的现成预训练模型在推理时引入循环，无需微调、持续训练或架构修改。核心洞察是数值分析视角——预归一化 Transformer 块本质上是残差 ODE ẋ = F_g(x) 的前向欧拉步（h=1），因此循环不应推进到 t=K（朴素循环因此分布外崩溃），而应是对同一终点 x(t=1) 的更精确近似：阻尼子步 + 层模式稳定 MoE 路由 + K 阶段 Runge-Kutta + 深度分数规则选窗 + KV 快照/恢复。</p>
+<p><strong>方法</strong>：Training-Free Looped Transformers 允许直接对冻结的现成预训练模型在推理时引入循环，无需微调、持续训练或架构修改。核心洞察是数值分析视角——预归一化 Transformer 块本质上是残差 ODE $\dot{x} = F_g(x)$ 的前向欧拉步（$h=1$），因此循环不应推进到 $t=K$（朴素循环因此分布外崩溃），而应是对同一终点 $x(t=1)$ 的更精确近似：阻尼子步 + 层模式稳定 MoE 路由 + $K$ 阶段 Runge-Kutta + 深度分数规则选窗 + KV 快照/恢复。</p>
 <p><strong>结果</strong>：7 个模型家族（密集/MoE/MLA，0.6B–30B）、45 个测试单元格，知识密集型多项选择任务提升最显著；87% 单元格非负，且显著优于朴素循环（K=4 时困惑度爆炸至 1054）。</p>
 <p><strong>四大贡献</strong>：</p>
 <ol>
