@@ -7,29 +7,28 @@
     <meta name="robots" content="noodp" />
     <title>无需训练的循环 Transformer｜Training-Free Looped Transformers - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
 <meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
-<meta name="description" content="Training-Free Looped Transformers（无需训练的循环 Transformer）
-
+<meta name="description" content="
 一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="无需训练的循环 Transformer｜Training-Free Looped Transformers">
-  <meta itemprop="description" content="Training-Free Looped Transformers（无需训练的循环 Transformer） 一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
+  <meta itemprop="description" content="一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
   <meta itemprop="datePublished" content="2026-08-26T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-08-26T10:48:25+08:00">
-  <meta itemprop="wordCount" content="4861">
+  <meta itemprop="dateModified" content="2026-08-26T10:49:10+08:00">
+  <meta itemprop="wordCount" content="4827">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/papers/training-free-looped-transformers/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="无需训练的循环 Transformer｜Training-Free Looped Transformers">
-  <meta property="og:description" content="Training-Free Looped Transformers（无需训练的循环 Transformer） 一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
+  <meta property="og:description" content="一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="papers">
     <meta property="article:published_time" content="2026-08-26T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-08-26T10:48:25+08:00">
+    <meta property="article:modified_time" content="2026-08-26T10:49:10+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="无需训练的循环 Transformer｜Training-Free Looped Transformers">
-  <meta name="twitter:description" content="Training-Free Looped Transformers（无需训练的循环 Transformer） 一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
+  <meta name="twitter:description" content="一句话速读：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro &#43;2.64 pp，87% 测试单元格非负）。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/papers/training-free-looped-transformers/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -42,8 +41,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/training-free-looped-transformers\/"
-    },"genre": "papers","wordcount":  4861 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/training-free-looped-transformers\/","datePublished": "2026-08-26T00:00:00+08:00","dateModified": "2026-08-26T10:48:25+08:00","publisher": {
+    },"genre": "papers","wordcount":  4827 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/training-free-looped-transformers\/","datePublished": "2026-08-26T00:00:00+08:00","dateModified": "2026-08-26T10:49:10+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -208,8 +207,7 @@
       id="content"
       
       
-    ><h1 id="training-free-looped-transformers无需训练的循环-transformer">Training-Free Looped Transformers（无需训练的循环 Transformer）</h1>
-<blockquote>
+    ><blockquote>
 <p><strong>一句话速读</strong>：用一个轻量推理时 wrapper，把冻结 checkpoint 中连续的中间层块循环执行——不做任何微调、继续训练或架构改动，即可让现成大模型普遍涨点（Qwen3-4B MMLU-Pro <strong>+2.64 pp</strong>，87% 测试单元格非负）。</p></blockquote>
 <h2 id="论文信息">论文信息</h2>
 <ul>
@@ -218,7 +216,7 @@
 <li><strong>方向标签</strong>：免训练 ‧ 循环架构 ‧ 推理时计算 ‧ 深度循环（looping） ‧ ODE 数值视角</li>
 </ul>
 <h2 id="q1这篇论文试图解决什么问题">Q1：这篇论文试图解决什么问题？</h2>
-<p>核心问题：**如何在不进行任何额外训练、微调、持续训练或架构修改的情况下，将循环（recurrence/looping）机制应用于现成的（frozen）预训练 Transformer，以提升推理性能。**具体针对四个挑战：</p>
+<p>核心问题：** 如何在不进行任何额外训练、微调、持续训练或架构修改的情况下，将循环（recurrence/looping）机制应用于现成的（frozen）预训练 Transformer，以提升推理性能。** 具体针对四个挑战：</p>
 <ol>
 <li><strong>训练时循环与现成模型的不匹配</strong>。传统循环 Transformer（Universal Transformers、Deep Equilibrium Models 等）需要在训练阶段就把循环结构嵌入架构和权重；而绝大多数公开发布的模型（Qwen3、Llama-3.2、DeepSeek 等）按标准多阶段流水线（持续预训练 → SFT → RLHF/DPO）训练发布，并未考虑循环结构，现成 checkpoint 无法直接套用这些方法。</li>
 <li><strong>朴素循环导致性能退化</strong>。直接在推理时对冻结模型块朴素重复应用（naive reapplication）通常显著掉点：预训练模型的后循环层（post-loop layers）被训练为接收特定时间步（t=1）的隐藏状态，朴素循环会把状态推进到 t=K，造成分布偏移。</li>
