@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>MemoryEvolve - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="MemoryEvolve
+
+研究方向：记忆自进化——让智能体自主构建、组织、巩固并持续演化长期记忆。
+研究范畴
+记忆自进化（memory self-evolution）以&quot;记忆&quot;为核心驱动，让模型 / 智能体在交互与任务执行中自主完成记忆的写入、检索、压缩、巩固、遗忘与重组，从而突破上下文窗口限制、支撑长周期任务与持续学习。本方向涵盖：智能体长期记忆架构（分层记忆 / 记忆操作系统）、情景记忆与语义记忆的组织与索引（含时序知识图谱）、记忆巩固与反思（reflection / consolidation）、参数化记忆与非参数化记忆的协同、记忆驱动的经验复用与技能沉淀。社区关注的核心问题包括：记忆的写入 / 淘汰策略如何自动学习而非人工规则、长期记忆如何抗噪声与防止错误记忆累积、记忆检索与推理如何深度耦合、多智能体 / 多会话间记忆如何共享与隔离，以及如何评测记忆系统在长周期任务上的真实收益。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="MemoryEvolve">
+  <meta itemprop="description" content="MemoryEvolve 研究方向：记忆自进化——让智能体自主构建、组织、巩固并持续演化长期记忆。
+研究范畴 记忆自进化（memory self-evolution）以&#34;记忆&#34;为核心驱动，让模型 / 智能体在交互与任务执行中自主完成记忆的写入、检索、压缩、巩固、遗忘与重组，从而突破上下文窗口限制、支撑长周期任务与持续学习。本方向涵盖：智能体长期记忆架构（分层记忆 / 记忆操作系统）、情景记忆与语义记忆的组织与索引（含时序知识图谱）、记忆巩固与反思（reflection / consolidation）、参数化记忆与非参数化记忆的协同、记忆驱动的经验复用与技能沉淀。社区关注的核心问题包括：记忆的写入 / 淘汰策略如何自动学习而非人工规则、长期记忆如何抗噪声与防止错误记忆累积、记忆检索与推理如何深度耦合、多智能体 / 多会话间记忆如何共享与隔离，以及如何评测记忆系统在长周期任务上的真实收益。">
+  <meta itemprop="datePublished" content="2026-08-30T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-08-30T22:14:39+08:00">
+  <meta itemprop="wordCount" content="845">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/memoryevolve/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="MemoryEvolve">
+  <meta property="og:description" content="MemoryEvolve 研究方向：记忆自进化——让智能体自主构建、组织、巩固并持续演化长期记忆。
+研究范畴 记忆自进化（memory self-evolution）以&#34;记忆&#34;为核心驱动，让模型 / 智能体在交互与任务执行中自主完成记忆的写入、检索、压缩、巩固、遗忘与重组，从而突破上下文窗口限制、支撑长周期任务与持续学习。本方向涵盖：智能体长期记忆架构（分层记忆 / 记忆操作系统）、情景记忆与语义记忆的组织与索引（含时序知识图谱）、记忆巩固与反思（reflection / consolidation）、参数化记忆与非参数化记忆的协同、记忆驱动的经验复用与技能沉淀。社区关注的核心问题包括：记忆的写入 / 淘汰策略如何自动学习而非人工规则、长期记忆如何抗噪声与防止错误记忆累积、记忆检索与推理如何深度耦合、多智能体 / 多会话间记忆如何共享与隔离，以及如何评测记忆系统在长周期任务上的真实收益。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="research">
+    <meta property="article:published_time" content="2026-08-30T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-08-30T22:14:39+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="MemoryEvolve">
+  <meta name="twitter:description" content="MemoryEvolve 研究方向：记忆自进化——让智能体自主构建、组织、巩固并持续演化长期记忆。
+研究范畴 记忆自进化（memory self-evolution）以&#34;记忆&#34;为核心驱动，让模型 / 智能体在交互与任务执行中自主完成记忆的写入、检索、压缩、巩固、遗忘与重组，从而突破上下文窗口限制、支撑长周期任务与持续学习。本方向涵盖：智能体长期记忆架构（分层记忆 / 记忆操作系统）、情景记忆与语义记忆的组织与索引（含时序知识图谱）、记忆巩固与反思（reflection / consolidation）、参数化记忆与非参数化记忆的协同、记忆驱动的经验复用与技能沉淀。社区关注的核心问题包括：记忆的写入 / 淘汰策略如何自动学习而非人工规则、长期记忆如何抗噪声与防止错误记忆累积、记忆检索与推理如何深度耦合、多智能体 / 多会话间记忆如何共享与隔离，以及如何评测记忆系统在长周期任务上的真实收益。">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/research/memoryevolve/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/research/researchevolve/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MemoryEvolve",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/memoryevolve\/"
+    },"genre": "research","wordcount":  845 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/memoryevolve\/","datePublished": "2026-08-30T00:00:00+08:00","dateModified": "2026-08-30T22:14:39+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/research/" title="Researches">Researches</a></li><li class="breadcrumb-item active" aria-current="page">MemoryEvolve</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom"></aside>
+
+  <article class="page single">
+    <div class="header">
+      <h1 class="single-title animate__animated animate__flipInX"><span>MemoryEvolve</span></h1></div><div class="post-meta">
+      <div class="post-meta-line"><span title="研究提出者"><i class="fa-solid fa-user fa-fw me-1" aria-hidden="true"></i>提出者：杜晋华
+          </span>&nbsp;<span title="最早研究时间"><i class="fa-regular fa-flag fa-fw me-1" aria-hidden="true"></i>最早研究：2026-08-30
+          </span></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#研究范畴">研究范畴</a></li>
+    <li><a href="#研究挑战">研究挑战</a></li>
+    <li><a href="#自研项目">自研项目</a></li>
+    <li><a href="#相关工作">相关工作</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="memoryevolve">MemoryEvolve</h1>
+<blockquote>
+<p>研究方向：<strong>记忆自进化</strong>——让智能体自主构建、组织、巩固并持续演化长期记忆。</p></blockquote>
+<h2 id="研究范畴">研究范畴</h2>
+<p>记忆自进化（memory self-evolution）以&quot;记忆&quot;为核心驱动，让模型 / 智能体在交互与任务执行中自主完成记忆的写入、检索、压缩、巩固、遗忘与重组，从而突破上下文窗口限制、支撑长周期任务与持续学习。本方向涵盖：智能体长期记忆架构（分层记忆 / 记忆操作系统）、情景记忆与语义记忆的组织与索引（含时序知识图谱）、记忆巩固与反思（reflection / consolidation）、参数化记忆与非参数化记忆的协同、记忆驱动的经验复用与技能沉淀。社区关注的核心问题包括：记忆的写入 / 淘汰策略如何自动学习而非人工规则、长期记忆如何抗噪声与防止错误记忆累积、记忆检索与推理如何深度耦合、多智能体 / 多会话间记忆如何共享与隔离，以及如何评测记忆系统在长周期任务上的真实收益。</p>
+<h2 id="研究挑战">研究挑战</h2>
+<ul>
+<li>记忆质量随时间漂移：错误、过时与冲突记忆的检测与修正。</li>
+<li>写入 / 遗忘策略的自动化学习，避免记忆膨胀与检索退化。</li>
+<li>记忆与推理的耦合：何时检索、检索什么、如何融合进当前决策。</li>
+<li>长周期评测困难：缺少可复现、可量化记忆收益的基准。</li>
+<li>隐私与安全：跨会话记忆的泄漏、污染与投毒风险。</li>
+</ul>
+<h2 id="自研项目">自研项目</h2>
+<ul>
+<li><a href="https://github.com/dujh22/EvolveLLM"target="_blank" rel="external nofollow noopener noreferrer">EvolveLLM<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 博士课题《Toward True ASI》承载仓库，含自进化机制综述与方法论沉淀。</li>
+</ul>
+<h2 id="相关工作">相关工作</h2>
+<p><strong>代码 / 框架</strong></p>
+<ul>
+<li><a href="https://github.com/letta-ai/letta"target="_blank" rel="external nofollow noopener noreferrer">Letta (MemGPT)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 将操作系统分页思想引入 LLM 记忆管理的智能体记忆框架</li>
+<li><a href="https://github.com/mem0ai/mem0"target="_blank" rel="external nofollow noopener noreferrer">mem0<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 面向生产的智能体可扩展长期记忆层</li>
+<li><a href="https://github.com/getzep/graphiti"target="_blank" rel="external nofollow noopener noreferrer">Graphiti (Zep)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 基于时序知识图谱的智能体记忆</li>
+<li><a href="https://github.com/agiresearch/A-mem"target="_blank" rel="external nofollow noopener noreferrer">A-mem<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 受 Zettelkasten 启发的智能体自组织记忆系统</li>
+<li><a href="https://github.com/OSU-NLP-Group/HippoRAG"target="_blank" rel="external nofollow noopener noreferrer">HippoRAG<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 受海马体记忆索引理论启发的长期记忆检索框架</li>
+<li><a href="https://github.com/MemTensor/MemOS"target="_blank" rel="external nofollow noopener noreferrer">MemOS<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 把记忆作为一等资源调度的&quot;记忆操作系统&quot;</li>
+</ul>
+<p><strong>论文</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2310.08560"target="_blank" rel="external nofollow noopener noreferrer">MemGPT: Towards LLMs as Operating Systems<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 分层虚拟上下文与记忆分页管理</li>
+<li><a href="https://arxiv.org/abs/2304.03442"target="_blank" rel="external nofollow noopener noreferrer">Generative Agents: Interactive Simulacra of Human Behavior<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 记忆流 + 反思 + 检索的经典智能体记忆架构</li>
+<li><a href="https://arxiv.org/abs/2305.10250"target="_blank" rel="external nofollow noopener noreferrer">MemoryBank: Enhancing Large Language Models with Long-Term Memory<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 基于遗忘曲线的长期记忆更新机制</li>
+<li><a href="https://arxiv.org/abs/2502.12110"target="_blank" rel="external nofollow noopener noreferrer">A-MEM: Agentic Memory for LLM Agents<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 动态链接与演化的自组织智能体记忆</li>
+<li><a href="https://arxiv.org/abs/2504.19413"target="_blank" rel="external nofollow noopener noreferrer">Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 可扩展记忆抽取与更新管线</li>
+<li><a href="https://arxiv.org/abs/2404.13501"target="_blank" rel="external nofollow noopener noreferrer">A Survey on the Memory Mechanism of Large Language Model based Agents<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — LLM 智能体记忆机制综述</li>
+</ul>
+</div><section class="page archive" style="margin-top:2rem;">
+        <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>记忆演化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-26/#recuris" class="archive-item-link">Recuris：面向长程智能体脚手架的递归经验—工作记忆演化</a>
+                <span class="archive-item-date" title='2026-08-26'>08-26</span>&nbsp;<a href="https://arxiv.org/abs/2608.24876" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Gen-Verse/Recuris" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div></section></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
