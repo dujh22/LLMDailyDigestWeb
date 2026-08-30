@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>模型评估 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="模型评估
+
+本主题由提交工具自动创建，可在此补充洞察与资料。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="模型评估">
+  <meta itemprop="description" content="模型评估 本主题由提交工具自动创建，可在此补充洞察与资料。">
+  <meta itemprop="datePublished" content="2026-08-30T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-08-30T00:00:00+08:00">
+  <meta itemprop="wordCount" content="28">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="模型评估">
+  <meta property="og:description" content="模型评估 本主题由提交工具自动创建，可在此补充洞察与资料。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="topic">
+    <meta property="article:published_time" content="2026-08-30T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-08-30T00:00:00+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="模型评估">
+  <meta name="twitter:description" content="模型评估 本主题由提交工具自动创建，可在此补充洞察与资料。">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E5%B7%A5%E4%BD%9C%E6%B5%81/" /><link rel="next" href="https://dujh22.github.io/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E6%A3%80%E6%9F%A5%E7%82%B9/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "模型评估",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/topic\/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0\/"
+    },"genre": "topic","wordcount":  28 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/topic\/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0\/","datePublished": "2026-08-30T00:00:00+08:00","dateModified": "2026-08-30T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/topic/" title="Topics">Topics</a></li><li class="breadcrumb-item active" aria-current="page">模型评估</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>模型评估</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    LLM-DailyDigest</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2026-08-30 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-08-30">2026-08-30</time></span>&nbsp;<span title="更新于 2026-08-30 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-08-30">2026-08-30</time></span>&nbsp;<span title="28 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div
+      class="content"
+      id="content"
+      
+      
+    ><h1 id="模型评估">模型评估</h1>
+<blockquote>
+<p>本主题由提交工具自动创建，可在此补充洞察与资料。</p></blockquote>
+</div><section class="page archive" style="margin-top:2rem;">
+        <h2 class="single-title"><i class="fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>相关消息（按子主题自动聚合）</h2><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>一致性评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#consistencychecker" class="archive-item-link">ConsistencyChecker：基于树结构评估大模型泛化一致性</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.12376" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/ulab-uiuc/consistencychecker" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>下游任务适配 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#item-18" class="archive-item-link">为下游任务优化语言模型：训练后视角</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.20917" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>专家智能 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#aai" class="archive-item-link">AAI 推动人工专家智能新路径</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>临床评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#llm-2" class="archive-item-link">LLM作为模糊评判：微调大模型用于临床评估</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span>&nbsp;<a href="https://arxiv.org/abs/2506.11221" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/2sigmaEdTech/LLMAsAJudge" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>主动学习 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#atgen" class="archive-item-link">ATGen：面向自然语言生成的主动文本生成框架</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>主动推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-12/#item-26" class="archive-item-link">从被动推理到主动推理：大型语言模型能否在不完整信息下提出正确问题？</a>
+                <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08295" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/tmlr-group/AR-Bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/tmlr-group/AR-Bench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>事实一致性 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#assertbench" class="archive-item-link">AssertBench：评估大型语言模型自我断言能力的基准</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span>&nbsp;<a href="https://arxiv.org/abs/2506.11110" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/achowd32/assert-bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>事实核查 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#item-18" class="archive-item-link">验证核验器：揭示事实核验系统的陷阱与潜力</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#item-19" class="archive-item-link">验证验证者：揭示事实验证器的陷阱与潜力</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13342" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>交互式评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-15/#playworld" class="archive-item-link">PlayWorld：智能体玩家驱动的长程世界模型评测基准</a>
+                <span class="archive-item-date" title='2026-08-15'>08-15</span>&nbsp;<a href="https://arxiv.org/abs/2608.13552" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/kxding/PlayWorld" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/kxding/PlayWorld" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>交互控制 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-03/#os-kairos-gui" class="archive-item-link">OS-Kairos：以置信度机制避免 GUI 智能体“过度执行”</a>
+                <span class="archive-item-date" title='2025-07-03'>07-03</span>&nbsp;<a href="https://arxiv.org/abs/2503.16465" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Wuzheng02/OS-Kairos" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>人名识别评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-24/#pun-llm" class="archive-item-link">PUN：面向人物中心 LLM 评测的可信未知姓名</a>
+                <span class="archive-item-date" title='2026-08-24'>08-24</span>&nbsp;<a href="https://arxiv.org/abs/2608.21206" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>人工监督 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-75" class="archive-item-link">强化人工监督以验证 AI 推理</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>代码模型 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-05/#claude-opus-4-1-swe-bench-74-5" class="archive-item-link">Claude Opus 4.1 发布，SWE-bench 成绩提升至 74.5%</a>
+                <span class="archive-item-date" title='2025-08-05'>08-05</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-28/#44-bug" class="archive-item-link">蚂蚁开源代码模型实现 44% 自动修 Bug 解决率</a>
+                <span class="archive-item-date" title='2025-06-28'>06-28</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-17/#kimi-dev-swe-bench-verified-sota" class="archive-item-link">Kimi-Dev 开源代码模型在 SWE-bench Verified 取得开源 SOTA</a>
+                <span class="archive-item-date" title='2025-06-17'>06-17</span>&nbsp;<a href="https://github.com/MoonshotAI/Kimi-Dev" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>代码评审 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#llm-it-bash" class="archive-item-link">LLM评审：面向IT自动化的无参考Bash代码验证与改进</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span>&nbsp;<a href="https://arxiv.org/abs/2506.11237" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>代码评测 <sup>5</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-12/#naturebench-sota" class="archive-item-link">NatureBench：编程智能体能否复现论文中的 SOTA</a>
+                <span class="archive-item-date" title='2026-08-12'>08-12</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-24/#ojbench" class="archive-item-link">OJBench：面向大语言模型的竞赛级代码评测基准</a>
+                <span class="archive-item-date" title='2025-06-24'>06-24</span>&nbsp;<a href="https://arxiv.org/abs/2506.16395" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-20/#swe-bench-live-agent" class="archive-item-link">微软发布 SWE-bench-Live：Agent 全自动搭建代码环境并实时更新评测</a>
+                <span class="archive-item-date" title='2025-06-20'>06-20</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-19/#livecodebench-pro-llm" class="archive-item-link">LiveCodeBench Pro：奥赛级竞技编程基准揭示顶尖 LLM 的推理短板</a>
+                <span class="archive-item-date" title='2025-06-19'>06-19</span>&nbsp;<a href="https://arxiv.org/pdf/2506.11928" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/GavinZhengOI/LiveCodeBench-Pro" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#item-22" class="archive-item-link">人类最后的代码考试：高级大模型能否攻克最难编程竞赛？</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.12713" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Humanity-s-Last-Code-Exam/HLCE" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Humanity-s-Last-Code-Exam/HLCE" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>价值权衡 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-25/#llm" class="archive-item-link">你内心有许多狼：运用认知模型解读 LLM 中的价值权衡</a>
+                <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.20666" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>任务生成 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#cnf" class="archive-item-link">从 CNF 实例生成多样化可满足性逻辑推理问题</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-19/#agentsynth" class="archive-item-link">AgentSynth：面向通用计算机使用智能体的可扩展任务生成</a>
+                <span class="archive-item-date" title='2025-06-19'>06-19</span>&nbsp;<a href="https://arxiv.org/abs/2506.14205" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/sunblaze-ucb/AgentSynth" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/sunblaze-ucb/AgentSynth" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#taskcraft" class="archive-item-link">TaskCraft：自动生成代理式任务与执行轨迹</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10055" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>元认知 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#sage-nano" class="archive-item-link">SAGE-nano：通过逆向推理实现大模型元认知自我解释</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#item-7" class="archive-item-link">推理模型如何识别无益想法并从中恢复？</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10979" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-12/#item-1" class="archive-item-link">大型语言模型具有内在元认知，但需要良好的评估透镜</a>
+                <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08410" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>公平性评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-17/#livebench" class="archive-item-link">LiveBench：具有挑战性且无污染的大语言模型基准</a>
+                <span class="archive-item-date" title='2025-07-17'>07-17</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>关系推理评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#relarena-tabpfn-rel-rpi" class="archive-item-link">RelArena-α、TabPFN-Rel 与 RPI：开放可复现的关系学习工具栈</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span>&nbsp;<a href="https://arxiv.org/abs/2608.16319" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>具身智能评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-18/#deepinsight-ii" class="archive-item-link">DeepInsight II：从基准到真实机器人的统一评测轨迹</a>
+                <span class="archive-item-date" title='2026-08-18'>08-18</span>&nbsp;<a href="https://arxiv.org/abs/2608.16556" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>决策说服 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-03/#llm" class="archive-item-link">LLM 中理解与说服之间的细线</a>
+                <span class="archive-item-date" title='2025-07-03'>07-03</span>&nbsp;<a href="https://arxiv.org/abs/2507.01936" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>分级验证 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-20/#llm-l0-l5" class="archive-item-link">给验证器打分：LLM 推理验证自治等级 L0–L5</a>
+                <span class="archive-item-date" title='2026-08-20'>08-20</span>&nbsp;<a href="https://arxiv.org/abs/2608.19009" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>分解粒度 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-25/#vat-llm" class="archive-item-link">VAT 判定中的 LLM 智能体分解粒度控制实验</a>
+                <span class="archive-item-date" title='2026-08-25'>08-25</span>&nbsp;<a href="https://arxiv.org/abs/2608.23395" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>创意写作 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#litbench" class="archive-item-link">LitBench：可靠评估创意写作的基准与数据集</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/abs/2507.00769" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/collections/SAA-Lab/litbench-68267b5da3aafe58f9e43461" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>创造力评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-26/#ai-iei" class="archive-item-link">人类创造力的核心机制，AI 已开始掌握：IEI 分层评估框架</a>
+                <span class="archive-item-date" title='2025-06-26'>06-26</span>&nbsp;<a href="https://ppyyqq.github.io/aicc/" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>动态操控 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-17/#reflex-vla" class="archive-item-link">Reflex：面向反应关键型操作的快速预测式 VLA 模型</a>
+                <span class="archive-item-date" title='2026-08-17'>08-17</span>&nbsp;<a href="https://arxiv.org/abs/2608.14379" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>动态评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-163" class="archive-item-link">仇恨革命：静态基准没有告诉我们什么</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2506.12148" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>动机推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#motivebench" class="archive-item-link">MotiveBench：大型语言模型距离类人动机推理还有多远？</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13065" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://aka.ms/motivebench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://aka.ms/motivebench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>医学影像 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#gpt-5" class="archive-item-link">GPT-5医学影像推理与理解准确率超过人类专家</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>医疗AI评测 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#medxpertqa" class="archive-item-link">MedXpertQA：专家级医学知识与高级推理评估基准</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#vqa-rad" class="archive-item-link">VQA-RAD医学视觉问答测试集</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-15/#usmle" class="archive-item-link">USMLE：标准化医学能力评估基准</a>
+                <span class="archive-item-date" title='2025-08-15'>08-15</span>&nbsp;<a href="https://arxiv.org/abs/2508.08224" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>医疗人工智能 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-11/#baichuan-m2-32b-healthbench-gpt-oss-120b" class="archive-item-link">百川开源医疗推理模型 Baichuan-M2-32B，HealthBench 超越 GPT-OSS-120B</a>
+                <span class="archive-item-date" title='2025-08-11'>08-11</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>协同演化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-13/#item-7" class="archive-item-link">智能体系统协同演化：迈向超越人工设计的自主进化</a>
+                <span class="archive-item-date" title='2026-08-13'>08-13</span>&nbsp;<a href="https://arxiv.org/abs/2608.10299" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>博弈协作 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#item-26" class="archive-item-link">推理腐蚀：推理语言模型成为公共产品博弈中的搭便车者</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.23276" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/davidguzmanp/SanctSim" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>博弈智能体 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-09/#textatari-10" class="archive-item-link">TextAtari：语言智能体仅用 10 万帧完成游戏学习</a>
+                <span class="archive-item-date" title='2025-06-09'>06-09</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>博弈评测 <sup>4</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-07/#game-arena-ai" class="archive-item-link">Game Arena：以游戏评估 AI 的复杂推理与规划能力</a>
+                <span class="archive-item-date" title='2025-08-07'>08-07</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-07/#grok-4" class="archive-item-link">Grok 4夺得首届大模型国际象棋对抗赛冠军</a>
+                <span class="archive-item-date" title='2025-08-07'>08-07</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-05/#board-game-arena" class="archive-item-link">Board Game Arena：通过策略游戏评估大型语言模型的框架与基准</a>
+                <span class="archive-item-date" title='2025-08-05'>08-05</span>&nbsp;<a href="https://arxiv.org/abs/2508.03368" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-04/#deepseek-kimi" class="archive-item-link">谷歌首届大模型对抗赛：DeepSeek、Kimi 等模型同场博弈</a>
+                <span class="archive-item-date" title='2025-08-04'>08-04</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>反例推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-23/#icml-2025" class="archive-item-link">ICML 2025：首个反例驱动推理基准揭示大模型“刷题式假象”</a>
+                <span class="archive-item-date" title='2025-10-23'>10-23</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>叙事一致性 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-14/#ncp-bench-llm" class="archive-item-link">NCP-Bench：LLM 智能体交互叙事长程一致性评测</a>
+                <span class="archive-item-date" title='2026-08-14'>08-14</span>&nbsp;<a href="https://arxiv.org/abs/2608.08160" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>可信推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-17/#reliablemath" class="archive-item-link">ReliableMath：评估大模型数学推理可靠性的开源基准</a>
+                <span class="archive-item-date" title='2025-07-17'>07-17</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>可扩展推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#slr" class="archive-item-link">SLR：可扩展逻辑推理的自动化综合框架</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2506.15787" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>可靠性认证 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#item-45" class="archive-item-link">智能体行为契约 II：无独立性假设的组合可靠性认证</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.12895" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>可靠性训练 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#item-10" class="archive-item-link">基于可验证奖励训练接地大模型的经验总结</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2506.15522" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>可验证奖励 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-19/#item-4" class="archive-item-link">具有可验证奖励的强化学习可隐式激励基础大模型正确推理</a>
+                <span class="archive-item-date" title='2025-06-19'>06-19</span>&nbsp;<a href="https://arxiv.org/abs/2506.14245" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>响应对齐 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-24/#patterneval" class="archive-item-link">PatternEval：混合思考多模态模型的响应行为对齐</a>
+                <span class="archive-item-date" title='2026-08-24'>08-24</span>&nbsp;<a href="https://arxiv.org/abs/2608.12781" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>因果推理 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#item-24" class="archive-item-link">揭示大型语言模型中的因果推理：现实还是海市蜃楼？</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.21215" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-24/#clear-3k" class="archive-item-link">CLEAR-3K：评估语言模型的因果解释能力</a>
+                <span class="archive-item-date" title='2025-06-24'>06-24</span>&nbsp;<a href="https://arxiv.org/abs/2506.17180" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>图像评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#mmmg" class="archive-item-link">MMMG：面向文本到图像推理的大规模多学科多层级生成基准</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10963" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>图形用户界面纠错 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#gui-critic-r1-gui" class="archive-item-link">GUI-Critic-R1：为GUI智能体操作加上“紧急刹车”</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>基准优化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-21/#asr" class="archive-item-link">量化 ASR 模型的基准优化行为</a>
+                <span class="archive-item-date" title='2026-08-21'>08-21</span>&nbsp;<a href="https://arxiv.org/abs/2608.19936" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>基准分析 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#swe-bench-llm" class="archive-item-link">剖析 SWE-Bench 排行榜：基于 LLM 和智能体的软件修复系统提交者与架构分析</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/pdf/2506.17208" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>基准评测 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-23/#ai-ai" class="archive-item-link">AI 基准测试：从专业难题到大众谜题，探索 AI 推理能力</a>
+                <span class="archive-item-date" title='2025-10-23'>10-23</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-24/#swe-bench-llm" class="archive-item-link">剖析 SWE-Bench 排行榜：LLM 与智能体修复系统的提交者及架构画像</a>
+                <span class="archive-item-date" title='2025-06-24'>06-24</span>&nbsp;<a href="https://arxiv.org/abs/2506.17208" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>基础模型评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-11/#floatboat-harness-claude-opus-4-8" class="archive-item-link">Floatboat Harness五项基准超越Claude Opus 4.8</a>
+                <span class="archive-item-date" title='2026-08-11'>08-11</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>增量评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#item-41" class="archive-item-link">关系深度学习的增量评测与训练</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13023" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>复合推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#item-51" class="archive-item-link">从原子证据到逻辑组合：复合答案选项的结构化推理</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.12836" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>复杂度 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-11/#item-4" class="archive-item-link">思考的错觉：从问题复杂性理解推理模型的优势与局限</a>
+                <span class="archive-item-date" title='2025-06-11'>06-11</span>&nbsp;<a href="https://arxiv.org/abs/2506.06941" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多智能体系统 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#llm-3" class="archive-item-link">许多 LLM 比一个更实用：多智能体协作中的道德判断</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2507.00814" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-14/#token-anthropic" class="archive-item-link">多智能体正在“燃烧”Token：Anthropic 公开研究系统构建经验</a>
+                <span class="archive-item-date" title='2025-06-14'>06-14</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多样性评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#item-30" class="archive-item-link">用多样性剖面评估 AI 生成内容</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span>&nbsp;<a href="https://arxiv.org/abs/2608.17731" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多模态学习 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#glm-4-5v-sota" class="archive-item-link">GLM-4.5V：视觉多模态能力达到开源 SOTA</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多模态推理 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-05/#corgi" class="archive-item-link">CoRGI：以视觉证据验证思维链的多模态推理框架</a>
+                <span class="archive-item-date" title='2025-08-05'>08-05</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-24/#grpo-care" class="archive-item-link">GRPO-CARE：面向多模态推理的一致性感知强化学习</a>
+                <span class="archive-item-date" title='2025-06-24'>06-24</span>&nbsp;<a href="https://arxiv.org/abs/2506.16141" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多模态证明 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-17/#matp-bench" class="archive-item-link">MATP-BENCH：多模态大模型能否成为自动定理证明器？</a>
+                <span class="archive-item-date" title='2025-07-17'>07-17</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>多轮验证 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#gemini-2-5-pro-imo" class="archive-item-link">Gemini 2.5 Pro结合多轮验证框架系统拆解IMO解题方法</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励建模 <sup>4</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#skywork-reward-v2" class="archive-item-link">Skywork-Reward-V2：通过人机协同扩展高质量偏好数据管理</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/abs/2507.01352" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-28/#spct" class="archive-item-link">通才奖励建模的推理时间缩放：SPCT</a>
+                <span class="archive-item-date" title='2025-06-28'>06-28</span>&nbsp;<a href="https://arxiv.org/abs/2504.02495" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-24/#reasongrm" class="archive-item-link">ReasonGRM：借助大型推理模型增强生成奖励模型</a>
+                <span class="archive-item-date" title='2025-06-24'>06-24</span>&nbsp;<a href="https://arxiv.org/abs/2506.16712" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#reasongrm" class="archive-item-link">ReasonGRM：通过大型推理模型增强生成式奖励模型</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2506.16712" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励机制 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-53" class="archive-item-link">强化学习奖励机制现状：验证、粒度与训练策略</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励模型评测 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#agent-rewardbench" class="archive-item-link">Agent-RewardBench：面向现实世界多模态智能体的统一奖励建模基准</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.21252" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-04/#rewardbench-2" class="archive-item-link">RewardBench 2：推进奖励模型评估</a>
+                <span class="archive-item-date" title='2025-06-04'>06-04</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-02/#rewardbench-2" class="archive-item-link">RewardBench 2：高级奖励模型评估</a>
+                <span class="archive-item-date" title='2025-06-02'>06-02</span>&nbsp;<a href="https://arxiv.org/abs/2506.01937" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励黑客 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-28/#item-8" class="archive-item-link">让模型在思维链中明确解释奖励黑客行为</a>
+                <span class="archive-item-date" title='2025-06-28'>06-28</span>&nbsp;<a href="https://arxiv.org/abs/2506.22777" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>学习认知 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#item-1" class="archive-item-link">揭开语言模型的学习心智：认知框架与实证研究</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13464" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>学术搜索 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#scholarsearch-deep-research" class="archive-item-link">北大发布学术搜索评测 ScholarSearch：挑战主流 Deep Research 系统</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>安全审计 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#item-32" class="archive-item-link">金融智能体自进化审计：能力增益、安全漂移与执行接口错配</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span>&nbsp;<a href="https://arxiv.org/abs/2608.17684" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>安全评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-28/#agentauditor" class="archive-item-link">AgentAuditor：让智能体安全评估器的精确度达到人类水平</a>
+                <span class="archive-item-date" title='2025-06-28'>06-28</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>对话者意识 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#item-1" class="archive-item-link">代理对代理心智理论：测试大语言模型的对话者意识</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.22957" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/younwoochoi/InterlocutorAwarenessLLM" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>工具推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-25/#item-15" class="archive-item-link">大模型推理崩溃论战：从「思维错觉」到多重反驳</a>
+                <span class="archive-item-date" title='2025-06-25'>06-25</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>工具调用 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-28/#dice-bench" class="archive-item-link">DICE-BENCH：多轮多方对话中的大模型工具使用评估</a>
+                <span class="archive-item-date" title='2025-06-28'>06-28</span>&nbsp;<a href="https://arxiv.org/abs/2506.22853" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://snuhcc.github.io/DICE-Bench/" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://snuhcc.github.io/DICE-Bench/" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>幻觉检测 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-27/#shroom-visions-2026" class="archive-item-link">SHROOM-Visions 2026：大视觉语言模型幻觉检测共享任务</a>
+                <span class="archive-item-date" title='2026-08-27'>08-27</span>&nbsp;<a href="https://arxiv.org/abs/2608.25662" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-09-15/#harp" class="archive-item-link">HARP：通过推理子空间投影进行幻觉检测</a>
+                <span class="archive-item-date" title='2025-09-15'>09-15</span>&nbsp;<a href="https://arxiv.org/abs/2509.11536" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>幻觉评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#llm-gpt-5-o3" class="archive-item-link">苹果再发论文：精准定位 LLM 幻觉，GPT-5、o3 仍难应对</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>开发评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-05-16/#swe-dev" class="archive-item-link">SWE-Dev：评估与训练自主特性驱动软件开发系统</a>
+                <span class="archive-item-date" title='2025-05-16'>05-16</span>&nbsp;<a href="https://arxiv.org/abs/2505.16975" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/justLittleWhite/SWE-Dev" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/justLittleWhite/SWE-Dev" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>开放式推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-10/#puzzleworld" class="archive-item-link">PuzzleWorld：面向益智寻谜的多模态开放式推理基准</a>
+                <span class="archive-item-date" title='2025-06-10'>06-10</span>&nbsp;<a href="https://arxiv.org/abs/2506.06211" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/MIT-MI/PuzzleWorld" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/MIT-MI/PuzzleWorld" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>形式化证明 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#matt-bench" class="archive-item-link">MATT-BENCH：多模态大模型能否成为优秀的自动定理证明器？</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-24/#item-12" class="archive-item-link">通过一阶逻辑定理证明提升大模型数学推理能力</a>
+                <span class="archive-item-date" title='2025-06-24'>06-24</span>&nbsp;<a href="https://arxiv.org/abs/2506.17104" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#matp-bench-4" class="archive-item-link">MATP-BENCH：多模态大模型自动定理证明正确率仅约4%</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/pdf/2506.06034" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://matpbench.github.io/" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>形式化验证 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#vero" class="archive-item-link">Vero：智能体能否构建形式化验证的软件仓库</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13522" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/sunblaze-ucb/vero" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/sunblaze-ucb/vero" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#vltl-bench" class="archive-item-link">可验证自然语言到线性时间逻辑的转换：VLTL-Bench 基准与评估套件</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2507.00877" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://www.kaggle.com/datasets/dubascudes/vltl-bench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>心智理论 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-29/#somi-tom" class="archive-item-link">SoMi-ToM：评估具身社会互动中的多视角心智理论</a>
+                <span class="archive-item-date" title='2025-06-29'>06-29</span>&nbsp;<a href="https://arxiv.org/abs/2506.23046" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-26/#decrypto" class="archive-item-link">Decrypto：多智能体推理与心智理论基准测试</a>
+                <span class="archive-item-date" title='2025-06-26'>06-26</span>&nbsp;<a href="https://arxiv.org/abs/2506.20664" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>忠实性验证 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-73" class="archive-item-link">以因果验证机制检验 AI 推理忠实性</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>思维链 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-03/#bengio-cot-llm" class="archive-item-link">Bengio等质疑CoT忠实度：语言化步骤未必反映LLM真实推理</a>
+                <span class="archive-item-date" title='2025-07-03'>07-03</span>&nbsp;<a href="https://arxiv.org/abs/2505.00875" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>思维链监测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-17/#cot-ai" class="archive-item-link">CoT监测或成为控制AI智能体的核心方法</a>
+                <span class="archive-item-date" title='2025-07-17'>07-17</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>恶意技能 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-21/#maliciousskillbench" class="archive-item-link">MaliciousSkillBench：恶意智能体技能检测综合基准</a>
+                <span class="archive-item-date" title='2026-08-21'>08-21</span>&nbsp;<a href="https://arxiv.org/abs/2608.19901" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>意识表征 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#span" class="archive-item-link">能否从大型语言模型内部状态中观察到“意识”？基于综合信息理论与 Span 表示的分析</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.22516" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>执行评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#quotebench" class="archive-item-link">QuoteBench：同分掩盖的命令路径故障</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13547" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>技术生态 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-12/#ai4ai" class="archive-item-link">AI4AI 从自进化、元进化迈向递归自我改进</a>
+                <span class="archive-item-date" title='2026-08-12'>08-12</span>&nbsp;<a href="https://arxiv.org/abs/2607.28568" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/FrontisAI/OpenRSI" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/FrontisAI" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>拒答评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#trapsbench" class="archive-item-link">TRAPSBench：视觉语言模型能识别不确定性，却不会克制回答</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13167" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>指令数据合成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#infinity-instruct" class="archive-item-link">Infinity Instruct：扩展指令选择与合成以增强语言模型</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span>&nbsp;<a href="https://arxiv.org/abs/2506.11116" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://gitee.com/li-touch/infinity-instruct" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/datasets/BAAI/Infinity-Instruct" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>指标演化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-20/#evalcegar" class="archive-item-link">EvalCEGAR：从盲点中自动演化评估指标</a>
+                <span class="archive-item-date" title='2026-08-20'>08-20</span>&nbsp;<a href="https://arxiv.org/abs/2608.18744" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>探针效度 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#item-28" class="archive-item-link">探针方向由提示词决定，而非模型属性</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13329" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理异常 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#gpt-oss" class="archive-item-link">GPT-oss 无提示生成问题并陷入数千次重复推理</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理归因 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-25/#thought-anchors" class="archive-item-link">Thought Anchors：识别大模型推理中的关键步骤</a>
+                <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.19143" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理扩展 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#optscale" class="archive-item-link">推理时扩展的概率最优性：OptScale 动态确定最佳采样数</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.22376" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理效率 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#item-9" class="archive-item-link">思维令牌是帮助还是陷阱？迈向更高效的大型推理模型</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.23840" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-25/#long-to-short" class="archive-item-link">Long-to-Short 是免费的午餐吗？研究大型推理模型的一致性与推理效率</a>
+                <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.19492" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理研究综述 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-23/#item-3" class="archive-item-link">香港中文大学发布基础模型推理能力综述：方法、基准与未来方向</a>
+                <span class="archive-item-date" title='2025-10-23'>10-23</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-15/#item-1" class="archive-item-link">逻辑学研究中心联合发表大模型逻辑推理能力综述《思维机器》</a>
+                <span class="archive-item-date" title='2025-10-15'>10-15</span>&nbsp;<a href="https://papers.cool/arxiv/2508.00459" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理训练 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-06/#mera" class="archive-item-link">MERA 训练提升模型推理效率与准确性</a>
+                <span class="archive-item-date" title='2025-08-06'>08-06</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理记忆 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-09-30/#reasoningbank" class="archive-item-link">ReasoningBank：通过推理记忆扩展智能体自我进化</a>
+                <span class="archive-item-date" title='2025-09-30'>09-30</span>&nbsp;<a href="https://arxiv.org/abs/2509.25140" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理评测 <sup>15</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#oneeval-llm" class="archive-item-link">OneEval：面向多元化知识库的LLM知识密集型推理基准</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2506.12577" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#formulaone" class="archive-item-link">FormulaOne：图结构动态规划评估集</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#maximal-cluster-graph" class="archive-item-link">Maximal-Cluster-Graph 难题中的动态规划推理链</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-189" class="archive-item-link">不可解谜题暴露纯程序化推理评估的缺陷</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/1802.09369" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-190" class="archive-item-link">组合深度并非可靠的推理复杂度指标</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-23/#icml-2025-llm" class="archive-item-link">ICML 2025 新基准揭示 LLM 推理短板：高分或源于符号记忆</a>
+                <span class="archive-item-date" title='2025-10-23'>10-23</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-23/#llm-textgames" class="archive-item-link">挑战 LLM 逻辑推理极限：新基准 TEXTGAMES</a>
+                <span class="archive-item-date" title='2025-10-23'>10-23</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#mmreason-agi" class="archive-item-link">MMReason：面向 AGI 的开放式多模态多步骤推理基准</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.23563" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/HJYao00/MMReason" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#item-13" class="archive-item-link">从思考到输出：推理语言模型中的思维链与文本生成特征</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.21609" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/ChangWenhan/FromThinking2Output" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#re-imagine" class="archive-item-link">RE-IMAGINE：用于推理评估的符号化基准合成</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2506.15455" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-21/#item-1" class="archive-item-link">大语言模型的“波将金式理解”：正确答案背后的推理不一致</a>
+                <span class="archive-item-date" title='2025-06-21'>06-21</span>&nbsp;<a href="https://arxiv.org/pdf/2506.21521" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-20/#ineqmath-29-50" class="archive-item-link">IneqMath：29个大模型奥数级不等式证明成功率不足50%</a>
+                <span class="archive-item-date" title='2025-06-20'>06-20</span>&nbsp;<a href="https://arxiv.org/abs/2506.07927" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/lupantech/ineqmath" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/datasets/AI4Math/IneqMath" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-20/#claude" class="archive-item-link">苹果《思考的错觉》再遭质疑：Claude与人类共著论文指出三大测试缺陷</a>
+                <span class="archive-item-date" title='2025-06-20'>06-20</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-14/#claude" class="archive-item-link">苹果《思考的错觉》再遭质疑：Claude 与人类共著论文指出三大关键缺陷</a>
+                <span class="archive-item-date" title='2025-06-14'>06-14</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-14/#item-4" class="archive-item-link">《思考幻觉》的幻觉：重新审视大模型推理能力崩溃</a>
+                <span class="archive-item-date" title='2025-06-14'>06-14</span>&nbsp;<a href="https://arxiv.org/pdf/2506.09250v1" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理迁移 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#llm-2" class="archive-item-link">数学推理训练能否提升 LLM 的通用能力？推理能力的可转移性研究</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2507.00432" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>提示格式 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-24/#promptresponse-llm" class="archive-item-link">PromptResponse：优化 LLM 编程任务提示词</a>
+                <span class="archive-item-date" title='2026-08-24'>08-24</span>&nbsp;<a href="https://arxiv.org/abs/2608.21074" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>搜索能力评测 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#tsugo" class="archive-item-link">TsuGO：以围棋死活题评测大模型推理搜索效率</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13221" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#mind2web-2-agent-as-a-judge" class="archive-item-link">Mind2Web 2：基于 Agent-as-a-Judge 的智能体搜索评估</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.21506" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>效度审计 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#llm" class="archive-item-link">超越局部准确率：LLM 推理评测的协议级可识别性审计</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13326" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>效率评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-11/#item-3" class="archive-item-link">我们离最佳推理效率还有多远？</a>
+                <span class="archive-item-date" title='2025-06-11'>06-11</span>&nbsp;<a href="https://arxiv.org/abs/2506.07104" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>敏感性分析 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-20/#llm-2" class="archive-item-link">基于交互作用评估与解释 LLM 提示敏感性</a>
+                <span class="archive-item-date" title='2026-08-20'>08-20</span>&nbsp;<a href="https://arxiv.org/abs/2608.18539" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>教育应用 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-07/#item-4" class="archive-item-link">超越自动化：苏格拉底式 AI 与编排式多智能体学习架构</a>
+                <span class="archive-item-date" title='2025-08-07'>08-07</span>&nbsp;<a href="https://arxiv.org/abs/2508.05116" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数值能力 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#item-36" class="archive-item-link">大语言模型数值能力：根本局限与改进路径</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13129" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数学推理 <sup>4</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#openai-imo" class="archive-item-link">OpenAI IMO 金牌团队：模型拒答难题，长时推理面临评估瓶颈</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-05/#item-9" class="archive-item-link">大语言模型的数学推理：代码合成、证明生成与逻辑状态</a>
+                <span class="archive-item-date" title='2025-08-05'>08-05</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-21/#gemini-2-5-pro-imo-2025" class="archive-item-link">仅靠提示词与自我验证，Gemini 2.5 Pro 达到 IMO 2025 金牌水平</a>
+                <span class="archive-item-date" title='2025-07-21'>07-21</span>&nbsp;<a href="https://arxiv.org/abs/2507.15855" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-10/#item-5" class="archive-item-link">数学推理大型语言模型研究综述</a>
+                <span class="archive-item-date" title='2025-06-10'>06-10</span>&nbsp;<a href="https://arxiv.org/abs/2506.08446" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数学研究 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#aim" class="archive-item-link">AIM：面向数学理论研究的自动化智能体</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数学评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#llm-2" class="archive-item-link">超越黄金标准：用于形式数学推理评估的LLM法官认识论集成</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10903" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数据合成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#swe-flow" class="archive-item-link">SWE-Flow：以测试驱动方式合成软件工程数据</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2506.09003" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Hambaobao/SWE-Flow" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Hambaobao/SWE-Flow" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数据构建 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-06/#skywork-swe-swe-dev" class="archive-item-link">Skywork-SWE：SWE-Dev 可验证软件开发数据集构建流程</a>
+                <span class="archive-item-date" title='2025-08-06'>08-06</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数据泄露 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-18/#item-3" class="archive-item-link">真相大白！RL不是魔法，随机奖励有效只是由于数据泄露</a>
+                <span class="archive-item-date" title='2025-07-18'>07-18</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数据规模扩展 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-25/#skywork-swe" class="archive-item-link">Skywork-SWE：揭示大模型软件工程能力的数据缩放定律</a>
+                <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.19290" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>数理语言 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-19/#item-13" class="archive-item-link">使用多语言数字谜题研究语言模型中语言与数学推理的相互作用</a>
+                <span class="archive-item-date" title='2025-06-19'>06-19</span>&nbsp;<a href="https://arxiv.org/abs/2506.13886" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>文本增强 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#promptaug" class="archive-item-link">PromptAug：使用数据增强进行精细冲突分类</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.22491" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>文本评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-03/#item-7" class="archive-item-link">面向决策的文本评估</a>
+                <span class="archive-item-date" title='2025-07-03'>07-03</span>&nbsp;<a href="https://arxiv.org/abs/2507.01923" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-07/#swe-dev-2" class="archive-item-link">SWE-Dev：通过训练与推理扩展构建软件工程智能体</a>
+                <span class="archive-item-date" title='2025-06-07'>06-07</span>&nbsp;<a href="https://arxiv.org/abs/2506.07636" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/THUDM/SWE-Dev" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/THUDM/SWE-Dev" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体安全 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-14/#openart" class="archive-item-link">OpenART：通过开放式环境演化扩展智能体红队测试</a>
+                <span class="archive-item-date" title='2026-08-14'>08-14</span>&nbsp;<a href="https://arxiv.org/abs/2608.00677" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体框架 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-11/#prime-agent" class="archive-item-link">Prime Agent 开源自我改进智能体框架</a>
+                <span class="archive-item-date" title='2026-08-11'>08-11</span>&nbsp;<a href="https://arxiv.org/abs/2608.23552" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#ai-lab-cognitive-kernel-pro" class="archive-item-link">腾讯 AI Lab 开源层次化智能体框架 Cognitive Kernel-Pro</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/pdf/2508.00414" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Tencent/CognitiveKernel-Pro" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体自进化 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#darwin-g-del-machine" class="archive-item-link">Darwin Gödel Machine：通过开放式进化实现智能体自我改进</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://github.com/jennyzzt/dgm" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-01/#item-2" class="archive-item-link">普林斯顿王梦迪团队综述：自我进化智能体的持续学习与适应</a>
+                <span class="archive-item-date" title='2025-08-01'>08-01</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体记忆 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-08/#memory-agent" class="archive-item-link">Memory&#43;Agent：人大高瓴与华为诺亚构建大模型智能体记忆研究体系</a>
+                <span class="archive-item-date" title='2025-08-08'>08-08</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体评测 <sup>14</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#browsecomp-vl" class="archive-item-link">BrowseComp-VL：面向跨模态研究任务的视觉语言评测基准</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#ai-agent" class="archive-item-link">AI Agent 评测基准的“环境—能力”分类框架</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#ai-agent-2" class="archive-item-link">AI Agent 评测的四大演进趋势</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-17/#ai-agent" class="archive-item-link">AI Agent 与传统聊天机器人的本质区别及科学评测方法</a>
+                <span class="archive-item-date" title='2025-07-17'>07-17</span>&nbsp;<a href="https://arxiv.org/pdf/2506.11102" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-03/#llm-3" class="archive-item-link">LLM 智能体与传统聊天机器人的本质区别及科学评测</a>
+                <span class="archive-item-date" title='2025-07-03'>07-03</span>&nbsp;<a href="https://arxiv.org/pdf/2506.11102" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#rexbench-llm" class="archive-item-link">RExBench：评估 LLM 智能体实现研究扩展的能力</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#scienceboard" class="archive-item-link">ScienceBoard：面向真实科学工作流的多模态智能体评测环境</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#ale-bench-np-2" class="archive-item-link">ALE-Bench：编程智能体跻身 NP 难题竞赛前 2%</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.09050" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/SakanaAI/ALE-Bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/datasets/SakanaAI/ALE-Bench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#deepresearch-bench" class="archive-item-link">DeepResearch Bench：深度研究智能体综合评测基准</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span>&nbsp;<a href="https://arxiv.org/abs/2506.11763" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Ayanami0730/deep_research_bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Ayanami0730/deep_research_bench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#llm" class="archive-item-link">基于LLM的人工智能代理评估的进化视角：全面综述</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span>&nbsp;<a href="https://arxiv.org/abs/2506.11102" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-12/#item-20" class="archive-item-link">测量数据科学自动化：AI 助手与智能体评估工具综述</a>
+                <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08800" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-12/#econwebarena-web" class="archive-item-link">EconWebArena：现实 Web 环境中的经济任务自治智能体评测基准</a>
+                <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08136" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-11/#pastcasting" class="archive-item-link">面向未来的基准：预测智能体的 Pastcasting 基准</a>
+                <span class="archive-item-date" title='2025-06-11'>06-11</span>&nbsp;<a href="https://arxiv.org/abs/2506.21558" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-05/#textatari-10-atari" class="archive-item-link">TextAtari：使用语言智能体挑战10万步Atari游戏</a>
+                <span class="archive-item-date" title='2025-06-05'>06-05</span>&nbsp;<a href="https://arxiv.org/abs/2506.04098" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-18/#acl-2025-oral-evaluation-agent" class="archive-item-link">ACL 2025 Oral：Evaluation Agent，懂模型的智能评测搭子</a>
+                <span class="archive-item-date" title='2025-07-18'>07-18</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>框架修复 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#harness" class="archive-item-link">能力层模型：组合式智能体 Harness 修复与真实仓库压力测试</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13228" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>框架演化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-12/#aide" class="archive-item-link">AIDE²：零权重更新实现一阶递归自我改进</a>
+                <span class="archive-item-date" title='2026-08-12'>08-12</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>框架评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#deepseek-pi-harness" class="archive-item-link">DeepSeek &#43; Pi：轻量 Harness 提升智能体成功率与缓存效率</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>检索停止 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#rag-search-r1" class="archive-item-link">多轮 RAG 何时停止：Search-R1 的结构化停止判断</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13237" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>概率推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-11/#item-11" class="archive-item-link">不完全是夏洛克·福尔摩斯：语言模型无法可靠区分不可能与不太可能的事件</a>
+                <span class="archive-item-date" title='2025-06-11'>06-11</span>&nbsp;<a href="https://arxiv.org/abs/2506.06808" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型可靠性 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-187" class="archive-item-link">多组件系统的整体成功率会快速下降</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型安全 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#item-24" class="archive-item-link">思想犯罪：推理模型中的后门与涌现失调</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13206" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型对抗 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#grok-4-gemini" class="archive-item-link">Grok 4晋级大模型对抗赛决赛，Gemini全军覆没</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#o3-4-0-grok-4" class="archive-item-link">o3 以 4:0 横扫 Grok 4，夺得首届大模型对抗赛冠军</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型微调 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#item-16" class="archive-item-link">在不损害能力的前提下精简大语言模型</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10885" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型评测 <sup>8</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#dots-vlm1" class="archive-item-link">dots.vlm1在多项多模态任务中表现突出</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#ring-1t-deepseek-v3-2" class="archive-item-link">实测蚂蚁万亿参数思考模型 Ring-1T：对比 DeepSeek V3.2</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#gpt-5-simplebench" class="archive-item-link">GPT-5 首波实测：SimpleBench 超越人类平均水平</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-26/#glm-4-5" class="archive-item-link">GLM-4.5 逻辑能力评测：推理模式显著降低幻觉与计算误差</a>
+                <span class="archive-item-date" title='2025-07-26'>07-26</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-17/#kimi-2-livebench-ai-gpt-4-1" class="archive-item-link">Kimi-2 上线 LiveBench AI，评测超越 GPT-4.1</a>
+                <span class="archive-item-date" title='2025-07-17'>07-17</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#superclue-ai" class="archive-item-link">SuperCLUE推理榜惊现黑马：中兴AI模型表现亮眼</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#llm" class="archive-item-link">心理语言学词特征：评估 LLM 与人类一致性的新方法</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.22439" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-11/#openai-o3-pro-4-4" class="archive-item-link">OpenAI 发布 o3-pro，引入严格的“4/4 可靠性”评估</a>
+                <span class="archive-item-date" title='2025-06-11'>06-11</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型路由 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-15/#llmrouter" class="archive-item-link">LLMRouter：统一大模型路由开发、评估与部署框架</a>
+                <span class="archive-item-date" title='2026-08-15'>08-15</span>&nbsp;<a href="https://arxiv.org/abs/2608.06867" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型选型 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-19/#lensllm-llm" class="archive-item-link">LensLLM：以低成本预测微调表现的LLM选型框架</a>
+                <span class="archive-item-date" title='2025-06-19'>06-19</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型量化评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-14/#seed-evolving" class="archive-item-link">Seed-Evolving 量化策略研发与自迭代能力评测</a>
+                <span class="archive-item-date" title='2026-08-14'>08-14</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>模型验证 <sup>4</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#binoculars" class="archive-item-link">Binoculars：机器生成文本检测器</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#openai-gpt-5" class="archive-item-link">OpenAI以「通用验证器」推动GPT-5全领域能力提升</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#compassverifier-llm" class="archive-item-link">CompassVerifier：跨领域验证 LLM 输出的轻量级模型</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-06/#compassverifier-llm" class="archive-item-link">CompassVerifier：统一支持 LLM 评估与结果奖励的鲁棒验证器</a>
+                <span class="archive-item-date" title='2025-08-06'>08-06</span>&nbsp;<a href="https://arxiv.org/abs/2508.03686" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>步骤归因 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#skillshapley-shapley" class="archive-item-link">SkillShapley：智能体技能步骤的边界自适应 Shapley 归因</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13173" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>泛化迁移 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-25/#item-6" class="archive-item-link">打破领域障碍：强化后训练的推理收益能否迁移到未见领域？</a>
+                <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.19733" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>测试生成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-10/#codecontests" class="archive-item-link">CodeContests&#43;：为竞技编程生成高质量测试用例</a>
+                <span class="archive-item-date" title='2025-06-10'>06-10</span>&nbsp;<a href="https://arxiv.org/abs/2506.05817" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>涌现能力 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#item-8" class="archive-item-link">大型语言模型与涌现：复杂系统视角</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span>&nbsp;<a href="https://arxiv.org/abs/2506.11135" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>游戏评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#lmgame-bench" class="archive-item-link">LMGame-Bench：用经典游戏评测大模型感知、记忆与推理能力</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/pdf/2505.15146" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>演化能力评测 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-07/#seagym-llm" class="archive-item-link">SEAGym：自我演化 LLM 智能体评估环境</a>
+                <span class="archive-item-date" title='2026-08-07'>08-07</span>&nbsp;<a href="https://arxiv.org/abs/2606.17546" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-07/#gdpevo" class="archive-item-link">GDPevo：真实业务任务上的智能体自我进化评测</a>
+                <span class="archive-item-date" title='2026-08-07'>08-07</span>&nbsp;<a href="https://github.com/Prism-Shadow/GDPevo" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Prism-Shadow/GDPevo" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>潜空间推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-12/#bdh-cq" class="archive-item-link">BDH-CQ：基于循环潜在推理的上下文学习</a>
+                <span class="archive-item-date" title='2026-08-12'>08-12</span>&nbsp;<a href="https://arxiv.org/abs/2608.09888" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>状态追踪 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-22/#statemembench" class="archive-item-link">StateMemBench：智能体记忆能否追踪演化状态？</a>
+                <span class="archive-item-date" title='2026-08-22'>08-22</span>&nbsp;<a href="https://arxiv.org/abs/2608.19652" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>理解能力评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#item-20" class="archive-item-link">大型语言模型中的波将金式理解</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.21521" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>理论评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-15/#courcelle" class="archive-item-link">Courcelle 算法元定理保证一类问题的可解性</a>
+                <span class="archive-item-date" title='2025-08-15'>08-15</span>&nbsp;<a href="https://arxiv.org/pdf/2507.13337" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>生成式评判 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-97" class="archive-item-link">双模型生成与评判机制</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>真值表征 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-04/#llm" class="archive-item-link">探索真理的几何学：LLM 真值方向在逻辑变换与问答任务中的一致性和泛化性</a>
+                <span class="archive-item-date" title='2025-06-04'>06-04</span>&nbsp;<a href="https://arxiv.org/abs/2506.00823" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>真实世界评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-18/#agent" class="archive-item-link">真实工作场景中Agent成功率仍然偏低</a>
+                <span class="archive-item-date" title='2026-08-18'>08-18</span>&nbsp;<a href="https://github.com/Accio-org/RealReplicaBench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Accio-org/RealReplicaBench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>知识发现 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#metaagent-3" class="archive-item-link">MetaAgent：自我进化智能体提升通用知识发现能力</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>知识推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#oneeval" class="archive-item-link">OneEval：面向多样化知识库的大模型知识密集型推理评测</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>社会仿真 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-07/#learneragent-llm" class="archive-item-link">LearnerAgent：使用 LLM 智能体模拟类人学习动态</a>
+                <span class="archive-item-date" title='2025-08-07'>08-07</span>&nbsp;<a href="https://arxiv.org/abs/2508.05622" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>神经符号人工智能 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-09-16/#item-2" class="archive-item-link">大型语言模型模仿逻辑推理，但代价是什么？</a>
+                <span class="archive-item-date" title='2025-09-16'>09-16</span>&nbsp;<a href="https://papers.cool/arxiv/2509.12645" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>科学数据 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#megascience" class="archive-item-link">上海创智学院与上海交通大学发布科学推理数据集 MegaScience</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>科学检索增强生成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#scirgen-rag" class="archive-item-link">ScIRGen：为科学研究合成真实的大规模 RAG 数据集</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span>&nbsp;<a href="https://arxiv.org/abs/2506.11117" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>科学编程 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-21/#swe-bench-science" class="archive-item-link">SWE-bench Science：科学软件工程中的编码智能体评测</a>
+                <span class="archive-item-date" title='2026-08-21'>08-21</span>&nbsp;<a href="https://arxiv.org/abs/2608.19799" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>科研复现 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#llm-nanogpt" class="archive-item-link">自动化 LLM 速通基准：评估 NanoGPT 改进复现能力</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.22419" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>科研工具 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-18/#9-ai-agent-ppt" class="archive-item-link">实测9款AI：Agent究竟如何改变PPT制作？</a>
+                <span class="archive-item-date" title='2025-07-18'>07-18</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>科研智能体 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-13/#aibuildai-science-agent-4" class="archive-item-link">AIBuildAI Science Agent：4小时自主完成顶刊级模型研发</a>
+                <span class="archive-item-date" title='2026-08-13'>08-13</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>科研评测 <sup>5</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-20/#asi-bench-ai" class="archive-item-link">ASI-Bench：评测 AI 自主科研与创新探索能力</a>
+                <span class="archive-item-date" title='2026-08-20'>08-20</span>&nbsp;<a href="https://arxiv.org/abs/2608.17271" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/apexin-ai/ASI-Bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-13/#mls-bench-140-ai" class="archive-item-link">MLS-Bench：140道真实任务检验AI方法创新能力</a>
+                <span class="archive-item-date" title='2026-08-13'>08-13</span>&nbsp;<a href="https://arxiv.org/abs/2605.08678" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Imbernoulli/MLS-Bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#sciarena" class="archive-item-link">SciArena：面向科学文献任务的开放式基础模型评估平台</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/abs/2507.01001" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#llm" class="archive-item-link">构思与执行差距：LLM 与人类研究理念的执行结果比较</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.20803" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#item-1" class="archive-item-link">科学家的第一次考试：通过感知、理解与推理评测多模态大模型的科学认知能力</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10521" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>程序进化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-05-29/#item-2" class="archive-item-link">达尔文哥德尔机：开放式进化的自我改进智能体</a>
+                <span class="archive-item-date" title='2025-05-29'>05-29</span>&nbsp;<a href="https://arxiv.org/abs/2505.22954" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>稳定性 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#llm-5" class="archive-item-link">比想象中更脆弱：工具集成型 LLM 智能体的稳定性研究</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.21967" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>空间推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-17/#ai-50" class="archive-item-link">密室逃脱成 AI 新考场：通关率不足 50%，暴露空间推理短板</a>
+                <span class="archive-item-date" title='2025-07-17'>07-17</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>空间认知 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#mindcube" class="archive-item-link">MindCube：从有限视图构建空间心智模型</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://papers.cool/arxiv/2506.21458" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>答案聚合 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#llm-2" class="archive-item-link">表示一致性：聚合准确且连贯的 LLM 候选答案</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.21590" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>答案验证 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#compassverifier" class="archive-item-link">CompassVerifier：面向多领域答案评估与奖励的轻量级验证模型</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://github.com/open-compass/CompassVerifier" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/open-compass/CompassVerifier" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>策略归纳 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-25/#strategybench" class="archive-item-link">StrategyBench：评测大模型显式策略归纳能力</a>
+                <span class="archive-item-date" title='2026-08-25'>08-25</span>&nbsp;<a href="https://arxiv.org/abs/2608.23475" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://anonymous.4open.science/r/StrategyBench-D53C" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>算法比较 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-20/#dpo-grpo" class="archive-item-link">DPO 与 GRPO 在自回归图像生成中的系统性对比</a>
+                <span class="archive-item-date" title='2025-06-20'>06-20</span>&nbsp;<a href="https://arxiv.org/abs/2505.17017" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/ZiyuGuo99/Image-Generation-CoT" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>算法设计 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-21/#ai4ai-bench-llm" class="archive-item-link">AI4AI-Bench：评测 LLM 智能体的递归自改进算法设计能力</a>
+                <span class="archive-item-date" title='2026-08-21'>08-21</span>&nbsp;<a href="https://arxiv.org/abs/2608.20318" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Einsia/AI4AI-Bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>组合推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#ineq-comp" class="archive-item-link">Ineq-Comp：不等式自动定理证明中的人类直觉组合推理基准</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2505.12680" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>经验进化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-12/#item-4" class="archive-item-link">经验时代的自改进智能体：从自我进化到元进化综述</a>
+                <span class="archive-item-date" title='2026-08-12'>08-12</span>&nbsp;<a href="https://openreview.net/forum?id=IUltZSgLMm" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>缩放定律 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#item-14" class="archive-item-link">能力显著性向量：面向下游任务缩放定律的损失—能力细粒度对齐</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13216" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>置信度评估 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#llm-5" class="archive-item-link">LLM 的置信度能否反映回答正确性？</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>能力评测基准 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#formulaone-gpt-5-o3-pro" class="archive-item-link">FormulaOne 基准令 GPT-5、o3 Pro 等前沿模型集体零分</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>能力迁移 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-12" class="archive-item-link">不同游戏训练会形成专门化认知能力</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>脚手架 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-14/#opus-5-harness-arc-agi-3-96-2" class="archive-item-link">Opus 5借助极简Harness在ARC-AGI-3取得96.2%通关率</a>
+                <span class="archive-item-date" title='2026-08-14'>08-14</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>脚手架优化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-15/#autodesign" class="archive-item-link">AutoDesign：面向长程智能体设计的元脚手架优化</a>
+                <span class="archive-item-date" title='2026-08-15'>08-15</span>&nbsp;<a href="https://arxiv.org/abs/2608.13560" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Yaxin9Luo/AutoDesign" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/datasets/YaxinLuo/PosterBench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>脚手架演化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-15/#darwinx" class="archive-item-link">DarwinX：通过自然选择演化智能体脚手架</a>
+                <span class="archive-item-date" title='2026-08-15'>08-15</span>&nbsp;<a href="https://arxiv.org/abs/2608.07545" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自动化评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-13/#item-19" class="archive-item-link">文本、视觉和语音生成自动评估方法综述</a>
+                <span class="archive-item-date" title='2025-06-13'>06-13</span>&nbsp;<a href="https://arxiv.org/abs/2506.10019" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我批判 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-27/#double-checker" class="archive-item-link">Double-Checker：通过自我批判微调增强慢思维大模型推理</a>
+                <span class="archive-item-date" title='2025-06-27'>06-27</span>&nbsp;<a href="https://arxiv.org/abs/2506.21285" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我确定 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-145" class="archive-item-link">用 KL 散度衡量模型的「自我确定性」</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2502.18581" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自进化 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-02/#ml-master-openai-mle-bench" class="archive-item-link">上交大推出机器学习智能体 ML-Master，登顶 OpenAI MLE-bench</a>
+                <span class="archive-item-date" title='2025-07-02'>07-02</span>&nbsp;<a href="https://arxiv.org/pdf/2506.16499" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/sjtu-sai-agents/ML-Master" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-04/#alita-2" class="archive-item-link">普林斯顿 Alita 开启通用智能体自主进化新范式</a>
+                <span class="archive-item-date" title='2025-06-04'>06-04</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自进化框架 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-11/#harnessbank-agent-harness" class="archive-item-link">HarnessBank：面向 Agent-Harness 自进化的语义基因库</a>
+                <span class="archive-item-date" title='2026-08-11'>08-11</span>&nbsp;<a href="https://arxiv.org/abs/2607.13683" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自适应停止 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-17/#llm" class="archive-item-link">知道何时停止：LLM 评测的贝叶斯最优停止</a>
+                <span class="archive-item-date" title='2026-08-17'>08-17</span>&nbsp;<a href="https://arxiv.org/abs/2608.14425" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>补丁回移 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#item-33" class="archive-item-link">自动化安全补丁回移基准：现有工具能走多远？</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span>&nbsp;<a href="https://arxiv.org/abs/2608.17671" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>表征分析 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-14/#pca-cka-fisher" class="archive-item-link">表示空间分析工具：PCA、CKA 与 Fisher 信息矩阵</a>
+                <span class="archive-item-date" title='2025-06-14'>06-14</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>裁判模型评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-18/#llm-2" class="archive-item-link">LLM 作为评委的实证研究：设计选择如何影响评估可靠性</a>
+                <span class="archive-item-date" title='2025-06-18'>06-18</span>&nbsp;<a href="https://arxiv.org/abs/2506.13639" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>裁判模型诊断 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-20/#item-39" class="archive-item-link">能力而非准确率：无参考裁判门控的诊断方法</a>
+                <span class="archive-item-date" title='2026-08-20'>08-20</span>&nbsp;<a href="https://arxiv.org/abs/2608.18719" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>规划评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-04/#item-1" class="archive-item-link">看似简单的规划问题也具计算挑战：倒计时游戏基准</a>
+                <span class="archive-item-date" title='2025-08-04'>08-04</span>&nbsp;<a href="https://arxiv.org/abs/2508.02900" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视觉推理 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#caughtcheating" class="archive-item-link">CaughtCheating：多模态大模型能否成为优秀的作弊侦探？</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2507.00045" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视觉模型 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-20" class="archive-item-link">大模型时代，通用视觉模型将何去何从？</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-21" class="archive-item-link">清华鲁继文团队综述通用视觉模型研究进展</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视频到音频生成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-28/#kling-foley" class="archive-item-link">Kling-Foley：为视频生成音画同步的高质量立体声</a>
+                <span class="archive-item-date" title='2025-06-28'>06-28</span>&nbsp;<a href="https://www.arxiv.org/pdf/2506.19774" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/klingfoley/Kling-Foley" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/datasets/klingfoley/Kling-Audio-Eval" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视频评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-28/#video-ifbench" class="archive-item-link">Video-IFBench：评估视频理解中的指令遵循能力</a>
+                <span class="archive-item-date" title='2026-08-28'>08-28</span>&nbsp;<a href="https://arxiv.org/abs/2608.25529" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>解释效用 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-18/#item-21" class="archive-item-link">自然语言解释何时助益上下文学习：类型与忠实度比较</a>
+                <span class="archive-item-date" title='2026-08-18'>08-18</span>&nbsp;<a href="https://arxiv.org/abs/2608.16627" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>计算机控制 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-18/#cradle" class="archive-item-link">Cradle：赋能基础智能体实现通用计算机控制</a>
+                <span class="archive-item-date" title='2025-07-18'>07-18</span>&nbsp;<a href="https://arxiv.org/abs/2403.03186" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>认知习惯 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#cogtest" class="archive-item-link">了解大型推理模型的认知习惯：CogTest 基准评估</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.21571" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/jianshuod/CogTest" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>认知链 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-25/#eccot" class="archive-item-link">ECCoT：通过认知链验证增强大型语言模型的有效推理</a>
+                <span class="archive-item-date" title='2025-06-25'>06-25</span>&nbsp;<a href="https://arxiv.org/abs/2506.19599" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/erwinmsmith/ECCoT.git" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>记忆机制 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#llm-4" class="archive-item-link">通过电路发现理解 LLM 中的逐字记忆</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.21588" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>记忆能力评测 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#membench-llm" class="archive-item-link">MemBench：全面评估基于 LLM 的智能体记忆能力</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.21605" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/import-myself/Membench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/import-myself/Membench" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-26/#membench" class="archive-item-link">MemBench：面向大语言模型智能体记忆能力的综合评估</a>
+                <span class="archive-item-date" title='2025-06-26'>06-26</span>&nbsp;<a href="https://arxiv.org/abs/2506.21605" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2024-09-30/#memsim" class="archive-item-link">MemSim：用于评估大模型个人助理记忆能力的贝叶斯模拟器</a>
+                <span class="archive-item-date" title='2024-09-30'>09-30</span>&nbsp;<a href="https://arxiv.org/abs/2409.20163" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>论文写作 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-14/#1947-ai" class="archive-item-link">1947篇AI顶会论文揭示高质量论文写作法则</a>
+                <span class="archive-item-date" title='2026-08-14'>08-14</span>&nbsp;<a href="https://arxiv.org/abs/2607.04439" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>设计创新 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#ai-ai" class="archive-item-link">当 AI 设计 AI：创新还是模仿？</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span>&nbsp;<a href="https://arxiv.org/abs/2608.17471" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>证明语料库 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#llm-3" class="archive-item-link">开放证明语料库：大规模研究 LLM 生成的数学证明</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.21621" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评分偏差 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#llm-as-a-judge" class="archive-item-link">评估 LLM-as-a-Judge 中的评分偏差</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.22316" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-23/#gemini-2-5-pro-60" class="archive-item-link">最强 Gemini 2.5 Pro 逻辑推理评测仅得 60 分</a>
+                <span class="archive-item-date" title='2025-10-23'>10-23</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-11/#item-9" class="archive-item-link">大型语言模型在框架与符号落地问题上的零样本评估基准</a>
+                <span class="archive-item-date" title='2025-06-11'>06-11</span>&nbsp;<a href="https://arxiv.org/abs/2506.07896" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测争议 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-08-07/#gpt-5-23" class="archive-item-link">GPT-5 编程成绩被质疑：删去 23 道测试题，关键基准由自己提出</a>
+                <span class="archive-item-date" title='2025-08-07'>08-07</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测优化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-21/#llm-4" class="archive-item-link">重新思考 LLM 社会模拟的评估与优化</a>
+                <span class="archive-item-date" title='2026-08-21'>08-21</span>&nbsp;<a href="https://arxiv.org/abs/2608.19689" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测偏差 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#item-188" class="archive-item-link">自动化评估应区分模型能力与决策偏好</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测可靠性 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#item-28" class="archive-item-link">使用开放基准测试评估语言模型的陷阱</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2507.00460" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测基准 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-24/#flavourbench" class="archive-item-link">FlavourBench：以可执行烹饪真值评测前沿语言模型</a>
+                <span class="archive-item-date" title='2026-08-24'>08-24</span>&nbsp;<a href="https://arxiv.org/abs/2608.20574" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#nocode-bench" class="archive-item-link">NoCode-bench：评估自然语言驱动功能开发的新基准</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2507.18130" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/NoCode-bench/NoCode-bench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-10-23/#llm" class="archive-item-link">LLM 评测基准综述与多模态推理新基准</a>
+                <span class="archive-item-date" title='2025-10-23'>10-23</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测审计 <sup>3</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-21/#phantom-gains" class="archive-item-link">Phantom Gains：用实测零基线审计模型自我改进</a>
+                <span class="archive-item-date" title='2026-08-21'>08-21</span>&nbsp;<a href="https://arxiv.org/abs/2608.20290" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#mcp" class="archive-item-link">MCP 智能体安全评测中的处理泄漏与构念效度</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.12880" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-07-01/#item-29" class="archive-item-link">垃圾输入，推理输出？为何基准分数不可靠及如何应对</a>
+                <span class="archive-item-date" title='2025-07-01'>07-01</span>&nbsp;<a href="https://arxiv.org/abs/2506.23864" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测框架 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-04/#benchhub-llm" class="archive-item-link">BenchHub：面向整体与可定制 LLM 评估的统一基准套件</a>
+                <span class="archive-item-date" title='2025-06-04'>06-04</span>&nbsp;<a href="https://arxiv.org/abs/2506.00482" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测榜单 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#huggingface-formulaone" class="archive-item-link">HuggingFace FormulaOne 评估排行榜</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测编排 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#harnesseval-harness-benchmark" class="archive-item-link">HarnessEval：以可执行 Harness 重构 Benchmark</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span>&nbsp;<a href="https://github.com/mirros-lab/harnesseval-w" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>谜题评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-14/#pencil-puzzle-bench" class="archive-item-link">Pencil Puzzle Bench：可逐步验证的多步推理评测基准</a>
+                <span class="archive-item-date" title='2026-08-14'>08-14</span>&nbsp;<a href="https://arxiv.org/abs/2603.02119" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>资源研究综述 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-12/#awesome-self-improving-agents" class="archive-item-link">Awesome Self-Improving Agents：自改进智能体资源库</a>
+                <span class="archive-item-date" title='2026-08-12'>08-12</span>&nbsp;<a href="https://github.com/FrontisAI/Awesome-Self-Improving-Agents" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>软件工程 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-12/#swe-flow" class="archive-item-link">SWE-Flow：以测试驱动方式合成软件工程数据</a>
+                <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.09003" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Hambaobao/SWE-Flow" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/Hambaobao/SWE-Flow" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>迁移评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#llm-api" class="archive-item-link">商业 LLM API 迁移中的题项级能力回归测量</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span>&nbsp;<a href="https://arxiv.org/abs/2608.17719" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>过程奖励模型 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-23/#spare" class="archive-item-link">SPARE：基于参考引导评估的单次过程标注框架</a>
+                <span class="archive-item-date" title='2025-06-23'>06-23</span>&nbsp;<a href="https://arxiv.org/abs/2506.15498" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-04/#item-5" class="archive-item-link">从数学推理到代码：测试时扩展中过程奖励模型的泛化</a>
+                <span class="archive-item-date" title='2025-06-04'>06-04</span>&nbsp;<a href="https://arxiv.org/abs/2506.00027" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>过程评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#item-7" class="archive-item-link">超越最终得分：长程 AI 研发智能体的系统评估</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13417" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>运动跟踪 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-18/#humantracker" class="archive-item-link">HumanTracker：人类感知对齐的人形运动追踪基准</a>
+                <span class="archive-item-date" title='2026-08-18'>08-18</span>&nbsp;<a href="https://arxiv.org/abs/2608.13555" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>进化安全 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#self-evolving-agents" class="archive-item-link">Self-evolving Agents 并非总是良性：警惕智能体“错误进化”风险</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/pdf/2509.26354" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>进化框架 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-07/#penguinharness-agent" class="archive-item-link">PenguinHarness：构建持续自我进化 Agent 的开源框架</a>
+                <span class="archive-item-date" title='2026-08-07'>08-07</span>&nbsp;<a href="https://github.com/Prism-Shadow/penguin-harness" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>进化研究综述 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-12/#97-ai-agent" class="archive-item-link">97页综述：现代 AI Agent 的自我进化体系</a>
+                <span class="archive-item-date" title='2026-08-12'>08-12</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>递归自我改进 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-13/#rsi" class="archive-item-link">综述：递归自我改进（RSI）的能力边界与关键瓶颈</a>
+                <span class="archive-item-date" title='2026-08-13'>08-13</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>逻辑评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#satquest" class="archive-item-link">SATQuest：用于逻辑推理评估与微调的验证器</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2509.00930" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>重构评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-12/#swe-bench-promax" class="archive-item-link">SWE-Bench ProMax：大规模多语言代码重构智能体基准</a>
+                <span class="archive-item-date" title='2026-08-12'>08-12</span>&nbsp;<a href="https://arxiv.org/abs/2608.09802" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/datasets/swe-bench-promax/SWE-Bench-ProMax" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>量规评分 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#item-20" class="archive-item-link">评分靠量规，而非模型智能</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span>&nbsp;<a href="https://arxiv.org/abs/2608.17938" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>错误模式 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-16/#item-11" class="archive-item-link">更强大的语言模型会产生更多类似人类的错误</a>
+                <span class="archive-item-date" title='2025-06-16'>06-16</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>长度泛化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#transformer" class="archive-item-link">Transformer 长度泛化的代数分解理论</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13433" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>长期记忆 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-16/#egomonth" class="archive-item-link">EgoMonth：月级第一视角视频长期时空记忆基准</a>
+                <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.13113" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>长程任务评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-13/#vibelifebench" class="archive-item-link">VibeLifeBench：评测生活智能体的主动性与持久性</a>
+                <span class="archive-item-date" title='2026-08-13'>08-13</span>&nbsp;<a href="https://arxiv.org/abs/2608.10875" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>隐私风险 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#item-22" class="archive-item-link">微调方法对大型语言模型中记忆的影响</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2507.00258" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>领域泛化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#item-17" class="archive-item-link">从一般推理到领域专业知识：揭示大型语言模型泛化的局限性</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.21580" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>题目生成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-12/#item-13" class="archive-item-link">自动生成用于阅读理解评估的推理问题</a>
+                <span class="archive-item-date" title='2025-06-12'>06-12</span>&nbsp;<a href="https://arxiv.org/abs/2506.08260" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>题项相似性 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-26/#llm" class="archive-item-link">双维度 LLM 框架自动分析大规模测评题项内容相似性</a>
+                <span class="archive-item-date" title='2026-08-26'>08-26</span>&nbsp;<a href="https://arxiv.org/abs/2608.24825" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>风格评测 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-17/#item-26" class="archive-item-link">风格还是签名？艺术家隔离的绘画风格分类评测</a>
+                <span class="archive-item-date" title='2026-08-17'>08-17</span>&nbsp;<a href="https://arxiv.org/abs/2608.14435" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>风险评估 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-19/#judge-retrieve-or-abstain-llm" class="archive-item-link">Judge, Retrieve, or Abstain：具风险保证的 LLM 裁判</a>
+                <span class="archive-item-date" title='2026-08-19'>08-19</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>首步纠错 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-06-30/#item-16" class="archive-item-link">在推理的开始迷失：首个推理步骤对长链推理的关键影响</a>
+                <span class="archive-item-date" title='2025-06-30'>06-30</span>&nbsp;<a href="https://arxiv.org/abs/2506.22058" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>验证器模型 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2025-12-31/#compassverifier-3b-verifierbench" class="archive-item-link">CompassVerifier：3B验证模型与多领域高难度基准 VerifierBench</a>
+                <span class="archive-item-date" title='2025-12-31'>12-31</span>&nbsp;<a href="https://arxiv.org/abs/2508.03686" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/open-compass/CompassVerifier" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://huggingface.co/collections/opencompass/compassverifier-686e5a25e8672e603b17c666" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>鲁棒性测试 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-08-22/#testnav-pareto" class="archive-item-link">TESTNAV：Pareto 引导的组合鲁棒性测试</a>
+                <span class="archive-item-date" title='2026-08-22'>08-22</span>&nbsp;<a href="https://arxiv.org/abs/2608.19882" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div></section></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
