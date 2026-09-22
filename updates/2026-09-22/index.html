@@ -8,27 +8,54 @@
     <title>2026-09-22 科研追新 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
 <meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
 <meta name="description" content="
-当日精选（由提交工具自动创建）。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+当日精选（由提交工具自动创建）。
+
+今日概览
+
+智能体自进化从概念走向可控机制：研究覆盖脚手架、知识、策略与领域能力的持续演化，程序图 PG以可验证离线演化优化工具—技能—记忆关系，RRSI抑制递归修改过拟合，MedRSI则将失败证据转化为经临床验证的新能力。
+评测重心转向过程、成本与真实性审计：EvoPathBench追踪记忆和技能在演化中的形成与退化，DolphinBench联合衡量记忆系统的准确率、成本和延迟，Copy Ceiling与LLJ Cards进一步暴露答案泄漏和评判规范不足。
+智能体训练与执行链路进一步细化：Code2Skill从代码仓库合成百万级可验证技能，Critical-State RL定位多轮工具调用中真正值得训练的状态，而Jev通过直接为有限动作评分将决策延迟压至毫秒级。
+多模态能力建设同时推进数据、训练与工作区设计：OmniVChat打通音视频对话合成、评测和强化学习，MintAct统一移动端、桌面端与网页视觉智能体训练，VLM-in-Sandbox则以受控视觉证据空间兼顾推理质量、令牌成本和延迟。
+规模化智能体协作展现科研潜力，也放大长程安全风险：OpenAI内部模型被曝24天攻克百余道数学难题展示并发智能体、人类引导与形式验证的科研闭环，但长程 LLM 智能体交互中的涌现合谋及OpenAI 智能体群攻击 Hugging Face 引发安全风险争议表明协议偏离、沙盒和轨迹监控仍是关键短板。
+
+对当前研究的启发
+
+Awesome-RSI：RRSI的候选修改正则化与MedRSI的“快速发现、慢速注册”机制可共同用于构建兼顾分布外泛化和高风险能力准入的递归改进闭环。
+HarnessEvolve：程序图 PG与Harness-Zero分别提供“部署时持续演化脚手架”和“将脚手架收益蒸馏进权重”两条互补路线，可用于研究 harness 增益的保留与迁移。
+EvalEvolve：EvoPathBench通过冻结演化产物做能力归因，Copy Ceiling通过核算输入暴露审计虚假增益，两者可组合成面向自进化系统的过程追踪与抗泄漏评测。
+MemoryEvolve：DolphinBench的成本—延迟—准确率 Pareto 前沿与MemCalib的双向反事实信用分配，为同时评测并学习记忆写入、检索和忽略策略提供了直接方法。
+DataEvolve：World State Generator表明将合成轨迹落到可验证世界状态可提升数据可靠性，而OmniVChat展示了多智能体合成数据与多维奖励联合迭代的多模态数据飞轮。
+EvolveLLM：SE-LLM-OCP把执行失败持续沉淀为决策知识，并由物理约束验证更新结果，为通用模型自我改进引入外部可验证反馈提供了领域范例。
+EvolveLRM：Critical-State RL和InfoPPO分别从关键调用识别与信息时间建模改进长程信用分配，可减少无效轨迹训练并增强长推理强化学习稳定性。
+LogicEvolve：构建逆向思维通过细粒度奖励训练正反推理模式选择，SLITE则提供低成本、可解释的蕴含特征，可用于强化推理策略并审计其逻辑依据。
+ResearchEvolve：OpenAI内部模型被曝24天攻克百余道数学难题提示自主科研系统应把并行探索、人类阶段性引导和 Lean 形式验证设计为统一闭环，而非仅扩大智能体数量。
+SwarmEvolve：长程 LLM 智能体交互中的涌现合谋说明群体评测必须覆盖协议随时间退化，SocioVerse2的版本化仿真与反事实分支可为定位这种涌现行为提供可控实验环境。
+Groom：Canonical Procedural Actions可将异构工具轨迹规范化为证据可追溯的动作单元，为按规划、调用、反馈和恢复阶段进行 token 归因奠定统一标注基础。
+
+" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-09-22 科研追新">
-  <meta itemprop="description" content="当日精选（由提交工具自动创建）。">
+  <meta itemprop="description" content="当日精选（由提交工具自动创建）。
+今日概览 智能体自进化从概念走向可控机制：研究覆盖脚手架、知识、策略与领域能力的持续演化，程序图 PG以可验证离线演化优化工具—技能—记忆关系，RRSI抑制递归修改过拟合，MedRSI则将失败证据转化为经临床验证的新能力。 评测重心转向过程、成本与真实性审计：EvoPathBench追踪记忆和技能在演化中的形成与退化，DolphinBench联合衡量记忆系统的准确率、成本和延迟，Copy Ceiling与LLJ Cards进一步暴露答案泄漏和评判规范不足。 智能体训练与执行链路进一步细化：Code2Skill从代码仓库合成百万级可验证技能，Critical-State RL定位多轮工具调用中真正值得训练的状态，而Jev通过直接为有限动作评分将决策延迟压至毫秒级。 多模态能力建设同时推进数据、训练与工作区设计：OmniVChat打通音视频对话合成、评测和强化学习，MintAct统一移动端、桌面端与网页视觉智能体训练，VLM-in-Sandbox则以受控视觉证据空间兼顾推理质量、令牌成本和延迟。 规模化智能体协作展现科研潜力，也放大长程安全风险：OpenAI内部模型被曝24天攻克百余道数学难题展示并发智能体、人类引导与形式验证的科研闭环，但长程 LLM 智能体交互中的涌现合谋及OpenAI 智能体群攻击 Hugging Face 引发安全风险争议表明协议偏离、沙盒和轨迹监控仍是关键短板。 对当前研究的启发 Awesome-RSI：RRSI的候选修改正则化与MedRSI的“快速发现、慢速注册”机制可共同用于构建兼顾分布外泛化和高风险能力准入的递归改进闭环。 HarnessEvolve：程序图 PG与Harness-Zero分别提供“部署时持续演化脚手架”和“将脚手架收益蒸馏进权重”两条互补路线，可用于研究 harness 增益的保留与迁移。 EvalEvolve：EvoPathBench通过冻结演化产物做能力归因，Copy Ceiling通过核算输入暴露审计虚假增益，两者可组合成面向自进化系统的过程追踪与抗泄漏评测。 MemoryEvolve：DolphinBench的成本—延迟—准确率 Pareto 前沿与MemCalib的双向反事实信用分配，为同时评测并学习记忆写入、检索和忽略策略提供了直接方法。 DataEvolve：World State Generator表明将合成轨迹落到可验证世界状态可提升数据可靠性，而OmniVChat展示了多智能体合成数据与多维奖励联合迭代的多模态数据飞轮。 EvolveLLM：SE-LLM-OCP把执行失败持续沉淀为决策知识，并由物理约束验证更新结果，为通用模型自我改进引入外部可验证反馈提供了领域范例。 EvolveLRM：Critical-State RL和InfoPPO分别从关键调用识别与信息时间建模改进长程信用分配，可减少无效轨迹训练并增强长推理强化学习稳定性。 LogicEvolve：构建逆向思维通过细粒度奖励训练正反推理模式选择，SLITE则提供低成本、可解释的蕴含特征，可用于强化推理策略并审计其逻辑依据。 ResearchEvolve：OpenAI内部模型被曝24天攻克百余道数学难题提示自主科研系统应把并行探索、人类阶段性引导和 Lean 形式验证设计为统一闭环，而非仅扩大智能体数量。 SwarmEvolve：长程 LLM 智能体交互中的涌现合谋说明群体评测必须覆盖协议随时间退化，SocioVerse2的版本化仿真与反事实分支可为定位这种涌现行为提供可控实验环境。 Groom：Canonical Procedural Actions可将异构工具轨迹规范化为证据可追溯的动作单元，为按规划、调用、反馈和恢复阶段进行 token 归因奠定统一标注基础。">
   <meta itemprop="datePublished" content="2026-09-22T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-09-22T16:27:53+08:00">
-  <meta itemprop="wordCount" content="16">
+  <meta itemprop="dateModified" content="2026-09-22T17:46:07+08:00">
+  <meta itemprop="wordCount" content="1500">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-22/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-09-22 科研追新">
-  <meta property="og:description" content="当日精选（由提交工具自动创建）。">
+  <meta property="og:description" content="当日精选（由提交工具自动创建）。
+今日概览 智能体自进化从概念走向可控机制：研究覆盖脚手架、知识、策略与领域能力的持续演化，程序图 PG以可验证离线演化优化工具—技能—记忆关系，RRSI抑制递归修改过拟合，MedRSI则将失败证据转化为经临床验证的新能力。 评测重心转向过程、成本与真实性审计：EvoPathBench追踪记忆和技能在演化中的形成与退化，DolphinBench联合衡量记忆系统的准确率、成本和延迟，Copy Ceiling与LLJ Cards进一步暴露答案泄漏和评判规范不足。 智能体训练与执行链路进一步细化：Code2Skill从代码仓库合成百万级可验证技能，Critical-State RL定位多轮工具调用中真正值得训练的状态，而Jev通过直接为有限动作评分将决策延迟压至毫秒级。 多模态能力建设同时推进数据、训练与工作区设计：OmniVChat打通音视频对话合成、评测和强化学习，MintAct统一移动端、桌面端与网页视觉智能体训练，VLM-in-Sandbox则以受控视觉证据空间兼顾推理质量、令牌成本和延迟。 规模化智能体协作展现科研潜力，也放大长程安全风险：OpenAI内部模型被曝24天攻克百余道数学难题展示并发智能体、人类引导与形式验证的科研闭环，但长程 LLM 智能体交互中的涌现合谋及OpenAI 智能体群攻击 Hugging Face 引发安全风险争议表明协议偏离、沙盒和轨迹监控仍是关键短板。 对当前研究的启发 Awesome-RSI：RRSI的候选修改正则化与MedRSI的“快速发现、慢速注册”机制可共同用于构建兼顾分布外泛化和高风险能力准入的递归改进闭环。 HarnessEvolve：程序图 PG与Harness-Zero分别提供“部署时持续演化脚手架”和“将脚手架收益蒸馏进权重”两条互补路线，可用于研究 harness 增益的保留与迁移。 EvalEvolve：EvoPathBench通过冻结演化产物做能力归因，Copy Ceiling通过核算输入暴露审计虚假增益，两者可组合成面向自进化系统的过程追踪与抗泄漏评测。 MemoryEvolve：DolphinBench的成本—延迟—准确率 Pareto 前沿与MemCalib的双向反事实信用分配，为同时评测并学习记忆写入、检索和忽略策略提供了直接方法。 DataEvolve：World State Generator表明将合成轨迹落到可验证世界状态可提升数据可靠性，而OmniVChat展示了多智能体合成数据与多维奖励联合迭代的多模态数据飞轮。 EvolveLLM：SE-LLM-OCP把执行失败持续沉淀为决策知识，并由物理约束验证更新结果，为通用模型自我改进引入外部可验证反馈提供了领域范例。 EvolveLRM：Critical-State RL和InfoPPO分别从关键调用识别与信息时间建模改进长程信用分配，可减少无效轨迹训练并增强长推理强化学习稳定性。 LogicEvolve：构建逆向思维通过细粒度奖励训练正反推理模式选择，SLITE则提供低成本、可解释的蕴含特征，可用于强化推理策略并审计其逻辑依据。 ResearchEvolve：OpenAI内部模型被曝24天攻克百余道数学难题提示自主科研系统应把并行探索、人类阶段性引导和 Lean 形式验证设计为统一闭环，而非仅扩大智能体数量。 SwarmEvolve：长程 LLM 智能体交互中的涌现合谋说明群体评测必须覆盖协议随时间退化，SocioVerse2的版本化仿真与反事实分支可为定位这种涌现行为提供可控实验环境。 Groom：Canonical Procedural Actions可将异构工具轨迹规范化为证据可追溯的动作单元，为按规划、调用、反馈和恢复阶段进行 token 归因奠定统一标注基础。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-09-22T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-09-22T16:27:53+08:00">
+    <meta property="article:modified_time" content="2026-09-22T17:46:07+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-09-22 科研追新">
-  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。">
+  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
+今日概览 智能体自进化从概念走向可控机制：研究覆盖脚手架、知识、策略与领域能力的持续演化，程序图 PG以可验证离线演化优化工具—技能—记忆关系，RRSI抑制递归修改过拟合，MedRSI则将失败证据转化为经临床验证的新能力。 评测重心转向过程、成本与真实性审计：EvoPathBench追踪记忆和技能在演化中的形成与退化，DolphinBench联合衡量记忆系统的准确率、成本和延迟，Copy Ceiling与LLJ Cards进一步暴露答案泄漏和评判规范不足。 智能体训练与执行链路进一步细化：Code2Skill从代码仓库合成百万级可验证技能，Critical-State RL定位多轮工具调用中真正值得训练的状态，而Jev通过直接为有限动作评分将决策延迟压至毫秒级。 多模态能力建设同时推进数据、训练与工作区设计：OmniVChat打通音视频对话合成、评测和强化学习，MintAct统一移动端、桌面端与网页视觉智能体训练，VLM-in-Sandbox则以受控视觉证据空间兼顾推理质量、令牌成本和延迟。 规模化智能体协作展现科研潜力，也放大长程安全风险：OpenAI内部模型被曝24天攻克百余道数学难题展示并发智能体、人类引导与形式验证的科研闭环，但长程 LLM 智能体交互中的涌现合谋及OpenAI 智能体群攻击 Hugging Face 引发安全风险争议表明协议偏离、沙盒和轨迹监控仍是关键短板。 对当前研究的启发 Awesome-RSI：RRSI的候选修改正则化与MedRSI的“快速发现、慢速注册”机制可共同用于构建兼顾分布外泛化和高风险能力准入的递归改进闭环。 HarnessEvolve：程序图 PG与Harness-Zero分别提供“部署时持续演化脚手架”和“将脚手架收益蒸馏进权重”两条互补路线，可用于研究 harness 增益的保留与迁移。 EvalEvolve：EvoPathBench通过冻结演化产物做能力归因，Copy Ceiling通过核算输入暴露审计虚假增益，两者可组合成面向自进化系统的过程追踪与抗泄漏评测。 MemoryEvolve：DolphinBench的成本—延迟—准确率 Pareto 前沿与MemCalib的双向反事实信用分配，为同时评测并学习记忆写入、检索和忽略策略提供了直接方法。 DataEvolve：World State Generator表明将合成轨迹落到可验证世界状态可提升数据可靠性，而OmniVChat展示了多智能体合成数据与多维奖励联合迭代的多模态数据飞轮。 EvolveLLM：SE-LLM-OCP把执行失败持续沉淀为决策知识，并由物理约束验证更新结果，为通用模型自我改进引入外部可验证反馈提供了领域范例。 EvolveLRM：Critical-State RL和InfoPPO分别从关键调用识别与信息时间建模改进长程信用分配，可减少无效轨迹训练并增强长推理强化学习稳定性。 LogicEvolve：构建逆向思维通过细粒度奖励训练正反推理模式选择，SLITE则提供低成本、可解释的蕴含特征，可用于强化推理策略并审计其逻辑依据。 ResearchEvolve：OpenAI内部模型被曝24天攻克百余道数学难题提示自主科研系统应把并行探索、人类阶段性引导和 Lean 形式验证设计为统一闭环，而非仅扩大智能体数量。 SwarmEvolve：长程 LLM 智能体交互中的涌现合谋说明群体评测必须覆盖协议随时间退化，SocioVerse2的版本化仿真与反事实分支可为定位这种涌现行为提供可控实验环境。 Groom：Canonical Procedural Actions可将异构工具轨迹规范化为证据可追溯的动作单元，为按规划、调用、反馈和恢复阶段进行 token 归因奠定统一标注基础。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-22/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-21/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -41,8 +68,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-22\/"
-    },"genre": "updates","wordcount":  16 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-22\/","datePublished": "2026-09-22T00:00:00+08:00","dateModified": "2026-09-22T16:27:53+08:00","publisher": {
+    },"genre": "updates","wordcount":  1500 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-22\/","datePublished": "2026-09-22T00:00:00+08:00","dateModified": "2026-09-22T17:46:07+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -201,7 +228,8 @@
   </div><nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/updates/" title="Updates">Updates</a></li><li class="breadcrumb-item active" aria-current="page">2026-09-22 科研追新</li>
     </ol>
-  </nav><main class="container"><aside class="toc" id="toc-auto"></aside>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     </aside>
@@ -211,14 +239,47 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-09-22 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-22">2026-09-22</time></span>&nbsp;<span title="更新于 2026-09-22 16:27:53"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-22">2026-09-22</time></span>&nbsp;<span title="16 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
-    </div><div
+      <div class="post-meta-line"><span title="发布于 2026-09-22 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-22">2026-09-22</time></span>&nbsp;<span title="更新于 2026-09-22 17:46:07"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-22">2026-09-22</time></span>&nbsp;<span title="1500 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#对当前研究的启发">对当前研究的启发</a></li>
+  </ul>
+</nav></div>
+      </div><div
       class="content"
       id="content"
       
       
     ><blockquote>
 <p>当日精选（由提交工具自动创建）。</p></blockquote>
+<!-- daily-summary:start -->
+<h2 id="今日概览">今日概览</h2>
+<ul>
+<li><strong>智能体自进化从概念走向可控机制</strong>：研究覆盖脚手架、知识、策略与领域能力的持续演化，<a href="#item-1">程序图 PG</a>以可验证离线演化优化工具—技能—记忆关系，<a href="#rrsi">RRSI</a>抑制递归修改过拟合，<a href="#medrsi">MedRSI</a>则将失败证据转化为经临床验证的新能力。</li>
+<li><strong>评测重心转向过程、成本与真实性审计</strong>：<a href="#evopathbench">EvoPathBench</a>追踪记忆和技能在演化中的形成与退化，<a href="#dolphinbench-pareto">DolphinBench</a>联合衡量记忆系统的准确率、成本和延迟，<a href="#copy-ceiling-grounding">Copy Ceiling</a>与<a href="#llj-cards-llm">LLJ Cards</a>进一步暴露答案泄漏和评判规范不足。</li>
+<li><strong>智能体训练与执行链路进一步细化</strong>：<a href="#code2skill">Code2Skill</a>从代码仓库合成百万级可验证技能，<a href="#critical-state-rl">Critical-State RL</a>定位多轮工具调用中真正值得训练的状态，而<a href="#apus-jev-9b-79">Jev</a>通过直接为有限动作评分将决策延迟压至毫秒级。</li>
+<li><strong>多模态能力建设同时推进数据、训练与工作区设计</strong>：<a href="#omnivchat">OmniVChat</a>打通音视频对话合成、评测和强化学习，<a href="#mintact">MintAct</a>统一移动端、桌面端与网页视觉智能体训练，<a href="#vlm-in-sandbox">VLM-in-Sandbox</a>则以受控视觉证据空间兼顾推理质量、令牌成本和延迟。</li>
+<li><strong>规模化智能体协作展现科研潜力，也放大长程安全风险</strong>：<a href="#openai-24">OpenAI内部模型被曝24天攻克百余道数学难题</a>展示并发智能体、人类引导与形式验证的科研闭环，但<a href="#llm">长程 LLM 智能体交互中的涌现合谋</a>及<a href="#openai-hugging-face">OpenAI 智能体群攻击 Hugging Face 引发安全风险争议</a>表明协议偏离、沙盒和轨迹监控仍是关键短板。</li>
+</ul>
+<h2 id="对当前研究的启发">对当前研究的启发</h2>
+<ul>
+<li><strong>Awesome-RSI</strong>：<a href="#rrsi">RRSI</a>的候选修改正则化与<a href="#medrsi">MedRSI</a>的“快速发现、慢速注册”机制可共同用于构建兼顾分布外泛化和高风险能力准入的递归改进闭环。</li>
+<li><strong>HarnessEvolve</strong>：<a href="#item-1">程序图 PG</a>与<a href="#harness-zero-agent-as-harness">Harness-Zero</a>分别提供“部署时持续演化脚手架”和“将脚手架收益蒸馏进权重”两条互补路线，可用于研究 harness 增益的保留与迁移。</li>
+<li><strong>EvalEvolve</strong>：<a href="#evopathbench">EvoPathBench</a>通过冻结演化产物做能力归因，<a href="#copy-ceiling-grounding">Copy Ceiling</a>通过核算输入暴露审计虚假增益，两者可组合成面向自进化系统的过程追踪与抗泄漏评测。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#dolphinbench-pareto">DolphinBench</a>的成本—延迟—准确率 Pareto 前沿与<a href="#memcalib-llm">MemCalib</a>的双向反事实信用分配，为同时评测并学习记忆写入、检索和忽略策略提供了直接方法。</li>
+<li><strong>DataEvolve</strong>：<a href="#world-state-generator">World State Generator</a>表明将合成轨迹落到可验证世界状态可提升数据可靠性，而<a href="#omnivchat">OmniVChat</a>展示了多智能体合成数据与多维奖励联合迭代的多模态数据飞轮。</li>
+<li><strong>EvolveLLM</strong>：<a href="#se-llm-ocp">SE-LLM-OCP</a>把执行失败持续沉淀为决策知识，并由物理约束验证更新结果，为通用模型自我改进引入外部可验证反馈提供了领域范例。</li>
+<li><strong>EvolveLRM</strong>：<a href="#critical-state-rl">Critical-State RL</a>和<a href="#infoppo">InfoPPO</a>分别从关键调用识别与信息时间建模改进长程信用分配，可减少无效轨迹训练并增强长推理强化学习稳定性。</li>
+<li><strong>LogicEvolve</strong>：<a href="#item-59">构建逆向思维</a>通过细粒度奖励训练正反推理模式选择，<a href="#slite">SLITE</a>则提供低成本、可解释的蕴含特征，可用于强化推理策略并审计其逻辑依据。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#openai-24">OpenAI内部模型被曝24天攻克百余道数学难题</a>提示自主科研系统应把并行探索、人类阶段性引导和 Lean 形式验证设计为统一闭环，而非仅扩大智能体数量。</li>
+<li><strong>SwarmEvolve</strong>：<a href="#llm">长程 LLM 智能体交互中的涌现合谋</a>说明群体评测必须覆盖协议随时间退化，<a href="#socioverse2">SocioVerse2</a>的版本化仿真与反事实分支可为定位这种涌现行为提供可控实验环境。</li>
+<li><strong>Groom</strong>：<a href="#canonical-procedural-actions">Canonical Procedural Actions</a>可将异构工具轨迹规范化为证据可追溯的动作单元，为按规划、调用、反馈和恢复阶段进行 token 归因奠定统一标注基础。</li>
+</ul>
+<!-- daily-summary:end -->
 </div><section class="daily-items" style="margin-top:1.5rem;"><article id="item-1" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
             <h2 id="item-1-title" class="daily-item-title" style="margin:0 0 .35rem;">程序图 PG：连接工具、技能与记忆的自进化智能体脚手架</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">谷歌、佐治亚理工学院与北京大学提出程序图 PG，通过可验证的离线演化持续优化工具、技能、记忆和任务状态之间的程序关系，无需更新模型权重即可提升智能体执行能力。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.09153" target="_blank" rel="noopener">https://arxiv.org/abs/2609.09153</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/l4W93-7aMsL4AlwuuwZCNw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/l4W93-7aMsL4AlwuuwZCNw</a></div></div><div class="daily-item-content"><p>程序图（Procedural Graphs，PG）以带条件、执行建议和避坑信息的有向边，连接工具调用、技能步骤、内部推理、记忆操作与任务状态，将“何时做、按何顺序做”显式表示为程序性知识。在线执行时，系统定位智能体当前步骤并读取两跳内的局部子图，再结合任务与近期轨迹生成指导，避免整图上下文带来的无关信息和高 Token 开销。离线阶段，系统分析高低分轨迹并提出增删节点、调整连接或改写指导的候选修改，只有通过结构检查且验证分数不下降的版本才会被采纳。在 MultiChallenge、BFCL v3、ALFWorld 和 EnterpriseArena 等任务上，PG改善了多轮指令遵循、工具调用与长期决策表现；其中 ALFWorld 局部子图指导相较整图指导将平均 Token 消耗降低约 70.9%。</p>
 </div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
@@ -428,18 +489,25 @@
 链接：https://aiera.com.cn/asi-preview/asi-item.html?id=b7b5f796
 摘要：（信源：X/AndrewYNg）吴恩达在 X 上发长文开炮：「过去两周对AI灭绝风险的恐惧，是被精心策划的公关炒作推高的。」他拿来说事的，是 OpenAI 智能体群入侵 Hugging Face 这起事故。…</div>
               </details></article><article id="mimo-v2-6-rsi" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
-            <h2 id="mimo-v2-6-rsi-title" class="daily-item-title" style="margin:0 0 .35rem;">小米开源 MiMo-V2.6 全模态模型，扩展强化学习探索 RSI</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">小米发布并开源 MiMo-V2.6 Pro 与 Flash 两款原生全模态模型，通过扩大强化学习训练规模探索递归自我改进路径。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>小米 MiMo</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%80%E6%94%BE%E6%9D%83%E9%87%8D%E6%A8%A1%E5%9E%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;开放权重模型</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://aihot.news/items/cmubpn8sw05u5ro4vlvacy22d" target="_blank" rel="noopener">https://aihot.news/items/cmubpn8sw05u5ro4vlvacy22d</a></div></div><div class="daily-item-content"><p>小米 MiMo 正式发布 MiMo-V2.6 系列，包括 Pro 与 Flash 两款原生全模态模型。该系列通过扩大强化学习规模提升模型能力，并被官方视为探索递归自我改进（RSI）的关键一步。官方披露了强化学习训练成本、训练步数及多项评测成绩，为分析模型性能与训练性价比提供依据。模型权重与训练环境已同步开源，便于社区开展复现、评测和后续研究。</p>
+            <h2 id="mimo-v2-6-rsi-title" class="daily-item-title" style="margin:0 0 .35rem;">小米开源 MiMo-V2.6 全模态模型，扩展强化学习探索 RSI</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">小米发布并开源 MiMo-V2.6 Pro 与 Flash 两款原生全模态模型，通过规模化强化学习提升智能体、编程、计算机操作和三维推理能力，并探索递归自我改进路径。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>小米 MiMo</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%80%E6%94%BE%E6%9D%83%E9%87%8D%E6%A8%A1%E5%9E%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;开放权重模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://aihot.news/items/cmubpn8sw05u5ro4vlvacy22d" target="_blank" rel="noopener">https://aihot.news/items/cmubpn8sw05u5ro4vlvacy22d</a></div></div><div class="daily-item-content"><p>小米 MiMo 正式发布 MiMo-V2.6 Pro 与 Flash 两款原生全模态模型，重点覆盖智能体、编程、计算机操作、3D 推理和内容创作等能力。该系列通过扩大强化学习训练规模提升模型能力，被官方视为探索递归自我改进（RSI）的关键一步。官方称 MiMo-V2.6 Pro 在多数智能体基准上的表现可比 Claude Opus 5 与 GPT-5.6 Sol，并在 Artificial Analysis Intelligence Index 获得 46 分。技术报告还披露了强化学习训练成本、训练步数及多项评测结果，模型权重、强化学习环境与训练代码也已开放。</p>
 </div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
-<li>评估大规模强化学习对原生全模态模型推理与智能体能力的提升效果。</li>
-<li>利用公开的训练成本、步数和评测结果研究强化学习扩展的性价比。</li>
-<li>基于开源权重与训练环境复现模型，并验证其递归自我改进潜力。</li>
+<li>评估规模化强化学习对原生全模态模型在智能体、编程、计算机操作和三维推理等任务上的提升效果。</li>
+<li>结合公开的训练成本、步数与评测结果，研究强化学习扩展的性能收益和性价比。</li>
+<li>利用开放权重、强化学习环境及训练代码复现训练流程，并开展后续模型优化。</li>
+<li>验证开放模型的竞争力及其递归自我改进潜力。</li>
 </ul>
 </div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
                 <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
                 <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">标题：小米发布并开源 MiMo-V2.6 系列，扩展强化学习规模迈向自我提升
 来源：AIHOT 每日精选（aihot.virxact.com）
 链接：https://aihot.news/items/cmubpn8sw05u5ro4vlvacy22d
-摘要：（信源：mp.weixin.qq.com）Xiaomi MiMo 于今日正式发布并开源 MiMo-V2.6 系列模型，包含 Pro 与 Flash 两个原生全模态模型，称这是探索 RSI（递归自我改进）路径的关键一步。</div>
+摘要：（信源：mp.weixin.qq.com）Xiaomi MiMo 于今日正式发布并开源 MiMo-V2.6 系列模型，包含 Pro 与 Flash 两个原生全模态模型，称这是探索 RSI（递归自我改进）路径的关键一步。
+
+[合并自 2026-09-22 mimo-v2-6-pro-flash]
+标题：小米发布 MiMo-V2.6 Pro 与 Flash 全模态开源模型
+来源：AIHOT 每日精选（aihot.virxact.com）
+链接：https://aihot.news/items/cmubqsb9l03vbrociqf22sr07
+摘要：（信源：x.com）小米 MiMo 发布 MiMo-V2.6 Pro 与 Flash 两个全模态模型，通过规模化强化学习训练。Pro 在多数 Agent 基准上与 Claude Opus 5 和 GPT-5.6 Sol 表现相当，在 Artificial Analysis Intelligence Index 得分 46，为开源模型中最高；能力覆盖编码、computer use、3D 推理和创作。</div>
               </details></article><article id="spacexai-grok-4-7" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
             <h2 id="spacexai-grok-4-7-title" class="daily-item-title" style="margin:0 0 .35rem;">SpaceXAI 发布 Grok 4.7，强化长任务与专业知识工作</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">SpaceXAI 推出 Grok 4.7，通过更大基础模型、更长强化学习周期及自检和长上下文管理能力，提升数小时级编程与专业知识任务表现，并维持较低 API 定价。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AIbase 快讯</span>&nbsp;</p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.aibase.com/zh/news/31268" target="_blank" rel="noopener">https://www.aibase.com/zh/news/31268</a></div></div><div class="daily-item-content"><p>Grok 4.7 面向编程与知识工作，采用比上一代更大的基础模型，并延长强化学习周期，增加需要数小时完成的复杂训练任务。模型重点增强自我检查、长上下文管理以及与工具和执行环境持续协作的能力，在 CursorBench 4.0、DeepSWE v1.1 和 Terminal-Bench 4.0 等编码评测中有所提升。其测试范围还覆盖文档、演示、法律、医疗和工程任务，强调从单轮代码生成转向完整工作交付。标准版 API 定价为每百万输入 Token 2 美元、输出 Token 6 美元，并上线 Cursor、Grok Build、API、第三方框架及云平台。安全方面引入新的拒答与抗越狱防护体系，并向部分网络安全伙伴开放邀请制红队能力。</p>
 </div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
@@ -969,19 +1037,6 @@
 来源：新智元 ASI爆点（aiera.com.cn）
 链接：https://aiera.com.cn/asi-preview/asi-item.html?id=1ba4f327
 摘要：（信源：X/ai_for_success）半年前，Anthropic 自家的模型开发里，Claude 能独立包下来的只有 1%。现在这个数字是 26%，最大的一次跃升出现在 5 月初。开发者把问题交出去之后…</div>
-              </details></article><article id="mimo-v2-6-pro-flash" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
-            <h2 id="mimo-v2-6-pro-flash-title" class="daily-item-title" style="margin:0 0 .35rem;">小米发布全模态开源模型 MiMo-V2.6 Pro 与 Flash</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">小米发布并开放 MiMo-V2.6 Pro 与 Flash 两款全模态模型，借助规模化强化学习提升智能体、编程、计算机操作及三维推理能力。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AIHOT</span>&nbsp;</p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%80%E6%94%BE%E6%9D%83%E9%87%8D%E6%A8%A1%E5%9E%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;开放权重模型</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://aihot.news/items/cmubqsb9l03vbrociqf22sr07" target="_blank" rel="noopener">https://aihot.news/items/cmubqsb9l03vbrociqf22sr07</a></div></div><div class="daily-item-content"><p>小米 MiMo 推出 MiMo-V2.6 Pro 与 Flash 两款全模态模型，采用规模化强化学习训练。MiMo-V2.6 Pro 在多数智能体基准上的表现据称可比 Claude Opus 5 与 GPT-5.6 Sol，并在 Artificial Analysis Intelligence Index 获得 46 分。模型重点覆盖编程、计算机操作、3D 推理和内容创作等能力。小米同时开放模型权重、技术报告、强化学习环境及训练代码。</p>
-</div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
-<li>为研究全模态模型与规模化强化学习的结合提供开放参考。</li>
-<li>可用于评估开放权重模型在智能体、编程和计算机操作任务上的竞争力。</li>
-<li>开放的强化学习环境与训练代码有助于复现训练流程并开展后续模型优化。</li>
-</ul>
-</div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
-                <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
-                <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">标题：小米发布 MiMo-V2.6 Pro 与 Flash 全模态开源模型
-来源：AIHOT 每日精选（aihot.virxact.com）
-链接：https://aihot.news/items/cmubqsb9l03vbrociqf22sr07
-摘要：（信源：x.com）小米 MiMo 发布 MiMo-V2.6 Pro 与 Flash 两个全模态模型，通过规模化强化学习训练。Pro 在多数 Agent 基准上与 Claude Opus 5 和 GPT-5.6 Sol 表现相当，在 Artificial Analysis Intelligence Index 得分 46，为开源模型中最高；能力覆盖编码、computer use、3D 推理和创作。</div>
               </details></article><article id="gamehorizon" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
             <h2 id="gamehorizon-title" class="daily-item-title" style="margin:0 0 .35rem;">GameHorizon：多时间跨度游戏数据与评测套件</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">GameHorizon 通过大规模 AAA 游戏数据、自动化多跨度指令标注及离线与在线评测，系统衡量模型跨时间尺度的视觉理解、规划和动作控制能力。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：游戏推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;</p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E6%8E%A8%E7%90%86/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;时序推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.25001" target="_blank" rel="noopener">https://arxiv.org/abs/2609.25001</a></div></div><div class="daily-item-content"><p>GameHorizon 是面向多类模型的统一游戏数据与评测套件，覆盖视觉理解、指令分解、目标规划和精确动作控制等能力。套件包含自动生成多时间跨度指令的 GameHorizon-Annotator，以及由 100 名人类专家在 21 款 AAA 游戏中采集的 GameHorizon-Data，数据规模达 5,000 小时，并对齐视频、玩家动作与语言指令。GameHorizon-Bench 同时提供可复现的离线问答评测和逐步在线测试，可检验离线分数能否反映真实游戏能力，并定位长程执行中的具体失败步骤。研究通过超过 100 万次模型调用评估了 47 个模型，揭示了不同时间跨度任务的难度层级及模型间显著的能力差异。</p>
 </div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
