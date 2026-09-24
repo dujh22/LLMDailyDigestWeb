@@ -12,48 +12,48 @@
 
 今日概览
 
-递归自我改进走向分层、可执行的闭环体系：从提出 B0–L5 自主性框架的 79页综述提出RSI五级自主性分层架构，到群体协作与脚手架演化并行的 SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径，RSI 研究正从概念讨论转向可比较的实现路径。
-真实反馈成为自进化的关键驱动力：Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo将假设、真机实验和评测闭合，Meta“组织第二大脑”智能体：结构化知识与自改进闭环与 Mind Lab推出自迭代后训练平台Mint Recursive则分别以专家反馈和生产反馈持续更新知识或模型。
-Jev 式快决策形成从模型到系统的完整路线：4 项工作覆盖范式比较、端侧模型、分级评判和记忆控制，包括 开源版 Jev：Laya 登顶 Hugging Face 热榜、JEV-as-a-Judge：高置信接受、低置信升级的低成本评判与 Jev-Mem：System-One 控制的高效智能体记忆架构。
-评测与奖励开始刻画开放任务中的细粒度质量：The Tasteful Agent：衡量与提升长时程任务决策品味从真实轨迹自动构造决策分叉题，RULER：面向 SVG 生成的实例感知量规奖励则把实例级多维量规转化为可用于强化学习的评分信号。
-基础模型与系统侧继续拓展效率和模态边界：Ovis-Embedding：统一文本、图像、视频与音频的全模态嵌入统一四类模态检索，Flash-dLLM：IO 感知 KV 缓存与并行解码加速扩散语言模型提升扩散语言模型推理效率，HyperQ：量子增强扩散语言模型的电路超网络探索量子残差分支的参数高效适配。
+递归自我改进从概念分层走向多路径实现：综述提出 RSI 五级自主性分层架构，SwarmWorld 与 ModularRSI 分别验证群体协作与脚手架演化路径，Mint Recursive 则将闭环落到企业模型后训练。
+智能体闭环开始连接组织知识与真实物理环境：Meta“组织第二大脑”智能体 以结构化知识、自动评估和专家反馈实现免重训改进，Simate Physical RSI 则闭合假设、真机实验与评测反馈并登顶 RoboDojo。
+Jev 式 System 1 快决策形成完整应用栈（4 项）：从 Jev 与 Decitron 的范式对比、开源端侧模型 Laya，延伸到置信度级联的 JEV-as-a-Judge 和记忆控制架构 Jev-Mem。
+智能体与生成模型评测进一步细化到过程决策和实例级奖励：Taste-Bench 自动构造长时程轨迹决策分叉，RULER 则把实例感知多维量规转化为 SVG 强化学习奖励。
+模型底层能力同步推进：Ovis-Embedding 统一全模态表征，HyperQ 探索量子残差适配，Flash-dLLM 与 StableVQ 分别改善扩散语言模型推理效率和视觉分词器训练稳定性。
 
 对当前研究的启发
 
-Awesome-RSI：79页综述提出RSI五级自主性分层架构的 B0–L5 分级可作为资源清单的统一标注轴，而 SwarmWorld、ModularRSI 与 Physical RSI 可补充群体、脚手架和物理闭环三类代表路线。
-MemoryEvolve：Meta“组织第二大脑”智能体：结构化知识与自改进闭环与 Jev-Mem：System-One 控制的高效智能体记忆架构分别提供“专家反馈驱动知识演化”和“快模型控制写入、检索与停止”的两种可审计长期记忆方案。
-ResearchEvolve：Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo表明可将真机实验结果直接纳入假设生成与研究策略更新，构造具身科研智能体的可验证自进化闭环。
-SwarmEvolve：SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径可用于比较共享环境中的群体经验传播与单体模块演化，进而识别群体协作带来的独立增益。
-HarnessEvolve：SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径中的 ModularRSI 将执行框架本身纳入演化对象，为量化 harness 改动对能力提升和排名变化的贡献提供了直接案例。
-JevEvolve：JEV-as-a-Judge：高置信接受、低置信升级的低成本评判与 Jev-Mem：System-One 控制的高效智能体记忆架构展示了可从评判置信度和记忆操作日志中持续学习快模型与慢模型的升级边界。
-EvalEvolve：The Tasteful Agent：衡量与提升长时程任务决策品味以智能体轨迹中的真实决策分叉自动生成题目，可用于构建随新轨迹持续更新、且更贴近长程任务质量的动态评测。
-EvolveLRM：Mind Lab推出自迭代后训练平台Mint Recursive提供了以评测、数据、LoRA 后训练和生产反馈组成低成本迭代闭环的工程模板，而 RULER说明实例感知量规可进一步转化为开放任务的细粒度强化学习奖励。
-LogicEvolve：未打标签的 Lean Pool：AI 维护的形式化数学档案库可作为持续扩充且机器可验证的训练与评测来源，为逻辑自进化提供低歧义反馈和错误修复基础。
+Awesome-RSI：RSI 五级自主性分层架构 可作为资源库统一标注自主性和改进环路的主轴，并用 SwarmWorld 与 ModularRSI 补充群体、脚手架两类实现案例。
+MemoryEvolve：Meta“组织第二大脑”智能体 展示了“结构化外部记忆—自动评估—专家纠偏”的可审计演化闭环，而 Jev-Mem 提供了用快模型学习记忆写入、关联、路由和停止策略的低成本架构。
+ResearchEvolve：Simate Physical RSI 表明自主科研闭环可扩展至真机实验，值得重点研究人机共驾下假设生成、执行验证和真实数据回流的接口设计。
+JevEvolve：JEV-as-a-Judge 的高置信接受、低置信升级机制可直接用于学习快慢模型路由边界，Laya 与 Jev-Mem 则分别验证端侧部署和高频记忆控制场景。
+EvalEvolve：Tasteful Agent 的轨迹决策分叉自动出题方法，为构建随真实工程与科研轨迹持续更新、且关注长程决策质量的动态评测提供了具体方案。
+SwarmEvolve：SwarmWorld 与 ModularRSI 中共享环境驱动的群体经验学习，可用于研究协作结构、知识传播与群体改进信号是否真正超越单体自迭代。
+HarnessEvolve：ModularRSI 将执行框架本身纳入演化对象，提示应把工具接口、模块组合和验证流程作为可搜索、可比较的 harness 配置。
+EvolveLRM：Mint Recursive 将评测、数据、LoRA 后训练、部署和生产反馈串成低成本循环，可作为持续 RL 后训练平台化与防退化监控的工程参照。
+Groom：Taste-Bench 的轨迹分叉与结果感知教师机制可用于定位关键决策 token，并区分有效规划投入与冗余搜索消耗。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-09-24 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向分层、可执行的闭环体系：从提出 B0–L5 自主性框架的 79页综述提出RSI五级自主性分层架构，到群体协作与脚手架演化并行的 SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径，RSI 研究正从概念讨论转向可比较的实现路径。 真实反馈成为自进化的关键驱动力：Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo将假设、真机实验和评测闭合，Meta“组织第二大脑”智能体：结构化知识与自改进闭环与 Mind Lab推出自迭代后训练平台Mint Recursive则分别以专家反馈和生产反馈持续更新知识或模型。 Jev 式快决策形成从模型到系统的完整路线：4 项工作覆盖范式比较、端侧模型、分级评判和记忆控制，包括 开源版 Jev：Laya 登顶 Hugging Face 热榜、JEV-as-a-Judge：高置信接受、低置信升级的低成本评判与 Jev-Mem：System-One 控制的高效智能体记忆架构。 评测与奖励开始刻画开放任务中的细粒度质量：The Tasteful Agent：衡量与提升长时程任务决策品味从真实轨迹自动构造决策分叉题，RULER：面向 SVG 生成的实例感知量规奖励则把实例级多维量规转化为可用于强化学习的评分信号。 基础模型与系统侧继续拓展效率和模态边界：Ovis-Embedding：统一文本、图像、视频与音频的全模态嵌入统一四类模态检索，Flash-dLLM：IO 感知 KV 缓存与并行解码加速扩散语言模型提升扩散语言模型推理效率，HyperQ：量子增强扩散语言模型的电路超网络探索量子残差分支的参数高效适配。 对当前研究的启发 Awesome-RSI：79页综述提出RSI五级自主性分层架构的 B0–L5 分级可作为资源清单的统一标注轴，而 SwarmWorld、ModularRSI 与 Physical RSI 可补充群体、脚手架和物理闭环三类代表路线。 MemoryEvolve：Meta“组织第二大脑”智能体：结构化知识与自改进闭环与 Jev-Mem：System-One 控制的高效智能体记忆架构分别提供“专家反馈驱动知识演化”和“快模型控制写入、检索与停止”的两种可审计长期记忆方案。 ResearchEvolve：Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo表明可将真机实验结果直接纳入假设生成与研究策略更新，构造具身科研智能体的可验证自进化闭环。 SwarmEvolve：SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径可用于比较共享环境中的群体经验传播与单体模块演化，进而识别群体协作带来的独立增益。 HarnessEvolve：SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径中的 ModularRSI 将执行框架本身纳入演化对象，为量化 harness 改动对能力提升和排名变化的贡献提供了直接案例。 JevEvolve：JEV-as-a-Judge：高置信接受、低置信升级的低成本评判与 Jev-Mem：System-One 控制的高效智能体记忆架构展示了可从评判置信度和记忆操作日志中持续学习快模型与慢模型的升级边界。 EvalEvolve：The Tasteful Agent：衡量与提升长时程任务决策品味以智能体轨迹中的真实决策分叉自动生成题目，可用于构建随新轨迹持续更新、且更贴近长程任务质量的动态评测。 EvolveLRM：Mind Lab推出自迭代后训练平台Mint Recursive提供了以评测、数据、LoRA 后训练和生产反馈组成低成本迭代闭环的工程模板，而 RULER说明实例感知量规可进一步转化为开放任务的细粒度强化学习奖励。 LogicEvolve：未打标签的 Lean Pool：AI 维护的形式化数学档案库可作为持续扩充且机器可验证的训练与评测来源，为逻辑自进化提供低歧义反馈和错误修复基础。">
+今日概览 递归自我改进从概念分层走向多路径实现：综述提出 RSI 五级自主性分层架构，SwarmWorld 与 ModularRSI 分别验证群体协作与脚手架演化路径，Mint Recursive 则将闭环落到企业模型后训练。 智能体闭环开始连接组织知识与真实物理环境：Meta“组织第二大脑”智能体 以结构化知识、自动评估和专家反馈实现免重训改进，Simate Physical RSI 则闭合假设、真机实验与评测反馈并登顶 RoboDojo。 Jev 式 System 1 快决策形成完整应用栈（4 项）：从 Jev 与 Decitron 的范式对比、开源端侧模型 Laya，延伸到置信度级联的 JEV-as-a-Judge 和记忆控制架构 Jev-Mem。 智能体与生成模型评测进一步细化到过程决策和实例级奖励：Taste-Bench 自动构造长时程轨迹决策分叉，RULER 则把实例感知多维量规转化为 SVG 强化学习奖励。 模型底层能力同步推进：Ovis-Embedding 统一全模态表征，HyperQ 探索量子残差适配，Flash-dLLM 与 StableVQ 分别改善扩散语言模型推理效率和视觉分词器训练稳定性。 对当前研究的启发 Awesome-RSI：RSI 五级自主性分层架构 可作为资源库统一标注自主性和改进环路的主轴，并用 SwarmWorld 与 ModularRSI 补充群体、脚手架两类实现案例。 MemoryEvolve：Meta“组织第二大脑”智能体 展示了“结构化外部记忆—自动评估—专家纠偏”的可审计演化闭环，而 Jev-Mem 提供了用快模型学习记忆写入、关联、路由和停止策略的低成本架构。 ResearchEvolve：Simate Physical RSI 表明自主科研闭环可扩展至真机实验，值得重点研究人机共驾下假设生成、执行验证和真实数据回流的接口设计。 JevEvolve：JEV-as-a-Judge 的高置信接受、低置信升级机制可直接用于学习快慢模型路由边界，Laya 与 Jev-Mem 则分别验证端侧部署和高频记忆控制场景。 EvalEvolve：Tasteful Agent 的轨迹决策分叉自动出题方法，为构建随真实工程与科研轨迹持续更新、且关注长程决策质量的动态评测提供了具体方案。 SwarmEvolve：SwarmWorld 与 ModularRSI 中共享环境驱动的群体经验学习，可用于研究协作结构、知识传播与群体改进信号是否真正超越单体自迭代。 HarnessEvolve：ModularRSI 将执行框架本身纳入演化对象，提示应把工具接口、模块组合和验证流程作为可搜索、可比较的 harness 配置。 EvolveLRM：Mint Recursive 将评测、数据、LoRA 后训练、部署和生产反馈串成低成本循环，可作为持续 RL 后训练平台化与防退化监控的工程参照。 Groom：Taste-Bench 的轨迹分叉与结果感知教师机制可用于定位关键决策 token，并区分有效规划投入与冗余搜索消耗。">
   <meta itemprop="datePublished" content="2026-09-24T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-09-24T12:54:25+08:00">
-  <meta itemprop="wordCount" content="1554">
+  <meta itemprop="dateModified" content="2026-09-24T13:24:26+08:00">
+  <meta itemprop="wordCount" content="1092">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-24/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-09-24 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向分层、可执行的闭环体系：从提出 B0–L5 自主性框架的 79页综述提出RSI五级自主性分层架构，到群体协作与脚手架演化并行的 SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径，RSI 研究正从概念讨论转向可比较的实现路径。 真实反馈成为自进化的关键驱动力：Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo将假设、真机实验和评测闭合，Meta“组织第二大脑”智能体：结构化知识与自改进闭环与 Mind Lab推出自迭代后训练平台Mint Recursive则分别以专家反馈和生产反馈持续更新知识或模型。 Jev 式快决策形成从模型到系统的完整路线：4 项工作覆盖范式比较、端侧模型、分级评判和记忆控制，包括 开源版 Jev：Laya 登顶 Hugging Face 热榜、JEV-as-a-Judge：高置信接受、低置信升级的低成本评判与 Jev-Mem：System-One 控制的高效智能体记忆架构。 评测与奖励开始刻画开放任务中的细粒度质量：The Tasteful Agent：衡量与提升长时程任务决策品味从真实轨迹自动构造决策分叉题，RULER：面向 SVG 生成的实例感知量规奖励则把实例级多维量规转化为可用于强化学习的评分信号。 基础模型与系统侧继续拓展效率和模态边界：Ovis-Embedding：统一文本、图像、视频与音频的全模态嵌入统一四类模态检索，Flash-dLLM：IO 感知 KV 缓存与并行解码加速扩散语言模型提升扩散语言模型推理效率，HyperQ：量子增强扩散语言模型的电路超网络探索量子残差分支的参数高效适配。 对当前研究的启发 Awesome-RSI：79页综述提出RSI五级自主性分层架构的 B0–L5 分级可作为资源清单的统一标注轴，而 SwarmWorld、ModularRSI 与 Physical RSI 可补充群体、脚手架和物理闭环三类代表路线。 MemoryEvolve：Meta“组织第二大脑”智能体：结构化知识与自改进闭环与 Jev-Mem：System-One 控制的高效智能体记忆架构分别提供“专家反馈驱动知识演化”和“快模型控制写入、检索与停止”的两种可审计长期记忆方案。 ResearchEvolve：Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo表明可将真机实验结果直接纳入假设生成与研究策略更新，构造具身科研智能体的可验证自进化闭环。 SwarmEvolve：SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径可用于比较共享环境中的群体经验传播与单体模块演化，进而识别群体协作带来的独立增益。 HarnessEvolve：SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径中的 ModularRSI 将执行框架本身纳入演化对象，为量化 harness 改动对能力提升和排名变化的贡献提供了直接案例。 JevEvolve：JEV-as-a-Judge：高置信接受、低置信升级的低成本评判与 Jev-Mem：System-One 控制的高效智能体记忆架构展示了可从评判置信度和记忆操作日志中持续学习快模型与慢模型的升级边界。 EvalEvolve：The Tasteful Agent：衡量与提升长时程任务决策品味以智能体轨迹中的真实决策分叉自动生成题目，可用于构建随新轨迹持续更新、且更贴近长程任务质量的动态评测。 EvolveLRM：Mind Lab推出自迭代后训练平台Mint Recursive提供了以评测、数据、LoRA 后训练和生产反馈组成低成本迭代闭环的工程模板，而 RULER说明实例感知量规可进一步转化为开放任务的细粒度强化学习奖励。 LogicEvolve：未打标签的 Lean Pool：AI 维护的形式化数学档案库可作为持续扩充且机器可验证的训练与评测来源，为逻辑自进化提供低歧义反馈和错误修复基础。">
+今日概览 递归自我改进从概念分层走向多路径实现：综述提出 RSI 五级自主性分层架构，SwarmWorld 与 ModularRSI 分别验证群体协作与脚手架演化路径，Mint Recursive 则将闭环落到企业模型后训练。 智能体闭环开始连接组织知识与真实物理环境：Meta“组织第二大脑”智能体 以结构化知识、自动评估和专家反馈实现免重训改进，Simate Physical RSI 则闭合假设、真机实验与评测反馈并登顶 RoboDojo。 Jev 式 System 1 快决策形成完整应用栈（4 项）：从 Jev 与 Decitron 的范式对比、开源端侧模型 Laya，延伸到置信度级联的 JEV-as-a-Judge 和记忆控制架构 Jev-Mem。 智能体与生成模型评测进一步细化到过程决策和实例级奖励：Taste-Bench 自动构造长时程轨迹决策分叉，RULER 则把实例感知多维量规转化为 SVG 强化学习奖励。 模型底层能力同步推进：Ovis-Embedding 统一全模态表征，HyperQ 探索量子残差适配，Flash-dLLM 与 StableVQ 分别改善扩散语言模型推理效率和视觉分词器训练稳定性。 对当前研究的启发 Awesome-RSI：RSI 五级自主性分层架构 可作为资源库统一标注自主性和改进环路的主轴，并用 SwarmWorld 与 ModularRSI 补充群体、脚手架两类实现案例。 MemoryEvolve：Meta“组织第二大脑”智能体 展示了“结构化外部记忆—自动评估—专家纠偏”的可审计演化闭环，而 Jev-Mem 提供了用快模型学习记忆写入、关联、路由和停止策略的低成本架构。 ResearchEvolve：Simate Physical RSI 表明自主科研闭环可扩展至真机实验，值得重点研究人机共驾下假设生成、执行验证和真实数据回流的接口设计。 JevEvolve：JEV-as-a-Judge 的高置信接受、低置信升级机制可直接用于学习快慢模型路由边界，Laya 与 Jev-Mem 则分别验证端侧部署和高频记忆控制场景。 EvalEvolve：Tasteful Agent 的轨迹决策分叉自动出题方法，为构建随真实工程与科研轨迹持续更新、且关注长程决策质量的动态评测提供了具体方案。 SwarmEvolve：SwarmWorld 与 ModularRSI 中共享环境驱动的群体经验学习，可用于研究协作结构、知识传播与群体改进信号是否真正超越单体自迭代。 HarnessEvolve：ModularRSI 将执行框架本身纳入演化对象，提示应把工具接口、模块组合和验证流程作为可搜索、可比较的 harness 配置。 EvolveLRM：Mint Recursive 将评测、数据、LoRA 后训练、部署和生产反馈串成低成本循环，可作为持续 RL 后训练平台化与防退化监控的工程参照。 Groom：Taste-Bench 的轨迹分叉与结果感知教师机制可用于定位关键决策 token，并区分有效规划投入与冗余搜索消耗。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-09-24T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-09-24T12:54:25+08:00">
+    <meta property="article:modified_time" content="2026-09-24T13:24:26+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-09-24 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向分层、可执行的闭环体系：从提出 B0–L5 自主性框架的 79页综述提出RSI五级自主性分层架构，到群体协作与脚手架演化并行的 SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径，RSI 研究正从概念讨论转向可比较的实现路径。 真实反馈成为自进化的关键驱动力：Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo将假设、真机实验和评测闭合，Meta“组织第二大脑”智能体：结构化知识与自改进闭环与 Mind Lab推出自迭代后训练平台Mint Recursive则分别以专家反馈和生产反馈持续更新知识或模型。 Jev 式快决策形成从模型到系统的完整路线：4 项工作覆盖范式比较、端侧模型、分级评判和记忆控制，包括 开源版 Jev：Laya 登顶 Hugging Face 热榜、JEV-as-a-Judge：高置信接受、低置信升级的低成本评判与 Jev-Mem：System-One 控制的高效智能体记忆架构。 评测与奖励开始刻画开放任务中的细粒度质量：The Tasteful Agent：衡量与提升长时程任务决策品味从真实轨迹自动构造决策分叉题，RULER：面向 SVG 生成的实例感知量规奖励则把实例级多维量规转化为可用于强化学习的评分信号。 基础模型与系统侧继续拓展效率和模态边界：Ovis-Embedding：统一文本、图像、视频与音频的全模态嵌入统一四类模态检索，Flash-dLLM：IO 感知 KV 缓存与并行解码加速扩散语言模型提升扩散语言模型推理效率，HyperQ：量子增强扩散语言模型的电路超网络探索量子残差分支的参数高效适配。 对当前研究的启发 Awesome-RSI：79页综述提出RSI五级自主性分层架构的 B0–L5 分级可作为资源清单的统一标注轴，而 SwarmWorld、ModularRSI 与 Physical RSI 可补充群体、脚手架和物理闭环三类代表路线。 MemoryEvolve：Meta“组织第二大脑”智能体：结构化知识与自改进闭环与 Jev-Mem：System-One 控制的高效智能体记忆架构分别提供“专家反馈驱动知识演化”和“快模型控制写入、检索与停止”的两种可审计长期记忆方案。 ResearchEvolve：Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo表明可将真机实验结果直接纳入假设生成与研究策略更新，构造具身科研智能体的可验证自进化闭环。 SwarmEvolve：SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径可用于比较共享环境中的群体经验传播与单体模块演化，进而识别群体协作带来的独立增益。 HarnessEvolve：SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径中的 ModularRSI 将执行框架本身纳入演化对象，为量化 harness 改动对能力提升和排名变化的贡献提供了直接案例。 JevEvolve：JEV-as-a-Judge：高置信接受、低置信升级的低成本评判与 Jev-Mem：System-One 控制的高效智能体记忆架构展示了可从评判置信度和记忆操作日志中持续学习快模型与慢模型的升级边界。 EvalEvolve：The Tasteful Agent：衡量与提升长时程任务决策品味以智能体轨迹中的真实决策分叉自动生成题目，可用于构建随新轨迹持续更新、且更贴近长程任务质量的动态评测。 EvolveLRM：Mind Lab推出自迭代后训练平台Mint Recursive提供了以评测、数据、LoRA 后训练和生产反馈组成低成本迭代闭环的工程模板，而 RULER说明实例感知量规可进一步转化为开放任务的细粒度强化学习奖励。 LogicEvolve：未打标签的 Lean Pool：AI 维护的形式化数学档案库可作为持续扩充且机器可验证的训练与评测来源，为逻辑自进化提供低歧义反馈和错误修复基础。">
+今日概览 递归自我改进从概念分层走向多路径实现：综述提出 RSI 五级自主性分层架构，SwarmWorld 与 ModularRSI 分别验证群体协作与脚手架演化路径，Mint Recursive 则将闭环落到企业模型后训练。 智能体闭环开始连接组织知识与真实物理环境：Meta“组织第二大脑”智能体 以结构化知识、自动评估和专家反馈实现免重训改进，Simate Physical RSI 则闭合假设、真机实验与评测反馈并登顶 RoboDojo。 Jev 式 System 1 快决策形成完整应用栈（4 项）：从 Jev 与 Decitron 的范式对比、开源端侧模型 Laya，延伸到置信度级联的 JEV-as-a-Judge 和记忆控制架构 Jev-Mem。 智能体与生成模型评测进一步细化到过程决策和实例级奖励：Taste-Bench 自动构造长时程轨迹决策分叉，RULER 则把实例感知多维量规转化为 SVG 强化学习奖励。 模型底层能力同步推进：Ovis-Embedding 统一全模态表征，HyperQ 探索量子残差适配，Flash-dLLM 与 StableVQ 分别改善扩散语言模型推理效率和视觉分词器训练稳定性。 对当前研究的启发 Awesome-RSI：RSI 五级自主性分层架构 可作为资源库统一标注自主性和改进环路的主轴，并用 SwarmWorld 与 ModularRSI 补充群体、脚手架两类实现案例。 MemoryEvolve：Meta“组织第二大脑”智能体 展示了“结构化外部记忆—自动评估—专家纠偏”的可审计演化闭环，而 Jev-Mem 提供了用快模型学习记忆写入、关联、路由和停止策略的低成本架构。 ResearchEvolve：Simate Physical RSI 表明自主科研闭环可扩展至真机实验，值得重点研究人机共驾下假设生成、执行验证和真实数据回流的接口设计。 JevEvolve：JEV-as-a-Judge 的高置信接受、低置信升级机制可直接用于学习快慢模型路由边界，Laya 与 Jev-Mem 则分别验证端侧部署和高频记忆控制场景。 EvalEvolve：Tasteful Agent 的轨迹决策分叉自动出题方法，为构建随真实工程与科研轨迹持续更新、且关注长程决策质量的动态评测提供了具体方案。 SwarmEvolve：SwarmWorld 与 ModularRSI 中共享环境驱动的群体经验学习，可用于研究协作结构、知识传播与群体改进信号是否真正超越单体自迭代。 HarnessEvolve：ModularRSI 将执行框架本身纳入演化对象，提示应把工具接口、模块组合和验证流程作为可搜索、可比较的 harness 配置。 EvolveLRM：Mint Recursive 将评测、数据、LoRA 后训练、部署和生产反馈串成低成本循环，可作为持续 RL 后训练平台化与防退化监控的工程参照。 Groom：Taste-Bench 的轨迹分叉与结果感知教师机制可用于定位关键决策 token，并区分有效规划投入与冗余搜索消耗。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-24/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-23/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -66,8 +66,8 @@ LogicEvolve：未打标签的 Lean Pool：AI 维护的形式化数学档案库�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-24\/"
-    },"genre": "updates","wordcount":  1554 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-24\/","datePublished": "2026-09-24T00:00:00+08:00","dateModified": "2026-09-24T12:54:25+08:00","publisher": {
+    },"genre": "updates","wordcount":  1092 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-24\/","datePublished": "2026-09-24T00:00:00+08:00","dateModified": "2026-09-24T13:24:26+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -237,7 +237,7 @@ LogicEvolve：未打标签的 Lean Pool：AI 维护的形式化数学档案库�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-09-24 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-24">2026-09-24</time></span>&nbsp;<span title="更新于 2026-09-24 12:54:25"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-24">2026-09-24</time></span>&nbsp;<span title="1554 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-09-24 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-24">2026-09-24</time></span>&nbsp;<span title="更新于 2026-09-24 13:24:26"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-24">2026-09-24</time></span>&nbsp;<span title="1092 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -257,23 +257,23 @@ LogicEvolve：未打标签的 Lean Pool：AI 维护的形式化数学档案库�
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>递归自我改进走向分层、可执行的闭环体系</strong>：从提出 B0–L5 自主性框架的 <a href="#%e6%9d%a1%e7%9b%ae79-rsi">79页综述提出RSI五级自主性分层架构</a>，到群体协作与脚手架演化并行的 <a href="#%e6%9d%a1%e7%9b%aeswarmworld-modularrsi-ai">SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径</a>，RSI 研究正从概念讨论转向可比较的实现路径。</li>
-<li><strong>真实反馈成为自进化的关键驱动力</strong>：<a href="#%e6%9d%a1%e7%9b%aesimate-physical-rsi-robodojo">Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo</a>将假设、真机实验和评测闭合，<a href="#%e6%9d%a1%e7%9b%aemeta">Meta“组织第二大脑”智能体：结构化知识与自改进闭环</a>与 <a href="#%e6%9d%a1%e7%9b%aemind-lab-mint-recursive">Mind Lab推出自迭代后训练平台Mint Recursive</a>则分别以专家反馈和生产反馈持续更新知识或模型。</li>
-<li><strong>Jev 式快决策形成从模型到系统的完整路线</strong>：4 项工作覆盖范式比较、端侧模型、分级评判和记忆控制，包括 <a href="#%e6%9d%a1%e7%9b%aejev-laya-hugging-face">开源版 Jev：Laya 登顶 Hugging Face 热榜</a>、<a href="#%e6%9d%a1%e7%9b%aejev-as-a-judge">JEV-as-a-Judge：高置信接受、低置信升级的低成本评判</a>与 <a href="#%e6%9d%a1%e7%9b%aejev-mem-system-one">Jev-Mem：System-One 控制的高效智能体记忆架构</a>。</li>
-<li><strong>评测与奖励开始刻画开放任务中的细粒度质量</strong>：<a href="#%e6%9d%a1%e7%9b%aethe-tasteful-agent">The Tasteful Agent：衡量与提升长时程任务决策品味</a>从真实轨迹自动构造决策分叉题，<a href="#%e6%9d%a1%e7%9b%aeruler-svg">RULER：面向 SVG 生成的实例感知量规奖励</a>则把实例级多维量规转化为可用于强化学习的评分信号。</li>
-<li><strong>基础模型与系统侧继续拓展效率和模态边界</strong>：<a href="#%e6%9d%a1%e7%9b%aeovis-embedding">Ovis-Embedding：统一文本、图像、视频与音频的全模态嵌入</a>统一四类模态检索，<a href="#%e6%9d%a1%e7%9b%aeflash-dllm-io-kv">Flash-dLLM：IO 感知 KV 缓存与并行解码加速扩散语言模型</a>提升扩散语言模型推理效率，<a href="#%e6%9d%a1%e7%9b%aehyperq">HyperQ：量子增强扩散语言模型的电路超网络</a>探索量子残差分支的参数高效适配。</li>
+<li>递归自我改进从概念分层走向多路径实现：综述提出 <a href="#79-rsi">RSI 五级自主性分层架构</a>，<a href="#swarmworld-modularrsi-ai">SwarmWorld 与 ModularRSI</a> 分别验证群体协作与脚手架演化路径，<a href="#mind-lab-mint-recursive">Mint Recursive</a> 则将闭环落到企业模型后训练。</li>
+<li>智能体闭环开始连接组织知识与真实物理环境：<a href="#meta">Meta“组织第二大脑”智能体</a> 以结构化知识、自动评估和专家反馈实现免重训改进，<a href="#simate-physical-rsi-robodojo">Simate Physical RSI</a> 则闭合假设、真机实验与评测反馈并登顶 RoboDojo。</li>
+<li>Jev 式 System 1 快决策形成完整应用栈（4 项）：从 <a href="#jev-vs-decitron-ai">Jev 与 Decitron 的范式对比</a>、开源端侧模型 <a href="#jev-laya-hugging-face">Laya</a>，延伸到置信度级联的 <a href="#jev-as-a-judge">JEV-as-a-Judge</a> 和记忆控制架构 <a href="#jev-mem-system-one">Jev-Mem</a>。</li>
+<li>智能体与生成模型评测进一步细化到过程决策和实例级奖励：<a href="#the-tasteful-agent">Taste-Bench</a> 自动构造长时程轨迹决策分叉，<a href="#ruler-svg">RULER</a> 则把实例感知多维量规转化为 SVG 强化学习奖励。</li>
+<li>模型底层能力同步推进：<a href="#ovis-embedding">Ovis-Embedding</a> 统一全模态表征，<a href="#hyperq">HyperQ</a> 探索量子残差适配，<a href="#flash-dllm-io-kv">Flash-dLLM</a> 与 <a href="#stablevq">StableVQ</a> 分别改善扩散语言模型推理效率和视觉分词器训练稳定性。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>Awesome-RSI</strong>：<a href="#%e6%9d%a1%e7%9b%ae79-rsi">79页综述提出RSI五级自主性分层架构</a>的 B0–L5 分级可作为资源清单的统一标注轴，而 SwarmWorld、ModularRSI 与 Physical RSI 可补充群体、脚手架和物理闭环三类代表路线。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aemeta">Meta“组织第二大脑”智能体：结构化知识与自改进闭环</a>与 <a href="#%e6%9d%a1%e7%9b%aejev-mem-system-one">Jev-Mem：System-One 控制的高效智能体记忆架构</a>分别提供“专家反馈驱动知识演化”和“快模型控制写入、检索与停止”的两种可审计长期记忆方案。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aesimate-physical-rsi-robodojo">Simate以Physical RSI驱动机器人自主研究，登顶RoboDojo</a>表明可将真机实验结果直接纳入假设生成与研究策略更新，构造具身科研智能体的可验证自进化闭环。</li>
-<li><strong>SwarmEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aeswarmworld-modularrsi-ai">SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径</a>可用于比较共享环境中的群体经验传播与单体模块演化，进而识别群体协作带来的独立增益。</li>
-<li><strong>HarnessEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aeswarmworld-modularrsi-ai">SwarmWorld 与 ModularRSI：AI 自我进化的群体与个体路径</a>中的 ModularRSI 将执行框架本身纳入演化对象，为量化 harness 改动对能力提升和排名变化的贡献提供了直接案例。</li>
-<li><strong>JevEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aejev-as-a-judge">JEV-as-a-Judge：高置信接受、低置信升级的低成本评判</a>与 <a href="#%e6%9d%a1%e7%9b%aejev-mem-system-one">Jev-Mem：System-One 控制的高效智能体记忆架构</a>展示了可从评判置信度和记忆操作日志中持续学习快模型与慢模型的升级边界。</li>
-<li><strong>EvalEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aethe-tasteful-agent">The Tasteful Agent：衡量与提升长时程任务决策品味</a>以智能体轨迹中的真实决策分叉自动生成题目，可用于构建随新轨迹持续更新、且更贴近长程任务质量的动态评测。</li>
-<li><strong>EvolveLRM</strong>：<a href="#%e6%9d%a1%e7%9b%aemind-lab-mint-recursive">Mind Lab推出自迭代后训练平台Mint Recursive</a>提供了以评测、数据、LoRA 后训练和生产反馈组成低成本迭代闭环的工程模板，而 <a href="#%e6%9d%a1%e7%9b%aeruler-svg">RULER</a>说明实例感知量规可进一步转化为开放任务的细粒度强化学习奖励。</li>
-<li><strong>LogicEvolve</strong>：未打标签的 <a href="#%e6%9d%a1%e7%9b%aelean-pool-ai">Lean Pool：AI 维护的形式化数学档案库</a>可作为持续扩充且机器可验证的训练与评测来源，为逻辑自进化提供低歧义反馈和错误修复基础。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#79-rsi">RSI 五级自主性分层架构</a> 可作为资源库统一标注自主性和改进环路的主轴，并用 <a href="#swarmworld-modularrsi-ai">SwarmWorld 与 ModularRSI</a> 补充群体、脚手架两类实现案例。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#meta">Meta“组织第二大脑”智能体</a> 展示了“结构化外部记忆—自动评估—专家纠偏”的可审计演化闭环，而 <a href="#jev-mem-system-one">Jev-Mem</a> 提供了用快模型学习记忆写入、关联、路由和停止策略的低成本架构。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#simate-physical-rsi-robodojo">Simate Physical RSI</a> 表明自主科研闭环可扩展至真机实验，值得重点研究人机共驾下假设生成、执行验证和真实数据回流的接口设计。</li>
+<li><strong>JevEvolve</strong>：<a href="#jev-as-a-judge">JEV-as-a-Judge</a> 的高置信接受、低置信升级机制可直接用于学习快慢模型路由边界，<a href="#jev-laya-hugging-face">Laya</a> 与 <a href="#jev-mem-system-one">Jev-Mem</a> 则分别验证端侧部署和高频记忆控制场景。</li>
+<li><strong>EvalEvolve</strong>：<a href="#the-tasteful-agent">Tasteful Agent</a> 的轨迹决策分叉自动出题方法，为构建随真实工程与科研轨迹持续更新、且关注长程决策质量的动态评测提供了具体方案。</li>
+<li><strong>SwarmEvolve</strong>：<a href="#swarmworld-modularrsi-ai">SwarmWorld 与 ModularRSI</a> 中共享环境驱动的群体经验学习，可用于研究协作结构、知识传播与群体改进信号是否真正超越单体自迭代。</li>
+<li><strong>HarnessEvolve</strong>：<a href="#swarmworld-modularrsi-ai">ModularRSI</a> 将执行框架本身纳入演化对象，提示应把工具接口、模块组合和验证流程作为可搜索、可比较的 harness 配置。</li>
+<li><strong>EvolveLRM</strong>：<a href="#mind-lab-mint-recursive">Mint Recursive</a> 将评测、数据、LoRA 后训练、部署和生产反馈串成低成本循环，可作为持续 RL 后训练平台化与防退化监控的工程参照。</li>
+<li><strong>Groom</strong>：<a href="#the-tasteful-agent">Taste-Bench</a> 的轨迹分叉与结果感知教师机制可用于定位关键决策 token，并区分有效规划投入与冗余搜索消耗。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items" style="margin-top:1.5rem;"><article id="meta" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
@@ -456,6 +456,17 @@ LogicEvolve：未打标签的 Lean Pool：AI 维护的形式化数学档案库�
 </div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
                 <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
                 <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">https://mp.weixin.qq.com/s/Ttmci98QZIL5dAcWOX3-Pg?scene=1</div>
+              </details></article><article id="stablevq" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
+            <h2 id="stablevq-title" class="daily-item-title" style="margin:0 0 .35rem;">StableVQ：稳定训练向量量化视觉分词器</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">StableVQ通过动态直通估计器、区域VQ损失和解耦学习率调度，提升向量量化视觉分词器的训练稳定性、码本利用率与重建质量。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型训练</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉表征学习</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.26774" target="_blank" rel="noopener">https://arxiv.org/abs/2609.26774</a></div></div><div class="daily-item-content"><p>StableVQ将向量量化分词器的不稳定性归因于编码器—解码器与码本训练目标和优化过程的过度耦合。Dynamic STE修正编码器的学习目标，使其在码本利用率较低时仍能稳定优化离散约束下的重建空间。Region VQ Loss促使码本独立追踪编码器输出分布，减少对编码器振荡来激活码字的依赖；Decoupled Schedule则为两个子系统配置独立的学习率调度。该方法基于共享投影码本，不增加可学习参数，并在ImageNet实验中跨不同码本规模和初始化设置改善了稳定性、码本利用率及重建质量。</p>
+</div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
+<li>为离散视觉分词器提供无需增加可学习参数的稳定训练方案。</li>
+<li>启示VQ系统应按模块职责分别设计学习目标与优化动态，而非依赖脆弱的联合协作。</li>
+<li>可用于改进自回归或掩码式图像生成模型的视觉离散表征质量。</li>
+<li>Dynamic STE、Region VQ Loss与解耦调度可作为排查码本坍缩和低利用率问题的实用组件。</li>
+</ul>
+</div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
+                <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
+                <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">[StableVQ：稳定向量量化分词器训练实用指南（20 ▲）](https://huggingface.co/papers/2609.26774?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-09-23)</div>
               </details></article></section></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
