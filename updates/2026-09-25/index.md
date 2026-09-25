@@ -6,20 +6,23 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- 自我改进从“更新模型”扩展到“演化系统组件”： [ModularRSI：冻结模型权重实现 Harness 持续自我改进](#条目modularrsi-harness)通过迭代修改并验证 Harness 获得跨任务、跨模型增益，[Meta“组织第二大脑”智能体设计：可审计知识与自改进闭环](#条目meta)则将机构知识、推理程序和反馈回归置于权重之外。
-- 后训练开始细化数据与监督信号的控制：[北大开源 DataFlex-RL：统一接入与公平比较 RL 数据策略](#条目dataflex-rl-rl)统一比较动态数据选择、重加权和领域混合策略，[OPD：模型如何从自身生成轨迹学习](#条目opd)以在策略轨迹上的逐 token 教师监督兼顾分布匹配与稠密反馈。
-- 动态、抗记忆评测成为代码智能体能力辨析的关键：[薛定谔代码仓库：LLM 学会还是记住了 SWE-bench？](#条目llm-swe-bench)利用功能等价的仓库变换揭示 SWE-bench 成绩中存在仓库线索记忆成分，凸显静态基准的污染与推理失真风险。
-- 多模态长程任务围绕“状态记忆—交互学习—闭环决策”推进：[Spatial-Interactor：通过物理交互学习空间推理](#条目spatial-interactor)从真实与模拟轨迹学习物理状态转移，[过去塑造未来：自回归视频生成中的记忆机制综述](#条目item-7)系统梳理时序记忆机制，[PackLab：机器人料箱装箱多模态模型综合框架](#条目packlab)则打通仿真、训练和标准化评测。
-- 科研与创作自动化继续走向端到端执行：[AI Skill 自动发现科研 Idea 并运行实验](#条目ai-skill-idea)和[AI自主跑实验并生成论文](#条目item-14)展示从创意、实验到写作的无人值守工作流，而[Claude Opus 5.5 纯代码生成视频、3D 与游戏应用](#条目claude-opus-5-5-3d)体现代码智能体向视觉应用快速交付的扩展。
+- 自我改进闭环从模型权重扩展到脚手架、数据与轨迹： [ModularRSI](#modularrsi-harness) 在冻结模型下迭代 Harness，[SEAL](#mit-seal) 让模型生成自编辑并更新权重，[DataFlex-RL](#dataflex-rl-rl) 与 [OPD](#opd) 则分别优化 RL 数据调度和在策略轨迹学习。
+- 长期记忆走向可审计、可演化的外部知识系统：[Meta“组织第二大脑”](#meta) 以显式程序、专家反馈和回归测试维护机构知识，[自回归视频记忆综述](#item-7) 则从五个维度统一梳理时序状态持久化机制。
+- 动态评测与可靠性成为能力验证主线：[薛定谔代码仓库](#llm-swe-bench) 用功能等价变换揭示 SWE-bench 中的记忆依赖，[HappyWorld-Bench](#happyworld-bench) 面向视频、空间和具身交互评测世界模型的状态一致性与长程可靠性。
+- 具身与视频研究共同聚焦长程状态更新和闭环反馈：[Spatial-Interactor](#spatial-interactor) 从物理交互轨迹学习空间状态转移，[PackLab](#packlab) 打通装箱仿真、训练与评测，[RewardVerse](#rewardverse) 提供动态评分标准驱动的可解释视频奖励。
+- 自主科研工作流继续向端到端推进：[AI Skill 自动发现科研 Idea 并运行实验](#ai-skill-idea) 和 [AI自主跑实验并生成论文](#item-14) 展示从创意、实验到写作的自动化实践，[从 AI Build AI 到真正 RSI](#ai-build-ai-rsi) 则讨论跨代码、科学与具身场景的自进化闭环。
+- 新型决策与系统能力呈现多样化探索：[Jev](#jev) 引发类型安全、概率化快决策模型研究，[Claude Opus 5.5](#claude-opus-5-5-3d) 展示纯代码构建视觉应用的能力，[GeoPair](#geopair-transformer) 则以免训练方式保几何压缩 Transformer。
 
 ## 对当前研究的启发
-- **HarnessEvolve**：[ModularRSI：冻结模型权重实现 Harness 持续自我改进](#条目modularrsi-harness)表明可把执行轨迹分析、模块修改和回归验证直接做成 Harness 的自动演化闭环，并以跨模型迁移检验改进是否独立于底座。
-- **Awesome-RSI**：[从 AI Build AI 到真正 RSI：自进化闭环的实践路径](#条目ai-build-ai-rsi)与 ModularRSI 共同提示资源清单应区分局部组件优化和改进机制自身可迭代的真正 RSI，并重点记录闭环层级与持续增益证据。
-- **MemoryEvolve**：[Meta“组织第二大脑”智能体设计：可审计知识与自改进闭环](#条目meta)提供了以权重外知识、显式推理程序、专家反馈和回归测试共同驱动记忆演化的可审计架构范式。
-- **EvolveLRM**：[北大开源 DataFlex-RL：统一接入与公平比较 RL 数据策略](#条目dataflex-rl-rl)和[OPD：模型如何从自身生成轨迹学习](#条目opd)可分别用于研究 RL 推理训练中的数据配比演化与在策略稠密监督，从而联合改善探索效率和训练稳定性。
-- **EvalEvolve**：[薛定谔代码仓库：LLM 学会还是记住了 SWE-bench？](#条目llm-swe-bench)证明功能等价的动态仓库变换可作为抗污染评测原语，用于分离仓库记忆、表面线索利用与真实仓库级推理。
-- **JevEvolve**：[Jev掀起类型安全决策模型研究热潮](#条目jev)提示应优先评测候选选项扰动下的概率校准与稳定性，并探索其在模型评判、动作路由和记忆管理中的低延迟闭环学习。
-- **ResearchEvolve**：[AI Skill 自动发现科研 Idea 并运行实验](#条目ai-skill-idea)和[AI自主跑实验并生成论文](#条目item-14)为端到端科研智能体提供了工作流样例，但应进一步纳入创意新颖性、实验可复现性和论文结论可追溯性验证。
+- **Awesome-RSI**：[ModularRSI](#modularrsi-harness) 与 [SEAL](#mit-seal) 分别验证了外部脚手架和内部权重两条自改进路径，可用于构建“改进对象—反馈信号—验证机制”的统一 RSI 分类框架。
+- **HarnessEvolve**：[ModularRSI](#modularrsi-harness) 表明基于执行轨迹自动修改并回归验证模块化 Harness，能在冻结模型下持续增益且跨模型迁移，可作为 Harness 演化流水线的直接原型。
+- **MemoryEvolve**：[Meta“组织第二大脑”](#meta) 将知识外置、显式推理程序、专家反馈和回归测试组合成可审计闭环，为长期记忆的安全更新、错误回滚与组织级共享提供了具体架构。
+- **DataEvolve**：[SEAL](#mit-seal) 的自主合成数据与学习策略生成结合 [DataFlex-RL](#dataflex-rl-rl) 的动态选择、重加权和领域混合，可形成“生成—估值—配比—训练”的数据进化闭环。
+- **EvolveLLM**：[SEAL](#mit-seal) 通过强化学习优化自编辑、再以内层监督微调落实权重更新，为研究模型如何自主设计持续学习策略及控制遗忘提供了可复现实验范式。
+- **EvolveLRM**：[DataFlex-RL](#dataflex-rl-rl) 的统一数据策略比较框架与 [OPD](#opd) 的在策略逐 token 蒸馏，可用于同时研究 RL 推理训练中的数据配比、公平对照和稠密反馈。
+- **EvalEvolve**：[薛定谔代码仓库](#llm-swe-bench) 证明功能等价的动态仓库变换能够区分仓库线索记忆与真实推理，为构建抗污染、可持续生成变体的代码智能体评测提供了关键方法。
+- **ResearchEvolve**：[AI Skill 自动发现科研 Idea 并运行实验](#ai-skill-idea) 与 [AI自主跑实验并生成论文](#item-14) 提供了端到端科研自动化案例，可进一步加入新颖性审查、实验复现和结果回归测试形成可信科研闭环。
+- **JevEvolve**：[Jev](#jev) 周边对选项敏感性、模型评判和智能体记忆的快速研究扩散，提示应优先建立快决策模型的校准评测，并从交互日志学习快慢模型路由边界。
 
 <!-- daily-summary:end -->
 
