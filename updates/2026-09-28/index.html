@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>2026-09-28 科研追新 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="
+当日精选（由提交工具自动创建）。
+
+今日概览
+
+Claude API 开发工具进一步可视化：Anthropic 将 Workbench 升级为 Claude API Playground，整合参数配置、API 报文查看与代码导出，降低模型应用和工具调用的开发门槛。
+Coding Agent 从代码生成迈向全生命周期智能体：对话 OpenAI Codex 负责人：从内部工具到通用智能体回顾 Codex 从内部研究原型到开放式 Agent 的演变，显示 Harness 与运行环境正成为软件工程能力的重要组成部分。
+Agent Harness 开始形成递归优化闭环：Raven V0.2.0：统一编排专业 Agent 并推动 Harness 持续进化以“​​Harness of Harnesses”编排 Claude Code、Codex 等专业 Agent，并依据执行反馈自动改写和验证 Harness，连接了多智能体协作与递归自我改进。
+
+对当前研究的启发
+
+HarnessEvolve：Raven V0.2.0提供了“执行反馈—Harness 改写—验证”的可复现实例，可用于研究 Harness 自动演进及其对 Agent 表现的因果影响；Codex 的演进也提示评测应覆盖软件开发全生命周期。
+SwarmEvolve：Raven V0.2.0将多个异构专业 Agent 置于统一元 Harness 下，为研究动态任务分派、协作结构优化及跨 Agent 经验复用提供了具体架构。
+Awesome-RSI：Raven V0.2.0把改进机制本身纳入 Curator 的持续改写与验证闭环，可作为 Harness 层递归自我改进案例，并用于考察长期迭代中的单调提升、退化和验证器偏差。
+
+" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="2026-09-28 科研追新">
+  <meta itemprop="description" content="当日精选（由提交工具自动创建）。
+今日概览 Claude API 开发工具进一步可视化：Anthropic 将 Workbench 升级为 Claude API Playground，整合参数配置、API 报文查看与代码导出，降低模型应用和工具调用的开发门槛。 Coding Agent 从代码生成迈向全生命周期智能体：对话 OpenAI Codex 负责人：从内部工具到通用智能体回顾 Codex 从内部研究原型到开放式 Agent 的演变，显示 Harness 与运行环境正成为软件工程能力的重要组成部分。 Agent Harness 开始形成递归优化闭环：Raven V0.2.0：统一编排专业 Agent 并推动 Harness 持续进化以“​​Harness of Harnesses”编排 Claude Code、Codex 等专业 Agent，并依据执行反馈自动改写和验证 Harness，连接了多智能体协作与递归自我改进。 对当前研究的启发 HarnessEvolve：Raven V0.2.0提供了“执行反馈—Harness 改写—验证”的可复现实例，可用于研究 Harness 自动演进及其对 Agent 表现的因果影响；Codex 的演进也提示评测应覆盖软件开发全生命周期。 SwarmEvolve：Raven V0.2.0将多个异构专业 Agent 置于统一元 Harness 下，为研究动态任务分派、协作结构优化及跨 Agent 经验复用提供了具体架构。 Awesome-RSI：Raven V0.2.0把改进机制本身纳入 Curator 的持续改写与验证闭环，可作为 Harness 层递归自我改进案例，并用于考察长期迭代中的单调提升、退化和验证器偏差。">
+  <meta itemprop="datePublished" content="2026-09-28T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-09-28T12:37:37+08:00">
+  <meta itemprop="wordCount" content="564">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-28/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="2026-09-28 科研追新">
+  <meta property="og:description" content="当日精选（由提交工具自动创建）。
+今日概览 Claude API 开发工具进一步可视化：Anthropic 将 Workbench 升级为 Claude API Playground，整合参数配置、API 报文查看与代码导出，降低模型应用和工具调用的开发门槛。 Coding Agent 从代码生成迈向全生命周期智能体：对话 OpenAI Codex 负责人：从内部工具到通用智能体回顾 Codex 从内部研究原型到开放式 Agent 的演变，显示 Harness 与运行环境正成为软件工程能力的重要组成部分。 Agent Harness 开始形成递归优化闭环：Raven V0.2.0：统一编排专业 Agent 并推动 Harness 持续进化以“​​Harness of Harnesses”编排 Claude Code、Codex 等专业 Agent，并依据执行反馈自动改写和验证 Harness，连接了多智能体协作与递归自我改进。 对当前研究的启发 HarnessEvolve：Raven V0.2.0提供了“执行反馈—Harness 改写—验证”的可复现实例，可用于研究 Harness 自动演进及其对 Agent 表现的因果影响；Codex 的演进也提示评测应覆盖软件开发全生命周期。 SwarmEvolve：Raven V0.2.0将多个异构专业 Agent 置于统一元 Harness 下，为研究动态任务分派、协作结构优化及跨 Agent 经验复用提供了具体架构。 Awesome-RSI：Raven V0.2.0把改进机制本身纳入 Curator 的持续改写与验证闭环，可作为 Harness 层递归自我改进案例，并用于考察长期迭代中的单调提升、退化和验证器偏差。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="updates">
+    <meta property="article:published_time" content="2026-09-28T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-09-28T12:37:37+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="2026-09-28 科研追新">
+  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
+今日概览 Claude API 开发工具进一步可视化：Anthropic 将 Workbench 升级为 Claude API Playground，整合参数配置、API 报文查看与代码导出，降低模型应用和工具调用的开发门槛。 Coding Agent 从代码生成迈向全生命周期智能体：对话 OpenAI Codex 负责人：从内部工具到通用智能体回顾 Codex 从内部研究原型到开放式 Agent 的演变，显示 Harness 与运行环境正成为软件工程能力的重要组成部分。 Agent Harness 开始形成递归优化闭环：Raven V0.2.0：统一编排专业 Agent 并推动 Harness 持续进化以“​​Harness of Harnesses”编排 Claude Code、Codex 等专业 Agent，并依据执行反馈自动改写和验证 Harness，连接了多智能体协作与递归自我改进。 对当前研究的启发 HarnessEvolve：Raven V0.2.0提供了“执行反馈—Harness 改写—验证”的可复现实例，可用于研究 Harness 自动演进及其对 Agent 表现的因果影响；Codex 的演进也提示评测应覆盖软件开发全生命周期。 SwarmEvolve：Raven V0.2.0将多个异构专业 Agent 置于统一元 Harness 下，为研究动态任务分派、协作结构优化及跨 Agent 经验复用提供了具体架构。 Awesome-RSI：Raven V0.2.0把改进机制本身纳入 Curator 的持续改写与验证闭环，可作为 Harness 层递归自我改进案例，并用于考察长期迭代中的单调提升、退化和验证器偏差。">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-28/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-26/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2026-09-28 科研追新",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-28\/"
+    },"genre": "updates","wordcount":  564 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-28\/","datePublished": "2026-09-28T00:00:00+08:00","dateModified": "2026-09-28T12:37:37+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/updates/" title="Updates">Updates</a></li><li class="breadcrumb-item active" aria-current="page">2026-09-28 科研追新</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>2026-09-28 科研追新</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    LLM-DailyDigest</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2026-09-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-28">2026-09-28</time></span>&nbsp;<span title="更新于 2026-09-28 12:37:37"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-28">2026-09-28</time></span>&nbsp;<span title="564 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#对当前研究的启发">对当前研究的启发</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><blockquote>
+<p>当日精选（由提交工具自动创建）。</p></blockquote>
+<!-- daily-summary:start -->
+<h2 id="今日概览">今日概览</h2>
+<ul>
+<li><strong>Claude API 开发工具进一步可视化</strong>：<a href="#%e6%9d%a1%e7%9b%aeanthropic-workbench-claude-api-playgroun">Anthropic 将 Workbench 升级为 Claude API Playground</a>，整合参数配置、API 报文查看与代码导出，降低模型应用和工具调用的开发门槛。</li>
+<li><strong>Coding Agent 从代码生成迈向全生命周期智能体</strong>：<a href="#%e6%9d%a1%e7%9b%aeopenai-codex">对话 OpenAI Codex 负责人：从内部工具到通用智能体</a>回顾 Codex 从内部研究原型到开放式 Agent 的演变，显示 Harness 与运行环境正成为软件工程能力的重要组成部分。</li>
+<li><strong>Agent Harness 开始形成递归优化闭环</strong>：<a href="#%e6%9d%a1%e7%9b%aeraven-v0-2-0-agent-harness">Raven V0.2.0：统一编排专业 Agent 并推动 Harness 持续进化</a>以“​​Harness of Harnesses”编排 Claude Code、Codex 等专业 Agent，并依据执行反馈自动改写和验证 Harness，连接了多智能体协作与递归自我改进。</li>
+</ul>
+<h2 id="对当前研究的启发">对当前研究的启发</h2>
+<ul>
+<li><strong>HarnessEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aeraven-v0-2-0-agent-harness">Raven V0.2.0</a>提供了“执行反馈—Harness 改写—验证”的可复现实例，可用于研究 Harness 自动演进及其对 Agent 表现的因果影响；Codex 的演进也提示评测应覆盖软件开发全生命周期。</li>
+<li><strong>SwarmEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aeraven-v0-2-0-agent-harness">Raven V0.2.0</a>将多个异构专业 Agent 置于统一元 Harness 下，为研究动态任务分派、协作结构优化及跨 Agent 经验复用提供了具体架构。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#%e6%9d%a1%e7%9b%aeraven-v0-2-0-agent-harness">Raven V0.2.0</a>把改进机制本身纳入 Curator 的持续改写与验证闭环，可作为 Harness 层递归自我改进案例，并用于考察长期迭代中的单调提升、退化和验证器偏差。</li>
+</ul>
+<!-- daily-summary:end -->
+</div><section class="daily-items" style="margin-top:1.5rem;"><article id="anthropic-workbench-claude-api-playgroun" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
+            <h2 id="anthropic-workbench-claude-api-playgroun-title" class="daily-item-title" style="margin:0 0 .35rem;">Anthropic 将 Workbench 升级为 Claude API Playground</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">Anthropic 将 Workbench 更名并升级为 Playground，通过可视化配置、API 报文查看和一键代码导出，降低 Claude API 的应用开发门槛。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：编程工具</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;</p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A1%86%E6%9E%B6/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能框架</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能应用</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/2TKEA5rW3NPScPQnyVpQxA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/2TKEA5rW3NPScPQnyVpQxA</a></div></div><div class="daily-item-content"><p>Anthropic 将使用近两年的开发者工具 Workbench 更名为 Playground，并将其打造为建立在 Messages API 之上的可视化开发环境。用户无需编写代码，即可切换 Claude 模型、调整生成参数，并测试工具调用、结构化输出、代码执行和 Web Search 等能力。平台允许查看原始 HTTP 请求与响应、Token 消耗及上下文调用逻辑，还可将调试结果一键导出为 Python、TypeScript 或 cURL 代码。其产品思路是先在浏览器中低成本完成原型验证，再导出可直接集成至代码仓库和 CI/CD 流程的脚本。</p>
+</div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
+<li>降低 Claude API 的试用和原型开发门槛，使非专业开发者也能验证人工智能应用构想。</li>
+<li>将参数调试、工具配置、成本观察和代码生成整合到统一界面，缩短从实验到工程集成的路径。</li>
+<li>体现大模型厂商竞争正从聊天入口扩展至开发控制台、API 易用性和应用生态建设。</li>
+<li>可用于快速比较模型、提示词与高级 API 功能，并生成后续工程开发的初始代码。</li>
+</ul>
+</div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
+                <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
+                <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">有趣研究｜对标OpenAI！不会代码，也能跑Claude API https://mp.weixin.qq.com/s/2TKEA5rW3NPScPQnyVpQxA</div>
+              </details></article><article id="openai-codex" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
+            <h2 id="openai-codex-title" class="daily-item-title" style="margin:0 0 .35rem;">对话 OpenAI Codex 负责人：从内部工具到通用智能体</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">OpenAI Codex 负责人 Tibo Sottiaux 回顾 Codex 从内部研究工具和自主软件工程师项目演变为开放式 Coding Agent 的历程，并阐述其超越代码生成、重塑软件开发全生命周期的目标。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：人工智能辅助编程</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>The Pragmatic Engineer</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%80%E6%94%BE%E6%9D%83%E9%87%8D%E6%A8%A1%E5%9E%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;开放权重模型</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/aBFDItu7Qcz0gJANM1A6RQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/aBFDItu7Qcz0gJANM1A6RQ</a></div></div><div class="daily-item-content"><p>Codex 最初源于 OpenAI 内部帮助研究人员编写 Python、搭建基础设施的小型智能体，随后与自主软件工程师（ASWE）项目合并，逐步扩展到理解代码库、调用工具、执行测试和提交修改。团队选择使用 Rust 重写核心智能体，并开源 CLI 与 SDK、允许接入其他模型，以提升正确性、效率和生态开放性。Codex 正从本地 Coding Agent 走向云端并与 ChatGPT 统一，其长期目标不局限于编程，而是成为可承担更广泛知识工作与长程任务的通用智能体。随着正确性检查、安全审查、依赖升级和重构逐渐自动化，人类工程师的重心将转向产品意图、架构边界、用户理解以及问题选择。</p>
+</div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
+<li>为 HarnessEvolve 研究提供真实产品案例，展示智能体脚手架如何从内部工具经由用户反馈、工程重写和云端化持续演进。</li>
+<li>说明 Coding Agent 的竞争力不仅取决于基础模型，还取决于代码库理解、工具调用、测试执行、运行时环境及反馈闭环等系统能力。</li>
+<li>开源 CLI、SDK 和模型兼容接口有助于形成可扩展生态，并降低智能体与单一模型供应商的绑定。</li>
+<li>软件开发自动化将重新划分人机职责：智能体负责执行与验证，人类更多关注需求、架构、安全边界和高价值问题。</li>
+</ul>
+</div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
+                <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
+                <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">HarnessEvolve｜深度｜对话OpenAI Codex负责人Tibo：从内部工具杀到顶流，Codex的终极目标不只是Coding Agent https://mp.weixin.qq.com/s/aBFDItu7Qcz0gJANM1A6RQ</div>
+              </details></article><article id="raven-v0-2-0-agent-harness" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
+            <h2 id="raven-v0-2-0-agent-harness-title" class="daily-item-title" style="margin:0 0 .35rem;">Raven V0.2.0：统一编排专业 Agent 并推动 Harness 持续进化</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">EverMind 开源 Raven V0.2.0，通过 Harness of Harnesses 统一编排 Claude Code、Codex 等专业 Agent，并利用 Curator 根据执行反馈持续改写和验证 Harness。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体编排</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/u9Pnht2mHluZH_FS5tnbAg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/u9Pnht2mHluZH_FS5tnbAg</a></div></div><div class="daily-item-content"><p>Raven V0.2.0 将 Raven-Research、Raven-Code、Raven-Design、Raven-Oncall 及 Claude Code、Codex 等专业 Agent 纳入统一编排，通过 DAG 完成成员选择、任务拆解、依赖调度和产物交接。其 Harness 将可进化部分拆分为 Modules、Code、Prompt 和 Policy，并以 Memory、Planning、Capability、Action 四类公共策略接口承接具体调整。实验性 Curator 可读取任务轨迹与用户反馈，生成策略代码或配置，经声明检查、真实装配和预检后安装，失败时自动回滚，从而形成 Harness 层递归自我改进闭环。EverOS 负责保存跨会话上下文与经验，评测则显示 Raven 在多智能体编排和深度研究等任务上优于部分同底座 Harness，但 Harness 自进化效果尚缺少跨场景、重复性统计验证。</p>
+</div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
+<li>展示递归自我改进可从模型参数层扩展到提示、记忆、工具权限、控制代码和团队编排等 Harness 层。</li>
+<li>为异构专业 Agent 协作提供可复用架构：以 DAG 表达依赖，以 Playbook 固化流程，以持久记忆支持跨会话经验复用。</li>
+<li>Curator 的检查、预检、安装、追溯与回滚机制，为安全部署可自修改智能体提供了工程参考。</li>
+<li>后续研究应重点评估 Harness 改写的跨任务泛化、长期稳定性、回滚可靠性，以及与模型参数慢更新机制的协同。</li>
+</ul>
+</div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
+                <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
+                <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">SwarmEvolve｜Claude Code、Codex组队干活，Raven新版本既做总调度，也让Harness持续进化https://mp.weixin.qq.com/s/u9Pnht2mHluZH_FS5tnbAg</div>
+              </details></article></section></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
