@@ -12,47 +12,47 @@
 
 今日概览
 
-递归自我改进走向多智能体与自主研发闭环：Noam Brown谈多智能体扩展与递归自我改进讨论并行 Agent 的协作涌现与自我改进潜力，Naive AI 开源 AI 研发模型 Naive-N0.5-Flash则展示 AI 深度参与架构、训练和推理优化的实践。
-智能体基础设施与产品生态继续成熟：阿里云 Agent Sandbox：面向智能体的云上安全执行底座提供隔离、恢复和大规模并发能力，OpenAI DevDay 2026：Dots、GPT-6.1 Sol 与 Codex Cloud 等更新进一步整合个人智能体、云端编程与企业工作空间。
-强化学习与蒸馏聚焦细粒度信用分配：领域归一化的多教师在策略蒸馏校准不同教师的反馈尺度，GAGAR：代码智能体强化学习的分组评分与优势重分配则利用轨迹组内排序将优势重新分配给高质量实现。
-计算效率优化覆盖注意力与测试时扩展：MassAlloc Attention：让注意力自适应分配计算资源、CoWindow Attention：以多头协作实现完整因果覆盖分别从贡献裁剪和多头互补窗口降低长上下文成本，自适应循环 Transformer 改进测试时扩展进一步按词元动态配置推理深度。
-评测向真实轨迹和连续交互演进：TraceDance：从真实部署轨迹自动构建智能体行为基准把线上不良行为转化为针对性动态测试，Duplex-MPE：全双工多方对话交互基准则评估无固定轮次的多人语音交互决策。
+递归自我改进从构想走向研发闭环：Noam Brown 探讨以并行多智能体扩展测试时计算及推动递归改进的可能性，Naive-N0.5-Flash 则展示 AI 深度参与架构探索、训练与推理优化的实际模型研发闭环。
+智能体基础设施与真实评测同步演进：Agent Sandbox 提供可隔离、恢复和大规模并发的云上执行底座，TraceDance 从真实部署故障轨迹自动生成针对性行为基准，Duplex-MPE 进一步把评测扩展到无固定轮次的连续多人语音交互。
+强化学习聚焦更精细的信用分配与自我修正：领域归一化的多教师在策略蒸馏 缓解跨教师反馈尺度失衡，GAGAR 将优势重新分配给高质量代码轨迹，UMM-Reflection 则联合训练多模态模型的反思与生成修订能力。
+计算效率成为长上下文与测试时扩展的共同主线：MassAlloc Attention 按注意力贡献动态裁剪计算，CoWindow Attention 通过多头互补窗口保留完整因果覆盖，自适应循环 Transformer 则按词元分配推理深度以改善测试时扩展斜率。
+模型与应用生态继续向低成本、长程任务和多模态创作扩张：Claude Sonnet 5.5 以更低价格逼近旗舰性能，OpenAI DevDay 2026 强化个人智能体与云端编程平台，YuE2 则统一符号规划、全曲音频生成与智能体式音乐编辑。
 
 对当前研究的启发
 
-Awesome-RSI：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash提供了“人类设定目标与治理、AI 执行研发闭环”的具体 RSI 案例，可用于分析改进机制是否真正自指以及长期迭代的稳定边界。
-SwarmEvolve：Noam Brown谈多智能体扩展与递归自我改进提出弱脚手架下通过大规模并行产生协作涌现，可启发将 Agent 数量、通信结构与测试时算力纳入群体进化的联合缩放实验。
-ResearchEvolve：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash覆盖架构探索、训练系统、实验迭代和推理优化，可作为端到端自主 AI 研发闭环及人类治理接口的案例。
-EvolveLLM：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash表明基础模型、训练系统与推理栈可以被纳入同一迭代闭环，适合研究跨层自我改进的收益归因和退化风险。
-EvolveLRM：自适应循环 Transformer 改进测试时扩展的词元级动态计算与GAGAR：代码智能体强化学习的分组评分与优势重分配的轨迹级信用重分配，可分别改进推理算力配置和强化学习奖励归因。
-EnvironmentEvolve：阿里云 Agent Sandbox：面向智能体的云上安全执行底座的 MicroVM 隔离、状态恢复和弹性并发可作为大规模自动生成、执行与验证进化环境的基础设施。
-EvalEvolve：TraceDance：从真实部署轨迹自动构建智能体行为基准提供了由线上失败持续生成针对性测试的低成本路径，可支撑随模型行为变化而演进的真实世界基准。
-Groom：TraceDance：从真实部署轨迹自动构建智能体行为基准可将真实失败定位到具体决策点，为过程级 token 归因补充可审计的缺陷标签与横向比较样本。
+Awesome-RSI：Noam Brown 的多智能体扩展讨论与 Naive-N0.5-Flash 分别提供了群体递归改进的机制假设和 AI 主导模型研发闭环的现实案例，可用于补充 RSI 的能力增益、稳定性与治理边界分析。
+SwarmEvolve：Noam Brown 的讨论表明弱脚手架下的协作涌现和大规模并行测试时计算可作为检验群体是否产生超越单体进化信号的重点实验方向。
+EnvironmentEvolve：Agent Sandbox 的 MicroVM 隔离、状态恢复与弹性并发可直接作为可执行、可复现且可规模化的 Environment-as-a-Service 底座。
+EvalEvolve：TraceDance 将线上不良行为持续转化为决策点级基准，为低成本构建随真实失败模式动态演化的智能体评测提供了具体路径。
+EvolveLLM：Naive-N0.5-Flash 展示了让模型参与架构、训练系统、实验迭代和推理优化的端到端自改进范式，可用于研究跨迭代收益是否稳定及错误是否被闭环放大。
+EvolveLRM：自适应循环 Transformer 的按词元动态计算深度可作为推理时算力分配策略，帮助提升固定预算下的推理收益并研究计算深度与任务难度的匹配关系。
+ResearchEvolve：Naive-N0.5-Flash 将 AI 研发职责推进到架构探索、实验执行和系统优化，可作为评估自主科研闭环中新颖性、可复现性及人类治理接口的案例。
+HarnessEvolve：自我进化编程智能体迈向物理世界智能 以代码显式表示状态和策略、调用感知规划控制工具并利用验证轨迹进化，为具身任务 harness 的接口标准化与轨迹可审计设计提供了参考。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-09-30 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向多智能体与自主研发闭环：Noam Brown谈多智能体扩展与递归自我改进讨论并行 Agent 的协作涌现与自我改进潜力，Naive AI 开源 AI 研发模型 Naive-N0.5-Flash则展示 AI 深度参与架构、训练和推理优化的实践。 智能体基础设施与产品生态继续成熟：阿里云 Agent Sandbox：面向智能体的云上安全执行底座提供隔离、恢复和大规模并发能力，OpenAI DevDay 2026：Dots、GPT-6.1 Sol 与 Codex Cloud 等更新进一步整合个人智能体、云端编程与企业工作空间。 强化学习与蒸馏聚焦细粒度信用分配：领域归一化的多教师在策略蒸馏校准不同教师的反馈尺度，GAGAR：代码智能体强化学习的分组评分与优势重分配则利用轨迹组内排序将优势重新分配给高质量实现。 计算效率优化覆盖注意力与测试时扩展：MassAlloc Attention：让注意力自适应分配计算资源、CoWindow Attention：以多头协作实现完整因果覆盖分别从贡献裁剪和多头互补窗口降低长上下文成本，自适应循环 Transformer 改进测试时扩展进一步按词元动态配置推理深度。 评测向真实轨迹和连续交互演进：TraceDance：从真实部署轨迹自动构建智能体行为基准把线上不良行为转化为针对性动态测试，Duplex-MPE：全双工多方对话交互基准则评估无固定轮次的多人语音交互决策。 对当前研究的启发 Awesome-RSI：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash提供了“人类设定目标与治理、AI 执行研发闭环”的具体 RSI 案例，可用于分析改进机制是否真正自指以及长期迭代的稳定边界。 SwarmEvolve：Noam Brown谈多智能体扩展与递归自我改进提出弱脚手架下通过大规模并行产生协作涌现，可启发将 Agent 数量、通信结构与测试时算力纳入群体进化的联合缩放实验。 ResearchEvolve：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash覆盖架构探索、训练系统、实验迭代和推理优化，可作为端到端自主 AI 研发闭环及人类治理接口的案例。 EvolveLLM：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash表明基础模型、训练系统与推理栈可以被纳入同一迭代闭环，适合研究跨层自我改进的收益归因和退化风险。 EvolveLRM：自适应循环 Transformer 改进测试时扩展的词元级动态计算与GAGAR：代码智能体强化学习的分组评分与优势重分配的轨迹级信用重分配，可分别改进推理算力配置和强化学习奖励归因。 EnvironmentEvolve：阿里云 Agent Sandbox：面向智能体的云上安全执行底座的 MicroVM 隔离、状态恢复和弹性并发可作为大规模自动生成、执行与验证进化环境的基础设施。 EvalEvolve：TraceDance：从真实部署轨迹自动构建智能体行为基准提供了由线上失败持续生成针对性测试的低成本路径，可支撑随模型行为变化而演进的真实世界基准。 Groom：TraceDance：从真实部署轨迹自动构建智能体行为基准可将真实失败定位到具体决策点，为过程级 token 归因补充可审计的缺陷标签与横向比较样本。">
+今日概览 递归自我改进从构想走向研发闭环：Noam Brown 探讨以并行多智能体扩展测试时计算及推动递归改进的可能性，Naive-N0.5-Flash 则展示 AI 深度参与架构探索、训练与推理优化的实际模型研发闭环。 智能体基础设施与真实评测同步演进：Agent Sandbox 提供可隔离、恢复和大规模并发的云上执行底座，TraceDance 从真实部署故障轨迹自动生成针对性行为基准，Duplex-MPE 进一步把评测扩展到无固定轮次的连续多人语音交互。 强化学习聚焦更精细的信用分配与自我修正：领域归一化的多教师在策略蒸馏 缓解跨教师反馈尺度失衡，GAGAR 将优势重新分配给高质量代码轨迹，UMM-Reflection 则联合训练多模态模型的反思与生成修订能力。 计算效率成为长上下文与测试时扩展的共同主线：MassAlloc Attention 按注意力贡献动态裁剪计算，CoWindow Attention 通过多头互补窗口保留完整因果覆盖，自适应循环 Transformer 则按词元分配推理深度以改善测试时扩展斜率。 模型与应用生态继续向低成本、长程任务和多模态创作扩张：Claude Sonnet 5.5 以更低价格逼近旗舰性能，OpenAI DevDay 2026 强化个人智能体与云端编程平台，YuE2 则统一符号规划、全曲音频生成与智能体式音乐编辑。 对当前研究的启发 Awesome-RSI：Noam Brown 的多智能体扩展讨论与 Naive-N0.5-Flash 分别提供了群体递归改进的机制假设和 AI 主导模型研发闭环的现实案例，可用于补充 RSI 的能力增益、稳定性与治理边界分析。 SwarmEvolve：Noam Brown 的讨论表明弱脚手架下的协作涌现和大规模并行测试时计算可作为检验群体是否产生超越单体进化信号的重点实验方向。 EnvironmentEvolve：Agent Sandbox 的 MicroVM 隔离、状态恢复与弹性并发可直接作为可执行、可复现且可规模化的 Environment-as-a-Service 底座。 EvalEvolve：TraceDance 将线上不良行为持续转化为决策点级基准，为低成本构建随真实失败模式动态演化的智能体评测提供了具体路径。 EvolveLLM：Naive-N0.5-Flash 展示了让模型参与架构、训练系统、实验迭代和推理优化的端到端自改进范式，可用于研究跨迭代收益是否稳定及错误是否被闭环放大。 EvolveLRM：自适应循环 Transformer 的按词元动态计算深度可作为推理时算力分配策略，帮助提升固定预算下的推理收益并研究计算深度与任务难度的匹配关系。 ResearchEvolve：Naive-N0.5-Flash 将 AI 研发职责推进到架构探索、实验执行和系统优化，可作为评估自主科研闭环中新颖性、可复现性及人类治理接口的案例。 HarnessEvolve：自我进化编程智能体迈向物理世界智能 以代码显式表示状态和策略、调用感知规划控制工具并利用验证轨迹进化，为具身任务 harness 的接口标准化与轨迹可审计设计提供了参考。">
   <meta itemprop="datePublished" content="2026-09-30T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-09-30T09:12:33+08:00">
-  <meta itemprop="wordCount" content="1276">
+  <meta itemprop="dateModified" content="2026-09-30T09:21:35+08:00">
+  <meta itemprop="wordCount" content="1148">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-30/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-09-30 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向多智能体与自主研发闭环：Noam Brown谈多智能体扩展与递归自我改进讨论并行 Agent 的协作涌现与自我改进潜力，Naive AI 开源 AI 研发模型 Naive-N0.5-Flash则展示 AI 深度参与架构、训练和推理优化的实践。 智能体基础设施与产品生态继续成熟：阿里云 Agent Sandbox：面向智能体的云上安全执行底座提供隔离、恢复和大规模并发能力，OpenAI DevDay 2026：Dots、GPT-6.1 Sol 与 Codex Cloud 等更新进一步整合个人智能体、云端编程与企业工作空间。 强化学习与蒸馏聚焦细粒度信用分配：领域归一化的多教师在策略蒸馏校准不同教师的反馈尺度，GAGAR：代码智能体强化学习的分组评分与优势重分配则利用轨迹组内排序将优势重新分配给高质量实现。 计算效率优化覆盖注意力与测试时扩展：MassAlloc Attention：让注意力自适应分配计算资源、CoWindow Attention：以多头协作实现完整因果覆盖分别从贡献裁剪和多头互补窗口降低长上下文成本，自适应循环 Transformer 改进测试时扩展进一步按词元动态配置推理深度。 评测向真实轨迹和连续交互演进：TraceDance：从真实部署轨迹自动构建智能体行为基准把线上不良行为转化为针对性动态测试，Duplex-MPE：全双工多方对话交互基准则评估无固定轮次的多人语音交互决策。 对当前研究的启发 Awesome-RSI：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash提供了“人类设定目标与治理、AI 执行研发闭环”的具体 RSI 案例，可用于分析改进机制是否真正自指以及长期迭代的稳定边界。 SwarmEvolve：Noam Brown谈多智能体扩展与递归自我改进提出弱脚手架下通过大规模并行产生协作涌现，可启发将 Agent 数量、通信结构与测试时算力纳入群体进化的联合缩放实验。 ResearchEvolve：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash覆盖架构探索、训练系统、实验迭代和推理优化，可作为端到端自主 AI 研发闭环及人类治理接口的案例。 EvolveLLM：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash表明基础模型、训练系统与推理栈可以被纳入同一迭代闭环，适合研究跨层自我改进的收益归因和退化风险。 EvolveLRM：自适应循环 Transformer 改进测试时扩展的词元级动态计算与GAGAR：代码智能体强化学习的分组评分与优势重分配的轨迹级信用重分配，可分别改进推理算力配置和强化学习奖励归因。 EnvironmentEvolve：阿里云 Agent Sandbox：面向智能体的云上安全执行底座的 MicroVM 隔离、状态恢复和弹性并发可作为大规模自动生成、执行与验证进化环境的基础设施。 EvalEvolve：TraceDance：从真实部署轨迹自动构建智能体行为基准提供了由线上失败持续生成针对性测试的低成本路径，可支撑随模型行为变化而演进的真实世界基准。 Groom：TraceDance：从真实部署轨迹自动构建智能体行为基准可将真实失败定位到具体决策点，为过程级 token 归因补充可审计的缺陷标签与横向比较样本。">
+今日概览 递归自我改进从构想走向研发闭环：Noam Brown 探讨以并行多智能体扩展测试时计算及推动递归改进的可能性，Naive-N0.5-Flash 则展示 AI 深度参与架构探索、训练与推理优化的实际模型研发闭环。 智能体基础设施与真实评测同步演进：Agent Sandbox 提供可隔离、恢复和大规模并发的云上执行底座，TraceDance 从真实部署故障轨迹自动生成针对性行为基准，Duplex-MPE 进一步把评测扩展到无固定轮次的连续多人语音交互。 强化学习聚焦更精细的信用分配与自我修正：领域归一化的多教师在策略蒸馏 缓解跨教师反馈尺度失衡，GAGAR 将优势重新分配给高质量代码轨迹，UMM-Reflection 则联合训练多模态模型的反思与生成修订能力。 计算效率成为长上下文与测试时扩展的共同主线：MassAlloc Attention 按注意力贡献动态裁剪计算，CoWindow Attention 通过多头互补窗口保留完整因果覆盖，自适应循环 Transformer 则按词元分配推理深度以改善测试时扩展斜率。 模型与应用生态继续向低成本、长程任务和多模态创作扩张：Claude Sonnet 5.5 以更低价格逼近旗舰性能，OpenAI DevDay 2026 强化个人智能体与云端编程平台，YuE2 则统一符号规划、全曲音频生成与智能体式音乐编辑。 对当前研究的启发 Awesome-RSI：Noam Brown 的多智能体扩展讨论与 Naive-N0.5-Flash 分别提供了群体递归改进的机制假设和 AI 主导模型研发闭环的现实案例，可用于补充 RSI 的能力增益、稳定性与治理边界分析。 SwarmEvolve：Noam Brown 的讨论表明弱脚手架下的协作涌现和大规模并行测试时计算可作为检验群体是否产生超越单体进化信号的重点实验方向。 EnvironmentEvolve：Agent Sandbox 的 MicroVM 隔离、状态恢复与弹性并发可直接作为可执行、可复现且可规模化的 Environment-as-a-Service 底座。 EvalEvolve：TraceDance 将线上不良行为持续转化为决策点级基准，为低成本构建随真实失败模式动态演化的智能体评测提供了具体路径。 EvolveLLM：Naive-N0.5-Flash 展示了让模型参与架构、训练系统、实验迭代和推理优化的端到端自改进范式，可用于研究跨迭代收益是否稳定及错误是否被闭环放大。 EvolveLRM：自适应循环 Transformer 的按词元动态计算深度可作为推理时算力分配策略，帮助提升固定预算下的推理收益并研究计算深度与任务难度的匹配关系。 ResearchEvolve：Naive-N0.5-Flash 将 AI 研发职责推进到架构探索、实验执行和系统优化，可作为评估自主科研闭环中新颖性、可复现性及人类治理接口的案例。 HarnessEvolve：自我进化编程智能体迈向物理世界智能 以代码显式表示状态和策略、调用感知规划控制工具并利用验证轨迹进化，为具身任务 harness 的接口标准化与轨迹可审计设计提供了参考。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-09-30T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-09-30T09:12:33+08:00">
+    <meta property="article:modified_time" content="2026-09-30T09:21:35+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-09-30 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向多智能体与自主研发闭环：Noam Brown谈多智能体扩展与递归自我改进讨论并行 Agent 的协作涌现与自我改进潜力，Naive AI 开源 AI 研发模型 Naive-N0.5-Flash则展示 AI 深度参与架构、训练和推理优化的实践。 智能体基础设施与产品生态继续成熟：阿里云 Agent Sandbox：面向智能体的云上安全执行底座提供隔离、恢复和大规模并发能力，OpenAI DevDay 2026：Dots、GPT-6.1 Sol 与 Codex Cloud 等更新进一步整合个人智能体、云端编程与企业工作空间。 强化学习与蒸馏聚焦细粒度信用分配：领域归一化的多教师在策略蒸馏校准不同教师的反馈尺度，GAGAR：代码智能体强化学习的分组评分与优势重分配则利用轨迹组内排序将优势重新分配给高质量实现。 计算效率优化覆盖注意力与测试时扩展：MassAlloc Attention：让注意力自适应分配计算资源、CoWindow Attention：以多头协作实现完整因果覆盖分别从贡献裁剪和多头互补窗口降低长上下文成本，自适应循环 Transformer 改进测试时扩展进一步按词元动态配置推理深度。 评测向真实轨迹和连续交互演进：TraceDance：从真实部署轨迹自动构建智能体行为基准把线上不良行为转化为针对性动态测试，Duplex-MPE：全双工多方对话交互基准则评估无固定轮次的多人语音交互决策。 对当前研究的启发 Awesome-RSI：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash提供了“人类设定目标与治理、AI 执行研发闭环”的具体 RSI 案例，可用于分析改进机制是否真正自指以及长期迭代的稳定边界。 SwarmEvolve：Noam Brown谈多智能体扩展与递归自我改进提出弱脚手架下通过大规模并行产生协作涌现，可启发将 Agent 数量、通信结构与测试时算力纳入群体进化的联合缩放实验。 ResearchEvolve：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash覆盖架构探索、训练系统、实验迭代和推理优化，可作为端到端自主 AI 研发闭环及人类治理接口的案例。 EvolveLLM：Naive AI 开源 AI 研发模型 Naive-N0.5-Flash表明基础模型、训练系统与推理栈可以被纳入同一迭代闭环，适合研究跨层自我改进的收益归因和退化风险。 EvolveLRM：自适应循环 Transformer 改进测试时扩展的词元级动态计算与GAGAR：代码智能体强化学习的分组评分与优势重分配的轨迹级信用重分配，可分别改进推理算力配置和强化学习奖励归因。 EnvironmentEvolve：阿里云 Agent Sandbox：面向智能体的云上安全执行底座的 MicroVM 隔离、状态恢复和弹性并发可作为大规模自动生成、执行与验证进化环境的基础设施。 EvalEvolve：TraceDance：从真实部署轨迹自动构建智能体行为基准提供了由线上失败持续生成针对性测试的低成本路径，可支撑随模型行为变化而演进的真实世界基准。 Groom：TraceDance：从真实部署轨迹自动构建智能体行为基准可将真实失败定位到具体决策点，为过程级 token 归因补充可审计的缺陷标签与横向比较样本。">
+今日概览 递归自我改进从构想走向研发闭环：Noam Brown 探讨以并行多智能体扩展测试时计算及推动递归改进的可能性，Naive-N0.5-Flash 则展示 AI 深度参与架构探索、训练与推理优化的实际模型研发闭环。 智能体基础设施与真实评测同步演进：Agent Sandbox 提供可隔离、恢复和大规模并发的云上执行底座，TraceDance 从真实部署故障轨迹自动生成针对性行为基准，Duplex-MPE 进一步把评测扩展到无固定轮次的连续多人语音交互。 强化学习聚焦更精细的信用分配与自我修正：领域归一化的多教师在策略蒸馏 缓解跨教师反馈尺度失衡，GAGAR 将优势重新分配给高质量代码轨迹，UMM-Reflection 则联合训练多模态模型的反思与生成修订能力。 计算效率成为长上下文与测试时扩展的共同主线：MassAlloc Attention 按注意力贡献动态裁剪计算，CoWindow Attention 通过多头互补窗口保留完整因果覆盖，自适应循环 Transformer 则按词元分配推理深度以改善测试时扩展斜率。 模型与应用生态继续向低成本、长程任务和多模态创作扩张：Claude Sonnet 5.5 以更低价格逼近旗舰性能，OpenAI DevDay 2026 强化个人智能体与云端编程平台，YuE2 则统一符号规划、全曲音频生成与智能体式音乐编辑。 对当前研究的启发 Awesome-RSI：Noam Brown 的多智能体扩展讨论与 Naive-N0.5-Flash 分别提供了群体递归改进的机制假设和 AI 主导模型研发闭环的现实案例，可用于补充 RSI 的能力增益、稳定性与治理边界分析。 SwarmEvolve：Noam Brown 的讨论表明弱脚手架下的协作涌现和大规模并行测试时计算可作为检验群体是否产生超越单体进化信号的重点实验方向。 EnvironmentEvolve：Agent Sandbox 的 MicroVM 隔离、状态恢复与弹性并发可直接作为可执行、可复现且可规模化的 Environment-as-a-Service 底座。 EvalEvolve：TraceDance 将线上不良行为持续转化为决策点级基准，为低成本构建随真实失败模式动态演化的智能体评测提供了具体路径。 EvolveLLM：Naive-N0.5-Flash 展示了让模型参与架构、训练系统、实验迭代和推理优化的端到端自改进范式，可用于研究跨迭代收益是否稳定及错误是否被闭环放大。 EvolveLRM：自适应循环 Transformer 的按词元动态计算深度可作为推理时算力分配策略，帮助提升固定预算下的推理收益并研究计算深度与任务难度的匹配关系。 ResearchEvolve：Naive-N0.5-Flash 将 AI 研发职责推进到架构探索、实验执行和系统优化，可作为评估自主科研闭环中新颖性、可复现性及人类治理接口的案例。 HarnessEvolve：自我进化编程智能体迈向物理世界智能 以代码显式表示状态和策略、调用感知规划控制工具并利用验证轨迹进化，为具身任务 harness 的接口标准化与轨迹可审计设计提供了参考。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-30/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-09-29/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -65,8 +65,8 @@ Groom：TraceDance：从真实部署轨迹自动构建智能体行为基准可�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-30\/"
-    },"genre": "updates","wordcount":  1276 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-30\/","datePublished": "2026-09-30T00:00:00+08:00","dateModified": "2026-09-30T09:12:33+08:00","publisher": {
+    },"genre": "updates","wordcount":  1148 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-09-30\/","datePublished": "2026-09-30T00:00:00+08:00","dateModified": "2026-09-30T09:21:35+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -236,7 +236,7 @@ Groom：TraceDance：从真实部署轨迹自动构建智能体行为基准可�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-09-30 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-30">2026-09-30</time></span>&nbsp;<span title="更新于 2026-09-30 09:12:33"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-30">2026-09-30</time></span>&nbsp;<span title="1276 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-09-30 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-30">2026-09-30</time></span>&nbsp;<span title="更新于 2026-09-30 09:21:35"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-09-30">2026-09-30</time></span>&nbsp;<span title="1148 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -256,22 +256,22 @@ Groom：TraceDance：从真实部署轨迹自动构建智能体行为基准可�
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>递归自我改进走向多智能体与自主研发闭环</strong>：<a href="#%e6%9d%a1%e7%9b%aenoam-brown">Noam Brown谈多智能体扩展与递归自我改进</a>讨论并行 Agent 的协作涌现与自我改进潜力，<a href="#%e6%9d%a1%e7%9b%aenaive-ai-ai-naive-n0-5-flash">Naive AI 开源 AI 研发模型 Naive-N0.5-Flash</a>则展示 AI 深度参与架构、训练和推理优化的实践。</li>
-<li><strong>智能体基础设施与产品生态继续成熟</strong>：<a href="#%e6%9d%a1%e7%9b%aeagent-sandbox">阿里云 Agent Sandbox：面向智能体的云上安全执行底座</a>提供隔离、恢复和大规模并发能力，<a href="#%e6%9d%a1%e7%9b%aeopenai-devday-2026-dots-gpt-6-1-sol-code">OpenAI DevDay 2026：Dots、GPT-6.1 Sol 与 Codex Cloud 等更新</a>进一步整合个人智能体、云端编程与企业工作空间。</li>
-<li><strong>强化学习与蒸馏聚焦细粒度信用分配</strong>：<a href="#%e6%9d%a1%e7%9b%aeitem-8">领域归一化的多教师在策略蒸馏</a>校准不同教师的反馈尺度，<a href="#%e6%9d%a1%e7%9b%aegagar">GAGAR：代码智能体强化学习的分组评分与优势重分配</a>则利用轨迹组内排序将优势重新分配给高质量实现。</li>
-<li><strong>计算效率优化覆盖注意力与测试时扩展</strong>：<a href="#%e6%9d%a1%e7%9b%aemassalloc-attention">MassAlloc Attention：让注意力自适应分配计算资源</a>、<a href="#%e6%9d%a1%e7%9b%aecowindow-attention">CoWindow Attention：以多头协作实现完整因果覆盖</a>分别从贡献裁剪和多头互补窗口降低长上下文成本，<a href="#%e6%9d%a1%e7%9b%aetransformer">自适应循环 Transformer 改进测试时扩展</a>进一步按词元动态配置推理深度。</li>
-<li><strong>评测向真实轨迹和连续交互演进</strong>：<a href="#%e6%9d%a1%e7%9b%aetracedance">TraceDance：从真实部署轨迹自动构建智能体行为基准</a>把线上不良行为转化为针对性动态测试，<a href="#%e6%9d%a1%e7%9b%aeduplex-mpe">Duplex-MPE：全双工多方对话交互基准</a>则评估无固定轮次的多人语音交互决策。</li>
+<li><strong>递归自我改进从构想走向研发闭环</strong>：Noam Brown 探讨以并行多智能体扩展测试时计算及推动递归改进的可能性，<a href="#naive-ai-ai-naive-n0-5-flash">Naive-N0.5-Flash</a> 则展示 AI 深度参与架构探索、训练与推理优化的实际模型研发闭环。</li>
+<li><strong>智能体基础设施与真实评测同步演进</strong>：<a href="#agent-sandbox">Agent Sandbox</a> 提供可隔离、恢复和大规模并发的云上执行底座，<a href="#tracedance">TraceDance</a> 从真实部署故障轨迹自动生成针对性行为基准，<a href="#duplex-mpe">Duplex-MPE</a> 进一步把评测扩展到无固定轮次的连续多人语音交互。</li>
+<li><strong>强化学习聚焦更精细的信用分配与自我修正</strong>：<a href="#item-8">领域归一化的多教师在策略蒸馏</a> 缓解跨教师反馈尺度失衡，<a href="#gagar">GAGAR</a> 将优势重新分配给高质量代码轨迹，<a href="#umm-reflection">UMM-Reflection</a> 则联合训练多模态模型的反思与生成修订能力。</li>
+<li><strong>计算效率成为长上下文与测试时扩展的共同主线</strong>：<a href="#massalloc-attention">MassAlloc Attention</a> 按注意力贡献动态裁剪计算，<a href="#cowindow-attention">CoWindow Attention</a> 通过多头互补窗口保留完整因果覆盖，<a href="#transformer">自适应循环 Transformer</a> 则按词元分配推理深度以改善测试时扩展斜率。</li>
+<li><strong>模型与应用生态继续向低成本、长程任务和多模态创作扩张</strong>：<a href="#claude-sonnet-5-5-opus-5-5">Claude Sonnet 5.5</a> 以更低价格逼近旗舰性能，<a href="#openai-devday-2026-dots-gpt-6-1-sol-code">OpenAI DevDay 2026</a> 强化个人智能体与云端编程平台，<a href="#yue2">YuE2</a> 则统一符号规划、全曲音频生成与智能体式音乐编辑。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>Awesome-RSI</strong>：<a href="#%e6%9d%a1%e7%9b%aenaive-ai-ai-naive-n0-5-flash">Naive AI 开源 AI 研发模型 Naive-N0.5-Flash</a>提供了“人类设定目标与治理、AI 执行研发闭环”的具体 RSI 案例，可用于分析改进机制是否真正自指以及长期迭代的稳定边界。</li>
-<li><strong>SwarmEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aenoam-brown">Noam Brown谈多智能体扩展与递归自我改进</a>提出弱脚手架下通过大规模并行产生协作涌现，可启发将 Agent 数量、通信结构与测试时算力纳入群体进化的联合缩放实验。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aenaive-ai-ai-naive-n0-5-flash">Naive AI 开源 AI 研发模型 Naive-N0.5-Flash</a>覆盖架构探索、训练系统、实验迭代和推理优化，可作为端到端自主 AI 研发闭环及人类治理接口的案例。</li>
-<li><strong>EvolveLLM</strong>：<a href="#%e6%9d%a1%e7%9b%aenaive-ai-ai-naive-n0-5-flash">Naive AI 开源 AI 研发模型 Naive-N0.5-Flash</a>表明基础模型、训练系统与推理栈可以被纳入同一迭代闭环，适合研究跨层自我改进的收益归因和退化风险。</li>
-<li><strong>EvolveLRM</strong>：<a href="#%e6%9d%a1%e7%9b%aetransformer">自适应循环 Transformer 改进测试时扩展</a>的词元级动态计算与<a href="#%e6%9d%a1%e7%9b%aegagar">GAGAR：代码智能体强化学习的分组评分与优势重分配</a>的轨迹级信用重分配，可分别改进推理算力配置和强化学习奖励归因。</li>
-<li><strong>EnvironmentEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aeagent-sandbox">阿里云 Agent Sandbox：面向智能体的云上安全执行底座</a>的 MicroVM 隔离、状态恢复和弹性并发可作为大规模自动生成、执行与验证进化环境的基础设施。</li>
-<li><strong>EvalEvolve</strong>：<a href="#%e6%9d%a1%e7%9b%aetracedance">TraceDance：从真实部署轨迹自动构建智能体行为基准</a>提供了由线上失败持续生成针对性测试的低成本路径，可支撑随模型行为变化而演进的真实世界基准。</li>
-<li><strong>Groom</strong>：<a href="#%e6%9d%a1%e7%9b%aetracedance">TraceDance：从真实部署轨迹自动构建智能体行为基准</a>可将真实失败定位到具体决策点，为过程级 token 归因补充可审计的缺陷标签与横向比较样本。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#noam-brown">Noam Brown 的多智能体扩展讨论</a>与 <a href="#naive-ai-ai-naive-n0-5-flash">Naive-N0.5-Flash</a> 分别提供了群体递归改进的机制假设和 AI 主导模型研发闭环的现实案例，可用于补充 RSI 的能力增益、稳定性与治理边界分析。</li>
+<li><strong>SwarmEvolve</strong>：<a href="#noam-brown">Noam Brown 的讨论</a>表明弱脚手架下的协作涌现和大规模并行测试时计算可作为检验群体是否产生超越单体进化信号的重点实验方向。</li>
+<li><strong>EnvironmentEvolve</strong>：<a href="#agent-sandbox">Agent Sandbox</a> 的 MicroVM 隔离、状态恢复与弹性并发可直接作为可执行、可复现且可规模化的 Environment-as-a-Service 底座。</li>
+<li><strong>EvalEvolve</strong>：<a href="#tracedance">TraceDance</a> 将线上不良行为持续转化为决策点级基准，为低成本构建随真实失败模式动态演化的智能体评测提供了具体路径。</li>
+<li><strong>EvolveLLM</strong>：<a href="#naive-ai-ai-naive-n0-5-flash">Naive-N0.5-Flash</a> 展示了让模型参与架构、训练系统、实验迭代和推理优化的端到端自改进范式，可用于研究跨迭代收益是否稳定及错误是否被闭环放大。</li>
+<li><strong>EvolveLRM</strong>：<a href="#transformer">自适应循环 Transformer</a> 的按词元动态计算深度可作为推理时算力分配策略，帮助提升固定预算下的推理收益并研究计算深度与任务难度的匹配关系。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#naive-ai-ai-naive-n0-5-flash">Naive-N0.5-Flash</a> 将 AI 研发职责推进到架构探索、实验执行和系统优化，可作为评估自主科研闭环中新颖性、可复现性及人类治理接口的案例。</li>
+<li><strong>HarnessEvolve</strong>：<a href="#item-16">自我进化编程智能体迈向物理世界智能</a> 以代码显式表示状态和策略、调用感知规划控制工具并利用验证轨迹进化，为具身任务 harness 的接口标准化与轨迹可审计设计提供了参考。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items" style="margin-top:1.5rem;"><article id="noam-brown" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
@@ -444,6 +444,28 @@ https://mp.weixin.qq.com/s/nSsw6R8gi6j4aVbZyGkqEQ</div>
 </div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
                 <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
                 <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">[通过自适应循环 Transformer 改进测试时扩展（46 ▲）](https://huggingface.co/papers/2609.35748?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-09-29)</div>
+              </details></article><article id="item-16" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
+            <h2 id="item-16-title" class="daily-item-title" style="margin:0 0 .35rem;">自我进化编程智能体迈向物理世界智能</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">论文提出以代码显式表示物理任务状态与执行策略的 Physical Coding 范式，并构建可调用感知、规划和控制工具且能从验证轨迹中持续进化的具身智能体 HexaAnything。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.35432" target="_blank" rel="noopener">https://arxiv.org/abs/2609.35432</a></div></div><div class="daily-item-content"><p>论文提出 <strong>Physical Coding</strong>，用“Code as World”记录对象、关系、约束与任务进度，并用“Code as Policy”组织规划、验证、恢复和执行。基于该范式构建的 HexaAnything 可调用感知、规划、控制及 VLA/WAM 策略，根据外部反馈进行闭环决策。经过验证的执行轨迹会沉淀为训练数据和记忆，推动工具、Harness、模型权重、架构乃至硬件与任务设计的自我进化。在 RoboCasa365、PhyBench 和双臂 AgileX 机器人实验中，该系统提升了未见组合任务成功率，并自主完成物理实验及多数桌面操作任务。</p>
+</div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
+<li>将代码作为可检查、可修改的物理世界状态与策略表示，缓解端到端动作策略在布局、视角和指令变化下的泛化不足。</li>
+<li>为长程具身任务提供规划、验证、故障恢复和执行闭环，使物理经验能够转化为可复用程序、记忆与证据。</li>
+<li>展示通过验证轨迹训练 Harness 与模型、逐步内化物理执行能力的路径，可用于制造、机器人操作和自动化科学实验。</li>
+<li>为具身智能体从工具级优化走向模型、架构及硬件协同自进化提供系统化研究框架。</li>
+</ul>
+</div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
+                <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
+                <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">[自我进化的编程智能体：从数字程序迈向物理世界智能（91 ▲）](https://huggingface.co/papers/2609.35432?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-09-29)</div>
+              </details></article><article id="umm-reflection" class="summary-card daily-item" style="margin:1.25rem 0;padding:1rem 1.25rem;border:1px solid var(--global-border-color,#eee);border-radius:12px;">
+            <h2 id="umm-reflection-title" class="daily-item-title" style="margin:0 0 .35rem;">UMM-Reflection：交错强化学习赋予统一模型原生反思能力</h2><p class="single-subtitle" style="margin:0 0 .6rem;opacity:.85;">UMM-Reflection通过轨迹级交错强化学习联合优化统一多模态模型的反思文本与图像修订能力，使模型无需外部验证器即可迭代诊断并修复自身生成结果。</p><p class="post-meta-line" style="font-size:.85rem;opacity:.8;margin:.25rem 0 .6rem;"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自我反思</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics" style="font-size:.8rem;margin:0 0 .6rem;"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我反思</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/" style="text-decoration:none;margin-right:.5rem;"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div style="margin:.25rem 0 .6rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));font-size:.9rem;"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.35767" target="_blank" rel="noopener">https://arxiv.org/abs/2609.35767</a></div></div><div class="daily-item-content"><p>UMM-Reflection让统一多模态模型在同一条轨迹中生成图像、诊断错误、执行修订，并根据渲染结果继续反思。方法让共享初始图像的同组轨迹进行相对比较，以评估不同反思策略的效果。单个轨迹级优势信号同时更新反思词元和基于流的图像修订过程，避免逐轮信用分配带来的组合复杂度。基于BAGEL的实验中，该方法较SFT在GenEval上提升12.05分，并在未参与训练的WISE、OneIG-Bench和T2I-CompBench++上实现迁移增益。</p>
+</div><div class="daily-item-purpose" style="margin-top:.5rem;padding-left:.75rem;border-left:3px solid var(--global-link-hover-color,#6366f1);"><strong>用途与启示</strong><ul>
+<li>为统一多模态模型联合训练语言反思与视觉生成提供轨迹级信用分配方案。</li>
+<li>表明完整闭环强化学习比仅优化渲染器或单一输出头更能发现高成功率的图像修复路径。</li>
+<li>可用于构建无需外部批评器或推理时验证器的自诊断、自修订视觉生成系统。</li>
+<li>跨基准迁移结果说明原生反思能力可能提升模型在未见图像生成与编辑任务上的泛化性。</li>
+</ul>
+</div><details class="daily-item-notes" style="margin-top:.5rem;font-size:.85rem;opacity:.82;">
+                <summary style="cursor:pointer;">📝 原始笔记（逐字保留）</summary>
+                <div style="margin-top:.4rem;padding:.5rem .75rem;border-radius:8px;background:var(--global-bg-secondary,rgba(99,102,241,.05));white-space:pre-wrap;word-break:break-word;">[通过交错强化学习，在统一模型中学习原生反思能力（36 ▲）](https://huggingface.co/papers/2609.35767?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-09-29)</div>
               </details></article></section></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">

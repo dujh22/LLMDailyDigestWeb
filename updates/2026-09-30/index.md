@@ -6,21 +6,21 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **递归自我改进走向多智能体与自主研发闭环**：[Noam Brown谈多智能体扩展与递归自我改进](#条目noam-brown)讨论并行 Agent 的协作涌现与自我改进潜力，[Naive AI 开源 AI 研发模型 Naive-N0.5-Flash](#条目naive-ai-ai-naive-n0-5-flash)则展示 AI 深度参与架构、训练和推理优化的实践。
-- **智能体基础设施与产品生态继续成熟**：[阿里云 Agent Sandbox：面向智能体的云上安全执行底座](#条目agent-sandbox)提供隔离、恢复和大规模并发能力，[OpenAI DevDay 2026：Dots、GPT-6.1 Sol 与 Codex Cloud 等更新](#条目openai-devday-2026-dots-gpt-6-1-sol-code)进一步整合个人智能体、云端编程与企业工作空间。
-- **强化学习与蒸馏聚焦细粒度信用分配**：[领域归一化的多教师在策略蒸馏](#条目item-8)校准不同教师的反馈尺度，[GAGAR：代码智能体强化学习的分组评分与优势重分配](#条目gagar)则利用轨迹组内排序将优势重新分配给高质量实现。
-- **计算效率优化覆盖注意力与测试时扩展**：[MassAlloc Attention：让注意力自适应分配计算资源](#条目massalloc-attention)、[CoWindow Attention：以多头协作实现完整因果覆盖](#条目cowindow-attention)分别从贡献裁剪和多头互补窗口降低长上下文成本，[自适应循环 Transformer 改进测试时扩展](#条目transformer)进一步按词元动态配置推理深度。
-- **评测向真实轨迹和连续交互演进**：[TraceDance：从真实部署轨迹自动构建智能体行为基准](#条目tracedance)把线上不良行为转化为针对性动态测试，[Duplex-MPE：全双工多方对话交互基准](#条目duplex-mpe)则评估无固定轮次的多人语音交互决策。
+- **递归自我改进从构想走向研发闭环**：Noam Brown 探讨以并行多智能体扩展测试时计算及推动递归改进的可能性，[Naive-N0.5-Flash](#naive-ai-ai-naive-n0-5-flash) 则展示 AI 深度参与架构探索、训练与推理优化的实际模型研发闭环。
+- **智能体基础设施与真实评测同步演进**：[Agent Sandbox](#agent-sandbox) 提供可隔离、恢复和大规模并发的云上执行底座，[TraceDance](#tracedance) 从真实部署故障轨迹自动生成针对性行为基准，[Duplex-MPE](#duplex-mpe) 进一步把评测扩展到无固定轮次的连续多人语音交互。
+- **强化学习聚焦更精细的信用分配与自我修正**：[领域归一化的多教师在策略蒸馏](#item-8) 缓解跨教师反馈尺度失衡，[GAGAR](#gagar) 将优势重新分配给高质量代码轨迹，[UMM-Reflection](#umm-reflection) 则联合训练多模态模型的反思与生成修订能力。
+- **计算效率成为长上下文与测试时扩展的共同主线**：[MassAlloc Attention](#massalloc-attention) 按注意力贡献动态裁剪计算，[CoWindow Attention](#cowindow-attention) 通过多头互补窗口保留完整因果覆盖，[自适应循环 Transformer](#transformer) 则按词元分配推理深度以改善测试时扩展斜率。
+- **模型与应用生态继续向低成本、长程任务和多模态创作扩张**：[Claude Sonnet 5.5](#claude-sonnet-5-5-opus-5-5) 以更低价格逼近旗舰性能，[OpenAI DevDay 2026](#openai-devday-2026-dots-gpt-6-1-sol-code) 强化个人智能体与云端编程平台，[YuE2](#yue2) 则统一符号规划、全曲音频生成与智能体式音乐编辑。
 
 ## 对当前研究的启发
-- **Awesome-RSI**：[Naive AI 开源 AI 研发模型 Naive-N0.5-Flash](#条目naive-ai-ai-naive-n0-5-flash)提供了“人类设定目标与治理、AI 执行研发闭环”的具体 RSI 案例，可用于分析改进机制是否真正自指以及长期迭代的稳定边界。
-- **SwarmEvolve**：[Noam Brown谈多智能体扩展与递归自我改进](#条目noam-brown)提出弱脚手架下通过大规模并行产生协作涌现，可启发将 Agent 数量、通信结构与测试时算力纳入群体进化的联合缩放实验。
-- **ResearchEvolve**：[Naive AI 开源 AI 研发模型 Naive-N0.5-Flash](#条目naive-ai-ai-naive-n0-5-flash)覆盖架构探索、训练系统、实验迭代和推理优化，可作为端到端自主 AI 研发闭环及人类治理接口的案例。
-- **EvolveLLM**：[Naive AI 开源 AI 研发模型 Naive-N0.5-Flash](#条目naive-ai-ai-naive-n0-5-flash)表明基础模型、训练系统与推理栈可以被纳入同一迭代闭环，适合研究跨层自我改进的收益归因和退化风险。
-- **EvolveLRM**：[自适应循环 Transformer 改进测试时扩展](#条目transformer)的词元级动态计算与[GAGAR：代码智能体强化学习的分组评分与优势重分配](#条目gagar)的轨迹级信用重分配，可分别改进推理算力配置和强化学习奖励归因。
-- **EnvironmentEvolve**：[阿里云 Agent Sandbox：面向智能体的云上安全执行底座](#条目agent-sandbox)的 MicroVM 隔离、状态恢复和弹性并发可作为大规模自动生成、执行与验证进化环境的基础设施。
-- **EvalEvolve**：[TraceDance：从真实部署轨迹自动构建智能体行为基准](#条目tracedance)提供了由线上失败持续生成针对性测试的低成本路径，可支撑随模型行为变化而演进的真实世界基准。
-- **Groom**：[TraceDance：从真实部署轨迹自动构建智能体行为基准](#条目tracedance)可将真实失败定位到具体决策点，为过程级 token 归因补充可审计的缺陷标签与横向比较样本。
+- **Awesome-RSI**：[Noam Brown 的多智能体扩展讨论](#noam-brown)与 [Naive-N0.5-Flash](#naive-ai-ai-naive-n0-5-flash) 分别提供了群体递归改进的机制假设和 AI 主导模型研发闭环的现实案例，可用于补充 RSI 的能力增益、稳定性与治理边界分析。
+- **SwarmEvolve**：[Noam Brown 的讨论](#noam-brown)表明弱脚手架下的协作涌现和大规模并行测试时计算可作为检验群体是否产生超越单体进化信号的重点实验方向。
+- **EnvironmentEvolve**：[Agent Sandbox](#agent-sandbox) 的 MicroVM 隔离、状态恢复与弹性并发可直接作为可执行、可复现且可规模化的 Environment-as-a-Service 底座。
+- **EvalEvolve**：[TraceDance](#tracedance) 将线上不良行为持续转化为决策点级基准，为低成本构建随真实失败模式动态演化的智能体评测提供了具体路径。
+- **EvolveLLM**：[Naive-N0.5-Flash](#naive-ai-ai-naive-n0-5-flash) 展示了让模型参与架构、训练系统、实验迭代和推理优化的端到端自改进范式，可用于研究跨迭代收益是否稳定及错误是否被闭环放大。
+- **EvolveLRM**：[自适应循环 Transformer](#transformer) 的按词元动态计算深度可作为推理时算力分配策略，帮助提升固定预算下的推理收益并研究计算深度与任务难度的匹配关系。
+- **ResearchEvolve**：[Naive-N0.5-Flash](#naive-ai-ai-naive-n0-5-flash) 将 AI 研发职责推进到架构探索、实验执行和系统优化，可作为评估自主科研闭环中新颖性、可复现性及人类治理接口的案例。
+- **HarnessEvolve**：[自我进化编程智能体迈向物理世界智能](#item-16) 以代码显式表示状态和策略、调用感知规划控制工具并利用验证轨迹进化，为具身任务 harness 的接口标准化与轨迹可审计设计提供了参考。
 
 <!-- daily-summary:end -->
 
