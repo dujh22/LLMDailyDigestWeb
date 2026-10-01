@@ -6,23 +6,27 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- 智能体基础设施与平台化加速：从 [OpenAI DevDay](#openai-devday) 的 Agents API、云端 Codex 与全天候智能体，到 [DeepSeek DSec](#deepseek-v4-1-agent-dsec) 提供弹性沙盒、状态持久化和安全隔离，竞争正由模型能力延伸至长程执行环境与开发者生态。
-- 可编程多模态 Harness 成为重要架构路线：[Omni-IO Skills](#omni-io-skills) 以分层技能和统一接口扩展全模态能力，[MaLiang-Harness](#maliang-harness) 建立可追踪、可修订的视觉生成闭环，[LEGO-Anything](#lego-anything-3d) 则以可执行 Blender 程序表达和迭代重建 3D 场景。
-- 具身智能围绕上下文适应、世界建模与高效执行推进：[机器人上下文学习综述](#item-4) 系统化部署时适应范式，[Simple-WAM](#simple-wam) 将未来建模收益压缩至关键去噪步骤，[PanoVLN](#panovln) 通过长动作预测和置信度引导提升导航效率。
-- 后训练研究聚焦更高效、精细的监督信号：[同系列在策略蒸馏](#item-5) 发现小型 RL 专家可推动更大学生超越教师，[SAKI](#saki) 以最大耦合动态路由词元级监督，[Think Before You Score](#think-before-you-score) 则让视觉奖励模型先制定样例自适应评分标准再评判。
-- 长上下文与记忆评测暴露出新的系统性短板：[VoxMem](#voxmem) 显示 15 个音频语言模型在 32K 跨会话记忆任务上均低于 40%，[分块 KV 缓存压缩研究](#item-10) 进一步发现相对窗口相位可造成最高 40 个百分点的周期性检索差异。
-- 长程智能与自动迭代同时推进：[Gemini 4 Argon](#gemini-4-argon) 宣称面向软件工程、智能体和网络安全长程工作流，[RSI-Jev](#rsi-jev-ai-agent-jev) 则以“假设—实验—评估—保留”闭环完成 204 个实验分支并显著提升记忆重排序效果。
+- **智能体基础设施与脚手架进入“可执行、可演化、可验证”阶段**：从大规模安全沙盒 [DeepSeek公开V4.1 Agent训练沙盒基础设施DSec](#deepseek-v4-1-agent-dsec)，到动态物理脚手架 [DynaHarness：面向自进化机器人智能体的动态物理脚手架](#dynaharness)、任务级即时组装 [STITCH：测试时组合任务专属智能体脚手架](#stitch) 与文献驱动演化 [ScholarEvolve：从研究文献中学习的终身智能体脚手架演化](#scholarevolve)，主线已从固定工具链转向运行时组合和闭环修订。
+- **后训练集中探索在策略蒸馏、信用分配与低成本推理**：多项工作分别研究教师动态路由、邻域专家、残差目标和角色自蒸馏，但 [诊断推理语言模型的在策略自蒸馏](#item-122) 与 [逐点裁剪反转纠正：在策略自蒸馏的失效机制](#item-139) 表明其收益依赖狭窄的师生兼容区间和正确目标设计；与此同时，[Trust the Critic More：基于动作分块的 Actor-Critic 训练](#trust-the-critic-more-actor-critic) 展示了减少完整轨迹解码的新路径。
+- **长期记忆从“存取模块”走向可编程、自演化与多模态状态系统**：[MemCodex：可自编程演化的分层智能体记忆](#memcodex)、[ReCAP：基于持久上下文图的智能体记忆压缩](#recap) 和 [Galahad 字节精确记忆让 LLM 文档读取成为一次性成本](#galahad-llm) 分别推进记忆程序、依赖感知压缩与跨请求状态复用，而 [VoxMem：大型音频语言模型多模态记忆评测基准](#voxmem) 显示现有模型在跨会话音频记忆上仍有显著能力缺口。
+- **自主科研与多智能体协作开始产出长程、可核验成果**：[10个Claude协作形式化证明汤姆逊问题N=7](#10-claude-n-7)、[AutoMIP：面向混合整数规划的长程自动研究](#automip) 和 [RankEvolve：可靠的多智能体排序模型自动研究框架](#rankevolve) 展示了形式化证明、算法发现和实验迭代能力，但潜空间通信、隐蔽协助与协同作弊等结果也凸显群体系统的新安全边界。
+- **评测重点由最终准确率转向过程因果、真实执行和预算效率**：[组件替换证据能证明什么：LLM 智能体局部决策的批判性综述](#llm) 质疑局部指标的因果解释，[部署验证器套件的硬门控资格评估](#item-133) 揭示验证器失效上限，[风险感知自适应评测：有限预算下发现高影响故障](#item-151) 则提出优先发现高影响故障的动态预算分配方案。
+- **可信执行与安全治理成为部署前置条件**：技能投毒、审批洗白、因果验证器错设和多智能体安全均出现系统性攻击研究，[ActionGuard：面向技能投毒的工具调用授权机制](#actionguard) 与 [Pretext：绕过 AI 智能体恶意技能检测框架](#pretext-ai) 构成攻防对照；同时，[美国拟立法限制 AI 递归自我改进](#item-28) 将递归改进的沙箱、审计和审批要求推向政策层面。
 
 ## 对当前研究的启发
-- **EnvironmentEvolve**：[DeepSeek DSec](#deepseek-v4-1-agent-dsec) 的弹性环境供给、状态持久化、资源超卖和安全隔离可直接作为 Environment-as-a-Service 的工程基线，并为后续自动难度进化补齐可扩展执行底座。
-- **HarnessEvolve**：[Omni-IO Skills](#omni-io-skills) 的统一多模态执行接口与 [MaLiang-Harness](#maliang-harness) 的持久程序状态、修订感知验证，为设计可扩展且过程可复现的多模态 Agent Harness 提供了两类互补组件。
-- **Groom**：[MaLiang-Harness](#maliang-harness) 的可追踪生成过程与修订验证可转化为过程级证据结构，用于归因 token 消耗究竟产生了有效修改还是冗余试错。
-- **MemoryEvolve**：[VoxMem](#voxmem) 将跨会话记忆拆分为语义、说话人、辅助语言线索和环境声音，为长期记忆系统建立了可直接复用的多模态分维评测框架。
-- **EvalEvolve**：[VoxMem](#voxmem) 的跨会话模态拆分与 [KV 缓存相位弱点](#item-10) 揭示的周期性波动表明，动态评测应主动变换历史结构和窗口相位，避免单一位置配置掩盖真实性能。
-- **EvolveLRM**：[SAKI](#saki) 的事件驱动词元监督与 [同系列在策略蒸馏](#item-5) 的“小专家推动大模型超越教师”现象，为弱到强推理进化提供了兼顾轨迹分布、训练效率和扩展性的蒸馏路径。
-- **JevEvolve**：[RSI-Jev](#rsi-jev-ai-agent-jev) 通过 Listwise Reranking Reward 将记忆重排序 R@1 从 0.192 提升至 0.308，验证了让自动实验智能体持续优化 Jev 式快决策模型的可行性。
-- **ResearchEvolve**：[RSI-Jev](#rsi-jev-ai-agent-jev) 的 204 分支“提出假设—执行实验—评估—保留”记录提供了可复现的自主科研闭环样板，可用于研究实验选择偏差、探索效率与长期收益。
-- **Awesome-RSI**：[RSI-Jev](#rsi-jev-ai-agent-jev) 提供了带完整实验规模和量化增益的开源 RSI 案例，适合纳入资源清单并作为考察迭代稳定性与选择机制的实证对象。
+- **Awesome-RSI**：[ReSAIL：缓解智能体迭代自蒸馏中的性能坍塌](#resail) 表明 RSI 循环应显式保留受特权信息影响的关键行为，并用跨代回归评测防止自蒸馏退化。
+- **DataEvolve**：[AutoDataBench：面向自动化研究的数据智能评测基准](#autodatabench) 提供了固定训练与算力变量、单独测量数据诊断和构造贡献的实验范式，可用于建立数据进化策略的可归因评价。
+- **EnvironmentEvolve**：[DeepSeek公开V4.1 Agent训练沙盒基础设施DSec](#deepseek-v4-1-agent-dsec) 的弹性供给、状态持久化、资源超卖和安全隔离可直接作为环境即服务基础设施的设计参照。
+- **EvalEvolve**：[风险感知自适应评测：有限预算下发现高影响故障](#item-151) 可将动态基准的采样目标由平均覆盖率改为有限预算下的高影响故障发现率。
+- **EvolveLLM**：[FailBank：利用运行时反馈自进化视觉语言动作模型](#failbank) 展示了把安全模块产生的反事实纠正持续沉淀为训练监督、同时优化能力与安全成本的通用自进化闭环。
+- **EvolveLRM**：[诊断推理语言模型的在策略自蒸馏](#item-122) 提醒项目在采用自蒸馏前先测量师生兼容区间，并将不兼容状态下的性能坍塌纳入训练门控。
+- **Groom**：[强智能体在自主机器学习工程中需要多少脚手架？](#item-33) 说明复杂 Harness 未必提高任务收益，适合用过程级 token 归因检验额外规划、状态维护和工具调用究竟贡献了有效证据还是冗余开销。
+- **HarnessEvolve**：[STITCH：测试时组合任务专属智能体脚手架](#stitch) 表明可将 Harness 拆成可复用原语，并以任务条件选择和编译替代固定脚手架或整体搜索。
+- **JevEvolve**：[RSI-Jev：AI Agent 自动研究并迭代 Jev 模型](#rsi-jev-ai-agent-jev) 已验证自动假设—实验—筛选闭环能显著改善记忆重排序，可进一步与 [OpenJev-RLCD：面向校准决策的强化学习实现](#openjev-rlcd) 的概率校准目标结合。
+- **LogicEvolve**：[InterPact：验证规则决策中的关键证据](#interpact) 提供了用反事实干预识别决定性证据的训练方法，可用于提升逻辑链的忠实度与错误定位能力。
+- **MemoryEvolve**：[FAME：基于反事实推理评估自主智能体的错误记忆](#fame) 可作为记忆写入、更新和淘汰策略的诊断层，区分伪相关、环境变化与知识冲突造成的记忆漂移。
+- **ResearchEvolve**：[EEM：面向自主研究的实验经验建模](#eem) 表明科研智能体应把历史实验压缩为可检索决策经验，并在证据不足时主动安排低成本先导实验。
+- **SwarmEvolve**：[多智能体潜空间通信的安全风险](#item-68) 说明通信协议自身必须作为独立对齐和审计对象，而不能假设已对齐单体组合后仍然安全。
 
 <!-- daily-summary:end -->
 
