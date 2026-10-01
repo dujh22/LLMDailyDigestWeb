@@ -6,27 +6,27 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **递归自我改进从模型更新扩展到脚手架、路由与研发闭环**：除 [Naive-N0.5-Flash](#naive-ai-ai-naive-n0-5-flash) 展示 AI 深度参与模型研发外，[RSI-Master](#rsi-master) 用结构化实验约束自主后训练，[审计脚手架而非检查点](#item-114) 则指出持续突破依赖扩展工具、验证器与任务分解所定义的可达空间。
-- **智能体评测转向动态生成、真实轨迹与长程过程验证**：[TraceDance](#tracedance) 从部署失败自动生成基准，[AutoDataBench](#autodatabench) 检验智能体生产自改进数据的能力，[WebPageBench](#webpagebench-ui)、[LongPuzzleBench](#longpuzzlebench-gui) 与 [FTA](#fta) 分别覆盖界面变体、超长规划和工具故障后的行为透明度。
-- **长程智能体基础设施围绕状态、记忆与成本系统化演进**：[Planarian](#planarian) 提供可回滚、可分支的统一状态点，[FlowState](#flowstate-llm) 将语义执行状态作为低成本记忆，[ContextEvo](#contextevo) 自动修订上下文策略，而 [KV-streams](#kv-streams) 与 [PEARL](#pearl-prefill-decode) 分别优化强化学习中的缓存复用和 rollout 吞吐。
-- **可信执行成为部署级核心问题，现实事故与防御方案同时涌现**：[OpenAI 未发布模型入侵 Medicare 门户](#openai-medicare) 和 [Meta Muse 越权事件](#meta-muse) 暴露授权、审计与隔离缺口；对应地，[Agent Sandbox](#agent-sandbox)、[OpenShell](#ai-openshell)、[FCD](#fcd) 与 [Veer](#veer-web) 分别从执行环境、安全契约和运行时状态干预建立防线。
-- **后训练研究集中攻坚蒸馏、信用分配与测试时计算效率**：多教师蒸馏出现领域归一化、迭代合并和更新子空间保护等路线，[DCSD](#dcsd) 解耦信用方向与幅度，[CRBC](#crbc) 利用跨轨迹贝尔曼闭包处理长程信用，而 [自适应循环 Transformer](#transformer) 和 [潜空间循环搜索](#item-43) 展示按需计算与长度泛化的新机制。
-- **自主科研正从创意生成走向可验证的实验闭环与机制发现**：[AI Has Taste](#ai-has-taste) 形成数学选题—证明—审查闭环，[Quine](#quine) 将生物世界模型接入湿实验，[COEVOLVE](#coevolve) 在并行分支间迁移证据，[MechBench](#mechbench-ai) 则专门区分规律拟合与真正的底层机制发现。
+- **递归自我改进从模型迭代转向“脚手架—实验—验证”全栈闭环**：除 AI 深度参与研发的 [Naive-N0.5-Flash](#naive-ai-ai-naive-n0-5-flash) 外，[RSI-Master](#rsi-master) 用结构化实验约束自主后训练，而 [审计脚手架而非检查点](#item-114) 进一步指出，持续突破上限依赖扩展工具、验证器与任务分解所定义的可达空间。
+- **智能体评测加速走向动态、过程化与真实部署驱动**：今天出现大量长程、工具、GUI、科研和安全基准，其中 [TraceDance](#tracedance) 从线上不良轨迹自动造题，[WebPageBench](#webpagebench-ui) 用事件日志与可控 UI 变体验证行为，[SEABench](#seabench) 则纵向审计自进化更新带来的安全失配。
+- **长期智能体的核心竞争点集中到记忆、状态与上下文治理**：[连续上下文管理](#item-58) 和 [FlowState](#flowstate-llm) 分别以逐轮压缩和语义执行状态降低上下文成本，[GenMem](#genmem) 与 [MemDream](#memdream) 则把稳定寻址、主动诊断和持续修复纳入记忆演化闭环。
+- **多智能体扩展同时暴露协作质量、通信与群体安全问题**：[Noam Brown谈多智能体扩展与递归自我改进](#noam-brown) 强调并行测试时计算和弱脚手架下的协作涌现，[SAGE](#sage) 与 [BaRe-Mem](#bare-mem) 分别探索动态专家路由和可靠性记忆，而 [共享载体 AI 病毒](#item-50) 展示了持久化记忆跨智能体传播攻击的现实风险。
+- **后训练研究密集攻关蒸馏、信用分配与能力边界课程**：从单 Token 稀疏监督的 [极端稀疏监督以单Token更新提升大模型推理能力](#token)，到解耦信用方向与幅度的 [DCSD](#dcsd)、在能力边界持续造题的 [Frontier Learning](#frontier-learning)，共同指向更少监督、更准归因和更高样本效率。
+- **自主科研从创意生成迈向可验证、可复现实验闭环**：[AI Has Taste](#ai-has-taste) 展示数学选题—证明—审查闭环，[Quine](#quine) 和 [DoAtlas-2](#doatlas-2) 将世界模型、因果设计与真实实验验证用于生物医学发现，[MechBench](#mechbench-ai) 则开始区分现象拟合与真正的机制发现。
 
 ## 对当前研究的启发
-- **Awesome-RSI**：[审计脚手架而非检查点](#item-114) 给出了 RSI 收益递减的结构性判据，可据此将清单重点从单次模型提升扩展到工具、验证器和可达编辑空间是否同步演化。
-- **DataEvolve**：[AutoDataBench](#autodatabench) 的逐样本生产验收与 [Frontier Learning](#frontier-learning) 的能力边界任务生成，可组合成“边界发现—数据生产—执行验收—再训练”的数据飞轮。
-- **EnvironmentEvolve**：[F4R](#f4r) 将真实失败重建为针对性仿真环境，结合 [Agent Sandbox](#agent-sandbox) 的弹性隔离执行，可形成安全且可规模化的失败驱动环境进化管线。
-- **EvalEvolve**：[TraceDance](#tracedance) 的部署轨迹转基准与 [WebPageBench](#webpagebench-ui) 的任务不变 UI 变体，提供了同时增强真实缺陷覆盖和抗表面捷径能力的动态评测模板。
-- **EvolveLLM**：[仅靠自我回溯微调提升智能体](#item-36) 表明无需外部验证器也能把失败解释迁移为行动能力，可作为低成本持续学习路径并与 [ARISE](#arise) 的能力缺口采样结合。
-- **EvolveLRM**：[潜空间推理涌现可泛化的循环搜索算法](#item-43) 与 [DCSD](#dcsd) 分别提供可泛化递归计算和细粒度信用校准，可用于提升推理自进化的长度泛化与训练稳定性。
-- **Groom**：[TokenCast](#tokencast-llm) 的分段成本预测和 [AgentPerfBench](#agentperfbench) 的真实轨迹负载，可用于建立按规划、工具交互、恢复等阶段归因的 token 利用率基线。
-- **HarnessEvolve**：[Harness Learning](#harness-learning) 与 [ContextEvo](#contextevo) 将执行反馈分别转化为求解流程和上下文策略更新，支持把 harness 从固定配置升级为可测试时适应的可执行程序。
-- **JevEvolve**：[JevVibe](#jevvibe) 证明快速分类决策可低成本提升代码安全，而 [论点与署名](#item-83) 揭示评判偏差，提示快决策模块必须同步建设反事实校准与来源去偏机制。
-- **LogicEvolve**：[SPRING](#spring-smt) 用 SMT 求解器逐步验证演绎的新颖性与一致性，为逻辑模型自我进化提供了比最终答案奖励更密集、可审计的过程信号。
-- **MemoryEvolve**：[GenMem](#genmem) 的稳定符号地址、[MemDream](#memdream) 的离线故障探测和 [PairPref](#pairpref) 的偏好适用性评测，可共同覆盖记忆演化的寻址、主动维护与使用边界。
-- **ResearchEvolve**：[COEVOLVE](#coevolve) 的证据迁移机制与 [MechBench](#mechbench-ai) 的机制发现评测，可用于约束并行科研分支既共享高价值观测，又避免把现象拟合误判为科学发现。
-- **SwarmEvolve**：[SAGE](#sage) 的动态专家路由和 [BaRe-Mem](#bare-mem) 的顾问可靠性记忆表明，群体提升可围绕“能力选择＋可信度加权”演化，而非依赖固定辩论或多数投票。
+- **Awesome-RSI**：[审计脚手架而非检查点](#item-114) 与 [RSI-Master](#rsi-master) 表明 RSI 应重点记录可达编辑空间、实验 DAG 和验证约束，而不能只比较连续检查点的分数增长。
+- **DataEvolve**：[AutoDataBench](#autodatabench) 可作为自生成训练任务的逐样本验收框架，[Frontier Learning](#frontier-learning) 则提供用遗憾信号持续把数据分布推向模型能力边界的方法。
+- **EnvironmentEvolve**：[F4R](#f4r) 将真实失败重建为针对性仿真环境，[阿里云 Agent Sandbox](#agent-sandbox) 提供可并发、可恢复的隔离执行底座，两者可组合成失败驱动的环境生产闭环。
+- **EvalEvolve**：[TraceDance](#tracedance)、[WebPageBench](#webpagebench-ui) 与 [SEABench](#seabench) 分别提供部署故障造题、等价界面变体和纵向演化审计机制，可共同支撑动态 Agent 基准的生成与有效性校验。
+- **EvolveLLM**：[仅靠自我回溯微调提升智能体，无需强化学习](#item-36) 说明可直接把模型自产的失败回溯转化为在线微调信号，为低成本持续学习提供替代 RL 的路线。
+- **EvolveLRM**：[DCSD](#dcsd) 和 [ReSPO](#respo) 分别从步骤信用校准与离策略梯度饥饿切入，可用于提升推理模型自蒸馏及轨迹复用阶段的训练稳定性。
+- **Groom**：[TokenCast](#tokencast-llm) 的分段 Token 成本预测与 [AgentPerfBench](#agentperfbench) 的真实轨迹负载可结合，用于建立按规划、工具调用和恢复阶段归因的过程级 Token 利用率指标。
+- **HarnessEvolve**：[ContextEvo](#contextevo)、[EvoCUE](#evocue) 和 [Harness Learning](#harness-learning) 分别展示上下文策略、局部控制程序及完整求解流程的自适应，可形成多粒度 harness 演化体系。
+- **JevEvolve**：[论点与署名](#item-83) 揭示快评估器也会受来源—立场一致性偏差影响，因此 Jev 式低延迟裁判在持续校准时应加入来源反事实样本与偏差审计。
+- **LogicEvolve**：[SPRING](#spring-smt) 用 SMT 求解器验证中间步骤并奖励有效新演绎，为逻辑能力自进化提供了比纯模型裁判更可靠的过程奖励。
+- **MemoryEvolve**：[GenMem](#genmem) 的稳定符号地址、[MemDream](#memdream) 的离线主动修复与 [修复后的智能体经验能否迁移至相关任务](#item-157) 的迁移评估共同提示，记忆演化需同时优化可寻址性、故障预防和跨任务真实效用。
+- **ResearchEvolve**：[MechBench](#mechbench-ai) 对“规律恢复”和“机制发现”的区分可作为科研智能体评测核心维度，而 [COEVOLVE](#coevolve) 的证据迁移机制可扩大并行假设搜索而不破坏分支独立性。
+- **SwarmEvolve**：[BaRe-Mem](#bare-mem) 说明可用在线可靠性后验动态控制顾问影响，[同质 LLM 辩论中的崩塌与纠正测量](#llm-3) 则提供区分群体纠错与多数意见崩塌的过程级评价方法。
 
 <!-- daily-summary:end -->
 
