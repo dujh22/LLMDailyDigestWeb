@@ -39,7 +39,7 @@ JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策�
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
 今日概览 智能体脚手架开始从“自动改写”转向受约束、可复用的系统演化：RRSI抑制迭代过拟合与复杂度膨胀，RSR将专用脚手架经验递归重写为通用训练轨迹，EVISKILL则以可回放证据沉淀和修正技能。 长周期自我改进的稳定性成为核心问题：自生成反馈破坏测试时训练的长期稳定性揭示闭环更新会持续退化；MemAdapter与超越记忆：用显式信念状态驱动长时程智能体分别从记忆校准和显式状态维护降低错误累积。 动态评测正覆盖科学任务与真实纵向交互：AutoSciBench让任务难度随智能体能力自动演进，RealCompanion则用最长 120 天真实对话检验远程记忆、相关性判断与过度推断。 推理能力提升更加依赖结构先验、跨域迁移和可审计状态：SAGE用代数与双曲结构显著改善长程推理，NAT-ARC将自然图像预训练迁移至抽象视觉推理，而AlphaGo作者：LLM尚未掌握可审计的搜索式推理强调搜索、证据验证和信念更新仍是关键缺口。 大规模多智能体并非简单堆叠即可获得线性收益：万级多智能体扩展指出增益主要来自并行测试时计算且伴随奖励错配风险，Raven则尝试通过自动编排可组合 Harness 支撑跨域长程协作。 自动化科研同时展现可用成果与验证瓶颈：AutoSella发现了可跨分子泛化的更快几何弛豫算法，而OpenAI 公开 722 篇 AI 生成数学手稿将正确性验证和大规模科研产出的质量筛选推向前台。 对当前研究的启发 Awesome-RSI：RRSI 的候选生成与筛选正则化，加上自生成反馈研究提出的独立真实数据验证，可组合为防止递归迭代追逐噪声和闭环退化的双重护栏。 HarnessEvolve：RRSI、RSR 与 EVISKILL 分别提供约束演化、跨脚手架轨迹迁移和证据化技能修正机制，可用于构建“生成—迁移—验证”一体化 Harness 演进闭环。 DataEvolve：自生成反馈在 128K token 更新中出现闭环退化，说明数据飞轮必须在每轮训练前设置独立真实数据验收，而不能仅依赖模型自身生成与评价。 EvolveLLM：RSR 表明可把专用 Harness 的成功轨迹重写为通用模型训练数据，但应结合外部验证过滤重写过程中累积的自洽错误。 EvolveLRM：SAGE 在可由 Lean 验证的长程任务上取得近 8 倍提升，说明把任务结构直接注入探索过程可作为纯奖励塑形之外的高效训练路线。 LogicEvolve：NAT-ARC 的视觉先验迁移与显式搜索、证据验证、信念更新的主张共同指向“强表征先验＋可审计符号状态”的混合推理架构。 MemoryEvolve：PoS 的显式信念状态、MemAdapter 的反事实校准和 RealCompanion 的纵向评测可串成记忆写入、冲突修复与长期有效性验证的完整链路。 EvalEvolve：AutoSciBench 可依据求解轨迹和评判反馈持续生成更难任务，适合作为动态基准自动对准能力边界的实现模板。 ResearchEvolve：AutoSella 证明智能体可产出具备收敛性与跨分子泛化的真实算法改进，而 722 篇数学手稿事件表明规模化产出必须配套形式验证、复现和价值筛选管线。 SwarmEvolve：Raven 的模块化 Harness 编排可作为群体结构演化载体，但万级智能体分析提示优化目标应聚焦边际收益、通信成本和奖励错配，而非智能体数量。 EnvironmentEvolve：HERA 的脚手架—环境协同演化表明，可将不确定情形和可靠拒答能力共同纳入自动课程，使环境难度演化同时服务能力与安全校准。 JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策模型承担高频搜索动作筛选、仅将低置信决策升级给慢模型提供了直接范式。">
   <meta itemprop="datePublished" content="2026-10-08T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-08T18:48:31+08:00">
+  <meta itemprop="dateModified" content="2026-10-08T18:49:25+08:00">
   <meta itemprop="wordCount" content="1466">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-08/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
@@ -50,7 +50,7 @@ JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策�
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-10-08T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-08T18:48:31+08:00">
+    <meta property="article:modified_time" content="2026-10-08T18:49:25+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -71,7 +71,7 @@ JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策�
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-08\/"
     },"genre": "updates","wordcount":  1466 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-08\/","datePublished": "2026-10-08T00:00:00+08:00","dateModified": "2026-10-08T18:48:31+08:00","publisher": {
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-08\/","datePublished": "2026-10-08T00:00:00+08:00","dateModified": "2026-10-08T18:49:25+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -241,7 +241,7 @@ JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-10-08 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-08">2026-10-08</time></span>&nbsp;<span title="更新于 2026-10-08 18:48:31"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-08">2026-10-08</time></span>&nbsp;<span title="1466 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-10-08 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-08">2026-10-08</time></span>&nbsp;<span title="更新于 2026-10-08 18:49:25"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-08">2026-10-08</time></span>&nbsp;<span title="1466 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -286,7 +286,7 @@ JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策�
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 57 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 8</a><a href="#daily-other">📎 其他 34</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 61 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 10</a><a href="#daily-other">📎 其他 36</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">15 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="rrsi-harness" class="summary-card daily-item">
@@ -476,7 +476,7 @@ JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/G6MKdKAjFnb37w8yFyyRPg</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">8 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">10 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/" onclick="event.stopPropagation()">Awesome-RSI</a><span class="daily-count">1 条</span>
               </summary>
@@ -613,7 +613,7 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/" onclick="event.stopPropagation()">EnvironmentEvolve</a><span class="daily-count">1 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/" onclick="event.stopPropagation()">EnvironmentEvolve</a><span class="daily-count">2 条</span>
               </summary>
               <div class="daily-group-body"><details id="hera" class="daily-row">
   <summary>
@@ -630,6 +630,29 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">EnvironmenEvolve｜《HERA: HARNESS-ENVIRONMENT CO-EVOLUTIONFOR RELIABLE AGENTIC ABSTENTION》https://h5.lingowhale.com/s/v3eO2Mm</div>
+  </details></div>
+</details>
+<details id="minicorp-ai" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>MiniCorp：面向 AI 自运行公司的多智能体办公模拟器</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 多智能体系统 · <a href="https://arxiv.org/abs/2610.05912" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">MiniCorp 通过耦合企业内部多智能体与动态外部市场，模拟 AI 集体经营公司，并规模化生成纵向、可回放和反事实的企业决策数据。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多智能体系统</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E7%A4%BE%E4%BC%9A%E4%BB%BF%E7%9C%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;社会仿真</a><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境合成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体数据合成</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%8D%E4%BA%8B%E5%AE%9E%E5%AE%9E%E9%AA%8C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;反事实实验</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05912" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05912</a></div></div><div class="daily-item-content"><ul>
+<li>MiniCorp 以电商企业为示例，将客户、竞争者和市场机制构成的外部世界，与负责观察、讨论和战略决策的内部智能体组织连接起来。</li>
+<li>智能体的决策会持续影响市场，市场反馈又会作用于后续决策，从而形成具有长期影响的企业经营闭环。</li>
+<li>系统完整记录决策时可见信息、智能体通信、行动及后续业务结果，并借助检查点从同一状态重放不同决策，以生成静态企业档案无法提供的反事实数据。</li>
+<li>实验显示，不同岗位智能体能够跨角色协作并根据市场反馈调整策略；加入长期战略指引后，即使广告早期回报较弱，也能维持探索行为。</li>
+<li>作者还依据真实市场实证研究中的模式评估端到端保真度，以降低智能体利用模拟器缺陷进行奖励投机的风险。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为企业智能体的训练与评估提供可扩展的纵向交互数据，缓解真实企业数据稀缺、昂贵及隐私受限问题。</li>
+<li>利用检查点回放开展反事实经营实验，比较同一市场状态下不同决策的长期效果。</li>
+<li>可用于研究多岗位智能体的组织协作、战略适应、探索行为和长期信用分配。</li>
+<li>提示企业级智能体环境不仅要模拟内部工作流，还需纳入客户、竞争者与市场反馈，并通过现实规律验证仿真保真度。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[MiniCorp：AI 智能体公司的最后一公里（18 ▲）](https://huggingface.co/papers/2610.05912?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-07)</div>
   </details></div>
 </details>
 </div>
@@ -654,8 +677,33 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
   </details></div>
 </details>
 </div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/" onclick="event.stopPropagation()">JevEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="openai-jev" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>OpenAI 以快速迭代冲击百亿美元估值的 Jev</strong>
+      <span class="daily-row-meta">微信公众号 · 产业动态分析 · <a href="https://mp.weixin.qq.com/s/sm7V3vYjkKohud_T-QbmwA" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">文章讨论 OpenAI 在短短 15 天内通过产品或能力迭代，对估值约 100 亿美元的 Jev 及其商业模式形成的潜在替代冲击。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：产业动态分析</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众号</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能原生应用</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%95%86%E4%B8%9A%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体商业化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/sm7V3vYjkKohud_T-QbmwA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/sm7V3vYjkKohud_T-QbmwA</a></div></div><div class="daily-item-content"><ul>
+<li>文章以 OpenAI 的快速产品迭代为切入点，分析其对 Jev 核心业务与市场估值逻辑的冲击。</li>
+<li>基础模型厂商将能力直接产品化后，可能迅速覆盖垂直创业公司的关键功能，压缩其差异化空间。</li>
+<li>“15 天”凸显人工智能行业能力扩散和竞争格局变化的速度，也反映高估值企业面临的平台依赖风险。</li>
+<li>相关趋势表明，单纯依靠模型能力封装建立的产品壁垒，可能难以抵御上游模型厂商的功能下沉。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>用于跟踪 OpenAI 产品迭代对人工智能创业公司和垂直应用市场的影响。</li>
+<li>提醒创业团队将壁垒建立在专有数据、深度工作流、客户关系和持续交付能力之上。</li>
+<li>可作为 JevEvolve 项目研究平台能力演进、产品替代和商业生态重构的案例。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">JevEvolve｜OpenAI 只用 15 天，就杀死了估值 100 亿美元的 Jev？https://mp.weixin.qq.com/s/sm7V3vYjkKohud_T-QbmwA</div>
+  </details></div>
+</details>
+</div>
             </details><details class="daily-group daily-group-other" id="daily-other">
-            <summary class="daily-group-title"><h2 class="daily-tier-title">📎 其他相关 <span class="daily-count">34 条 · 未归入研究项目，默认收起</span></h2></summary>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">📎 其他相关 <span class="daily-count">36 条 · 未归入研究项目，默认收起</span></h2></summary>
             <div class="daily-group-body"><details id="glm-agi-agent-scaling" class="daily-row">
   <summary>
     <span class="daily-row-title"><strong>唐杰谈GLM通往AGI：预训练、后训练与Agent持续Scaling</strong>
@@ -738,7 +786,7 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
   </details></div>
 </details>
 <section class="daily-cluster">
-      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：视频生成 <span class="daily-count">3 条</span></h3><article id="duomatching" class="summary-card daily-item daily-item-medium">
+      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：视频生成 <span class="daily-count">4 条</span></h3><article id="duomatching" class="summary-card daily-item daily-item-medium">
   <h2 id="duomatching-title" class="daily-item-title">DuoMatching：联合边缘分布匹配提升少步视频生成</h2><p class="single-subtitle daily-item-summary">DuoMatching通过联合匹配视频分布与边缘匹配单帧分布，将图像生成器的视觉和语义先验迁移至少步视频生成，在保持运动动态的同时提升画质、构图及语义对齐。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03543" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03543</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
       <div class="daily-item-content"><p>DuoMatching在现有视频联合分布匹配蒸馏基础上，加入由图像生成器提供监督的边缘分布匹配目标。该方法提出LatentBridge，解决视频学生模型与图像教师模型之间的潜表示不匹配问题。Latent Variation Sampling将帧级监督分散到不同时间片段，以减少监督冗余并扩大时序覆盖。实验显示，该方法在大体保持运动动态的同时改善视觉质量、构图和语义对齐，人工评测相对所有基线的总体偏好率均超过80%。</p>
 </div>
@@ -767,7 +815,7 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
     <div class="daily-item-notes-body">[Kandinsky 6.0 视频：用于同步视频和音频生成的基础模型（113 ▲）](https://huggingface.co/papers/2610.05608?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
   </details></article>
 <div class="daily-cluster-rest">
-          <p class="daily-cluster-rest-label">同专题其余 1 条</p><details id="framemorrow" class="daily-row">
+          <p class="daily-cluster-rest-label">同专题其余 2 条</p><details id="framemorrow" class="daily-row">
   <summary>
     <span class="daily-row-title"><strong>FrameMorrow：以前瞻性标记引导长时程视频帧选择</strong>
       <span class="daily-row-meta">Hugging Face Papers · 视频生成 · <a href="https://arxiv.org/abs/2609.38839" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
@@ -782,6 +830,23 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[FrameMorrow：利用前瞻性标记进行未来引导的帧选择，以生成长时程视频（90 ▲）](https://huggingface.co/papers/2609.38839?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-05)</div>
+  </details></div>
+</details>
+<details id="id-forcing" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>ID-Forcing：测试时分布内强制实现长视频生成</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 视频生成 · <a href="https://arxiv.org/abs/2610.03120" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">ID-Forcing 通过在测试时约束 KV 缓存及条件机制与训练配置一致，将短时自回归视频扩散模型扩展至分钟级生成并显著抑制视觉漂移。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;扩散模型</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03120" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03120</a></div></div><div class="daily-item-content"><p>现代自回归视频扩散模型在超出训练时域后，容易出现颜色、纹理漂移以及运动动态衰减。论文指出，既有 KV conditioning 默认缓存条目仍处于训练分布内，但长程滚动生成会使 KV 条目本身逐渐分布外，由此形成“KV 来源问题”。ID-Forcing 同时对 KV 缓存与 KV conditioning 施加训练分布约束，其 self-caching 机制让每个视频块在不关注先前 KV 条目的情况下独立建立缓存。该方法无需重新训练即可将短时模型扩展到分钟级视频，并在漂移指标与用户研究中明显优于已有方案。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为预训练短视频生成模型提供无需再训练的长时域扩展方案。</li>
+<li>表明长视频漂移不仅源于 KV 条件选择，还源于缓存条目自身逐步变为分布外数据。</li>
+<li>启示测试时生成系统应同时控制条件使用方式与中间状态的来源分布。</li>
+<li>self-caching 可作为提升长程视频颜色、纹理和运动一致性的通用设计参考。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[测试时长视频生成的分布内强制（28 ▲）](https://huggingface.co/papers/2610.03120?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
   </details></div>
 </details>
 </div></section><details id="item-15" class="daily-row">
@@ -918,13 +983,12 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
     <div class="daily-item-notes-body">[ALoDLM：自适应循环扩散语言模型（55 ▲）](https://huggingface.co/papers/2610.04198?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
   </details></div>
 </details>
-<details id="lmbuild-llm" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><strong>LMBuild：评估 LLM 智能体生成可构建功能结构的能力</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 智能体评测 · <a href="https://arxiv.org/abs/2610.04292" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">LMBuild 通过交互式构建环境与多维评估框架，衡量 LLM 智能体生成结构可靠、功能可用且能够物理实现的三维对象的能力。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;真实世界基准测试</a><a href="/LLMDailyDigestWeb/topic/%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;空间智能</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;可执行性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.04292" target="_blank" rel="noopener">https://arxiv.org/abs/2610.04292</a></div></div><div class="daily-item-content"><p>LMBuild 将生成对象表示为包含零件分解、连接关系、材料和装配序列的组合结构，而非仅关注几何外观。基准提供交互式环境，允许智能体检索、创建和放置组件，并基于 CAD 数据集及 Wikipedia 知识构建评测任务。评估覆盖结构可靠性、功能可供性、设计质量和物理实现能力，对 30 个系统的实验显示，前沿闭源模型的主要瓶颈已从结构对齐转向功能与物理可操作性。更强模型更善于创建新组件，而较弱模型更依赖检索；明确提供功能规格可显著改善零件完整性、运动学表现和物理可操作性。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<section class="daily-cluster">
+      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：智能体评测 <span class="daily-count">3 条</span></h3><article id="lmbuild-llm" class="summary-card daily-item daily-item-medium">
+  <h2 id="lmbuild-llm-title" class="daily-item-title">LMBuild：评估 LLM 智能体生成可构建功能结构的能力</h2><p class="single-subtitle daily-item-summary">LMBuild 通过交互式构建环境与多维评估框架，衡量 LLM 智能体生成结构可靠、功能可用且能够物理实现的三维对象的能力。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;真实世界基准测试</a><a href="/LLMDailyDigestWeb/topic/%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;空间智能</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;可执行性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.04292" target="_blank" rel="noopener">https://arxiv.org/abs/2610.04292</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>LMBuild 将生成对象表示为包含零件分解、连接关系、材料和装配序列的组合结构，而非仅关注几何外观。基准提供交互式环境，允许智能体检索、创建和放置组件，并基于 CAD 数据集及 Wikipedia 知识构建评测任务。评估覆盖结构可靠性、功能可供性、设计质量和物理实现能力，对 30 个系统的实验显示，前沿闭源模型的主要瓶颈已从结构对齐转向功能与物理可操作性。更强模型更善于创建新组件，而较弱模型更依赖检索；明确提供功能规格可显著改善零件完整性、运动学表现和物理可操作性。</p>
+</div>
+    </details><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>为三维设计与构建智能体提供超越几何质量的真实世界能力评测框架。</li>
 <li>揭示功能可供性、机械推理和物理可操作性是当前模型生成可实现结构的核心短板。</li>
 <li>可用于比较组件检索与组件生成策略，并研究功能规格对智能体规划和构建质量的影响。</li>
@@ -933,15 +997,12 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[LMBuild：评估 LLM 智能体生成可构建且功能完善的结构的能力（24 ▲）](https://huggingface.co/papers/2610.04292?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
-  </details></div>
-</details>
-<details id="hyperbrowsecomp" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><strong>HyperBrowseComp：网页浏览智能体的多语言多模态压力测试</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 智能体评测 · <a href="https://arxiv.org/abs/2610.03574" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://huggingface.co/papers/2610.03574" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
-    </span><span class="daily-row-summary">HyperBrowseComp 以13种语言、423道人工验证问题，评测网页浏览智能体跨语言、跨模态发现并串联开放网络证据的能力。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多语言建模</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;证据推理</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03574" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03574</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://huggingface.co/papers/2610.03574" target="_blank" rel="noopener">https://huggingface.co/papers/2610.03574</a></div></div><div class="daily-item-content"><p>HyperBrowseComp 收录423道由母语者或高水平使用者编写并经人工验证的问题，覆盖13种语言。问题要求智能体寻找公开可验证的简短答案，但通常需要定位冷门证据、沿多步线索链搜索，或检查视频、扫描文档、图像和地图等异构来源。研究者先使用无法联网的模型过滤较容易依靠参数知识回答的问题，以提高基准难度与搜索能力的构念效度。评测同时比较供应商原生搜索能力与统一外部检索脚手架，并通过人工评测样本衡量模型表现及任务投入。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+  </details></article>
+<article id="hyperbrowsecomp" class="summary-card daily-item daily-item-medium">
+  <h2 id="hyperbrowsecomp-title" class="daily-item-title">HyperBrowseComp：网页浏览智能体的多语言多模态压力测试</h2><p class="single-subtitle daily-item-summary">HyperBrowseComp 以13种语言、423道人工验证问题，评测网页浏览智能体跨语言、跨模态发现并串联开放网络证据的能力。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多语言建模</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;证据推理</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03574" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03574</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://huggingface.co/papers/2610.03574" target="_blank" rel="noopener">https://huggingface.co/papers/2610.03574</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>HyperBrowseComp 收录423道由母语者或高水平使用者编写并经人工验证的问题，覆盖13种语言。问题要求智能体寻找公开可验证的简短答案，但通常需要定位冷门证据、沿多步线索链搜索，或检查视频、扫描文档、图像和地图等异构来源。研究者先使用无法联网的模型过滤较容易依靠参数知识回答的问题，以提高基准难度与搜索能力的构念效度。评测同时比较供应商原生搜索能力与统一外部检索脚手架，并通过人工评测样本衡量模型表现及任务投入。</p>
+</div>
+    </details><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>用于压力测试网页浏览智能体在开放网络中的持续信息搜寻与多步证据连接能力。</li>
 <li>支持比较原生搜索工具与统一检索脚手架对智能体表现的影响。</li>
 <li>为多语言、多模态浏览评测提供人工编写和验证的高难度题集。</li>
@@ -950,9 +1011,26 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[HyperBrowseComp：面向网页浏览智能体的多语言、多模态压力测试（51 ▲）](https://huggingface.co/papers/2610.03574?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-05)</div>
+  </details></article>
+<div class="daily-cluster-rest">
+          <p class="daily-cluster-rest-label">同专题其余 1 条</p><details id="proactivity-gym" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>主动式智能体基础与 Proactivity-Gym 评测框架</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 智能体评测 · <a href="https://arxiv.org/abs/2609.37267" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">论文提出任务能力、时间分配与用户信任三项联合原则，并以 Proactivity-Gym 评估主动式智能体在多日持续交互中的综合表现。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%BB%E5%8A%A8%E5%BC%8F%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;主动式智能</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.37267" target="_blank" rel="noopener">https://arxiv.org/abs/2609.37267</a></div></div><div class="daily-item-content"><p>论文以 3T 原则刻画主动式智能体：任务能力要求预判并正确完成有用工作，时间分配关注计算资源与结果时效，信任则衡量用户对智能体的持续信心和适当依赖。其设计空间包含任务范围、预判时域、激活触发条件、处理时机和干预深度五个维度，并涉及用户、环境、基础模型与智能体脚手架的联合建模。作者提出基于仿真的 Proactivity-Gym，通过多日场景、有状态环境和人格条件化模拟用户，评估主动协助在连续交互中的后果。对 23 种模型—脚手架配置的实验显示三项原则之间存在显著性能差距，且 LLM 评判器容易混淆任务能力与信任；30 人用户研究还发现，即便结果正确，干预错位也会造成信任骤降。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为主动式智能体的设计提供兼顾有用性、计算时机和用户信任的统一原则。</li>
+<li>支持在多日、有状态、人物画像条件化的仿真环境中开展长程智能体评测。</li>
+<li>提醒开发者不能只以任务正确率衡量主动协助，干预时机与上下文匹配同样会显著影响信任。</li>
+<li>可用于审计 LLM 评判器是否错误地将任务完成质量等同于用户信任。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[主动式智能体基础：原则、技术层级与 Proactivity-Gym（21 ▲）](https://huggingface.co/papers/2609.37267?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
   </details></div>
 </details>
-<details id="omnireasoning" class="daily-row">
+</div></section><details id="omnireasoning" class="daily-row">
   <summary>
     <span class="daily-row-title"><strong>OmniReasoning：音视频联合推理基准、数据引擎与自蒸馏方法</strong>
       <span class="daily-row-meta">Hugging Face Papers · 多模态推理 · <a href="https://arxiv.org/abs/2609.39490" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
