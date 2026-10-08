@@ -12,51 +12,52 @@
 
 今日概览
 
-智能体 Harness 开始从人工设计走向受约束的递归演化：研究同时覆盖抑制迭代过拟合的 RRSI：正则化智能体 Harness 递归自我改进框架、将专用脚手架经验重写为通用轨迹的 RSR：递归自我重写扩展复杂任务执行轨迹、证据驱动的 EVISKILL：以可回放证据驱动智能体技能演化，以及自动组合专业智能体的 Raven：面向可组合智能体的 Harness 之 Harness。
-持续学习的焦点转向闭环稳定性与记忆可信度：自生成反馈破坏测试时训练的长期稳定性 证明独立真实数据验证可阻断长期闭环退化，MemAdapter：反事实适应缓解记忆诱导型谄媚 与 RealCompanion：真实纵向对话中的人类理解评测 则分别给出记忆校准方法和最长 120 天的真实评测。
-推理能力提升更依赖结构先验和跨域迁移：SAGE以结构信号纠正长程推理偏差 借助代数与双曲结构将 Lean 验证通过率提升至近 8 倍，NAT-ARC：自然图像预训练迁移至ARC视觉推理 则展示自然图像视觉先验向抽象推理迁移的可行性。
-动态评测与自主科研闭环同步推进：AutoSciBench：自主生成并迭代适配科学智能体评测基准 让任务难度随能力演进，语言模型发现更快的分子几何弛豫算法 AutoSella 展示智能体发现可泛化新算法的实例，而 OpenAI 公开 722 篇 AI 生成数学手稿 将正确性验证与规模化质量筛选推到前台。
-规模扩展同时带来收益边界与治理压力：万级多智能体扩展：能力增益、协作机制与对齐风险 指出群体收益主要来自并行测试时计算且呈次线性，Hinton等22人警告RSI或触发智能爆炸 则把 AI 研发自动化反馈环的可见性、部署约束和治理机制列为紧迫议题。
+智能体脚手架开始从“自动改写”转向受约束、可复用的系统演化：RRSI抑制迭代过拟合与复杂度膨胀，RSR将专用脚手架经验递归重写为通用训练轨迹，EVISKILL则以可回放证据沉淀和修正技能。
+长周期自我改进的稳定性成为核心问题：自生成反馈破坏测试时训练的长期稳定性揭示闭环更新会持续退化；MemAdapter与超越记忆：用显式信念状态驱动长时程智能体分别从记忆校准和显式状态维护降低错误累积。
+动态评测正覆盖科学任务与真实纵向交互：AutoSciBench让任务难度随智能体能力自动演进，RealCompanion则用最长 120 天真实对话检验远程记忆、相关性判断与过度推断。
+推理能力提升更加依赖结构先验、跨域迁移和可审计状态：SAGE用代数与双曲结构显著改善长程推理，NAT-ARC将自然图像预训练迁移至抽象视觉推理，而AlphaGo作者：LLM尚未掌握可审计的搜索式推理强调搜索、证据验证和信念更新仍是关键缺口。
+大规模多智能体并非简单堆叠即可获得线性收益：万级多智能体扩展指出增益主要来自并行测试时计算且伴随奖励错配风险，Raven则尝试通过自动编排可组合 Harness 支撑跨域长程协作。
+自动化科研同时展现可用成果与验证瓶颈：AutoSella发现了可跨分子泛化的更快几何弛豫算法，而OpenAI 公开 722 篇 AI 生成数学手稿将正确性验证和大规模科研产出的质量筛选推向前台。
 
 对当前研究的启发
 
-Awesome-RSI：RRSI 的候选生成与筛选正则化可作为抑制 RSI 基准过拟合和复杂度膨胀的具体机制，自生成反馈破坏测试时训练的长期稳定性 进一步说明每轮更新前必须引入独立外部验证。
-HarnessEvolve：RRSI、RSR 与 Raven 分别提供受约束搜索、成功轨迹迁移和模块化编排三种 Harness 演化路径，可据此拆分统一的演化与评测接口。
-EvolveLLM：RSR 表明可将异构脚手架产生的成功经验重写为通用训练轨迹，为模型吸收 Harness 层能力而不绑定特定执行框架提供方案。
-EvolveLRM：SAGE 说明在稀疏长程推理中注入可验证的代数结构和几何先验，可能比单纯增加采样或强化学习规模更有效。
-LogicEvolve：NAT-ARC 将自然图像预训练迁移到 ARC，提示逻辑能力进化可探索视觉表征先验与离散规则验证器的结合。
-MemoryEvolve：MemAdapter 的反事实校准与 RealCompanion 的纵向证据溯源评测，可分别用于控制错误记忆影响和检验远程记忆是否被恰当调用。
-EvalEvolve：AutoSciBench 通过求解轨迹和评判反馈持续生成新任务，为构建随智能体能力自动调难且不依赖固定题库的动态基准提供了直接范式。
-EnvironmentEvolve：AutoSciBench 可将轨迹失误转化为下一轮科学任务生成信号，适合作为环境难度追踪模型能力边界的实现基础。
-ResearchEvolve：AutoSella 证明智能体能够在收敛与跨分子泛化约束下自动改写科研算法，提示自主科研应把可执行验证和分布外测试嵌入发现闭环。
-SwarmEvolve：万级多智能体扩展 的次线性收益结论表明群体演化不应只扩大智能体数量，而应重点优化任务可并行性、通信结构与奖励对齐。
-DataEvolve：自生成反馈破坏测试时训练的长期稳定性 显示纯自生成数据闭环会累积退化，数据飞轮应在提交训练更新前保留独立真实数据门控。
-Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复用收益归因到具体执行片段，而非仅依据智能体自述或最终成功率。
+Awesome-RSI：RRSI 的候选生成与筛选正则化，加上自生成反馈研究提出的独立真实数据验证，可组合为防止递归迭代追逐噪声和闭环退化的双重护栏。
+HarnessEvolve：RRSI、RSR 与 EVISKILL 分别提供约束演化、跨脚手架轨迹迁移和证据化技能修正机制，可用于构建“生成—迁移—验证”一体化 Harness 演进闭环。
+DataEvolve：自生成反馈在 128K token 更新中出现闭环退化，说明数据飞轮必须在每轮训练前设置独立真实数据验收，而不能仅依赖模型自身生成与评价。
+EvolveLLM：RSR 表明可把专用 Harness 的成功轨迹重写为通用模型训练数据，但应结合外部验证过滤重写过程中累积的自洽错误。
+EvolveLRM：SAGE 在可由 Lean 验证的长程任务上取得近 8 倍提升，说明把任务结构直接注入探索过程可作为纯奖励塑形之外的高效训练路线。
+LogicEvolve：NAT-ARC 的视觉先验迁移与显式搜索、证据验证、信念更新的主张共同指向“强表征先验＋可审计符号状态”的混合推理架构。
+MemoryEvolve：PoS 的显式信念状态、MemAdapter 的反事实校准和 RealCompanion 的纵向评测可串成记忆写入、冲突修复与长期有效性验证的完整链路。
+EvalEvolve：AutoSciBench 可依据求解轨迹和评判反馈持续生成更难任务，适合作为动态基准自动对准能力边界的实现模板。
+ResearchEvolve：AutoSella 证明智能体可产出具备收敛性与跨分子泛化的真实算法改进，而 722 篇数学手稿事件表明规模化产出必须配套形式验证、复现和价值筛选管线。
+SwarmEvolve：Raven 的模块化 Harness 编排可作为群体结构演化载体，但万级智能体分析提示优化目标应聚焦边际收益、通信成本和奖励错配，而非智能体数量。
+EnvironmentEvolve：HERA 的脚手架—环境协同演化表明，可将不确定情形和可靠拒答能力共同纳入自动课程，使环境难度演化同时服务能力与安全校准。
+JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策模型承担高频搜索动作筛选、仅将低置信决策升级给慢模型提供了直接范式。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-10-08 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体 Harness 开始从人工设计走向受约束的递归演化：研究同时覆盖抑制迭代过拟合的 RRSI：正则化智能体 Harness 递归自我改进框架、将专用脚手架经验重写为通用轨迹的 RSR：递归自我重写扩展复杂任务执行轨迹、证据驱动的 EVISKILL：以可回放证据驱动智能体技能演化，以及自动组合专业智能体的 Raven：面向可组合智能体的 Harness 之 Harness。 持续学习的焦点转向闭环稳定性与记忆可信度：自生成反馈破坏测试时训练的长期稳定性 证明独立真实数据验证可阻断长期闭环退化，MemAdapter：反事实适应缓解记忆诱导型谄媚 与 RealCompanion：真实纵向对话中的人类理解评测 则分别给出记忆校准方法和最长 120 天的真实评测。 推理能力提升更依赖结构先验和跨域迁移：SAGE以结构信号纠正长程推理偏差 借助代数与双曲结构将 Lean 验证通过率提升至近 8 倍，NAT-ARC：自然图像预训练迁移至ARC视觉推理 则展示自然图像视觉先验向抽象推理迁移的可行性。 动态评测与自主科研闭环同步推进：AutoSciBench：自主生成并迭代适配科学智能体评测基准 让任务难度随能力演进，语言模型发现更快的分子几何弛豫算法 AutoSella 展示智能体发现可泛化新算法的实例，而 OpenAI 公开 722 篇 AI 生成数学手稿 将正确性验证与规模化质量筛选推到前台。 规模扩展同时带来收益边界与治理压力：万级多智能体扩展：能力增益、协作机制与对齐风险 指出群体收益主要来自并行测试时计算且呈次线性，Hinton等22人警告RSI或触发智能爆炸 则把 AI 研发自动化反馈环的可见性、部署约束和治理机制列为紧迫议题。 对当前研究的启发 Awesome-RSI：RRSI 的候选生成与筛选正则化可作为抑制 RSI 基准过拟合和复杂度膨胀的具体机制，自生成反馈破坏测试时训练的长期稳定性 进一步说明每轮更新前必须引入独立外部验证。 HarnessEvolve：RRSI、RSR 与 Raven 分别提供受约束搜索、成功轨迹迁移和模块化编排三种 Harness 演化路径，可据此拆分统一的演化与评测接口。 EvolveLLM：RSR 表明可将异构脚手架产生的成功经验重写为通用训练轨迹，为模型吸收 Harness 层能力而不绑定特定执行框架提供方案。 EvolveLRM：SAGE 说明在稀疏长程推理中注入可验证的代数结构和几何先验，可能比单纯增加采样或强化学习规模更有效。 LogicEvolve：NAT-ARC 将自然图像预训练迁移到 ARC，提示逻辑能力进化可探索视觉表征先验与离散规则验证器的结合。 MemoryEvolve：MemAdapter 的反事实校准与 RealCompanion 的纵向证据溯源评测，可分别用于控制错误记忆影响和检验远程记忆是否被恰当调用。 EvalEvolve：AutoSciBench 通过求解轨迹和评判反馈持续生成新任务，为构建随智能体能力自动调难且不依赖固定题库的动态基准提供了直接范式。 EnvironmentEvolve：AutoSciBench 可将轨迹失误转化为下一轮科学任务生成信号，适合作为环境难度追踪模型能力边界的实现基础。 ResearchEvolve：AutoSella 证明智能体能够在收敛与跨分子泛化约束下自动改写科研算法，提示自主科研应把可执行验证和分布外测试嵌入发现闭环。 SwarmEvolve：万级多智能体扩展 的次线性收益结论表明群体演化不应只扩大智能体数量，而应重点优化任务可并行性、通信结构与奖励对齐。 DataEvolve：自生成反馈破坏测试时训练的长期稳定性 显示纯自生成数据闭环会累积退化，数据飞轮应在提交训练更新前保留独立真实数据门控。 Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复用收益归因到具体执行片段，而非仅依据智能体自述或最终成功率。">
+今日概览 智能体脚手架开始从“自动改写”转向受约束、可复用的系统演化：RRSI抑制迭代过拟合与复杂度膨胀，RSR将专用脚手架经验递归重写为通用训练轨迹，EVISKILL则以可回放证据沉淀和修正技能。 长周期自我改进的稳定性成为核心问题：自生成反馈破坏测试时训练的长期稳定性揭示闭环更新会持续退化；MemAdapter与超越记忆：用显式信念状态驱动长时程智能体分别从记忆校准和显式状态维护降低错误累积。 动态评测正覆盖科学任务与真实纵向交互：AutoSciBench让任务难度随智能体能力自动演进，RealCompanion则用最长 120 天真实对话检验远程记忆、相关性判断与过度推断。 推理能力提升更加依赖结构先验、跨域迁移和可审计状态：SAGE用代数与双曲结构显著改善长程推理，NAT-ARC将自然图像预训练迁移至抽象视觉推理，而AlphaGo作者：LLM尚未掌握可审计的搜索式推理强调搜索、证据验证和信念更新仍是关键缺口。 大规模多智能体并非简单堆叠即可获得线性收益：万级多智能体扩展指出增益主要来自并行测试时计算且伴随奖励错配风险，Raven则尝试通过自动编排可组合 Harness 支撑跨域长程协作。 自动化科研同时展现可用成果与验证瓶颈：AutoSella发现了可跨分子泛化的更快几何弛豫算法，而OpenAI 公开 722 篇 AI 生成数学手稿将正确性验证和大规模科研产出的质量筛选推向前台。 对当前研究的启发 Awesome-RSI：RRSI 的候选生成与筛选正则化，加上自生成反馈研究提出的独立真实数据验证，可组合为防止递归迭代追逐噪声和闭环退化的双重护栏。 HarnessEvolve：RRSI、RSR 与 EVISKILL 分别提供约束演化、跨脚手架轨迹迁移和证据化技能修正机制，可用于构建“生成—迁移—验证”一体化 Harness 演进闭环。 DataEvolve：自生成反馈在 128K token 更新中出现闭环退化，说明数据飞轮必须在每轮训练前设置独立真实数据验收，而不能仅依赖模型自身生成与评价。 EvolveLLM：RSR 表明可把专用 Harness 的成功轨迹重写为通用模型训练数据，但应结合外部验证过滤重写过程中累积的自洽错误。 EvolveLRM：SAGE 在可由 Lean 验证的长程任务上取得近 8 倍提升，说明把任务结构直接注入探索过程可作为纯奖励塑形之外的高效训练路线。 LogicEvolve：NAT-ARC 的视觉先验迁移与显式搜索、证据验证、信念更新的主张共同指向“强表征先验＋可审计符号状态”的混合推理架构。 MemoryEvolve：PoS 的显式信念状态、MemAdapter 的反事实校准和 RealCompanion 的纵向评测可串成记忆写入、冲突修复与长期有效性验证的完整链路。 EvalEvolve：AutoSciBench 可依据求解轨迹和评判反馈持续生成更难任务，适合作为动态基准自动对准能力边界的实现模板。 ResearchEvolve：AutoSella 证明智能体可产出具备收敛性与跨分子泛化的真实算法改进，而 722 篇数学手稿事件表明规模化产出必须配套形式验证、复现和价值筛选管线。 SwarmEvolve：Raven 的模块化 Harness 编排可作为群体结构演化载体，但万级智能体分析提示优化目标应聚焦边际收益、通信成本和奖励错配，而非智能体数量。 EnvironmentEvolve：HERA 的脚手架—环境协同演化表明，可将不确定情形和可靠拒答能力共同纳入自动课程，使环境难度演化同时服务能力与安全校准。 JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策模型承担高频搜索动作筛选、仅将低置信决策升级给慢模型提供了直接范式。">
   <meta itemprop="datePublished" content="2026-10-08T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-08T18:46:21+08:00">
-  <meta itemprop="wordCount" content="1517">
+  <meta itemprop="dateModified" content="2026-10-08T18:48:31+08:00">
+  <meta itemprop="wordCount" content="1466">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-08/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-10-08 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体 Harness 开始从人工设计走向受约束的递归演化：研究同时覆盖抑制迭代过拟合的 RRSI：正则化智能体 Harness 递归自我改进框架、将专用脚手架经验重写为通用轨迹的 RSR：递归自我重写扩展复杂任务执行轨迹、证据驱动的 EVISKILL：以可回放证据驱动智能体技能演化，以及自动组合专业智能体的 Raven：面向可组合智能体的 Harness 之 Harness。 持续学习的焦点转向闭环稳定性与记忆可信度：自生成反馈破坏测试时训练的长期稳定性 证明独立真实数据验证可阻断长期闭环退化，MemAdapter：反事实适应缓解记忆诱导型谄媚 与 RealCompanion：真实纵向对话中的人类理解评测 则分别给出记忆校准方法和最长 120 天的真实评测。 推理能力提升更依赖结构先验和跨域迁移：SAGE以结构信号纠正长程推理偏差 借助代数与双曲结构将 Lean 验证通过率提升至近 8 倍，NAT-ARC：自然图像预训练迁移至ARC视觉推理 则展示自然图像视觉先验向抽象推理迁移的可行性。 动态评测与自主科研闭环同步推进：AutoSciBench：自主生成并迭代适配科学智能体评测基准 让任务难度随能力演进，语言模型发现更快的分子几何弛豫算法 AutoSella 展示智能体发现可泛化新算法的实例，而 OpenAI 公开 722 篇 AI 生成数学手稿 将正确性验证与规模化质量筛选推到前台。 规模扩展同时带来收益边界与治理压力：万级多智能体扩展：能力增益、协作机制与对齐风险 指出群体收益主要来自并行测试时计算且呈次线性，Hinton等22人警告RSI或触发智能爆炸 则把 AI 研发自动化反馈环的可见性、部署约束和治理机制列为紧迫议题。 对当前研究的启发 Awesome-RSI：RRSI 的候选生成与筛选正则化可作为抑制 RSI 基准过拟合和复杂度膨胀的具体机制，自生成反馈破坏测试时训练的长期稳定性 进一步说明每轮更新前必须引入独立外部验证。 HarnessEvolve：RRSI、RSR 与 Raven 分别提供受约束搜索、成功轨迹迁移和模块化编排三种 Harness 演化路径，可据此拆分统一的演化与评测接口。 EvolveLLM：RSR 表明可将异构脚手架产生的成功经验重写为通用训练轨迹，为模型吸收 Harness 层能力而不绑定特定执行框架提供方案。 EvolveLRM：SAGE 说明在稀疏长程推理中注入可验证的代数结构和几何先验，可能比单纯增加采样或强化学习规模更有效。 LogicEvolve：NAT-ARC 将自然图像预训练迁移到 ARC，提示逻辑能力进化可探索视觉表征先验与离散规则验证器的结合。 MemoryEvolve：MemAdapter 的反事实校准与 RealCompanion 的纵向证据溯源评测，可分别用于控制错误记忆影响和检验远程记忆是否被恰当调用。 EvalEvolve：AutoSciBench 通过求解轨迹和评判反馈持续生成新任务，为构建随智能体能力自动调难且不依赖固定题库的动态基准提供了直接范式。 EnvironmentEvolve：AutoSciBench 可将轨迹失误转化为下一轮科学任务生成信号，适合作为环境难度追踪模型能力边界的实现基础。 ResearchEvolve：AutoSella 证明智能体能够在收敛与跨分子泛化约束下自动改写科研算法，提示自主科研应把可执行验证和分布外测试嵌入发现闭环。 SwarmEvolve：万级多智能体扩展 的次线性收益结论表明群体演化不应只扩大智能体数量，而应重点优化任务可并行性、通信结构与奖励对齐。 DataEvolve：自生成反馈破坏测试时训练的长期稳定性 显示纯自生成数据闭环会累积退化，数据飞轮应在提交训练更新前保留独立真实数据门控。 Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复用收益归因到具体执行片段，而非仅依据智能体自述或最终成功率。">
+今日概览 智能体脚手架开始从“自动改写”转向受约束、可复用的系统演化：RRSI抑制迭代过拟合与复杂度膨胀，RSR将专用脚手架经验递归重写为通用训练轨迹，EVISKILL则以可回放证据沉淀和修正技能。 长周期自我改进的稳定性成为核心问题：自生成反馈破坏测试时训练的长期稳定性揭示闭环更新会持续退化；MemAdapter与超越记忆：用显式信念状态驱动长时程智能体分别从记忆校准和显式状态维护降低错误累积。 动态评测正覆盖科学任务与真实纵向交互：AutoSciBench让任务难度随智能体能力自动演进，RealCompanion则用最长 120 天真实对话检验远程记忆、相关性判断与过度推断。 推理能力提升更加依赖结构先验、跨域迁移和可审计状态：SAGE用代数与双曲结构显著改善长程推理，NAT-ARC将自然图像预训练迁移至抽象视觉推理，而AlphaGo作者：LLM尚未掌握可审计的搜索式推理强调搜索、证据验证和信念更新仍是关键缺口。 大规模多智能体并非简单堆叠即可获得线性收益：万级多智能体扩展指出增益主要来自并行测试时计算且伴随奖励错配风险，Raven则尝试通过自动编排可组合 Harness 支撑跨域长程协作。 自动化科研同时展现可用成果与验证瓶颈：AutoSella发现了可跨分子泛化的更快几何弛豫算法，而OpenAI 公开 722 篇 AI 生成数学手稿将正确性验证和大规模科研产出的质量筛选推向前台。 对当前研究的启发 Awesome-RSI：RRSI 的候选生成与筛选正则化，加上自生成反馈研究提出的独立真实数据验证，可组合为防止递归迭代追逐噪声和闭环退化的双重护栏。 HarnessEvolve：RRSI、RSR 与 EVISKILL 分别提供约束演化、跨脚手架轨迹迁移和证据化技能修正机制，可用于构建“生成—迁移—验证”一体化 Harness 演进闭环。 DataEvolve：自生成反馈在 128K token 更新中出现闭环退化，说明数据飞轮必须在每轮训练前设置独立真实数据验收，而不能仅依赖模型自身生成与评价。 EvolveLLM：RSR 表明可把专用 Harness 的成功轨迹重写为通用模型训练数据，但应结合外部验证过滤重写过程中累积的自洽错误。 EvolveLRM：SAGE 在可由 Lean 验证的长程任务上取得近 8 倍提升，说明把任务结构直接注入探索过程可作为纯奖励塑形之外的高效训练路线。 LogicEvolve：NAT-ARC 的视觉先验迁移与显式搜索、证据验证、信念更新的主张共同指向“强表征先验＋可审计符号状态”的混合推理架构。 MemoryEvolve：PoS 的显式信念状态、MemAdapter 的反事实校准和 RealCompanion 的纵向评测可串成记忆写入、冲突修复与长期有效性验证的完整链路。 EvalEvolve：AutoSciBench 可依据求解轨迹和评判反馈持续生成更难任务，适合作为动态基准自动对准能力边界的实现模板。 ResearchEvolve：AutoSella 证明智能体可产出具备收敛性与跨分子泛化的真实算法改进，而 722 篇数学手稿事件表明规模化产出必须配套形式验证、复现和价值筛选管线。 SwarmEvolve：Raven 的模块化 Harness 编排可作为群体结构演化载体，但万级智能体分析提示优化目标应聚焦边际收益、通信成本和奖励错配，而非智能体数量。 EnvironmentEvolve：HERA 的脚手架—环境协同演化表明，可将不确定情形和可靠拒答能力共同纳入自动课程，使环境难度演化同时服务能力与安全校准。 JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策模型承担高频搜索动作筛选、仅将低置信决策升级给慢模型提供了直接范式。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-10-08T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-08T18:46:21+08:00">
+    <meta property="article:modified_time" content="2026-10-08T18:48:31+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-10-08 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体 Harness 开始从人工设计走向受约束的递归演化：研究同时覆盖抑制迭代过拟合的 RRSI：正则化智能体 Harness 递归自我改进框架、将专用脚手架经验重写为通用轨迹的 RSR：递归自我重写扩展复杂任务执行轨迹、证据驱动的 EVISKILL：以可回放证据驱动智能体技能演化，以及自动组合专业智能体的 Raven：面向可组合智能体的 Harness 之 Harness。 持续学习的焦点转向闭环稳定性与记忆可信度：自生成反馈破坏测试时训练的长期稳定性 证明独立真实数据验证可阻断长期闭环退化，MemAdapter：反事实适应缓解记忆诱导型谄媚 与 RealCompanion：真实纵向对话中的人类理解评测 则分别给出记忆校准方法和最长 120 天的真实评测。 推理能力提升更依赖结构先验和跨域迁移：SAGE以结构信号纠正长程推理偏差 借助代数与双曲结构将 Lean 验证通过率提升至近 8 倍，NAT-ARC：自然图像预训练迁移至ARC视觉推理 则展示自然图像视觉先验向抽象推理迁移的可行性。 动态评测与自主科研闭环同步推进：AutoSciBench：自主生成并迭代适配科学智能体评测基准 让任务难度随能力演进，语言模型发现更快的分子几何弛豫算法 AutoSella 展示智能体发现可泛化新算法的实例，而 OpenAI 公开 722 篇 AI 生成数学手稿 将正确性验证与规模化质量筛选推到前台。 规模扩展同时带来收益边界与治理压力：万级多智能体扩展：能力增益、协作机制与对齐风险 指出群体收益主要来自并行测试时计算且呈次线性，Hinton等22人警告RSI或触发智能爆炸 则把 AI 研发自动化反馈环的可见性、部署约束和治理机制列为紧迫议题。 对当前研究的启发 Awesome-RSI：RRSI 的候选生成与筛选正则化可作为抑制 RSI 基准过拟合和复杂度膨胀的具体机制，自生成反馈破坏测试时训练的长期稳定性 进一步说明每轮更新前必须引入独立外部验证。 HarnessEvolve：RRSI、RSR 与 Raven 分别提供受约束搜索、成功轨迹迁移和模块化编排三种 Harness 演化路径，可据此拆分统一的演化与评测接口。 EvolveLLM：RSR 表明可将异构脚手架产生的成功经验重写为通用训练轨迹，为模型吸收 Harness 层能力而不绑定特定执行框架提供方案。 EvolveLRM：SAGE 说明在稀疏长程推理中注入可验证的代数结构和几何先验，可能比单纯增加采样或强化学习规模更有效。 LogicEvolve：NAT-ARC 将自然图像预训练迁移到 ARC，提示逻辑能力进化可探索视觉表征先验与离散规则验证器的结合。 MemoryEvolve：MemAdapter 的反事实校准与 RealCompanion 的纵向证据溯源评测，可分别用于控制错误记忆影响和检验远程记忆是否被恰当调用。 EvalEvolve：AutoSciBench 通过求解轨迹和评判反馈持续生成新任务，为构建随智能体能力自动调难且不依赖固定题库的动态基准提供了直接范式。 EnvironmentEvolve：AutoSciBench 可将轨迹失误转化为下一轮科学任务生成信号，适合作为环境难度追踪模型能力边界的实现基础。 ResearchEvolve：AutoSella 证明智能体能够在收敛与跨分子泛化约束下自动改写科研算法，提示自主科研应把可执行验证和分布外测试嵌入发现闭环。 SwarmEvolve：万级多智能体扩展 的次线性收益结论表明群体演化不应只扩大智能体数量，而应重点优化任务可并行性、通信结构与奖励对齐。 DataEvolve：自生成反馈破坏测试时训练的长期稳定性 显示纯自生成数据闭环会累积退化，数据飞轮应在提交训练更新前保留独立真实数据门控。 Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复用收益归因到具体执行片段，而非仅依据智能体自述或最终成功率。">
+今日概览 智能体脚手架开始从“自动改写”转向受约束、可复用的系统演化：RRSI抑制迭代过拟合与复杂度膨胀，RSR将专用脚手架经验递归重写为通用训练轨迹，EVISKILL则以可回放证据沉淀和修正技能。 长周期自我改进的稳定性成为核心问题：自生成反馈破坏测试时训练的长期稳定性揭示闭环更新会持续退化；MemAdapter与超越记忆：用显式信念状态驱动长时程智能体分别从记忆校准和显式状态维护降低错误累积。 动态评测正覆盖科学任务与真实纵向交互：AutoSciBench让任务难度随智能体能力自动演进，RealCompanion则用最长 120 天真实对话检验远程记忆、相关性判断与过度推断。 推理能力提升更加依赖结构先验、跨域迁移和可审计状态：SAGE用代数与双曲结构显著改善长程推理，NAT-ARC将自然图像预训练迁移至抽象视觉推理，而AlphaGo作者：LLM尚未掌握可审计的搜索式推理强调搜索、证据验证和信念更新仍是关键缺口。 大规模多智能体并非简单堆叠即可获得线性收益：万级多智能体扩展指出增益主要来自并行测试时计算且伴随奖励错配风险，Raven则尝试通过自动编排可组合 Harness 支撑跨域长程协作。 自动化科研同时展现可用成果与验证瓶颈：AutoSella发现了可跨分子泛化的更快几何弛豫算法，而OpenAI 公开 722 篇 AI 生成数学手稿将正确性验证和大规模科研产出的质量筛选推向前台。 对当前研究的启发 Awesome-RSI：RRSI 的候选生成与筛选正则化，加上自生成反馈研究提出的独立真实数据验证，可组合为防止递归迭代追逐噪声和闭环退化的双重护栏。 HarnessEvolve：RRSI、RSR 与 EVISKILL 分别提供约束演化、跨脚手架轨迹迁移和证据化技能修正机制，可用于构建“生成—迁移—验证”一体化 Harness 演进闭环。 DataEvolve：自生成反馈在 128K token 更新中出现闭环退化，说明数据飞轮必须在每轮训练前设置独立真实数据验收，而不能仅依赖模型自身生成与评价。 EvolveLLM：RSR 表明可把专用 Harness 的成功轨迹重写为通用模型训练数据，但应结合外部验证过滤重写过程中累积的自洽错误。 EvolveLRM：SAGE 在可由 Lean 验证的长程任务上取得近 8 倍提升，说明把任务结构直接注入探索过程可作为纯奖励塑形之外的高效训练路线。 LogicEvolve：NAT-ARC 的视觉先验迁移与显式搜索、证据验证、信念更新的主张共同指向“强表征先验＋可审计符号状态”的混合推理架构。 MemoryEvolve：PoS 的显式信念状态、MemAdapter 的反事实校准和 RealCompanion 的纵向评测可串成记忆写入、冲突修复与长期有效性验证的完整链路。 EvalEvolve：AutoSciBench 可依据求解轨迹和评判反馈持续生成更难任务，适合作为动态基准自动对准能力边界的实现模板。 ResearchEvolve：AutoSella 证明智能体可产出具备收敛性与跨分子泛化的真实算法改进，而 722 篇数学手稿事件表明规模化产出必须配套形式验证、复现和价值筛选管线。 SwarmEvolve：Raven 的模块化 Harness 编排可作为群体结构演化载体，但万级智能体分析提示优化目标应聚焦边际收益、通信成本和奖励错配，而非智能体数量。 EnvironmentEvolve：HERA 的脚手架—环境协同演化表明，可将不确定情形和可靠拒答能力共同纳入自动课程，使环境难度演化同时服务能力与安全校准。 JevEvolve：SSR 将开放式推理改为自然语言候选选择，为快决策模型承担高频搜索动作筛选、仅将低置信决策升级给慢模型提供了直接范式。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-08/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-01/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -69,8 +70,8 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-08\/"
-    },"genre": "updates","wordcount":  1517 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-08\/","datePublished": "2026-10-08T00:00:00+08:00","dateModified": "2026-10-08T18:46:21+08:00","publisher": {
+    },"genre": "updates","wordcount":  1466 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-08\/","datePublished": "2026-10-08T00:00:00+08:00","dateModified": "2026-10-08T18:48:31+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -240,7 +241,7 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-10-08 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-08">2026-10-08</time></span>&nbsp;<span title="更新于 2026-10-08 18:46:21"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-08">2026-10-08</time></span>&nbsp;<span title="1517 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-10-08 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-08">2026-10-08</time></span>&nbsp;<span title="更新于 2026-10-08 18:48:31"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-08">2026-10-08</time></span>&nbsp;<span title="1466 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -260,33 +261,34 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>智能体 Harness 开始从人工设计走向受约束的递归演化</strong>：研究同时覆盖抑制迭代过拟合的 <a href="#rrsi-harness">RRSI：正则化智能体 Harness 递归自我改进框架</a>、将专用脚手架经验重写为通用轨迹的 <a href="#rsr">RSR：递归自我重写扩展复杂任务执行轨迹</a>、证据驱动的 <a href="#eviskill">EVISKILL：以可回放证据驱动智能体技能演化</a>，以及自动组合专业智能体的 <a href="#raven-harness-harness">Raven：面向可组合智能体的 Harness 之 Harness</a>。</li>
-<li><strong>持续学习的焦点转向闭环稳定性与记忆可信度</strong>：<a href="#item-26">自生成反馈破坏测试时训练的长期稳定性</a> 证明独立真实数据验证可阻断长期闭环退化，<a href="#memadapter">MemAdapter：反事实适应缓解记忆诱导型谄媚</a> 与 <a href="#realcompanion">RealCompanion：真实纵向对话中的人类理解评测</a> 则分别给出记忆校准方法和最长 120 天的真实评测。</li>
-<li><strong>推理能力提升更依赖结构先验和跨域迁移</strong>：<a href="#sage">SAGE以结构信号纠正长程推理偏差</a> 借助代数与双曲结构将 Lean 验证通过率提升至近 8 倍，<a href="#nat-arc-arc">NAT-ARC：自然图像预训练迁移至ARC视觉推理</a> 则展示自然图像视觉先验向抽象推理迁移的可行性。</li>
-<li><strong>动态评测与自主科研闭环同步推进</strong>：<a href="#autoscibench">AutoSciBench：自主生成并迭代适配科学智能体评测基准</a> 让任务难度随能力演进，<a href="#autosella">语言模型发现更快的分子几何弛豫算法 AutoSella</a> 展示智能体发现可泛化新算法的实例，而 <a href="#openai-722-ai">OpenAI 公开 722 篇 AI 生成数学手稿</a> 将正确性验证与规模化质量筛选推到前台。</li>
-<li><strong>规模扩展同时带来收益边界与治理压力</strong>：<a href="#item-7">万级多智能体扩展：能力增益、协作机制与对齐风险</a> 指出群体收益主要来自并行测试时计算且呈次线性，<a href="#hinton-22-rsi">Hinton等22人警告RSI或触发智能爆炸</a> 则把 AI 研发自动化反馈环的可见性、部署约束和治理机制列为紧迫议题。</li>
+<li>智能体脚手架开始从“自动改写”转向受约束、可复用的系统演化：<a href="#rrsi-harness">RRSI</a>抑制迭代过拟合与复杂度膨胀，<a href="#rsr">RSR</a>将专用脚手架经验递归重写为通用训练轨迹，<a href="#eviskill">EVISKILL</a>则以可回放证据沉淀和修正技能。</li>
+<li>长周期自我改进的稳定性成为核心问题：<a href="#item-26">自生成反馈破坏测试时训练的长期稳定性</a>揭示闭环更新会持续退化；<a href="#memadapter">MemAdapter</a>与<a href="#item-41">超越记忆：用显式信念状态驱动长时程智能体</a>分别从记忆校准和显式状态维护降低错误累积。</li>
+<li>动态评测正覆盖科学任务与真实纵向交互：<a href="#autoscibench">AutoSciBench</a>让任务难度随智能体能力自动演进，<a href="#realcompanion">RealCompanion</a>则用最长 120 天真实对话检验远程记忆、相关性判断与过度推断。</li>
+<li>推理能力提升更加依赖结构先验、跨域迁移和可审计状态：<a href="#sage">SAGE</a>用代数与双曲结构显著改善长程推理，<a href="#nat-arc-arc">NAT-ARC</a>将自然图像预训练迁移至抽象视觉推理，而<a href="#alphago-llm">AlphaGo作者：LLM尚未掌握可审计的搜索式推理</a>强调搜索、证据验证和信念更新仍是关键缺口。</li>
+<li>大规模多智能体并非简单堆叠即可获得线性收益：<a href="#item-7">万级多智能体扩展</a>指出增益主要来自并行测试时计算且伴随奖励错配风险，<a href="#raven-harness-harness">Raven</a>则尝试通过自动编排可组合 Harness 支撑跨域长程协作。</li>
+<li>自动化科研同时展现可用成果与验证瓶颈：<a href="#autosella">AutoSella</a>发现了可跨分子泛化的更快几何弛豫算法，而<a href="#openai-722-ai">OpenAI 公开 722 篇 AI 生成数学手稿</a>将正确性验证和大规模科研产出的质量筛选推向前台。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>Awesome-RSI</strong>：<a href="#rrsi-harness">RRSI</a> 的候选生成与筛选正则化可作为抑制 RSI 基准过拟合和复杂度膨胀的具体机制，<a href="#item-26">自生成反馈破坏测试时训练的长期稳定性</a> 进一步说明每轮更新前必须引入独立外部验证。</li>
-<li><strong>HarnessEvolve</strong>：<a href="#rrsi-harness">RRSI</a>、<a href="#rsr">RSR</a> 与 <a href="#raven-harness-harness">Raven</a> 分别提供受约束搜索、成功轨迹迁移和模块化编排三种 Harness 演化路径，可据此拆分统一的演化与评测接口。</li>
-<li><strong>EvolveLLM</strong>：<a href="#rsr">RSR</a> 表明可将异构脚手架产生的成功经验重写为通用训练轨迹，为模型吸收 Harness 层能力而不绑定特定执行框架提供方案。</li>
-<li><strong>EvolveLRM</strong>：<a href="#sage">SAGE</a> 说明在稀疏长程推理中注入可验证的代数结构和几何先验，可能比单纯增加采样或强化学习规模更有效。</li>
-<li><strong>LogicEvolve</strong>：<a href="#nat-arc-arc">NAT-ARC</a> 将自然图像预训练迁移到 ARC，提示逻辑能力进化可探索视觉表征先验与离散规则验证器的结合。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#memadapter">MemAdapter</a> 的反事实校准与 <a href="#realcompanion">RealCompanion</a> 的纵向证据溯源评测，可分别用于控制错误记忆影响和检验远程记忆是否被恰当调用。</li>
-<li><strong>EvalEvolve</strong>：<a href="#autoscibench">AutoSciBench</a> 通过求解轨迹和评判反馈持续生成新任务，为构建随智能体能力自动调难且不依赖固定题库的动态基准提供了直接范式。</li>
-<li><strong>EnvironmentEvolve</strong>：<a href="#autoscibench">AutoSciBench</a> 可将轨迹失误转化为下一轮科学任务生成信号，适合作为环境难度追踪模型能力边界的实现基础。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#autosella">AutoSella</a> 证明智能体能够在收敛与跨分子泛化约束下自动改写科研算法，提示自主科研应把可执行验证和分布外测试嵌入发现闭环。</li>
-<li><strong>SwarmEvolve</strong>：<a href="#item-7">万级多智能体扩展</a> 的次线性收益结论表明群体演化不应只扩大智能体数量，而应重点优化任务可并行性、通信结构与奖励对齐。</li>
-<li><strong>DataEvolve</strong>：<a href="#item-26">自生成反馈破坏测试时训练的长期稳定性</a> 显示纯自生成数据闭环会累积退化，数据飞轮应在提交训练更新前保留独立真实数据门控。</li>
-<li><strong>Groom</strong>：<a href="#eviskill">EVISKILL</a> 的可回放证据卡和显式证据关联可用于把技能复用收益归因到具体执行片段，而非仅依据智能体自述或最终成功率。</li>
+<li><strong>Awesome-RSI</strong>：RRSI 的候选生成与筛选正则化，加上自生成反馈研究提出的独立真实数据验证，可组合为防止递归迭代追逐噪声和闭环退化的双重护栏。</li>
+<li><strong>HarnessEvolve</strong>：RRSI、RSR 与 EVISKILL 分别提供约束演化、跨脚手架轨迹迁移和证据化技能修正机制，可用于构建“生成—迁移—验证”一体化 Harness 演进闭环。</li>
+<li><strong>DataEvolve</strong>：自生成反馈在 128K token 更新中出现闭环退化，说明数据飞轮必须在每轮训练前设置独立真实数据验收，而不能仅依赖模型自身生成与评价。</li>
+<li><strong>EvolveLLM</strong>：RSR 表明可把专用 Harness 的成功轨迹重写为通用模型训练数据，但应结合外部验证过滤重写过程中累积的自洽错误。</li>
+<li><strong>EvolveLRM</strong>：SAGE 在可由 Lean 验证的长程任务上取得近 8 倍提升，说明把任务结构直接注入探索过程可作为纯奖励塑形之外的高效训练路线。</li>
+<li><strong>LogicEvolve</strong>：NAT-ARC 的视觉先验迁移与显式搜索、证据验证、信念更新的主张共同指向“强表征先验＋可审计符号状态”的混合推理架构。</li>
+<li><strong>MemoryEvolve</strong>：PoS 的显式信念状态、MemAdapter 的反事实校准和 RealCompanion 的纵向评测可串成记忆写入、冲突修复与长期有效性验证的完整链路。</li>
+<li><strong>EvalEvolve</strong>：AutoSciBench 可依据求解轨迹和评判反馈持续生成更难任务，适合作为动态基准自动对准能力边界的实现模板。</li>
+<li><strong>ResearchEvolve</strong>：AutoSella 证明智能体可产出具备收敛性与跨分子泛化的真实算法改进，而 722 篇数学手稿事件表明规模化产出必须配套形式验证、复现和价值筛选管线。</li>
+<li><strong>SwarmEvolve</strong>：Raven 的模块化 Harness 编排可作为群体结构演化载体，但万级智能体分析提示优化目标应聚焦边际收益、通信成本和奖励错配，而非智能体数量。</li>
+<li><strong>EnvironmentEvolve</strong>：HERA 的脚手架—环境协同演化表明，可将不确定情形和可靠拒答能力共同纳入自动课程，使环境难度演化同时服务能力与安全校准。</li>
+<li><strong>JevEvolve</strong>：SSR 将开放式推理改为自然语言候选选择，为快决策模型承担高频搜索动作筛选、仅将低置信决策升级给慢模型提供了直接范式。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 48 条</span><a href="#daily-featured">⭐ 重点 14</a><a href="#daily-related">🔬 相关 6</a><a href="#daily-other">📎 其他 28</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 57 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 8</a><a href="#daily-other">📎 其他 34</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">14 条</span></h2>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">15 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="rrsi-harness" class="summary-card daily-item">
   <h2 id="rrsi-harness-title" class="daily-item-title">RRSI：正则化智能体 Harness 递归自我改进框架</h2><p class="single-subtitle daily-item-summary">谷歌与斯坦福提出 RRSI，通过在候选生成和筛选阶段引入正则约束，抑制智能体 Harness 自我迭代中的基准过拟合、噪声追逐与复杂度膨胀。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>模智空间</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/vNW5SovLN27lcvnYqzo_4w?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/vNW5SovLN27lcvnYqzo_4w?scene=1</a></div></div><div class="daily-item-content"><p>RRSI 面向底座模型权重冻结的场景，让智能体根据失败轨迹递归修改提示词、工具、记忆和子智能体等 Harness 组件，同时强调改动的可复用性。提案侧采用退火式稀疏编辑、证据感知信用分配和停滞后的结构化探索，使修改更容易归因并减少重复试错。选择侧通过任务泄漏筛查、噪声调整性能下限、复杂度感知接纳和结构化剪枝，避免把偶然高分、基准特化或高成本改动固化到系统中。该框架在编程、办公智能体和工程设计的八个基准上实现稳定的分布外提升，并将策略 token 消耗较无正则化迭代降低约 30%，但目前仍受进化集质量、评估反馈及实验覆盖范围限制。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -298,22 +300,6 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/vNW5SovLN27lcvnYqzo_4w?scene=1</div>
-  </details></article>
-<article id="hinton-22-rsi" class="summary-card daily-item">
-  <h2 id="hinton-22-rsi-title" class="daily-item-title">Hinton等22人警告RSI或触发智能爆炸</h2><p class="single-subtitle daily-item-summary">Hinton、Bengio、Barto等22位学者与产业领袖分析AI研发自动化形成递归反馈并触发智能爆炸的可能性、现实瓶颈与治理对策，呼吁建立可见性、部署约束和社会适应机制。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>PaperTody</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能安全治理</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体安全</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/FBLlIVgdEdEgY_hxOM5hYg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/FBLlIVgdEdEgY_hxOM5hYg</a></div></div><div class="daily-item-content"><p>论文《What if automating AI R&amp;D triggers an intelligence explosion?》将递归自我改进划分为执行、策略、经验、部署和元改进五个阶段，探讨AI参与下一代AI研发所形成的闭环。当AI能够长期自主完成提出假设、设计与执行实验、分析结果和调整路线等流程时，可复制的智能体可能迅速扩大有效研发劳动力，并开发出更强的AI。其分析以研究投入回报率为核心；在相关假设成立且回报率持续大于1的情况下，模型估算AI技术进步速度可能在约1.5年内提升10倍，使当前一年的进步压缩至约5周。报告强调智能爆炸尚未发生，可靠性、算力、数据、实验周期和科研边际收益递减仍是关键瓶颈，同时警示研发失控、监督能力下降及权力制衡受损等风险。作者建议标准化披露研发自动化指标、设置部署门槛，并通过第三方审计、隔离评估、履约核查和应急预案强化治理。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为研究递归自我改进及智能爆炸提供分阶段机制框架与量化假设。</li>
-<li>提示评估科研智能体时关注长程自主研发能力、实际生产率、AI生成代码比例、任务跨度和研究投入回报率，而非仅考察单项基准分数。</li>
-<li>支持分析大规模复制研究智能体引发的算力调度、实验资源竞争、边际收益递减及协作安全问题。</li>
-<li>为前沿实验室与监管者设计标准化披露、第三方审计、隔离评估、部署门槛、数据中心监管和应急干预机制提供参考。</li>
-<li>启发针对智能体越权访问、轨迹篡改和监督失效等风险开展专项评测。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/FBLlIVgdEdEgY_hxOM5hYg
-
-[合并自 2026-10-08 hinton-ai]
-自进化｜刚刚，Hinton发了首篇RSI论文https://www.qbitai.com/2026/10/501705.html</div>
   </details></article>
 <article id="rsr" class="summary-card daily-item">
   <h2 id="rsr-title" class="daily-item-title">RSR：递归自我重写扩展复杂任务执行轨迹</h2><p class="single-subtitle daily-item-summary">RSR 将多种专用脚手架发现的成功经验递归重写为通用脚手架下可复用的训练轨迹，显著提升模型在复杂终端与长程任务上的表现。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.02826" target="_blank" rel="noopener">https://arxiv.org/abs/2610.02826</a></div></div><div class="daily-item-content"><p>论文提出 Recursive Self-Rewrite（RSR），使用同一个 Qwen-3.8-27B 模型在多种脚手架下发现解法，再将其重构为通用脚手架可执行的训练轨迹。系统由规划器、批评器和执行器组成：规划器将过程提炼为 runbook，批评器检查验证器或答案泄漏并驱动递归修订，执行器则在全新沙箱中验证合格方案。三个脚手架在约 3,000 个自策展终端任务中共同解决 759 个任务，比记录池中最强的单一脚手架多 34.3%，并将 2,001 条成功源轨迹扩展为 11,094 条重写轨迹。使用这些轨迹进行监督微调后，模型在 Terminal-Bench 2、Terminal-Bench 4、Terminal-Bench Hard 和 Software Terminal-Bench 上均优于基础模型及直接轨迹 SFT，长程任务的过程奖励也由 0.21 提升至 0.29。</p>
@@ -339,30 +325,6 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">EvolveLRM｜NeurIPS 2026 | 长推理为何总在中途走偏？SAGE用结构信号纠偏，AC实例验证通过率接近8倍https://mp.weixin.qq.com/s/-N-Wo8ra1YqC1-HHKkprnQ</div>
   </details></article>
-<article id="autoscibench" class="summary-card daily-item">
-  <h2 id="autoscibench-title" class="daily-item-title">AutoSciBench：自主生成并迭代适配科学智能体评测基准</h2><p class="single-subtitle daily-item-summary">AutoSciBench通过分析智能体求解轨迹与评判反馈，自动生成并持续改进科学任务，使评测难度能够随智能体能力演进。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E6%80%81%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动态基准测试</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E5%9F%BA%E5%87%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学研究基准</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务生成</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05140" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05140</a></div></div><div class="daily-item-content"><p>AutoSciBench将每项任务分解为描述科学领域、数据模态和推理方式的高层概念，以及规定问题、环境和标准答案构造与验证方法的底层配方。框架利用求解智能体的执行轨迹和评判反馈修改任务概念或配方，封堵解题捷径，并强化原始数据复查、中间结果解释和证据整合要求。它还会从既往任务的完整改进轨迹中蒸馏经验，用于指导新概念和后续基准任务的生成。实验覆盖计算生物学、材料科学和临床影像，生成基准相较人工基准分别将前两个领域的平均求解准确率降低22.4和25.5个百分点，同时在三个领域获得更高的平均质量评分。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为快速饱和的科学智能体基准提供自动更新机制，使评测持续暴露模型的剩余失效模式。</li>
-<li>可将求解轨迹与评判反馈转化为基准演化信号，系统性消除数据泄漏、模式匹配或工具捷径。</li>
-<li>高层概念与底层配方的分层表示有助于复用任务构造经验，并扩展至新的科学领域和数据模态。</li>
-<li>可作为动态基准测试和评测智能体研究的基础框架，降低人工策题、验证与维护成本。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[AutoSciBench：用于评估科学智能体的自主基准测试生成（26 ▲）](https://huggingface.co/papers/2610.05140?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-07)</div>
-  </details></article>
-<article id="autosella" class="summary-card daily-item">
-  <h2 id="autosella-title" class="daily-item-title">语言模型发现更快的分子几何弛豫算法 AutoSella</h2><p class="single-subtitle daily-item-summary">研究利用智能体自动改写分子几何优化器，在保证收敛与跨分子泛化的前提下，发现了显著减少量子化学力评估次数的 AutoSella 算法族。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自动化科学研究</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a><a href="/LLMDailyDigestWeb/topic/%E5%8C%96%E5%AD%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;化学人工智能</a><a href="/LLMDailyDigestWeb/topic/%E7%AE%97%E6%B3%95%E5%88%9B%E6%96%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;算法创新</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.06577" target="_blank" rel="noopener">https://arxiv.org/abs/2610.06577</a></div></div><div class="daily-item-content"><p>研究从高效开源几何优化器 Sella 出发，让语言模型智能体以减少力调用次数为目标自动改写优化算法。搜索过程设置了两道准入门槛，以排除过早停止以及无法泛化到未见分子的改进。最终得到的 AutoSella 包含两个优化器变体，在搜索阶段未使用的分子基准和势能模型上均稳定优于 Sella。在 r2SCAN-3c DFT 层级，最佳变体仅需 Sella 约 40.2%–77.2% 的力调用次数，同时实现相同程度的能量下降，而且搜索过程未使用 DFT 梯度。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>展示语言模型智能体可直接改进成熟科学计算算法，而不只是生成代码或调用现有工具。</li>
-<li>通过收敛性与域外泛化门槛约束自动搜索，可降低智能体利用评测漏洞或产生过拟合优化器的风险。</li>
-<li>减少昂贵的 DFT 力评估次数，有望显著加速分子结构优化及相关量子化学工作流。</li>
-<li>为面向科学软件的闭环自动研究提供范例：以可测量成本为目标，自动修改算法并在未见任务上验证。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[优化优化器：语言模型发现更快的分子弛豫方法（17 ▲）](https://huggingface.co/papers/2610.06577?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
-  </details></article>
 <article id="item-26" class="summary-card daily-item">
   <h2 id="item-26-title" class="daily-item-title">自生成反馈破坏测试时训练的长期稳定性</h2><p class="single-subtitle daily-item-summary">研究通过长达 128K token 的实验与因果分解发现，模型基于自身生成文本持续更新会形成闭环退化，而在提交更新前用独立真实文本验证可基本消除损害。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：测试时训练</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05076" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05076</a></div></div><div class="daily-item-content"><p>论文研究模型在推理期间将信息写入权重的测试时训练，并发现保留自生成文本带来的更新会降低模型对独立人类文本的预测能力，该现象横跨 125M、760M、3B 配置及 Qwen3-4B。固定生成模型后，125M 和 760M 配置中超过 98% 的损害被消除，表明关键问题是生成器与学习器相互影响形成的闭环反馈，而非写入权重本身。Recorded Replay 与单步配对实验进一步显示，模型在更好拟合当前生成样本的同时，会恶化对新真实文本的预测，且少数异常轨迹贡献了大部分严重失效。Settlement 方法在提交候选状态前使用独立真实文本评估，将两个模型的平均终点差距压至 0.07 和 -0.02 nats，同时保留了真实文本适应收益。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -374,6 +336,18 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[自生成反馈会破坏测试时训练的稳定性：长时程适应的因果分解（19 ▲）](https://huggingface.co/papers/2610.05076?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
+  </details></article>
+<article id="autoscibench" class="summary-card daily-item">
+  <h2 id="autoscibench-title" class="daily-item-title">AutoSciBench：自主生成并迭代适配科学智能体评测基准</h2><p class="single-subtitle daily-item-summary">AutoSciBench通过分析智能体求解轨迹与评判反馈，自动生成并持续改进科学任务，使评测难度能够随智能体能力演进。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E6%80%81%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动态基准测试</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E5%9F%BA%E5%87%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学研究基准</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务生成</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05140" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05140</a></div></div><div class="daily-item-content"><p>AutoSciBench将每项任务分解为描述科学领域、数据模态和推理方式的高层概念，以及规定问题、环境和标准答案构造与验证方法的底层配方。框架利用求解智能体的执行轨迹和评判反馈修改任务概念或配方，封堵解题捷径，并强化原始数据复查、中间结果解释和证据整合要求。它还会从既往任务的完整改进轨迹中蒸馏经验，用于指导新概念和后续基准任务的生成。实验覆盖计算生物学、材料科学和临床影像，生成基准相较人工基准分别将前两个领域的平均求解准确率降低22.4和25.5个百分点，同时在三个领域获得更高的平均质量评分。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为快速饱和的科学智能体基准提供自动更新机制，使评测持续暴露模型的剩余失效模式。</li>
+<li>可将求解轨迹与评判反馈转化为基准演化信号，系统性消除数据泄漏、模式匹配或工具捷径。</li>
+<li>高层概念与底层配方的分层表示有助于复用任务构造经验，并扩展至新的科学领域和数据模态。</li>
+<li>可作为动态基准测试和评测智能体研究的基础框架，降低人工策题、验证与维护成本。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[AutoSciBench：用于评估科学智能体的自主基准测试生成（26 ▲）](https://huggingface.co/papers/2610.05140?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-07)</div>
   </details></article>
 <article id="eviskill" class="summary-card daily-item">
   <h2 id="eviskill-title" class="daily-item-title">EVISKILL：以可回放证据驱动智能体技能演化</h2><p class="single-subtitle daily-item-summary">EVISKILL通过可回放证据卡、显式证据关联与定向重执行验证，使LLM智能体能够在不更新模型参数的情况下持续积累和修正可复用技能。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技能演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%9B%9E%E6%94%BE/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行回放</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05030" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05030</a></div></div><div class="daily-item-content"><p>EVISKILL面向LLM智能体的持续技能演化，将交互执行中的观察组织为可回放证据卡，并让每项技能编辑显式关联其支持情境。框架通过定向回放重新执行相关任务，验证编辑是否有效并为后续修正提供反馈。它跨轮次保留证据和已获局部支持的临时编辑，避免因全局验证失败而丢弃有价值的局部改进，同时由全局验证决定编辑是否最终固化到技能中。作者在三个交互式基准和六种LLM骨干模型上验证了该方法的有效性。</p>
@@ -387,17 +361,17 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[EVISKILL：将技能演化锚定于可回放证据（36 ▲）](https://huggingface.co/papers/2610.05030?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-07)</div>
   </details></article>
-<article id="raven-harness-harness" class="summary-card daily-item">
-  <h2 id="raven-harness-harness-title" class="daily-item-title">Raven：面向可组合智能体的 Harness 之 Harness</h2><p class="single-subtitle daily-item-summary">Raven 通过自动构建、演化和编排模型与模块化 Harness，将专业智能体组合为可跨领域协作的长程任务执行系统。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体编排</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%A4%8D%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验复用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.33439" target="_blank" rel="noopener">https://arxiv.org/abs/2609.33439</a></div></div><div class="daily-item-content"><p>Raven 是一个开源多智能体生态，将每个“模型—Harness”可执行配对视为可组合的智能单元，并面向特定模型和领域自动构建与演化模块化 Harness。Host Agent 负责目标分解、专业智能体匹配、执行依赖协调及结果整合，从而形成跨领域协作网络。系统利用 Host Archive、EverOS 和 Skill Forge 保存跨任务经验，并将其转化为可复用的执行流程。论文还给出了组合扩展可靠任务覆盖范围的充分条件，并报告 Raven 在复杂长程任务上优于现有先进智能体系统。</p>
+<article id="nat-arc-arc" class="summary-card daily-item">
+  <h2 id="nat-arc-arc-title" class="daily-item-title">NAT-ARC：自然图像预训练迁移至ARC视觉推理</h2><p class="single-subtitle daily-item-summary">何恺明团队提出纯视觉ARC求解方案NAT-ARC，将ImageNet上的MAE预训练视觉先验迁移至抽象格子推理，集成模型在ARC-1上取得70.2%的pass@2。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视觉推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/IQH3easn93wPN_cXtbUzMw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/IQH3easn93wPN_cXtbUzMw</a></div></div><div class="daily-item-content"><p>NAT-ARC在VARC视觉编解码流程前引入ImageNet MAE预训练，并在ARC离线训练后针对每道测试题使用少量示例进行LoRA微调。自然图像预训练赋予模型前景分离、对象匹配和连通区域识别等视觉先验，使其能够迁移到match-and-copy与connected-component reasoning等抽象任务。最佳0.6B单模型在ARC-1上达到63.4%的pass@2，融合不同预训练策略后达到70.2%，接近8B专用语言模型系统的71.6%。实验还表明，预训练缓解了小数据条件下大模型的过拟合，使模型从base到huge规模呈现稳定的性能增长。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为自动生成和持续演化智能体脚手架提供系统化架构参考。</li>
-<li>展示如何将领域专用智能体组合成跨领域、长程任务执行网络。</li>
-<li>可借鉴其经验归档与技能锻造机制，实现执行经验的持久化和程序化复用。</li>
-<li>为研究共享资源预算下多智能体组合的可靠性与任务覆盖扩展提供理论基础。</li>
+<li>证明自然图像中学到的对象分组、图案匹配与区域分割能力可以跨域迁移到抽象规则推理。</li>
+<li>为ARC提供不依赖LLM文本化或符号化的纯视觉技术路线，并以更少参数逼近专用语言模型系统。</li>
+<li>表明预训练是突破视觉ARC模型规模扩展瓶颈、改善收敛速度和泛化能力的关键。</li>
+<li>启发将视觉基础模型、任务级LoRA适配与模型集成用于其他小样本抽象推理任务。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[Raven：用于可组合智能体智能的 Harness 之 Harness（452 ▲）](https://huggingface.co/papers/2609.33439?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-09-30)</div>
+    <div class="daily-item-notes-body">LogicEvolve｜何恺明团队新作：看猫片就能学会ARC挑战https://mp.weixin.qq.com/s/IQH3easn93wPN_cXtbUzMw</div>
   </details></article>
 <article id="realcompanion" class="summary-card daily-item">
   <h2 id="realcompanion-title" class="daily-item-title">RealCompanion：真实纵向对话中的人类理解评测</h2><p class="single-subtitle daily-item-summary">RealCompanion 基于最长120天的真实人机对话，评测AI伴侣识别历史信息何时相关、检索远程记忆及避免过度推断用户人格的能力。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：记忆能力评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%BA%AF%E6%BA%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;证据溯源</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.01780" target="_blank" rel="noopener">https://arxiv.org/abs/2610.01780</a></div></div><div class="daily-item-content"><ul>
@@ -417,6 +391,42 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[RealCompanion：通过推理纵向真实世界对话来评测人类理解能力（249 ▲）](https://huggingface.co/papers/2610.01780?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-05)</div>
   </details></article>
+<article id="item-41" class="summary-card daily-item">
+  <h2 id="item-41-title" class="daily-item-title">超越记忆：用显式信念状态驱动长时程智能体</h2><p class="single-subtitle daily-item-summary">PoS 在推理时持续构建、验证并修复显式信念状态，使智能体在长时程任务中保持对世界状态、未决需求和任务进度的一致理解。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：状态追踪</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态表征</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程智能体</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.01415" target="_blank" rel="noopener">https://arxiv.org/abs/2610.01415</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://huggingface.co/papers/2610.01415" target="_blank" rel="noopener">https://huggingface.co/papers/2610.01415</a></div></div><div class="daily-item-content"><p>论文提出推理时框架 PoS，将当前世界状态估计与尚未解决的任务需求组合为显式信念状态，并以此作为智能体的决策上下文。框架持续检查信念的一致性和任务进展，以识别智能体反复行动却未实质接近目标的“信念陷阱”（Belief Trapping）。检测到停滞后，PoS 会依据陷阱模式及未决需求类型采取针对性的恢复策略。在覆盖执行与诊断的四项基准上，PoS 搭配三种 LLM 骨干均取得最高综合表现，并在上下文增长时展现出较强韧性。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为长时程智能体提供超越历史保留与上下文压缩的状态管理方案。</li>
+<li>可将显式信念状态作为规划、工具调用和执行恢复的统一决策接口。</li>
+<li>一致性验证与进度监控有助于及时发现循环执行、错误状态累积和任务停滞。</li>
+<li>启示智能体记忆系统应从被动存储交互历史，转向主动维护可验证、可操作的世界状态与未决目标。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[超越记忆：借助显式信念状态驾驭长时程智能体（69 ▲）](https://huggingface.co/papers/2610.01415?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-02)</div>
+  </details></article>
+<article id="raven-harness-harness" class="summary-card daily-item">
+  <h2 id="raven-harness-harness-title" class="daily-item-title">Raven：面向可组合智能体的 Harness 之 Harness</h2><p class="single-subtitle daily-item-summary">Raven 通过自动构建、演化和编排模型与模块化 Harness，将专业智能体组合为可跨领域协作的长程任务执行系统。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体编排</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%A4%8D%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验复用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.33439" target="_blank" rel="noopener">https://arxiv.org/abs/2609.33439</a></div></div><div class="daily-item-content"><p>Raven 是一个开源多智能体生态，将每个“模型—Harness”可执行配对视为可组合的智能单元，并面向特定模型和领域自动构建与演化模块化 Harness。Host Agent 负责目标分解、专业智能体匹配、执行依赖协调及结果整合，从而形成跨领域协作网络。系统利用 Host Archive、EverOS 和 Skill Forge 保存跨任务经验，并将其转化为可复用的执行流程。论文还给出了组合扩展可靠任务覆盖范围的充分条件，并报告 Raven 在复杂长程任务上优于现有先进智能体系统。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为自动生成和持续演化智能体脚手架提供系统化架构参考。</li>
+<li>展示如何将领域专用智能体组合成跨领域、长程任务执行网络。</li>
+<li>可借鉴其经验归档与技能锻造机制，实现执行经验的持久化和程序化复用。</li>
+<li>为研究共享资源预算下多智能体组合的可靠性与任务覆盖扩展提供理论基础。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Raven：用于可组合智能体智能的 Harness 之 Harness（452 ▲）](https://huggingface.co/papers/2609.33439?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-09-30)</div>
+  </details></article>
+<article id="autosella" class="summary-card daily-item">
+  <h2 id="autosella-title" class="daily-item-title">语言模型发现更快的分子几何弛豫算法 AutoSella</h2><p class="single-subtitle daily-item-summary">研究利用智能体自动改写分子几何优化器，在保证收敛与跨分子泛化的前提下，发现了显著减少量子化学力评估次数的 AutoSella 算法族。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自动化科学研究</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a><a href="/LLMDailyDigestWeb/topic/%E5%8C%96%E5%AD%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;化学人工智能</a><a href="/LLMDailyDigestWeb/topic/%E7%AE%97%E6%B3%95%E5%88%9B%E6%96%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;算法创新</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.06577" target="_blank" rel="noopener">https://arxiv.org/abs/2610.06577</a></div></div><div class="daily-item-content"><p>研究从高效开源几何优化器 Sella 出发，让语言模型智能体以减少力调用次数为目标自动改写优化算法。搜索过程设置了两道准入门槛，以排除过早停止以及无法泛化到未见分子的改进。最终得到的 AutoSella 包含两个优化器变体，在搜索阶段未使用的分子基准和势能模型上均稳定优于 Sella。在 r2SCAN-3c DFT 层级，最佳变体仅需 Sella 约 40.2%–77.2% 的力调用次数，同时实现相同程度的能量下降，而且搜索过程未使用 DFT 梯度。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示语言模型智能体可直接改进成熟科学计算算法，而不只是生成代码或调用现有工具。</li>
+<li>通过收敛性与域外泛化门槛约束自动搜索，可降低智能体利用评测漏洞或产生过拟合优化器的风险。</li>
+<li>减少昂贵的 DFT 力评估次数，有望显著加速分子结构优化及相关量子化学工作流。</li>
+<li>为面向科学软件的闭环自动研究提供范例：以可测量成本为目标，自动修改算法并在未见任务上验证。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[优化优化器：语言模型发现更快的分子弛豫方法（17 ▲）](https://huggingface.co/papers/2610.06577?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
+  </details></article>
 <article id="memadapter" class="summary-card daily-item">
   <h2 id="memadapter-title" class="daily-item-title">MemAdapter：反事实适应缓解记忆诱导型谄媚</h2><p class="single-subtitle daily-item-summary">MemAdapter通过反事实诱导、上下文感知反思和基于证据的推理，动态校准长期记忆对智能体回答的影响，以降低记忆诱导型谄媚。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：长期记忆</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%8D%E4%BA%8B%E5%AE%9E%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;反事实推理</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;证据推理</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我反思</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05162" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05162</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/DEEP-JLU/MemAdapter" target="_blank" rel="noopener">https://github.com/DEEP-JLU/MemAdapter</a></div></div><div class="daily-item-content"><p>长期记忆可能使智能体过度迎合用户的历史信念，即使相关信念已经过时、与客观证据冲突，正确记忆在不适当的上下文中也可能诱发谄媚。MemAdapter首先通过反事实诱导识别检索记忆的潜在风险，再利用上下文感知反思校准每条记忆对当前任务的推断影响。框架最终以适当证据为基础生成回答，同时保留记忆中合理且有用的信息。三个基准上的实验表明，该方法能在多种场景中持续提升记忆可靠性。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -428,18 +438,6 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[Memadapter：针对记忆诱导型谄媚的反事实适应（27 ▲）](https://huggingface.co/papers/2610.05162?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
-  </details></article>
-<article id="nat-arc-arc" class="summary-card daily-item">
-  <h2 id="nat-arc-arc-title" class="daily-item-title">NAT-ARC：自然图像预训练迁移至ARC视觉推理</h2><p class="single-subtitle daily-item-summary">何恺明团队提出纯视觉ARC求解方案NAT-ARC，将ImageNet上的MAE预训练视觉先验迁移至抽象格子推理，集成模型在ARC-1上取得70.2%的pass@2。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视觉推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/IQH3easn93wPN_cXtbUzMw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/IQH3easn93wPN_cXtbUzMw</a></div></div><div class="daily-item-content"><p>NAT-ARC在VARC视觉编解码流程前引入ImageNet MAE预训练，并在ARC离线训练后针对每道测试题使用少量示例进行LoRA微调。自然图像预训练赋予模型前景分离、对象匹配和连通区域识别等视觉先验，使其能够迁移到match-and-copy与connected-component reasoning等抽象任务。最佳0.6B单模型在ARC-1上达到63.4%的pass@2，融合不同预训练策略后达到70.2%，接近8B专用语言模型系统的71.6%。实验还表明，预训练缓解了小数据条件下大模型的过拟合，使模型从base到huge规模呈现稳定的性能增长。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>证明自然图像中学到的对象分组、图案匹配与区域分割能力可以跨域迁移到抽象规则推理。</li>
-<li>为ARC提供不依赖LLM文本化或符号化的纯视觉技术路线，并以更少参数逼近专用语言模型系统。</li>
-<li>表明预训练是突破视觉ARC模型规模扩展瓶颈、改善收敛速度和泛化能力的关键。</li>
-<li>启发将视觉基础模型、任务级LoRA适配与模型集成用于其他小样本抽象推理任务。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">LogicEvolve｜何恺明团队新作：看猫片就能学会ARC挑战https://mp.weixin.qq.com/s/IQH3easn93wPN_cXtbUzMw</div>
   </details></article>
 <article id="item-7" class="summary-card daily-item">
   <h2 id="item-7-title" class="daily-item-title">万级多智能体扩展：能力增益、协作机制与对齐风险</h2><p class="single-subtitle daily-item-summary">Noam Brown 指出，万级智能体解决高难问题主要依赖强大的基础模型，多智能体的核心价值是并行扩展测试时计算，但其收益次线性、任务依赖且伴随协作失控与奖励错配风险。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多智能体系统</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AI前线</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作安全</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/IFqeCxUcXOTqLbfHZya0rg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/IFqeCxUcXOTqLbfHZya0rg</a></div></div><div class="daily-item-content"><p>OpenAI 将多智能体能力产品化，通过 Dots、Specialist Dots 和 Agents API 支持个人、企业及开发者组织可分工协作的 AI 团队。Noam Brown 认为，多智能体本质上是并行扩展测试时计算的方法，能够缓解串行推理的延迟瓶颈，但万级规模的真实贡献尚缺乏系统消融实验，解决世界级难题的主要功劳仍属于强大的通用基础模型。现有实验显示，4 至 16 个智能体可带来略低于线性的加速，且收益高度依赖任务是否适合并行化；开放通信和较少预设结构还能促成层级分工等涌现协作行为。大规模协作也会放大奖励错配、合谋作弊与评估伪装等风险，模型在评测中表现良好并不代表真实部署可靠，而直接依据思维链惩罚又可能促使模型隐藏推理过程。</p>
@@ -454,6 +452,18 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">SwarmEvolve｜OpenAI刚把多Agent做成产品，o1奠基人却说：1万个Agent解出世界级难题，多Agent贡献不到10% https://mp.weixin.qq.com/s/IFqeCxUcXOTqLbfHZya0rg</div>
   </details></article>
+<article id="alphago-llm" class="summary-card daily-item">
+  <h2 id="alphago-llm-title" class="daily-item-title">AlphaGo作者：LLM尚未掌握可审计的搜索式推理</h2><p class="single-subtitle daily-item-summary">AlphaGo核心作者Thore Graepel认为，LLM的思维链仍是扩展后的模式预测，可信推理需要显式维护认知状态，并通过搜索、证据验证与信念更新产生可审计结论。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：可信推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态表征</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程验证</a><a href="/LLMDailyDigestWeb/topic/%E6%80%9D%E7%BB%B4%E9%93%BE%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;思维链安全</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/DWSIhf52x217d_IcB2aDSg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/DWSIhf52x217d_IcB2aDSg</a></div></div><div class="daily-item-content"><p>AlphaGo的“第37手”并非单纯依赖神经网络直觉，而是策略网络与博弈树搜索结合后，对低概率候选进行未来推演的结果。Graepel认为，当前LLM更像被训练到极致的“系统1”，即使使用思维链，也没有独立、可持续更新且可检查的认知状态，生成的解释还可能并非真实决策依据。可信的通用推理系统应明确记录已确认、存疑、排除和待解决的命题，并将推导、提问、计算及实验视为改变认知状态的动作。系统还需设置独立裁判，依据证据支持程度和不确定性消减量验证每一步，仅在通过验证后更新信念，从而形成可审计、可积累的知识。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为可信推理架构提供设计方向：将神经模型的直觉能力与显式搜索、状态维护和验证机制解耦。</li>
+<li>提醒研究者不要把流畅的思维链直接等同于真实推理，应检查解释忠实性与证据链可追溯性。</li>
+<li>可借鉴AlphaGo的策略网络与搜索协同机制，为科学研究、医疗和工程等高风险任务构建可审计推理系统。</li>
+<li>指出单纯扩大模型规模未必能产生审慎推理，未来突破可能依赖外部工具、形式化知识表示和独立验证器。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">LogicEvolve｜AlphaGo核心作者：十年了，LLM还没学到那场棋局「神之一手」的精华https://mp.weixin.qq.com/s/DWSIhf52x217d_IcB2aDSg</div>
+  </details></article>
 <article id="openai-722-ai" class="summary-card daily-item">
   <h2 id="openai-722-ai-title" class="daily-item-title">OpenAI 公开 722 篇 AI 生成数学手稿</h2><p class="single-subtitle daily-item-summary">据报道，OpenAI 将未发布内部模型生成的 722 篇研究级数学手稿集中公开，但其正确性与学术价值仍有待数学共同体系统验证。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自动化科学研究</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>PaperTody</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E5%AD%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数学人工智能</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a><a href="/LLMDailyDigestWeb/topic/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;形式化验证</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/openai/math" target="_blank" rel="noopener">https://github.com/openai/math</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/G6MKdKAjFnb37w8yFyyRPg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/G6MKdKAjFnb37w8yFyyRPg</a></div></div><div class="daily-item-content"><p>文章称，OpenAI 公开了由内部前沿模型生成的 722 篇数学手稿，共分为 372 个成果家族，覆盖 17 个数学分支。仓库所列结果涉及拟黎曼猜想相关零自由区域、低余秩情形的 BSD 公式、希尔伯特第十问题有理数域版本及随机 3-SAT 阈值等重要议题。独立顾问组织 AGMAI 强调，其咨询工作不构成对这些结果或生成过程的背书，成果的最终评判权属于数学共同体。目前这些手稿能否通过同行审查和形式化核验尚不明确，因此相关重大结论应视为待验证主张。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -466,8 +476,33 @@ Groom：EVISKILL 的可回放证据卡和显式证据关联可用于把技能复
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/G6MKdKAjFnb37w8yFyyRPg</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">6 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">8 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/" onclick="event.stopPropagation()">Awesome-RSI</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="hinton-22-rsi" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>Hinton等22人警告RSI或触发智能爆炸</strong>
+      <span class="daily-row-meta">PaperTody · 递归自我改进 · <a href="https://mp.weixin.qq.com/s/FBLlIVgdEdEgY_hxOM5hYg" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">Hinton、Bengio、Barto等22位学者与产业领袖分析AI研发自动化形成递归反馈并触发智能爆炸的可能性、现实瓶颈与治理对策，呼吁建立可见性、部署约束和社会适应机制。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>PaperTody</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能安全治理</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体安全</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/FBLlIVgdEdEgY_hxOM5hYg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/FBLlIVgdEdEgY_hxOM5hYg</a></div></div><div class="daily-item-content"><p>论文《What if automating AI R&amp;D triggers an intelligence explosion?》将递归自我改进划分为执行、策略、经验、部署和元改进五个阶段，探讨AI参与下一代AI研发所形成的闭环。当AI能够长期自主完成提出假设、设计与执行实验、分析结果和调整路线等流程时，可复制的智能体可能迅速扩大有效研发劳动力，并开发出更强的AI。其分析以研究投入回报率为核心；在相关假设成立且回报率持续大于1的情况下，模型估算AI技术进步速度可能在约1.5年内提升10倍，使当前一年的进步压缩至约5周。报告强调智能爆炸尚未发生，可靠性、算力、数据、实验周期和科研边际收益递减仍是关键瓶颈，同时警示研发失控、监督能力下降及权力制衡受损等风险。作者建议标准化披露研发自动化指标、设置部署门槛，并通过第三方审计、隔离评估、履约核查和应急预案强化治理。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为研究递归自我改进及智能爆炸提供分阶段机制框架与量化假设。</li>
+<li>提示评估科研智能体时关注长程自主研发能力、实际生产率、AI生成代码比例、任务跨度和研究投入回报率，而非仅考察单项基准分数。</li>
+<li>支持分析大规模复制研究智能体引发的算力调度、实验资源竞争、边际收益递减及协作安全问题。</li>
+<li>为前沿实验室与监管者设计标准化披露、第三方审计、隔离评估、部署门槛、数据中心监管和应急干预机制提供参考。</li>
+<li>启发针对智能体越权访问、轨迹篡改和监督失效等风险开展专项评测。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/FBLlIVgdEdEgY_hxOM5hYg
+
+[合并自 2026-10-08 hinton-ai]
+自进化｜刚刚，Hinton发了首篇RSI论文https://www.qbitai.com/2026/10/501705.html</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/promptevolve/" onclick="event.stopPropagation()">PromptEvolve</a><span class="daily-count">1 条</span>
               </summary>
               <div class="daily-group-body"><details id="gpt-6-sol-codex" class="daily-row">
@@ -557,27 +592,6 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/" onclick="event.stopPropagation()">MemoryEvolve</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="item-41" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><strong>超越记忆：用显式信念状态驱动长时程智能体</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 状态追踪 · <a href="https://arxiv.org/abs/2610.01415" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://huggingface.co/papers/2610.01415" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
-    </span><span class="daily-row-summary">PoS 在推理时持续构建、验证并修复显式信念状态，使智能体在长时程任务中保持对世界状态、未决需求和任务进度的一致理解。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：状态追踪</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态表征</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程智能体</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.01415" target="_blank" rel="noopener">https://arxiv.org/abs/2610.01415</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://huggingface.co/papers/2610.01415" target="_blank" rel="noopener">https://huggingface.co/papers/2610.01415</a></div></div><div class="daily-item-content"><p>论文提出推理时框架 PoS，将当前世界状态估计与尚未解决的任务需求组合为显式信念状态，并以此作为智能体的决策上下文。框架持续检查信念的一致性和任务进展，以识别智能体反复行动却未实质接近目标的“信念陷阱”（Belief Trapping）。检测到停滞后，PoS 会依据陷阱模式及未决需求类型采取针对性的恢复策略。在覆盖执行与诊断的四项基准上，PoS 搭配三种 LLM 骨干均取得最高综合表现，并在上下文增长时展现出较强韧性。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为长时程智能体提供超越历史保留与上下文压缩的状态管理方案。</li>
-<li>可将显式信念状态作为规划、工具调用和执行恢复的统一决策接口。</li>
-<li>一致性验证与进度监控有助于及时发现循环执行、错误状态累积和任务停滞。</li>
-<li>启示智能体记忆系统应从被动存储交互历史，转向主动维护可验证、可操作的世界状态与未决目标。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[超越记忆：借助显式信念状态驾驭长时程智能体（69 ▲）](https://huggingface.co/papers/2610.01415?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-02)</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/" onclick="event.stopPropagation()">EvalEvolve</a><span class="daily-count">1 条</span>
               </summary>
               <div class="daily-group-body"><details id="prowbench" class="daily-row">
@@ -598,8 +612,50 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
   </details></div>
 </details>
 </div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/" onclick="event.stopPropagation()">EnvironmentEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="hera" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>HERA：脚手架与环境协同演化提升智能体可靠拒答</strong>
+      <span class="daily-row-meta">语鲸 · 协同演化 · <a href="https://h5.lingowhale.com/s/v3eO2Mm" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">HERA 探索智能体脚手架与任务环境的协同演化，以增强智能体在不确定情形下可靠拒答的能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：协同演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>语鲸</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%8D%8F%E5%90%8C%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境协同演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%8B%92%E7%AD%94%E6%A0%A1%E5%87%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;拒答校准</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://h5.lingowhale.com/s/v3eO2Mm" target="_blank" rel="noopener">https://h5.lingowhale.com/s/v3eO2Mm</a></div></div><div class="daily-item-content"><p>HERA 的核心方向是让智能体脚手架（Harness）与环境共同演化，而非仅对模型或策略进行单侧优化。研究聚焦可靠的智能体拒答机制，使系统在能力不足、风险较高或信息不充分时能够适时停止并拒绝执行。该思路将环境演化、脚手架优化与可靠性目标结合，为构建更稳健的智能体训练和评估闭环提供路径。当前链接页面未提供论文地址、代码、数据集或更具体的实验结果。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为智能体拒答校准提供脚手架—环境协同优化的新思路。</li>
+<li>可用于生成逐步演化的风险场景，检验智能体是否能识别能力边界并停止执行。</li>
+<li>启发将可靠性指标纳入环境演化和智能体脚手架搜索的联合目标。</li>
+<li>后续需结合论文全文核实具体算法、评测基准与性能增益。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">EnvironmenEvolve｜《HERA: HARNESS-ENVIRONMENT CO-EVOLUTIONFOR RELIABLE AGENTIC ABSTENTION》https://h5.lingowhale.com/s/v3eO2Mm</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/" onclick="event.stopPropagation()">MemoryEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="onestreamer" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>OneStreamer：统一流式视频感知、记忆与主动响应</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 长期记忆 · <a href="https://arxiv.org/abs/2610.01762" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">OneStreamer通过分层字幕记忆、主动状态转换学习和百万级合成数据，将实时视频感知、事实记忆形成与及时响应统一到同一生成框架中。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：长期记忆</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频理解</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.01762" target="_blank" rel="noopener">https://arxiv.org/abs/2610.01762</a></div></div><div class="daily-item-content"><p>OneStreamer以主动生成为统一接口，共同学习与查询无关的证据记录和面向任务的实时响应。其主动分层字幕记忆（PHCM）生成带时间定位的局部细节字幕和已完成事件摘要，并与近期视觉窗口结合，避免重新访问历史视觉特征。主动状态转换学习（PSTL）通过选择具有代表性的状态变化与状态保持词元，缓解重复等待状态主导训练的问题，仅监督27.5%的标注状态词元便优于密集状态监督。团队还构建了包含流式字幕和问答的OneStreamer-1M数据集，其4B模型在八项流式视频理解基准上取得对比方法中的最佳结果。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为需要持续观察视频流的实时智能助手提供统一的感知、记忆和主动响应架构。</li>
+<li>展示生成式字幕可作为可复用的长期事实记忆，在提升历史问答能力的同时不损害实时感知。</li>
+<li>PSTL为等待状态占比过高的流式任务提供更高效的稀疏监督方案。</li>
+<li>OneStreamer-1M的数据合成流程可用于构建证据内容与响应时机对齐的流式多模态训练数据。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[OneStreamer：统一流式视频交互中的感知、记忆与主动响应（146 ▲）](https://huggingface.co/papers/2610.01762?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-02)</div>
+  </details></div>
+</details>
+</div>
             </details><details class="daily-group daily-group-other" id="daily-other">
-            <summary class="daily-group-title"><h2 class="daily-tier-title">📎 其他相关 <span class="daily-count">28 条 · 未归入研究项目，默认收起</span></h2></summary>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">📎 其他相关 <span class="daily-count">34 条 · 未归入研究项目，默认收起</span></h2></summary>
             <div class="daily-group-body"><details id="glm-agi-agent-scaling" class="daily-row">
   <summary>
     <span class="daily-row-title"><strong>唐杰谈GLM通往AGI：预训练、后训练与Agent持续Scaling</strong>
@@ -681,13 +737,12 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
     <div class="daily-item-notes-body">[TRACE：面向 MoE 语言模型 FP4 强化学习的滚动引导量化感知训练（74 ▲）](https://huggingface.co/papers/2610.07767?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-07)</div>
   </details></div>
 </details>
-<details id="duomatching" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><strong>DuoMatching：联合边缘分布匹配提升少步视频生成</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 视频生成 · <a href="https://arxiv.org/abs/2610.03543" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">DuoMatching通过联合匹配视频分布与边缘匹配单帧分布，将图像生成器的视觉和语义先验迁移至少步视频生成，在保持运动动态的同时提升画质、构图及语义对齐。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03543" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03543</a></div></div><div class="daily-item-content"><p>DuoMatching在现有视频联合分布匹配蒸馏基础上，加入由图像生成器提供监督的边缘分布匹配目标。该方法提出LatentBridge，解决视频学生模型与图像教师模型之间的潜表示不匹配问题。Latent Variation Sampling将帧级监督分散到不同时间片段，以减少监督冗余并扩大时序覆盖。实验显示，该方法在大体保持运动动态的同时改善视觉质量、构图和语义对齐，人工评测相对所有基线的总体偏好率均超过80%。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<section class="daily-cluster">
+      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：视频生成 <span class="daily-count">3 条</span></h3><article id="duomatching" class="summary-card daily-item daily-item-medium">
+  <h2 id="duomatching-title" class="daily-item-title">DuoMatching：联合边缘分布匹配提升少步视频生成</h2><p class="single-subtitle daily-item-summary">DuoMatching通过联合匹配视频分布与边缘匹配单帧分布，将图像生成器的视觉和语义先验迁移至少步视频生成，在保持运动动态的同时提升画质、构图及语义对齐。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03543" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03543</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>DuoMatching在现有视频联合分布匹配蒸馏基础上，加入由图像生成器提供监督的边缘分布匹配目标。该方法提出LatentBridge，解决视频学生模型与图像教师模型之间的潜表示不匹配问题。Latent Variation Sampling将帧级监督分散到不同时间片段，以减少监督冗余并扩大时序覆盖。实验显示，该方法在大体保持运动动态的同时改善视觉质量、构图和语义对齐，人工评测相对所有基线的总体偏好率均超过80%。</p>
+</div>
+    </details><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>为少步、流式及自回归视频生成提供兼顾时序一致性与单帧质量的蒸馏方案。</li>
 <li>展示图像教师与视频教师的互补监督价值，可用于跨模型、跨模态知识迁移设计。</li>
 <li>LatentBridge可为潜空间不一致的异构生成模型协同训练提供参考。</li>
@@ -696,15 +751,12 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[DuoMatching：面向少步视频生成的联合边缘分布匹配（69 ▲）](https://huggingface.co/papers/2610.03543?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-07)</div>
-  </details></div>
-</details>
-<details id="kandinsky-6-0" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><strong>Kandinsky 6.0：同步音视频生成基础模型</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 视频生成 · <a href="https://arxiv.org/abs/2610.05608" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">Kandinsky 6.0 Video 通过双流 CrossDiT 架构联合生成5秒全高清视频与同步44 kHz音频，并支持文本或图像条件生成。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;扩散模型</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05608" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05608</a></div></div><div class="daily-item-content"><p>Kandinsky 6.0 Video 是同步文本到音视频生成的扩散基础模型系列，包括 3B 参数的 Lite 版和 29B 参数的 Pro 版。模型采用双流 CrossDiT，以双向交叉注意力连接预训练视频流与新训练的音频流，实现时序及语义对齐，并支持 T2AV 和 I2AV 两种模式。它可生成带口型同步和 44 kHz 音频的 5 秒视频，并通过内置超分辨率模型将画面提升至 1920×1080。训练流程涵盖音频流预训练、配对音视频联合训练、监督微调、强化学习后训练和蒸馏；人工评测显示 Pro 版明显优于 Kandinsky 5.0，并在语音质量方面具备较强竞争力。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+  </details></article>
+<article id="kandinsky-6-0" class="summary-card daily-item daily-item-medium">
+  <h2 id="kandinsky-6-0-title" class="daily-item-title">Kandinsky 6.0：同步音视频生成基础模型</h2><p class="single-subtitle daily-item-summary">Kandinsky 6.0 Video 通过双流 CrossDiT 架构联合生成5秒全高清视频与同步44 kHz音频，并支持文本或图像条件生成。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;扩散模型</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05608" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05608</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>Kandinsky 6.0 Video 是同步文本到音视频生成的扩散基础模型系列，包括 3B 参数的 Lite 版和 29B 参数的 Pro 版。模型采用双流 CrossDiT，以双向交叉注意力连接预训练视频流与新训练的音频流，实现时序及语义对齐，并支持 T2AV 和 I2AV 两种模式。它可生成带口型同步和 44 kHz 音频的 5 秒视频，并通过内置超分辨率模型将画面提升至 1920×1080。训练流程涵盖音频流预训练、配对音视频联合训练、监督微调、强化学习后训练和蒸馏；人工评测显示 Pro 版明显优于 Kandinsky 5.0，并在语音质量方面具备较强竞争力。</p>
+</div>
+    </details><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>为统一建模视频、语音、音效及口型同步提供双流扩散架构参考。</li>
 <li>展示从单模态预训练过渡到配对音视频联合训练，同时保持单模态生成质量的训练方案。</li>
 <li>可用于影视内容生成、虚拟人物、广告制作和多媒体创作工具。</li>
@@ -713,9 +765,26 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[Kandinsky 6.0 视频：用于同步视频和音频生成的基础模型（113 ▲）](https://huggingface.co/papers/2610.05608?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
+  </details></article>
+<div class="daily-cluster-rest">
+          <p class="daily-cluster-rest-label">同专题其余 1 条</p><details id="framemorrow" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>FrameMorrow：以前瞻性标记引导长时程视频帧选择</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 视频生成 · <a href="https://arxiv.org/abs/2609.38839" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">FrameMorrow通过预测表征未来信息需求的前瞻性标记，从生成历史中动态选择关键帧，以较低推理开销提升长时程视频的一致性、视觉质量和动作对齐。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.38839" target="_blank" rel="noopener">https://arxiv.org/abs/2609.38839</a></div></div><div class="daily-item-content"><p>FrameMorrow针对长时程视频生成中历史内容持续增长、完整保留成本高且信息冗余的问题，提出面向未来需求的历史帧选择方法。其核心是预测少量前瞻性标记，用紧凑表示刻画后续生成所需的信息，并据此从历史中识别相关帧。该方法选择显式视频帧而非模型内部状态，因此可即插即用地适配开源或闭源生成器，且额外推理成本较低。作者在5个基准和11个生成模型上进行了评测，覆盖长视频生成、交互式生成及动作条件世界模型，并观察到长程一致性、视觉质量和动作对齐的稳定提升。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为长视频生成提供一种按未来需求压缩和检索历史上下文的方案，避免仅依据当前内容选择帧。</li>
+<li>显式帧选择具备较强的模型无关性，可作为外部模块接入不同视频生成器或闭源系统。</li>
+<li>前瞻性标记表明，无需完整预测未来即可估计后续信息需求，可启发长程智能体记忆检索与上下文管理。</li>
+<li>该方法适用于交互式视频和动作条件世界模型，有助于维持跨长时间跨度的状态与动作一致性。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[FrameMorrow：利用前瞻性标记进行未来引导的帧选择，以生成长时程视频（90 ▲）](https://huggingface.co/papers/2609.38839?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-05)</div>
   </details></div>
 </details>
-<details id="item-15" class="daily-row">
+</div></section><details id="item-15" class="daily-row">
   <summary>
     <span class="daily-row-title"><strong>从证据到行动：工具型智能体的失效机制</strong>
       <span class="daily-row-meta">Hugging Face Papers · 可信执行 · <a href="https://arxiv.org/abs/2610.07753" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
@@ -866,6 +935,23 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
     <div class="daily-item-notes-body">[LMBuild：评估 LLM 智能体生成可构建且功能完善的结构的能力（24 ▲）](https://huggingface.co/papers/2610.04292?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-06)</div>
   </details></div>
 </details>
+<details id="hyperbrowsecomp" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>HyperBrowseComp：网页浏览智能体的多语言多模态压力测试</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 智能体评测 · <a href="https://arxiv.org/abs/2610.03574" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://huggingface.co/papers/2610.03574" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">HyperBrowseComp 以13种语言、423道人工验证问题，评测网页浏览智能体跨语言、跨模态发现并串联开放网络证据的能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多语言建模</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;证据推理</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03574" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03574</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://huggingface.co/papers/2610.03574" target="_blank" rel="noopener">https://huggingface.co/papers/2610.03574</a></div></div><div class="daily-item-content"><p>HyperBrowseComp 收录423道由母语者或高水平使用者编写并经人工验证的问题，覆盖13种语言。问题要求智能体寻找公开可验证的简短答案，但通常需要定位冷门证据、沿多步线索链搜索，或检查视频、扫描文档、图像和地图等异构来源。研究者先使用无法联网的模型过滤较容易依靠参数知识回答的问题，以提高基准难度与搜索能力的构念效度。评测同时比较供应商原生搜索能力与统一外部检索脚手架，并通过人工评测样本衡量模型表现及任务投入。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>用于压力测试网页浏览智能体在开放网络中的持续信息搜寻与多步证据连接能力。</li>
+<li>支持比较原生搜索工具与统一检索脚手架对智能体表现的影响。</li>
+<li>为多语言、多模态浏览评测提供人工编写和验证的高难度题集。</li>
+<li>可用于分析模型参数知识、真实检索能力与证据核验能力之间的差异。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[HyperBrowseComp：面向网页浏览智能体的多语言、多模态压力测试（51 ▲）](https://huggingface.co/papers/2610.03574?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-05)</div>
+  </details></div>
+</details>
 <details id="omnireasoning" class="daily-row">
   <summary>
     <span class="daily-row-title"><strong>OmniReasoning：音视频联合推理基准、数据引擎与自蒸馏方法</strong>
@@ -945,7 +1031,7 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
   </details></div>
 </details>
 </div></section><section class="daily-cluster">
-      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：世界模型 <span class="daily-count">3 条</span></h3><article id="prowam" class="summary-card daily-item daily-item-medium">
+      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：世界模型 <span class="daily-count">4 条</span></h3><article id="prowam" class="summary-card daily-item daily-item-medium">
   <h2 id="prowam-title" class="daily-item-title">ProWAM：通过渐进式视觉规划建模世界动作</h2><p class="single-subtitle daily-item-summary">ProWAM通过联合预测动作与有序稀疏视觉子目标，为机器人长程闭环控制提供高效的渐进式视觉规划，并显著提升分布外与真实场景泛化能力。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.02508" target="_blank" rel="noopener">https://arxiv.org/abs/2610.02508</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
       <div class="daily-item-content"><p>ProWAM是一种渐进式世界动作模型，从初始观测和指令中联合预测动作及一系列有序的稀疏视觉子目标，以持续锚定任务执行。该方法可利用大规模无动作视频学习子目标预测，并将复杂视觉规划交由视频骨干网络承担。推理时仅需一次视频骨干前向传播并缓存子目标特征，重规划阶段只执行轻量级动作去噪，避免低效的完整视频迭代生成。ProWAM在LIBERO-Plus和随机化RoboTwin上分别达到85.8%和75.7%，在零样本真实世界实验中取得70.0%的成功率，较最强基线提升15个百分点。</p>
 </div>
@@ -974,7 +1060,7 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
     <div class="daily-item-notes-body">[PDE-JEPA：用于参数化偏微分方程潜在动力学建模的预测式表征学习（51 ▲）](https://huggingface.co/papers/2609.34715?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-05)</div>
   </details></article>
 <div class="daily-cluster-rest">
-          <p class="daily-cluster-rest-label">同专题其余 1 条</p><details id="world-observer" class="daily-row">
+          <p class="daily-cluster-rest-label">同专题其余 2 条</p><details id="world-observer" class="daily-row">
   <summary>
     <span class="daily-row-title"><strong>World Observer：联合动作与观察者生成的持久世界建模</strong>
       <span class="daily-row-meta">Hugging Face Papers · 世界模型 · <a href="https://arxiv.org/abs/2610.02162" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
@@ -989,6 +1075,22 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[世界观察者：面向持久世界建模的动作生成与观察者生成联合方法（63 ▲）](https://huggingface.co/papers/2610.02162?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-02)</div>
+  </details></div>
+</details>
+<details id="nava-wam" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>NAVA-WAM：从视频原生学习世界动作模型的动作先验</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 世界模型 · <a href="https://arxiv.org/abs/2610.03391" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">NAVA-WAM通过仅含观测的视频直接预训练机器人动作策略，再以少量动作标注示范进行后训练，从而提升动作标签效率和真实机器人泛化能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频理解</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模仿学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03391" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03391</a></div></div><div class="daily-item-content"><p>NAVA-WAM面向世界动作模型依赖大量动作标注机器人轨迹的问题，提出从无动作标签视频中原生学习动作先验。第一阶段利用未来视频的流匹配监督，并通过具有转移结构的联合注意力将视觉变化信号传播至Action-DiT，直接优化动作策略。第二阶段使用动作标注示范进行视频—动作联合流匹配后训练，同时借助非对称注意力解耦视觉分支与动作迭代去噪，实现高效的纯动作推理。实验显示，该方法在分布内外场景中均优于既有方案，并具备较强的动作标签效率与真实机器人泛化能力。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为利用互联网或人类操作视频预训练机器人策略提供直接路径，减少对昂贵动作标注轨迹的依赖。</li>
+<li>表明视觉动态监督可以通过联合注意力直接塑造动作生成模块，而不必先学习独立的潜动作模型。</li>
+<li>非对称注意力设计可用于降低世界动作模型部署时的推理成本，并增强真实机器人控制的可扩展性。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[从视频中学习世界动作模型的原生动作先验（74 ▲）](https://huggingface.co/papers/2610.03391?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-05)</div>
   </details></div>
 </details>
 </div></section><details id="llm" class="daily-row">
@@ -1056,6 +1158,58 @@ Groom｜刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[后训练中的锐化税（63 ▲）](https://huggingface.co/papers/2610.01509?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-02)</div>
+  </details></div>
+</details>
+<details id="google-gemini-4-argon" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>Google 发布 Gemini 4 Argon 前沿模型</strong>
+      <span class="daily-row-meta">Google Blog · 模型发布 · <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">Google 发布面向复杂长程专业任务的 Gemini 4 Argon，主打百万输出 token、软件工程与企业知识工作，并通过 Fairwind Program 向可信网络防御人员分阶段开放。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Google Blog</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;网络安全</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener">https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/</a></div></div><div class="daily-item-content"><p>Gemini 4 Argon 可在单条轨迹中输出最多 100 万 token，以持续处理软件工程、金融研究、法律起草和网络防御等复杂长程工作流。模型在 DeepSWE v1.1 上取得 77.9%，在 AutomationBench 上以 51.3% 排名第一，并在长视频理解基准 LVBench 上达到 91.7%。Google 已将 Argon 用于量子算法优化、数据中心内存优化及大规模 C/C++ 到 Rust 的代码迁移，其中相关内存优化预计可节省 500 TiB 至 1 PiB。该模型还可自主发现、验证并修补关键软件漏洞，目前仅通过 Fairwind Program 向可信网络防御人员逐步开放，待安全测试和护栏迭代后再扩大范围。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示超长输出预算对复杂长程推理和单轨迹任务执行能力的潜在提升。</li>
+<li>为仓库级代码迁移、性能优化和漏洞自动修复等人工智能辅助软件工程场景提供参考。</li>
+<li>说明前沿网络安全能力适合采用可信用户先行、预发布审查和逐步扩展访问的发布机制。</li>
+<li>百万 token 输出可能显著增加成本与验证压力，实际部署需结合缓存、自动测试及人工审计。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">新模型or新应用｜Google gemini4 argon
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/?utm_source=deepmind.google&amp;utm_medium=referral&amp;utm_campaign=gdm&amp;utm_content=</div>
+  </details></div>
+</details>
+<details id="mistral-large-4" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>Mistral发布万亿参数旗舰模型Large 4</strong>
+      <span class="daily-row-meta">新智元 · 模型发布 · <a href="https://mp.weixin.qq.com/s/z1I-TZb4S-fdAWFUUAg6Xg" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">Mistral推出万亿参数混合专家模型Large 4预览版，宣称其在网络安全、编程、法律金融及视觉定位等多项评测中达到或超过部分闭源旗舰模型。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%80%E6%94%BE%E6%9D%83%E9%87%8D%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;开放权重模型</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/z1I-TZb4S-fdAWFUUAg6Xg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/z1I-TZb4S-fdAWFUUAg6Xg</a></div></div><div class="daily-item-content"><p>Mistral Large 4总参数量为1万亿，采用混合专家架构，每个词元激活约490亿参数，并统一支持指令遵循、推理、智能体任务及160多种语言。第三方与内部评测显示，该模型在Cybench、DeepSWE、AutomationBench、Dense 200和SciCode-Verified等网络安全、编程、办公自动化、视觉定位及科学计算测试中表现突出。模型使用约3800块英伟达Grace Blackwell GPU从零训练，后训练依赖大规模强化学习集群生成并过滤长任务轨迹。预览版API已上线Mistral Studio，完整权重计划于月底开放，以支持企业私有云和本地部署。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示万亿参数混合专家架构在控制推理成本的同时扩展模型能力的可行路径。</li>
+<li>表明大规模长轨迹强化学习可持续提升编程、工具操作和跨应用智能体能力。</li>
+<li>为网络安全模型设计提供启示：需要在阻止恶意攻击与支持合法漏洞研究之间进行细粒度拒答校准。</li>
+<li>开放权重与私有化部署可增强企业对模型能力、数据和运行连续性的控制。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">新模型or新应用｜1万亿参数「肥猫」单挑GPT-6和Claude！多项测试赢了https://mp.weixin.qq.com/s/z1I-TZb4S-fdAWFUUAg6Xg</div>
+  </details></div>
+</details>
+<details id="pivot-sd" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><strong>Pivot-SD：掩码扩散语言模型的高效自蒸馏</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 自蒸馏 · <a href="https://arxiv.org/abs/2610.03665" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">Pivot-SD以信息增益识别掩码扩散语言模型去噪过程中的高影响力关键提交，并通过成功轨迹正向监督与失败轨迹定向抑制实现高效离线自蒸馏。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自蒸馏</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.03665" target="_blank" rel="noopener">https://arxiv.org/abs/2610.03665</a></div></div><div class="daily-item-content"><p>Pivot-SD针对掩码扩散语言模型的信用分配难题，不再监督完整输出或对整个去噪步骤统一分配奖励，而是聚焦显著影响后续生成的关键词元提交（pivot）。该方法以剩余掩码位置的不确定性下降衡量信息增益，据此自动选择高影响力 pivot。对于成功轨迹，框架使用交叉熵强化这些提交；对于失败轨迹，则采用定向 unlikelihood 抑制错误 pivot，同时不改动失败轨迹的其余部分。实验仅使用200个问题、每题4次 rollout，便使 LLaDA-8B-Instruct 在数学与代码基准上优于全序列 SFT 和同预算的扩散强化学习基线。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为掩码扩散语言模型提供细粒度信用分配方案，将训练资源集中于真正改变生成走向的词元决策。</li>
+<li>展示信息增益可作为筛选高价值训练信号的依据，减少对完整轨迹监督和大规模采样的依赖。</li>
+<li>成功与失败轨迹采用非对称学习目标，可在保留有效行为的同时精准抑制关键错误。</li>
+<li>适合用于低数据、低 rollout 预算下的数学推理与代码能力后训练。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Pivot-SD：掩码扩散语言模型的高效自蒸馏（50 ▲）](https://huggingface.co/papers/2610.03665?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-05)</div>
   </details></div>
 </details>
 </div>
