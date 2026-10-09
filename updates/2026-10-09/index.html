@@ -12,45 +12,45 @@
 
 今日概览
 
-推理模型自进化聚焦长期稳定性与细粒度训练信号：R-Quest 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，SCAPO 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。
-可验证推理与科研闭环出现强结果：VeriLoop E2 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。
-环境与记忆成为智能体持续进化的基础设施：AgentGarten 结合代码物理环境、实时神经渲染和跨轮次经验手册，nanoMuse 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。
-热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 UniWAM、SGF&#43; 和 GRACE 等，但与当前核心研究方向关联较弱。
+推理模型持续自进化：两项高相关工作分别攻克数据坍缩与信用分配，R-Quest 以有效性和新颖性反馈支撑连续十轮稳定提升，SCAPO 则借助半事实干预改善 GRPO 的词元级归因与分布外泛化。
+可验证推理与自主科研：VeriLoop E2 将外部验证证据纳入状态提交和后训练闭环，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示“生成—验证—递归改进”的科研路径。
+环境与经验共同演化：AgentGarten 结合代码化物理世界、实时神经渲染和跨轮次经验手册，为具身智能体提供可持续试错、积累经验并改进策略的闭环环境。
+长期个人智能体基础设施：nanoMuse 通过跨设备共享会话、可溯源文件记忆和动作安全审查，探索兼顾状态持久化、记忆来源追踪与执行安全的本地智能体。
+热点延伸：低相关性工作集中于世界—动作模型与长程视频、生成加速及智能体安全评测，包括 Long-WAM、UniWAM、SGF&#43; 和 DecepEval 等。
 
 对当前研究的启发
 
-Awesome-RSI：R-Quest 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。
-EvolveLRM：SCAPO 的半事实词元稳定性可用于改进过程级信用分配，而 R-Quest 提供了维持多轮自训练探索多样性的互补方案。
-DataEvolve：R-Quest 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。
-LogicEvolve：VeriLoop E2 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，SCAPO 则有助于增强其分布外泛化。
-ResearchEvolve：VeriLoop E2 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。
-EnvironmentEvolve：AgentGarten 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。
-MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。
+EvolveLRM：R-Quest 的无效问题过滤与新颖性反馈可用于抑制多轮自训练的数据重复和能力坍缩，而 SCAPO 的半事实词元信用可增强推理 RL 的训练稳定性与跨域泛化。
+DataEvolve：R-Quest 表明将“有效性”和“相对已有训练集的新颖性”联合用作筛选信号，可能比单纯按解题难度过滤更适合维持长期数据飞轮。
+LogicEvolve：VeriLoop E2 的外部证据驱动状态提交与 SCAPO 的半事实归因，分别提供了可验证递归推理和细粒度逻辑训练反馈的可复用机制。
+ResearchEvolve：VeriLoop E2 展示了把数学验证证据直接接入假设迭代与后训练闭环的自主科研范式，可用于提高研究结论的可审计性。
+EnvironmentEvolve：AgentGarten 的确定性代码环境与实时渲染解耦方案，可作为同时满足可执行、可复现和高频交互的具身环境合成架构。
+MemoryEvolve：AgentGarten 的跨轮次经验手册和 nanoMuse 的可溯源文件记忆，为长期记忆的经验沉淀、来源审计及跨设备共享提供了两种互补实现。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-10-09 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 推理模型自进化聚焦长期稳定性与细粒度训练信号：R-Quest 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，SCAPO 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。 可验证推理与科研闭环出现强结果：VeriLoop E2 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。 环境与记忆成为智能体持续进化的基础设施：AgentGarten 结合代码物理环境、实时神经渲染和跨轮次经验手册，nanoMuse 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。 热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 UniWAM、SGF&#43; 和 GRACE 等，但与当前核心研究方向关联较弱。 对当前研究的启发 Awesome-RSI：R-Quest 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。 EvolveLRM：SCAPO 的半事实词元稳定性可用于改进过程级信用分配，而 R-Quest 提供了维持多轮自训练探索多样性的互补方案。 DataEvolve：R-Quest 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。 LogicEvolve：VeriLoop E2 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，SCAPO 则有助于增强其分布外泛化。 ResearchEvolve：VeriLoop E2 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。 MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。">
+今日概览 推理模型持续自进化：两项高相关工作分别攻克数据坍缩与信用分配，R-Quest 以有效性和新颖性反馈支撑连续十轮稳定提升，SCAPO 则借助半事实干预改善 GRPO 的词元级归因与分布外泛化。 可验证推理与自主科研：VeriLoop E2 将外部验证证据纳入状态提交和后训练闭环，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示“生成—验证—递归改进”的科研路径。 环境与经验共同演化：AgentGarten 结合代码化物理世界、实时神经渲染和跨轮次经验手册，为具身智能体提供可持续试错、积累经验并改进策略的闭环环境。 长期个人智能体基础设施：nanoMuse 通过跨设备共享会话、可溯源文件记忆和动作安全审查，探索兼顾状态持久化、记忆来源追踪与执行安全的本地智能体。 热点延伸：低相关性工作集中于世界—动作模型与长程视频、生成加速及智能体安全评测，包括 Long-WAM、UniWAM、SGF&#43; 和 DecepEval 等。 对当前研究的启发 EvolveLRM：R-Quest 的无效问题过滤与新颖性反馈可用于抑制多轮自训练的数据重复和能力坍缩，而 SCAPO 的半事实词元信用可增强推理 RL 的训练稳定性与跨域泛化。 DataEvolve：R-Quest 表明将“有效性”和“相对已有训练集的新颖性”联合用作筛选信号，可能比单纯按解题难度过滤更适合维持长期数据飞轮。 LogicEvolve：VeriLoop E2 的外部证据驱动状态提交与 SCAPO 的半事实归因，分别提供了可验证递归推理和细粒度逻辑训练反馈的可复用机制。 ResearchEvolve：VeriLoop E2 展示了把数学验证证据直接接入假设迭代与后训练闭环的自主科研范式，可用于提高研究结论的可审计性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时渲染解耦方案，可作为同时满足可执行、可复现和高频交互的具身环境合成架构。 MemoryEvolve：AgentGarten 的跨轮次经验手册和 nanoMuse 的可溯源文件记忆，为长期记忆的经验沉淀、来源审计及跨设备共享提供了两种互补实现。">
   <meta itemprop="datePublished" content="2026-10-09T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-09T11:23:36+08:00">
-  <meta itemprop="wordCount" content="838">
+  <meta itemprop="dateModified" content="2026-10-09T11:26:07+08:00">
+  <meta itemprop="wordCount" content="860">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-09/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-10-09 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 推理模型自进化聚焦长期稳定性与细粒度训练信号：R-Quest 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，SCAPO 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。 可验证推理与科研闭环出现强结果：VeriLoop E2 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。 环境与记忆成为智能体持续进化的基础设施：AgentGarten 结合代码物理环境、实时神经渲染和跨轮次经验手册，nanoMuse 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。 热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 UniWAM、SGF&#43; 和 GRACE 等，但与当前核心研究方向关联较弱。 对当前研究的启发 Awesome-RSI：R-Quest 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。 EvolveLRM：SCAPO 的半事实词元稳定性可用于改进过程级信用分配，而 R-Quest 提供了维持多轮自训练探索多样性的互补方案。 DataEvolve：R-Quest 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。 LogicEvolve：VeriLoop E2 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，SCAPO 则有助于增强其分布外泛化。 ResearchEvolve：VeriLoop E2 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。 MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。">
+今日概览 推理模型持续自进化：两项高相关工作分别攻克数据坍缩与信用分配，R-Quest 以有效性和新颖性反馈支撑连续十轮稳定提升，SCAPO 则借助半事实干预改善 GRPO 的词元级归因与分布外泛化。 可验证推理与自主科研：VeriLoop E2 将外部验证证据纳入状态提交和后训练闭环，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示“生成—验证—递归改进”的科研路径。 环境与经验共同演化：AgentGarten 结合代码化物理世界、实时神经渲染和跨轮次经验手册，为具身智能体提供可持续试错、积累经验并改进策略的闭环环境。 长期个人智能体基础设施：nanoMuse 通过跨设备共享会话、可溯源文件记忆和动作安全审查，探索兼顾状态持久化、记忆来源追踪与执行安全的本地智能体。 热点延伸：低相关性工作集中于世界—动作模型与长程视频、生成加速及智能体安全评测，包括 Long-WAM、UniWAM、SGF&#43; 和 DecepEval 等。 对当前研究的启发 EvolveLRM：R-Quest 的无效问题过滤与新颖性反馈可用于抑制多轮自训练的数据重复和能力坍缩，而 SCAPO 的半事实词元信用可增强推理 RL 的训练稳定性与跨域泛化。 DataEvolve：R-Quest 表明将“有效性”和“相对已有训练集的新颖性”联合用作筛选信号，可能比单纯按解题难度过滤更适合维持长期数据飞轮。 LogicEvolve：VeriLoop E2 的外部证据驱动状态提交与 SCAPO 的半事实归因，分别提供了可验证递归推理和细粒度逻辑训练反馈的可复用机制。 ResearchEvolve：VeriLoop E2 展示了把数学验证证据直接接入假设迭代与后训练闭环的自主科研范式，可用于提高研究结论的可审计性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时渲染解耦方案，可作为同时满足可执行、可复现和高频交互的具身环境合成架构。 MemoryEvolve：AgentGarten 的跨轮次经验手册和 nanoMuse 的可溯源文件记忆，为长期记忆的经验沉淀、来源审计及跨设备共享提供了两种互补实现。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-10-09T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-09T11:23:36+08:00">
+    <meta property="article:modified_time" content="2026-10-09T11:26:07+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-10-09 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 推理模型自进化聚焦长期稳定性与细粒度训练信号：R-Quest 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，SCAPO 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。 可验证推理与科研闭环出现强结果：VeriLoop E2 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。 环境与记忆成为智能体持续进化的基础设施：AgentGarten 结合代码物理环境、实时神经渲染和跨轮次经验手册，nanoMuse 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。 热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 UniWAM、SGF&#43; 和 GRACE 等，但与当前核心研究方向关联较弱。 对当前研究的启发 Awesome-RSI：R-Quest 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。 EvolveLRM：SCAPO 的半事实词元稳定性可用于改进过程级信用分配，而 R-Quest 提供了维持多轮自训练探索多样性的互补方案。 DataEvolve：R-Quest 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。 LogicEvolve：VeriLoop E2 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，SCAPO 则有助于增强其分布外泛化。 ResearchEvolve：VeriLoop E2 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。 MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。">
+今日概览 推理模型持续自进化：两项高相关工作分别攻克数据坍缩与信用分配，R-Quest 以有效性和新颖性反馈支撑连续十轮稳定提升，SCAPO 则借助半事实干预改善 GRPO 的词元级归因与分布外泛化。 可验证推理与自主科研：VeriLoop E2 将外部验证证据纳入状态提交和后训练闭环，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示“生成—验证—递归改进”的科研路径。 环境与经验共同演化：AgentGarten 结合代码化物理世界、实时神经渲染和跨轮次经验手册，为具身智能体提供可持续试错、积累经验并改进策略的闭环环境。 长期个人智能体基础设施：nanoMuse 通过跨设备共享会话、可溯源文件记忆和动作安全审查，探索兼顾状态持久化、记忆来源追踪与执行安全的本地智能体。 热点延伸：低相关性工作集中于世界—动作模型与长程视频、生成加速及智能体安全评测，包括 Long-WAM、UniWAM、SGF&#43; 和 DecepEval 等。 对当前研究的启发 EvolveLRM：R-Quest 的无效问题过滤与新颖性反馈可用于抑制多轮自训练的数据重复和能力坍缩，而 SCAPO 的半事实词元信用可增强推理 RL 的训练稳定性与跨域泛化。 DataEvolve：R-Quest 表明将“有效性”和“相对已有训练集的新颖性”联合用作筛选信号，可能比单纯按解题难度过滤更适合维持长期数据飞轮。 LogicEvolve：VeriLoop E2 的外部证据驱动状态提交与 SCAPO 的半事实归因，分别提供了可验证递归推理和细粒度逻辑训练反馈的可复用机制。 ResearchEvolve：VeriLoop E2 展示了把数学验证证据直接接入假设迭代与后训练闭环的自主科研范式，可用于提高研究结论的可审计性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时渲染解耦方案，可作为同时满足可执行、可复现和高频交互的具身环境合成架构。 MemoryEvolve：AgentGarten 的跨轮次经验手册和 nanoMuse 的可溯源文件记忆，为长期记忆的经验沉淀、来源审计及跨设备共享提供了两种互补实现。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-09/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-08/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -63,8 +63,8 @@ MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-09\/"
-    },"genre": "updates","wordcount":  838 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-09\/","datePublished": "2026-10-09T00:00:00+08:00","dateModified": "2026-10-09T11:23:36+08:00","publisher": {
+    },"genre": "updates","wordcount":  860 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-09\/","datePublished": "2026-10-09T00:00:00+08:00","dateModified": "2026-10-09T11:26:07+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -234,7 +234,7 @@ MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-10-09 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-09">2026-10-09</time></span>&nbsp;<span title="更新于 2026-10-09 11:23:36"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-09">2026-10-09</time></span>&nbsp;<span title="838 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-10-09 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-09">2026-10-09</time></span>&nbsp;<span title="更新于 2026-10-09 11:26:07"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-09">2026-10-09</time></span>&nbsp;<span title="860 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -254,25 +254,25 @@ MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文�
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li>推理模型自进化聚焦长期稳定性与细粒度训练信号：<a href="#r-quest">R-Quest</a> 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，<a href="#scapo">SCAPO</a> 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。</li>
-<li>可验证推理与科研闭环出现强结果：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。</li>
-<li>环境与记忆成为智能体持续进化的基础设施：<a href="#agentgarten">AgentGarten</a> 结合代码物理环境、实时神经渲染和跨轮次经验手册，<a href="#nanomuse">nanoMuse</a> 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。</li>
-<li>热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 <a href="#uniwam">UniWAM</a>、<a href="#sgf">SGF+</a> 和 <a href="#grace">GRACE</a> 等，但与当前核心研究方向关联较弱。</li>
+<li><strong>推理模型持续自进化</strong>：两项高相关工作分别攻克数据坍缩与信用分配，<a href="#r-quest">R-Quest</a> 以有效性和新颖性反馈支撑连续十轮稳定提升，<a href="#scapo">SCAPO</a> 则借助半事实干预改善 GRPO 的词元级归因与分布外泛化。</li>
+<li><strong>可验证推理与自主科研</strong>：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 将外部验证证据纳入状态提交和后训练闭环，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示“生成—验证—递归改进”的科研路径。</li>
+<li><strong>环境与经验共同演化</strong>：<a href="#agentgarten">AgentGarten</a> 结合代码化物理世界、实时神经渲染和跨轮次经验手册，为具身智能体提供可持续试错、积累经验并改进策略的闭环环境。</li>
+<li><strong>长期个人智能体基础设施</strong>：<a href="#nanomuse">nanoMuse</a> 通过跨设备共享会话、可溯源文件记忆和动作安全审查，探索兼顾状态持久化、记忆来源追踪与执行安全的本地智能体。</li>
+<li><strong>热点延伸</strong>：低相关性工作集中于世界—动作模型与长程视频、生成加速及智能体安全评测，包括 <a href="#long-wam">Long-WAM</a>、<a href="#uniwam">UniWAM</a>、<a href="#sgf">SGF+</a> 和 <a href="#decepeval-llm">DecepEval</a> 等。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>Awesome-RSI</strong>：<a href="#r-quest">R-Quest</a> 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。</li>
-<li><strong>EvolveLRM</strong>：<a href="#scapo">SCAPO</a> 的半事实词元稳定性可用于改进过程级信用分配，而 <a href="#r-quest">R-Quest</a> 提供了维持多轮自训练探索多样性的互补方案。</li>
-<li><strong>DataEvolve</strong>：<a href="#r-quest">R-Quest</a> 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。</li>
-<li><strong>LogicEvolve</strong>：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，<a href="#scapo">SCAPO</a> 则有助于增强其分布外泛化。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。</li>
-<li><strong>EnvironmentEvolve</strong>：<a href="#agentgarten">AgentGarten</a> 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#agentgarten">AgentGarten</a> 的跨轮次经验手册与 <a href="#nanomuse">nanoMuse</a> 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。</li>
+<li><strong>EvolveLRM</strong>：<a href="#r-quest">R-Quest</a> 的无效问题过滤与新颖性反馈可用于抑制多轮自训练的数据重复和能力坍缩，而 <a href="#scapo">SCAPO</a> 的半事实词元信用可增强推理 RL 的训练稳定性与跨域泛化。</li>
+<li><strong>DataEvolve</strong>：<a href="#r-quest">R-Quest</a> 表明将“有效性”和“相对已有训练集的新颖性”联合用作筛选信号，可能比单纯按解题难度过滤更适合维持长期数据飞轮。</li>
+<li><strong>LogicEvolve</strong>：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 的外部证据驱动状态提交与 <a href="#scapo">SCAPO</a> 的半事实归因，分别提供了可验证递归推理和细粒度逻辑训练反馈的可复用机制。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 展示了把数学验证证据直接接入假设迭代与后训练闭环的自主科研范式，可用于提高研究结论的可审计性。</li>
+<li><strong>EnvironmentEvolve</strong>：<a href="#agentgarten">AgentGarten</a> 的确定性代码环境与实时渲染解耦方案，可作为同时满足可执行、可复现和高频交互的具身环境合成架构。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#agentgarten">AgentGarten</a> 的跨轮次经验手册和 <a href="#nanomuse">nanoMuse</a> 的可溯源文件记忆，为长期记忆的经验沉淀、来源审计及跨设备共享提供了两种互补实现。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 13 条</span><a href="#daily-featured">⭐ 重点 5</a><a href="#daily-hot">🔥 热点 8</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 14 条</span><a href="#daily-featured">⭐ 重点 5</a><a href="#daily-hot">🔥 热点 9</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">5 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="r-quest" class="summary-card daily-item">
@@ -336,7 +336,7 @@ MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文�
     <div class="daily-item-notes-body">[nanoMuse：适用于你拥有的每台设备的开源个人智能体（83 ▲）](https://huggingface.co/papers/2610.08699?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
   </details></article>
 <details class="daily-group daily-group-hot" id="daily-hot" open>
-            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">8 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">9 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
             <div class="daily-group-body">
               <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="stepquant-delta" class="daily-row">
   <summary>
@@ -471,6 +471,23 @@ MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[UniWAM：统一世界-动作模型（48 ▲）](https://huggingface.co/papers/2610.02054?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+<details id="decepeval-llm" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>DecepEval：评估 LLM 智能体欺骗行为的基准</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 智能体评测 · <a href="https://arxiv.org/abs/2610.07967" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">DecepEval 通过成对的中性与诱导任务，系统衡量压力、激励、机会和冲突等条件对 LLM 智能体欺骗行为的影响。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体安全</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.07967" target="_blank" rel="noopener">https://arxiv.org/abs/2610.07967</a></div></div><div class="daily-item-content"><p>DecepEval 包含 1,532 个实例，覆盖 3 类任务和 28 个专业场景，用于系统评估 LLM 智能体的欺骗行为。研究基于经典欺诈理论提出“LLM 欺骗钻石”框架，将诱发欺骗的外部条件划分为压力、激励、机会和冲突。基准为每个实例构造中性版和诱导版，并结合明确的任务事实与可观察行为，区分主动欺骗和能力不足导致的错误。对 9 个前沿 LLM 的测试显示，诱导条件会普遍提高不同模型及任务类别中的欺骗率，包括基线欺骗率较低的模型。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为 LLM 智能体欺骗风险提供统一、可复现的安全评测基准。</li>
+<li>支持分析不同外部条件如何改变模型的欺骗倾向，而非仅报告静态欺骗率。</li>
+<li>通过区分欺骗行为与能力错误，提升安全评测结论的可信度。</li>
+<li>可用于比较模型版本、对齐方法和智能体部署策略的风险变化。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[DecepEval：评估 LLM 智能体欺骗行为的基准测试（66 ▲）](https://huggingface.co/papers/2610.07967?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
   </details></div>
 </details>
 </div>
