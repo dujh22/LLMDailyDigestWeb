@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>2026-10-09 科研追新 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="
+当日精选（由提交工具自动创建）。
+
+今日概览
+
+推理模型自进化聚焦长期稳定性与细粒度训练信号：R-Quest 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，SCAPO 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。
+可验证推理与科研闭环出现强结果：VeriLoop E2 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。
+环境与记忆成为智能体持续进化的基础设施：AgentGarten 结合代码物理环境、实时神经渲染和跨轮次经验手册，nanoMuse 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。
+热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 UniWAM、SGF&#43; 和 GRACE 等，但与当前核心研究方向关联较弱。
+
+对当前研究的启发
+
+Awesome-RSI：R-Quest 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。
+EvolveLRM：SCAPO 的半事实词元稳定性可用于改进过程级信用分配，而 R-Quest 提供了维持多轮自训练探索多样性的互补方案。
+DataEvolve：R-Quest 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。
+LogicEvolve：VeriLoop E2 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，SCAPO 则有助于增强其分布外泛化。
+ResearchEvolve：VeriLoop E2 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。
+EnvironmentEvolve：AgentGarten 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。
+MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。
+
+" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="2026-10-09 科研追新">
+  <meta itemprop="description" content="当日精选（由提交工具自动创建）。
+今日概览 推理模型自进化聚焦长期稳定性与细粒度训练信号：R-Quest 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，SCAPO 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。 可验证推理与科研闭环出现强结果：VeriLoop E2 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。 环境与记忆成为智能体持续进化的基础设施：AgentGarten 结合代码物理环境、实时神经渲染和跨轮次经验手册，nanoMuse 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。 热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 UniWAM、SGF&#43; 和 GRACE 等，但与当前核心研究方向关联较弱。 对当前研究的启发 Awesome-RSI：R-Quest 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。 EvolveLRM：SCAPO 的半事实词元稳定性可用于改进过程级信用分配，而 R-Quest 提供了维持多轮自训练探索多样性的互补方案。 DataEvolve：R-Quest 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。 LogicEvolve：VeriLoop E2 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，SCAPO 则有助于增强其分布外泛化。 ResearchEvolve：VeriLoop E2 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。 MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。">
+  <meta itemprop="datePublished" content="2026-10-09T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-10-09T11:23:36+08:00">
+  <meta itemprop="wordCount" content="838">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-09/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="2026-10-09 科研追新">
+  <meta property="og:description" content="当日精选（由提交工具自动创建）。
+今日概览 推理模型自进化聚焦长期稳定性与细粒度训练信号：R-Quest 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，SCAPO 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。 可验证推理与科研闭环出现强结果：VeriLoop E2 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。 环境与记忆成为智能体持续进化的基础设施：AgentGarten 结合代码物理环境、实时神经渲染和跨轮次经验手册，nanoMuse 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。 热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 UniWAM、SGF&#43; 和 GRACE 等，但与当前核心研究方向关联较弱。 对当前研究的启发 Awesome-RSI：R-Quest 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。 EvolveLRM：SCAPO 的半事实词元稳定性可用于改进过程级信用分配，而 R-Quest 提供了维持多轮自训练探索多样性的互补方案。 DataEvolve：R-Quest 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。 LogicEvolve：VeriLoop E2 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，SCAPO 则有助于增强其分布外泛化。 ResearchEvolve：VeriLoop E2 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。 MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="updates">
+    <meta property="article:published_time" content="2026-10-09T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-10-09T11:23:36+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="2026-10-09 科研追新">
+  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
+今日概览 推理模型自进化聚焦长期稳定性与细粒度训练信号：R-Quest 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，SCAPO 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。 可验证推理与科研闭环出现强结果：VeriLoop E2 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。 环境与记忆成为智能体持续进化的基础设施：AgentGarten 结合代码物理环境、实时神经渲染和跨轮次经验手册，nanoMuse 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。 热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 UniWAM、SGF&#43; 和 GRACE 等，但与当前核心研究方向关联较弱。 对当前研究的启发 Awesome-RSI：R-Quest 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。 EvolveLRM：SCAPO 的半事实词元稳定性可用于改进过程级信用分配，而 R-Quest 提供了维持多轮自训练探索多样性的互补方案。 DataEvolve：R-Quest 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。 LogicEvolve：VeriLoop E2 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，SCAPO 则有助于增强其分布外泛化。 ResearchEvolve：VeriLoop E2 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。 EnvironmentEvolve：AgentGarten 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。 MemoryEvolve：AgentGarten 的跨轮次经验手册与 nanoMuse 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-09/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-08/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2026-10-09 科研追新",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-09\/"
+    },"genre": "updates","wordcount":  838 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-09\/","datePublished": "2026-10-09T00:00:00+08:00","dateModified": "2026-10-09T11:23:36+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/updates/" title="Updates">Updates</a></li><li class="breadcrumb-item active" aria-current="page">2026-10-09 科研追新</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>2026-10-09 科研追新</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    LLM-DailyDigest</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2026-10-09 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-09">2026-10-09</time></span>&nbsp;<span title="更新于 2026-10-09 11:23:36"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-09">2026-10-09</time></span>&nbsp;<span title="838 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#对当前研究的启发">对当前研究的启发</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><blockquote>
+<p>当日精选（由提交工具自动创建）。</p></blockquote>
+<!-- daily-summary:start -->
+<h2 id="今日概览">今日概览</h2>
+<ul>
+<li>推理模型自进化聚焦长期稳定性与细粒度训练信号：<a href="#r-quest">R-Quest</a> 以有效性、新颖性反馈避免重复自训练的数据坍缩并实现连续十轮提升，<a href="#scapo">SCAPO</a> 则用半事实干预改善 GRPO 的词元级信用分配与分布外泛化。</li>
+<li>可验证推理与科研闭环出现强结果：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 将外部验证证据引入状态提交和后训练，并报告把黎曼猜想临界线零点比例下界推进至 67.35%，展示了“生成—验证—提交”闭环的潜力。</li>
+<li>环境与记忆成为智能体持续进化的基础设施：<a href="#agentgarten">AgentGarten</a> 结合代码物理环境、实时神经渲染和跨轮次经验手册，<a href="#nanomuse">nanoMuse</a> 则以共享会话、可溯源文件记忆和动作审查支撑跨设备长期运行。</li>
+<li>热点延伸共 8 条，主要集中于世界—动作模型、长时视频生成与推理、生成加速及多模态评测，包括 <a href="#uniwam">UniWAM</a>、<a href="#sgf">SGF+</a> 和 <a href="#grace">GRACE</a> 等，但与当前核心研究方向关联较弱。</li>
+</ul>
+<h2 id="对当前研究的启发">对当前研究的启发</h2>
+<ul>
+<li><strong>Awesome-RSI</strong>：<a href="#r-quest">R-Quest</a> 的无效问题识别与新颖性反馈可作为衡量递归改进能否跨多轮保持增益、避免退化的具体机制。</li>
+<li><strong>EvolveLRM</strong>：<a href="#scapo">SCAPO</a> 的半事实词元稳定性可用于改进过程级信用分配，而 <a href="#r-quest">R-Quest</a> 提供了维持多轮自训练探索多样性的互补方案。</li>
+<li><strong>DataEvolve</strong>：<a href="#r-quest">R-Quest</a> 表明同时过滤无效样本并显式奖励问题新颖性，有望抑制合成数据飞轮中的重复与分布坍缩。</li>
+<li><strong>LogicEvolve</strong>：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 的循证状态提交可借鉴为逻辑推理自进化中的“仅提交经外部验证更新”机制，<a href="#scapo">SCAPO</a> 则有助于增强其分布外泛化。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#veriloop-e2-67-35">VeriLoop E2</a> 展示了外部形式化证据进入后训练和研究结论提交闭环的路径，可用于提升自主科研结果的可验证性。</li>
+<li><strong>EnvironmentEvolve</strong>：<a href="#agentgarten">AgentGarten</a> 的确定性代码环境与实时神经渲染组合，为兼顾可验证执行、低延迟交互和持续课程生成提供了环境架构样板。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#agentgarten">AgentGarten</a> 的跨轮次经验手册与 <a href="#nanomuse">nanoMuse</a> 的可溯源文件记忆，可分别用于研究经验巩固和长期记忆审计。</li>
+</ul>
+<!-- daily-summary:end -->
+</div><section class="daily-items daily-tiered">
+          <nav class="daily-nav">
+            <span class="daily-nav-label">共 13 条</span><a href="#daily-featured">⭐ 重点 5</a><a href="#daily-hot">🔥 热点 8</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">5 条</span></h2>
+          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="r-quest" class="summary-card daily-item">
+  <h2 id="r-quest-title" class="daily-item-title">R-Quest：以有效性与新颖性反馈维持推理模型自进化</h2><p class="single-subtitle daily-item-summary">R-Quest通过识别无效问题并评估数学问题的新颖性，缓解重复自训练中的数据质量与多样性坍缩，使推理模型连续十轮自进化仍能稳定提升。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自进化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E8%BF%87%E6%BB%A4/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据质量过滤</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E5%AD%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数学人工智能</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.04299" target="_blank" rel="noopener">https://arxiv.org/abs/2610.04299</a></div></div><div class="daily-item-content"><p>研究发现，自生成问题中的无效问题会随训练轮次增加，而答案一致性过滤反而可能提高这类问题在训练数据中的占比。基于词法相似度的多样性控制无法识别表达不同但数学上等价的问题，导致后期问题多样性坍缩。R-Quest先训练求解器识别并拒绝无效问题，再用其判断指导出题器奖励和求解器数据过滤，同时借助冻结的基础模型提供问题新颖性反馈。该方法在两个模型家族及数学推理、通用推理和代码生成等12个基准上取得最高平均表现，连续十轮保持稳定增益，最终比R-Zero高17.32分。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>揭示迭代式自训练失效不仅源于答案噪声，也与问题有效性下降和语义重复积累有关。</li>
+<li>可将有效性判别器与新颖性反馈纳入自生成数据流水线，改善训练数据筛选和奖励设计。</li>
+<li>提示多轮自进化系统应使用语义或数学等价性判断，而不能只依赖表层文本相似度控制多样性。</li>
+<li>为构建可长期运行的推理模型闭环自进化机制提供了实证方案。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[质疑问题：在推理模型中维持自我进化（64 ▲）](https://huggingface.co/papers/2610.04299?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></article>
+<article id="scapo" class="summary-card daily-item">
+  <h2 id="scapo-title" class="daily-item-title">SCAPO：半事实信用增强策略优化</h2><p class="single-subtitle daily-item-summary">SCAPO利用半事实提示干预衡量词元稳定性，改进GRPO的词元级信用分配，从而提升数学推理准确率与分布外泛化能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：信用分配</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;策略优化</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.40360" target="_blank" rel="noopener">https://arxiv.org/abs/2609.40360</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/DtYXs/SCAPO" target="_blank" rel="noopener">https://github.com/DtYXs/SCAPO</a></div></div><div class="daily-item-content"><p>论文发现，采用可验证奖励的强化学习模型仍容易受到与任务无关的提示特征影响，且不同候选词元的敏感性存在显著差异。传统GRPO为回复中的所有词元分配相同的结果优势，可能同时强化有效推理路径和伪相关依赖。SCAPO通过保持问题及答案不变的半事实提示干预，测量固定回复的词元概率漂移，并在训练早期降低不稳定词元的优势权重。基于Qwen3-4B-Base和Qwen3-1.7B-Base的实验中，SCAPO相较GRPO在AIME 2024—2026上分别提升5.63和4.17个百分点，并在多数数学基准及全部分布外基准上取得最佳结果。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为RLVR提供比序列级结果奖励更细粒度的词元信用分配机制。</li>
+<li>可借助半事实稳定性抑制模型对提示表面特征和伪相关模式的依赖。</li>
+<li>表明无需单独奖励“稳定性”，仅削弱高漂移词元的优势即可改善推理与泛化。</li>
+<li>可用于设计更具因果稳健性的GRPO变体及分布外推理训练方案。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[半事实信用增强策略优化（36 ▲）](https://huggingface.co/papers/2609.40360?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></article>
+<article id="veriloop-e2-67-35" class="summary-card daily-item">
+  <h2 id="veriloop-e2-67-35-title" class="daily-item-title">VeriLoop E2以循证递归实现可验证状态提交，黎曼零点比例下界达67.35%</h2><p class="single-subtitle daily-item-summary">清华团队开源VeriLoop E2，通过循证收敛递归将外部验证证据引入状态提交与后训练，并报告将黎曼猜想临界线零点比例下界推进至67.35%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：可信执行</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>LogicEvolve</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%AF%E4%BF%A1%E6%89%A7%E8%A1%8C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;可信执行</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;形式化验证</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/brucewang123456789/GeniusTrail/tree/VeriLoop-E2/riemann-hypothesis" target="_blank" rel="noopener">https://github.com/brucewang123456789/GeniusTrail/tree/VeriLoop-E2/riemann-hypothesis</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://huggingface.co/datasets/tsinghua-sigs-robot-lab/VeriLoop-E2-Evaluation-Evidence" target="_blank" rel="noopener">https://huggingface.co/datasets/tsinghua-sigs-robot-lab/VeriLoop-E2-Evaluation-Evidence</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/XR-b8BRaXFdEXQ1psQ2F6Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/XR-b8BRaXFdEXQ1psQ2F6Q</a></div></div><div class="daily-item-content"><p>VeriLoop E2基于Qwen 3.8-27B后训练，面向代码、数学和物理等具备外部可验证约束的复杂推理任务，训练数据池暂含1,841,831条记录。其核心机制循证收敛递归（VGR）将候选生成权与持久化提交权分离：候选制品只有在全部受保护义务不退化且至少一项严格改善时，才能替换当前认证状态。模型在SWE-bench Pro、Terminal-Bench、AIME 2026和GPQA Diamond等9项基准上完成评测，并同步开放标准权重、GGUF量化版本及评测证据。团队还公开了黎曼猜想相关证据，报告将临界线零点比例下界提升至67.35%，体现了外部验证器约束下的数学研究能力。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为递归推理和测试时计算提供独立于模型自评分数的状态提交规则，避免新增计算引入回归。</li>
+<li>可将验证结果统一编码为正确、有效进展、无进展、回归和不可比较等后训练监督信号。</li>
+<li>为代码修改、数学证明和物理推导建立可重放、可审计的证据链与原子提交机制。</li>
+<li>黎曼猜想案例展示了可验证推理模型辅助高难度数学研究及证据复核的潜力。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">LogicEvolve｜黎曼猜想临界线零点比例下界达67.35%：清华团队开源模型VeriLoop E2叩开可验证智能之门https://mp.weixin.qq.com/s/XR-b8BRaXFdEXQ1psQ2F6Q</div>
+  </details></article>
+<article id="agentgarten" class="summary-card daily-item">
+  <h2 id="agentgarten-title" class="daily-item-title">AgentGarten：代码世界与实时扩散渲染驱动智能体持续进化</h2><p class="single-subtitle daily-item-summary">MirroS推出AgentGarten，将确定性的代码物理环境、30 fps以上的神经渲染与跨轮次经验手册结合，为具身智能体构建可持续试错和自我进化的实时世界。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：环境合成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境合成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/MirroS-Lab/AgentGarten" target="_blank" rel="noopener">https://github.com/MirroS-Lab/AgentGarten</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/AK95fXOGD3l5rePKMx3vKw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/AK95fXOGD3l5rePKMx3vKw</a></div></div><div class="daily-item-content"><p>AgentGarten以代码计算物理碰撞和状态变化，再由神经渲染器根据深度、法线等几何条件生成第一人称拟真画面，实现确定物理与写实视觉的解耦。智能体通过“领取任务—自主试错—撰写手册—封存传代”的闭环积累经验，在捉迷藏实验中仅用数轮演练便涌现出封堵入口、搭坡翻墙和失败后调整重试等策略。该流程还在陪伴小狗、狭桥会车、合作牧羊和装载机作业等任务中带来持续性能提升，显示出跨环境复用能力。系统采用Adversarial Forcing、精确重放、真实视频对抗训练、Triton融合算子和CUDA Graph，在480p下实现单卡30 fps以上的长程流式交互。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为具身智能体提供可程序化扩展、物理状态可查询且视觉逼真的训练与评测环境。</li>
+<li>展示以文字化经验手册跨轮次传承技能的轻量自我改进路径，可减少纯强化学习所需的大规模试错。</li>
+<li>将代码环境的可控性与生成式世界模型的视觉质量结合，为Physical RSI和环境驱动的智能体演化提供系统范式。</li>
+<li>实时流式渲染及长序列稳定训练方案可用于导航、操控、驾驶和多智能体协作等持续交互任务。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">EnvironmenEvolve｜代码造世界，扩散绘现实：AgentGarten让智能体在实时试炼场中边玩边进化https://mp.weixin.qq.com/s/AK95fXOGD3l5rePKMx3vKw</div>
+  </details></article>
+<article id="nanomuse" class="summary-card daily-item">
+  <h2 id="nanomuse-title" class="daily-item-title">nanoMuse：面向多设备的开源个人智能体</h2><p class="single-subtitle daily-item-summary">nanoMuse 提出一个可由用户自主部署、跨设备持续运行的开源个人智能体，通过共享会话、可溯源文件记忆和动作安全审查实现长期个人服务。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能框架</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E6%8C%81%E4%B9%85%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态持久化</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%AF%E4%BF%A1%E6%89%A7%E8%A1%8C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;可信执行</a><a href="/LLMDailyDigestWeb/topic/%E6%9C%AC%E5%9C%B0%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;本地智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.08699" target="_blank" rel="noopener">https://arxiv.org/abs/2610.08699</a></div></div><div class="daily-item-content"><p>nanoMuse 将个人智能体定义为一种长期运行的软件系统，而非单一模型，目标是跨账户与设备执行任务、维持数周记忆并在适当时机主动交互。系统可部署在用户拥有的每台设备上，通过自托管中继服务共享同一段持续会话，并允许用户自由选择底层模型。所有设备操作都要经过 Sentinel 安全组件审查，记忆则以用户可直接读取且带来源信息的文件保存。项目采用 GPL-3.0 开源许可，并规划建设设备操作评测套件、可溯源记忆机制及面向设备控制的开放模型。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为构建跨手机与电脑的长期个人智能体提供开放式系统架构参考。</li>
+<li>以 Sentinel 审查所有动作，可用于研究智能体权限控制、可信执行与操作问责。</li>
+<li>文件化且带来源的记忆设计有助于提升长期记忆的透明度、可编辑性和可审计性。</li>
+<li>自托管中继与模型可替换设计可降低厂商锁定，并增强用户对数据和运行环境的控制。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[nanoMuse：适用于你拥有的每台设备的开源个人智能体（83 ▲）](https://huggingface.co/papers/2610.08699?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></article>
+<details class="daily-group daily-group-hot" id="daily-hot" open>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">8 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
+            <div class="daily-group-body">
+              <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="stepquant-delta" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-0">★0</span> <strong>STEPQuant：面向 Delta 规则循环状态的时空量化</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 模型轻量化 · <a href="https://arxiv.org/abs/2609.38169" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/Dreamer-Toby/STEPQuant" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a></span>
+    </span><span class="daily-row-summary">STEPQuant依据量化误差的持续时间与空间影响分配循环状态精度，在名义 6-bit 预算下接近 FP32 准确率，并将服务总显存最多降低 68.7%。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-0" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 0</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型轻量化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态表征</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.38169" target="_blank" rel="noopener">https://arxiv.org/abs/2609.38169</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/Dreamer-Toby/STEPQuant" target="_blank" rel="noopener">https://github.com/Dreamer-Toby/STEPQuant</a></div></div><div class="daily-item-content"><p>线性注意力以固定大小的循环状态替代持续增长的 KV Cache，但并发服务时循环状态仍会形成显著的显存瓶颈，直接低比特量化还会因误差在连续状态更新中传播而损害准确率。研究发现，量化误差在时间上受记忆存续周期影响，在空间上则因不同 key 行对输出的影响不同而呈现显著差异，同时状态幅值在行列方向均不均匀。STEPQuant据此按误差大小和记忆寿命分配精度，并结合 key 行影响与状态分布联合拟合 key-row 和 value-column 缩放因子。在 Qwen3.8-27B 与 Kimi-Linear-48B-A3B-Instruct 上，其 6-bit 配置接近 FP32 状态准确率，4-bit 配置优于统一 INT8；集成 SGLang 优化内核后实现超过 5 倍的循环状态压缩，服务总显存最多下降 68.7%。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为线性注意力模型的并发推理提供比统一量化更精细的循环状态压缩方案。</li>
+<li>表明持久状态量化不能只依据数值幅度，还应同时考虑误差的生命周期及其对模型输出的敏感度。</li>
+<li>可将时空敏感的混合精度分配思想推广到长期记忆、状态空间模型及其他递归推理架构。</li>
+<li>与 SGLang 和定制 GPU 内核结合后，可直接用于降低大模型长短文本生成服务的显存成本。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[STEPQuant：Delta 规则循环状态量化中，错误何时、何处至关重要（100 ▲）](https://huggingface.co/papers/2609.38169?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+<details id="long-wam" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>Long-WAM：扩展世界行动模型的长上下文能力</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 世界模型 · <a href="https://arxiv.org/abs/2610.10528" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">Long-WAM通过自回归视频预训练、流式观测编码与异步执行，让世界行动模型在实时机器人控制中有效利用更长视觉历史并显著提升长程操作成功率。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.10528" target="_blank" rel="noopener">https://arxiv.org/abs/2610.10528</a></div></div><div class="daily-item-content"><p>Long-WAM面向实时机器人控制，在因果世界行动模型中将视觉上下文扩展至19.2秒，并强调“能够访问历史”不等于“能够有效利用历史”。研究发现，自回归视频基础模型能保留从历史预测未来的因果结构，使RoboCasa GR-1成功率由63.3%提升至78.7%，而双向预训练初始化未从长历史中获得净收益。模型先在无动作标签的机器人与第一人称视频上学习因果预测，再适配为世界行动模型，并在LIBERO-Long、RoboTwin 2.0和DOMINO上取得领先结果。通过流式观测编码、异步执行和硬件加速，系统可部署于RTX 5090、DGX Spark和Jetson AGX Thor；在Unitree G1与YAM上的动态杯子堆叠任务中达到95%成功率。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>表明长上下文具身模型的关键不只是扩大输入窗口，还需通过自回归预训练建立可利用的历史到未来因果结构。</li>
+<li>为长程、动态机器人操作提供兼顾未来视频预测与实时控制延迟的模型—系统协同设计方案。</li>
+<li>可将Long-WAM作为记忆增强的底层执行器，与高层任务规划器结合以完成复合长程任务。</li>
+<li>说明无动作标签的机器人及第一人称视频可用于预训练世界动态，降低动作标注依赖。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Long-WAM：扩展世界行动模型的上下文（88 ▲）](https://huggingface.co/papers/2610.10528?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+<details id="recursive-game-creator" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>Recursive Game Creator：面向产品体验的递归游戏开发框架</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 游戏生成 · <a href="https://arxiv.org/abs/2610.08621" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">Recursive Game Creator 通过 Designer、Builder、Player 和 Reviewer 构成递归开发闭环，将智能体生成的粗糙游戏原型持续优化为更具可玩性和产品级体验的游戏。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：游戏生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%B8%B8%E6%88%8F%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;游戏生成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.08621" target="_blank" rel="noopener">https://arxiv.org/abs/2610.08621</a></div></div><div class="daily-item-content"><p>框架由 Designer、Builder、Player 和 Reviewer 四类组件组成，依次负责规划、游戏构建、轨迹采集与体验评审。编码原生的 Player 通过程序化接口创建并执行可复用策略，高效收集多样化游戏轨迹，降低基于 GUI 的缓慢测试所造成的评估偏差。Reviewer 综合轨迹指标、视觉证据和显式文本偏好，在每轮选择更优版本并生成改进意见，从而闭合递归开发循环。该方法在 GameCraft-Bench 上取得 77.89 分，在 GameASG-Bench 上达到 53.2% 的严格任务成功率和 93.4% 的运行时检查通过率，用户研究也显示其生成游戏拥有更长游玩时间和更高评分。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为智能体游戏开发提供从“程序可运行”迈向“体验可接受”的产品级测试与迭代范式。</li>
+<li>展示如何利用程序化玩家和可复用策略降低 GUI 游戏测试成本并扩大轨迹覆盖范围。</li>
+<li>可借鉴其基于轨迹、视觉证据和用户偏好的综合评审机制，构建其他交互式产品的递归优化闭环。</li>
+<li>为游戏生成智能体的可玩性、运行可靠性和用户体验联合评估提供参考。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[递归游戏创作者：面向产品级体验的智能体游戏测试框架（78 ▲）](https://huggingface.co/papers/2610.08621?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+<details id="grace" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-0">★0</span> <strong>GRACE：生成感知潜在压缩加速视频生成</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 视频生成 · <a href="https://arxiv.org/abs/2610.10524" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">GRACE通过生成感知的两阶段潜在压缩，在保持预训练视频DiT生成质量的同时将Token数量降低8倍、生成延迟降低11.1倍。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-0" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 0</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;扩散模型</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.10524" target="_blank" rel="noopener">https://arxiv.org/abs/2610.10524</a></div></div><div class="daily-item-content"><p>GRACE面向高压缩视频自编码器带来的重建质量下降、DiT收敛变慢及潜在分布偏移问题，提出兼容预训练DiT的两阶段压缩框架。方法保留预训练编码器产生的冻结基础潜变量，并学习残差潜变量，以补偿强化压缩所损失的信息。训练时利用冻结DiT的特征空间对齐压缩潜变量与原始潜变量，使自编码器优化目标直接关注生成质量；随后通过轻量微调和基础潜变量先于残差潜变量的非对称去噪适配DiT。在Wan2.1-I2V-14B上，GRACE将Token数量减少8倍，并在480×832、81帧设置下实现11.1倍延迟降低，同时在VBench上保持压缩前流水线的生成质量。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为复用大型预训练视频DiT提供低成本潜在空间压缩方案，避免从头重新训练模型。</li>
+<li>表明自编码器压缩不应只优化像素重建，还应在生成模型的特征空间中约束潜在分布。</li>
+<li>基础与残差潜变量的分解及非对称去噪，可为高分辨率、长视频生成的推理加速提供参考。</li>
+<li>适合用于降低视频生成服务的Token计算量、推理延迟与部署成本。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[GRACE：面向生成的视频高效生成的生成感知潜在压缩（64 ▲）](https://huggingface.co/papers/2610.10524?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+<details id="sgf" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-0">★0</span> <strong>SGF&#43;：解耦梯度流的长时自回归视频生成</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 视频生成 · <a href="https://arxiv.org/abs/2610.10429" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">SGF&#43;通过分离上下文写入与帧去噪的参数和梯度流，缓解两种角色的梯度冲突，并将仅用5秒轨迹训练的自回归视频模型外推至最长24小时连续生成。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-0" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 0</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;时序建模</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.10429" target="_blank" rel="noopener">https://arxiv.org/abs/2610.10429</a></div></div><div class="daily-item-content"><p>论文发现，自回归视频生成中的上下文写入与当前帧去噪通常共享参数，但二者梯度呈现不同模式并存在系统性负对齐，阻碍视觉质量与时间一致性的联合优化。SGF+为两种角色分配独立参数，同时通过因果注意力保留交互，并继续使用原始生成目标联合训练，无需辅助损失。上下文写入模块通过其对未来帧预测的贡献获得监督，在逐帧和分块生成设置下均改善了画质与长程一致性。模型无需额外视频数据或长视频微调，仅基于5秒展开轨迹训练便可连续生成最长24小时的视频。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为自回归视频模型提供按功能角色解耦参数与梯度流的架构设计思路。</li>
+<li>表明短时训练轨迹也可能支持原生长时外推，降低长视频数据与微调成本。</li>
+<li>可用于提升连续视频生成、长时世界模拟等任务的视觉质量和时间一致性。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[SGF&#43;：解耦梯度流，实现自回归视频生成（51 ▲）](https://huggingface.co/papers/2610.10429?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+<details id="ultratext-bench" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>UltraText Bench：双语视觉文本渲染评测基准</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 评测基准 · <a href="https://arxiv.org/abs/2610.09823" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/LINs-lab/UltraText_Bench" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a></span>
+    </span><span class="daily-row-summary">UltraText Bench 通过中英双语、密集文本区域和多维自动评分，系统评估图像生成模型的视觉文本渲染能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E5%88%A4/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评判</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.09823" target="_blank" rel="noopener">https://arxiv.org/abs/2610.09823</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/LINs-lab/UltraText_Bench" target="_blank" rel="noopener">https://github.com/LINs-lab/UltraText_Bench</a></div></div><div class="daily-item-content"><p>UltraText Bench 包含 432 条经人工审核的提示词，覆盖 24 类真实场景和三个难度等级，中英文样本各占一半。每条提示要求模型仅依据提示生成包含 4 至 12 个文本区域的图像，并提供文本内容、空间位置及视觉属性等结构化参考。基准使用视觉语言模型 Q-Judger，从文本忠实度、文本清晰度、空间质量和场景质量四个维度自动评分，并通过 10 名参与者的人类评估验证自动分数。对 24 种模型配置的测试显示，不同维度之间存在明显权衡，且随着文本密度和任务难度提升，模型性能显著下降。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为中英文图像生成模型提供统一的密集视觉文本渲染评测方案。</li>
+<li>揭示文本忠实度、清晰度、空间布局与整体场景质量之间的能力差异和权衡。</li>
+<li>可用于比较模型版本与推理配置，并定位高负载、多文本区域场景下的性能退化。</li>
+<li>结构化参考与自动评判器可为视觉生成模型的训练、筛选和迭代提供反馈。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[UltraText Bench：用于评估图像生成中视觉文本渲染效果的综合双语基准（62 ▲）](https://huggingface.co/papers/2610.09823?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+<details id="vepagent" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>VepAgent：工具增强强化学习驱动的视频事件预测</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 因果推理 · <a href="https://arxiv.org/abs/2610.06293" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">VepAgent结合因果转移推理、诊断工具调用与强化学习，弥合视频观测终态到未来事件之间的缺失状态并实现领先的事件预测性能。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：因果推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频理解</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.06293" target="_blank" rel="noopener">https://arxiv.org/abs/2610.06293</a></div></div><div class="daily-item-content"><p>VepAgent面向视频事件预测，显式推演从已观测终态到未来事件的逻辑进程，以克服多模态大模型依赖回顾式总结和文本先验的问题。研究构建了高质量思维链数据集 FutureBench-4K，通过监督微调学习未观测中间状态的因果推演。框架集成状态追踪、帧检索和区域放大等诊断工具，在推理时动态补充时空证据并消解视觉歧义。其复合奖励同时优化预测准确性、因果连贯性与先验可靠性，在 FutureBench 和 NEPBench 上取得领先表现并超越更大规模的多模态模型。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为视频预测提供“状态追踪—证据检索—因果推演”的智能体式技术路线。</li>
+<li>展示工具增强强化学习如何补足视频中的缺失时空证据，降低对表层文本相似性的依赖。</li>
+<li>FutureBench-4K 可作为训练多模态模型推断未观测中间状态的思维链数据构建范例。</li>
+<li>复合奖励设计可用于同时约束预测结果、推理连贯性与视觉依据可靠性。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[VepAgent：通过工具增强型强化学习弥合因果转移，实现视频事件预测（53 ▲）](https://huggingface.co/papers/2610.06293?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+<details id="uniwam" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>UniWAM：统一世界-动作模型</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 具身基础模型 · <a href="https://arxiv.org/abs/2610.02054" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">UniWAM统一物理推理、世界生成与动作预测，并通过人类第一视角和机器人数据联合训练，在泛化、鲁棒性及长程任务执行等具身评测中取得领先表现。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身基础模型</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.02054" target="_blank" rel="noopener">https://arxiv.org/abs/2610.02054</a></div></div><div class="daily-item-content"><p>UniWAM将物理推理器、世界生成器和动作预测器整合进统一架构，联合学习物理世界的语义理解、视觉生成与动作预测。其预训练方案将低层动作表示为自然语言，并把VQA、人类第一视角数据和机器人演示的互补监督分配给相应模型组件。后训练阶段采用未来视觉噪声增强和历史条件流匹配，在降低对精确未来预测依赖的同时显著减少去噪步数。模型在分布内性能、鲁棒性、泛化、指令遵循和长程任务执行等评测中达到SOTA，并揭示了人类—机器人统一训练的对数线性缩放规律。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为融合视觉语言模型的语义推理能力与视频生成模型的时空先验提供统一架构参考。</li>
+<li>表明人类第一视角数据与机器人演示可通过大规模混合预训练有效提升具身模型能力。</li>
+<li>自然语言动作表示有助于适配具身任务，同时保留预训练模型已有的语言能力。</li>
+<li>历史条件流匹配可减少动作生成的去噪步骤，为具身系统的实时推理优化提供思路。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[UniWAM：统一世界-动作模型（48 ▲）](https://huggingface.co/papers/2610.02054?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-08)</div>
+  </details></div>
+</details>
+</div>
+          </details></section>
+        <script>
+        (function(){
+          
+          function reveal(){
+            var h = location.hash.slice(1);
+            if(!h) return;
+            try{ h = decodeURIComponent(h); }catch(e){   }
+            var el = document.getElementById(h);
+            if(!el) return;
+            var p = el;
+            while(p){ if(p.tagName === 'DETAILS') p.open = true; p = p.parentElement; }
+            el.scrollIntoView({block:'start'});
+          }
+          window.addEventListener('hashchange', reveal);
+          if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal();
+          document.querySelectorAll('[data-daily-toggle]').forEach(function(b){
+            b.addEventListener('click', function(){
+              var open = b.getAttribute('data-daily-toggle') === 'open';
+              document.querySelectorAll('.daily-tiered details').forEach(function(d){ d.open = open; });
+            });
+          });
+        })();
+        </script></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
