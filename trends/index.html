@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>趋势 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="基于日报条目的二次统计：关注热度、升温/降温榜、技术词云、机构与研究项目随时间的变化" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="趋势">
+  <meta itemprop="description" content="基于日报条目的二次统计：关注热度、升温/降温榜、技术词云、机构与研究项目随时间的变化">
+  <meta itemprop="datePublished" content="2026-10-09T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-10-09T13:45:00+08:00">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/trends/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="趋势">
+  <meta property="og:description" content="基于日报条目的二次统计：关注热度、升温/降温榜、技术词云、机构与研究项目随时间的变化">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="趋势">
+  <meta name="twitter:description" content="基于日报条目的二次统计：关注热度、升温/降温榜、技术词云、机构与研究项目随时间的变化">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/trends/" /><link rel="alternate" href="/LLMDailyDigestWeb/trends/index.xml" type="application/rss+xml" title="LLM-DailyDigest · 大模型研究日报">
+  <link rel="feed" href="/LLMDailyDigestWeb/trends/index.xml" type="application/rss+xml" title="LLM-DailyDigest · 大模型研究日报"><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item active">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/trends/"
+                
+                
+              ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item active"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/trends/"
+                  
+                  
+                ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><article class="page single trends-page">
+    <div class="header">
+      <h1 class="single-title animate__animated animate__flipInX"><i class="fa-solid fa-chart-line fa-fw me-2" aria-hidden="true"></i>趋势
+      </h1><p class="single-subtitle">基于日报条目的二次统计：关注热度、升温/降温榜、技术词云、机构与研究项目随时间的变化</p></div>
+    <div class="content" id="content"><div id="trendRoot" data-src="/LLMDailyDigestWeb/trends/trends.json" data-topic-links='{&#34;上下文压缩&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9/&#34;,&#34;上下文学习&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%AD%A6%E4%B9%A0/&#34;,&#34;不确定性估计&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%B0%E8%AE%A1/&#34;,&#34;世界模型&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/&#34;,&#34;中期训练&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%B8%AD%E6%9C%9F%E8%AE%AD%E7%BB%83/&#34;,&#34;事实核查&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BA%8B%E5%AE%9E%E6%A0%B8%E6%9F%A5/&#34;,&#34;交互成本&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BA%A4%E4%BA%92%E6%88%90%E6%9C%AC/&#34;,&#34;人在回路&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%9C%A8%E5%9B%9E%E8%B7%AF/&#34;,&#34;人工智能可解释性&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7/&#34;,&#34;人工智能安全治理&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86/&#34;,&#34;人工智能辅助编程&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/&#34;,&#34;任务生成&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E7%94%9F%E6%88%90/&#34;,&#34;任务规划&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/&#34;,&#34;信用分配&#34;:&#34;/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/&#34;,&#34;候选选择&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%80%99%E9%80%89%E9%80%89%E6%8B%A9/&#34;,&#34;偏好优化&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%81%8F%E5%A5%BD%E4%BC%98%E5%8C%96/&#34;,&#34;具身基础模型&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B/&#34;,&#34;具身智能&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/&#34;,&#34;动态基准测试&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%8A%A8%E6%80%81%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/&#34;,&#34;医疗人工智能&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%8C%BB%E7%96%97%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/&#34;,&#34;协同演化&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%8D%8F%E5%90%8C%E6%BC%94%E5%8C%96/&#34;,&#34;参数高效微调&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%8F%82%E6%95%B0%E9%AB%98%E6%95%88%E5%BE%AE%E8%B0%83/&#34;,&#34;反事实推理&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%8F%8D%E4%BA%8B%E5%AE%9E%E6%8E%A8%E7%90%86/&#34;,&#34;可信执行&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%8F%AF%E4%BF%A1%E6%89%A7%E8%A1%8C/&#34;,&#34;后训练&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/&#34;,&#34;因果归因&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%9B%A0%E6%9E%9C%E5%BD%92%E5%9B%A0/&#34;,&#34;图形用户界面智能体&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%99%BA%E8%83%BD%E4%BD%93/&#34;,&#34;在策略蒸馏&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%AD%96%E7%95%A5%E8%92%B8%E9%A6%8F/&#34;,&#34;基准污染&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%9F%BA%E5%87%86%E6%B1%A1%E6%9F%93/&#34;,&#34;多教师蒸馏&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%95%99%E5%B8%88%E8%92%B8%E9%A6%8F/&#34;,&#34;多智能体协作&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C/&#34;,&#34;多智能体系统&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/&#34;,&#34;多语言建模&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%BB%BA%E6%A8%A1/&#34;,&#34;奖励作弊&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E4%BD%9C%E5%BC%8A/&#34;,&#34;奖励建模&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E5%BB%BA%E6%A8%A1/&#34;,&#34;安全审计&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/&#34;,&#34;安全对齐&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AF%B9%E9%BD%90/&#34;,&#34;安全沙箱&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E6%B2%99%E7%AE%B1/&#34;,&#34;工具调用&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/&#34;,&#34;强化学习&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/&#34;,&#34;形式化验证&#34;:&#34;/LLMDailyDigestWeb/topic/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/&#34;,&#34;成本优化&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/&#34;,&#34;执行反馈&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/&#34;,&#34;执行恢复&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E6%81%A2%E5%A4%8D/&#34;,&#34;执行轨迹&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/&#34;,&#34;执行隔离&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%9A%94%E7%A6%BB/&#34;,&#34;执行验证&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/&#34;,&#34;扩散模型&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/&#34;,&#34;技能优化&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E4%BC%98%E5%8C%96/&#34;,&#34;技能演化&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/&#34;,&#34;技能生成&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E7%94%9F%E6%88%90/&#34;,&#34;持续学习&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/&#34;,&#34;提示优化&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E4%BC%98%E5%8C%96/&#34;,&#34;提示敏感性&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E6%95%8F%E6%84%9F%E6%80%A7/&#34;,&#34;提示注入攻击&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB/&#34;,&#34;插件架构&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%8F%92%E4%BB%B6%E6%9E%B6%E6%9E%84/&#34;,&#34;故障归因&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%95%85%E9%9A%9C%E5%BD%92%E5%9B%A0/&#34;,&#34;数据合成&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/&#34;,&#34;数据增强&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/&#34;,&#34;数据策展&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E7%AD%96%E5%B1%95/&#34;,&#34;时序建模&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E5%BB%BA%E6%A8%A1/&#34;,&#34;智能体&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/&#34;,&#34;智能体安全&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8/&#34;,&#34;智能体技能库&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%8A%80%E8%83%BD%E5%BA%93/&#34;,&#34;智能体编排&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/&#34;,&#34;智能体脚手架&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/&#34;,&#34;机制发现&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%9C%BA%E5%88%B6%E5%8F%91%E7%8E%B0/&#34;,&#34;构念效度&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%9E%84%E5%BF%B5%E6%95%88%E5%BA%A6/&#34;,&#34;样本调度&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%A0%B7%E6%9C%AC%E8%B0%83%E5%BA%A6/&#34;,&#34;检索增强生成&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90/&#34;,&#34;模型蒸馏&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/&#34;,&#34;模型训练&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/&#34;,&#34;模型评判偏差&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E5%88%A4%E5%81%8F%E5%B7%AE/&#34;,&#34;模型路由&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1/&#34;,&#34;测试时计算&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/&#34;,&#34;测量效度&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%B5%8B%E9%87%8F%E6%95%88%E5%BA%A6/&#34;,&#34;混合专家模型&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%B7%B7%E5%90%88%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%9E%8B/&#34;,&#34;漏洞挖掘&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/&#34;,&#34;潜空间推理&#34;:&#34;/LLMDailyDigestWeb/topic/%E6%BD%9C%E7%A9%BA%E9%97%B4%E6%8E%A8%E7%90%86/&#34;,&#34;灾难性遗忘&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%81%BE%E9%9A%BE%E6%80%A7%E9%81%97%E5%BF%98/&#34;,&#34;状态持久化&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E6%8C%81%E4%B9%85%E5%8C%96/&#34;,&#34;状态表征&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/&#34;,&#34;状态追踪&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/&#34;,&#34;环境合成&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/&#34;,&#34;知识图谱&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/&#34;,&#34;社会仿真&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%A4%BE%E4%BC%9A%E4%BB%BF%E7%9C%9F/&#34;,&#34;神经符号人工智能&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%A5%9E%E7%BB%8F%E7%AC%A6%E5%8F%B7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/&#34;,&#34;科学发现&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/&#34;,&#34;科研智能体&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%A7%91%E7%A0%94%E6%99%BA%E8%83%BD%E4%BD%93/&#34;,&#34;策略优化&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96/&#34;,&#34;系统优化&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/&#34;,&#34;经验学习&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/&#34;,&#34;缩放定律&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%BC%A9%E6%94%BE%E5%AE%9A%E5%BE%8B/&#34;,&#34;网络安全&#34;:&#34;/LLMDailyDigestWeb/topic/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/&#34;,&#34;能力迁移&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E8%BF%81%E7%A7%BB/&#34;,&#34;自动化科学研究&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/&#34;,&#34;自动定理证明&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/&#34;,&#34;自博弈&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8D%9A%E5%BC%88/&#34;,&#34;自我反思&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/&#34;,&#34;自我改进&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/&#34;,&#34;自我验证&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E9%AA%8C%E8%AF%81/&#34;,&#34;自演化&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/&#34;,&#34;自蒸馏&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%87%AA%E8%92%B8%E9%A6%8F/&#34;,&#34;行为建模&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%A1%8C%E4%B8%BA%E5%BB%BA%E6%A8%A1/&#34;,&#34;表征探测&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%A1%A8%E5%BE%81%E6%8E%A2%E6%B5%8B/&#34;,&#34;规则学习&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%A7%84%E5%88%99%E5%AD%A6%E4%B9%A0/&#34;,&#34;视觉推理&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/&#34;,&#34;视觉生成&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/&#34;,&#34;视觉表征学习&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/&#34;,&#34;视频生成&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/&#34;,&#34;访问控制&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/&#34;,&#34;证据推理&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%8E%A8%E7%90%86/&#34;,&#34;证据溯源&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%BA%AF%E6%BA%90/&#34;,&#34;评估方差&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E6%96%B9%E5%B7%AE/&#34;,&#34;课程学习&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/&#34;,&#34;跨域泛化&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/&#34;,&#34;轨迹审计&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%BD%A8%E8%BF%B9%E5%AE%A1%E8%AE%A1/&#34;,&#34;过程监督&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E7%9B%91%E7%9D%A3/&#34;,&#34;过程验证&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E9%AA%8C%E8%AF%81/&#34;,&#34;运行时干预&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B9%B2%E9%A2%84/&#34;,&#34;进化搜索&#34;:&#34;/LLMDailyDigestWeb/topic/%E8%BF%9B%E5%8C%96%E6%90%9C%E7%B4%A2/&#34;,&#34;递归自我改进&#34;:&#34;/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/&#34;,&#34;逻辑推理&#34;:&#34;/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/&#34;,&#34;采样控制&#34;:&#34;/LLMDailyDigestWeb/topic/%E9%87%87%E6%A0%B7%E6%8E%A7%E5%88%B6/&#34;,&#34;长上下文&#34;:&#34;/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/&#34;}' data-research-links='{&#34;Awesome-RSI&#34;:&#34;/LLMDailyDigestWeb/research/awesome-rsi/&#34;,&#34;DataEvolve&#34;:&#34;/LLMDailyDigestWeb/research/dataevolve/&#34;,&#34;EnvironmentEvolve&#34;:&#34;/LLMDailyDigestWeb/research/environmentevolve/&#34;,&#34;EvalEvolve&#34;:&#34;/LLMDailyDigestWeb/research/evalevolve/&#34;,&#34;EvolveLLM&#34;:&#34;/LLMDailyDigestWeb/research/evolvellm/&#34;,&#34;EvolveLRM&#34;:&#34;/LLMDailyDigestWeb/research/evolvelrm/&#34;,&#34;Groom&#34;:&#34;/LLMDailyDigestWeb/research/groom/&#34;,&#34;HarnessEvolve&#34;:&#34;/LLMDailyDigestWeb/research/harnessevolve/&#34;,&#34;JevEvolve&#34;:&#34;/LLMDailyDigestWeb/research/jevevolve/&#34;,&#34;LogicEvolve&#34;:&#34;/LLMDailyDigestWeb/research/logicevolve/&#34;,&#34;MemoryEvolve&#34;:&#34;/LLMDailyDigestWeb/research/memoryevolve/&#34;,&#34;PromptEvolve&#34;:&#34;/LLMDailyDigestWeb/research/promptevolve/&#34;,&#34;ResearchEvolve&#34;:&#34;/LLMDailyDigestWeb/research/researchevolve/&#34;,&#34;SwarmEvolve&#34;:&#34;/LLMDailyDigestWeb/research/swarmevolve/&#34;}'>
+        <div class="trend-note" id="trendCaveat">加载中…</div>
+
+        <section class="trend-section" id="trend-heat">
+          <h2>① 关注热度 <span class="trend-hint">按周条目数（4 周滑动平均）或占当周总条目比</span></h2>
+          <div class="trend-controls">
+            <label>维度
+              <select id="heatMode"><option value="research">研究项目</option><option value="tracks">技术赛道</option></select>
+            </label>
+            <label>指标
+              <select id="heatMetric"><option value="ma4">条目数（4 周均值）</option><option value="share">占比</option><option value="counts">条目数（原始）</option></select>
+            </label>
+            <label>默认显示前 <input type="number" id="heatTop" min="1" max="30" value="8" style="width:4em"> 个（图例可切换）</label>
+          </div>
+          <div class="trend-chart" id="chartHeat" style="height:26rem"></div>
+          <p class="trend-hint">占比 = 该维度当周条目 ÷ 当周全部条目，可抵消采集源扩张带来的总量变化；条目可属多个项目/赛道，占比之和可大于 1。</p>
+        </section>
+
+        <section class="trend-section" id="trend-rising">
+          <h2>② 升温 / 降温榜 <span class="trend-hint" id="risingHint"></span></h2>
+          <div class="trend-grid3">
+            <div><h3>技术赛道</h3><div class="trend-chart" id="chartRiseTracks" style="height:22rem"></div></div>
+            <div><h3>关键词</h3><div class="trend-chart" id="chartRiseKeywords" style="height:22rem"></div></div>
+            <div><h3>子主题</h3><div class="trend-chart" id="chartRiseSubtopics" style="height:22rem"></div></div>
+          </div>
+          <p class="trend-hint">条形长度 = 占比变化（百分点）：该名称在最近窗口的条目占比 − 上一窗口占比，已抵消采集总量增长；只统计两窗口合计 ≥ 3 的名称。短窗口受单日大批导入影响较大，宜与 ① 对照。</p>
+        </section>
+
+        <section class="trend-section" id="trend-cloud">
+          <h2>③ 技术词云 <span class="trend-hint" id="cloudHint"></span></h2>
+          <div class="trend-controls trend-tabs" id="cloudTabs">
+            <button type="button" data-slice="recent30" class="active">最近 30 天</button>
+            <button type="button" data-slice="prev30">之前 30 天</button>
+            <button type="button" data-slice="all">全部</button>
+          </div>
+          <div class="trend-cloud" id="cloudBox"></div>
+          <details class="trend-details"><summary>本期新出现的词（最近 30 天有、之前 30 天没有）</summary><div class="trend-taglist" id="cloudNew"></div></details>
+        </section>
+
+        <section class="trend-section" id="trend-orgs">
+          <h2>④ 研究机构 <span class="trend-hint" id="orgsHint"></span></h2>
+          <div class="trend-grid2">
+            <div><h3>发文量 Top 20</h3><div class="trend-chart" id="chartOrgsTop" style="height:30rem"></div></div>
+            <div><h3>机构 × 研究项目</h3><div class="trend-chart" id="chartOrgsMatrix" style="height:30rem"></div></div>
+          </div>
+          <h3>Top 机构按月活跃度</h3>
+          <div class="trend-chart" id="chartOrgsMonthly" style="height:20rem"></div>
+        </section>
+
+        <section class="trend-section" id="trend-projects">
+          <h2>⑤ 研究项目时间线 <span class="trend-hint">各项目相关条目按月数量；虚线为项目提出月份</span></h2>
+          <div class="trend-grid3" id="projectGrid"></div>
+        </section>
+
+        <section class="trend-section" id="trend-sources">
+          <h2>⑥ 来源构成 <span class="trend-hint">按月堆叠；采集源随时间扩张，解读绝对量时请参考本图</span></h2>
+          <div class="trend-chart" id="chartSources" style="height:22rem"></div>
+          <details class="trend-details" id="srcUnrecognized" style="display:none"><summary>未归类的来源写法（可补充到 tools/trends_build.py 的 SOURCE_FAMILIES）</summary><div class="trend-taglist" id="srcUnrecognizedList"></div></details>
+        </section>
+      </div></div>
+  </article><script>
+  (function(){
+    'use strict';
+    var root = document.getElementById('trendRoot');
+    if(!root) return;
+    var SRC = root.dataset.src;
+    var TOPIC_LINKS = {}, RESEARCH_LINKS = {};
+    try{ TOPIC_LINKS = JSON.parse(root.dataset.topicLinks || '{}'); RESEARCH_LINKS = JSON.parse(root.dataset.researchLinks || '{}'); }catch(e){}
+    var D = null;                 
+    var charts = {};              
+    var builders = {};            
+    var cloudSlice = 'recent30';
+    var PALETTE = ['#6366f1','#a855f7','#06b6d4','#22c55e','#f59e0b','#ef4444','#ec4899','#14b8a6','#8b5cf6','#84cc16','#f97316','#0ea5e9','#d946ef','#64748b','#10b981','#eab308'];
+
+    function isDark(){ return (window.fixit && typeof window.fixit.isDark === 'boolean') ? window.fixit.isDark : document.body.dataset.theme === 'dark'; }
+    function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+    function fmtRange(a,b){ return a.slice(5).replace('-','/') + ' ~ ' + b.slice(5).replace('-','/'); }
+    function weekLabel(w){ return w.slice(2).replace(/-/g,'/'); }
+
+    function mount(id, build){
+      builders[id] = build;
+      var el = document.getElementById(id);
+      if(!el) return;
+      if(charts[id]) charts[id].dispose();
+      var inst = echarts.init(el, isDark() ? 'dark' : 'light', {renderer:'canvas'});
+      charts[id] = inst;
+      var opt = build();
+      opt.backgroundColor = 'transparent';
+      opt.color = opt.color || PALETTE;
+      inst.setOption(opt, true);
+    }
+    function remountAll(){ Object.keys(builders).forEach(function(id){ mount(id, builders[id]); }); }
+    function resizeAll(){ Object.keys(charts).forEach(function(id){ charts[id].resize(); }); }
+
+    
+    function renderCaveat(){
+      var t = D.totals, kc = D.keywords.coverage, oc = D.orgs.coverage, tc = D.track_coverage;
+      var pct = function(a,b){ return b ? Math.round(100*a/b) + '%' : '—'; };
+      var gaps = (D.digests.gaps||[]).slice(-4).map(function(g){ return fmtRange(g[0], g[1]); });
+      document.getElementById('trendCaveat').innerHTML =
+        '<b>口径</b>：基于 ' + t.digests + ' 期日报、' + t.items + ' 条精选条目（' + D.range.from + ' ~ ' + D.range.to + '），按<b>日报日期</b>统计，反映「我们关注到」的时间；' +
+        '条目经 LLM 相关性筛选且每日有上限，绝对量受采集源扩张影响，比较趋势时优先看占比与滑动平均。' +
+        '<br><b>覆盖</b>：赛道映射 ' + pct(tc.mapped_items, tc.mapped_items + tc.unmapped_items) +
+        ' · 关键词字段 ' + pct(kc.items_with_keywords, kc.total) +
+        ' · 机构字段 ' + pct(oc.items_with_orgs, oc.total) + '（arXiv 条目 ' + pct(oc.arxiv_with_orgs, oc.arxiv_items) + '）' +
+        (gaps.length ? '<br><b>日报空档</b>（≥3 天）：' + gaps.join('，') + '，空档周计 0，曲线会出现断崖' : '') +
+        '<br><span class="trend-hint">生成时间 ' + D.generated_at.replace('T',' ').slice(0,16) + '</span>';
+    }
+
+    
+    function heatOption(){
+      var mode = document.getElementById('heatMode').value;
+      var metric = document.getElementById('heatMetric').value;
+      var top = parseInt(document.getElementById('heatTop').value, 10) || 8;
+      var src = D[mode];
+      var names = Object.keys(src).filter(function(n){ return n !== '其他' || mode !== 'tracks'; })
+        .sort(function(a,b){ return src[b].total - src[a].total; });
+      var selected = {};
+      names.forEach(function(n,i){ selected[n] = i < top; });
+      var isShare = metric === 'share';
+      return {
+        tooltip: {trigger:'axis', valueFormatter: function(v){ return isShare ? (100*v).toFixed(1) + '%' : v; }},
+        legend: {type:'scroll', bottom: 0, selected: selected},
+        grid: {left: 48, right: 16, top: 24, bottom: 56},
+        xAxis: {type:'category', data: D.week_starts.map(weekLabel), axisLabel:{interval: Math.ceil(D.week_starts.length/14)}},
+        yAxis: {type:'value', axisLabel:{formatter: isShare ? function(v){ return Math.round(100*v)+'%'; } : '{value}'}},
+        dataZoom: [{type:'inside'}, {type:'slider', height: 16, bottom: 28}],
+        series: names.map(function(n){ return {name:n, type:'line', smooth:true, showSymbol:false, data: src[n][metric]}; })
+      };
+    }
+
+    
+    function risingOption(rows){
+      rows = rows.slice().sort(function(a,b){ return a.delta - b.delta; });
+      return {
+        tooltip: {trigger:'axis', axisPointer:{type:'shadow'}, formatter: function(ps){ var p = ps[0]; var r = rows[p.dataIndex];
+          return esc(r.name) + '<br>最近 ' + r.recent + ' 条（' + (100*r.recent_share).toFixed(1) + '%） · 之前 ' + r.prev + ' 条（' + (100*r.prev_share).toFixed(1) + '%）<br>占比变化 ' + (r.delta>0?'+':'') + r.delta + ' 个百分点' + (r.ratio ? '（×' + r.ratio + '）' : '（新出现）'); }},
+        grid: {left: 4, right: 36, top: 8, bottom: 8, containLabel: true},
+        xAxis: {type:'value', splitLine:{show:false}},
+        yAxis: {type:'category', data: rows.map(function(r){ return r.name; }), axisLabel:{width: 110, overflow:'truncate'}},
+        series: [{type:'bar', data: rows.map(function(r){ return {value: r.delta, itemStyle:{color: r.delta >= 0 ? '#22c55e' : '#ef4444'}}; }),
+                  label:{show:true, position:'right', formatter: function(p){ return (p.value>0?'+':'') + p.value.toFixed(1); }}, barMaxWidth: 16}]
+      };
+    }
+
+    
+    function renderCloud(){
+      var list = D.keywords[cloudSlice] || [];
+      var box = document.getElementById('cloudBox');
+      if(!list.length){ box.innerHTML = '<div class="trend-empty">该时段没有数据</div>'; return; }
+      var max = list[0][1], min = list[list.length-1][1];
+      var html = list.slice(0, 120).map(function(kv, i){
+        var w = kv[0], c = kv[1];
+        var t = max === min ? 1 : Math.sqrt((c - min) / (max - min));
+        var size = (0.8 + 1.6 * t).toFixed(2);
+        var color = PALETTE[i % PALETTE.length];
+        var style = 'font-size:' + size + 'em;color:' + color;
+        return TOPIC_LINKS[w]
+          ? '<a class="trend-word" href="' + esc(TOPIC_LINKS[w]) + '" style="' + style + '" title="' + c + ' 条 · 打开主题页">' + esc(w) + '</a>'
+          : '<span class="trend-word" style="' + style + '" title="' + c + ' 条">' + esc(w) + '</span>';
+      });
+      
+      for(var i = html.length - 1; i > 0; i--){ var j = (i * 7919) % (i + 1); var tmp = html[i]; html[i] = html[j]; html[j] = tmp; }
+      box.innerHTML = html.join(' ');
+      var prev = {}; (D.keywords.prev30||[]).forEach(function(kv){ prev[kv[0]] = 1; });
+      var fresh = (D.keywords.recent30||[]).filter(function(kv){ return !prev[kv[0]] && kv[1] >= 2; }).slice(0, 40);
+      document.getElementById('cloudNew').innerHTML = fresh.length ? fresh.map(function(kv){ return '<span class="trend-tag">' + esc(kv[0]) + ' <small>' + kv[1] + '</small></span>'; }).join('') : '<span class="trend-hint">无</span>';
+    }
+
+    
+    function orgsTopOption(){
+      var top = D.orgs.top.slice(0, 20).reverse();
+      return {
+        tooltip: {trigger:'axis', axisPointer:{type:'shadow'}},
+        grid: {left: 4, right: 36, top: 8, bottom: 8, containLabel: true},
+        xAxis: {type:'value', splitLine:{show:false}},
+        yAxis: {type:'category', data: top.map(function(kv){ return kv[0]; }), axisLabel:{width: 140, overflow:'truncate'}},
+        series: [{type:'bar', data: top.map(function(kv){ return kv[1]; }), label:{show:true, position:'right'}, barMaxWidth: 16, itemStyle:{color:'#6366f1'}}]
+      };
+    }
+    function orgsMatrixOption(){
+      var m = D.orgs.research_matrix;
+      var max = m.values.reduce(function(a,v){ return Math.max(a, v[2]); }, 1);
+      return {
+        tooltip: {formatter: function(p){ return esc(m.orgs[p.value[0]]) + ' × ' + esc(m.research[p.value[1]]) + '：' + p.value[2] + ' 条'; }},
+        grid: {left: 4, right: 16, top: 8, bottom: 60, containLabel: true},
+        xAxis: {type:'category', data: m.orgs, axisLabel:{rotate: 45, width: 90, overflow:'truncate'}},
+        yAxis: {type:'category', data: m.research},
+        visualMap: {min: 0, max: max, orient:'horizontal', left:'center', bottom: 0, inRange:{color:['#eef2ff','#6366f1','#312e81']}},
+        series: [{type:'heatmap', data: m.values, label:{show:true}, emphasis:{itemStyle:{shadowBlur:6}}}]
+      };
+    }
+    function orgsMonthlyOption(){
+      var names = Object.keys(D.orgs.monthly);
+      return {
+        tooltip: {trigger:'axis'},
+        legend: {type:'scroll', bottom: 0},
+        grid: {left: 40, right: 16, top: 16, bottom: 48},
+        xAxis: {type:'category', data: D.months},
+        yAxis: {type:'value'},
+        series: names.map(function(n){ return {name: n, type:'line', smooth:true, showSymbol:false, data: D.orgs.monthly[n]}; })
+      };
+    }
+
+    
+    function renderProjects(){
+      var grid = document.getElementById('projectGrid');
+      var names = Object.keys(D.projects).sort(function(a,b){ return (D.projects[a].proposed||'9999') < (D.projects[b].proposed||'9999') ? -1 : 1; });
+      grid.innerHTML = names.map(function(n, i){
+        var p = D.projects[n];
+        var head = RESEARCH_LINKS[n] ? '<a href="' + esc(RESEARCH_LINKS[n]) + '">' + esc(n) + '</a>' : esc(n);
+        return '<div class="trend-proj"><h3>' + head + ' <small>' + p.total + ' 条' + (p.proposed ? ' · 提出 ' + p.proposed : '') + '</small></h3><div class="trend-chart" id="chartProj' + i + '" style="height:11rem"></div></div>';
+      }).join('');
+      names.forEach(function(n, i){
+        var p = D.projects[n];
+        mount('chartProj' + i, function(){
+          var mark = p.proposed && D.months.indexOf(p.proposed) >= 0 ? {silent:true, symbol:'none', lineStyle:{type:'dashed', color:'#a855f7'}, label:{formatter:'提出', position:'insideEndTop'}, data:[{xAxis: p.proposed}]} : null;
+          return {
+            tooltip: {trigger:'axis'},
+            grid: {left: 32, right: 12, top: 10, bottom: 24},
+            xAxis: {type:'category', data: D.months, axisLabel:{interval: Math.ceil(D.months.length/5), fontSize: 10}},
+            yAxis: {type:'value', minInterval: 1, axisLabel:{fontSize: 10}},
+            series: [{type:'bar', data: p.monthly, itemStyle:{color: PALETTE[i % PALETTE.length]}, barMaxWidth: 12, markLine: mark || undefined}]
+          };
+        });
+      });
+    }
+
+    
+    function sourcesOption(){
+      return {
+        tooltip: {trigger:'axis', axisPointer:{type:'shadow'}},
+        legend: {type:'scroll', bottom: 0},
+        grid: {left: 40, right: 16, top: 16, bottom: 48},
+        xAxis: {type:'category', data: D.months},
+        yAxis: {type:'value'},
+        series: D.sources.families.map(function(f){ return {name: f, type:'bar', stack:'src', data: D.sources.per_month[f], barMaxWidth: 28}; })
+      };
+    }
+
+    function renderAll(){
+      renderCaveat();
+      mount('chartHeat', heatOption);
+      var r = D.rising;
+      document.getElementById('risingHint').textContent = '最近 ' + r.window_weeks + ' 周（' + r.recent_from + ' 起，' + r.recent_total + ' 条）vs 之前 ' + r.window_weeks + ' 周（' + r.prev_from + ' 起，' + r.prev_total + ' 条），按占比比较';
+      mount('chartRiseTracks', function(){ return risingOption(r.tracks); });
+      mount('chartRiseKeywords', function(){ return risingOption(r.keywords); });
+      mount('chartRiseSubtopics', function(){ return risingOption(r.subtopics); });
+      var k = D.keywords;
+      document.getElementById('cloudHint').textContent = '最近 ' + k.recent_days + ' 天 = ' + k.recent_from + ' 起；词 = ' + k.source;
+      renderCloud();
+      var oc = D.orgs.coverage;
+      var orgsSec = document.getElementById('trend-orgs');
+      if(!D.orgs.top.length){
+        orgsSec.querySelectorAll('.trend-grid2, h3, .trend-chart').forEach(function(e){ e.style.display = 'none'; });
+        document.getElementById('orgsHint').textContent = '机构字段尚未回填（0 / ' + oc.total + ' 条），回填后自动出现';
+      } else {
+        document.getElementById('orgsHint').textContent = '机构字段覆盖 ' + oc.items_with_orgs + ' / ' + oc.total + ' 条，低覆盖时仅供参考';
+        mount('chartOrgsTop', orgsTopOption);
+        mount('chartOrgsMatrix', orgsMatrixOption);
+        mount('chartOrgsMonthly', orgsMonthlyOption);
+      }
+      renderProjects();
+      mount('chartSources', sourcesOption);
+      var un = D.sources.unrecognized_top || [];
+      if(un.length){
+        document.getElementById('srcUnrecognized').style.display = '';
+        document.getElementById('srcUnrecognizedList').innerHTML = un.map(function(kv){ return '<span class="trend-tag">' + esc(kv[0]) + ' <small>' + kv[1] + '</small></span>'; }).join('');
+      }
+    }
+
+    function bind(){
+      ['heatMode','heatMetric','heatTop'].forEach(function(id){ document.getElementById(id).addEventListener('change', function(){ mount('chartHeat', heatOption); }); });
+      document.querySelectorAll('#cloudTabs button').forEach(function(b){ b.addEventListener('click', function(){
+        document.querySelectorAll('#cloudTabs button').forEach(function(x){ x.classList.remove('active'); });
+        b.classList.add('active'); cloudSlice = b.dataset.slice; renderCloud(); }); });
+      if(window.fixit){
+        if(window.fixit.switchThemeEventSet) window.fixit.switchThemeEventSet.add(remountAll);
+        if(window.fixit.resizeEventSet) window.fixit.resizeEventSet.add(resizeAll);
+      }
+      window.addEventListener('resize', resizeAll);
+    }
+
+    function whenReady(fn, tries){
+      if(window.echarts && window.fixit){ fn(); return; }
+      if(tries > 100){ document.getElementById('trendCaveat').textContent = '图表库加载失败（echarts 未就绪）'; return; }
+      setTimeout(function(){ whenReady(fn, tries + 1); }, 100);
+    }
+    fetch(SRC).then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function(j){
+      D = j;
+      whenReady(function(){ renderAll(); bind(); }, 0);
+    }).catch(function(e){ document.getElementById('trendCaveat').textContent = '趋势数据加载失败：' + e; });
+  })();
+  </script></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/echarts/echarts.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"echarts":{"darkTheme":{"backgroundColor":"rgba(41,52,65,1)","bar":{"itemStyle":{"barBorderColor":"#ccc","barBorderWidth":0}},"boxplot":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"candlestick":{"itemStyle":{"borderColor":"#fc97af","borderColor0":"#87f7cf","borderWidth":1,"color":"#fc97af","color0":"transparent"}},"categoryAxis":{"axisLabel":{"color":"#aaaaaa","show":true},"axisLine":{"lineStyle":{"color":"#666666"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.05)","rgba(200,200,200,0.02)"]},"show":false},"splitLine":{"lineStyle":{"color":["#e6e6e6"]},"show":false}},"color":["#fc97af","#87f7cf","#f7f494","#72ccff","#f7c5a0","#d4a4eb","#d2f5a6","#76f2f2"],"dataZoom":{"backgroundColor":"rgba(255,255,255,0)","dataBackgroundColor":"rgba(114,204,255,1)","fillerColor":"rgba(114,204,255,0.2)","handleColor":"#72ccff","handleSize":"100%","textStyle":{"color":"#333333"}},"funnel":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"gauge":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"geo":{"emphasis":{"itemStyle":{"areaColor":"rgba(255,178,72,1)","borderColor":"#eb8146","borderWidth":1},"label":{"color":"rgb(137,52,72)"}},"itemStyle":{"areaColor":"#f3f3f3","borderColor":"#999999","borderWidth":0.5},"label":{"color":"#893448"}},"graph":{"color":["#fc97af","#87f7cf","#f7f494","#72ccff","#f7c5a0","#d4a4eb","#d2f5a6","#76f2f2"],"itemStyle":{"borderColor":"#ccc","borderWidth":0},"label":{"color":"#293441"},"lineStyle":{"color":"#ffffff","width":1},"smooth":true,"symbol":"emptyCircle","symbolSize":3},"legend":{"textStyle":{"color":"#999999"}},"line":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"smooth":true,"symbol":"circle","symbolSize":6},"logAxis":{"axisLabel":{"color":"#aaaaaa","show":true},"axisLine":{"lineStyle":{"color":"#666666"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.05)","rgba(200,200,200,0.02)"]},"show":true},"splitLine":{"lineStyle":{"color":["#e6e6e6"]},"show":true}},"map":{"emphasis":{"itemStyle":{"areaColor":"rgba(255,178,72,1)","borderColor":"#eb8146","borderWidth":1},"label":{"color":"rgb(137,52,72)"}},"itemStyle":{"areaColor":"#f3f3f3","borderColor":"#999999","borderWidth":0.5},"label":{"color":"#893448"}},"markPoint":{"emphasis":{"label":{"color":"#293441"}},"label":{"color":"#293441"}},"parallel":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"pie":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"radar":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"smooth":true,"symbol":"circle","symbolSize":3},"sankey":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"scatter":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"textStyle":{},"timeAxis":{"axisLabel":{"color":"#aaaaaa","show":true},"axisLine":{"lineStyle":{"color":"#666666"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.05)","rgba(200,200,200,0.02)"]},"show":false},"splitLine":{"lineStyle":{"color":["#e6e6e6"]},"show":true}},"timeline":{"checkpointStyle":{"borderColor":"#fc97af","color":"#fc97af"},"controlStyle":{"borderColor":"#87f7cf","borderWidth":0.5,"color":"#87f7cf"},"emphasis":{"controlStyle":{"borderColor":"#87f7cf","borderWidth":0.5,"color":"#87f7cf"},"itemStyle":{"color":"#f7f494"},"label":{"color":"#87f7cf"}},"itemStyle":{"borderWidth":1,"color":"#87f7cf"},"label":{"color":"#87f7cf"},"lineStyle":{"color":"#87f7cf","width":1}},"title":{"subtextStyle":{"color":"#dddddd"},"textStyle":{"color":"#ffffff"}},"toolbox":{"emphasis":{"iconStyle":{"borderColor":"#666666"}},"iconStyle":{"borderColor":"#999999"}},"tooltip":{"axisPointer":{"crossStyle":{"color":"#cccccc","width":1},"lineStyle":{"color":"#cccccc","width":1}}},"valueAxis":{"axisLabel":{"color":"#aaaaaa","show":true},"axisLine":{"lineStyle":{"color":"#666666"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.05)","rgba(200,200,200,0.02)"]},"show":false},"splitLine":{"lineStyle":{"color":["#e6e6e6"]},"show":true}},"visualMap":{"color":["#fc97af","#87f7cf"]}},"lightTheme":{"backgroundColor":"rgba(0,0,0,0)","bar":{"itemStyle":{"barBorderColor":"#ccc","barBorderWidth":0}},"boxplot":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"candlestick":{"itemStyle":{"borderColor":"#d87a80","borderColor0":"#2ec7c9","borderWidth":1,"color":"#d87a80","color0":"#2ec7c9"}},"categoryAxis":{"axisLabel":{"color":"#333","show":true},"axisLine":{"lineStyle":{"color":"#008acd"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]},"show":false},"splitLine":{"lineStyle":{"color":["#eee"]},"show":false}},"color":["#2ec7c9","#b6a2de","#5ab1ef","#ffb980","#d87a80","#8d98b3","#e5cf0d","#97b552","#95706d","#dc69aa","#07a2a4","#9a7fd1","#588dd5","#f5994e","#c05050","#59678c","#c9ab00","#7eb00a","#6f5553","#c14089"],"dataZoom":{"backgroundColor":"rgba(47,69,84,0)","dataBackgroundColor":"#efefff","fillerColor":"rgba(182,162,222,0.2)","handleColor":"#008acd","handleSize":"100%","textStyle":{"color":"#333333"}},"funnel":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"gauge":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"geo":{"emphasis":{"itemStyle":{"areaColor":"rgba(254,153,78,1)","borderColor":"#444","borderWidth":1},"label":{"color":"rgb(100,0,0)"}},"itemStyle":{"areaColor":"#dddddd","borderColor":"#eeeeee","borderWidth":0.5},"label":{"color":"#d87a80"}},"graph":{"color":["#2ec7c9","#b6a2de","#5ab1ef","#ffb980","#d87a80","#8d98b3","#e5cf0d","#97b552","#95706d","#dc69aa","#07a2a4","#9a7fd1","#588dd5","#f5994e","#c05050","#59678c","#c9ab00","#7eb00a","#6f5553","#c14089"],"itemStyle":{"borderColor":"#ccc","borderWidth":0},"label":{"color":"#eeeeee"},"lineStyle":{"color":"#aaaaaa","width":1},"smooth":true,"symbol":"emptyCircle","symbolSize":3},"legend":{"textStyle":{"color":"#333333"}},"line":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"smooth":true,"symbol":"emptyCircle","symbolSize":5},"logAxis":{"axisLabel":{"color":"#333","show":true},"axisLine":{"lineStyle":{"color":"#008acd"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]},"show":true},"splitLine":{"lineStyle":{"color":["#eee"]},"show":true}},"map":{"emphasis":{"itemStyle":{"areaColor":"rgba(254,153,78,1)","borderColor":"#444","borderWidth":1},"label":{"color":"rgb(100,0,0)"}},"itemStyle":{"areaColor":"#dddddd","borderColor":"#eeeeee","borderWidth":0.5},"label":{"color":"#d87a80"}},"markPoint":{"emphasis":{"label":{"color":"#eeeeee"}},"label":{"color":"#eeeeee"}},"parallel":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"pie":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"radar":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"smooth":true,"symbol":"emptyCircle","symbolSize":3},"sankey":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"scatter":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"textStyle":{},"timeAxis":{"axisLabel":{"color":"#333","show":true},"axisLine":{"lineStyle":{"color":"#008acd"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]},"show":false},"splitLine":{"lineStyle":{"color":["#eee"]},"show":true}},"timeline":{"checkpointStyle":{"borderColor":"#2ec7c9","color":"#2ec7c9"},"controlStyle":{"borderColor":"#008acd","borderWidth":0.5,"color":"#008acd"},"emphasis":{"controlStyle":{"borderColor":"#008acd","borderWidth":0.5,"color":"#008acd"},"itemStyle":{"color":"#a9334c"},"label":{"color":"#008acd"}},"itemStyle":{"borderWidth":1,"color":"#008acd"},"label":{"color":"#008acd"},"lineStyle":{"color":"#008acd","width":1}},"title":{"subtextStyle":{"color":"#aaaaaa"},"textStyle":{"color":"#008acd"}},"toolbox":{"emphasis":{"iconStyle":{"borderColor":"#18a4a6"}},"iconStyle":{"borderColor":"#2ec7c9"}},"tooltip":{"axisPointer":{"crossStyle":{"color":"#008acd","width":1},"lineStyle":{"color":"#008acd","width":1}}},"valueAxis":{"axisLabel":{"color":"#333","show":true},"axisLine":{"lineStyle":{"color":"#008acd"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]},"show":true},"splitLine":{"lineStyle":{"color":["#eee"]},"show":true}},"visualMap":{"color":["#5ab1ef","#e0ffff"]}}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
