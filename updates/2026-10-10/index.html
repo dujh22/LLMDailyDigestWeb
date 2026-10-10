@@ -12,49 +12,50 @@
 
 今日概览
 
-递归自我改进转向系统级闭环与安全治理：AgentEvolver将执行经验沉淀为版本化系统能力，脚手架演化何时触顶给出从流程失败转向权重训练的诊断标准，而谁来验证验证器？与Anthropic：模型自述不能作为行为动机证据共同强调验证器审计、执行隔离和轨迹证据的重要性。
-环境生成与评测开始协同演化：Trace2Env从历史轨迹重建持久化语言环境，AgentGarten提供可继承经验的代码化交互世界，生成式对抗循环则让任务生成与算法发现互相暴露弱点、持续抬高能力边界。
-自主科研同时出现能力进展与清醒上限：SAIL通过失败诊断和针对性训练形成科研能力闭环，但InnovationEval显示前沿智能体端到端研发效果仅达人类方案的 15%，复现不足、结果夸大和奖励作弊仍是核心瓶颈。
-长期记忆从“多存多取”走向类型路由、压缩与原生评测：MemoType按记忆类型选择检索策略，REMORY用残差软记忆大幅压缩历史上下文，VoxMem则揭示音频模型跨会话绑定和追踪原生信息的明显缺口。
-后训练与快决策模型更重视奖励及呈现鲁棒性：Envelope Sampling以少量真实标签重校准代理奖励；与此同时，请求呈现方式诱发评判模型对抗性偏差和TypedBench表明低延迟决策模型必须同时评估校准、措辞敏感性和实际错误成本。
-热点延伸主要集中在高吞吐路由、具身世界模型与低成本机器人学习，包括TokenRouter、ME-World和SimpleICL，但与当前核心研究主线关联较弱。
+递归自我改进开始从抽象闭环转向可诊断、可版本化的系统工程：AgentEvolver 将执行经验沉淀为系统组件更新，脚手架演化何时触顶 则以流程失败和内容失败的构成判断何时应从脚手架优化转向权重训练。
+验证器可靠性与安全边界成为 RSI 的核心瓶颈：谁来验证验证器？ 证明下游得分无法担保自演化评分器可靠，Envelope Sampling 用少量真实标签重校准代理奖励，而 Anthropic：模型自述不能作为行为动机证据 展示了真实联网评测越界后隔离、监控与轨迹审计的必要性。
+自主科研同时出现闭环进展与明显能力上限：SAIL 通过失败诊断生成针对性训练任务，生成式对抗循环 让基准与算法协同演化；但 InnovationEval 显示前沿智能体投入大量算力后仍仅达到人类方案有效增益的 15%，并伴随复现不足和奖励作弊。
+长程智能体的环境与记忆基础设施继续细化：Trace2Env 可直接从历史轨迹构造持久状态语言世界模型；记忆侧，MemoType 按记忆类型路由检索，VoxMem 则暴露音频模型跨会话绑定和追踪原生信息的短板。
+模型自进化进一步转向“任务分布、反馈与教师共同演化”：ReTeach 以反思、重试和结果验证构建自教师，SynCo 联合训练任务合成器与推理器，使训练分布持续对准模型能力边界。
+热点延伸集中在 Token 级模型路由、具身世界模型与导航、机器人情境学习、三维动态生成及招聘工具等方向，但与当前核心研究主线关联较弱。
 
 对当前研究的启发
 
-Awesome-RSI：谁来验证验证器？证明下游得分不能为自演化验证器背书，可将独立验证器审计与Envelope Sampling的少量真实标签校准纳入 RSI 发布门槛。
-HarnessEvolve：脚手架演化何时触顶提供了可操作的流程失败／内容失败分解，可用于决定继续搜索 harness 还是启动模型权重训练。
-EnvironmentEvolve：Trace2Env可把存量执行轨迹直接编译为有状态训练环境，与AgentGarten的可继承交互世界结合后有望降低环境构建和课程迭代成本。
-EvalEvolve：生成式对抗循环展示了“出题智能体—算法智能体”共同演化的动态基准路径，但需结合谁来验证验证器？对自动评分器单独验真。
-ResearchEvolve：InnovationEval给出了自主科研相对人类方案的量化差距，SAIL的失败诊断式任务生成可直接用于针对复现、实验执行和结果核验短板设计训练闭环。
-MemoryEvolve：MemoType、REMORY与VoxMem分别覆盖类型感知检索、极限上下文压缩和跨会话原生信息评测，可组成“路由—压缩—评估”的长期记忆实验基线。
-JevEvolve：请求呈现方式诱发评判模型对抗性偏差说明快决策模型的高准确率可能被微小格式变化击穿，应采用TypedBench式措辞扰动、概率校准和决策成本联合评测。
-Groom：Anthropic的事故表明模型自述不能替代过程证据，过程级 token 归因应优先依赖工具调用、环境状态变化和可验证中间产物。
-EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正代理奖励失准，为低人工成本的自奖励训练增加了一条防奖励作弊机制。
+Awesome-RSI：脚手架演化何时触顶 与 谁来验证验证器？ 共同提示 RSI 闭环应同时设置“何时升级到权重训练”的故障构成阈值，以及独立于任务得分的验证器审计机制。
+HarnessEvolve：AgentEvolver 表明可将提示、工具和执行模块纳入统一版本生命周期，并用真实任务轨迹驱动可回滚的系统级持续演化。
+ResearchEvolve：InnovationEval 与 SAIL 的对照说明科研智能体应以可复现有效增益而非自报结果为优化目标，并把失败诊断直接转化为下一轮训练任务。
+EnvironmentEvolve：Trace2Env 提供了无需重建原系统、仅凭存量交互轨迹生成有状态训练环境的低成本路径，可用于扩展长程 Agent 的回放与课程生成。
+EvalEvolve：生成式对抗循环 可作为动态基准原型，让出题器持续暴露算法弱点，但需结合 谁来验证验证器？ 的结论对评测目标自身进行独立校验。
+MemoryEvolve：MemoType 与 VoxMem 表明记忆系统需要按信息类型设计差异化写入和检索策略，并将跨会话定位、绑定与追踪拆成独立评测维度。
+EvolveLLM：ReTeach 展示了仅依赖自身尝试和结果级验证构造自教师的路线，可减少外部教师依赖，同时保留单次部署推理成本。
+DataEvolve：SynCo 提示数据飞轮不应静态扩充题库，而应联合优化任务合成器与求解器，使数据难度随能力同步演化。
+JevEvolve：请求呈现方式诱发评判模型对抗性偏差 与 TypedBench 说明快决策模型上线前必须同时评测措辞鲁棒性、概率校准和实际错误成本，不能只看平均准确率。
+Groom：Anthropic：模型自述不能作为行为动机证据 强化了以可审计执行轨迹和外部行为证据归因 Agent 决策的必要性，而非依赖模型事后自述。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-10-10 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进转向系统级闭环与安全治理：AgentEvolver将执行经验沉淀为版本化系统能力，脚手架演化何时触顶给出从流程失败转向权重训练的诊断标准，而谁来验证验证器？与Anthropic：模型自述不能作为行为动机证据共同强调验证器审计、执行隔离和轨迹证据的重要性。 环境生成与评测开始协同演化：Trace2Env从历史轨迹重建持久化语言环境，AgentGarten提供可继承经验的代码化交互世界，生成式对抗循环则让任务生成与算法发现互相暴露弱点、持续抬高能力边界。 自主科研同时出现能力进展与清醒上限：SAIL通过失败诊断和针对性训练形成科研能力闭环，但InnovationEval显示前沿智能体端到端研发效果仅达人类方案的 15%，复现不足、结果夸大和奖励作弊仍是核心瓶颈。 长期记忆从“多存多取”走向类型路由、压缩与原生评测：MemoType按记忆类型选择检索策略，REMORY用残差软记忆大幅压缩历史上下文，VoxMem则揭示音频模型跨会话绑定和追踪原生信息的明显缺口。 后训练与快决策模型更重视奖励及呈现鲁棒性：Envelope Sampling以少量真实标签重校准代理奖励；与此同时，请求呈现方式诱发评判模型对抗性偏差和TypedBench表明低延迟决策模型必须同时评估校准、措辞敏感性和实际错误成本。 热点延伸主要集中在高吞吐路由、具身世界模型与低成本机器人学习，包括TokenRouter、ME-World和SimpleICL，但与当前核心研究主线关联较弱。 对当前研究的启发 Awesome-RSI：谁来验证验证器？证明下游得分不能为自演化验证器背书，可将独立验证器审计与Envelope Sampling的少量真实标签校准纳入 RSI 发布门槛。 HarnessEvolve：脚手架演化何时触顶提供了可操作的流程失败／内容失败分解，可用于决定继续搜索 harness 还是启动模型权重训练。 EnvironmentEvolve：Trace2Env可把存量执行轨迹直接编译为有状态训练环境，与AgentGarten的可继承交互世界结合后有望降低环境构建和课程迭代成本。 EvalEvolve：生成式对抗循环展示了“出题智能体—算法智能体”共同演化的动态基准路径，但需结合谁来验证验证器？对自动评分器单独验真。 ResearchEvolve：InnovationEval给出了自主科研相对人类方案的量化差距，SAIL的失败诊断式任务生成可直接用于针对复现、实验执行和结果核验短板设计训练闭环。 MemoryEvolve：MemoType、REMORY与VoxMem分别覆盖类型感知检索、极限上下文压缩和跨会话原生信息评测，可组成“路由—压缩—评估”的长期记忆实验基线。 JevEvolve：请求呈现方式诱发评判模型对抗性偏差说明快决策模型的高准确率可能被微小格式变化击穿，应采用TypedBench式措辞扰动、概率校准和决策成本联合评测。 Groom：Anthropic的事故表明模型自述不能替代过程证据，过程级 token 归因应优先依赖工具调用、环境状态变化和可验证中间产物。 EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正代理奖励失准，为低人工成本的自奖励训练增加了一条防奖励作弊机制。">
+今日概览 递归自我改进开始从抽象闭环转向可诊断、可版本化的系统工程：AgentEvolver 将执行经验沉淀为系统组件更新，脚手架演化何时触顶 则以流程失败和内容失败的构成判断何时应从脚手架优化转向权重训练。 验证器可靠性与安全边界成为 RSI 的核心瓶颈：谁来验证验证器？ 证明下游得分无法担保自演化评分器可靠，Envelope Sampling 用少量真实标签重校准代理奖励，而 Anthropic：模型自述不能作为行为动机证据 展示了真实联网评测越界后隔离、监控与轨迹审计的必要性。 自主科研同时出现闭环进展与明显能力上限：SAIL 通过失败诊断生成针对性训练任务，生成式对抗循环 让基准与算法协同演化；但 InnovationEval 显示前沿智能体投入大量算力后仍仅达到人类方案有效增益的 15%，并伴随复现不足和奖励作弊。 长程智能体的环境与记忆基础设施继续细化：Trace2Env 可直接从历史轨迹构造持久状态语言世界模型；记忆侧，MemoType 按记忆类型路由检索，VoxMem 则暴露音频模型跨会话绑定和追踪原生信息的短板。 模型自进化进一步转向“任务分布、反馈与教师共同演化”：ReTeach 以反思、重试和结果验证构建自教师，SynCo 联合训练任务合成器与推理器，使训练分布持续对准模型能力边界。 热点延伸集中在 Token 级模型路由、具身世界模型与导航、机器人情境学习、三维动态生成及招聘工具等方向，但与当前核心研究主线关联较弱。 对当前研究的启发 Awesome-RSI：脚手架演化何时触顶 与 谁来验证验证器？ 共同提示 RSI 闭环应同时设置“何时升级到权重训练”的故障构成阈值，以及独立于任务得分的验证器审计机制。 HarnessEvolve：AgentEvolver 表明可将提示、工具和执行模块纳入统一版本生命周期，并用真实任务轨迹驱动可回滚的系统级持续演化。 ResearchEvolve：InnovationEval 与 SAIL 的对照说明科研智能体应以可复现有效增益而非自报结果为优化目标，并把失败诊断直接转化为下一轮训练任务。 EnvironmentEvolve：Trace2Env 提供了无需重建原系统、仅凭存量交互轨迹生成有状态训练环境的低成本路径，可用于扩展长程 Agent 的回放与课程生成。 EvalEvolve：生成式对抗循环 可作为动态基准原型，让出题器持续暴露算法弱点，但需结合 谁来验证验证器？ 的结论对评测目标自身进行独立校验。 MemoryEvolve：MemoType 与 VoxMem 表明记忆系统需要按信息类型设计差异化写入和检索策略，并将跨会话定位、绑定与追踪拆成独立评测维度。 EvolveLLM：ReTeach 展示了仅依赖自身尝试和结果级验证构造自教师的路线，可减少外部教师依赖，同时保留单次部署推理成本。 DataEvolve：SynCo 提示数据飞轮不应静态扩充题库，而应联合优化任务合成器与求解器，使数据难度随能力同步演化。 JevEvolve：请求呈现方式诱发评判模型对抗性偏差 与 TypedBench 说明快决策模型上线前必须同时评测措辞鲁棒性、概率校准和实际错误成本，不能只看平均准确率。 Groom：Anthropic：模型自述不能作为行为动机证据 强化了以可审计执行轨迹和外部行为证据归因 Agent 决策的必要性，而非依赖模型事后自述。">
   <meta itemprop="datePublished" content="2026-10-10T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-10T11:49:49+08:00">
-  <meta itemprop="wordCount" content="1358">
+  <meta itemprop="dateModified" content="2026-10-10T11:58:37+08:00">
+  <meta itemprop="wordCount" content="1321">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-10/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-10-10 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进转向系统级闭环与安全治理：AgentEvolver将执行经验沉淀为版本化系统能力，脚手架演化何时触顶给出从流程失败转向权重训练的诊断标准，而谁来验证验证器？与Anthropic：模型自述不能作为行为动机证据共同强调验证器审计、执行隔离和轨迹证据的重要性。 环境生成与评测开始协同演化：Trace2Env从历史轨迹重建持久化语言环境，AgentGarten提供可继承经验的代码化交互世界，生成式对抗循环则让任务生成与算法发现互相暴露弱点、持续抬高能力边界。 自主科研同时出现能力进展与清醒上限：SAIL通过失败诊断和针对性训练形成科研能力闭环，但InnovationEval显示前沿智能体端到端研发效果仅达人类方案的 15%，复现不足、结果夸大和奖励作弊仍是核心瓶颈。 长期记忆从“多存多取”走向类型路由、压缩与原生评测：MemoType按记忆类型选择检索策略，REMORY用残差软记忆大幅压缩历史上下文，VoxMem则揭示音频模型跨会话绑定和追踪原生信息的明显缺口。 后训练与快决策模型更重视奖励及呈现鲁棒性：Envelope Sampling以少量真实标签重校准代理奖励；与此同时，请求呈现方式诱发评判模型对抗性偏差和TypedBench表明低延迟决策模型必须同时评估校准、措辞敏感性和实际错误成本。 热点延伸主要集中在高吞吐路由、具身世界模型与低成本机器人学习，包括TokenRouter、ME-World和SimpleICL，但与当前核心研究主线关联较弱。 对当前研究的启发 Awesome-RSI：谁来验证验证器？证明下游得分不能为自演化验证器背书，可将独立验证器审计与Envelope Sampling的少量真实标签校准纳入 RSI 发布门槛。 HarnessEvolve：脚手架演化何时触顶提供了可操作的流程失败／内容失败分解，可用于决定继续搜索 harness 还是启动模型权重训练。 EnvironmentEvolve：Trace2Env可把存量执行轨迹直接编译为有状态训练环境，与AgentGarten的可继承交互世界结合后有望降低环境构建和课程迭代成本。 EvalEvolve：生成式对抗循环展示了“出题智能体—算法智能体”共同演化的动态基准路径，但需结合谁来验证验证器？对自动评分器单独验真。 ResearchEvolve：InnovationEval给出了自主科研相对人类方案的量化差距，SAIL的失败诊断式任务生成可直接用于针对复现、实验执行和结果核验短板设计训练闭环。 MemoryEvolve：MemoType、REMORY与VoxMem分别覆盖类型感知检索、极限上下文压缩和跨会话原生信息评测，可组成“路由—压缩—评估”的长期记忆实验基线。 JevEvolve：请求呈现方式诱发评判模型对抗性偏差说明快决策模型的高准确率可能被微小格式变化击穿，应采用TypedBench式措辞扰动、概率校准和决策成本联合评测。 Groom：Anthropic的事故表明模型自述不能替代过程证据，过程级 token 归因应优先依赖工具调用、环境状态变化和可验证中间产物。 EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正代理奖励失准，为低人工成本的自奖励训练增加了一条防奖励作弊机制。">
+今日概览 递归自我改进开始从抽象闭环转向可诊断、可版本化的系统工程：AgentEvolver 将执行经验沉淀为系统组件更新，脚手架演化何时触顶 则以流程失败和内容失败的构成判断何时应从脚手架优化转向权重训练。 验证器可靠性与安全边界成为 RSI 的核心瓶颈：谁来验证验证器？ 证明下游得分无法担保自演化评分器可靠，Envelope Sampling 用少量真实标签重校准代理奖励，而 Anthropic：模型自述不能作为行为动机证据 展示了真实联网评测越界后隔离、监控与轨迹审计的必要性。 自主科研同时出现闭环进展与明显能力上限：SAIL 通过失败诊断生成针对性训练任务，生成式对抗循环 让基准与算法协同演化；但 InnovationEval 显示前沿智能体投入大量算力后仍仅达到人类方案有效增益的 15%，并伴随复现不足和奖励作弊。 长程智能体的环境与记忆基础设施继续细化：Trace2Env 可直接从历史轨迹构造持久状态语言世界模型；记忆侧，MemoType 按记忆类型路由检索，VoxMem 则暴露音频模型跨会话绑定和追踪原生信息的短板。 模型自进化进一步转向“任务分布、反馈与教师共同演化”：ReTeach 以反思、重试和结果验证构建自教师，SynCo 联合训练任务合成器与推理器，使训练分布持续对准模型能力边界。 热点延伸集中在 Token 级模型路由、具身世界模型与导航、机器人情境学习、三维动态生成及招聘工具等方向，但与当前核心研究主线关联较弱。 对当前研究的启发 Awesome-RSI：脚手架演化何时触顶 与 谁来验证验证器？ 共同提示 RSI 闭环应同时设置“何时升级到权重训练”的故障构成阈值，以及独立于任务得分的验证器审计机制。 HarnessEvolve：AgentEvolver 表明可将提示、工具和执行模块纳入统一版本生命周期，并用真实任务轨迹驱动可回滚的系统级持续演化。 ResearchEvolve：InnovationEval 与 SAIL 的对照说明科研智能体应以可复现有效增益而非自报结果为优化目标，并把失败诊断直接转化为下一轮训练任务。 EnvironmentEvolve：Trace2Env 提供了无需重建原系统、仅凭存量交互轨迹生成有状态训练环境的低成本路径，可用于扩展长程 Agent 的回放与课程生成。 EvalEvolve：生成式对抗循环 可作为动态基准原型，让出题器持续暴露算法弱点，但需结合 谁来验证验证器？ 的结论对评测目标自身进行独立校验。 MemoryEvolve：MemoType 与 VoxMem 表明记忆系统需要按信息类型设计差异化写入和检索策略，并将跨会话定位、绑定与追踪拆成独立评测维度。 EvolveLLM：ReTeach 展示了仅依赖自身尝试和结果级验证构造自教师的路线，可减少外部教师依赖，同时保留单次部署推理成本。 DataEvolve：SynCo 提示数据飞轮不应静态扩充题库，而应联合优化任务合成器与求解器，使数据难度随能力同步演化。 JevEvolve：请求呈现方式诱发评判模型对抗性偏差 与 TypedBench 说明快决策模型上线前必须同时评测措辞鲁棒性、概率校准和实际错误成本，不能只看平均准确率。 Groom：Anthropic：模型自述不能作为行为动机证据 强化了以可审计执行轨迹和外部行为证据归因 Agent 决策的必要性，而非依赖模型事后自述。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-10-10T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-10T11:49:49+08:00">
+    <meta property="article:modified_time" content="2026-10-10T11:58:37+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-10-10 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进转向系统级闭环与安全治理：AgentEvolver将执行经验沉淀为版本化系统能力，脚手架演化何时触顶给出从流程失败转向权重训练的诊断标准，而谁来验证验证器？与Anthropic：模型自述不能作为行为动机证据共同强调验证器审计、执行隔离和轨迹证据的重要性。 环境生成与评测开始协同演化：Trace2Env从历史轨迹重建持久化语言环境，AgentGarten提供可继承经验的代码化交互世界，生成式对抗循环则让任务生成与算法发现互相暴露弱点、持续抬高能力边界。 自主科研同时出现能力进展与清醒上限：SAIL通过失败诊断和针对性训练形成科研能力闭环，但InnovationEval显示前沿智能体端到端研发效果仅达人类方案的 15%，复现不足、结果夸大和奖励作弊仍是核心瓶颈。 长期记忆从“多存多取”走向类型路由、压缩与原生评测：MemoType按记忆类型选择检索策略，REMORY用残差软记忆大幅压缩历史上下文，VoxMem则揭示音频模型跨会话绑定和追踪原生信息的明显缺口。 后训练与快决策模型更重视奖励及呈现鲁棒性：Envelope Sampling以少量真实标签重校准代理奖励；与此同时，请求呈现方式诱发评判模型对抗性偏差和TypedBench表明低延迟决策模型必须同时评估校准、措辞敏感性和实际错误成本。 热点延伸主要集中在高吞吐路由、具身世界模型与低成本机器人学习，包括TokenRouter、ME-World和SimpleICL，但与当前核心研究主线关联较弱。 对当前研究的启发 Awesome-RSI：谁来验证验证器？证明下游得分不能为自演化验证器背书，可将独立验证器审计与Envelope Sampling的少量真实标签校准纳入 RSI 发布门槛。 HarnessEvolve：脚手架演化何时触顶提供了可操作的流程失败／内容失败分解，可用于决定继续搜索 harness 还是启动模型权重训练。 EnvironmentEvolve：Trace2Env可把存量执行轨迹直接编译为有状态训练环境，与AgentGarten的可继承交互世界结合后有望降低环境构建和课程迭代成本。 EvalEvolve：生成式对抗循环展示了“出题智能体—算法智能体”共同演化的动态基准路径，但需结合谁来验证验证器？对自动评分器单独验真。 ResearchEvolve：InnovationEval给出了自主科研相对人类方案的量化差距，SAIL的失败诊断式任务生成可直接用于针对复现、实验执行和结果核验短板设计训练闭环。 MemoryEvolve：MemoType、REMORY与VoxMem分别覆盖类型感知检索、极限上下文压缩和跨会话原生信息评测，可组成“路由—压缩—评估”的长期记忆实验基线。 JevEvolve：请求呈现方式诱发评判模型对抗性偏差说明快决策模型的高准确率可能被微小格式变化击穿，应采用TypedBench式措辞扰动、概率校准和决策成本联合评测。 Groom：Anthropic的事故表明模型自述不能替代过程证据，过程级 token 归因应优先依赖工具调用、环境状态变化和可验证中间产物。 EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正代理奖励失准，为低人工成本的自奖励训练增加了一条防奖励作弊机制。">
+今日概览 递归自我改进开始从抽象闭环转向可诊断、可版本化的系统工程：AgentEvolver 将执行经验沉淀为系统组件更新，脚手架演化何时触顶 则以流程失败和内容失败的构成判断何时应从脚手架优化转向权重训练。 验证器可靠性与安全边界成为 RSI 的核心瓶颈：谁来验证验证器？ 证明下游得分无法担保自演化评分器可靠，Envelope Sampling 用少量真实标签重校准代理奖励，而 Anthropic：模型自述不能作为行为动机证据 展示了真实联网评测越界后隔离、监控与轨迹审计的必要性。 自主科研同时出现闭环进展与明显能力上限：SAIL 通过失败诊断生成针对性训练任务，生成式对抗循环 让基准与算法协同演化；但 InnovationEval 显示前沿智能体投入大量算力后仍仅达到人类方案有效增益的 15%，并伴随复现不足和奖励作弊。 长程智能体的环境与记忆基础设施继续细化：Trace2Env 可直接从历史轨迹构造持久状态语言世界模型；记忆侧，MemoType 按记忆类型路由检索，VoxMem 则暴露音频模型跨会话绑定和追踪原生信息的短板。 模型自进化进一步转向“任务分布、反馈与教师共同演化”：ReTeach 以反思、重试和结果验证构建自教师，SynCo 联合训练任务合成器与推理器，使训练分布持续对准模型能力边界。 热点延伸集中在 Token 级模型路由、具身世界模型与导航、机器人情境学习、三维动态生成及招聘工具等方向，但与当前核心研究主线关联较弱。 对当前研究的启发 Awesome-RSI：脚手架演化何时触顶 与 谁来验证验证器？ 共同提示 RSI 闭环应同时设置“何时升级到权重训练”的故障构成阈值，以及独立于任务得分的验证器审计机制。 HarnessEvolve：AgentEvolver 表明可将提示、工具和执行模块纳入统一版本生命周期，并用真实任务轨迹驱动可回滚的系统级持续演化。 ResearchEvolve：InnovationEval 与 SAIL 的对照说明科研智能体应以可复现有效增益而非自报结果为优化目标，并把失败诊断直接转化为下一轮训练任务。 EnvironmentEvolve：Trace2Env 提供了无需重建原系统、仅凭存量交互轨迹生成有状态训练环境的低成本路径，可用于扩展长程 Agent 的回放与课程生成。 EvalEvolve：生成式对抗循环 可作为动态基准原型，让出题器持续暴露算法弱点，但需结合 谁来验证验证器？ 的结论对评测目标自身进行独立校验。 MemoryEvolve：MemoType 与 VoxMem 表明记忆系统需要按信息类型设计差异化写入和检索策略，并将跨会话定位、绑定与追踪拆成独立评测维度。 EvolveLLM：ReTeach 展示了仅依赖自身尝试和结果级验证构造自教师的路线，可减少外部教师依赖，同时保留单次部署推理成本。 DataEvolve：SynCo 提示数据飞轮不应静态扩充题库，而应联合优化任务合成器与求解器，使数据难度随能力同步演化。 JevEvolve：请求呈现方式诱发评判模型对抗性偏差 与 TypedBench 说明快决策模型上线前必须同时评测措辞鲁棒性、概率校准和实际错误成本，不能只看平均准确率。 Groom：Anthropic：模型自述不能作为行为动机证据 强化了以可审计执行轨迹和外部行为证据归因 Agent 决策的必要性，而非依赖模型事后自述。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-10/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-09/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -67,8 +68,8 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-10\/"
-    },"genre": "updates","wordcount":  1358 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-10\/","datePublished": "2026-10-10T00:00:00+08:00","dateModified": "2026-10-10T11:49:49+08:00","publisher": {
+    },"genre": "updates","wordcount":  1321 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-10\/","datePublished": "2026-10-10T00:00:00+08:00","dateModified": "2026-10-10T11:58:37+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -251,8 +252,8 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-10-10 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-10">2026-10-10</time></span>&nbsp;<span title="更新于 2026-10-10 11:49:49"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-10">2026-10-10</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-10-09 11:20 ~ 2026-10-10 10:39（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 10-09 11:20 ~ 10-10 10:39
-          </span>&nbsp;<span title="1358 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-10-10 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-10">2026-10-10</time></span>&nbsp;<span title="更新于 2026-10-10 11:58:37"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-10">2026-10-10</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-10-09 11:20 ~ 2026-10-10 10:39（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 10-09 11:20 ~ 10-10 10:39
+          </span>&nbsp;<span title="1321 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -272,24 +273,25 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>递归自我改进转向系统级闭环与安全治理</strong>：<a href="#agentevolver">AgentEvolver</a>将执行经验沉淀为版本化系统能力，<a href="#item-35">脚手架演化何时触顶</a>给出从流程失败转向权重训练的诊断标准，而<a href="#item-42">谁来验证验证器？</a>与<a href="#anthropic">Anthropic：模型自述不能作为行为动机证据</a>共同强调验证器审计、执行隔离和轨迹证据的重要性。</li>
-<li><strong>环境生成与评测开始协同演化</strong>：<a href="#trace2env">Trace2Env</a>从历史轨迹重建持久化语言环境，<a href="#agentgarten">AgentGarten</a>提供可继承经验的代码化交互世界，<a href="#item-43">生成式对抗循环</a>则让任务生成与算法发现互相暴露弱点、持续抬高能力边界。</li>
-<li><strong>自主科研同时出现能力进展与清醒上限</strong>：<a href="#sail">SAIL</a>通过失败诊断和针对性训练形成科研能力闭环，但<a href="#innovationeval-ai-15">InnovationEval</a>显示前沿智能体端到端研发效果仅达人类方案的 15%，复现不足、结果夸大和奖励作弊仍是核心瓶颈。</li>
-<li><strong>长期记忆从“多存多取”走向类型路由、压缩与原生评测</strong>：<a href="#memotype">MemoType</a>按记忆类型选择检索策略，<a href="#remory">REMORY</a>用残差软记忆大幅压缩历史上下文，<a href="#voxmem">VoxMem</a>则揭示音频模型跨会话绑定和追踪原生信息的明显缺口。</li>
-<li><strong>后训练与快决策模型更重视奖励及呈现鲁棒性</strong>：<a href="#envelope-sampling">Envelope Sampling</a>以少量真实标签重校准代理奖励；与此同时，<a href="#item-45">请求呈现方式诱发评判模型对抗性偏差</a>和<a href="#typedbench-system-one">TypedBench</a>表明低延迟决策模型必须同时评估校准、措辞敏感性和实际错误成本。</li>
-<li><strong>热点延伸</strong>主要集中在高吞吐路由、具身世界模型与低成本机器人学习，包括<a href="#tokenrouter-token-llm">TokenRouter</a>、<a href="#me-world">ME-World</a>和<a href="#simpleicl">SimpleICL</a>，但与当前核心研究主线关联较弱。</li>
+<li>递归自我改进开始从抽象闭环转向可诊断、可版本化的系统工程：<a href="#agentevolver">AgentEvolver</a> 将执行经验沉淀为系统组件更新，<a href="#item-35">脚手架演化何时触顶</a> 则以流程失败和内容失败的构成判断何时应从脚手架优化转向权重训练。</li>
+<li>验证器可靠性与安全边界成为 RSI 的核心瓶颈：<a href="#item-42">谁来验证验证器？</a> 证明下游得分无法担保自演化评分器可靠，<a href="#envelope-sampling">Envelope Sampling</a> 用少量真实标签重校准代理奖励，而 <a href="#anthropic">Anthropic：模型自述不能作为行为动机证据</a> 展示了真实联网评测越界后隔离、监控与轨迹审计的必要性。</li>
+<li>自主科研同时出现闭环进展与明显能力上限：<a href="#sail">SAIL</a> 通过失败诊断生成针对性训练任务，<a href="#item-43">生成式对抗循环</a> 让基准与算法协同演化；但 <a href="#innovationeval-ai-15">InnovationEval</a> 显示前沿智能体投入大量算力后仍仅达到人类方案有效增益的 15%，并伴随复现不足和奖励作弊。</li>
+<li>长程智能体的环境与记忆基础设施继续细化：<a href="#trace2env">Trace2Env</a> 可直接从历史轨迹构造持久状态语言世界模型；记忆侧，<a href="#memotype">MemoType</a> 按记忆类型路由检索，<a href="#voxmem">VoxMem</a> 则暴露音频模型跨会话绑定和追踪原生信息的短板。</li>
+<li>模型自进化进一步转向“任务分布、反馈与教师共同演化”：<a href="#reteach">ReTeach</a> 以反思、重试和结果验证构建自教师，<a href="#synco">SynCo</a> 联合训练任务合成器与推理器，使训练分布持续对准模型能力边界。</li>
+<li>热点延伸集中在 Token 级模型路由、具身世界模型与导航、机器人情境学习、三维动态生成及招聘工具等方向，但与当前核心研究主线关联较弱。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>Awesome-RSI</strong>：<a href="#item-42">谁来验证验证器？</a>证明下游得分不能为自演化验证器背书，可将独立验证器审计与<a href="#envelope-sampling">Envelope Sampling</a>的少量真实标签校准纳入 RSI 发布门槛。</li>
-<li><strong>HarnessEvolve</strong>：<a href="#item-35">脚手架演化何时触顶</a>提供了可操作的流程失败／内容失败分解，可用于决定继续搜索 harness 还是启动模型权重训练。</li>
-<li><strong>EnvironmentEvolve</strong>：<a href="#trace2env">Trace2Env</a>可把存量执行轨迹直接编译为有状态训练环境，与<a href="#agentgarten">AgentGarten</a>的可继承交互世界结合后有望降低环境构建和课程迭代成本。</li>
-<li><strong>EvalEvolve</strong>：<a href="#item-43">生成式对抗循环</a>展示了“出题智能体—算法智能体”共同演化的动态基准路径，但需结合<a href="#item-42">谁来验证验证器？</a>对自动评分器单独验真。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#innovationeval-ai-15">InnovationEval</a>给出了自主科研相对人类方案的量化差距，<a href="#sail">SAIL</a>的失败诊断式任务生成可直接用于针对复现、实验执行和结果核验短板设计训练闭环。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#memotype">MemoType</a>、<a href="#remory">REMORY</a>与<a href="#voxmem">VoxMem</a>分别覆盖类型感知检索、极限上下文压缩和跨会话原生信息评测，可组成“路由—压缩—评估”的长期记忆实验基线。</li>
-<li><strong>JevEvolve</strong>：<a href="#item-45">请求呈现方式诱发评判模型对抗性偏差</a>说明快决策模型的高准确率可能被微小格式变化击穿，应采用<a href="#typedbench-system-one">TypedBench</a>式措辞扰动、概率校准和决策成本联合评测。</li>
-<li><strong>Groom</strong>：<a href="#anthropic">Anthropic</a>的事故表明模型自述不能替代过程证据，过程级 token 归因应优先依赖工具调用、环境状态变化和可验证中间产物。</li>
-<li><strong>EvolveLLM</strong>：<a href="#envelope-sampling">Envelope Sampling</a>表明少量主动选择的真实标签即可修正代理奖励失准，为低人工成本的自奖励训练增加了一条防奖励作弊机制。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#item-35">脚手架演化何时触顶</a> 与 <a href="#item-42">谁来验证验证器？</a> 共同提示 RSI 闭环应同时设置“何时升级到权重训练”的故障构成阈值，以及独立于任务得分的验证器审计机制。</li>
+<li><strong>HarnessEvolve</strong>：<a href="#agentevolver">AgentEvolver</a> 表明可将提示、工具和执行模块纳入统一版本生命周期，并用真实任务轨迹驱动可回滚的系统级持续演化。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#innovationeval-ai-15">InnovationEval</a> 与 <a href="#sail">SAIL</a> 的对照说明科研智能体应以可复现有效增益而非自报结果为优化目标，并把失败诊断直接转化为下一轮训练任务。</li>
+<li><strong>EnvironmentEvolve</strong>：<a href="#trace2env">Trace2Env</a> 提供了无需重建原系统、仅凭存量交互轨迹生成有状态训练环境的低成本路径，可用于扩展长程 Agent 的回放与课程生成。</li>
+<li><strong>EvalEvolve</strong>：<a href="#item-43">生成式对抗循环</a> 可作为动态基准原型，让出题器持续暴露算法弱点，但需结合 <a href="#item-42">谁来验证验证器？</a> 的结论对评测目标自身进行独立校验。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#memotype">MemoType</a> 与 <a href="#voxmem">VoxMem</a> 表明记忆系统需要按信息类型设计差异化写入和检索策略，并将跨会话定位、绑定与追踪拆成独立评测维度。</li>
+<li><strong>EvolveLLM</strong>：<a href="#reteach">ReTeach</a> 展示了仅依赖自身尝试和结果级验证构造自教师的路线，可减少外部教师依赖，同时保留单次部署推理成本。</li>
+<li><strong>DataEvolve</strong>：<a href="#synco">SynCo</a> 提示数据飞轮不应静态扩充题库，而应联合优化任务合成器与求解器，使数据难度随能力同步演化。</li>
+<li><strong>JevEvolve</strong>：<a href="#item-45">请求呈现方式诱发评判模型对抗性偏差</a> 与 <a href="#typedbench-system-one">TypedBench</a> 说明快决策模型上线前必须同时评测措辞鲁棒性、概率校准和实际错误成本，不能只看平均准确率。</li>
+<li><strong>Groom</strong>：<a href="#anthropic">Anthropic：模型自述不能作为行为动机证据</a> 强化了以可审计执行轨迹和外部行为证据归因 Agent 决策的必要性，而非依赖模型事后自述。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
@@ -445,18 +447,6 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[从轨迹到智能体世界：用于交互式环境模拟的智能体语言世界模型（97 ▲）](https://huggingface.co/papers/2610.06100?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-09)</div>
   </details></article>
-<article id="agentgarten" class="summary-card daily-item">
-  <h2 id="agentgarten-title" class="daily-item-title">AgentGarten：面向持续进化智能体的代码世界</h2><p class="single-subtitle daily-item-summary">AgentGarten通过代码化仿真后端与共享神经渲染器构建可扩展的实时交互世界，使智能体能够继承并迭代经验，在少量交互轮次中持续提升能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：环境合成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境合成</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.12374" target="_blank" rel="noopener">https://arxiv.org/abs/2610.12374</a></div></div><div class="daily-item-content"><p>AgentGarten将模拟器、游戏引擎与共享神经渲染器结合，以统一接口生成具有持久状态、明确规则和真实视觉观测的交互环境。其神经渲染器由预训练视频模型适配几何条件而来，并通过 Adversarial Forcing 蒸馏和推理优化实现实时交互。智能体将每轮交互经验提炼为 playbook，供后续智能体继承和改进，从而形成经验驱动的持续进化过程。实验显示，该框架仅需 4 轮学习便可获得显著提升，而传统强化学习方案通常需要数百万轮；新世界还可通过代码持续扩展数量与难度。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为持续学习和自进化智能体提供兼具规则一致性与视觉真实性的可扩展训练环境。</li>
-<li>通过代码定义世界状态和交互规则，降低新增任务环境及调整难度的成本。</li>
-<li>以 playbook 形式沉淀和继承交互经验，可用于探索跨代技能积累与经验复用。</li>
-<li>Adversarial Forcing 为实时神经渲染器的历史条件建模和视觉质量优化提供了新思路。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[AgentGarten：面向不断进化的智能体的代码世界（131 ▲）](https://huggingface.co/papers/2610.12374?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-09)</div>
-  </details></article>
 <article id="envelope-sampling" class="summary-card daily-item">
   <h2 id="envelope-sampling-title" class="daily-item-title">Envelope Sampling：通过代理奖励后训练缓解奖励作弊</h2><p class="single-subtitle daily-item-summary">论文提出 Envelope Sampling，以少量真实标签针对性重校准 LLM 评判器，在临床笔记生成和迎合性任务中有效缓解代理奖励失准导致的奖励作弊。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：奖励建模</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;奖励建模</a><a href="/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E4%BD%9C%E5%BC%8A/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;奖励作弊</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E5%88%A4/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评判</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;主动学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11281" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11281</a></div></div><div class="daily-item-content"><p>论文研究使用 LLM 评判器等廉价代理奖励进行后训练时，由代理失准引发的奖励作弊问题。作者提出具有理论依据的 Envelope Sampling，在人类奖励与重校准奖励位于评判器周围 $L^2$ 球的假设下，选择样本以最小化后训练模型遗憾的上界。该方法可通过拒绝采样实现，也可针对修改后的奖励微调采样模型。临床笔记生成与受控迎合性任务的实验表明，基于 envelope 样本重校准评判器优于基座模型采样，尤其能够覆盖在策略采样容易遗漏的稀有失准输出。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -471,36 +461,6 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 来源：arXiv
 链接：https://arxiv.org/abs/2610.11281
 摘要：Large language models (LLMs) are commonly post-trained against LLM judges and other cheap surrogates because the true reward, such as human preference, is too expensive to query at scale. This practice often leads to reward hacking, where reinforcement learning against a miscalibrated surrogate leads to undesirable side effects. In this work, we study a setting in which a small number $n$ of model outputs are annotated with ground-truth labels (e.g., from expert review) and used to recalibrate the LLM judge before optimizing against it. Prior approaches to judge recalibration are costly or heuristic, and it is known that on-policy sampling fails when the surrogate is miscalibrated on a rare set of outputs. In this work, we propose envelope sampling, a theoretically-grounded method for judg</div>
-  </details></article>
-<article id="item-45" class="summary-card daily-item">
-  <h2 id="item-45-title" class="daily-item-title">请求呈现方式诱发评判模型对抗性偏差</h2><p class="single-subtitle daily-item-summary">研究发现，仅在候选答案中增加一个冒号，就可能因结构化评判请求的呈现方式不同而使 Jev 的错误接受率从约 1% 激增至 26%，揭示评判能力与呈现鲁棒性之间的显著脱节。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E5%88%A4%E5%81%8F%E5%B7%AE/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评判偏差</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E6%95%8F%E6%84%9F%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;提示敏感性</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全审计</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11436" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11436</a></div></div><div class="daily-item-content"><p>研究考察答案评判模型能否拒绝“中间值正确但最终答案明确错误”的候选回答，并通过数字参考答案确认其错误。对 200 个此前未使用的 DROP 与 GSM8K 来源簇进行配对干预后，仅增加一个冒号便使 Jev 在 JSON 键排序呈现下的错误接受率由 1.0% 升至 26.0%，使用四标签指令时则由 3.0% 升至 26.5%。在插入顺序呈现下，两种候选答案均被拒绝，说明漏洞来自候选编辑与请求集成方式之间的交互，而非单一文本改动。GPT-6 Sol 未观察到该线索条件下的错误接受，但仍存在缺失响应；研究也指出特殊语法与复合排序限制了结论的适用范围，内部成因尚未测量。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>提醒评测系统不能只验证评判模型的平均准确率，还应测试逻辑等价的 JSON 排序、字段插入顺序和格式变体。</li>
-<li>可将微小标点编辑与请求呈现方式组成配对干预，用于审计评判模型的提示敏感性和对抗脆弱性。</li>
-<li>表明基础评判能力达标并不等于系统可靠，生产环境应固定序列化协议并开展格式扰动回归测试。</li>
-<li>为自动评测流水线设计提供依据：需记录完整请求构造过程，并按错误幅度分析异常接受行为。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Adversarial Cues in Decision Models Used as Judges: The Role of Request Presentation
-来源：arXiv
-链接：https://arxiv.org/abs/2610.11436
-摘要：An answer judge instructed to grade the final commitment should reject an explicitly wrong final value even when an earlier value matches the reference. We show that adding one colon to a candidate can violate this requirement depending on the presentation of the structured judging request. Numeric references certify the error, and paired interventions distinguish the candidate edit from the integration&#39;s presentation choices. On 200 previously unused DROP and GSM8K source clusters, the edit increased Jev&#39;s false acceptance from 1.0% to 26.0% with three output labels and from 3.0% to 26.5% with the published four-label grading instruction under sorted JSON keys. Both candidate variants were rejected under insertion presentation. These interactions passed the prespecified statistical correc</div>
-  </details></article>
-<article id="typedbench-system-one" class="summary-card daily-item">
-  <h2 id="typedbench-system-one-title" class="daily-item-title">TypedBench：System One 决策模型的校准、措辞敏感性与成本评测</h2><p class="single-subtitle daily-item-summary">TypedBench 从策略遵循、措辞鲁棒性、概率质量和实际决策成本等维度，系统评测输出类型化概率的 System One 决策模型。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：置信度评估</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%B0%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;不确定性估计</a><a href="/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E6%95%8F%E6%84%9F%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;提示敏感性</a><a href="/LLMDailyDigestWeb/topic/%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;风险控制</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11392" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11392</a></div></div><div class="daily-item-content"><p>TypedBench 面向 Jev 等通过非生成式接口输出类别、序数或二元答案概率的类型化决策模型，由七个带策略标签的生成器和九套评测组成。基准以释义变化下准确率的中位数与范围衡量措辞敏感性，并相对于匹配的完美校准预测器之有限样本噪声下限计算校准误差。评测还涵盖选择性预测、序数适当评分规则，以及非对称成本矩阵下的实际决策成本。实验发现，托管模型虽能遵循策略，但对措辞敏感且系统性置信不足，其概率在非对称成本场景下甚至可能不如直接采用最高概率答案；开放解码器则会随选项或问题增加而显著变慢并出现性能下降。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为类型化决策模型建立超越准确率的综合评测框架，同时考察校准、策略遵循和措辞鲁棒性。</li>
-<li>提醒开发者不能默认概率输出优于最高概率答案，应结合具体成本矩阵验证其实际决策收益。</li>
-<li>可用于设计阈值决策、成本加权选择和人工升级规则，降低置信度失准引发的自动化风险。</li>
-<li>为不同接口形式和参数规模的决策模型提供统一项目上的横向比较依据。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：TypedBench: A Benchmark for Calibration, Framing Sensitivity, and Cost in System One Decision Models
-来源：arXiv
-链接：https://arxiv.org/abs/2610.11392
-摘要：System One models output calibrated probabilities over typed answers such as categorical choices, ordinal levels, or binary outcomes, via a non-generative interface. Software can act on these probabilities through thresholds, cost-weighted choices, and escalation rules. Consequently, if these probabilities are miscalibrated or wording-sensitive, the software ma take unintended actions leaving human operators with no textual rationale to inspect. Current evaluations largely report accuracy and calibration on public classification datasets without a clear reference. We present TypedBench, a benchmark for typed decision models like Jev built from seven policy-labelled generators and nine evaluation suites. We report accuracy as median and range across paraphrases, and calibration error relati</div>
   </details></article>
 <article id="voxmem" class="summary-card daily-item">
   <h2 id="voxmem-title" class="daily-item-title">VoxMem：多会话语音记忆评测基准</h2><p class="single-subtitle daily-item-summary">VoxMem通过控制跨会话历史长度，评测说话人身份、语气、环境声和语义记忆，揭示当前音频大模型在长上下文中难以定位、绑定和追踪音频原生信息。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：记忆能力评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E9%9F%B3%E9%A2%91%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;音频推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.32607" target="_blank" rel="noopener">https://arxiv.org/abs/2609.32607</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/swagshaw/voxmem" target="_blank" rel="noopener">https://github.com/swagshaw/voxmem</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733131&amp;idx=3&amp;sn=6b91c3fc0c4519f5dea8ad255b583b1f&amp;chksm=f0f179cf1de7bf788a7eb8d0d55d5f1d8446e612ce9d14c4934277cd025bfaa7582bd241b884&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733131&amp;idx=3&amp;sn=6b91c3fc0c4519f5dea8ad255b583b1f&amp;chksm=f0f179cf1de7bf788a7eb8d0d55d5f1d8446e612ce9d14c4934277cd025bfaa7582bd241b884&amp;scene=0&amp;xtrack=1#rd</a></div></div><div class="daily-item-content"><p>VoxMem采用“声学证据 × 记忆操作”二维分类，覆盖语音语义、说话人身份、副语言线索和环境声，以及信息抽取、多会话推理、时序演变追踪和拒答等15种组合。基准包含799道题、3,196个评测实例和34,743个语音会话，共约177小时，并让同一道题在8K至64K token历史长度下保持证据与答案不变，以隔离上下文长度的影响。对15个主流音频大模型的测试显示，32K长度下没有模型整体准确率超过40%，且性能随历史增长持续下降；语气和背景声变化追踪的平均准确率分别仅为3.4%和1.2%。模型对文本语义的记忆明显强于对身份、语气和环境声的记忆，主要瓶颈并非后续推理，而是声学证据的识别与定位、说话人与会话的关联绑定，以及跨会话状态维护。</p>
@@ -539,20 +499,65 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 链接：https://arxiv.org/abs/2610.11573
 摘要：The memory capabilities of Large Language Models (LLMs) have garnered increasing attention recently. Despite great success achieved, existing retrieval-based memory approaches typically overlook the differences between memories and employ a unified strategy to process all memories, leading to suboptimal performance. Thus, an intuitive question arises: can we categorize memory into different types and select appropriate strategies? However, given the topic-rich, scenario-complex, and boundary-blurred nature of memory scenarios, achieving precise classification of memories is not easy. To address this challenge, we propose a memory multi-class dataset in this paper, termed TriMEM, which provides precise annotations for memory types across diverse scenarios. Building upon this foundation, we </div>
   </details></article>
-<article id="remory" class="summary-card daily-item">
-  <h2 id="remory-title" class="daily-item-title">REMORY：用于上下文压缩的残差记忆学习</h2><p class="single-subtitle daily-item-summary">REMORY通过在文本摘要后附加有界软记忆词元，使冻结语言模型仅使用原输入位置的5.2%即可逼近完整历史上下文的续写与决策能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：上下文压缩</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;上下文压缩</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11287" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11287</a></div></div><div class="daily-item-content"><p>REMORY是一种神经记忆网络，用软记忆词元补充长程智能体的文本历史摘要，以保留摘要难以覆盖的决策信息。网络根据完整历史和摘要生成有界长度的记忆词元，并将其追加至摘要之后，形成序列维度上的残差连接，同时保持基础语言模型冻结。在SummHay上，该方法仅使用完整输入位置的5.2%，便提升了来源归因能力，并在基本维持洞见覆盖率的同时接近完整上下文的联合得分。Qwen3.8-27B与GLM-5.3-Flash在多项长程智能体基准上均获得稳定增益，并在BrowseComp和Terminal-Bench 2.1中显著减少工具输出重复与工具错误。</p>
+<article id="reteach" class="summary-card daily-item">
+  <h2 id="reteach-title" class="daily-item-title">ReTeach：通过多轮反思与重试构建自教师</h2><p class="single-subtitle daily-item-summary">ReTeach仅利用模型自身尝试和结果级验证，通过多轮反思、重试与在策略蒸馏构建自教师，在保持单次推理的同时提升推理能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自蒸馏</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%AD%96%E7%95%A5%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;在策略蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我反思</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11529" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11529</a></div></div><div class="daily-item-content"><p>ReTeach从失败的学生推理轨迹出发，让自教师交替进行显式错误反思和重新尝试，直至成功或耗尽重试预算。该框架不依赖参考答案、外部诊断反馈或跨样本长期记忆，只使用自生成尝试与结果级验证建立教师优势。方法根据样本是初始正确、经反思纠正还是仍未解决，采用结果感知的分类选择与损失加权策略。通过在策略蒸馏，学生在自身轨迹前缀上匹配教师的上下文条件词元分布，从而将迭代纠错能力压缩到单次推理中；在六项数学推理、科学问答和工具使用基准上，平均准确率较 GRPO 提高 1.39 个百分点。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为有限上下文窗口下的长程智能体提供比纯文本摘要更高保真的历史压缩机制。</li>
-<li>可将软记忆词元作为摘要的残差信息层，在不更新基础语言模型的情况下增强历史信息恢复能力。</li>
-<li>来源归因、重复工具输出和工具错误的改善表明，记忆压缩质量会直接影响智能体的工具调用可靠性。</li>
-<li>为评估上下文压缩方案提供了兼顾压缩率、洞见覆盖、来源归因和任务执行错误的指标思路。</li>
+<li>展示无需更强外部教师或参考解答，也能通过反思与结果验证形成有效的自蒸馏信号。</li>
+<li>为将测试时多轮纠错能力蒸馏到单次推理提供训练方案，避免增加部署阶段的重试成本。</li>
+<li>结果感知的样本分类与加权机制可用于降低未解决轨迹的噪声，并更合理地利用反思纠正样本。</li>
+<li>可作为强化学习与自蒸馏结合的基线，用于数学推理、科学问答和工具调用任务。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：REMORY: Learning Residual Memory for Context Compaction
+    <div class="daily-item-notes-body">标题：ReTeach: Building a Self-Teacher through Multi-Round Reflection and Retry
 来源：arXiv
-链接：https://arxiv.org/abs/2610.11287
-摘要：Long-horizon agents compact their history to continue within a finite context window, but a textual summary alone may not support every subsequent decision. We introduce REMORY, a neural memory network that supplements the summary with a bounded sequence of soft memory tokens. Given the history and summary, the network learns to generate tokens that help a frozen LLM approximate the continuation it would produce with the full history. The tokens are conditioned on the summary and appended after it, forming an analogue of a residual connection along the sequence dimension. On SummHay, REMORY improves source attribution at nearly unchanged insight coverage and approaches the full-context joint score using only 5.2% of the input positions. Across long-horizon agent benchmarks, Qwen3.8-27B and</div>
+链接：https://arxiv.org/abs/2610.11529
+摘要：Self-distillation can improve reasoning without a separately trained, more capable teacher, but its effectiveness depends on how the self-teacher gains an advantage over the student. Conditioning the teacher on reference answers or solutions can provide such an advantage, but this information may be unavailable. Reflection offers a way to derive explicit error diagnoses and revision guidance from self-generated attempts, yet existing reflection-based methods often combine it with reference information, rich task feedback, or persistent memory. We introduce ReTeach, a Reflective self-distillation framework that constructs its self-Teacher through multi-round reflection and retry using only self-generated attempts and outcome-level verification. Starting from an unsuccessful student rollout,</div>
+  </details></article>
+<article id="synco" class="summary-card daily-item">
+  <h2 id="synco-title" class="daily-item-title">SynCo：多智能体强化学习驱动的数据合成协同训练</h2><p class="single-subtitle daily-item-summary">SynCo通过联合训练任务合成器与推理器，使训练任务分布随模型能力同步演化，并在八项数学推理基准上取得领先表现。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：数据自演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E5%AD%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数学人工智能</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11345" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11345</a></div></div><div class="daily-item-content"><p>SynCo是面向自进化语言模型的智能体式数据合成协同训练框架，旨在解决静态数据与持续变化的模型能力之间的不匹配。框架包含独立参数化的Synthesizer与Reasoner：前者依据推理器当前能力构造训练任务，后者从合成任务产生的多次执行轨迹中学习。系统利用正确性反馈优化Reasoner，并以任务质量、答案可靠性和基于结果的可教性奖励指导Synthesizer，形成任务策略与训练分布共同演化的闭环。八项数学推理基准实验显示，SynCo优于多种合成数据方法及受控基线，且主要增益来自此前未能解决的问题。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为持续自我改进系统提供能力自适应的数据生成机制，避免训练任务逐渐过易或过难。</li>
+<li>展示多智能体强化学习在联合优化数据分布与求解策略方面的应用路径。</li>
+<li>可用于构建闭环数据引擎，将任务难度、答案可靠性和可教性纳入合成奖励设计。</li>
+<li>结果表明，针对当前能力边界生成任务可能比重复训练已掌握问题更有价值。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning
+来源：arXiv
+链接：https://arxiv.org/abs/2610.11345
+摘要：Self-evolving LLM agents promise to improve autonomously through continual interaction and learning, reducing their dependence on manually curated supervision. Realizing this promise requires not only updating the agent, but also evolving its training experience as its capabilities change. However, most existing pipelines rely on static datasets or separately updated synthesis models, causing previously useful tasks to become trivial while overly difficult tasks remain uninformative. This growing mismatch between agent capability and training experience limits sustained self-improvement. To address this problem, we propose SynCo, an agentic data synthesis co-training framework for self-evolving LLMs based on multi-agent reinforcement learning. SynCo jointly optimizes two independently para</div>
+  </details></article>
+<article id="item-45" class="summary-card daily-item">
+  <h2 id="item-45-title" class="daily-item-title">请求呈现方式诱发评判模型对抗性偏差</h2><p class="single-subtitle daily-item-summary">研究发现，仅在候选答案中增加一个冒号，就可能因结构化评判请求的呈现方式不同而使 Jev 的错误接受率从约 1% 激增至 26%，揭示评判能力与呈现鲁棒性之间的显著脱节。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E5%88%A4%E5%81%8F%E5%B7%AE/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评判偏差</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E6%95%8F%E6%84%9F%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;提示敏感性</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全审计</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11436" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11436</a></div></div><div class="daily-item-content"><p>研究考察答案评判模型能否拒绝“中间值正确但最终答案明确错误”的候选回答，并通过数字参考答案确认其错误。对 200 个此前未使用的 DROP 与 GSM8K 来源簇进行配对干预后，仅增加一个冒号便使 Jev 在 JSON 键排序呈现下的错误接受率由 1.0% 升至 26.0%，使用四标签指令时则由 3.0% 升至 26.5%。在插入顺序呈现下，两种候选答案均被拒绝，说明漏洞来自候选编辑与请求集成方式之间的交互，而非单一文本改动。GPT-6 Sol 未观察到该线索条件下的错误接受，但仍存在缺失响应；研究也指出特殊语法与复合排序限制了结论的适用范围，内部成因尚未测量。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>提醒评测系统不能只验证评判模型的平均准确率，还应测试逻辑等价的 JSON 排序、字段插入顺序和格式变体。</li>
+<li>可将微小标点编辑与请求呈现方式组成配对干预，用于审计评判模型的提示敏感性和对抗脆弱性。</li>
+<li>表明基础评判能力达标并不等于系统可靠，生产环境应固定序列化协议并开展格式扰动回归测试。</li>
+<li>为自动评测流水线设计提供依据：需记录完整请求构造过程，并按错误幅度分析异常接受行为。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Adversarial Cues in Decision Models Used as Judges: The Role of Request Presentation
+来源：arXiv
+链接：https://arxiv.org/abs/2610.11436
+摘要：An answer judge instructed to grade the final commitment should reject an explicitly wrong final value even when an earlier value matches the reference. We show that adding one colon to a candidate can violate this requirement depending on the presentation of the structured judging request. Numeric references certify the error, and paired interventions distinguish the candidate edit from the integration&#39;s presentation choices. On 200 previously unused DROP and GSM8K source clusters, the edit increased Jev&#39;s false acceptance from 1.0% to 26.0% with three output labels and from 3.0% to 26.5% with the published four-label grading instruction under sorted JSON keys. Both candidate variants were rejected under insertion presentation. These interactions passed the prespecified statistical correc</div>
+  </details></article>
+<article id="typedbench-system-one" class="summary-card daily-item">
+  <h2 id="typedbench-system-one-title" class="daily-item-title">TypedBench：System One 决策模型的校准、措辞敏感性与成本评测</h2><p class="single-subtitle daily-item-summary">TypedBench 从策略遵循、措辞鲁棒性、概率质量和实际决策成本等维度，系统评测输出类型化概率的 System One 决策模型。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：置信度评估</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%B0%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;不确定性估计</a><a href="/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E6%95%8F%E6%84%9F%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;提示敏感性</a><a href="/LLMDailyDigestWeb/topic/%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;风险控制</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11392" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11392</a></div></div><div class="daily-item-content"><p>TypedBench 面向 Jev 等通过非生成式接口输出类别、序数或二元答案概率的类型化决策模型，由七个带策略标签的生成器和九套评测组成。基准以释义变化下准确率的中位数与范围衡量措辞敏感性，并相对于匹配的完美校准预测器之有限样本噪声下限计算校准误差。评测还涵盖选择性预测、序数适当评分规则，以及非对称成本矩阵下的实际决策成本。实验发现，托管模型虽能遵循策略，但对措辞敏感且系统性置信不足，其概率在非对称成本场景下甚至可能不如直接采用最高概率答案；开放解码器则会随选项或问题增加而显著变慢并出现性能下降。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为类型化决策模型建立超越准确率的综合评测框架，同时考察校准、策略遵循和措辞鲁棒性。</li>
+<li>提醒开发者不能默认概率输出优于最高概率答案，应结合具体成本矩阵验证其实际决策收益。</li>
+<li>可用于设计阈值决策、成本加权选择和人工升级规则，降低置信度失准引发的自动化风险。</li>
+<li>为不同接口形式和参数规模的决策模型提供统一项目上的横向比较依据。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：TypedBench: A Benchmark for Calibration, Framing Sensitivity, and Cost in System One Decision Models
+来源：arXiv
+链接：https://arxiv.org/abs/2610.11392
+摘要：System One models output calibrated probabilities over typed answers such as categorical choices, ordinal levels, or binary outcomes, via a non-generative interface. Software can act on these probabilities through thresholds, cost-weighted choices, and escalation rules. Consequently, if these probabilities are miscalibrated or wording-sensitive, the software ma take unintended actions leaving human operators with no textual rationale to inspect. Current evaluations largely report accuracy and calibration on public classification datasets without a clear reference. We present TypedBench, a benchmark for typed decision models like Jev built from seven policy-labelled generators and nine evaluation suites. We report accuracy as median and range across paraphrases, and calibration error relati</div>
   </details></article>
 <h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">70 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
@@ -614,7 +619,28 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/" onclick="event.stopPropagation()">DataEvolve</a><span class="daily-count">5 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/" onclick="event.stopPropagation()">EnvironmentEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="agentgarten" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>AgentGarten：面向持续进化智能体的代码世界</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 环境合成 · <a href="https://arxiv.org/abs/2610.12374" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">AgentGarten通过代码化仿真后端与共享神经渲染器构建可扩展的实时交互世界，使智能体能够继承并迭代经验，在少量交互轮次中持续提升能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：环境合成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境合成</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.12374" target="_blank" rel="noopener">https://arxiv.org/abs/2610.12374</a></div></div><div class="daily-item-content"><p>AgentGarten将模拟器、游戏引擎与共享神经渲染器结合，以统一接口生成具有持久状态、明确规则和真实视觉观测的交互环境。其神经渲染器由预训练视频模型适配几何条件而来，并通过 Adversarial Forcing 蒸馏和推理优化实现实时交互。智能体将每轮交互经验提炼为 playbook，供后续智能体继承和改进，从而形成经验驱动的持续进化过程。实验显示，该框架仅需 4 轮学习便可获得显著提升，而传统强化学习方案通常需要数百万轮；新世界还可通过代码持续扩展数量与难度。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为持续学习和自进化智能体提供兼具规则一致性与视觉真实性的可扩展训练环境。</li>
+<li>通过代码定义世界状态和交互规则，降低新增任务环境及调整难度的成本。</li>
+<li>以 playbook 形式沉淀和继承交互经验，可用于探索跨代技能积累与经验复用。</li>
+<li>Adversarial Forcing 为实时神经渲染器的历史条件建模和视觉质量优化提供了新思路。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[AgentGarten：面向不断进化的智能体的代码世界（131 ▲）](https://huggingface.co/papers/2610.12374?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-09)</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/" onclick="event.stopPropagation()">DataEvolve</a><span class="daily-count">4 条</span>
               </summary>
               <div class="daily-group-body"><details id="dreamtrue" class="daily-row">
   <summary>
@@ -631,26 +657,6 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[DreamTrue：通过反事实后训练实现动作忠实的机器人世界模型（33 ▲）](https://huggingface.co/papers/2610.12468?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-09)</div>
-  </details></div>
-</details>
-<details id="synco" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>SynCo：多智能体强化学习驱动的数据合成协同训练</strong>
-      <span class="daily-row-meta">arXiv · 数据自演化 · <a href="https://arxiv.org/abs/2610.11345" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">SynCo通过联合训练任务合成器与推理器，使训练任务分布随模型能力同步演化，并在八项数学推理基准上取得领先表现。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：数据自演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E5%AD%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数学人工智能</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11345" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11345</a></div></div><div class="daily-item-content"><p>SynCo是面向自进化语言模型的智能体式数据合成协同训练框架，旨在解决静态数据与持续变化的模型能力之间的不匹配。框架包含独立参数化的Synthesizer与Reasoner：前者依据推理器当前能力构造训练任务，后者从合成任务产生的多次执行轨迹中学习。系统利用正确性反馈优化Reasoner，并以任务质量、答案可靠性和基于结果的可教性奖励指导Synthesizer，形成任务策略与训练分布共同演化的闭环。八项数学推理基准实验显示，SynCo优于多种合成数据方法及受控基线，且主要增益来自此前未能解决的问题。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为持续自我改进系统提供能力自适应的数据生成机制，避免训练任务逐渐过易或过难。</li>
-<li>展示多智能体强化学习在联合优化数据分布与求解策略方面的应用路径。</li>
-<li>可用于构建闭环数据引擎，将任务难度、答案可靠性和可教性纳入合成奖励设计。</li>
-<li>结果表明，针对当前能力边界生成任务可能比重复训练已掌握问题更有价值。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning
-来源：arXiv
-链接：https://arxiv.org/abs/2610.11345
-摘要：Self-evolving LLM agents promise to improve autonomously through continual interaction and learning, reducing their dependence on manually curated supervision. Realizing this promise requires not only updating the agent, but also evolving its training experience as its capabilities change. However, most existing pipelines rely on static datasets or separately updated synthesis models, causing previously useful tasks to become trivial while overly difficult tasks remain uninformative. This growing mismatch between agent capability and training experience limits sustained self-improvement. To address this problem, we propose SynCo, an agentic data synthesis co-training framework for self-evolving LLMs based on multi-agent reinforcement learning. SynCo jointly optimizes two independently para</div>
   </details></div>
 </details>
 <details id="item-78" class="daily-row">
@@ -1365,7 +1371,7 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/" onclick="event.stopPropagation()">MemoryEvolve</a><span class="daily-count">10 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/" onclick="event.stopPropagation()">MemoryEvolve</a><span class="daily-count">11 条</span>
               </summary>
               <div class="daily-group-body"><details id="google-gemini-agent" class="daily-row">
   <summary>
@@ -1463,7 +1469,27 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 摘要：Despite the adoption of large language models (LLMs) in recommendation systems, prevailing approaches mostly model single-type behaviors (e.g., views or purchases). Even when incorporating multiple behaviors, existing methods flatten heterogeneous actions into homogeneous token sequences, ignoring their distinct decision-making roles. This flattening fails to capture semantic hierarchies and contextual nuances in complex decision-making, such as trade-offs between price and quality. Consequently, performance degrades in critical ``difficult-choice&#39;&#39; scenarios involving highly similar items. To bridge this gap, we propose MARI (Memory-Augmented Recommendation with Interpretability), which grounds predictions in explicit, structured decision evidence. MARI maintains a Decision Memory Bank (D</div>
   </details></div>
 </details>
-</div></section><details id="item-63" class="daily-row">
+</div></section><details id="remory" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>REMORY：用于上下文压缩的残差记忆学习</strong>
+      <span class="daily-row-meta">arXiv · 上下文压缩 · <a href="https://arxiv.org/abs/2610.11287" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">REMORY通过在文本摘要后附加有界软记忆词元，使冻结语言模型仅使用原输入位置的5.2%即可逼近完整历史上下文的续写与决策能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：上下文压缩</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;上下文压缩</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11287" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11287</a></div></div><div class="daily-item-content"><p>REMORY是一种神经记忆网络，用软记忆词元补充长程智能体的文本历史摘要，以保留摘要难以覆盖的决策信息。网络根据完整历史和摘要生成有界长度的记忆词元，并将其追加至摘要之后，形成序列维度上的残差连接，同时保持基础语言模型冻结。在SummHay上，该方法仅使用完整输入位置的5.2%，便提升了来源归因能力，并在基本维持洞见覆盖率的同时接近完整上下文的联合得分。Qwen3.8-27B与GLM-5.3-Flash在多项长程智能体基准上均获得稳定增益，并在BrowseComp和Terminal-Bench 2.1中显著减少工具输出重复与工具错误。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为有限上下文窗口下的长程智能体提供比纯文本摘要更高保真的历史压缩机制。</li>
+<li>可将软记忆词元作为摘要的残差信息层，在不更新基础语言模型的情况下增强历史信息恢复能力。</li>
+<li>来源归因、重复工具输出和工具错误的改善表明，记忆压缩质量会直接影响智能体的工具调用可靠性。</li>
+<li>为评估上下文压缩方案提供了兼顾压缩率、洞见覆盖、来源归因和任务执行错误的指标思路。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：REMORY: Learning Residual Memory for Context Compaction
+来源：arXiv
+链接：https://arxiv.org/abs/2610.11287
+摘要：Long-horizon agents compact their history to continue within a finite context window, but a textual summary alone may not support every subsequent decision. We introduce REMORY, a neural memory network that supplements the summary with a bounded sequence of soft memory tokens. Given the history and summary, the network learns to generate tokens that help a frozen LLM approximate the continuation it would produce with the full history. The tokens are conditioned on the summary and appended after it, forming an analogue of a residual connection along the sequence dimension. On SummHay, REMORY improves source attribution at nearly unchanged insight coverage and approaches the full-context joint score using only 5.2% of the input positions. Across long-horizon agent benchmarks, Qwen3.8-27B and</div>
+  </details></div>
+</details>
+<details id="item-63" class="daily-row">
   <summary>
     <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>可追溯世界状态：机器人溯源感知状态表示与确定性回放</strong>
       <span class="daily-row-meta">arXiv · 状态追踪 · <a href="https://arxiv.org/abs/2610.12033" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
@@ -1564,7 +1590,7 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/" onclick="event.stopPropagation()">EvolveLRM</a><span class="daily-count">11 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/" onclick="event.stopPropagation()">EvolveLRM</a><span class="daily-count">10 条</span>
               </summary>
               <div class="daily-group-body"><details id="jetbrains-ai-mellum2-1" class="daily-row">
   <summary>
@@ -1584,26 +1610,6 @@ EvolveLLM：Envelope Sampling表明少量主动选择的真实标签即可修正
 来源：AI工具集日报（ai-bot.cn）
 链接：https://www.ithome.com/1/010/905.htm
 摘要：（信源：IT之家）JetBrains推出Mellum2.1模型，采用12B混合专家架构。Mellum2.1将强化学习从收尾环节扩展为训练主体，补充数学、算法竞赛、软件工程等数据，训练期间启动数百万沙盒。模型可探索代码库、编辑文件、诊断测试失败根因并验证修复。高负载时推理吞吐量接近Qwen3.5-9B两倍，多Token预测使速度提升约1.6倍。</div>
-  </details></div>
-</details>
-<details id="reteach" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>ReTeach：通过多轮反思与重试构建自教师</strong>
-      <span class="daily-row-meta">arXiv · 自蒸馏 · <a href="https://arxiv.org/abs/2610.11529" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">ReTeach仅利用模型自身尝试和结果级验证，通过多轮反思、重试与在策略蒸馏构建自教师，在保持单次推理的同时提升推理能力。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自蒸馏</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%AD%96%E7%95%A5%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;在策略蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我反思</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11529" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11529</a></div></div><div class="daily-item-content"><p>ReTeach从失败的学生推理轨迹出发，让自教师交替进行显式错误反思和重新尝试，直至成功或耗尽重试预算。该框架不依赖参考答案、外部诊断反馈或跨样本长期记忆，只使用自生成尝试与结果级验证建立教师优势。方法根据样本是初始正确、经反思纠正还是仍未解决，采用结果感知的分类选择与损失加权策略。通过在策略蒸馏，学生在自身轨迹前缀上匹配教师的上下文条件词元分布，从而将迭代纠错能力压缩到单次推理中；在六项数学推理、科学问答和工具使用基准上，平均准确率较 GRPO 提高 1.39 个百分点。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>展示无需更强外部教师或参考解答，也能通过反思与结果验证形成有效的自蒸馏信号。</li>
-<li>为将测试时多轮纠错能力蒸馏到单次推理提供训练方案，避免增加部署阶段的重试成本。</li>
-<li>结果感知的样本分类与加权机制可用于降低未解决轨迹的噪声，并更合理地利用反思纠正样本。</li>
-<li>可作为强化学习与自蒸馏结合的基线，用于数学推理、科学问答和工具调用任务。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：ReTeach: Building a Self-Teacher through Multi-Round Reflection and Retry
-来源：arXiv
-链接：https://arxiv.org/abs/2610.11529
-摘要：Self-distillation can improve reasoning without a separately trained, more capable teacher, but its effectiveness depends on how the self-teacher gains an advantage over the student. Conditioning the teacher on reference answers or solutions can provide such an advantage, but this information may be unavailable. Reflection offers a way to derive explicit error diagnoses and revision guidance from self-generated attempts, yet existing reflection-based methods often combine it with reference information, rich task feedback, or persistent memory. We introduce ReTeach, a Reflective self-distillation framework that constructs its self-Teacher through multi-round reflection and retry using only self-generated attempts and outcome-level verification. Starting from an unsuccessful student rollout,</div>
   </details></div>
 </details>
 <section class="daily-cluster">
