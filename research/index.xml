@@ -6,8 +6,57 @@
     <description>Recent content in Researches on LLM-DailyDigest · 大模型研究日报</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 08 Oct 2026 18:46:21 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 13:03:42 +0800</lastBuildDate>
     <atom:link href="https://dujh22.github.io/LLMDailyDigestWeb/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AgentEvolve</title>
+      <link>https://dujh22.github.io/LLMDailyDigestWeb/research/agentevolve/</link>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://dujh22.github.io/LLMDailyDigestWeb/research/agentevolve/</guid>
+      <description>&lt;h1 id=&#34;agentevolve&#34;&gt;AgentEvolve&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;研究方向：&lt;strong&gt;Agent 推理时自进化&lt;/strong&gt;——不改参数，Agent 在部署后通过反思、技能库、工作流记忆与上下文演化持续变强。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;研究范畴&#34;&gt;研究范畴&lt;/h2&gt;&#xA;&lt;p&gt;Agent 推理时自进化（inference-time / deployment-time agent self-evolution）研究 Agent 在参数冻结的前提下如何随经验持续改进：把失败反思写回记忆（Reflexion）、把成功轨迹沉淀为可复用技能与工作流（Voyager 技能库、SkillWeaver、Agent Workflow Memory）、按需自造工具与 MCP 能力（Alita）、把经验以&amp;quot;演化中的上下文 / 作弊表&amp;quot;形式积累（Dynamic Cheatsheet、Agentic Context Engineering），乃至以免训练方式实现 GRPO 式的经验学习（Training-Free GRPO）。本方向涵盖：Agent 认知架构（CoALA）、经验记忆与检索、技能发现 / 验证 / 精炼闭环、自动工具构造、上下文与提示的在线演化、多 Agent 间的经验共享，以及推理时自进化与训练时自进化的互补与衔接。社区关注的核心问题包括：经验积累是否会带来&amp;quot;上下文坍缩&amp;quot;与噩梦式膨胀、自我反思信号的可靠性、技能库的泛化与过时淘汰机制、以及如何在不更新参数的情况下保证改进可持续并最终反哺训练。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AgentTrainEvolve</title>
+      <link>https://dujh22.github.io/LLMDailyDigestWeb/research/agenttrainevolve/</link>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://dujh22.github.io/LLMDailyDigestWeb/research/agenttrainevolve/</guid>
+      <description>&lt;h1 id=&#34;agenttrainevolve&#34;&gt;AgentTrainEvolve&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;研究方向：&lt;strong&gt;Agent 训练侧自进化&lt;/strong&gt;——通过多轮 Agentic RL、自博弈与自生成课程，让 Agent 的参数在与环境交互中持续进化。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;研究范畴&#34;&gt;研究范畴&lt;/h2&gt;&#xA;&lt;p&gt;Agent 训练侧自进化（training-time agent self-evolution）关注如何把 Agent 在环境中的交互经验稳定地转化为参数更新：从早期的轨迹蒸馏 / 指令微调（AgentTuning），走向多轮、长程、带工具调用的 Agentic 强化学习，再到由 Agent 自己提出任务、构造课程、合成经验并自我博弈的零数据训练范式（Absolute Zero、SPIRAL、WebRL 的自进化在线课程）。本方向涵盖：面向 Agent 的 RL 训练框架与基础设施（verl、SkyRL、rLLM、Agent Lightning）、多轮交互下的信用分配与回合级奖励、自博弈与对抗式课程生成、经验合成与模拟环境放大（DreamGym 类）、训练-评测环境生态（AgentGym），以及 Agent RL 中的自进化动力学诊断（RAGEN 揭示的&amp;quot;回声陷阱&amp;quot;等失败模式）。社区关注的核心问题包括：长程稀疏奖励下训练是否稳定、自生成任务的难度与多样性如何自适应、训练出的能力能否跨环境迁移、以及 Agent RL 的算力与环境吞吐瓶颈如何突破。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CodeEvolve</title>
+      <link>https://dujh22.github.io/LLMDailyDigestWeb/research/codeevolve/</link>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://dujh22.github.io/LLMDailyDigestWeb/research/codeevolve/</guid>
+      <description>&lt;h1 id=&#34;codeevolve&#34;&gt;CodeEvolve&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;研究方向：&lt;strong&gt;代码自进化&lt;/strong&gt;——以代码为载体的自进化：进化式程序搜索与算法发现、自改进编码 Agent、以及软件工程 Agent 的自训练闭环。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;研究范畴&#34;&gt;研究范畴&lt;/h2&gt;&#xA;&lt;p&gt;代码自进化（code self-evolution）把&amp;quot;代码&amp;quot;同时视为自进化的对象与手段：一方面，LLM 驱动的进化式程序搜索（FunSearch、AlphaEvolve、ShinkaEvolve、OpenEvolve、CodeEvolve）在可自动验证的问题上发现新算法与更优实现；另一方面，编码 Agent 可以修改自身的脚手架与工具（Self-Improving Coding Agent、Darwin Gödel Machine、Live-SWE-agent），形成&amp;quot;写代码的 Agent 改进写代码的 Agent&amp;quot;的递归闭环；再一方面，软件工程 Agent 的训练数据与环境本身也在自动生成与规模化（SWE-smith、SWE-Gym、R2E-Gym、SWE-RL 从开源演化历史学习）。本方向涵盖：自调试与自修复、流程工程（AlphaCodium）、进化式代码优化与算法发现、自改进编码 Agent 的档案与择优策略、可验证奖励下的代码 RL、以及软件工程环境的程序化合成。代码天然具备可执行、可测试、可度量的特点，是自进化闭环最易闭合也最易被作弊的领域，社区关注的核心问题包括：测试用例被&amp;quot;针对性通过&amp;quot;而非真正正确、进化出的代码可读性与可维护性、自修改 Agent 的安全边界，以及从竞赛题到真实仓库级任务的泛化。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GeneralizeEvolve</title>
+      <link>https://dujh22.github.io/LLMDailyDigestWeb/research/generalizeevolve/</link>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://dujh22.github.io/LLMDailyDigestWeb/research/generalizeevolve/</guid>
+      <description>&lt;h1 id=&#34;generalizeevolve&#34;&gt;GeneralizeEvolve&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;研究方向：&lt;strong&gt;自进化中的泛化&lt;/strong&gt;——自进化带来的提升能否跨任务、跨分布迁移而非基准过拟合，以及测试时学习与持续学习如何不遗忘。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;研究范畴&#34;&gt;研究范畴&lt;/h2&gt;&#xA;&lt;p&gt;自进化中的泛化（generalization in self-evolution）追问一个核心问题：模型 / Agent 通过自迭代获得的能力，究竟是真实的能力扩展，还是对训练分布与评测基准的记忆与过拟合。本方向涵盖：SFT 与 RL 后训练的泛化差异（&amp;ldquo;SFT 记忆、RL 泛化&amp;rdquo;）、RLVR 是否扩展了基座模型的推理边界、在线 RL 为何遗忘更少、无外部奖励的自信号学习（Intuitor 类）、测试时训练与自适应（TTT、SEAL 自生成微调数据）、测试时记忆与长上下文架构（Titans）、持续学习与灾难性遗忘、弱到强泛化，以及 ARC-AGI 类强调流体智能而非知识回忆的评测。社区关注的核心问题包括：如何在自进化闭环中设计分布外（OOD）与组合泛化的检验、如何区分&amp;quot;学到的算法&amp;quot;与&amp;quot;记住的模式&amp;quot;（grokking 现象）、持续自进化下能力增益与遗忘的权衡，以及测试时计算与测试时学习在多大程度上能替代参数规模。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HumanEvolve</title>
+      <link>https://dujh22.github.io/LLMDailyDigestWeb/research/humanevolve/</link>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://dujh22.github.io/LLMDailyDigestWeb/research/humanevolve/</guid>
+      <description>&lt;h1 id=&#34;humanevolve&#34;&gt;HumanEvolve&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;研究方向：&lt;strong&gt;人机协同进化&lt;/strong&gt;——AI 借人类反馈进化、人类借 AI 提升认知与技能的双向闭环，以及由此带来的对齐与认知影响问题。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;研究范畴&#34;&gt;研究范畴&lt;/h2&gt;&#xA;&lt;p&gt;人机协同进化（human-AI co-evolution）研究人与 AI 系统在长期交互中互相塑造的双向反馈环：一方面，人类偏好、示范与批评驱动模型对齐与改进（RLHF、宪法式 AI、可扩展监督）；另一方面，AI 作为协作者、导师与信息过滤器反过来改变人类的学习、决策与创造方式，可能带来技能提升（upskilling）也可能带来认知负债与去技能化（deskilling）。本方向涵盖：基于人类反馈的对齐与偏好学习、双向人机对齐（bidirectional alignment）、人在回路的自进化系统设计、人机共学（co-learning）与 AI 辅助研究 / 教育、AI 对人类认知与劳动生产率的实证影响，以及推荐与信息流算法与人类行为的共演化动力学。社区关注的核心问题包括：当 AI 能力超过人类时反馈信号如何保持有效（弱到强、可扩展监督）、人类反馈中的偏差与被操纵风险、如何设计让人&amp;quot;变强&amp;quot;而非&amp;quot;变懒&amp;quot;的协作界面，以及如何度量协同进化的长期效应而非单次任务效率。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RobotEvolve</title>
+      <link>https://dujh22.github.io/LLMDailyDigestWeb/research/robotevolve/</link>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://dujh22.github.io/LLMDailyDigestWeb/research/robotevolve/</guid>
+      <description>&lt;h1 id=&#34;robotevolve&#34;&gt;RobotEvolve&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;研究方向：&lt;strong&gt;具身智能自进化&lt;/strong&gt;——机器人 / 具身 Agent 在仿真与真实环境中通过自主数据采集、自动奖励设计与 sim-to-real 迭代持续提升。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;研究范畴&#34;&gt;研究范畴&lt;/h2&gt;&#xA;&lt;p&gt;具身智能自进化（embodied self-evolution）关注机器人与具身 Agent 如何在与物理（或高保真仿真）世界的交互中自主改进：由模型自己提出任务、生成场景与资产、设计奖励函数、采集与筛选轨迹，再回灌到视觉-语言-动作（VLA）基础模型的训练中，形成&amp;quot;任务生成 → 仿真执行 → 数据回灌 → 模型更新 → sim-to-real 验证&amp;quot;的闭环。本方向涵盖：VLA / 通用机器人基础模型、跨本体（cross-embodiment）数据与迁移、LLM 驱动的奖励与课程自动设计（Eureka 类）、生成式仿真与自动场景合成（RoboGen 类）、世界模型驱动的想象训练，以及具身 Agent 的技能库积累与长程规划。社区关注的核心问题包括：真实交互数据昂贵且不可无限扩展时如何让自进化闭环&amp;quot;跑得起&amp;quot;、仿真进化出的能力能否稳定迁移到真实机器人、自动奖励与自评是否会被策略作弊，以及如何度量具身能力的真实泛化而非在固定基准上过拟合。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SystemEvolve</title>
+      <link>https://dujh22.github.io/LLMDailyDigestWeb/research/systemevolve/</link>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://dujh22.github.io/LLMDailyDigestWeb/research/systemevolve/</guid>
+      <description>&lt;h1 id=&#34;systemevolve&#34;&gt;SystemEvolve&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;研究方向：&lt;strong&gt;AI 系统级自进化&lt;/strong&gt;——不止改模型权重，而是让 Agent 系统的架构、工作流、工具链与自身代码成为被进化的对象。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;研究范畴&#34;&gt;研究范畴&lt;/h2&gt;&#xA;&lt;p&gt;系统级自进化（system-level self-evolution）把优化对象从单个模型扩展到整个 AI 系统：Agent 的编排结构、工作流图、提示与工具配置、运行时 harness，乃至系统自身的源代码，都可以由系统自己提出修改、实验验证并择优保留，形成达尔文-哥德尔机式的开放式演化。本方向涵盖：自动化 Agent 系统设计（ADAS / AFlow 类元搜索）、以文本或执行轨迹为&amp;quot;梯度&amp;quot;的生成式优化（TextGrad / Trace / DSPy）、自指式递归自改进框架（Gödel Agent、Darwin Gödel Machine）、程序进化型发现系统（AlphaEvolve / ShinkaEvolve / OpenEvolve），以及系统演化的档案管理、分支选择与回滚机制。社区关注的核心问题包括：系统级改动的搜索空间巨大且不可微，如何高效评估与择优；进化出的系统是否只在基准上过拟合；自修改系统的可解释性、可审计性与安全边界；以及如何让&amp;quot;改进改进机制本身&amp;quot;的元层也被纳入闭环而不失控。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>PromptEvolve</title>
       <link>https://dujh22.github.io/LLMDailyDigestWeb/research/promptevolve/</link>
