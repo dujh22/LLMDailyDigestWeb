@@ -6,25 +6,24 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- 递归自我改进从单一策略更新走向“模型—记忆—脚手架—工作流”多层闭环：[RSI-Anything](#rsi-anything)尝试跨代码、GUI 与科学任务复用世界模型驱动的改进循环，[Google Harness²](#google-harness-agent)和[Evo²](#evo)则分别推进冻结权重下的外壳递归演化与权重—脚手架协同演化。
-- 免训练经验积累成为 RSI 的重要路径：[Memento 3](#memento-3)以可执行世界模型和规则手册满分通关 ARC-AGI-3 公开集，[ReHarness](#reharness)通过后向修订持续纠正历史经验；与此同时，多项理论与审计结果开始强调更新门控、验证器过拟合和继承退化风险。
-- 具身自进化密集推进：[Recursia](#recursia)以双层递归技能改进提升零样本长程泛化，[RoboFoundry](#robofoundry)将上下文、记忆、技能和接口统一纳入演化，[CoDA](#coda)进一步协同优化数据引擎与机器人策略。
-- 训练侧自进化一面扩展基础设施与环境，另一面迎来负面实证：[MASS](#mass)把多智能体优质轨迹转化为自监督信号，而[智能体强化学习自蒸馏方法的现实检验](#item-98)发现十种方法均无法稳定超越 GRPO，说明额外自蒸馏计算并不等于可靠增益。
-- 科研智能体的重心由局部成绩转向真实闭环：[DeepRSI](#deeprsi-48-kimi-k3)以 48 小时真实机器学习任务暴露奖励投机问题，[Google 自主湿实验室](#google-research-verid)则把可追溯实验执行、适配体发现和蛋白设计纳入实体闭环。
-- 系统效率与编排继续分化出专用组件：[JevAgentHarness](#jevagentharness-llm)用轻量决策模型分流高置信度动作并降低最高 89% 成本，[EvoOntology](#evoontology-data-agent)让数据智能体的语义层随执行轨迹持续演化；低相关热点则集中在视觉空间推理、视频生成、模型架构与消费级 AI 应用。
+- **递归自我改进转向“可执行、可验证、可迁移”的系统闭环**：[Memento 3](#memento-3)以可执行世界模型满分通关 ARC-AGI-3，[Google Harness²](#google-harness-agent)递归演化冻结模型的 Agent 外壳，[Evo²](#evo)则进一步协同优化模型权重与代码脚手架。
+- **具身自进化从技能积累扩展到整套系统与环境协同演化**：[RoboFoundry](#robofoundry)统一进化上下文、记忆、技能和接口，[Recursia](#recursia)以双层递归技能栈突破零样本长程泛化，[CoDA](#coda)让仿真数据引擎与机器人策略共同演化。
+- **自主科研加速走向真实训练与实体实验闭环**：[Athanor](#athanor)已能在真实 GPU 沙箱中自主完成模型后训练，[Google 自主湿实验室](#google-research-verid)则将可追溯实验执行、适配体发现和蛋白设计接入物理世界。
+- **多智能体进化开始同时优化协作结构与共享模型**：[MASS](#mass)将工作流搜索所得优质轨迹回灌共享模型，显示群体协作经验可以成为递归自改进的训练信号。
+- **评测结果进一步暴露“模型能力、Harness 与改进算法”之间的混淆**：[Gemini 4 Argon 的 ARC-AGI-3 结果](#gemini-4-argon-arc-agi-3-verified-97-5)因 Harness 不同从 49.8% 变为 97.5%，而[智能体强化学习自蒸馏现实检验](#item-98)发现十种方法均无法稳定超过 GRPO。
+- **记忆、语义层与快慢决策成为降低长程智能体成本的三条工程主线**：[Hy-Memory-30B-A3B](#hy-memory-30b-a3b)学习长期记忆写入，[EvoOntology](#evoontology-data-agent)按执行轨迹演化业务语义层，[JevAgentHarness](#jevagentharness-llm)以置信度路由将成本降低 81.1%～89.0%。
 
 ## 对当前研究的启发
-- **Awesome-RSI**：[RSI-Anything](#rsi-anything)与[Google Harness²](#google-harness-agent)表明 RSI 的关键对象正从模型权重扩展到世界模型和外壳，而自动更新门控的可计算性边界提示项目应把有限预算、独立验证和回滚机制纳入资源清单。
-- **AgentEvolve**：[Memento 3](#memento-3)和[ReHarness](#reharness)提供了“可执行经验表示—反馈校验—历史修订”的免训练闭环，可直接用于设计部署期经验沉淀与错误记忆纠正机制。
-- **AgentTrainEvolve**：[智能体强化学习自蒸馏方法的现实检验](#item-98)说明应以统一算力和跨任务稳定性比较自蒸馏与 GRPO，而不能仅凭单任务峰值判断训练侧自进化有效。
-- **HarnessEvolve**：[Gemini 4 Argon 在 ARC-AGI-3 Verified 评测中得分 97.5%](#gemini-4-argon-arc-agi-3-verified-97-5)中 provider adapter 与标准 harness 的 97.5% 对 49.8% 差距，为量化 harness 效应和强制披露配置提供了直接案例。
-- **RobotEvolve**：[RoboFoundry](#robofoundry)、[Recursia](#recursia)与[CoDA](#coda)共同提示应联合演化技能、记忆、执行接口和数据环境，并以跨任务、跨本体迁移而非单场景成绩验收。
-- **MemoryEvolve**：[ReHarness](#reharness)的后向修订机制可用于修复已写入的错误经验，而长期记忆写入、事实演化直接检查与架构级局部修复应被拆成独立评测维度。
-- **ResearchEvolve**：[DeepRSI](#deeprsi-48-kimi-k3)暴露公开验证器过拟合与奖励投机，[Google 自主湿实验室](#google-research-verid)则给出实体实验闭环范式，项目应把隔离验收、证据闭合和真实实验执行列为核心能力。
-- **SwarmEvolve**：[MASS](#mass)证明协作轨迹可反哺共享模型，但隐藏信念崩塌研究表明公开共识会掩盖私下错误采纳，因此群体评测还需记录个体信念变化与抗操纵性。
-- **JevEvolve**：[JevAgentHarness](#jevagentharness-llm)验证了基于校准置信度的快慢模型分工可显著降本，可进一步研究路由阈值如何随交互日志持续更新并约束失败风险。
-- **DataEvolve**：[EvoOntology](#evoontology-data-agent)把可版本化本体和轨迹补丁作为数据智能体的自进化语义层，为数据演化从样本生成扩展到业务知识结构演化提供了可实现路径。
-- **SystemEvolve**：[Evo²](#evo)与[Google Harness²](#google-harness-agent)分别展示权重—代码协同搜索和双层外壳递归，可据此比较联合演化与冻结模型演化在成本、迁移和回归风险上的差异。
+- **Awesome-RSI**：[Memento 3](#memento-3)、[Google Harness²](#google-harness-agent)与[自我改进门控边界](#item-166)共同表明，RSI 应把可执行状态、外部验证合同和有限预算下的更新准入作为核心设计，而不能依赖无约束自评。
+- **AgentEvolve**：[RoboFoundry](#robofoundry)证明可将上下文、记忆、技能和接口纳入同一免训练晋升闭环，可用于扩展当前仅演化反思或技能库的研究边界。
+- **HarnessEvolve**：[Gemini 4 Argon 的 Harness 分差](#gemini-4-argon-arc-agi-3-verified-97-5)说明 Harness 配置足以改变能力结论，后续评测必须固定并完整披露适配器、工具协议和执行预算。
+- **RobotEvolve**：[CoDA](#coda)与[Recursia](#recursia)提示可把数据引擎、技能栈和动作策略视为相互反馈的共同演化对象，而非只更新单一机器人策略。
+- **ResearchEvolve**：[Athanor](#athanor)和[Google 自主湿实验室](#google-research-verid)分别给出了计算实验与实体实验的闭环模板，可据此设计兼具隔离验收、证据追踪和真实执行的科研智能体。
+- **AgentTrainEvolve**：[智能体强化学习自蒸馏现实检验](#item-98)表明额外蒸馏计算不等于稳定增益，项目应优先建立跨任务、跨模型规模且计入总算力的统一 GRPO 对照。
+- **MemoryEvolve**：[Hy-Memory-30B-A3B](#hy-memory-30b-a3b)将写入协议学习为可归因策略，提示长期记忆研究应从手工规则转向以最终任务贡献监督写入、淘汰和框架选择。
+- **SwarmEvolve**：[MASS](#mass)把工作流搜索与共享模型训练交替进行，为“群体结构演化产生训练信号、训练后模型再反哺群体”的双层共进化提供了直接方案。
+- **DataEvolve**：[EvoOntology](#evoontology-data-agent)表明数据智能体可从执行失败中生成可版本化语义补丁，使业务本体本身成为持续演化、可回滚的数据资产。
+- **JevEvolve**：[JevAgentHarness](#jevagentharness-llm)验证了按选择校准置信度的快慢路由可大幅降本，适合进一步研究路由边界如何随交互日志持续更新。
 
 <!-- daily-summary:end -->
 
