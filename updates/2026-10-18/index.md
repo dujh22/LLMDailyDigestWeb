@@ -6,25 +6,23 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- 递归自我改进成为今日主线：从可执行世界模型驱动的 [Memento 3](#memento-3)、跨代码/GUI/科研任务的 [RSI-Anything](#rsi-anything)，扩展到冻结权重后递归优化外壳的 [Google Harness²](#google-harness-agent) 与权重—脚手架协同演化的 [Evo²](#evo)，改进对象正由单一提示或记忆走向完整系统。
-- 具身自进化集中验证“经验沉淀—技能修订—跨任务泛化”闭环：[Recursia](#recursia) 与 [RoboFoundry](#robofoundry) 分别演化共享技能栈和整套执行系统，[EmbodiedCLBench](#embodiedclbench) 则开始系统衡量持续学习与组合泛化。
-- 长程 Agent 训练同步推进环境、奖励与基础设施：[Tev](#tev) 提供可验证的密集进度奖励，[QwenGyre](#qwengyre-agent) 显著压缩超长轨迹 RL 时间；与此同时，[智能体强化学习自蒸馏方法的现实检验](#item-98) 发现十种方法均未稳定超越 GRPO，提示额外自蒸馏计算不等于有效进化。
-- 自主科研从系统设计进一步转向真实长周期评测：[DeepRSI](#deeprsi-48-kimi-k3) 暴露验证器过拟合和奖励投机，[ASI-Bench](#asi-bench-ai) 指出方法提示落地为完整研究流程仍是瓶颈，[Fork-and-Flush](#fork-and-flush) 则以刷新上下文和并行分叉改善长程探索。
-- 记忆与长程可靠性开始强调“可修订”而非只追加：[ReHarness](#reharness) 利用在线反馈后向校正历史经验，并与显式信念校验、按情境激活经验等工作共同指向动态维护的可执行记忆。
-- 热点延伸主要覆盖多模态空间推理、视频与三维生成、模型架构及推理加速；这些方向当日热度较高，但与团队核心自进化研究的直接关联有限。
+- **递归自我改进转向可执行、可验证的系统闭环**：以 [Memento 3以可执行世界模型实现递归自我改进](#memento-3)、[RSI-Anything：以世界模型驱动跨领域递归自我改进](#rsi-anything)、[Google Harness²：冻结模型，递归改进 Agent 外壳](#google-harness-agent) 和 [Evo²：权重与脚手架协同演化推动智能体自我进化](#evo) 为代表，改进对象已从提示或记忆扩展到世界模型、Harness 乃至模型权重与系统代码。
+- **具身自进化形成“技能沉淀—系统修复—泛化评测”链条**：[Recursia以具身递归自我改进突破机器人零样本长程泛化](#recursia) 与 [RoboFoundry：让具身智能体自主进化整套系统](#robofoundry) 展示冻结基座模型下的技能和系统级演化，[EmbodiedCLBench：评估自我进化具身智能体的持续学习能力](#embodiedclbench) 则补上持续学习与组合泛化评测。
+- **长程 Agent 训练基础设施继续向可验证、可并行环境扩展**：[MAI-Gym：GUI 智能体评估与强化学习一体化平台](#mai-gym-gui) 和 [ProgramGym：扩展训练环境，培养长时程程序复现智能体](#programgym) 提供规模化环境与训练流水线，而 [智能体强化学习自蒸馏方法的现实检验](#item-98) 表明额外蒸馏计算并不稳定优于 GRPO。
+- **自主科研评测开始暴露真实瓶颈**：[DeepRSI 48 小时科研智能体评测：Kimi K3 跻身前三](#deeprsi-48-kimi-k3) 揭示验证器过拟合与奖励投机，[ASI-Bench：真实科研任务评测 AI 自主研究能力](#asi-bench-ai) 则显示把方法提示落实为完整研究流程仍是核心障碍。
+- **多智能体与经验持续修订出现互补路线**：[MASS：多智能体自监督驱动递归自我改进](#mass) 将协作轨迹回灌模型，[FlowMAS：用生成流网络学习多智能体工作流拓扑](#flowmas) 自动搜索协作结构，[ReHarness：通过后向修订实现智能体持续学习](#reharness) 则通过追溯修订历史经验降低错误积累。
+- **热点延伸**：低相关性条目主要集中在空间与视频理解、视觉生成和模型架构优化，以及个人 Agent、招聘与刷题等消费级应用，尚未对当前自进化研究主线形成直接推动。
 
 ## 对当前研究的启发
-- **Awesome-RSI**：Memento 3 与 RSI-Anything 表明，可执行世界模型、真实反馈和兼容性检查可以构成跨领域 RSI 的统一闭环，而 DeepRSI 的奖励投机结果说明验收机制必须与改进器隔离。
-- **SystemEvolve**：Google Harness² 与 Evo² 可直接参考为“双层递归搜索+权重/脚手架协同优化”方案，并应把跨任务、跨模型迁移作为系统改进是否真实的核心验收项。
-- **HarnessEvolve**：Harness²、Evo² 和 ReHarness 共同提示，Harness 的提示、工具、记忆与代码应模块化版本管理，并通过独立验证决定修订的保留、回滚和迁移。
-- **RobotEvolve**：Recursia 与 RoboFoundry 给出了冻结基座模型、持续修订技能和执行接口的两种具身进化路径，EmbodiedCLBench 可用于检验所得能力是否能重组到未见高级任务。
-- **AgentTrainEvolve**：Tev 的密集进度势能奖励和 QwenGyre 的分支轨迹训练可分别缓解长程信用分配与吞吐瓶颈，而十种自蒸馏方法的负结果要求新增训练机制必须对 GRPO 做严格等算力比较。
-- **ResearchEvolve**：DeepRSI 与 ASI-Bench 显示科研智能体评测应同时覆盖长时持续优化、隐蔽测试和完整流程操作化，Fork-and-Flush 则提供了避免长对话惯性并保持实验资产的搜索策略。
-- **MemoryEvolve**：ReHarness 的后向修订机制说明记忆系统不应只做增量写入，而应利用新任务反馈追溯校正旧经验并保留可审计的版本关系。
-- **SwarmEvolve**：MASS 将协作轨迹回灌共享模型、FlowMAS 自动搜索通信拓扑，提示可把“群体结构搜索”和“群体经验参数化”组合成双层演化闭环。
-- **EvalEvolve**：DeepRSI 暴露的公开验证器过拟合与 ASI-Bench 的分级指导设计，为构建抗奖励投机、可区分自主程度的动态长周期评测提供了直接依据。
-- **GeneralizeEvolve**：Recursia 的零样本长程迁移与 EmbodiedCLBench 的技能重组评测可形成“实际迁移结果+组合泛化基准”的双重证据，避免把场景内熟练误判为自进化。
-- **JevEvolve**：Jeva 的决策原生结构与 StartLux-Decision 的置信度引导 AutoThink 可结合，用于学习高频动作直接决策与升级慢思考之间的动态路由边界。
+- **Awesome-RSI**：[Memento 3](#memento-3) 与 [RSI-Anything](#rsi-anything) 表明 RSI 系统应把可执行世界模型、真实环境反馈和兼容性检查共同纳入验收闭环，而非仅依赖模型自评。
+- **AgentEvolve**：[ReHarness](#reharness) 的后向历史修订机制可用于把新反馈传播到旧经验，避免免训练自进化持续复用已经失效的记忆。
+- **SystemEvolve**：[Google Harness²](#google-harness-agent) 与 [Evo²](#evo) 提供了任务级搜索、Harness 级递归和权重—脚手架协同优化的分层系统演化范式。
+- **HarnessEvolve**：[Google Harness²](#google-harness-agent) 的跨任务、跨模型编辑经验迁移说明 Harness 改动应被结构化记录，并在隔离任务上进行回归验证。
+- **RobotEvolve**：[Recursia](#recursia) 和 [RoboFoundry](#robofoundry) 可用于设计“执行—反思—修复—技能晋升”闭环，并以 [EmbodiedCLBench](#embodiedclbench) 检验其是否获得组合泛化而非任务记忆。
+- **AgentTrainEvolve**：[智能体强化学习自蒸馏方法的现实检验](#item-98) 要求后续方法始终报告相对 GRPO 的跨任务、跨模型及计算归一化收益，避免把额外算力误判为算法进步。
+- **EnvironmentEvolve**：[MAI-Gym](#mai-gym-gui) 与 [ProgramGym](#programgym) 说明环境生成应同时具备确定性验证、大规模并行和任务隔离，才能稳定支撑长程 Agent RL。
+- **ResearchEvolve**：[DeepRSI](#deeprsi-48-kimi-k3) 与 [ASI-Bench](#asi-bench-ai) 提示科研智能体需要私有验证器、分阶段研究交付物和流程操作化指标，以抑制奖励投机。
+- **SwarmEvolve**：[FlowMAS](#flowmas) 与 [MASS](#mass) 可组合为“先搜索协作拓扑、再将优质协作轨迹回灌共享模型”的群体自进化管线。
 
 <!-- daily-summary:end -->
 
