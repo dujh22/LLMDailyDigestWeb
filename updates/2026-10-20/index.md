@@ -6,23 +6,21 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- 具身自进化形成“执行反馈—想象数据—经验回灌”主线：[SenseNova-RoboRSI](#sensenova-roborsi)以冻结模型配合统一 Harness 持续改进执行，[EVO-WAM](#evo-wam)则用“想象—验证—学习”闭环提升未见任务能力。
-- 长期记忆开始从外挂检索走向原生状态与参数化沉淀：[MemT 1.0](#memt-1-0-300b-rsi)把可训练记忆分支扩展至近 300B 参数，[通衍灵智 Personal AI](#personal-ai)则以 Personal LoRA 将业务反馈持续写入专属模型。
-- 智能体评测更强调长程过程、证据与真实约束：[BizAgentBench](#bizagentbench)揭示结果正确会掩盖违规执行和工具成本，[Into the Unknown](#into-the-unknown)则显示前沿科研智能体仍普遍缺乏可靠证据支撑。
-- 系统工程聚焦低成本路由、轻量 Harness 与职责隔离：[HiRoute](#hiroute-jev)以 Jev 动态切换模型，[HexaShell](#hexashell-vlm)通过程序生成与修复控制机器人，[Meta 薄编排器](#meta)则用确定性路由隔离专项子智能体。
-- 热点延伸共 1 条，关注以推测采样、预测缓存和增量交付降低交互式视频生成延迟。
+- 具身智能自进化成为今日主线：商汤 [SenseNova-RoboRSI](#sensenova-roborsi) 以执行反馈和递归改进强化冻结模型，[EVO-WAM](#evo-wam) 则通过“想象—验证—学习”闭环生成可训练轨迹，显示推理时经验积累与训练侧数据飞轮正在汇合。
+- 机器人能力边界与 Harness 设计得到更清晰的实证：[HexaShell](#hexashell-vlm) 以轻量编程框架刷新 RoboDojo 表现，而 [GPT-6-Astra 具身评测](#gpt-6-astra) 表明精细接触、状态验证、长程执行和失败恢复仍是落地瓶颈。
+- 记忆与持续个性化从外挂存储走向模型、运行时和训练基础设施协同：[MemT 1.0](#memt-1-0-300b-rsi) 引入可训练原生记忆分支，[CarryOn](#carryon) 用任务对象压缩长程上下文，[Personal AI](#personal-ai) 则尝试将个人经验持续沉淀为专属参数能力。
+- 智能体评测进一步转向过程、证据与真实动态环境：[BizAgentBench](#bizagentbench) 揭示结果正确会掩盖违规执行和工具成本，[Into the Unknown](#into-the-unknown) 暴露科研智能体缺乏证据支撑的问题，强调仅看最终产出已不足以判断能力。
+- 系统工程侧强调低成本路由、职责隔离与可扩展训练环境：[HiRoute](#hiroute-jev) 用 Jev 动态切换快慢模型，[Meta 薄编排器模式](#meta) 以确定性路由隔离故障，[OpenMobile-2](#openmobile-2) 则用可控环境和原生工具扩展移动智能体训练；热点延伸方面，交互式视频生成开始以推测采样降低延迟。
 
 ## 对当前研究的启发
-- **RobotEvolve**：[EVO-WAM](#evo-wam)表明无需新增专家示范或真实环境试错，也可通过世界模型自生成并执行验证轨迹构造具身数据飞轮。
-- **AgentEvolve**：[SenseNova-RoboRSI](#sensenova-roborsi)验证了冻结核心模型、仅沉淀执行反馈与成功交互经验即可持续提升部署后智能体能力。
-- **MemoryEvolve**：[MemT 1.0](#memt-1-0-300b-rsi)提供了将动态矩阵状态、可训练记忆与多存储路由结合的原生记忆架构，可用于研究参数化与非参数化经验协同。
-- **Awesome-RSI**：[SenseNova-RoboRSI](#sensenova-roborsi)与[MemT 1.0](#memt-1-0-300b-rsi)共同补齐了 RSI 中执行闭环和持久记忆两个关键组件，适合作为系统级案例纳入清单。
-- **JevEvolve**：[HiRoute](#hiroute-jev)给出了以任务复杂度和阶段胜任度为信号的快慢模型路由实例，可进一步从真实工作流日志学习升级边界。
-- **EvalEvolve**：[BizAgentBench](#bizagentbench)证明动态长程评测应同时设置确定性过程检查、规则合规性与工具成本指标，而不能只看最终成功率。
-- **Groom**：[BizAgentBench](#bizagentbench)可直接借鉴其过程检查设计，将 token 和工具开销归因到违规步骤、无效尝试及重复调用。
-- **ResearchEvolve**：[Into the Unknown](#into-the-unknown)显示科研智能体的核心瓶颈不是论文形式完整性，而是研究声明的证据覆盖与需求逐项满足，可据此设计过程门禁。
-- **HarnessEvolve**：[HexaShell](#hexashell-vlm)说明极简 Harness 也能显著释放 VLM 的机器人编程能力，同时适合作为量化 Harness 对模型排名影响的对照框架。
-- **SystemEvolve**：[Meta 薄编排器](#meta)提示生产系统可将确定性路由和可靠性检查固定在薄控制层，把可变推理封装进上下文隔离的专项智能体，以限制故障扩散。
+- **RobotEvolve**：[SenseNova-RoboRSI](#sensenova-roborsi) 与 [EVO-WAM](#evo-wam) 分别提供“冻结模型下的执行反馈改进”和“世界模型自想象轨迹回灌”两条可组合的机器人持续进化路径。
+- **AgentEvolve**：[SenseNova-RoboRSI](#sensenova-roborsi) 验证了统一 Harness 可将交互经验转化为推理时改进，而 [CarryOn](#carryon) 的对象化任务状态可作为技能与工作流记忆的低成本载体。
+- **MemoryEvolve**：[MemT 1.0](#memt-1-0-300b-rsi) 与 [CarryOn](#carryon) 可用于对比参数化原生记忆和对象化外部记忆在写入、复用、遗忘及推理成本上的取舍。
+- **Groom**：[BizAgentBench](#bizagentbench) 的确定性过程检查与 LiveMACE 的完整决策轨迹表明，应把违规步骤、冗余工具调用和偶然成功纳入 token 利用归因。
+- **JevEvolve**：[HiRoute](#hiroute-jev) 直接给出了以任务复杂度和上一阶段胜任度为信号学习快慢模型升级边界的长程工作流范式。
+- **ResearchEvolve**：[Into the Unknown](#into-the-unknown) 中九种前沿智能体均未完成开放式续研任务，说明科研闭环必须引入逐项要求验证和声明—证据绑定，而不能只评判论文成稿。
+- **AgentTrainEvolve**：[Scene-Designer](#scene-designer-3d) 的 Critic 引导 GRPO 与 [OpenMobile-2](#openmobile-2) 的可控应用环境表明，可执行环境、确定性验证器和自动经验生成应作为长程 Agent RL 的一体化基础设施。
+- **SystemEvolve**：[Meta 薄编排器模式](#meta) 提示系统级演化应保留一个只负责确定性路由与可靠性检查的稳定内核，再让上下文隔离的专项智能体独立迭代。
 
 <!-- daily-summary:end -->
 

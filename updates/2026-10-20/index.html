@@ -12,49 +12,47 @@
 
 今日概览
 
-具身自进化形成“执行反馈—想象数据—经验回灌”主线：SenseNova-RoboRSI以冻结模型配合统一 Harness 持续改进执行，EVO-WAM则用“想象—验证—学习”闭环提升未见任务能力。
-长期记忆开始从外挂检索走向原生状态与参数化沉淀：MemT 1.0把可训练记忆分支扩展至近 300B 参数，通衍灵智 Personal AI则以 Personal LoRA 将业务反馈持续写入专属模型。
-智能体评测更强调长程过程、证据与真实约束：BizAgentBench揭示结果正确会掩盖违规执行和工具成本，Into the Unknown则显示前沿科研智能体仍普遍缺乏可靠证据支撑。
-系统工程聚焦低成本路由、轻量 Harness 与职责隔离：HiRoute以 Jev 动态切换模型，HexaShell通过程序生成与修复控制机器人，Meta 薄编排器则用确定性路由隔离专项子智能体。
-热点延伸共 1 条，关注以推测采样、预测缓存和增量交付降低交互式视频生成延迟。
+具身智能自进化成为今日主线：商汤 SenseNova-RoboRSI 以执行反馈和递归改进强化冻结模型，EVO-WAM 则通过“想象—验证—学习”闭环生成可训练轨迹，显示推理时经验积累与训练侧数据飞轮正在汇合。
+机器人能力边界与 Harness 设计得到更清晰的实证：HexaShell 以轻量编程框架刷新 RoboDojo 表现，而 GPT-6-Astra 具身评测 表明精细接触、状态验证、长程执行和失败恢复仍是落地瓶颈。
+记忆与持续个性化从外挂存储走向模型、运行时和训练基础设施协同：MemT 1.0 引入可训练原生记忆分支，CarryOn 用任务对象压缩长程上下文，Personal AI 则尝试将个人经验持续沉淀为专属参数能力。
+智能体评测进一步转向过程、证据与真实动态环境：BizAgentBench 揭示结果正确会掩盖违规执行和工具成本，Into the Unknown 暴露科研智能体缺乏证据支撑的问题，强调仅看最终产出已不足以判断能力。
+系统工程侧强调低成本路由、职责隔离与可扩展训练环境：HiRoute 用 Jev 动态切换快慢模型，Meta 薄编排器模式 以确定性路由隔离故障，OpenMobile-2 则用可控环境和原生工具扩展移动智能体训练；热点延伸方面，交互式视频生成开始以推测采样降低延迟。
 
 对当前研究的启发
 
-RobotEvolve：EVO-WAM表明无需新增专家示范或真实环境试错，也可通过世界模型自生成并执行验证轨迹构造具身数据飞轮。
-AgentEvolve：SenseNova-RoboRSI验证了冻结核心模型、仅沉淀执行反馈与成功交互经验即可持续提升部署后智能体能力。
-MemoryEvolve：MemT 1.0提供了将动态矩阵状态、可训练记忆与多存储路由结合的原生记忆架构，可用于研究参数化与非参数化经验协同。
-Awesome-RSI：SenseNova-RoboRSI与MemT 1.0共同补齐了 RSI 中执行闭环和持久记忆两个关键组件，适合作为系统级案例纳入清单。
-JevEvolve：HiRoute给出了以任务复杂度和阶段胜任度为信号的快慢模型路由实例，可进一步从真实工作流日志学习升级边界。
-EvalEvolve：BizAgentBench证明动态长程评测应同时设置确定性过程检查、规则合规性与工具成本指标，而不能只看最终成功率。
-Groom：BizAgentBench可直接借鉴其过程检查设计，将 token 和工具开销归因到违规步骤、无效尝试及重复调用。
-ResearchEvolve：Into the Unknown显示科研智能体的核心瓶颈不是论文形式完整性，而是研究声明的证据覆盖与需求逐项满足，可据此设计过程门禁。
-HarnessEvolve：HexaShell说明极简 Harness 也能显著释放 VLM 的机器人编程能力，同时适合作为量化 Harness 对模型排名影响的对照框架。
-SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠性检查固定在薄控制层，把可变推理封装进上下文隔离的专项智能体，以限制故障扩散。
+RobotEvolve：SenseNova-RoboRSI 与 EVO-WAM 分别提供“冻结模型下的执行反馈改进”和“世界模型自想象轨迹回灌”两条可组合的机器人持续进化路径。
+AgentEvolve：SenseNova-RoboRSI 验证了统一 Harness 可将交互经验转化为推理时改进，而 CarryOn 的对象化任务状态可作为技能与工作流记忆的低成本载体。
+MemoryEvolve：MemT 1.0 与 CarryOn 可用于对比参数化原生记忆和对象化外部记忆在写入、复用、遗忘及推理成本上的取舍。
+Groom：BizAgentBench 的确定性过程检查与 LiveMACE 的完整决策轨迹表明，应把违规步骤、冗余工具调用和偶然成功纳入 token 利用归因。
+JevEvolve：HiRoute 直接给出了以任务复杂度和上一阶段胜任度为信号学习快慢模型升级边界的长程工作流范式。
+ResearchEvolve：Into the Unknown 中九种前沿智能体均未完成开放式续研任务，说明科研闭环必须引入逐项要求验证和声明—证据绑定，而不能只评判论文成稿。
+AgentTrainEvolve：Scene-Designer 的 Critic 引导 GRPO 与 OpenMobile-2 的可控应用环境表明，可执行环境、确定性验证器和自动经验生成应作为长程 Agent RL 的一体化基础设施。
+SystemEvolve：Meta 薄编排器模式 提示系统级演化应保留一个只负责确定性路由与可靠性检查的稳定内核，再让上下文隔离的专项智能体独立迭代。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-10-20 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 具身自进化形成“执行反馈—想象数据—经验回灌”主线：SenseNova-RoboRSI以冻结模型配合统一 Harness 持续改进执行，EVO-WAM则用“想象—验证—学习”闭环提升未见任务能力。 长期记忆开始从外挂检索走向原生状态与参数化沉淀：MemT 1.0把可训练记忆分支扩展至近 300B 参数，通衍灵智 Personal AI则以 Personal LoRA 将业务反馈持续写入专属模型。 智能体评测更强调长程过程、证据与真实约束：BizAgentBench揭示结果正确会掩盖违规执行和工具成本，Into the Unknown则显示前沿科研智能体仍普遍缺乏可靠证据支撑。 系统工程聚焦低成本路由、轻量 Harness 与职责隔离：HiRoute以 Jev 动态切换模型，HexaShell通过程序生成与修复控制机器人，Meta 薄编排器则用确定性路由隔离专项子智能体。 热点延伸共 1 条，关注以推测采样、预测缓存和增量交付降低交互式视频生成延迟。 对当前研究的启发 RobotEvolve：EVO-WAM表明无需新增专家示范或真实环境试错，也可通过世界模型自生成并执行验证轨迹构造具身数据飞轮。 AgentEvolve：SenseNova-RoboRSI验证了冻结核心模型、仅沉淀执行反馈与成功交互经验即可持续提升部署后智能体能力。 MemoryEvolve：MemT 1.0提供了将动态矩阵状态、可训练记忆与多存储路由结合的原生记忆架构，可用于研究参数化与非参数化经验协同。 Awesome-RSI：SenseNova-RoboRSI与MemT 1.0共同补齐了 RSI 中执行闭环和持久记忆两个关键组件，适合作为系统级案例纳入清单。 JevEvolve：HiRoute给出了以任务复杂度和阶段胜任度为信号的快慢模型路由实例，可进一步从真实工作流日志学习升级边界。 EvalEvolve：BizAgentBench证明动态长程评测应同时设置确定性过程检查、规则合规性与工具成本指标，而不能只看最终成功率。 Groom：BizAgentBench可直接借鉴其过程检查设计，将 token 和工具开销归因到违规步骤、无效尝试及重复调用。 ResearchEvolve：Into the Unknown显示科研智能体的核心瓶颈不是论文形式完整性，而是研究声明的证据覆盖与需求逐项满足，可据此设计过程门禁。 HarnessEvolve：HexaShell说明极简 Harness 也能显著释放 VLM 的机器人编程能力，同时适合作为量化 Harness 对模型排名影响的对照框架。 SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠性检查固定在薄控制层，把可变推理封装进上下文隔离的专项智能体，以限制故障扩散。">
+今日概览 具身智能自进化成为今日主线：商汤 SenseNova-RoboRSI 以执行反馈和递归改进强化冻结模型，EVO-WAM 则通过“想象—验证—学习”闭环生成可训练轨迹，显示推理时经验积累与训练侧数据飞轮正在汇合。 机器人能力边界与 Harness 设计得到更清晰的实证：HexaShell 以轻量编程框架刷新 RoboDojo 表现，而 GPT-6-Astra 具身评测 表明精细接触、状态验证、长程执行和失败恢复仍是落地瓶颈。 记忆与持续个性化从外挂存储走向模型、运行时和训练基础设施协同：MemT 1.0 引入可训练原生记忆分支，CarryOn 用任务对象压缩长程上下文，Personal AI 则尝试将个人经验持续沉淀为专属参数能力。 智能体评测进一步转向过程、证据与真实动态环境：BizAgentBench 揭示结果正确会掩盖违规执行和工具成本，Into the Unknown 暴露科研智能体缺乏证据支撑的问题，强调仅看最终产出已不足以判断能力。 系统工程侧强调低成本路由、职责隔离与可扩展训练环境：HiRoute 用 Jev 动态切换快慢模型，Meta 薄编排器模式 以确定性路由隔离故障，OpenMobile-2 则用可控环境和原生工具扩展移动智能体训练；热点延伸方面，交互式视频生成开始以推测采样降低延迟。 对当前研究的启发 RobotEvolve：SenseNova-RoboRSI 与 EVO-WAM 分别提供“冻结模型下的执行反馈改进”和“世界模型自想象轨迹回灌”两条可组合的机器人持续进化路径。 AgentEvolve：SenseNova-RoboRSI 验证了统一 Harness 可将交互经验转化为推理时改进，而 CarryOn 的对象化任务状态可作为技能与工作流记忆的低成本载体。 MemoryEvolve：MemT 1.0 与 CarryOn 可用于对比参数化原生记忆和对象化外部记忆在写入、复用、遗忘及推理成本上的取舍。 Groom：BizAgentBench 的确定性过程检查与 LiveMACE 的完整决策轨迹表明，应把违规步骤、冗余工具调用和偶然成功纳入 token 利用归因。 JevEvolve：HiRoute 直接给出了以任务复杂度和上一阶段胜任度为信号学习快慢模型升级边界的长程工作流范式。 ResearchEvolve：Into the Unknown 中九种前沿智能体均未完成开放式续研任务，说明科研闭环必须引入逐项要求验证和声明—证据绑定，而不能只评判论文成稿。 AgentTrainEvolve：Scene-Designer 的 Critic 引导 GRPO 与 OpenMobile-2 的可控应用环境表明，可执行环境、确定性验证器和自动经验生成应作为长程 Agent RL 的一体化基础设施。 SystemEvolve：Meta 薄编排器模式 提示系统级演化应保留一个只负责确定性路由与可靠性检查的稳定内核，再让上下文隔离的专项智能体独立迭代。">
   <meta itemprop="datePublished" content="2026-10-20T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-20T17:23:07+08:00">
-  <meta itemprop="wordCount" content="1085">
+  <meta itemprop="dateModified" content="2026-10-20T17:25:26+08:00">
+  <meta itemprop="wordCount" content="1078">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-20/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-10-20 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 具身自进化形成“执行反馈—想象数据—经验回灌”主线：SenseNova-RoboRSI以冻结模型配合统一 Harness 持续改进执行，EVO-WAM则用“想象—验证—学习”闭环提升未见任务能力。 长期记忆开始从外挂检索走向原生状态与参数化沉淀：MemT 1.0把可训练记忆分支扩展至近 300B 参数，通衍灵智 Personal AI则以 Personal LoRA 将业务反馈持续写入专属模型。 智能体评测更强调长程过程、证据与真实约束：BizAgentBench揭示结果正确会掩盖违规执行和工具成本，Into the Unknown则显示前沿科研智能体仍普遍缺乏可靠证据支撑。 系统工程聚焦低成本路由、轻量 Harness 与职责隔离：HiRoute以 Jev 动态切换模型，HexaShell通过程序生成与修复控制机器人，Meta 薄编排器则用确定性路由隔离专项子智能体。 热点延伸共 1 条，关注以推测采样、预测缓存和增量交付降低交互式视频生成延迟。 对当前研究的启发 RobotEvolve：EVO-WAM表明无需新增专家示范或真实环境试错，也可通过世界模型自生成并执行验证轨迹构造具身数据飞轮。 AgentEvolve：SenseNova-RoboRSI验证了冻结核心模型、仅沉淀执行反馈与成功交互经验即可持续提升部署后智能体能力。 MemoryEvolve：MemT 1.0提供了将动态矩阵状态、可训练记忆与多存储路由结合的原生记忆架构，可用于研究参数化与非参数化经验协同。 Awesome-RSI：SenseNova-RoboRSI与MemT 1.0共同补齐了 RSI 中执行闭环和持久记忆两个关键组件，适合作为系统级案例纳入清单。 JevEvolve：HiRoute给出了以任务复杂度和阶段胜任度为信号的快慢模型路由实例，可进一步从真实工作流日志学习升级边界。 EvalEvolve：BizAgentBench证明动态长程评测应同时设置确定性过程检查、规则合规性与工具成本指标，而不能只看最终成功率。 Groom：BizAgentBench可直接借鉴其过程检查设计，将 token 和工具开销归因到违规步骤、无效尝试及重复调用。 ResearchEvolve：Into the Unknown显示科研智能体的核心瓶颈不是论文形式完整性，而是研究声明的证据覆盖与需求逐项满足，可据此设计过程门禁。 HarnessEvolve：HexaShell说明极简 Harness 也能显著释放 VLM 的机器人编程能力，同时适合作为量化 Harness 对模型排名影响的对照框架。 SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠性检查固定在薄控制层，把可变推理封装进上下文隔离的专项智能体，以限制故障扩散。">
+今日概览 具身智能自进化成为今日主线：商汤 SenseNova-RoboRSI 以执行反馈和递归改进强化冻结模型，EVO-WAM 则通过“想象—验证—学习”闭环生成可训练轨迹，显示推理时经验积累与训练侧数据飞轮正在汇合。 机器人能力边界与 Harness 设计得到更清晰的实证：HexaShell 以轻量编程框架刷新 RoboDojo 表现，而 GPT-6-Astra 具身评测 表明精细接触、状态验证、长程执行和失败恢复仍是落地瓶颈。 记忆与持续个性化从外挂存储走向模型、运行时和训练基础设施协同：MemT 1.0 引入可训练原生记忆分支，CarryOn 用任务对象压缩长程上下文，Personal AI 则尝试将个人经验持续沉淀为专属参数能力。 智能体评测进一步转向过程、证据与真实动态环境：BizAgentBench 揭示结果正确会掩盖违规执行和工具成本，Into the Unknown 暴露科研智能体缺乏证据支撑的问题，强调仅看最终产出已不足以判断能力。 系统工程侧强调低成本路由、职责隔离与可扩展训练环境：HiRoute 用 Jev 动态切换快慢模型，Meta 薄编排器模式 以确定性路由隔离故障，OpenMobile-2 则用可控环境和原生工具扩展移动智能体训练；热点延伸方面，交互式视频生成开始以推测采样降低延迟。 对当前研究的启发 RobotEvolve：SenseNova-RoboRSI 与 EVO-WAM 分别提供“冻结模型下的执行反馈改进”和“世界模型自想象轨迹回灌”两条可组合的机器人持续进化路径。 AgentEvolve：SenseNova-RoboRSI 验证了统一 Harness 可将交互经验转化为推理时改进，而 CarryOn 的对象化任务状态可作为技能与工作流记忆的低成本载体。 MemoryEvolve：MemT 1.0 与 CarryOn 可用于对比参数化原生记忆和对象化外部记忆在写入、复用、遗忘及推理成本上的取舍。 Groom：BizAgentBench 的确定性过程检查与 LiveMACE 的完整决策轨迹表明，应把违规步骤、冗余工具调用和偶然成功纳入 token 利用归因。 JevEvolve：HiRoute 直接给出了以任务复杂度和上一阶段胜任度为信号学习快慢模型升级边界的长程工作流范式。 ResearchEvolve：Into the Unknown 中九种前沿智能体均未完成开放式续研任务，说明科研闭环必须引入逐项要求验证和声明—证据绑定，而不能只评判论文成稿。 AgentTrainEvolve：Scene-Designer 的 Critic 引导 GRPO 与 OpenMobile-2 的可控应用环境表明，可执行环境、确定性验证器和自动经验生成应作为长程 Agent RL 的一体化基础设施。 SystemEvolve：Meta 薄编排器模式 提示系统级演化应保留一个只负责确定性路由与可靠性检查的稳定内核，再让上下文隔离的专项智能体独立迭代。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-10-20T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-20T17:23:07+08:00">
+    <meta property="article:modified_time" content="2026-10-20T17:25:26+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-10-20 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 具身自进化形成“执行反馈—想象数据—经验回灌”主线：SenseNova-RoboRSI以冻结模型配合统一 Harness 持续改进执行，EVO-WAM则用“想象—验证—学习”闭环提升未见任务能力。 长期记忆开始从外挂检索走向原生状态与参数化沉淀：MemT 1.0把可训练记忆分支扩展至近 300B 参数，通衍灵智 Personal AI则以 Personal LoRA 将业务反馈持续写入专属模型。 智能体评测更强调长程过程、证据与真实约束：BizAgentBench揭示结果正确会掩盖违规执行和工具成本，Into the Unknown则显示前沿科研智能体仍普遍缺乏可靠证据支撑。 系统工程聚焦低成本路由、轻量 Harness 与职责隔离：HiRoute以 Jev 动态切换模型，HexaShell通过程序生成与修复控制机器人，Meta 薄编排器则用确定性路由隔离专项子智能体。 热点延伸共 1 条，关注以推测采样、预测缓存和增量交付降低交互式视频生成延迟。 对当前研究的启发 RobotEvolve：EVO-WAM表明无需新增专家示范或真实环境试错，也可通过世界模型自生成并执行验证轨迹构造具身数据飞轮。 AgentEvolve：SenseNova-RoboRSI验证了冻结核心模型、仅沉淀执行反馈与成功交互经验即可持续提升部署后智能体能力。 MemoryEvolve：MemT 1.0提供了将动态矩阵状态、可训练记忆与多存储路由结合的原生记忆架构，可用于研究参数化与非参数化经验协同。 Awesome-RSI：SenseNova-RoboRSI与MemT 1.0共同补齐了 RSI 中执行闭环和持久记忆两个关键组件，适合作为系统级案例纳入清单。 JevEvolve：HiRoute给出了以任务复杂度和阶段胜任度为信号的快慢模型路由实例，可进一步从真实工作流日志学习升级边界。 EvalEvolve：BizAgentBench证明动态长程评测应同时设置确定性过程检查、规则合规性与工具成本指标，而不能只看最终成功率。 Groom：BizAgentBench可直接借鉴其过程检查设计，将 token 和工具开销归因到违规步骤、无效尝试及重复调用。 ResearchEvolve：Into the Unknown显示科研智能体的核心瓶颈不是论文形式完整性，而是研究声明的证据覆盖与需求逐项满足，可据此设计过程门禁。 HarnessEvolve：HexaShell说明极简 Harness 也能显著释放 VLM 的机器人编程能力，同时适合作为量化 Harness 对模型排名影响的对照框架。 SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠性检查固定在薄控制层，把可变推理封装进上下文隔离的专项智能体，以限制故障扩散。">
+今日概览 具身智能自进化成为今日主线：商汤 SenseNova-RoboRSI 以执行反馈和递归改进强化冻结模型，EVO-WAM 则通过“想象—验证—学习”闭环生成可训练轨迹，显示推理时经验积累与训练侧数据飞轮正在汇合。 机器人能力边界与 Harness 设计得到更清晰的实证：HexaShell 以轻量编程框架刷新 RoboDojo 表现，而 GPT-6-Astra 具身评测 表明精细接触、状态验证、长程执行和失败恢复仍是落地瓶颈。 记忆与持续个性化从外挂存储走向模型、运行时和训练基础设施协同：MemT 1.0 引入可训练原生记忆分支，CarryOn 用任务对象压缩长程上下文，Personal AI 则尝试将个人经验持续沉淀为专属参数能力。 智能体评测进一步转向过程、证据与真实动态环境：BizAgentBench 揭示结果正确会掩盖违规执行和工具成本，Into the Unknown 暴露科研智能体缺乏证据支撑的问题，强调仅看最终产出已不足以判断能力。 系统工程侧强调低成本路由、职责隔离与可扩展训练环境：HiRoute 用 Jev 动态切换快慢模型，Meta 薄编排器模式 以确定性路由隔离故障，OpenMobile-2 则用可控环境和原生工具扩展移动智能体训练；热点延伸方面，交互式视频生成开始以推测采样降低延迟。 对当前研究的启发 RobotEvolve：SenseNova-RoboRSI 与 EVO-WAM 分别提供“冻结模型下的执行反馈改进”和“世界模型自想象轨迹回灌”两条可组合的机器人持续进化路径。 AgentEvolve：SenseNova-RoboRSI 验证了统一 Harness 可将交互经验转化为推理时改进，而 CarryOn 的对象化任务状态可作为技能与工作流记忆的低成本载体。 MemoryEvolve：MemT 1.0 与 CarryOn 可用于对比参数化原生记忆和对象化外部记忆在写入、复用、遗忘及推理成本上的取舍。 Groom：BizAgentBench 的确定性过程检查与 LiveMACE 的完整决策轨迹表明，应把违规步骤、冗余工具调用和偶然成功纳入 token 利用归因。 JevEvolve：HiRoute 直接给出了以任务复杂度和上一阶段胜任度为信号学习快慢模型升级边界的长程工作流范式。 ResearchEvolve：Into the Unknown 中九种前沿智能体均未完成开放式续研任务，说明科研闭环必须引入逐项要求验证和声明—证据绑定，而不能只评判论文成稿。 AgentTrainEvolve：Scene-Designer 的 Critic 引导 GRPO 与 OpenMobile-2 的可控应用环境表明，可执行环境、确定性验证器和自动经验生成应作为长程 Agent RL 的一体化基础设施。 SystemEvolve：Meta 薄编排器模式 提示系统级演化应保留一个只负责确定性路由与可靠性检查的稳定内核，再让上下文隔离的专项智能体独立迭代。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-20/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-19/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -67,8 +65,8 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-20\/"
-    },"genre": "updates","wordcount":  1085 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-20\/","datePublished": "2026-10-20T00:00:00+08:00","dateModified": "2026-10-20T17:23:07+08:00","publisher": {
+    },"genre": "updates","wordcount":  1078 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-20\/","datePublished": "2026-10-20T00:00:00+08:00","dateModified": "2026-10-20T17:25:26+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -251,8 +249,8 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-10-20 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-20">2026-10-20</time></span>&nbsp;<span title="更新于 2026-10-20 17:23:07"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-20">2026-10-20</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-10-19 10:27 ~ 2026-10-20 16:18（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 10-19 10:27 ~ 10-20 16:18
-          </span>&nbsp;<span title="1085 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-10-20 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-20">2026-10-20</time></span>&nbsp;<span title="更新于 2026-10-20 17:25:26"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-20">2026-10-20</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-10-19 10:27 ~ 2026-10-20 16:18（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 10-19 10:27 ~ 10-20 16:18
+          </span>&nbsp;<span title="1078 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -272,29 +270,27 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li>具身自进化形成“执行反馈—想象数据—经验回灌”主线：<a href="#sensenova-roborsi">SenseNova-RoboRSI</a>以冻结模型配合统一 Harness 持续改进执行，<a href="#evo-wam">EVO-WAM</a>则用“想象—验证—学习”闭环提升未见任务能力。</li>
-<li>长期记忆开始从外挂检索走向原生状态与参数化沉淀：<a href="#memt-1-0-300b-rsi">MemT 1.0</a>把可训练记忆分支扩展至近 300B 参数，<a href="#personal-ai">通衍灵智 Personal AI</a>则以 Personal LoRA 将业务反馈持续写入专属模型。</li>
-<li>智能体评测更强调长程过程、证据与真实约束：<a href="#bizagentbench">BizAgentBench</a>揭示结果正确会掩盖违规执行和工具成本，<a href="#into-the-unknown">Into the Unknown</a>则显示前沿科研智能体仍普遍缺乏可靠证据支撑。</li>
-<li>系统工程聚焦低成本路由、轻量 Harness 与职责隔离：<a href="#hiroute-jev">HiRoute</a>以 Jev 动态切换模型，<a href="#hexashell-vlm">HexaShell</a>通过程序生成与修复控制机器人，<a href="#meta">Meta 薄编排器</a>则用确定性路由隔离专项子智能体。</li>
-<li>热点延伸共 1 条，关注以推测采样、预测缓存和增量交付降低交互式视频生成延迟。</li>
+<li>具身智能自进化成为今日主线：商汤 <a href="#sensenova-roborsi">SenseNova-RoboRSI</a> 以执行反馈和递归改进强化冻结模型，<a href="#evo-wam">EVO-WAM</a> 则通过“想象—验证—学习”闭环生成可训练轨迹，显示推理时经验积累与训练侧数据飞轮正在汇合。</li>
+<li>机器人能力边界与 Harness 设计得到更清晰的实证：<a href="#hexashell-vlm">HexaShell</a> 以轻量编程框架刷新 RoboDojo 表现，而 <a href="#gpt-6-astra">GPT-6-Astra 具身评测</a> 表明精细接触、状态验证、长程执行和失败恢复仍是落地瓶颈。</li>
+<li>记忆与持续个性化从外挂存储走向模型、运行时和训练基础设施协同：<a href="#memt-1-0-300b-rsi">MemT 1.0</a> 引入可训练原生记忆分支，<a href="#carryon">CarryOn</a> 用任务对象压缩长程上下文，<a href="#personal-ai">Personal AI</a> 则尝试将个人经验持续沉淀为专属参数能力。</li>
+<li>智能体评测进一步转向过程、证据与真实动态环境：<a href="#bizagentbench">BizAgentBench</a> 揭示结果正确会掩盖违规执行和工具成本，<a href="#into-the-unknown">Into the Unknown</a> 暴露科研智能体缺乏证据支撑的问题，强调仅看最终产出已不足以判断能力。</li>
+<li>系统工程侧强调低成本路由、职责隔离与可扩展训练环境：<a href="#hiroute-jev">HiRoute</a> 用 Jev 动态切换快慢模型，<a href="#meta">Meta 薄编排器模式</a> 以确定性路由隔离故障，<a href="#openmobile-2">OpenMobile-2</a> 则用可控环境和原生工具扩展移动智能体训练；热点延伸方面，交互式视频生成开始以推测采样降低延迟。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>RobotEvolve</strong>：<a href="#evo-wam">EVO-WAM</a>表明无需新增专家示范或真实环境试错，也可通过世界模型自生成并执行验证轨迹构造具身数据飞轮。</li>
-<li><strong>AgentEvolve</strong>：<a href="#sensenova-roborsi">SenseNova-RoboRSI</a>验证了冻结核心模型、仅沉淀执行反馈与成功交互经验即可持续提升部署后智能体能力。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#memt-1-0-300b-rsi">MemT 1.0</a>提供了将动态矩阵状态、可训练记忆与多存储路由结合的原生记忆架构，可用于研究参数化与非参数化经验协同。</li>
-<li><strong>Awesome-RSI</strong>：<a href="#sensenova-roborsi">SenseNova-RoboRSI</a>与<a href="#memt-1-0-300b-rsi">MemT 1.0</a>共同补齐了 RSI 中执行闭环和持久记忆两个关键组件，适合作为系统级案例纳入清单。</li>
-<li><strong>JevEvolve</strong>：<a href="#hiroute-jev">HiRoute</a>给出了以任务复杂度和阶段胜任度为信号的快慢模型路由实例，可进一步从真实工作流日志学习升级边界。</li>
-<li><strong>EvalEvolve</strong>：<a href="#bizagentbench">BizAgentBench</a>证明动态长程评测应同时设置确定性过程检查、规则合规性与工具成本指标，而不能只看最终成功率。</li>
-<li><strong>Groom</strong>：<a href="#bizagentbench">BizAgentBench</a>可直接借鉴其过程检查设计，将 token 和工具开销归因到违规步骤、无效尝试及重复调用。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#into-the-unknown">Into the Unknown</a>显示科研智能体的核心瓶颈不是论文形式完整性，而是研究声明的证据覆盖与需求逐项满足，可据此设计过程门禁。</li>
-<li><strong>HarnessEvolve</strong>：<a href="#hexashell-vlm">HexaShell</a>说明极简 Harness 也能显著释放 VLM 的机器人编程能力，同时适合作为量化 Harness 对模型排名影响的对照框架。</li>
-<li><strong>SystemEvolve</strong>：<a href="#meta">Meta 薄编排器</a>提示生产系统可将确定性路由和可靠性检查固定在薄控制层，把可变推理封装进上下文隔离的专项智能体，以限制故障扩散。</li>
+<li><strong>RobotEvolve</strong>：<a href="#sensenova-roborsi">SenseNova-RoboRSI</a> 与 <a href="#evo-wam">EVO-WAM</a> 分别提供“冻结模型下的执行反馈改进”和“世界模型自想象轨迹回灌”两条可组合的机器人持续进化路径。</li>
+<li><strong>AgentEvolve</strong>：<a href="#sensenova-roborsi">SenseNova-RoboRSI</a> 验证了统一 Harness 可将交互经验转化为推理时改进，而 <a href="#carryon">CarryOn</a> 的对象化任务状态可作为技能与工作流记忆的低成本载体。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#memt-1-0-300b-rsi">MemT 1.0</a> 与 <a href="#carryon">CarryOn</a> 可用于对比参数化原生记忆和对象化外部记忆在写入、复用、遗忘及推理成本上的取舍。</li>
+<li><strong>Groom</strong>：<a href="#bizagentbench">BizAgentBench</a> 的确定性过程检查与 LiveMACE 的完整决策轨迹表明，应把违规步骤、冗余工具调用和偶然成功纳入 token 利用归因。</li>
+<li><strong>JevEvolve</strong>：<a href="#hiroute-jev">HiRoute</a> 直接给出了以任务复杂度和上一阶段胜任度为信号学习快慢模型升级边界的长程工作流范式。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#into-the-unknown">Into the Unknown</a> 中九种前沿智能体均未完成开放式续研任务，说明科研闭环必须引入逐项要求验证和声明—证据绑定，而不能只评判论文成稿。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#scene-designer-3d">Scene-Designer</a> 的 Critic 引导 GRPO 与 <a href="#openmobile-2">OpenMobile-2</a> 的可控应用环境表明，可执行环境、确定性验证器和自动经验生成应作为长程 Agent RL 的一体化基础设施。</li>
+<li><strong>SystemEvolve</strong>：<a href="#meta">Meta 薄编排器模式</a> 提示系统级演化应保留一个只负责确定性路由与可靠性检查的稳定内核，再让上下文隔离的专项智能体独立迭代。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 23 条</span><a href="#daily-featured">⭐ 重点 13</a><a href="#daily-related">🔬 相关 9</a><a href="#daily-hot">🔥 热点 1</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 24 条</span><a href="#daily-featured">⭐ 重点 13</a><a href="#daily-related">🔬 相关 10</a><a href="#daily-hot">🔥 热点 1</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">13 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="sensenova-roborsi" class="summary-card daily-item">
@@ -346,6 +342,28 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
 链接：http://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&amp;mid=2247934889&amp;idx=1&amp;sn=12ccca4a87a549a80d18c3330f69fefa&amp;chksm=e98ae8940e556e3dc4b3f58115a6c2fb59eb2f19c7c3f6971c78a67a5dfaeba94b8a3c1cfc77&amp;scene=0&amp;xtrack=1#rd
 摘要：</div>
   </details></article>
+<article id="personal-ai" class="summary-card daily-item">
+  <h2 id="personal-ai-title" class="daily-item-title">通衍灵智推出可持续进化 Personal AI</h2><p class="single-subtitle daily-item-summary">北京通用人工智能研究院孵化团队通衍灵智提出 Recursive Self-Improving Personal AI，通过 Personal LoRA、评估闭环与训推基础设施，将个人及企业经验沉淀为可迁移、可持续更新的专属模型能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元 ASI爆点</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%82%E6%95%B0%E9%AB%98%E6%95%88%E5%BE%AE%E8%B0%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;参数高效微调</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E6%8C%81%E4%B9%85%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态持久化</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://aiera.com.cn/asi-preview/asi-item.html?id=tgb48e88" target="_blank" rel="noopener">https://aiera.com.cn/asi-preview/asi-item.html?id=tgb48e88</a></div></div><div class="daily-item-content"><p>通衍灵智在共享基础模型之上引入 Personal Parameters，以轻量级 Personal LoRA 承载个人、企业、岗位和智能体长期形成的偏好、规则与业务能力。系统从真实任务轨迹、人工反馈、业务结果和企业评测中提取学习信号，经 Evaluator 筛选后增量更新个性化参数，并通过影子评估、新旧版本对比、版本门控与回滚降低反馈污染、模型漂移和灾难性遗忘风险。TIP 通过训推并行和资源快速切换降低持续训练成本，Paged LoRA 则利用分页管理与按需映射，使大量个性化 Adapter 共享基础模型和 GPU。该方案强调将数据、反馈、评测体系和个性化参数沉淀为自有智能资产，并可在更换基础模型后利用原有数据资产重新适配。目前其核心路线与产品架构已明确，但完整自动化闭环仍在研发，Paged LoRA 在高请求占比下的性能退化也有待优化和生产验证。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为企业将代码审查、投研判断、运营反馈等隐性经验转化为可持续更新的专属能力提供技术路径。</li>
+<li>说明个性化能力除 Prompt、RAG 和外部记忆外，还可通过受控的参数化学习形成更稳定的行为模式。</li>
+<li>通过 Personal LoRA 将个性化能力与通用底座解耦，并保留训练数据、任务轨迹、人工反馈和评测体系，增强更换基础模型时的能力连续性。</li>
+<li>将 Evaluator 筛选、更新前后对照测试、版本门控与回滚作为安全持续学习的关键工程组件，以防范反馈污染和模型漂移。</li>
+<li>TIP 与 Paged LoRA 为大量个性化模型的持续训练、动态调度和低成本服务提供基础设施思路，但仍需关注高并发性能与生产成熟度。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：养成系AI玩法来了！可持续进化Personal AI，经验写进DNA
+来源：新智元 ASI爆点（aiera.com.cn）
+链接：https://aiera.com.cn/asi-preview/asi-item.html?id=tgb48e88
+摘要：过去两年，企业接入大模型的门槛已经大幅降低。调用 API、接入知识库、搭建 Agent，越来越多 AI 能力可以快速进入业务系统。但当大模型真正参与研发、投研、销售…
+
+[合并自 2026-10-20 personal-ai-2]
+标题：通研院孵化的团队，也盯上了RSI
+来源：量子位（微信公众号）
+链接：https://www.qbitai.com/2026/10/504294.html
+摘要：当AI越来越懂你，如何让智能真正属于你？</div>
+  </details></article>
 <article id="bizagentbench" class="summary-card daily-item">
   <h2 id="bizagentbench-title" class="daily-item-title">BizAgentBench：现实商业场景中的长时程智能体评测</h2><p class="single-subtitle daily-item-summary">BizAgentBench通过可执行商业环境和确定性过程检查，揭示仅评估任务结果会掩盖长时程智能体的违规执行与高额工具调用开销。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/groom/">Groom</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程验证</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.20424" target="_blank" rel="noopener">https://arxiv.org/abs/2610.20424</a></div></div><div class="daily-item-content"><p>BizAgentBench基于一家支付公司的真实业务流程构建，环境包含789份知识文档和601个可发现的业务工具。基准设置50项多轮任务，覆盖资源约束、时间依赖、既有承诺以及冲突或过时指引，并通过参考执行验证任务。其确定性检查同时衡量目标达成和执行过程有效性，而不限定唯一解法。实验中Claude Opus 5与GPT-6 Sol的严格成功率分别仅为64.0%和61.3%，Qwen3.8-27B也出现目标达成率42.0%但严格成功率仅32.7%的落差；DeepSeek-V4.1-Flash平均调用工具191.3次，比参考执行高约70%。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -382,20 +400,17 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/nk811DZ5L5BWRBOrLJIvrQ?scene=1&amp;click_id=110268669</div>
   </details></article>
-<article id="personal-ai" class="summary-card daily-item">
-  <h2 id="personal-ai-title" class="daily-item-title">通衍灵智推出可持续进化 Personal AI</h2><p class="single-subtitle daily-item-summary">通衍灵智提出 Recursive Self-Improving Personal AI，通过 Personal LoRA、持续业务反馈与训推基础设施，将企业经验沉淀为可迁移、可持续更新的专属模型能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元 ASI爆点</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%82%E6%95%B0%E9%AB%98%E6%95%88%E5%BE%AE%E8%B0%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;参数高效微调</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E6%8C%81%E4%B9%85%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态持久化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://aiera.com.cn/asi-preview/asi-item.html?id=tgb48e88" target="_blank" rel="noopener">https://aiera.com.cn/asi-preview/asi-item.html?id=tgb48e88</a></div></div><div class="daily-item-content"><p>通衍灵智在通用基础模型之上引入 Personal Parameters，以轻量级 Personal LoRA 承载企业、岗位和智能体长期形成的偏好、规则与业务能力。系统从真实任务轨迹、人工反馈、经营结果和企业评测中提取学习信号，并通过 Evaluator、影子评估及版本门控控制持续更新过程中的模型漂移。TIP 通过训推并行和资源快速切换降低持续训练成本，Paged LoRA 则采用分页管理与按需映射，让大量个性化适配器共享基础模型和 GPU。该方案强调将数据、反馈、评测体系与个性化参数沉淀为企业自有智能资产，并在更换基础模型后利用原有数据资产重新适配。</p>
+<article id="hexashell-vlm" class="summary-card daily-item">
+  <h2 id="hexashell-vlm-title" class="daily-item-title">HexaShell：探索 VLM 机器人编程智能体能力边界的轻量框架</h2><p class="single-subtitle daily-item-summary">HexaShell 通过极简执行框架让 VLM 智能体以编写和修复工具程序的方式控制双臂机器人，在 RoboDojo 上取得新最佳成绩，并揭示精密接触操作仍是主要瓶颈。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%B7%A5%E5%85%B7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体工具</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.23479" target="_blank" rel="noopener">https://arxiv.org/abs/2610.23479</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/HexaFuture/HexaShell" target="_blank" rel="noopener">https://github.com/HexaFuture/HexaShell</a></div></div><div class="daily-item-content"><p>HexaShell 仅负责将智能体命令转换为机器人运动，让基于 Codex 与 GPT-6-Astra 的智能体通过命令行控制双臂机器人，并利用三路已标定 RGB 相机观察环境。智能体会在失败后读取日志、定位原因，并编写或修复小型工具程序，将任务经验固化为可复用代码；工具通过多视角三角测量、射线与已知平面求交等方式估计物体及夹爪位置。工具仅在每项任务的 10 个布局上开发，随后冻结并在 10 个新布局上测试；在全部 42 项 RoboDojo 任务上达到 39.7% 成功率和 48.0 进度分数，刷新该基准最佳成绩。实验显示智能体通常能够识别失败，但难以执行精细接触动作：推动任务成功率达 92.5%，记忆任务为 65.0%，紧密插入任务仅为 8.3%。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为企业构建从业务反馈到参数更新的闭环，使稳定经验不再仅停留于 Prompt、RAG 或外部记忆。</li>
-<li>通过 Personal LoRA 将个性化能力与通用底座解耦，增强企业切换基础模型时的能力连续性。</li>
-<li>利用 TIP 和 Paged LoRA 支撑大量个性化模型的持续训练、动态调度与低成本运行。</li>
-<li>提示企业同步建设数据资产、任务轨迹、反馈机制和评测标准，并以版本门控防范持续学习中的模型漂移。</li>
+<li>展示极简智能体执行框架也能支持 VLM 通过代码生成、日志诊断和程序修复完成复杂机器人操作。</li>
+<li>将失败经验沉淀为可复用工具代码，为具身智能体的持续技能积累与跨布局泛化提供实现路径。</li>
+<li>结果表明当前瓶颈更多来自接触控制与运动精度，而非高层推理，可指导后续加强力觉反馈、闭环控制和精密操作能力。</li>
+<li>冻结工具后在新布局测试的设计，可用于区分工具泛化能力与针对基准布局的过拟合。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：养成系AI玩法来了！可持续进化Personal AI，经验写进DNA
-来源：新智元 ASI爆点（aiera.com.cn）
-链接：https://aiera.com.cn/asi-preview/asi-item.html?id=tgb48e88
-摘要：过去两年，企业接入大模型的门槛已经大幅降低。调用 API、接入知识库、搭建 Agent，越来越多 AI 能力可以快速进入业务系统。但当大模型真正参与研发、投研、销售…</div>
+    <div class="daily-item-notes-body">[HexaShell：用于探索 VLM 智能体作为机器人编程智能体能力边界的轻量级框架（284 ▲）](https://huggingface.co/papers/2610.23479?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-19)</div>
   </details></article>
 <article id="gpt-6-astra" class="summary-card daily-item">
   <h2 id="gpt-6-astra-title" class="daily-item-title">GPT-6-Astra具身智能评测：具备能力但尚未达到实用门槛</h2><p class="single-subtitle daily-item-summary">GPT-6-Astra在12项具身基准和8种真实机器人配置上展现出较强的操作与导航能力，部分仿真任务接近满分，但精细接触、状态验证、长程执行与失败恢复等短板使其尚未达到实用门槛。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;真实世界基准测试</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.22471" target="_blank" rel="noopener">https://arxiv.org/abs/2610.22471</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.aibase.com/zh/news/31740" target="_blank" rel="noopener">https://www.aibase.com/zh/news/31740</a></div></div><div class="daily-item-content"><p>研究采用统一协议在桌面操作、人形机器人、移动平台和灵巧手等12项代表性基准及8种真实机器人配置上评估GPT-6-Astra，并允许模型利用训练集演示进行上下文学习及增加执行步数。模型在放宽动作步数限制后于多项传统仿真基准上接近满分，但真机执行精细接触和长程任务时错误明显增多，且常误判动作是否成功，缺乏可靠的诊断、纠正与不可逆失败恢复能力。高层System 2推理器与低层System 1控制器（如π0.5）的闭环协同可提升具身控制表现，但演示采集、推理成本、执行延迟和现实试错代价限制了实际部署。研究还提出SenseNova-RoboRSI框架，在不更新基础模型权重的情况下利用执行反馈进行递归式自我改进，并探索面向真实家庭需求、无域内演示且按现实时间持续计时的评测原型。</p>
@@ -415,18 +430,6 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
 链接：https://www.aibase.com/zh/news/31740
 摘要：商汤联合多家高校与企业，给OpenAI的GPT-6-Astra安排具身智能大考：覆盖12项仿真评测、8个真实机器人平台，检验它能否从屏幕“大脑”真正长出“手脚”干活。结论尴尬：在上下文学习、放宽动作步数等“开小灶”下，它在不少传统具身评测中接近满分；可一旦落到……</div>
   </details></article>
-<article id="hexashell-vlm" class="summary-card daily-item">
-  <h2 id="hexashell-vlm-title" class="daily-item-title">HexaShell：探索 VLM 机器人编程智能体能力边界的轻量框架</h2><p class="single-subtitle daily-item-summary">HexaShell 通过极简执行框架让 VLM 智能体以编写和修复工具程序的方式控制双臂机器人，在 RoboDojo 上取得新最佳成绩，并揭示精密接触操作仍是主要瓶颈。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%B7%A5%E5%85%B7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体工具</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.23479" target="_blank" rel="noopener">https://arxiv.org/abs/2610.23479</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/HexaFuture/HexaShell" target="_blank" rel="noopener">https://github.com/HexaFuture/HexaShell</a></div></div><div class="daily-item-content"><p>HexaShell 仅负责将智能体命令转换为机器人运动，让基于 Codex 与 GPT-6-Astra 的智能体通过命令行控制双臂机器人，并利用三路已标定 RGB 相机观察环境。智能体会在失败后读取日志、定位原因，并编写或修复小型工具程序，将任务经验固化为可复用代码；工具通过多视角三角测量、射线与已知平面求交等方式估计物体及夹爪位置。工具仅在每项任务的 10 个布局上开发，随后冻结并在 10 个新布局上测试；在全部 42 项 RoboDojo 任务上达到 39.7% 成功率和 48.0 进度分数，刷新该基准最佳成绩。实验显示智能体通常能够识别失败，但难以执行精细接触动作：推动任务成功率达 92.5%，记忆任务为 65.0%，紧密插入任务仅为 8.3%。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>展示极简智能体执行框架也能支持 VLM 通过代码生成、日志诊断和程序修复完成复杂机器人操作。</li>
-<li>将失败经验沉淀为可复用工具代码，为具身智能体的持续技能积累与跨布局泛化提供实现路径。</li>
-<li>结果表明当前瓶颈更多来自接触控制与运动精度，而非高层推理，可指导后续加强力觉反馈、闭环控制和精密操作能力。</li>
-<li>冻结工具后在新布局测试的设计，可用于区分工具泛化能力与针对基准布局的过拟合。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[HexaShell：用于探索 VLM 智能体作为机器人编程智能体能力边界的轻量级框架（284 ▲）](https://huggingface.co/papers/2610.23479?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-19)</div>
-  </details></article>
 <article id="carryon" class="summary-card daily-item">
   <h2 id="carryon-title" class="daily-item-title">CarryOn：面向长时程智能体的对象化上下文运行时</h2><p class="single-subtitle daily-item-summary">CarryOn以可复用任务对象而非完整交互历史组织长时程智能体上下文，在提升任务表现的同时显著降低词元消耗。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：上下文压缩</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;上下文压缩</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%BF%90%E8%A1%8C%E6%97%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体运行时</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.18784" target="_blank" rel="noopener">https://arxiv.org/abs/2610.18784</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://huggingface.co/papers/2610.18784" target="_blank" rel="noopener">https://huggingface.co/papers/2610.18784</a></div></div><div class="daily-item-content"><p>CarryOn提出面向长时程智能体的对象化上下文运行时，将任务进展封装为可复用的 continuation carriers，并结合执行上下文与近期交互尾部构建当前上下文视图。系统在折叠旧历史时，仅依据绑定证据和环境检查修订受影响的载体记录，同时保留未受影响的记录，无需反复重建完整状态表示。在 OSWorld 2.0 上，该方法将任务表现提升 5.8%，并减少 51.9% 的总词元用量。在 BrowseComp-Plus 上，任务表现提升 7.0%，词元用量减少 22.9%。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -438,6 +441,18 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[轻装上阵，持续随行：为长时程智能体构建面向对象的上下文（99 ▲）](https://huggingface.co/papers/2610.18784?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-19)</div>
+  </details></article>
+<article id="scene-designer-3d" class="summary-card daily-item">
+  <h2 id="scene-designer-3d-title" class="daily-item-title">Scene-Designer：智能体驱动的 3D 室内场景生成</h2><p class="single-subtitle daily-item-summary">Scene-Designer 通过设计与批评经验数据、Critic 引导的 GRPO 训练及测试时反馈，提升 3D 室内场景的物理有效性、功能正确性和布局连贯性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：三维生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%89%E7%BB%B4%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;三维生成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E7%9B%91%E7%9D%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程监督</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.23121" target="_blank" rel="noopener">https://arxiv.org/abs/2610.23121</a></div></div><div class="daily-item-content"><p>Scene-Designer 是面向自然语言驱动 3D 室内场景生成的智能体框架，重点学习场景设计和质量批评两类能力。作者构建 Scene-OTA-35K，以 Observation–Thought–Action 轨迹监督设计决策与高效纠错，并构建 Scene-OTC-15K，以 Observation–Thought–Critic 数据训练场景质量批评器。Scene-GRPO 利用 Critic 引导强化学习，减少不必要的试错并改善设计决策。实验显示，该框架在物理有效性、功能正确性和布局连贯性上表现更优，测试时 Critic 指导也能进一步提升生成质量。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示如何将领域设计经验与批评经验联合用于训练 3D 场景生成智能体。</li>
+<li>为基于 Observation–Thought–Action/Critic 轨迹的数据合成和过程监督提供参考。</li>
+<li>说明 Critic 不仅可用于强化学习训练，也可在测试时作为反馈模块持续修正场景。</li>
+<li>为设计能力与批评能力相互增强的闭环智能体训练提供实践路径。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Scene-Designer：学习设计智能，实现智能体驱动的 3D 场景生成（49 ▲)](https://huggingface.co/papers/2610.23121?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-19)</div>
   </details></article>
 <article id="openmobile-2" class="summary-card daily-item">
   <h2 id="openmobile-2-title" class="daily-item-title">OpenMobile-2：以可扩展环境与原生工具训练移动智能体</h2><p class="single-subtitle daily-item-summary">OpenMobile-2通过可控移动应用环境、大规模交互轨迹及GUI与应用原生工具混合操作，构建了具备较强跨应用长程任务能力的开放移动智能体。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体训练</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图形用户界面智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境合成</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.14157" target="_blank" rel="noopener">https://arxiv.org/abs/2610.14157</a></div></div><div class="daily-item-content"><p>OpenMobile-2开放了完整的移动智能体训练环境与训练方案，其MobileGym++包含35个仿真商业应用，并与Android模拟器应用共同覆盖超过110个应用。项目整理了近1.2万条用于监督微调的移动交互轨迹，以及超过2000个带自动奖励的可执行强化学习任务。MobileGym++还在50多个应用中提供300余个应用原生工具，使智能体可在单次任务中交替执行GUI操作和工具调用。OpenMobile-2在AndroidWorld和MobileWorld上分别取得79.9和50.4分，并将真实设备SPA-Bench成绩从31.9提升至59.6。</p>
@@ -466,22 +481,7 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
 链接：https://aihot.news/items/qh6pvehounuylklti7i0zl124
 摘要：（信源：engineering.fb.com）Meta 工程团队介绍其数据管道智能体采用的瘦编排器（thin orchestrator）模式：一个约 1300 行的编排器只负责路由和可靠性检查，将 20&#43; 工作流分派给 14 个上下文隔离的专项子智能体，自身不做任何领域推理。</div>
   </details></article>
-<article id="claude-code" class="summary-card daily-item">
-  <h2 id="claude-code-title" class="daily-item-title">Claude Code 以分层审查实现九成代码自产自审</h2><p class="single-subtitle daily-item-summary">Anthropic 通过多智能体审查、风险分级、测试证据与人工审批构建 Claude Code 分层质量体系，在代码提交量快速增长的同时降低回滚率。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：软件开发流程</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;代码审查</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程验证</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735857&amp;idx=2&amp;sn=080a2d5531a5d51a3afe813509c04e82&amp;chksm=f0b1471f056c6eed3f9b1798fc5be8f8af87864bdab02a0f957e40c7f02f8b238a3bf8878e29&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735857&amp;idx=2&amp;sn=080a2d5531a5d51a3afe813509c04e82&amp;chksm=f0b1471f056c6eed3f9b1798fc5be8f8af87864bdab02a0f957e40c7f02f8b238a3bf8878e29&amp;scene=0&amp;xtrack=1#rd</a></div></div><div class="daily-item-content"><p>Claude Code 约九成代码由 Claude 生成，大部分初步审查也由 AI 完成，质量衡量重点由“是否经过人工查看”转向回滚率和事故率。提交 PR 前，智能体必须提供测试、构建结果或界面截图等可验证证据；提交后则由多个 Agent 分头查错，再由另一组 Agent 投票过滤低价值意见。系统按照代码风险分级决定审批要求：低风险改动可自动合并，普通改动需要一人批准，高风险模块需要两人批准，且 Agent 的批准不能替代人工签字。针对两个 Agent 循环修改与审查超过 50 轮的问题，Anthropic 将自动审查限制为最多三轮，使平均审查轮数从 2.08 降至 1.32，并保留 Feature Flag 和快速回滚作为兜底。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>将代码审查设计为测试、智能体审查、风险分类、人工批准和运行时回滚组成的多层防线，而非依赖单一审查者。</li>
-<li>为生成代码提供可执行验证手段和结果证据，可显著提升智能体完成软件任务的可靠性。</li>
-<li>应限制自动审查的迭代轮数，并在反复无法收敛时转向检查方案设计，避免智能体循环和计算浪费。</li>
-<li>人类应重点负责需求合理性、关键架构和高风险模块，而将规模化缺陷筛查交给自动化系统。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Claude Code「自产自审」：九成代码不再经过人类
-来源：新智元（微信公众号）
-链接：http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735857&amp;idx=2&amp;sn=080a2d5531a5d51a3afe813509c04e82&amp;chksm=f0b1471f056c6eed3f9b1798fc5be8f8af87864bdab02a0f957e40c7f02f8b238a3bf8878e29&amp;scene=0&amp;xtrack=1#rd
-摘要：</div>
-  </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">9 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">10 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/" onclick="event.stopPropagation()">RobotEvolve</a><span class="daily-count">3 条</span>
               </summary>
@@ -604,30 +604,29 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/" onclick="event.stopPropagation()">AgentTrainEvolve</a><span class="daily-count">1 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/" onclick="event.stopPropagation()">CodeEvolve</a><span class="daily-count">2 条</span>
               </summary>
-              <div class="daily-group-body"><details id="scene-designer-3d" class="daily-row">
+              <div class="daily-group-body"><details id="claude-code" class="daily-row">
   <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Scene-Designer：智能体驱动的 3D 室内场景生成</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 三维生成 · <a href="https://arxiv.org/abs/2610.23121" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">Scene-Designer 通过设计与批评经验数据、Critic 引导的 GRPO 训练及测试时反馈，提升 3D 室内场景的物理有效性、功能正确性和布局连贯性。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：三维生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%89%E7%BB%B4%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;三维生成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E7%9B%91%E7%9D%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程监督</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.23121" target="_blank" rel="noopener">https://arxiv.org/abs/2610.23121</a></div></div><div class="daily-item-content"><p>Scene-Designer 是面向自然语言驱动 3D 室内场景生成的智能体框架，重点学习场景设计和质量批评两类能力。作者构建 Scene-OTA-35K，以 Observation–Thought–Action 轨迹监督设计决策与高效纠错，并构建 Scene-OTC-15K，以 Observation–Thought–Critic 数据训练场景质量批评器。Scene-GRPO 利用 Critic 引导强化学习，减少不必要的试错并改善设计决策。实验显示，该框架在物理有效性、功能正确性和布局连贯性上表现更优，测试时 Critic 指导也能进一步提升生成质量。</p>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Claude Code 以分层审查实现九成代码自产自审</strong>
+      <span class="daily-row-meta">新智元 · 软件开发流程 · <a href="http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735857&amp;idx=2&amp;sn=080a2d5531a5d51a3afe813509c04e82&amp;chksm=f0b1471f056c6eed3f9b1798fc5be8f8af87864bdab02a0f957e40c7f02f8b238a3bf8878e29&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">Anthropic 通过多智能体审查、风险分级、测试证据与人工审批构建 Claude Code 分层质量体系，在代码提交量快速增长的同时降低回滚率。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：软件开发流程</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;代码审查</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程验证</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735857&amp;idx=2&amp;sn=080a2d5531a5d51a3afe813509c04e82&amp;chksm=f0b1471f056c6eed3f9b1798fc5be8f8af87864bdab02a0f957e40c7f02f8b238a3bf8878e29&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735857&amp;idx=2&amp;sn=080a2d5531a5d51a3afe813509c04e82&amp;chksm=f0b1471f056c6eed3f9b1798fc5be8f8af87864bdab02a0f957e40c7f02f8b238a3bf8878e29&amp;scene=0&amp;xtrack=1#rd</a></div></div><div class="daily-item-content"><p>Claude Code 约九成代码由 Claude 生成，大部分初步审查也由 AI 完成，质量衡量重点由“是否经过人工查看”转向回滚率和事故率。提交 PR 前，智能体必须提供测试、构建结果或界面截图等可验证证据；提交后则由多个 Agent 分头查错，再由另一组 Agent 投票过滤低价值意见。系统按照代码风险分级决定审批要求：低风险改动可自动合并，普通改动需要一人批准，高风险模块需要两人批准，且 Agent 的批准不能替代人工签字。针对两个 Agent 循环修改与审查超过 50 轮的问题，Anthropic 将自动审查限制为最多三轮，使平均审查轮数从 2.08 降至 1.32，并保留 Feature Flag 和快速回滚作为兜底。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>展示如何将领域设计经验与批评经验联合用于训练 3D 场景生成智能体。</li>
-<li>为基于 Observation–Thought–Action/Critic 轨迹的数据合成和过程监督提供参考。</li>
-<li>说明 Critic 不仅可用于强化学习训练，也可在测试时作为反馈模块持续修正场景。</li>
-<li>为设计能力与批评能力相互增强的闭环智能体训练提供实践路径。</li>
+<li>将代码审查设计为测试、智能体审查、风险分类、人工批准和运行时回滚组成的多层防线，而非依赖单一审查者。</li>
+<li>为生成代码提供可执行验证手段和结果证据，可显著提升智能体完成软件任务的可靠性。</li>
+<li>应限制自动审查的迭代轮数，并在反复无法收敛时转向检查方案设计，避免智能体循环和计算浪费。</li>
+<li>人类应重点负责需求合理性、关键架构和高风险模块，而将规模化缺陷筛查交给自动化系统。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[Scene-Designer：学习设计智能，实现智能体驱动的 3D 场景生成（49 ▲)](https://huggingface.co/papers/2610.23121?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-19)</div>
+    <div class="daily-item-notes-body">标题：Claude Code「自产自审」：九成代码不再经过人类
+来源：新智元（微信公众号）
+链接：http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735857&amp;idx=2&amp;sn=080a2d5531a5d51a3afe813509c04e82&amp;chksm=f0b1471f056c6eed3f9b1798fc5be8f8af87864bdab02a0f957e40c7f02f8b238a3bf8878e29&amp;scene=0&amp;xtrack=1#rd
+摘要：</div>
   </details></div>
 </details>
-</div>
-            </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/" onclick="event.stopPropagation()">CodeEvolve</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="anthropic-oss-scanner" class="daily-row">
+<details id="anthropic-oss-scanner" class="daily-row">
   <summary>
     <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Anthropic 推出 OSS Scanner，免费扫描开源漏洞并生成补丁</strong>
       <span class="daily-row-meta">新智元 ASI爆点 · 漏洞挖掘 · <a href="https://aiera.com.cn/asi-preview/asi-item.html?id=7928d28d" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
@@ -669,6 +668,29 @@ SystemEvolve：Meta 薄编排器提示生产系统可将确定性路由和可靠
 来源：AI工具集日报（ai-bot.cn）
 链接：https://mp.weixin.qq.com/s/P_PWL2S-jVh0CUMYo-700Q
 摘要：（信源：APPSO）Lovart正式发布 Lovart 2.0 ，新推出个人设计 Agent「Arti」，能建立记忆库、延续审美偏好，主动开展设计调研并生成趋势报告与情绪板，后台巡检画布保证风格一致，还能处理批注评论、沉淀可复用 Skill；新增的设计委托可 24 小时自动执行竞品监控、灵感收集等重复工作，让 AI 从工具进化为真正懂你的长期设计搭档。</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/humanevolve/" onclick="event.stopPropagation()">HumanEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="anthropic-14-ai-6" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Anthropic初级技术岗位占比降至14%，AI代理工时达人类6倍</strong>
+      <span class="daily-row-meta">AIbase · 产业动态分析 · <a href="https://www.aibase.com/zh/news/31744" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">Anthropic内部数据显示，AI代理广泛应用在显著提升研发等部门产出的同时，正伴随技术部门初级岗位与招聘占比快速下降。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：产业动态分析</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AIbase</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/humanevolve/">HumanEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能应用</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.aibase.com/zh/news/31744" target="_blank" rel="noopener">https://www.aibase.com/zh/news/31744</a></div></div><div class="daily-item-content"><p>Anthropic技术部门初级职位占比自2025年初以来由21%降至14%，初级员工在新招聘中的占比由27%降至9%，且2025年12月后初级职位空缺明显减少。到2026年8月，公司内部AI代理工作时长达到人类员工的6倍，研发部门更达到19倍，代码编写和漏洞排查等任务越来越多由Claude承担。AI工具也推动工程师代码提交次数增长5.1倍，并提高数据科学、法务、销售、招聘和财务等部门的产出。Anthropic强调该公司具有AI应用普及度高、业务快速增长等特殊性，相关结果不能直接外推至整体经济，但初级岗位减少可能长期削弱行业人才培养渠道。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为评估智能体部署对组织生产率、岗位结构和招聘需求的影响提供企业内部案例。</li>
+<li>提醒企业在利用AI代理提升效率时，保留初级人才的培训、实践与晋升通道。</li>
+<li>后续需要结合更多行业和长期数据，区分AI替代效应、业务增长及员工主动采用工具等因素。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Anthropic初级技术岗位占比降至14%，AI代理工作时长达员工6倍
+来源：AIbase 快讯（aibase.com）
+链接：https://www.aibase.com/zh/news/31744
+摘要：Anthropic内部研究显示，自2025年初，技术部门初级职位占比从21%降至14%，初级员工在新招聘中占比从27%降至9%；2025年12月起初级职位空缺明显下降，非技术部门基本稳定。公司认为AI代理能力提升是重要原因：到2026年8月，内部AI代理工作时长已达人类员工6倍，研发部门达19倍。</div>
   </details></div>
 </details>
 </div>
