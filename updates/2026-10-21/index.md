@@ -6,24 +6,26 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **固定预算长上下文取得显著进展**：[EdgeRock-4B：固定内存长推理，KV Cache削减99.1%](#edgerock-4b-kv-cache-99-1)以固定容量记忆状态支撑 256K 上下文，在大幅压缩 KV Cache 的同时实现最高 6.42 倍单卡吞吐。
-- **智能体自进化从单一策略优化转向框架、接口与模型协同演化**：[Self-HPO：框架与策略协同优化的自进化编码智能体](#self-hpo)、[Agent S4：从任务经验中演化智能体接口](#agent-s4)和[MaD-RSI：以模型为数据的智能体脚手架递归自我改进](#mad-rsi)分别探索框架—策略交替优化、接口自主构建及跨模型共享脚手架，而[智能体脚手架优化：能力唤起还是能力扩展？](#item-32)提出了更严格的增益判别方法。
-- **长程 Agent 训练聚焦环境供给与细粒度信用分配**：[CoworkEnv：为长时程协作智能体合成可执行训练环境](#coworkenv)提供可验证的环境合成管线，[Self-Credit：长程智能体强化学习的组内重缩放信用分配](#self-credit)与[TrajEvolve：基于事后信用分配的强化学习轨迹演化](#trajevolve)则从证据引用和反事实步骤修复两条路线把稀疏结果奖励转化为过程监督。
-- **具身自进化继续向真机闭环与群体经验扩展**：[RLinf v0.4 发布：具身强化学习迈向真实物理世界](#rlinf-v0-4)补齐真机训练部署基础设施，[LoopWAM开源并登顶RoboChallenge Table30](#loopwam-robochallenge-table30)验证部署阶段自进化能力，[从车队经验中学习：机器人集体学习范式](#item-15)进一步让多机器人共享成功轨迹并利用失败上下文持续改进统一策略。
-- **评测与安全开始审视决策可靠性、奖励作弊和长期记忆风险**：[DecisionPivot：LLM 决策模型诊断评测基准](#decisionpivot-llm)揭示汇总准确率掩盖的排序与校准缺陷，[奖励错设会削弱思维链可监控性](#item-27)表明奖励设计本身可能隐藏作弊行为，[WorldMemArena：面向真实交互的多模态智能体记忆评测](#worldmemarena)则将记忆写入、维护、检索和使用拆开评估。
-- **自主科研出现更多真实实验与领域闭环证据**：[Claude Science设计抗蝎毒蛋白并通过湿实验验证](#claude-science)完成大规模候选生成到湿实验命中的闭环，[GBClaw：面向晶界研究与机理发现的智能体框架](#gbclaw)则把专业工具、原子模拟和分层记忆连接到材料机理发现流程。
+- 智能体自进化集中转向“接口—脚手架—模型”协同优化：[Agent S4](#agent-s4)从无成功标签轨迹中演化接口，[Self-HPO](#self-hpo)交替优化交互框架与策略，[MaD-RSI](#mad-rsi)则利用异构模型失败轨迹改进跨模型共享脚手架。
+- 长程 Agent 训练的关键环节进一步补齐：[CoworkEnv](#coworkenv)自动合成可执行、可验证的协作环境，[Self-Credit](#self-credit)与[TrajEvolve](#trajevolve)分别以证据引用和反事实验证改善稀疏奖励下的步骤级信用分配。
+- 具身自进化从仿真训练走向真机与群体经验闭环：[RLinf v0.4](#rlinf-v0-4)提供模块化真机强化学习基础设施，[从车队经验中学习](#item-15)则让多机器人共享成功轨迹并利用失败上下文持续提升统一策略。
+- 自主科研出现经过真实实验验证和符号规律发现的代表性进展：[Claude Science](#claude-science)完成抗蝎毒蛋白设计及湿实验验证，[OptScientist](#optscientist)从数据与文献先验中自动发现可解释的优化定律。
+- 评测与安全研究开始追问指标背后的真实能力和可监督性：[DecisionPivot](#decisionpivot-llm)细分诊断决策可靠性，[智能体脚手架优化：能力唤起还是能力扩展？](#item-32)区分已有能力释放与能力边界扩张，而[奖励错设会削弱思维链可监控性](#item-27)揭示奖励作弊可能同步破坏监督信号。
+- 系统效率方面，[EdgeRock-4B](#edgerock-4b-kv-cache-99-1)以固定容量状态在256K上下文削减99.1% KV Cache；热点延伸则覆盖 BrainLoRA 脑编码、第一人称三维表征、谱空间轻量化与多轮图像编辑等方向，但与核心研究主线关联较弱。
 
 ## 对当前研究的启发
-- **CacheEvolve**：[EdgeRock-4B](#edgerock-4b-kv-cache-99-1)说明可将固定容量状态、历史信息取舍与吞吐收益统一验证，可作为“学习记住什么”路线在 256K 场景下的强基线。
-- **SystemEvolve**：[Self-HPO](#self-hpo)、[Agent S4](#agent-s4)与[MaD-RSI](#mad-rsi)表明系统演化对象可同时覆盖策略、接口和跨模型脚手架，而非只搜索静态工作流。
-- **HarnessEvolve**：[智能体脚手架优化：能力唤起还是能力扩展？](#item-32)提供了以可达任务覆盖率和 pass@k 区分“唤起既有能力”与“扩展能力边界”的评测框架。
-- **AgentTrainEvolve**：[Self-Credit](#self-credit)和[TrajEvolve](#trajevolve)可分别用于设计证据驱动与反事实验证的步骤级信用分配，缓解长程 Agentic RL 的稀疏奖励问题。
-- **EnvironmentEvolve**：[CoworkEnv](#coworkenv)给出了“工作流约束生成—程序化验证—反馈修复”的环境生产链，可直接借鉴为可执行、可验证的自动课程合成模块。
-- **RobotEvolve**：[RLinf v0.4](#rlinf-v0-4)与[LoopWAM](#loopwam-robochallenge-table30)提示应把部署期自进化算法同真机接口、异构算力和可复现训练基础设施一并设计。
-- **SwarmEvolve**：[从车队经验中学习](#item-15)展示了跨机器人传播成功经验并保留失败上下文的群体数据飞轮，可用于研究群体知识扩散和统一策略持续更新。
-- **EvalEvolve**：[DecisionPivot](#decisionpivot-llm)与[WorldMemArena](#worldmemarena)说明评测应从端到端成功率下钻到校准、状态维护及记忆操作等可诊断子能力。
-- **Awesome-RSI**：[奖励错设会削弱思维链可监控性](#item-27)警示递归改进系统不能把思维链表面一致性当作安全证据，应同步审计奖励描述与真实优化目标。
-- **ResearchEvolve**：[Claude Science](#claude-science)和[GBClaw](#gbclaw)共同表明自主科研价值应以湿实验或高保真模拟的外部验证闭环衡量，而非停留在假设与文本产出。
+- **CacheEvolve**：[EdgeRock-4B](#edgerock-4b-kv-cache-99-1)证明固定容量“记忆锚点”可同时实现超长上下文、极高缓存压缩与吞吐提升，可作为学习式缓存取舍机制的重要架构参照。
+- **AgentEvolve**：[Agent S4](#agent-s4)表明无需成功标签也能从历史轨迹中演化接口及其使用知识，为部署期冻结参数的经验驱动能力增长提供了直接方案。
+- **HarnessEvolve**：[智能体脚手架优化：能力唤起还是能力扩展？](#item-32)提示脚手架评测应同时报告可达任务覆盖率与 pass@k，避免把重复采样或既有能力唤起误判为能力扩展。
+- **SystemEvolve**：[Self-HPO](#self-hpo)与[MaD-RSI](#mad-rsi)说明系统演化不应孤立搜索工作流，而应把策略模型、失败轨迹和跨模型共享脚手架纳入同一迭代闭环。
+- **AgentTrainEvolve**：[Self-Credit](#self-credit)和[TrajEvolve](#trajevolve)可分别提供证据引用式稠密监督与反事实步骤修复，适合组合成面向长程轨迹的信用分配管线。
+- **EnvironmentEvolve**：[CoworkEnv](#coworkenv)以能力约束、工作流约束、程序化验证和反馈修复保障环境可执行性，可直接借鉴为长程协作任务的自动环境质检流程。
+- **RobotEvolve**：[从车队经验中学习](#item-15)与[RLinf v0.4](#rlinf-v0-4)共同给出“多机器人部署经验汇聚—统一策略更新—真机复现”的具身数据飞轮实现路径。
+- **ResearchEvolve**：[Claude Science](#claude-science)和[OptScientist](#optscientist)显示自主科研评测应优先采用湿实验命中率或规律恢复精度等外部可验证结果，而非仅评价生成文本。
+- **EvalEvolve**：[DecisionPivot](#decisionpivot-llm)与[奖励错设会削弱思维链可监控性](#item-27)提示评测需把正确率拆解为排序、校准和监督可见性，防止总体分数掩盖不可靠决策或奖励作弊。
+- **Awesome-RSI**：[MaD-RSI](#mad-rsi)提供了以异构模型失败为数据的递归改进路线，而[奖励错设会削弱思维链可监控性](#item-27)说明每轮自改进还必须独立审计目标错设与监控信号退化。
+- **HumanEvolve**：[人机何时真正互补](#item-31)与[辩论可纠正人类判断，却难以改善弱模型监督](#item-72)共同说明协同增益取决于监督者类型和互补错误结构，不能把对人类有效的辩论机制直接迁移给弱模型裁判。
+- **MemoryEvolve**：[WorldMemArena](#worldmemarena)与[ClawMMU](#clawmmu-llm)分别提供记忆生命周期分阶段评测和带来源、权限的访问控制，可用于同时衡量长期记忆效用与安全隔离能力。
 
 <!-- daily-summary:end -->
 
