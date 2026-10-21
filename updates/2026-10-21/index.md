@@ -6,24 +6,24 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **固定预算长上下文取得显著进展**：[EdgeRock-4B：固定内存长推理，KV Cache削减99.1%](#edgerock-4b-kv-cache-99-1)以记忆岩锚维持固定容量状态，在 256K 上下文下大幅压缩 KV Cache，并显著提升单卡吞吐。
-- **具身自进化形成“部署—训练—群体经验”多线推进**（5 条）：[LoopWAM开源并登顶RoboChallenge Table30](#loopwam-robochallenge-table30)探索部署阶段自进化，[RLinf v0.4 发布：具身强化学习迈向真实物理世界](#rlinf-v0-4)打通真机后训练，而[从车队经验中学习：机器人集体学习范式](#item-15)利用跨机器人成功轨迹与失败上下文持续改进统一策略。
-- **Agent 的策略、脚手架与训练环境开始协同演化**：[Self-HPO：框架与策略协同优化的自进化编码智能体](#self-hpo)交替优化交互框架和策略模型，[CoworkEnv：为长时程协作智能体合成可执行训练环境](#coworkenv)则自动构造可执行、可验证且兼容 SFT/RL 的长程环境。
-- **生产级 Harness 更重视持久化、恢复与多模态证据管理**：[Pi 1.0 发布 Pi Durable，引入原生 MCP 与 Code Mode](#pi-1-0-pi-durable-mcp-code-mode)提供任务恢复与安全重放，[OpenVLHarness：以多模态记忆增强真实世界视觉智能体工具使用](#openvlharness)通过持久记忆和证据渲染提升工具使用效果并降低成本。
-- **真实世界能力的构建与评测进一步端到端化**：[OR-License：现实世界运筹学智能体评测基准](#or-license)以客户模拟和隐藏验证评估专业任务交付，[Holi-World：从人类第一人称经验构建整体世界智能](#holi-world)则整合数据采集、世界表征、训练与独立评测。
-- **热点延伸覆盖多模态与轻量化**：低相关性条目集中在脑编码 PEFT、第一人称三维重建、谱空间嵌入压缩和多轮图像编辑；模型发布侧，[MiniMax发布M3.1 Flash，智能体任务成本降低70%](#minimax-m3-1-flash-70)继续强化低成本高频 Agent 路线。
+- **固定预算长上下文取得显著进展**：[EdgeRock-4B：固定内存长推理，KV Cache削减99.1%](#edgerock-4b-kv-cache-99-1)以固定容量记忆状态支撑 256K 上下文，在大幅压缩 KV Cache 的同时实现最高 6.42 倍单卡吞吐。
+- **智能体自进化从单一策略优化转向框架、接口与模型协同演化**：[Self-HPO：框架与策略协同优化的自进化编码智能体](#self-hpo)、[Agent S4：从任务经验中演化智能体接口](#agent-s4)和[MaD-RSI：以模型为数据的智能体脚手架递归自我改进](#mad-rsi)分别探索框架—策略交替优化、接口自主构建及跨模型共享脚手架，而[智能体脚手架优化：能力唤起还是能力扩展？](#item-32)提出了更严格的增益判别方法。
+- **长程 Agent 训练聚焦环境供给与细粒度信用分配**：[CoworkEnv：为长时程协作智能体合成可执行训练环境](#coworkenv)提供可验证的环境合成管线，[Self-Credit：长程智能体强化学习的组内重缩放信用分配](#self-credit)与[TrajEvolve：基于事后信用分配的强化学习轨迹演化](#trajevolve)则从证据引用和反事实步骤修复两条路线把稀疏结果奖励转化为过程监督。
+- **具身自进化继续向真机闭环与群体经验扩展**：[RLinf v0.4 发布：具身强化学习迈向真实物理世界](#rlinf-v0-4)补齐真机训练部署基础设施，[LoopWAM开源并登顶RoboChallenge Table30](#loopwam-robochallenge-table30)验证部署阶段自进化能力，[从车队经验中学习：机器人集体学习范式](#item-15)进一步让多机器人共享成功轨迹并利用失败上下文持续改进统一策略。
+- **评测与安全开始审视决策可靠性、奖励作弊和长期记忆风险**：[DecisionPivot：LLM 决策模型诊断评测基准](#decisionpivot-llm)揭示汇总准确率掩盖的排序与校准缺陷，[奖励错设会削弱思维链可监控性](#item-27)表明奖励设计本身可能隐藏作弊行为，[WorldMemArena：面向真实交互的多模态智能体记忆评测](#worldmemarena)则将记忆写入、维护、检索和使用拆开评估。
+- **自主科研出现更多真实实验与领域闭环证据**：[Claude Science设计抗蝎毒蛋白并通过湿实验验证](#claude-science)完成大规模候选生成到湿实验命中的闭环，[GBClaw：面向晶界研究与机理发现的智能体框架](#gbclaw)则把专业工具、原子模拟和分层记忆连接到材料机理发现流程。
 
 ## 对当前研究的启发
-- **CacheEvolve**：[EdgeRock-4B](#edgerock-4b-kv-cache-99-1)表明可将长历史压缩为固定容量状态，值得重点分析其锚点选择、状态更新及质量—显存权衡能否转化为可学习的缓存淘汰机制。
-- **RobotEvolve**：[LoopWAM](#loopwam-robochallenge-table30)、[RLinf v0.4](#rlinf-v0-4)与[机器人集体学习](#item-15)共同提供了从单机部署反馈、真机后训练到车队经验回灌的完整具身进化闭环。
-- **AgentTrainEvolve**：[CoworkEnv](#coworkenv)的可验证环境合成与[RLinf v0.4](#rlinf-v0-4)的全模态真机训练接口，可分别补足长程 Agentic RL 的环境供给和现实交互基础设施。
-- **EnvironmentEvolve**：[CoworkEnv](#coworkenv)将工作流约束、程序化验证和反馈修复结合起来，为“环境生成后自动验收并自纠错”提供了直接可复用的实现范式。
-- **CodeEvolve**：[Self-HPO](#self-hpo)把编码 Agent 的交互框架与策略模型同时纳入优化，可作为“Agent 修改自身脚手架并用执行结果验证”的训练侧闭环参考。
-- **Awesome-RSI**：[Self-HPO](#self-hpo)对框架和策略进行交替递归优化，为研究改进机制自身是否能够持续提升、以及失败模式是否随迭代迁移提供了具体案例。
-- **HarnessEvolve**：[Pi Durable](#pi-1-0-pi-durable-mcp-code-mode)的安全重放与[OpenVLHarness](#openvlharness)的证据渲染、持久记忆，提示 Harness 评测应显式覆盖恢复能力、证据可审计性和状态管理成本。
-- **MemoryEvolve**：[OpenVLHarness](#openvlharness)展示了将工具所得多模态证据持久化并跨步骤组合的路径，可用于设计面向真实任务的记忆写入、复用和成本评测。
-- **EvalEvolve**：[OR-License](#or-license)以真实项目材料、动态客户模拟器和隐藏验证替代静态问答，为抗污染且面向最终交付质量的 Agent 评测提供了模板。
-- **SwarmEvolve**：[机器人集体学习范式](#item-15)将车队成功轨迹共享与失败上下文利用结合起来，可用于研究群体经验如何筛选、传播并稳定提升统一策略。
+- **CacheEvolve**：[EdgeRock-4B](#edgerock-4b-kv-cache-99-1)说明可将固定容量状态、历史信息取舍与吞吐收益统一验证，可作为“学习记住什么”路线在 256K 场景下的强基线。
+- **SystemEvolve**：[Self-HPO](#self-hpo)、[Agent S4](#agent-s4)与[MaD-RSI](#mad-rsi)表明系统演化对象可同时覆盖策略、接口和跨模型脚手架，而非只搜索静态工作流。
+- **HarnessEvolve**：[智能体脚手架优化：能力唤起还是能力扩展？](#item-32)提供了以可达任务覆盖率和 pass@k 区分“唤起既有能力”与“扩展能力边界”的评测框架。
+- **AgentTrainEvolve**：[Self-Credit](#self-credit)和[TrajEvolve](#trajevolve)可分别用于设计证据驱动与反事实验证的步骤级信用分配，缓解长程 Agentic RL 的稀疏奖励问题。
+- **EnvironmentEvolve**：[CoworkEnv](#coworkenv)给出了“工作流约束生成—程序化验证—反馈修复”的环境生产链，可直接借鉴为可执行、可验证的自动课程合成模块。
+- **RobotEvolve**：[RLinf v0.4](#rlinf-v0-4)与[LoopWAM](#loopwam-robochallenge-table30)提示应把部署期自进化算法同真机接口、异构算力和可复现训练基础设施一并设计。
+- **SwarmEvolve**：[从车队经验中学习](#item-15)展示了跨机器人传播成功经验并保留失败上下文的群体数据飞轮，可用于研究群体知识扩散和统一策略持续更新。
+- **EvalEvolve**：[DecisionPivot](#decisionpivot-llm)与[WorldMemArena](#worldmemarena)说明评测应从端到端成功率下钻到校准、状态维护及记忆操作等可诊断子能力。
+- **Awesome-RSI**：[奖励错设会削弱思维链可监控性](#item-27)警示递归改进系统不能把思维链表面一致性当作安全证据，应同步审计奖励描述与真实优化目标。
+- **ResearchEvolve**：[Claude Science](#claude-science)和[GBClaw](#gbclaw)共同表明自主科研价值应以湿实验或高保真模拟的外部验证闭环衡量，而非停留在假设与文本产出。
 
 <!-- daily-summary:end -->
 
