@@ -6,20 +6,22 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **长程 Agent 基座迎来开放权重更新**：[阶跃星辰开放 Step 5 Preview 权重，面向长程 Agent](#step-5-preview-agent)结合稀疏 MoE、百万 token 上下文、上下文压缩与可验证环境训练，体现基础模型开始围绕长期任务执行进行端到端设计。
-- **自进化从单点改进转向模型、脚手架与任务闭环协同**：3 项工作分别以[CoEvo-RSI](#coevo-rsi)缓解模型与执行框架的“脑—身体”错配、以[ScholarEvolve](#scholarevolve-agent-harness)从文献持续演化 Agent Harness，并以[RSIGame](#rsigame)打通游戏试玩、修复、验证及经验回灌。
-- **Agent 系统向规模化协作和垂直能力拓展**：[Agensh](#agensh)展示最多 1024 个智能体无中心自组织开发软件，[FocusGUI](#focusgui-gui)和[S-Agent 2.0](#s-agent-2-0)则分别用动态证据压缩、持久化场景记忆改善 GUI 操作与三维空间推理。
-- **冻结模型下的运行时优化成为效率主线**：[VLA-Rolling](#vla-rolling)通过自适应复用动作尾部同时提高具身控制速度与成功率，[SWIFT](#swift)则用弱去噪器外推目标，以约一半训练算力强化扩散模型。
-- **热点延伸**：低相关性条目主要是 [Novix 招募 RSI、Agentic RL 与新架构研究人才](#novix-rsi-agentic-rl)，反映产业界对 RSI、环境和评测基础设施的投入信号，但尚无新的技术结果。
+- **长程 Agent 与递归自我改进成为主线**：[阶跃星辰开放 Step 5 Preview 权重，面向长程 Agent](#step-5-preview-agent)以百万 token 上下文、上下文压缩和可验证环境强化复杂任务执行，[RSIGame：自主试玩、修复与迭代的游戏开发智能体](#rsigame)则打通作品迭代与底层模型经验学习闭环。
+- **系统与脚手架开始和模型协同演化**：[CoEvo-RSI：模型与测试框架协同演化](#coevo-rsi)直面 RSI 中模型与执行框架的“脑—身体”错配，[ScholarEvolve：从科研文献中持续演化 Agent Harness](#scholarevolve-agent-harness)展示了冻结模型参数、依靠文献检索和组合评估持续改进 Harness 的路径。
+- **多智能体及工具化 Agent 向复杂生产任务扩展**：[微软发布 Agensh：千智能体自组织协作开发软件](#agensh)将无中心协作扩展至 1024 个软件开发智能体，[S-Agent 2.0：通用编程智能体驱动的空间推理](#s-agent-2-0)则以工具调用和持久化场景记忆构造空间证据闭环。
+- **具身世界模型集中推进跨本体、四维表征与控制效率**：[Ropedia W0：利用人类经验扩展跨具身运动操作世界模型](#ropedia-w0)利用人类—机器人数据学习跨具身长程预测，[VPM：通过点轨迹预测学习四维世界](#vpm)联合建模视频与三维点轨迹，[VLA-Rolling：自适应复用动作尾部以加速具身控制](#vla-rolling)则通过动作缓存复用降低实时控制成本。
+- **长度泛化与高效生成出现结构性进展**：[PAR：进度对齐循环机制提升状态跟踪长度泛化](#par)将状态跟踪外推到训练长度的 16 倍，[SWIFT：基于目标外推的自引导弱到强扩散模型](#swift)以冻结弱模型构造更强训练目标，[Matrix-Game 4.0：视频模型驱动的实时可玩游戏世界](#matrix-game-4-0)实现单卡 480p、60 FPS 可玩世界；热点延伸则关注 RSI、Agentic RL 与评测人才和合作需求。
 
 ## 对当前研究的启发
-- **NewModel**：[Step 5 Preview](#step-5-preview-agent)把百万级上下文、端到端压缩和可验证环境训练统一到长程 Agent 基座中，可作为分析“模型原生 Agent 能力”与外部 harness 增益边界的新样本。
-- **HarnessEvolve**：[CoEvo-RSI](#coevo-rsi)与[ScholarEvolve](#scholarevolve-agent-harness)表明 harness 不应固定为评测外壳，而可与模型能力同步继承、组合和实证筛选。
-- **TaskEvolve**：[RSIGame](#rsigame)提供了“生成作品—自主试玩—诊断修复—重新验收”的完整实现，可直接借鉴其局部开发闭环与全局质量控制机制。
-- **AgentTrainEvolve**：[RSIGame](#rsigame)将开发闭环积累的经验继续用于训练底层模型，为把长程任务执行轨迹转化为参数侧持续改进提供了具体路径。
-- **SwarmEvolve**：[Agensh](#agensh)以共享仓库、通信系统和上下文看板支撑千智能体无中心协作，可用于研究协作拓扑、冲突消解与群体规模扩展规律。
-- **RobotEvolve**：[VLA-Rolling](#vla-rolling)说明具身系统可依据动作置信度动态决定复用与重新去噪预算，为实时控制中的经验缓存和快慢决策路由提供了可实现方案。
-- **MemoryEvolve**：[S-Agent 2.0](#s-agent-2-0)的持久化场景记忆与闭合证据循环，可作为评估长期记忆是否真正支撑空间推理而非仅扩大上下文的案例。
+- **AgentTrainEvolve**：[RSIGame](#rsigame)把自主试玩、缺陷修复和验证经验回灌到底层模型，为从长程执行轨迹构造可验证训练闭环提供了直接范式。
+- **TaskEvolve**：[RSIGame](#rsigame)验证了以可运行游戏为进化单位、由局部开发闭环和全局质量控制共同驱动持续迭代的可行性。
+- **HarnessEvolve**：[CoEvo-RSI](#coevo-rsi)与[ScholarEvolve](#scholarevolve-agent-harness)分别给出模型—Harness 协同训练和冻结模型下 Harness 搜索两条路线，可用于比较联合演化与纯脚手架演化的收益边界。
+- **ResearchEvolve**：[ScholarEvolve](#scholarevolve-agent-harness)将论文检索、算法实现、组合与实验评估闭环化，可直接作为自主科研系统持续吸收文献方法的设计参考。
+- **SwarmEvolve**：[Agensh](#agensh)以共享代码仓库、通信系统和上下文看板支撑千级无中心协作，为研究通信拓扑、任务涌现和规模效应提供了可执行样板。
+- **MemoryEvolve**：[S-Agent 2.0](#s-agent-2-0)通过持久化场景记忆维持三维证据闭环，提示长期记忆评测应关注证据状态能否在工具操作中持续更新而非仅看检索命中率。
+- **RobotEvolve**：[Ropedia W0](#ropedia-w0)、[VPM](#vpm)与[VLA-Rolling](#vla-rolling)分别覆盖跨本体数据、动态世界表征和动作缓存复用，可组合为“世界模型预训练—跨本体迁移—低延迟控制”的技术链。
+- **GeneralizeEvolve**：[PAR](#par)通过对齐循环进度实现 16 倍长度外推，为区分真正的算法性长度泛化与训练长度记忆提供了新的结构和实验基线。
+- **SystemEvolve**：[CoEvo-RSI](#coevo-rsi)表明模型升级若不与执行框架共同选择、合并和训练会产生能力错配，应把 Harness 检查点纳入系统级演化状态。
 
 <!-- daily-summary:end -->
 
