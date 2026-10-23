@@ -12,48 +12,49 @@
 
 今日概览
 
-环境与任务自动合成成为主线：WildAWM 同时生成支持 GUI、MCP 与命令行的可执行环境及长程任务，并以执行质量门控保证可解、可验证。
-Agent 经验沉淀从静态记忆走向“教学—实践—修订”闭环：苏格拉底式技能学习 让智能体自主检验并迭代可跨任务复用的技能。
-具身智能关注规模化泛化与复杂操控两端：游戏规模化 系统分析数据量、世界多样性和模型规模的作用，DONIC 则推进跨物体、跨动作来源的通用双手控制。
-多模态模型训练出现两条可复用路径：PrismaCoder 用可检查的分解式评分标准贯通数据筛选与 RL 奖励，FCP 通过远期片段预测提升视频世界演化建模与物理合理性。
-热点延伸集中于交互式多模态评测：流式视频生成的长期状态一致性，以及 VLM 智能体在有限预算下主动探索和三维建图，均暴露出现有系统在长周期交互中的短板。
+智能体环境与技能演化：两项高相关工作分别补齐训练闭环的环境和经验侧——WildAWM：面向计算机使用智能体的可控环境与任务合成自动生成支持 GUI、MCP 与命令行的可验证长程任务，苏格拉底式技能学习：教学与实践交替培养可迁移智能体技能则通过“教学—实践—修订”循环沉淀跨任务技能。
+具身智能的规模化与通用控制：游戏规模化：在多样虚拟世界中持续预训练具身智能体系统拆解数据量、世界多样性和模型规模对跨世界泛化的影响，DONIC：基于人类演示的通用灵巧双手追踪控制展示了单策略跨物体、跨动作来源的双手协同操控。
+生成模型与合成数据训练：FCP：面向未来演化建模的自回归视频生成以远距离未来片段预测强化场景演化建模，PrismaCoder：分解式评分标准驱动开放多模态代码智能则用可检查的细粒度评分标准统一多模态代码数据过滤与强化学习奖励。
+世界模型进入在线执行验证：LGWM：用世界模型验证 GUI 智能体状态转移直接在表征空间低延迟预测下一屏并识别恶意状态转移，体现世界模型从生成与规划走向生产智能体安全护栏。
+热点延伸聚焦长周期多模态评测：StreamEval 暴露流式视频系统的请求执行与长期一致性短板，SpatialScout 将 VLM 评测推进到主动探索和物体级三维建图，SSI 则探索低预算光谱—空间联合归因。
 
 对当前研究的启发
 
-EnvironmentEvolve：WildAWM 表明环境生成器应将可执行性、任务难度和验证可靠性纳入同一质量门控，而非只追求场景与任务数量。
-TaskEvolve：WildAWM 的长程任务合成与执行验收机制，可直接借鉴为“生成—运行—验证—淘汰”的任务进化闭环。
-AgentEvolve：苏格拉底式技能学习 提供了冻结参数条件下通过主动实践、失败修订和技能复用实现部署期持续增强的具体范式。
-MemoryEvolve：苏格拉底式技能学习 启发将长期记忆单元设计为经过自主测试和修订的可执行技能，而非未经验证的轨迹摘要。
-AgentTrainEvolve：WildAWM 可作为长程 Agentic RL 的环境与课程生产器，而苏格拉底式技能学习 展示了如何让教学信号随实践结果迭代。
-RobotEvolve：游戏规模化 提示具身预训练应优先扩大世界多样性并测量跨世界迁移收益，DONIC 则提供了融合示范、强化学习和成功轨迹回收的控制配方。
-GeneralizeEvolve：游戏规模化 的受控缩放实验可用于区分泛化提升究竟来自数据量、环境多样性还是模型容量。
-DataEvolve：PrismaCoder 展示了让同一套可分解评分标准同时负责合成数据过滤和强化学习奖励，从而减少数据质量目标与训练目标错位。
-NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学习更长时间尺度的状态演化，并以较低训练计算改善物理一致性。
+EnvironmentEvolve：WildAWM的“可执行环境合成＋执行质量门控”可直接作为环境自进化流水线的质量底座，尤其适合统一约束可解性、难度和验证可靠性。
+TaskEvolve：WildAWM展示了从多种交互接口自动构造长程任务并用真实执行验收的方案，可用于强化任务生成—运行—验证闭环。
+AgentTrainEvolve：苏格拉底式技能学习可将专家教学与智能体自主实践组织成低指导成本的迭代课程，而 WildAWM 可进一步为该循环持续供应可验证任务。
+AgentEvolve：苏格拉底式技能学习的自主测试、修订和技能沉淀机制，为冻结参数条件下依据执行反馈维护可复用技能库提供了具体流程。
+MemoryEvolve：苏格拉底式技能学习把成功经验从单次轨迹转化为可跨任务调用的技能，提示长期记忆应围绕“实践验证后再写入与修订”组织，而非无差别保存历史。
+RobotEvolve：游戏规模化给出了世界多样性与跨世界迁移的受控证据，DONIC则提供了融合模仿学习、强化学习和成功轨迹回收的通用双手策略配方。
+GeneralizeEvolve：游戏规模化的 120 组受控实验可用于判断具身预训练收益究竟来自数据规模还是环境多样性，并据此设计跨分布泛化消融。
+DataEvolve：PrismaCoder表明可分解、可检查的评分标准能够同时承担合成数据筛选和 RL 奖励，适合作为数据生成—质检—训练的一致反馈信号。
+NewModel：FCP说明以稀疏远期片段为辅助预测目标，可以较低训练计算迫使视频模型学习长期场景演化规律，而非只拟合局部运动。
+NewApply：LGWM提供了把世界模型部署为 GUI 智能体实时安全检查器的轻量路径，可在不生成完整下一帧的情况下监控异常状态转移。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-10-23 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 环境与任务自动合成成为主线：WildAWM 同时生成支持 GUI、MCP 与命令行的可执行环境及长程任务，并以执行质量门控保证可解、可验证。 Agent 经验沉淀从静态记忆走向“教学—实践—修订”闭环：苏格拉底式技能学习 让智能体自主检验并迭代可跨任务复用的技能。 具身智能关注规模化泛化与复杂操控两端：游戏规模化 系统分析数据量、世界多样性和模型规模的作用，DONIC 则推进跨物体、跨动作来源的通用双手控制。 多模态模型训练出现两条可复用路径：PrismaCoder 用可检查的分解式评分标准贯通数据筛选与 RL 奖励，FCP 通过远期片段预测提升视频世界演化建模与物理合理性。 热点延伸集中于交互式多模态评测：流式视频生成的长期状态一致性，以及 VLM 智能体在有限预算下主动探索和三维建图，均暴露出现有系统在长周期交互中的短板。 对当前研究的启发 EnvironmentEvolve：WildAWM 表明环境生成器应将可执行性、任务难度和验证可靠性纳入同一质量门控，而非只追求场景与任务数量。 TaskEvolve：WildAWM 的长程任务合成与执行验收机制，可直接借鉴为“生成—运行—验证—淘汰”的任务进化闭环。 AgentEvolve：苏格拉底式技能学习 提供了冻结参数条件下通过主动实践、失败修订和技能复用实现部署期持续增强的具体范式。 MemoryEvolve：苏格拉底式技能学习 启发将长期记忆单元设计为经过自主测试和修订的可执行技能，而非未经验证的轨迹摘要。 AgentTrainEvolve：WildAWM 可作为长程 Agentic RL 的环境与课程生产器，而苏格拉底式技能学习 展示了如何让教学信号随实践结果迭代。 RobotEvolve：游戏规模化 提示具身预训练应优先扩大世界多样性并测量跨世界迁移收益，DONIC 则提供了融合示范、强化学习和成功轨迹回收的控制配方。 GeneralizeEvolve：游戏规模化 的受控缩放实验可用于区分泛化提升究竟来自数据量、环境多样性还是模型容量。 DataEvolve：PrismaCoder 展示了让同一套可分解评分标准同时负责合成数据过滤和强化学习奖励，从而减少数据质量目标与训练目标错位。 NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学习更长时间尺度的状态演化，并以较低训练计算改善物理一致性。">
+今日概览 智能体环境与技能演化：两项高相关工作分别补齐训练闭环的环境和经验侧——WildAWM：面向计算机使用智能体的可控环境与任务合成自动生成支持 GUI、MCP 与命令行的可验证长程任务，苏格拉底式技能学习：教学与实践交替培养可迁移智能体技能则通过“教学—实践—修订”循环沉淀跨任务技能。 具身智能的规模化与通用控制：游戏规模化：在多样虚拟世界中持续预训练具身智能体系统拆解数据量、世界多样性和模型规模对跨世界泛化的影响，DONIC：基于人类演示的通用灵巧双手追踪控制展示了单策略跨物体、跨动作来源的双手协同操控。 生成模型与合成数据训练：FCP：面向未来演化建模的自回归视频生成以远距离未来片段预测强化场景演化建模，PrismaCoder：分解式评分标准驱动开放多模态代码智能则用可检查的细粒度评分标准统一多模态代码数据过滤与强化学习奖励。 世界模型进入在线执行验证：LGWM：用世界模型验证 GUI 智能体状态转移直接在表征空间低延迟预测下一屏并识别恶意状态转移，体现世界模型从生成与规划走向生产智能体安全护栏。 热点延伸聚焦长周期多模态评测：StreamEval 暴露流式视频系统的请求执行与长期一致性短板，SpatialScout 将 VLM 评测推进到主动探索和物体级三维建图，SSI 则探索低预算光谱—空间联合归因。 对当前研究的启发 EnvironmentEvolve：WildAWM的“可执行环境合成＋执行质量门控”可直接作为环境自进化流水线的质量底座，尤其适合统一约束可解性、难度和验证可靠性。 TaskEvolve：WildAWM展示了从多种交互接口自动构造长程任务并用真实执行验收的方案，可用于强化任务生成—运行—验证闭环。 AgentTrainEvolve：苏格拉底式技能学习可将专家教学与智能体自主实践组织成低指导成本的迭代课程，而 WildAWM 可进一步为该循环持续供应可验证任务。 AgentEvolve：苏格拉底式技能学习的自主测试、修订和技能沉淀机制，为冻结参数条件下依据执行反馈维护可复用技能库提供了具体流程。 MemoryEvolve：苏格拉底式技能学习把成功经验从单次轨迹转化为可跨任务调用的技能，提示长期记忆应围绕“实践验证后再写入与修订”组织，而非无差别保存历史。 RobotEvolve：游戏规模化给出了世界多样性与跨世界迁移的受控证据，DONIC则提供了融合模仿学习、强化学习和成功轨迹回收的通用双手策略配方。 GeneralizeEvolve：游戏规模化的 120 组受控实验可用于判断具身预训练收益究竟来自数据规模还是环境多样性，并据此设计跨分布泛化消融。 DataEvolve：PrismaCoder表明可分解、可检查的评分标准能够同时承担合成数据筛选和 RL 奖励，适合作为数据生成—质检—训练的一致反馈信号。 NewModel：FCP说明以稀疏远期片段为辅助预测目标，可以较低训练计算迫使视频模型学习长期场景演化规律，而非只拟合局部运动。 NewApply：LGWM提供了把世界模型部署为 GUI 智能体实时安全检查器的轻量路径，可在不生成完整下一帧的情况下监控异常状态转移。">
   <meta itemprop="datePublished" content="2026-10-23T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-23T10:59:39+08:00">
-  <meta itemprop="wordCount" content="964">
+  <meta itemprop="dateModified" content="2026-10-23T11:01:16+08:00">
+  <meta itemprop="wordCount" content="1288">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-23/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-10-23 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 环境与任务自动合成成为主线：WildAWM 同时生成支持 GUI、MCP 与命令行的可执行环境及长程任务，并以执行质量门控保证可解、可验证。 Agent 经验沉淀从静态记忆走向“教学—实践—修订”闭环：苏格拉底式技能学习 让智能体自主检验并迭代可跨任务复用的技能。 具身智能关注规模化泛化与复杂操控两端：游戏规模化 系统分析数据量、世界多样性和模型规模的作用，DONIC 则推进跨物体、跨动作来源的通用双手控制。 多模态模型训练出现两条可复用路径：PrismaCoder 用可检查的分解式评分标准贯通数据筛选与 RL 奖励，FCP 通过远期片段预测提升视频世界演化建模与物理合理性。 热点延伸集中于交互式多模态评测：流式视频生成的长期状态一致性，以及 VLM 智能体在有限预算下主动探索和三维建图，均暴露出现有系统在长周期交互中的短板。 对当前研究的启发 EnvironmentEvolve：WildAWM 表明环境生成器应将可执行性、任务难度和验证可靠性纳入同一质量门控，而非只追求场景与任务数量。 TaskEvolve：WildAWM 的长程任务合成与执行验收机制，可直接借鉴为“生成—运行—验证—淘汰”的任务进化闭环。 AgentEvolve：苏格拉底式技能学习 提供了冻结参数条件下通过主动实践、失败修订和技能复用实现部署期持续增强的具体范式。 MemoryEvolve：苏格拉底式技能学习 启发将长期记忆单元设计为经过自主测试和修订的可执行技能，而非未经验证的轨迹摘要。 AgentTrainEvolve：WildAWM 可作为长程 Agentic RL 的环境与课程生产器，而苏格拉底式技能学习 展示了如何让教学信号随实践结果迭代。 RobotEvolve：游戏规模化 提示具身预训练应优先扩大世界多样性并测量跨世界迁移收益，DONIC 则提供了融合示范、强化学习和成功轨迹回收的控制配方。 GeneralizeEvolve：游戏规模化 的受控缩放实验可用于区分泛化提升究竟来自数据量、环境多样性还是模型容量。 DataEvolve：PrismaCoder 展示了让同一套可分解评分标准同时负责合成数据过滤和强化学习奖励，从而减少数据质量目标与训练目标错位。 NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学习更长时间尺度的状态演化，并以较低训练计算改善物理一致性。">
+今日概览 智能体环境与技能演化：两项高相关工作分别补齐训练闭环的环境和经验侧——WildAWM：面向计算机使用智能体的可控环境与任务合成自动生成支持 GUI、MCP 与命令行的可验证长程任务，苏格拉底式技能学习：教学与实践交替培养可迁移智能体技能则通过“教学—实践—修订”循环沉淀跨任务技能。 具身智能的规模化与通用控制：游戏规模化：在多样虚拟世界中持续预训练具身智能体系统拆解数据量、世界多样性和模型规模对跨世界泛化的影响，DONIC：基于人类演示的通用灵巧双手追踪控制展示了单策略跨物体、跨动作来源的双手协同操控。 生成模型与合成数据训练：FCP：面向未来演化建模的自回归视频生成以远距离未来片段预测强化场景演化建模，PrismaCoder：分解式评分标准驱动开放多模态代码智能则用可检查的细粒度评分标准统一多模态代码数据过滤与强化学习奖励。 世界模型进入在线执行验证：LGWM：用世界模型验证 GUI 智能体状态转移直接在表征空间低延迟预测下一屏并识别恶意状态转移，体现世界模型从生成与规划走向生产智能体安全护栏。 热点延伸聚焦长周期多模态评测：StreamEval 暴露流式视频系统的请求执行与长期一致性短板，SpatialScout 将 VLM 评测推进到主动探索和物体级三维建图，SSI 则探索低预算光谱—空间联合归因。 对当前研究的启发 EnvironmentEvolve：WildAWM的“可执行环境合成＋执行质量门控”可直接作为环境自进化流水线的质量底座，尤其适合统一约束可解性、难度和验证可靠性。 TaskEvolve：WildAWM展示了从多种交互接口自动构造长程任务并用真实执行验收的方案，可用于强化任务生成—运行—验证闭环。 AgentTrainEvolve：苏格拉底式技能学习可将专家教学与智能体自主实践组织成低指导成本的迭代课程，而 WildAWM 可进一步为该循环持续供应可验证任务。 AgentEvolve：苏格拉底式技能学习的自主测试、修订和技能沉淀机制，为冻结参数条件下依据执行反馈维护可复用技能库提供了具体流程。 MemoryEvolve：苏格拉底式技能学习把成功经验从单次轨迹转化为可跨任务调用的技能，提示长期记忆应围绕“实践验证后再写入与修订”组织，而非无差别保存历史。 RobotEvolve：游戏规模化给出了世界多样性与跨世界迁移的受控证据，DONIC则提供了融合模仿学习、强化学习和成功轨迹回收的通用双手策略配方。 GeneralizeEvolve：游戏规模化的 120 组受控实验可用于判断具身预训练收益究竟来自数据规模还是环境多样性，并据此设计跨分布泛化消融。 DataEvolve：PrismaCoder表明可分解、可检查的评分标准能够同时承担合成数据筛选和 RL 奖励，适合作为数据生成—质检—训练的一致反馈信号。 NewModel：FCP说明以稀疏远期片段为辅助预测目标，可以较低训练计算迫使视频模型学习长期场景演化规律，而非只拟合局部运动。 NewApply：LGWM提供了把世界模型部署为 GUI 智能体实时安全检查器的轻量路径，可在不生成完整下一帧的情况下监控异常状态转移。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-10-23T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-23T10:59:39+08:00">
+    <meta property="article:modified_time" content="2026-10-23T11:01:16+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-10-23 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 环境与任务自动合成成为主线：WildAWM 同时生成支持 GUI、MCP 与命令行的可执行环境及长程任务，并以执行质量门控保证可解、可验证。 Agent 经验沉淀从静态记忆走向“教学—实践—修订”闭环：苏格拉底式技能学习 让智能体自主检验并迭代可跨任务复用的技能。 具身智能关注规模化泛化与复杂操控两端：游戏规模化 系统分析数据量、世界多样性和模型规模的作用，DONIC 则推进跨物体、跨动作来源的通用双手控制。 多模态模型训练出现两条可复用路径：PrismaCoder 用可检查的分解式评分标准贯通数据筛选与 RL 奖励，FCP 通过远期片段预测提升视频世界演化建模与物理合理性。 热点延伸集中于交互式多模态评测：流式视频生成的长期状态一致性，以及 VLM 智能体在有限预算下主动探索和三维建图，均暴露出现有系统在长周期交互中的短板。 对当前研究的启发 EnvironmentEvolve：WildAWM 表明环境生成器应将可执行性、任务难度和验证可靠性纳入同一质量门控，而非只追求场景与任务数量。 TaskEvolve：WildAWM 的长程任务合成与执行验收机制，可直接借鉴为“生成—运行—验证—淘汰”的任务进化闭环。 AgentEvolve：苏格拉底式技能学习 提供了冻结参数条件下通过主动实践、失败修订和技能复用实现部署期持续增强的具体范式。 MemoryEvolve：苏格拉底式技能学习 启发将长期记忆单元设计为经过自主测试和修订的可执行技能，而非未经验证的轨迹摘要。 AgentTrainEvolve：WildAWM 可作为长程 Agentic RL 的环境与课程生产器，而苏格拉底式技能学习 展示了如何让教学信号随实践结果迭代。 RobotEvolve：游戏规模化 提示具身预训练应优先扩大世界多样性并测量跨世界迁移收益，DONIC 则提供了融合示范、强化学习和成功轨迹回收的控制配方。 GeneralizeEvolve：游戏规模化 的受控缩放实验可用于区分泛化提升究竟来自数据量、环境多样性还是模型容量。 DataEvolve：PrismaCoder 展示了让同一套可分解评分标准同时负责合成数据过滤和强化学习奖励，从而减少数据质量目标与训练目标错位。 NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学习更长时间尺度的状态演化，并以较低训练计算改善物理一致性。">
+今日概览 智能体环境与技能演化：两项高相关工作分别补齐训练闭环的环境和经验侧——WildAWM：面向计算机使用智能体的可控环境与任务合成自动生成支持 GUI、MCP 与命令行的可验证长程任务，苏格拉底式技能学习：教学与实践交替培养可迁移智能体技能则通过“教学—实践—修订”循环沉淀跨任务技能。 具身智能的规模化与通用控制：游戏规模化：在多样虚拟世界中持续预训练具身智能体系统拆解数据量、世界多样性和模型规模对跨世界泛化的影响，DONIC：基于人类演示的通用灵巧双手追踪控制展示了单策略跨物体、跨动作来源的双手协同操控。 生成模型与合成数据训练：FCP：面向未来演化建模的自回归视频生成以远距离未来片段预测强化场景演化建模，PrismaCoder：分解式评分标准驱动开放多模态代码智能则用可检查的细粒度评分标准统一多模态代码数据过滤与强化学习奖励。 世界模型进入在线执行验证：LGWM：用世界模型验证 GUI 智能体状态转移直接在表征空间低延迟预测下一屏并识别恶意状态转移，体现世界模型从生成与规划走向生产智能体安全护栏。 热点延伸聚焦长周期多模态评测：StreamEval 暴露流式视频系统的请求执行与长期一致性短板，SpatialScout 将 VLM 评测推进到主动探索和物体级三维建图，SSI 则探索低预算光谱—空间联合归因。 对当前研究的启发 EnvironmentEvolve：WildAWM的“可执行环境合成＋执行质量门控”可直接作为环境自进化流水线的质量底座，尤其适合统一约束可解性、难度和验证可靠性。 TaskEvolve：WildAWM展示了从多种交互接口自动构造长程任务并用真实执行验收的方案，可用于强化任务生成—运行—验证闭环。 AgentTrainEvolve：苏格拉底式技能学习可将专家教学与智能体自主实践组织成低指导成本的迭代课程，而 WildAWM 可进一步为该循环持续供应可验证任务。 AgentEvolve：苏格拉底式技能学习的自主测试、修订和技能沉淀机制，为冻结参数条件下依据执行反馈维护可复用技能库提供了具体流程。 MemoryEvolve：苏格拉底式技能学习把成功经验从单次轨迹转化为可跨任务调用的技能，提示长期记忆应围绕“实践验证后再写入与修订”组织，而非无差别保存历史。 RobotEvolve：游戏规模化给出了世界多样性与跨世界迁移的受控证据，DONIC则提供了融合模仿学习、强化学习和成功轨迹回收的通用双手策略配方。 GeneralizeEvolve：游戏规模化的 120 组受控实验可用于判断具身预训练收益究竟来自数据规模还是环境多样性，并据此设计跨分布泛化消融。 DataEvolve：PrismaCoder表明可分解、可检查的评分标准能够同时承担合成数据筛选和 RL 奖励，适合作为数据生成—质检—训练的一致反馈信号。 NewModel：FCP说明以稀疏远期片段为辅助预测目标，可以较低训练计算迫使视频模型学习长期场景演化规律，而非只拟合局部运动。 NewApply：LGWM提供了把世界模型部署为 GUI 智能体实时安全检查器的轻量路径，可在不生成完整下一帧的情况下监控异常状态转移。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-23/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-22/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -66,8 +67,8 @@ NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-23\/"
-    },"genre": "updates","wordcount":  964 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-23\/","datePublished": "2026-10-23T00:00:00+08:00","dateModified": "2026-10-23T10:59:39+08:00","publisher": {
+    },"genre": "updates","wordcount":  1288 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-23\/","datePublished": "2026-10-23T00:00:00+08:00","dateModified": "2026-10-23T11:01:16+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -250,7 +251,7 @@ NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-10-23 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-23">2026-10-23</time></span>&nbsp;<span title="更新于 2026-10-23 10:59:39"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-23">2026-10-23</time></span>&nbsp;<span title="964 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-10-23 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-23">2026-10-23</time></span>&nbsp;<span title="更新于 2026-10-23 11:01:16"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-23">2026-10-23</time></span>&nbsp;<span title="1288 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -270,30 +271,31 @@ NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学�
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li>环境与任务自动合成成为主线：<a href="#wildawm">WildAWM</a> 同时生成支持 GUI、MCP 与命令行的可执行环境及长程任务，并以执行质量门控保证可解、可验证。</li>
-<li>Agent 经验沉淀从静态记忆走向“教学—实践—修订”闭环：<a href="#item-8">苏格拉底式技能学习</a> 让智能体自主检验并迭代可跨任务复用的技能。</li>
-<li>具身智能关注规模化泛化与复杂操控两端：<a href="#item-7">游戏规模化</a> 系统分析数据量、世界多样性和模型规模的作用，<a href="#donic">DONIC</a> 则推进跨物体、跨动作来源的通用双手控制。</li>
-<li>多模态模型训练出现两条可复用路径：<a href="#prismacoder">PrismaCoder</a> 用可检查的分解式评分标准贯通数据筛选与 RL 奖励，<a href="#fcp">FCP</a> 通过远期片段预测提升视频世界演化建模与物理合理性。</li>
-<li>热点延伸集中于交互式多模态评测：流式视频生成的长期状态一致性，以及 VLM 智能体在有限预算下主动探索和三维建图，均暴露出现有系统在长周期交互中的短板。</li>
+<li><strong>智能体环境与技能演化</strong>：两项高相关工作分别补齐训练闭环的环境和经验侧——<a href="#wildawm">WildAWM：面向计算机使用智能体的可控环境与任务合成</a>自动生成支持 GUI、MCP 与命令行的可验证长程任务，<a href="#item-8">苏格拉底式技能学习：教学与实践交替培养可迁移智能体技能</a>则通过“教学—实践—修订”循环沉淀跨任务技能。</li>
+<li><strong>具身智能的规模化与通用控制</strong>：<a href="#item-7">游戏规模化：在多样虚拟世界中持续预训练具身智能体</a>系统拆解数据量、世界多样性和模型规模对跨世界泛化的影响，<a href="#donic">DONIC：基于人类演示的通用灵巧双手追踪控制</a>展示了单策略跨物体、跨动作来源的双手协同操控。</li>
+<li><strong>生成模型与合成数据训练</strong>：<a href="#fcp">FCP：面向未来演化建模的自回归视频生成</a>以远距离未来片段预测强化场景演化建模，<a href="#prismacoder">PrismaCoder：分解式评分标准驱动开放多模态代码智能</a>则用可检查的细粒度评分标准统一多模态代码数据过滤与强化学习奖励。</li>
+<li><strong>世界模型进入在线执行验证</strong>：<a href="#lgwm-gui">LGWM：用世界模型验证 GUI 智能体状态转移</a>直接在表征空间低延迟预测下一屏并识别恶意状态转移，体现世界模型从生成与规划走向生产智能体安全护栏。</li>
+<li><strong>热点延伸聚焦长周期多模态评测</strong>：StreamEval 暴露流式视频系统的请求执行与长期一致性短板，SpatialScout 将 VLM 评测推进到主动探索和物体级三维建图，SSI 则探索低预算光谱—空间联合归因。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>EnvironmentEvolve</strong>：<a href="#wildawm">WildAWM</a> 表明环境生成器应将可执行性、任务难度和验证可靠性纳入同一质量门控，而非只追求场景与任务数量。</li>
-<li><strong>TaskEvolve</strong>：<a href="#wildawm">WildAWM</a> 的长程任务合成与执行验收机制，可直接借鉴为“生成—运行—验证—淘汰”的任务进化闭环。</li>
-<li><strong>AgentEvolve</strong>：<a href="#item-8">苏格拉底式技能学习</a> 提供了冻结参数条件下通过主动实践、失败修订和技能复用实现部署期持续增强的具体范式。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#item-8">苏格拉底式技能学习</a> 启发将长期记忆单元设计为经过自主测试和修订的可执行技能，而非未经验证的轨迹摘要。</li>
-<li><strong>AgentTrainEvolve</strong>：<a href="#wildawm">WildAWM</a> 可作为长程 Agentic RL 的环境与课程生产器，而<a href="#item-8">苏格拉底式技能学习</a> 展示了如何让教学信号随实践结果迭代。</li>
-<li><strong>RobotEvolve</strong>：<a href="#item-7">游戏规模化</a> 提示具身预训练应优先扩大世界多样性并测量跨世界迁移收益，<a href="#donic">DONIC</a> 则提供了融合示范、强化学习和成功轨迹回收的控制配方。</li>
-<li><strong>GeneralizeEvolve</strong>：<a href="#item-7">游戏规模化</a> 的受控缩放实验可用于区分泛化提升究竟来自数据量、环境多样性还是模型容量。</li>
-<li><strong>DataEvolve</strong>：<a href="#prismacoder">PrismaCoder</a> 展示了让同一套可分解评分标准同时负责合成数据过滤和强化学习奖励，从而减少数据质量目标与训练目标错位。</li>
-<li><strong>NewModel</strong>：<a href="#fcp">FCP</a> 的远期片段预测说明辅助目标可迫使视频模型学习更长时间尺度的状态演化，并以较低训练计算改善物理一致性。</li>
+<li><strong>EnvironmentEvolve</strong>：<a href="#wildawm">WildAWM</a>的“可执行环境合成＋执行质量门控”可直接作为环境自进化流水线的质量底座，尤其适合统一约束可解性、难度和验证可靠性。</li>
+<li><strong>TaskEvolve</strong>：<a href="#wildawm">WildAWM</a>展示了从多种交互接口自动构造长程任务并用真实执行验收的方案，可用于强化任务生成—运行—验证闭环。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#item-8">苏格拉底式技能学习</a>可将专家教学与智能体自主实践组织成低指导成本的迭代课程，而 WildAWM 可进一步为该循环持续供应可验证任务。</li>
+<li><strong>AgentEvolve</strong>：<a href="#item-8">苏格拉底式技能学习</a>的自主测试、修订和技能沉淀机制，为冻结参数条件下依据执行反馈维护可复用技能库提供了具体流程。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#item-8">苏格拉底式技能学习</a>把成功经验从单次轨迹转化为可跨任务调用的技能，提示长期记忆应围绕“实践验证后再写入与修订”组织，而非无差别保存历史。</li>
+<li><strong>RobotEvolve</strong>：<a href="#item-7">游戏规模化</a>给出了世界多样性与跨世界迁移的受控证据，<a href="#donic">DONIC</a>则提供了融合模仿学习、强化学习和成功轨迹回收的通用双手策略配方。</li>
+<li><strong>GeneralizeEvolve</strong>：<a href="#item-7">游戏规模化</a>的 120 组受控实验可用于判断具身预训练收益究竟来自数据规模还是环境多样性，并据此设计跨分布泛化消融。</li>
+<li><strong>DataEvolve</strong>：<a href="#prismacoder">PrismaCoder</a>表明可分解、可检查的评分标准能够同时承担合成数据筛选和 RL 奖励，适合作为数据生成—质检—训练的一致反馈信号。</li>
+<li><strong>NewModel</strong>：<a href="#fcp">FCP</a>说明以稀疏远期片段为辅助预测目标，可以较低训练计算迫使视频模型学习长期场景演化规律，而非只拟合局部运动。</li>
+<li><strong>NewApply</strong>：<a href="#lgwm-gui">LGWM</a>提供了把世界模型部署为 GUI 智能体实时安全检查器的轻量路径，可在不生成完整下一帧的情况下监控异常状态转移。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 8 条</span><a href="#daily-featured">⭐ 重点 6</a><a href="#daily-hot">🔥 热点 2</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 10 条</span><a href="#daily-featured">⭐ 重点 7</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">6 条</span></h2>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">7 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="wildawm" class="summary-card daily-item">
   <h2 id="wildawm-title" class="daily-item-title">WildAWM：面向计算机使用智能体的可控环境与任务合成</h2><p class="single-subtitle daily-item-summary">WildAWM利用开源模型合成同时支持GUI、MCP和命令行交互的可执行环境及长程任务，并通过执行质量门控保障可解性、难度与验证可靠性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：环境合成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/taskevolve/">TaskEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境合成</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.26828" target="_blank" rel="noopener">https://arxiv.org/abs/2610.26828</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/MSR-Orchard/WildAWM" target="_blank" rel="noopener">https://github.com/MSR-Orchard/WildAWM</a></div></div><div class="daily-item-content"><p>WildAWM是一套面向通用计算机使用智能体的可扩展环境与任务合成流水线，可生成同时支持图形用户界面、MCP服务和命令行接口的可执行环境。系统通过异构智能体轨迹、跨评判器一致性检查和反事实探测构成执行式质量门控，以提高任务的可解性、难度及验证器可靠性。该流水线共合成341组长程环境—任务对，部分任务需要超过100步操作，GPT-6-Astra的完成率仅为60%。仅在这些合成世界中训练的两种不同规模Qwen模型，在覆盖Web、Claw和计算机使用智能体的8个分布外基准上均取得显著提升。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -342,17 +344,6 @@ NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[PrismaCoder：通过分解式评分标准合成，拓展开放式多模态代码智能的边界（49 ▲）](https://huggingface.co/papers/2610.20538?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-22)</div>
   </details></article>
-<article id="fcp" class="summary-card daily-item">
-  <h2 id="fcp-title" class="daily-item-title">FCP：面向未来演化建模的自回归视频生成</h2><p class="single-subtitle daily-item-summary">论文提出未来片段预测（FCP）辅助目标，通过预测间隔较远的视频片段，促使自回归视频扩散模型学习场景演化规律，并以更低训练计算量提升生成结果的物理合理性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;时序建模</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.29989" target="_blank" rel="noopener">https://arxiv.org/abs/2610.29989</a></div></div><div class="daily-item-content"><p>自回归视频扩散模型通常逐片段生成视频，但教师强制训练中的高度时间冗余可能使模型依赖局部视觉连续性这一捷径，而未能充分学习场景的长期演化。作者提出未来片段预测（Future Chunk Prediction，FCP）辅助目标，要求模型在无法访问中间视觉上下文的情况下预测时间上相隔较远的片段。FCP直接使用训练视频提供监督，无需额外的预训练视觉编码器，也不改变原有的自回归推理流程。实验表明，该方法以更低的整体训练计算预算获得了优于标准教师强制训练的物理合理性，并形成更具结构性的表征空间。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为自回归视频生成提供针对场景动态演化的显式训练信号，减少模型对局部时间冗余的依赖。</li>
-<li>在不增加预训练编码器或修改推理流程的前提下，提高生成视频的物理合理性与训练效率。</li>
-<li>FCP形成的结构化表征空间可为构建具备长期预测能力的自回归世界模型提供基础。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[展望未来：自回归视频生成中的未来演化建模（115 ▲）](https://huggingface.co/papers/2610.29989?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-22)</div>
-  </details></article>
 <article id="donic" class="summary-card daily-item">
   <h2 id="donic-title" class="daily-item-title">DONIC：基于人类演示的通用灵巧双手追踪控制</h2><p class="single-subtitle daily-item-summary">DONIC通过融合PPO、行为克隆与成功轨迹回收，在单一策略中实现跨物体、跨动作来源的通用灵巧双手协同操控。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模仿学习</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E4%BD%9C%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动作表征</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据增强</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.29997" target="_blank" rel="noopener">https://arxiv.org/abs/2610.29997</a></div></div><div class="daily-item-content"><p>DONIC是一个面向接触密集型交互的通用双手追踪控制器，可联合学习不同操作类别和人类动作来源。作者同时构建BiHOI多视角数据集，包含1,575段双手交互序列和229个物体，并将重建的人类交互重定向为机器人参考动作。训练方法将近端策略优化（PPO）与行为克隆结合，通过反馈循环把验证成功的执行轨迹重新纳入演示数据，并采用以物体为中心的单手奖励和Clip-Centered Advantages改善协同学习。无需微调时，单一检查点在训练物体的未见轨迹上达到86.79%成功率，在留出物体上达到57.32%，分别领先双手追踪基线77.36和45.73个百分点。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -365,8 +356,31 @@ NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[DONIC：基于人类演示的通用灵巧双手追踪控制（124 ▲）](https://huggingface.co/papers/2610.29997?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-22)</div>
   </details></article>
+<article id="fcp" class="summary-card daily-item">
+  <h2 id="fcp-title" class="daily-item-title">FCP：面向未来演化建模的自回归视频生成</h2><p class="single-subtitle daily-item-summary">论文提出未来片段预测（FCP）辅助目标，通过预测间隔较远的视频片段，促使自回归视频扩散模型学习场景演化规律，并以更低训练计算量提升生成结果的物理合理性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;时序建模</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.29989" target="_blank" rel="noopener">https://arxiv.org/abs/2610.29989</a></div></div><div class="daily-item-content"><p>自回归视频扩散模型通常逐片段生成视频，但教师强制训练中的高度时间冗余可能使模型依赖局部视觉连续性这一捷径，而未能充分学习场景的长期演化。作者提出未来片段预测（Future Chunk Prediction，FCP）辅助目标，要求模型在无法访问中间视觉上下文的情况下预测时间上相隔较远的片段。FCP直接使用训练视频提供监督，无需额外的预训练视觉编码器，也不改变原有的自回归推理流程。实验表明，该方法以更低的整体训练计算预算获得了优于标准教师强制训练的物理合理性，并形成更具结构性的表征空间。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为自回归视频生成提供针对场景动态演化的显式训练信号，减少模型对局部时间冗余的依赖。</li>
+<li>在不增加预训练编码器或修改推理流程的前提下，提高生成视频的物理合理性与训练效率。</li>
+<li>FCP形成的结构化表征空间可为构建具备长期预测能力的自回归世界模型提供基础。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[展望未来：自回归视频生成中的未来演化建模（115 ▲）](https://huggingface.co/papers/2610.29989?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-22)</div>
+  </details></article>
+<article id="lgwm-gui" class="summary-card daily-item">
+  <h2 id="lgwm-gui-title" class="daily-item-title">LGWM：用世界模型验证 GUI 智能体状态转移</h2><p class="single-subtitle daily-item-summary">LGWM 在表征空间直接预测动作后的下一屏状态，以低延迟向量比较检测 GUI 智能体遭遇的恶意状态转移。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图形用户界面智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体安全</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理加速</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.11942" target="_blank" rel="noopener">https://arxiv.org/abs/2610.11942</a></div></div><div class="daily-item-content"><p>论文指出，GUI 智能体的安全性取决于动作与后续屏幕之间的转移关系，仅检查当前屏幕无法区分合法流程与界面劫持。LGWM 是一种无解码器、动作条件化的世界模型，使用 185 万条真实 GUI 转移进行无语义标注训练，直接预测下一屏的表征向量。验证过程可简化为预测表征与观测表征的向量比较，并可利用残差方向判断不匹配是否有害。在 RSWT-BENCH 上，其免训练检测分数达到 0.987 AUC、单次决策耗时 17 ms，延迟比生成式 GUI 世界模型低三个数量级以上；区分有害与良性违规的 AUC 达到 0.953。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>将世界模型从模拟器和规划器扩展为 GUI 智能体的运行时验证器。</li>
+<li>通过表征空间预测绕过文本、代码或图像生成以及二次模型评判，显著降低验证延迟。</li>
+<li>为检测界面劫持、动作后异常跳转和凭证窃取提供基于状态转移的安全信号。</li>
+<li>启示智能体验证系统应建模“执行动作后应当出现什么”，而非只判断当前界面是否合法。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[屏幕正确，转场错误：将世界模型用作 GUI 智能体的验证器（88 ▲）](https://huggingface.co/papers/2610.11942?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-22)</div>
+  </details></article>
 <details class="daily-group daily-group-hot" id="daily-hot" open>
-            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">2 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">3 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
             <div class="daily-group-body">
               <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="streameval" class="daily-row">
   <summary>
@@ -399,6 +413,23 @@ NewModel：FCP 的远期片段预测说明辅助目标可迫使视频模型学�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[SpatialScout：视觉语言模型智能体能否主动探索并绘制三维场景地图？（129 ▲）](https://huggingface.co/papers/2610.26659?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-22)</div>
+  </details></div>
+</details>
+<details id="ssi" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-0">★0</span> <strong>SSI：多光谱图像的光谱—空间联合归因</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 视觉归因 · <a href="https://arxiv.org/abs/2610.21114" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/AtheavenMa/Spectral-Spatial-Interpretation" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a></span>
+    </span><span class="daily-row-summary">SSI通过对每个空间位置的通道构建条件Shapley博弈，生成完整的光谱—空间归因矩阵，并以较低评估预算提升多光谱图像解释的准确性与定位能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-0" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 0</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视觉归因</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可解释性</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉表征学习</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.21114" target="_blank" rel="noopener">https://arxiv.org/abs/2610.21114</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/AtheavenMa/Spectral-Spatial-Interpretation" target="_blank" rel="noopener">https://github.com/AtheavenMa/Spectral-Spatial-Interpretation</a></div></div><div class="daily-item-content"><p>Spectral-Spatial Interpretation（SSI）将空间位置与光谱通道组成联合归因单元，解决传统空间热图或全局通道评分无法表达局部光谱相关性的问题。该方法固定目标位置周围的观测上下文，在每个空间位置上对通道构建条件博弈并计算Shapley值，从而输出完整的光谱—空间归因矩阵。SSI满足位置内部的Shapley公平性，其通道归因聚合后可精确恢复将该位置替换为基线时的上下文对比。实验显示，SSI在CUB-200、EuroSAT和HLS Burn Scar上取得更优的删除与插入AUC、光谱命中率、通道删除表现及空间定位效果；在HLS Burn Scar上仅使用约MC-Owen估计器6%的评估预算。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为多光谱和遥感视觉模型提供同时覆盖空间位置与光谱通道的细粒度解释。</li>
+<li>可用于识别模型在局部区域依赖的物理光谱特征，辅助验证预测依据是否合理。</li>
+<li>条件Shapley博弈兼顾归因公平性与计算效率，可作为高维通道归因方法的设计参考。</li>
+<li>删除与插入AUC、光谱命中率及定位指标可用于系统评估视觉归因质量。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[光谱—空间解读（65 ▲）](https://huggingface.co/papers/2610.21114?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-22)</div>
   </details></div>
 </details>
 </div>
