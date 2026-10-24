@@ -6,24 +6,23 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- Agent 系统自进化成为今日主线：[HarnessPro](#harnesspro-agent-53)以无标签合成测试和帕累托优化协同演化多智能体脚手架，最高降低 53% 单任务成本；[从 Harness 到 Loop](#harness-loop-agent)则将生产级演进扩展为发现、归因、修复、验证和发布的持续闭环。
-- 数据与训练自动化继续向“模型自主改进模型”推进：[AutoSFT](#autosft)让多智能体自主诊断能力短板、优化 SFT 数据并闭环评测，[EvolveLRM](#evolvelrm-k3v4)则探索个人可承担的低成本大模型训练路径。
-- 真实环境评测与记忆机制均出现值得关注的结果：[OpenDS-World](#opends-world-web)显示前沿模型在开放 Web 深度搜索上的最佳准确率仅 39.0%，[Deep Fusion Memory](#deep-fusion-memory)则以分块级参数化记忆探索无需在线检索的知识融合。
-- 新模型工作集中于多模态、效率与具身世界模型：[WeVisOne-VL](#wevisone-vl)统一物体级和像素级视觉任务，[Meta Expert](#meta-expert-moe)通过跨层专家共享压缩 MoE，[LaLa-World](#lala-world)与 [FRED](#fred)分别探索语言动作统一和未来视频表征自蒸馏。
-- 应用侧竞争正转向用户关系、权限与治理：[Personal AI 入口争夺](#personal-ai-app)强调长期记忆及超级 App 权限壁垒，[DeepSeek 智能体涌入 B 站评论区](#deepseek-b)暴露自动互动的身份与社区治理问题；热点延伸还包括 [Skills 生态变化](#skills)、预算感知扩散特征适配和可复用 RGBA 图层编辑。
+- Agent 训练与系统演化加速走向端到端闭环：[OpenForge RL](#openforge-rl-harness)打通 Harness 原生强化学习，[WorkForge](#workforge)规模化构建可验证真实工作环境，[HarnessPro](#harnesspro-agent-53)则以无标签协同进化同时优化任务成功率与成本。
+- 数据与知识层开始成为可持续进化对象：[AutoSFT](#autosft)让多智能体闭环优化监督微调数据，[EvoOntology](#evoontology-data-agent)则从执行轨迹中发现知识缺口并持续更新业务本体。
+- RSI 与自主科研出现更大规模的实践信号：[Mirendil 与 Recursive](#mirendil-recursive-rsi)展示模型训练及自动研究闭环，[GPT-Rosalind](#1946-ai-crispr)以 1946 个智能体并行完成大规模 CRISPR 图谱分析。
+- Agent 评测进一步暴露 Harness 与协作协议的决定性影响：[工具增强模型比较](#item-26)会因提示措辞改变相对结果，[多智能体通信研究](#23-6)更发现强模型指导可令准确率下降 23.6 个百分点；[OpenDS-World](#opends-world-web)中前沿模型在真实深度搜索任务上的最佳准确率也仅为 39%。
+- 推理研究转向过程忠实性与训练来源审计：[CausalCoT](#causalcot)通过因果上下文隔离降低注意力泄漏，[“Wait”标记追踪](#wait)则表明部分推理行为源自训练数据继承而非强化学习涌现。
+- 热点延伸集中于 Skills 插件生态变化、可复用图像图层与预算感知视觉适配，以及个人 AI 入口、超级 App 权限和开放社区中的智能体治理问题。
 
 ## 对当前研究的启发
-- **HarnessEvolve**：[HarnessPro](#harnesspro-agent-53)表明可用合成测试和成本—通过率帕累托前沿自动筛选 Harness，而 [从 Harness 到 Loop](#harness-loop-agent)提示评测框架还应覆盖上线后的归因、修复与回归验证。
-- **SystemEvolve**：[HarnessPro](#harnesspro-agent-53)提供了无需人工标签即可联合进化多智能体编排与脚手架的可复用系统优化范式。
-- **SwarmEvolve**：[HarnessPro](#harnesspro-agent-53)说明多智能体协作结构可以通过合成反馈持续优化，并同时把群体能力和运行成本纳入选择目标。
-- **DataEvolve**：[AutoSFT](#autosft)可作为“短板诊断—数据生成与改写—训练—评测”数据飞轮的具体实现参考，重点应补充多轮迭代中的偏差累积监测。
-- **AgentTrainEvolve**：[AutoSFT](#autosft)展示了由多个 Agent 自主构造训练数据和课程的训练侧闭环，可进一步接入环境交互轨迹与可验证奖励。
-- **EvalEvolve**：[OpenDS-World](#opends-world-web)以持续变化的真实 Web 和跨来源证据整合拉开模型差距，为动态、抗污染的长程 Agent 评测提供了任务模板。
-- **Groom**：[HarnessPro](#harnesspro-agent-53)的成本—成功率联合优化可扩展为过程级 token 归因，以判断成本下降究竟来自更有效的规划、工具调用还是错误恢复。
-- **MemoryEvolve**：[Deep Fusion Memory](#deep-fusion-memory)提示可将长期知识按块预测并门控注入隐藏状态，作为检索式记忆之外的参数化巩固路线。
-- **RobotEvolve**：[LaLa-World](#lala-world)与 [FRED](#fred)分别提供跨数据源统一动作语义和自蒸馏未来表征的方法，可用于降低世界模型训练成本并增强跨环境、跨本体迁移。
-- **PersonalEvolve**：[Personal AI 入口争夺](#personal-ai-app)表明个性化能力的落地瓶颈不只在画像与长期记忆，还在服务连接、操作授权及用户数据闭环的可获得性。
-- **EvolveLRM**：[单人训练大模型，EvolveLRM 指标挑战 K3V4](#evolvelrm-k3v4)提示项目评测应同时报告能力提升、训练预算与人力投入，以识别真正可复现的低成本自进化路径。
+- **AgentTrainEvolve**：[OpenForge RL](#openforge-rl-harness)与[WorkForge](#workforge)可组合为“可替换 Harness 训练框架＋规模化可验证环境”的长程 Agentic RL 基础设施。
+- **HarnessEvolve**：[工具增强模型比较](#item-26)证明提示措辞会经由工具调用频率改变模型排名，评测披露应纳入提示变体、调用轨迹及 Harness 配置的敏感性分析。
+- **SystemEvolve**：[HarnessPro](#harnesspro-agent-53)展示了用合成测试和帕累托优化共同搜索系统通过率与成本的可行路径，可用于系统级自进化的多目标选择机制。
+- **DataEvolve**：[AutoSFT](#autosft)可直接借鉴为“短板诊断—数据改写—训练—评测”闭环，而[EvoOntology](#evoontology-data-agent)进一步提示业务语义层也能由轨迹驱动持续演化。
+- **SwarmEvolve**：[多智能体通信研究](#23-6)说明群体演化不能默认信息越多越好，应把接收能力、表达协议与处理成本共同纳入通信拓扑优化目标。
+- **ResearchEvolve**：[GPT-Rosalind](#1946-ai-crispr)提供了大规模科研智能体并行编排及证据汇聚范式，[Mirendil 与 Recursive](#mirendil-recursive-rsi)则强调实验审计和人类判断必须进入自动研究闭环。
+- **EvolveLRM**：[“Wait”标记追踪](#wait)提示评估 RL 所产生的新推理能力时必须先做训练谱系与轨迹数据归因，避免把模仿行为误判为自主涌现。
+- **LogicEvolve**：[CausalCoT](#causalcot)可作为过程忠实性训练与评测的新工具，通过对子问题依赖图进行干预来区分真实因果推理与上下文泄漏。
+- **HumanEvolve**：[元认知脚手架研究](#item-27)表明适度“生产性摩擦”虽增加认知负担，却能改善知识留存与脱离 AI 后的能力迁移，可作为增强型交互设计原则。
 
 <!-- daily-summary:end -->
 
