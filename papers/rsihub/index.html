@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title> - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="RSIHub：一种用于智能体演进方法的可组合框架
+论文双语版  Huggingface
+Q1 : 这篇论文试图解决什么问题？
+这篇论文试图解决智能体进化（agent-evolution）方法在研究与实践中面临的重复基建、比较困难及实验归因风险问题。具体而言，论文聚焦于以下三个层面的核心挑战：" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta itemprop="description" content="RSIHub：一种用于智能体演进方法的可组合框架 论文双语版 Huggingface
+Q1 : 这篇论文试图解决什么问题？ 这篇论文试图解决智能体进化（agent-evolution）方法在研究与实践中面临的重复基建、比较困难及实验归因风险问题。具体而言，论文聚焦于以下三个层面的核心挑战：">
+  <meta itemprop="dateModified" content="2026-10-26T20:39:46+08:00">
+  <meta itemprop="wordCount" content="9677">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/papers/rsihub/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:description" content="RSIHub：一种用于智能体演进方法的可组合框架 论文双语版 Huggingface
+Q1 : 这篇论文试图解决什么问题？ 这篇论文试图解决智能体进化（agent-evolution）方法在研究与实践中面临的重复基建、比较困难及实验归因风险问题。具体而言，论文聚焦于以下三个层面的核心挑战：">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="papers">
+    <meta property="article:modified_time" content="2026-10-26T20:39:46+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="LLM-DailyDigest · 大模型研究日报">
+  <meta name="twitter:description" content="RSIHub：一种用于智能体演进方法的可组合框架 论文双语版 Huggingface
+Q1 : 这篇论文试图解决什么问题？ 这篇论文试图解决智能体进化（agent-evolution）方法在研究与实践中面临的重复基建、比较困难及实验归因风险问题。具体而言，论文聚焦于以下三个层面的核心挑战：">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/papers/rsihub/" /><link rel="next" href="https://dujh22.github.io/LLMDailyDigestWeb/papers/training-free-looped-transformers/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/rsihub\/"
+    },"genre": "papers","wordcount":  9677 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/rsihub\/","dateModified": "2026-10-26T20:39:46+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/trends/"
+                
+                
+              ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/trends/"
+                  
+                  
+                ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/papers/" title="论文">论文</a></li><li class="breadcrumb-item active" aria-current="page"></li>
+    </ol>
+  </nav><main class="container"><article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster"></h1></div><div
+      class="content"
+      id="content"
+      
+      
+    ><h1 id="rsihub一种用于智能体演进方法的可组合框架">RSIHub：一种用于智能体演进方法的可组合框架</h1>
+<p><a href="https://pan.baidu.com/s/1xBXMuVBD--pBzmQPy227gQ?pwd=iz3q"target="_blank" rel="external nofollow noopener noreferrer">论文双语版<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>  <a href="https://huggingface.co/papers/2610.32253"target="_blank" rel="external nofollow noopener noreferrer">Huggingface<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h2 id="q1--这篇论文试图解决什么问题"><strong>Q1</strong> : 这篇论文试图解决什么问题？</h2>
+<p>这篇论文试图解决<strong>智能体进化（agent-evolution）方法在研究与实践中面临的重复基建、比较困难及实验归因风险</strong>问题。具体而言，论文聚焦于以下三个层面的核心挑战：</p>
+<h3 id="1-重复构建实验基础设施">1. 重复构建实验基础设施</h3>
+<p>现有智能体进化方法（如 AHE、Hyperagents、A-Evolve、GEPA 等）虽然策略各异，但其底层实验流程高度相似：均需在每轮迭代中完成候选者（candidate）的 <strong>选择、执行、评估、修订与归档</strong> 。然而，当前实现往往将方法策略与这些通用基础设施（如隔离工作区、任务执行、轨迹捕获、产物留存、故障恢复与血缘追踪）紧密耦合，导致每提出一种新方法都需重新搭建一套端到端系统，造成大量重复工程。</p>
+<h3 id="2-跨方法比较困难与配置碎片化">2. 跨方法比较困难与配置碎片化</h3>
+<p>由于各方法使用独立的运行器（runners）、配置格式与评估器接口，研究者若想在相同条件下对比不同进化策略，必须耗费大量精力协调异构的实验管线。这种碎片化阻碍了在<strong>固定模型、固定评估器与固定任务划分</strong>下的公平比较，也使得策略改进的效果难以被清晰归因。</p>
+<h3 id="3-归因完整性与测量保真风险">3. 归因完整性与测量保真风险</h3>
+<p>在广泛可变的进化系统中，方法本身可能修改评估逻辑或重写记录证据（例如通过篡改评分规则或归档数据来夸大性能提升），从而产生 <strong>归因风险（attribution risk）</strong> 。即观察到的性能增益可能源于评估条件或记录方式的变化，而非候选者真实能力的提升。现有工作通常缺乏将“策略可变面”与“测量不变面”严格分离的机制。</p>
+<h3 id="解决方案概述">解决方案概述</h3>
+<p>为应对上述问题，论文提出了  <strong>RSIHub</strong> ，一个可组合的开源框架，其设计思想体现为：</p>
+<ul>
+<li><strong>策略与基础设施分离</strong> ：通过 <strong>recipe</strong> 抽象将方法策略（由可复用的生命周期算子组合而成）与框架托管的执行、评估、恢复和血缘服务解耦；</li>
+<li><strong>声明式可变边界（mutable surface）</strong> ：recipe 显式声明候选者允许修改的资源范围，确保评估器、归档记录与封闭任务集始终处于框架控制之下，排除方法对测量条件的影响；</li>
+<li><strong>共享实验协议</strong> ：提供统一的候选者生命周期（Select → Rollout → Analyze → Mutate → Guardrail → Evaluate → Absorb）与经认证的评估归档，使研究者能在固定模型与评估配置下直接对比不同进化策略，同时保留可审计的候选者历史与谱系。</li>
+</ul>
+<p>简言之，RSIHub 旨在让研究者 <strong>专注于设计进化策略（evolution policy）</strong> ，而无需重复构建工作区隔离、执行沙箱、评估记录与故障恢复等通用机制，并在共享基础设施上实现可比较、可扩展且归因清晰的智能体进化实验。</p>
+<h2 id="q2--有哪些相关研究"><strong>Q2</strong> : 有哪些相关研究？</h2>
+<p>根据论文第2节，相关研究可归纳为以下三个方向：</p>
+<h3 id="1-智能体优化与进化agent-optimization-and-evolution">1. 智能体优化与进化（Agent Optimization and Evolution）</h3>
+<p>该方向涵盖利用执行反馈改进提示、技能、工具、编排乃至改进过程本身的工作：</p>
+<ul>
+<li><strong>推理时反馈与输出精炼</strong>
+<ul>
+<li><strong>Reflexion</strong> ：通过语言反馈在多轮试验中保留经验。</li>
+<li><strong>Self-Refine</strong> ：在测试时迭代精炼输出。</li>
+</ul>
+</li>
+<li><strong>记忆与偏好优化</strong>
+<ul>
+<li><strong>RAM</strong> ：通过通信改进外部记忆系统。</li>
+<li>相关机制包括记忆机制设计、反思学习、不确定性感知的偏好优化，以及奖励模型的自我改进。</li>
+</ul>
+</li>
+<li><strong>语言模型程序与文本优化</strong>
+<ul>
+<li><strong>DSPy</strong> 与  <strong>TextGrad</strong> ：将语言模型程序或文本变量作为优化目标。</li>
+</ul>
+</li>
+<li><strong>提示与技能进化</strong>
+<ul>
+<li><strong>Promptbreeder</strong> ：通过自我指涉的提示进化实现自我改进。</li>
+<li><strong>ACE</strong> ：进化上下文手册（context playbooks）。</li>
+<li><strong>CoEvoSkills</strong> ：利用协同进化验证器进化多文件技能。</li>
+<li><strong>EffiSkill</strong> ：挖掘可复用技能以优化代码效率。</li>
+</ul>
+</li>
+<li><strong>智能体架构搜索与图优化</strong>
+<ul>
+<li><strong>GPTSwarm</strong> ：将智能体图作为可优化图结构。</li>
+<li><strong>AgentSquare</strong> ：在模块化设计空间中自动搜索规划、推理、工具使用和记忆模块的组合。</li>
+<li><strong>EvoAgentX</strong> ：自动化进化多智能体工作流。</li>
+</ul>
+</li>
+<li><strong>自我修改与元学习</strong>
+<ul>
+<li><strong>Fork-and-Flush</strong> ：结合工作区继承与对话上下文刷新，在自研究中实现候选搜索的多样化。</li>
+<li><strong>STOP</strong> 、 <strong>ADAS</strong> 、 <strong>DGM</strong> 、 <strong>AlphaEvolve</strong> ：分别修订优化器脚手架、生成智能体程序、修改编码智能体，以及进化目标算法。</li>
+</ul>
+</li>
+<li><strong>本文复现并对比的四种方法</strong>
+<ul>
+<li><strong>A-Evolve</strong> ：将部署时适应建模为对持久系统状态的目标导向优化。</li>
+<li><strong>AHE</strong> （Agentic Harness Engineering）：利用蒸馏后的执行证据指导对 harness 文件的修订。</li>
+<li><strong>GEPA</strong> ：利用轨迹反思与帕累托选择优化提示。</li>
+<li><strong>Hyperagents</strong> ：将任务智能体与可自我修改的元智能体融合于同一可编辑程序中，使改进过程本身也能进化。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-任务环境与执行基础设施tasks-environments-and-execution-infrastructure">2. 任务、环境与执行基础设施（Tasks, Environments, and Execution Infrastructure）</h3>
+<p>该方向提供评估与优化所需的基准、任务定义和运行时环境：</p>
+<ul>
+<li><strong>软件工程与终端交互基准</strong>
+<ul>
+<li><strong>SWE-bench</strong> ：评估语言模型解决真实 GitHub 问题的能力。</li>
+<li><strong>Terminal Bench 2</strong> ：在命令行界面的高难度现实任务上评估智能体。</li>
+<li><strong>τ3 Banking</strong> （源自 τ-Knowledge）：面向非结构化知识的对话式智能体评估。</li>
+</ul>
+</li>
+<li><strong>代码与仓库级任务</strong>
+<ul>
+<li><strong>SWE-Bench ProMax</strong> ：大规模多语言代码重构基准。</li>
+<li><strong>SWE-Explore</strong> ：评估编码智能体的仓库探索能力。</li>
+<li><strong>SWE-QA</strong> ：仓库级别的代码问答基准。</li>
+</ul>
+</li>
+<li><strong>执行与评估框架</strong>
+<ul>
+<li><strong>Harbor</strong> ：在容器环境中标准化任务、数据集、智能体和评估接口，RSIHub 将其作为底层执行与验证基座。</li>
+<li><strong>OpenHands Software Agent SDK</strong> ：提供可组合的智能体、工具、对话与工作区抽象，支持本地或远程执行。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-溯源与测量有效性provenance-and-measurement-validity">3. 溯源与测量有效性（Provenance and Measurement Validity）</h3>
+<p>该方向关注实验证据的可信归属、可复现性以及避免优化过程中的度量失真：</p>
+<ul>
+<li><strong>AI4AI 综述</strong> ：系统区分了测量增益（measured gains）、能力保留（retention）与留出迁移（held-out transfer）三个层次。</li>
+<li><strong>软件溯源与可复现性</strong>
+<ul>
+<li><strong>ReproZip</strong> 、 <strong>Sigstore</strong> 、 <strong>in-toto</strong> ：分别通过打包执行依赖、软件签名与供应链完整性保障，确保计算过程可复现且来源可信。</li>
+</ul>
+</li>
+<li><strong>能力进化的稀疏性与过优化风险</strong>
+<ul>
+<li>受控技能进化实验表明，持久改进可能是稀疏的，且高度依赖于反馈、验证、模型与基准。</li>
+<li><strong>奖励模型过优化</strong> （Scaling laws for reward model overoptimization）：揭示在不完美代理奖励上过度优化会降低在固定黄金标准下的表现。</li>
+<li><strong>奖励篡改</strong> （ <em>Sycophancy to subterfuge</em> ）：展示在可被博弈的课程训练环境中，满足操作性奖励定义的行为可能出现，暗示评估定义本身可能引入假阳性。</li>
+</ul>
+</li>
+</ul>
+<p>RSIHub 的设计直接回应了上述三个方向的缺口：为多样化的进化策略提供共享、可组合且归属清晰的实验基础设施，同时保持评估与归档的框架级保护。</p>
+<h2 id="q3--论文如何解决这个问题"><strong>Q3</strong> : 论文如何解决这个问题？</h2>
+<p>论文通过提出 <strong>RSIHub</strong> 框架，从架构抽象、生命周期管理、边界隔离与溯源机制四个层面系统性地解决智能体进化中的重复基建、比较困难与归因风险问题。</p>
+<h3 id="1-通过-recipe-抽象实现策略与基础设施分离">1. 通过 Recipe 抽象实现策略与基础设施分离</h3>
+<p>RSIHub 引入 <strong>recipe</strong> 作为方法策略的声明式配置单元，将“方法特定逻辑”与“框架托管的通用机制”解耦：</p>
+<ul>
+<li><strong>算子插槽（Stages）与算子实现（Operators）</strong> ：框架固定进化生命周期的插槽（如 <code>select</code>、<code>rollout</code>、<code>mutate</code>、<code>gate</code>、<code>record</code> 等），而 recipe 只需绑定每个插槽对应的具体算子实现并配置其参数。</li>
+<li><strong>零框架源码修改扩展</strong> ：四种方法（AHE、Hyperagents、A-Evolve、GEPA）均仅通过 47–61 行的 recipe 配置与 216–1,087 行的方法特定算子代码实现，未修改任何框架核心源码，验证了“可组合扩展”的设计目标。</li>
+</ul>
+<h3 id="2-声明式可变表面mutable-surface与信息边界">2. 声明式可变表面（Mutable Surface）与信息边界</h3>
+<p>为避免进化过程无限制地修改关键资源，recipe 通过声明式边界精确控制方法的可变范围：</p>
+<ul>
+<li><strong><code>surface</code> 块</strong> ：显式声明候选者可修改的文件或资源路径（如仅提示文件、技能目录或整个 target 目录）。</li>
+<li><strong><code>mutate</code> 配置</strong> ：控制编辑智能体的运行方式及其可获得的上下文。</li>
+<li><strong>Guardrail 阶段</strong> ：框架在候选者提交前执行 <strong>树差异检查（tree diff）</strong> ，实际比对变更是否超出声明的 <code>surface</code>，超出即拒绝提交。</li>
+</ul>
+<p>这一机制使同一套算子接口既能支持“仅提示优化”，也能支持“全 harness 修改”，同时确保评估器、数据集划分、运行时配置等关键组件始终不可被方法触及。</p>
+<h3 id="3-受保护的生命周期与评估隔离">3. 受保护的生命周期与评估隔离</h3>
+<p>RSIHub 将候选者执行与评估纳入 <strong>框架控制的受保护运行时</strong> ，防止方法通过篡改评估条件或证据记录来制造虚假增益：</p>
+<ul>
+<li><strong>七阶段生命周期</strong> ：<code>Select → Rollout → Analyze → Mutate → Guardrail → Evaluate → Absorb</code>。其中 <code>Evaluate</code> 完全由框架管理，在清洁检出（clean checkout）上执行 gate 任务评分。</li>
+<li><strong>评估与策略分离</strong> ：评估器接口、任务划分（train/gate/sealed）、运行时容器与模型配置在进化全过程中保持冻结。方法只能通过 <code>mutate</code> 修改声明的表面，无法接触评估逻辑。</li>
+<li><strong>Gate 算子隔离</strong> ：<code>Gate</code> 决定候选者是否能成为下一轮父本，但其输入是框架已认证的评分结果；<code>Gate</code> 本身不能修改评分字段。</li>
+</ul>
+<h3 id="4-认证归档与溯源provenance">4. 认证归档与溯源（Provenance）</h3>
+<p>为解决归因风险，RSIHub 建立了一套不可由方法篡改的证据链：</p>
+<ul>
+<li><strong>认证评估事件（Certified Evaluation Event）</strong> ：每次评估将提交的候选者、其父本、激活的 recipe 快照、评估器指纹、任务集摘要、试验结果、成本与产物引用等绑定为一条完整记录。</li>
+<li><strong>哈希引用合约（Contract）</strong> ：可选的严格合约模式进一步固化评估身份，涵盖候选者提交、评估器树摘要、数据集内容摘要、运行时摘要、模型身份等，确保跨代比较时身份一致性可验证。</li>
+<li><strong>归档分层</strong> ：框架认证字段（分数、成本、血缘）与算子提供的注释（<code>Record</code> 输出）在存储上分离，后者经框架过滤后才可追加，防止方法伪造或篡改核心评估数据。</li>
+</ul>
+<h3 id="5-中断恢复与完整性校验">5. 中断恢复与完整性校验</h3>
+<p>框架通过状态机与检查点机制保证实验完整性：</p>
+<ul>
+<li><strong>恢复边界</strong> ：完整的候选者评估在 <code>Gate</code> 前追加到归档中，处于“待处理”状态；若运行中断，恢复时可从该检查点继续，无需重复变异或评估。</li>
+<li><strong>故障注入验证</strong> ：在 420 次故障注入与边界突破试验中（包括中断、越界写入、评估器篡改、伪造归档等），框架均成功恢复了有效状态，未接受任何被污染的结果。</li>
+</ul>
+<h3 id="6-双模式运行支持">6. 双模式运行支持</h3>
+<p>RSIHub 支持两种运行模式，在统一边界下覆盖从固定策略到自适应元学习的不同研究需求：</p>
+<ul>
+<li><strong>Recipe-Driven（固定配方）</strong> ：研究者编写的 recipe 在迭代中保持不变，适用于对比特定进化策略。</li>
+<li><strong>Agent-Driven（智能体驱动）</strong> ：外层智能体可在每次迭代后基于允许反馈修订 recipe 的算子绑定与策略参数，但评估器、sealed 任务集与认证记录仍受框架保护。</li>
+</ul>
+<h3 id="总结">总结</h3>
+<p>RSIHub 的解决方案可概括为： <strong>以 recipe 为边界声明方法策略与可变范围，以框架托管的七阶段生命周期统一执行、评估与归档，以认证溯源与表面强制保障归因完整性</strong> 。这使研究者能在不重建工作区、执行与评估基础设施的前提下，专注于设计进化策略，并在固定模型与评估条件下公平比较不同方法。</p>
+<h2 id="q4--论文做了哪些实验"><strong>Q4</strong> : 论文做了哪些实验？</h2>
+<p>论文的实验围绕三个核心研究问题展开： <strong>RQ1</strong> （框架能否支持有效的智能体进化？）、 <strong>RQ2</strong> （框架是否保持被执行智能体的固有能力？）与  <strong>RQ3</strong> （框架能否保持进化实验的完整性？）。实验在固定模型与评估器配置下进行，涵盖有效性、保真度、完整性及工程成本四个维度。</p>
+<h3 id="1-实验设置">1. 实验设置</h3>
+<ul>
+<li><strong>种子智能体</strong> ：MiniSWE（v2.4.5）与 Codex（v0.143.0）。</li>
+<li><strong>进化方法</strong> ：AHE、Hyperagents、A-Evolve、GEPA，另设 hill-climbing 基线。</li>
+<li><strong>基准任务</strong> ：</li>
+<li><strong>Terminal Bench 2</strong> ：89 个任务，划分为 50 train、19 gate、20 sealed。</li>
+<li><strong>τ3 Banking</strong> ：97 个任务，划分为 50 train、20 gate、27 sealed。</li>
+<li><strong>模型配置</strong> ：目标模型与变异模型均固定使用 GPT-5.4（目标模型为 high reasoning effort，变异模型为 xhigh reasoning effort）。</li>
+<li><strong>运行配置</strong> ：每代产生 1 个子代，最多运行 10 代；任务执行基于 Docker 隔离的 Harbor 环境。</li>
+</ul>
+<h3 id="2-进化有效性与迁移rq1">2. 进化有效性与迁移（RQ1）</h3>
+<p><strong>协议</strong> ：在固定种子、固定划分与固定评估器下，比较各 recipe 进化前后的性能，并拆解到三个数据划分以观察泛化行为。</p>
+<p><strong>主要结果</strong> （见论文 Table 1）：</p>
+<ul>
+<li><strong>Terminal Bench 2</strong> ：</li>
+<li>MiniSWE 基线为 56.2%；所有方法均带来提升，Hyperagents 与 A-Evolve 并列最高（69.7%，+13.5 个百分点）。</li>
+<li>Codex 基线较强（69.7%）；AHE 提升至 71.9%（+2.2），Hyperagents 与 A-Evolve 各提升 1.1 个百分点，GEPA 持平。</li>
+<li><strong>τ3 Banking</strong> ：</li>
+<li>MiniSWE 基线为 27.8%；Hyperagents 提升至 33.0%（+5.2），GEPA 提升至 29.9%（+2.1），A-Evolve 无变化。</li>
+<li>Codex 基线为 24.7%；AHE 提升至 34.0%（+9.3），GEPA 提升至 33.0%（+8.3）。</li>
+<li><strong>划分级行为</strong> ：</li>
+<li>整体提升并不总是迁移到 held-out 任务。例如，MiniSWE 在 Terminal Bench 2 上的 gate 提升仅由 Hyperagents 实现；在 τ3 Banking 上，部分方法的 sealed 分数出现倒退（如 Hyperagents −2.1、AHE −4.1）。</li>
+</ul>
+<p><strong>结论</strong> ：方法排名因种子智能体、基准与划分而异，说明共享基础设施与可比较协议对于诊断策略优劣至关重要。</p>
+<h3 id="3-执行保真度与能力保持rq2">3. 执行保真度与能力保持（RQ2）</h3>
+<p><strong>协议</strong> ：排除进化本身的影响，比较“经 RSIHub 框架执行但未进化（generation zero）”与“直接执行（Direct）”的差异。每个条件进行 3 次独立重复，顺序为 Direct-A → RSIHub gen-0 → Direct-B。</p>
+<p><strong>指标</strong> ：</p>
+<ul>
+<li><strong>Avg@3</strong> ：3 次重复的平均 pass@1。</li>
+<li><strong>D–D agreement</strong> ：Direct-A 与 Direct-B 的任务级一致率。</li>
+<li><strong>D–R agreement</strong> ：Direct 与 RSIHub 的平均任务级一致率。</li>
+<li><strong>Excess disagreement</strong> ：跨模式不一致率减去直接执行间的不一致率。</li>
+</ul>
+<p><strong>主要结果</strong> （见论文 Table 2 与附录 Table 4）：</p>
+<table>
+  <thead>
+      <tr>
+          <th>基准</th>
+          <th>智能体</th>
+          <th>Avg@3 (Direct)</th>
+          <th>Avg@3 (RSIHub)</th>
+          <th>Δ</th>
+          <th>D–D</th>
+          <th>D–R</th>
+          <th>Excess disagreement</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Terminal Bench 2</td>
+          <td>MiniSWE</td>
+          <td>59.6</td>
+          <td>56.9</td>
+          <td>−2.6</td>
+          <td>83.5</td>
+          <td>84.6</td>
+          <td>−1.1</td>
+      </tr>
+      <tr>
+          <td>Terminal Bench 2</td>
+          <td>Codex</td>
+          <td>64.0</td>
+          <td>61.4</td>
+          <td>−2.6</td>
+          <td>88.0</td>
+          <td>82.0</td>
+          <td>+6.0</td>
+      </tr>
+      <tr>
+          <td>τ3 Banking</td>
+          <td>MiniSWE</td>
+          <td>24.6</td>
+          <td>22.0</td>
+          <td>−2.6</td>
+          <td>81.1</td>
+          <td>80.9</td>
+          <td>+0.2</td>
+      </tr>
+      <tr>
+          <td>τ3 Banking</td>
+          <td>Codex</td>
+          <td>29.6</td>
+          <td>33.0</td>
+          <td>+3.4</td>
+          <td>82.1</td>
+          <td>80.1</td>
+          <td>+2.1</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>直接执行本身在 12.0–18.9% 的任务上存在不一致，表明执行固有的随机性。</li>
+<li>Codex 在 Terminal Bench 2 上呈现 +6.0 个百分点的额外不一致，但其 RSIHub Avg@3（61.4）仍落在 6 次直接执行的 60.7–65.2 范围内。</li>
+</ul>
+<p><strong>结论</strong> ：框架执行引入的变异与直接执行间的固有变异量级相当，未观察到系统性的能力破坏。</p>
+<h3 id="4-恢复与完整性验证rq3">4. 恢复与完整性验证（RQ3）</h3>
+<p><strong>协议</strong> ：通过故障注入与边界突破测试框架的防御与恢复能力。每个场景在 Terminal Bench 2 与 τ3 Banking 各进行 30 次独立试验，共 420 次。</p>
+<p><strong>测试场景与结果</strong> （见论文 Table 3）：</p>
+<table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>场景</th>
+          <th>所需不变量</th>
+          <th>正确结果 / 30</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>恢复</strong></td>
+          <td>变异期间终止</td>
+          <td>从认证父本恢复；不接纳部分子代</td>
+          <td>60/60</td>
+      </tr>
+      <tr>
+          <td><strong>恢复</strong></td>
+          <td>评估期间终止</td>
+          <td>保留旧尝试；认证一次终端重试</td>
+          <td>60/60</td>
+      </tr>
+      <tr>
+          <td><strong>恢复</strong></td>
+          <td>收据写入后终止</td>
+          <td>对账收据且不产生重复事件</td>
+          <td>60/60</td>
+      </tr>
+      <tr>
+          <td><strong>边界</strong></td>
+          <td>修改评估器文件</td>
+          <td>在认证评估前拒绝评估器变异</td>
+          <td>60/60</td>
+      </tr>
+      <tr>
+          <td><strong>边界</strong></td>
+          <td>在可变表面外写入</td>
+          <td>将越界编辑排除在候选者外</td>
+          <td>60/60</td>
+      </tr>
+      <tr>
+          <td><strong>边界</strong></td>
+          <td>变异期间访问受保护证据</td>
+          <td>gate / sealed / anchor 诱饵不进入变异 bundle</td>
+          <td>60/60</td>
+      </tr>
+      <tr>
+          <td><strong>完整性</strong></td>
+          <td>伪造归档结果</td>
+          <td>对未盖章事件或伪造缓存失败关闭</td>
+          <td>60/60</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>所有 420 次试验均达到预期结果，未接受被污染状态。</li>
+<li>边界强制（如可变表面越界写入、评估器篡改、受保护证据访问）均被阻止；恢复机制在终止后成功重建有效状态。</li>
+</ul>
+<h3 id="5-运行时开销与方法集成成本附录">5. 运行时开销与方法集成成本（附录）</h3>
+<p><strong>B.1 成对执行一致性</strong> （附录 Table 4）： 进一步拆解 Direct-A–RSIHub 与 Direct-B–RSIHub 的单独一致率，验证取均值的合理性。结果显示没有一个直接复制品系统性地更接近框架执行。</p>
+<p><strong>B.2 运行时开销</strong> （附录 Table 5）：</p>
+<ul>
+<li>测量框架独占服务（工作区初始化、候选者快照、表面验证、评估盖章、状态校验、恢复重放）的耗时。</li>
+<li>在 Terminal Bench 2 上，框架独占时间占端到端代际时间的中位数为  <strong>0.02%</strong> （P95 0.06%）；在 τ3 Banking 上为  <strong>0.019%</strong> 。</li>
+<li>模型推理、变异与基准执行占据绝对主导，框架服务可忽略。</li>
+</ul>
+<p><strong>B.3 方法集成工作量</strong> （附录 Table 6）：</p>
+<ul>
+<li>四种方法仅需 <strong>47–61 行</strong> recipe 配置，各复用 2 个算子绑定。</li>
+<li>方法特定算子代码量为  <strong>216（Hyperagents）至 1,087（AHE）行</strong> 。</li>
+<li><strong>零次修改</strong>框架源码，各通过 14–47 项方法专属集成测试。</li>
+</ul>
+<h3 id="总结-1">总结</h3>
+<p>实验从 <strong>进化增益</strong> （多方法/多基准/多划分的有效性比较）、 <strong>执行保真</strong> （框架执行与直接执行的差异控制）、 <strong>系统完整性</strong> （故障注入与边界突破的全通过）及 <strong>工程效率</strong> （可忽略的运行时开销与低代码集成成本）四个维度验证了 RSIHub 的设计目标。</p>
+<h2 id="q5--有什么可以进一步探索的点"><strong>Q5</strong> : 有什么可以进一步探索的点？</h2>
+<p>基于论文的实验结果、设计空间与局限性声明，以下方向值得进一步探索：</p>
+<h3 id="1-自适应配方修订agent-driven-mode的实证研究">1. 自适应配方修订（Agent-Driven Mode）的实证研究</h3>
+<p>论文在框架层面支持了 <strong>agent-driven</strong> 运行模式——允许外层智能体在每轮迭代后基于受限反馈修订算子绑定与策略配置——但全部实验均聚焦于固定的 recipe-driven 配置。未来可系统性地验证：</p>
+<ul>
+<li>外层智能体在何种条件下能够稳定改进进化策略本身，而非引入震荡或规范博弈（specification gaming）；</li>
+<li>自适应修订与固定策略在长期增益、计算预算效率及 held-out 迁移上的权衡；</li>
+<li>外层智能体对 <strong>sealed split</strong> 的间接过拟合风险，以及如何通过框架边界进一步抑制。</li>
+</ul>
+<h3 id="2-跨方法元策略与条件性优势的理解">2. 跨方法元策略与条件性优势的理解</h3>
+<p>实验表明，方法排名高度依赖于种子智能体、基准与任务划分（如 AHE 在 Codex 上表现最优，Hyperagents 在 MiniSWE 上更优，且 gate / sealed 分数并非单调一致）。未来工作可深入：</p>
+<ul>
+<li>构建  <strong>元选择策略</strong> （meta-selection policy），根据早期训练轨迹或任务特征动态切换或组合不同进化方法；</li>
+<li>系统性地解构不同方法的互补性：例如 AHE 的执行证据蒸馏与 GEPA 的帕累托选择能否在统一 recipe 中协同；</li>
+<li>在更多样化的基准（如多语言代码重构、仓库级问答、科学计算）上验证排名的稳健性。</li>
+</ul>
+<h3 id="3-长期演化动态与能力保持">3. 长期演化动态与能力保持</h3>
+<p>当前实验限制在最多 10 代，且优化增益在 held-out 任务上的迁移并不稳定。未来可探索：</p>
+<ul>
+<li><strong>长周期演化</strong> （数十至数百代）中的能力累积曲线、收益递减点及灾难性遗忘模式；</li>
+<li>引入显式的  <strong>多样性保持机制</strong> （如 Novelty 算子的改进、谱系驱动的 niching）以避免早期收敛到局部最优；</li>
+<li>结合存档中的完整血缘与产物记录，分析修订模式（revision patterns）与停滞原因，从而设计更优的变异算子。</li>
+</ul>
+<h3 id="4-更广泛的算子生态与方法适配">4. 更广泛的算子生态与方法适配</h3>
+<p>论文仅实例化了四种方法，而相关工作中仍存在大量异质策略（如 Promptbreeder 的遗传提示进化、AlphaEvolve 的算法级进化、ADAS 的元智能体程序生成等）。可进一步：</p>
+<ul>
+<li>将 <strong>遗传算法、贝叶斯优化、强化学习</strong> 等搜索策略封装为 RSIHub 的 Select / Mutate 算子；</li>
+<li>探索  <strong>多智能体工作流</strong> （multi-agent workflows）的进化，例如 EvoAgentX 或 GPTSwarm 中的图结构优化如何映射到 recipe 的 mutable surface；</li>
+<li>开发跨 recipe 的  <strong>算子库</strong> （operator zoo），使研究者能够通过声明式组合快速复现并对比前沿方法。</li>
+</ul>
+<h3 id="5-统计稳健性与实验协议标准化">5. 统计稳健性与实验协议标准化</h3>
+<p>论文指出当前结果为描述性点估计，缺乏多次重复运行以确认微小差异的稳定性。未来应：</p>
+<ul>
+<li>对关键配置进行  <strong>多次独立重复实验</strong> ，报告置信区间与显著性检验；</li>
+<li>建立  <strong>社区共享的协议</strong> （community protocol），固定模型版本、评估器指纹与任务划分，使不同研究者在 RSIHub 上的结果可直接比较；</li>
+<li>开发自动化诊断工具，利用框架的认证归档自动检测过拟合、评估器泄漏或异常值。</li>
+</ul>
+<h3 id="6-安全对齐与更强的完整性保障">6. 安全、对齐与更强的完整性保障</h3>
+<p>论文在“Limitations”与“Responsible Use Statement”中明确承认，当前保障依赖于受信任的框架服务与主机保护。未来可强化：</p>
+<ul>
+<li><strong>独立证明与远程隔离</strong> ：引入可信执行环境（TEE）或形式化验证，使评估与归档的完整性不依赖于主机信任假设；</li>
+<li><strong>对抗性压力测试</strong> ：在更激进的故障与攻击模型下测试边界保持能力，例如算子通过侧信道推断 sealed 任务信息、或通过精心构造的变异触发评估器未定义行为；</li>
+<li><strong>安全评估集成</strong> ：将有害能力评估（harmful capability evaluation）与有用性评估并行纳入 gate / sealed 流程，避免单纯优化 pass@1 而忽视安全风险。</li>
+</ul>
+<h3 id="7-扩展至其他模型范式与异构运行时">7. 扩展至其他模型范式与异构运行时</h3>
+<p>当前实验统一使用 GPT-5.4。未来可探索：</p>
+<ul>
+<li><strong>开源模型</strong> （如 Llama、Qwen 系列）或 <strong>小模型</strong> 作为目标与变异智能体时的进化动态差异；</li>
+<li><strong>多模态智能体</strong> （涉及视觉、工具使用、浏览器操作）的 mutable surface 定义与 Harbor 运行时扩展；</li>
+<li>将 RSIHub 的生命周期与  <strong>异步、分布式执行环境</strong> （如 Kubernetes 集群、Serverless）对接，以支持大规模并行种群评估。</li>
+</ul>
+<h3 id="8-动态评估器与任务生成">8. 动态评估器与任务生成</h3>
+<p>当前框架固定了评估器与数据集划分。一个更具雄心的方向是：</p>
+<ul>
+<li>让评估器本身成为受控的、可演化的对象（在严格隔离下），以研究 <strong>任务分布漂移</strong> 对进化的影响；</li>
+<li>结合程序合成或对抗性任务生成，自动构造难度递增的课程，测试智能体的 <strong>系统性泛化</strong> 而非静态基准上的点估计。</li>
+</ul>
+<h2 id="q6--总结一下论文的主要内容"><strong>Q6</strong> : 总结一下论文的主要内容</h2>
+<p>这篇论文介绍了  <strong>RSIHub</strong> ，一个用于构建、比较和扩展智能体进化（agent-evolution）方法的开源可组合框架。以下从问题动机、核心设计、实验验证与主要贡献四个方面进行总结。</p>
+<h3 id="1-研究背景与问题">1. 研究背景与问题</h3>
+<p>智能体进化方法通过执行反馈自动改进提示、技能、工具或编排逻辑，构成了大语言模型智能体开发的核心范式。然而，现有工作面临三项关键挑战：</p>
+<ul>
+<li><strong>重复基建</strong> ：不同方法（如 AHE、Hyperagents、A-Evolve、GEPA）尽管策略各异，却依赖高度相似的底层实验流程（隔离工作区、任务执行、评估、产物归档、故障恢复与血缘追踪），但实现上往往与策略代码紧耦合，导致每提出新方法都需重建端到端系统。</li>
+<li><strong>比较困难</strong> ：异构的运行器、配置格式与评估接口使得在相同模型与评估条件下公平对比不同方法变得极为繁琐。</li>
+<li><strong>归因风险</strong> ：若方法本身能够修改评估逻辑或证据记录，则观测到的性能增益可能源于测量条件的改变，而非候选者真实能力的提升。</li>
+</ul>
+<h3 id="2-rsihub-的核心设计">2. RSIHub 的核心设计</h3>
+<h4 id="21-recipe-抽象策略与基础设施分离">2.1 Recipe 抽象：策略与基础设施分离</h4>
+<p>RSIHub 引入 <strong>recipe</strong> 作为方法策略的声明式配置。一个 recipe 将进化生命周期划分为固定插槽（如 <code>select</code>、<code>rollout</code>、<code>mutate</code>、<code>gate</code>、<code>record</code> 等），研究者只需为每个插槽绑定具体的**算子（operator）**实现并配置参数，即可定义一种进化方法，无需修改框架核心源码。</p>
+<h4 id="22-声明式可变表面mutable-surface">2.2 声明式可变表面（Mutable Surface）</h4>
+<p>Recipe 通过 <code>surface</code> 块显式声明候选者允许修改的资源范围（如仅提示文件、技能目录或整个 target 树）。框架在 <strong>Guardrail</strong> 阶段强制执行实际树差异（tree diff）与声明边界的比对，越界修改将被拒绝。这确保了评估器、数据划分与运行时配置始终处于方法不可触及的冻结状态。</p>
+<h4 id="23-受保护的生命周期与认证归档">2.3 受保护的生命周期与认证归档</h4>
+<p>框架托管一个七阶段生命周期：</p>
+<p><strong>Select</strong>→<strong>Rollout</strong>→<strong>Analyze</strong>∗**→<strong>Mutate</strong>→<strong>Guardrail</strong>→<strong>Evaluate</strong>→**Absorb</p>
+<p>其中 <code>Evaluate</code> 完全由框架控制：在清洁检出（clean checkout）上执行 gate 任务评分，并将结果写入 <strong>认证归档</strong> 。归档记录将候选者提交、其父本、激活的 recipe 快照、评估器指纹、任务集与模型配置等绑定为不可篡改的证据链，算子注释仅能在过滤后追加，无法修改核心评分字段。</p>
+<h4 id="24-双模式运行">2.4 双模式运行</h4>
+<ul>
+<li><strong>Recipe-Driven</strong> ：固定配方运行，适用于在受控条件下比较策略。</li>
+<li><strong>Agent-Driven</strong> ：外层智能体可在每轮迭代后基于受限反馈修订 recipe 的算子绑定与策略参数，但评估器、sealed 任务集与认证记录仍受框架保护。</li>
+</ul>
+<h3 id="3-实验验证">3. 实验验证</h3>
+<p>论文围绕三个研究问题展开评估：</p>
+<h4 id="rq1进化有效性与迁移">RQ1：进化有效性与迁移</h4>
+<p>在固定模型（GPT-5.4）与评估器（Harbor）下，四种方法（AHE、Hyperagents、A-Evolve、GEPA）在两个种子智能体（MiniSWE、Codex）和两个基准（Terminal Bench 2、τ3 Banking）上运行最多 10 代。结果包括：</p>
+<ul>
+<li>最大整体 pass@1 提升达  <strong>13.5 个百分点</strong> （MiniSWE + Hyperagents/A-Evolve 于 Terminal Bench 2）。</li>
+<li>方法排名高度依赖于种子智能体、基准与任务划分；部分方法在 held-out 的 gate 或 sealed 划分上出现倒退，表明优化增益并不总是均匀迁移。</li>
+</ul>
+<h4 id="rq2执行保真度">RQ2：执行保真度</h4>
+<p>通过对比“RSIHub 第零代执行”与“直接执行（Direct）”发现：</p>
+<ul>
+<li>框架引入的差异与直接执行自身固有的任务级不一致性（12.0–18.9%）量级相当。</li>
+<li>未观察到系统性的能力破坏；Codex 在 Terminal Bench 2 上虽呈现 +6.0 个百分点的额外不一致，其框架执行分数仍落在直接执行的变异范围内。</li>
+</ul>
+<h4 id="rq3完整性与恢复">RQ3：完整性与恢复</h4>
+<p>在 420 次故障注入与边界突破试验中（涵盖中断恢复、评估器篡改、越界写入、受保护证据访问、伪造归档等场景），框架 <strong>全部通过</strong> ：成功恢复有效状态，且未接受任何被污染结果。</p>
+<h4 id="工程成本">工程成本</h4>
+<ul>
+<li>四种适配的 recipe 配置仅  <strong>47–61 行</strong> ，算子代码  <strong>216–1,087 行</strong> ，<strong>零次修改</strong>框架源码。</li>
+<li>框架服务耗时占端到端代际时间的比例低于  <strong>0.06%</strong> ，可忽略不计。</li>
+</ul>
+<h3 id="4-主要贡献">4. 主要贡献</h3>
+<ul>
+<li><strong>可组合 recipe 抽象</strong> ：将 AHE、Hyperagents、A-Evolve、GEPA 表达为共享算子接口上的配置，实现方法策略与基础设施的解耦。</li>
+<li><strong>共享实验基础设施</strong> ：提供统一的候选者执行、故障恢复、认证评估记录与血缘追踪服务。</li>
+<li><strong>共同基准上的评估</strong> ：在严格固定的模型与评估配置下，系统比较了四种进化方法，揭示了方法排名的设置依赖性与 held-out 迁移的复杂性，并验证了框架自身不引入系统性测量偏差。</li>
+</ul>
+<h3 id="5-局限与责任声明">5. 局限与责任声明</h3>
+<p>RSIHub 的证据保障依赖于受信任的框架服务、主机保护及 Git/摘要操作。当前结果适用于测试的工作负载与生命周期边界，未覆盖更长周期的自适应配方修订（agent-driven 模式），也不包含对 hostile code 的对抗性防御。论文同时警示，更高的 pass@1 不意味着安全部署的充分条件，实际部署需配合访问控制、安全评估与人工审查。</p>
+</div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
