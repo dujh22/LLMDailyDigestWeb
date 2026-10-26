@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>2026-10-26 科研追新 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="
+当日精选（由提交工具自动创建）。
+
+今日概览
+
+智能体优化重心上移至系统层：Google 开源 Harness²：双层递归优化智能体执行框架，以任务级和元级递归优化执行框架，在冻结模型权重的前提下利用轨迹反馈持续提升表现。
+具身智能探索出推理时技能演化路径：RAX：在线探索扩展驱动机器人持续自我改进 通过在线探索生成控制程序并沉淀可复用技能，在五类仿真基准上平均领先既有 SOTA 37.4 个百分点。
+提示工程正在向 Harness 工程转型：提示词工程退潮：核心工作转向智能体 Harness 指出能力释放的关键正从面向用户的提示“咒语”，转向底层提示、工具调用、执行框架与系统工程的协同设计。
+
+对当前研究的启发
+
+AgentEvolve：RAX 与 Harness² 分别验证了技能库积累和执行轨迹驱动的框架优化，可作为参数冻结 Agent 持续进化的两类互补机制。
+RobotEvolve：RAX 表明机器人可在部署时将在线探索转化为控制程序和可复用技能，为具身自进化补充了无需更新模型参数的实践路线。
+HarnessEvolve：Harness² 将 Harness 从人工配置对象变成可递归优化的系统组件，可直接启发执行轨迹反馈、框架变异与择优保留机制的设计。
+SystemEvolve：Harness² 的任务级—元级双层闭环提供了系统自指改进的具体实现，可用于研究工作流与改进机制本身的联合演化。
+PromptEvolve：提示词工程退潮 提示应将优化单条提示扩展为联合优化系统提示、工具约定和执行脚手架的多组件 LM 程序。
+
+" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="2026-10-26 科研追新">
+  <meta itemprop="description" content="当日精选（由提交工具自动创建）。
+今日概览 智能体优化重心上移至系统层：Google 开源 Harness²：双层递归优化智能体执行框架，以任务级和元级递归优化执行框架，在冻结模型权重的前提下利用轨迹反馈持续提升表现。 具身智能探索出推理时技能演化路径：RAX：在线探索扩展驱动机器人持续自我改进 通过在线探索生成控制程序并沉淀可复用技能，在五类仿真基准上平均领先既有 SOTA 37.4 个百分点。 提示工程正在向 Harness 工程转型：提示词工程退潮：核心工作转向智能体 Harness 指出能力释放的关键正从面向用户的提示“咒语”，转向底层提示、工具调用、执行框架与系统工程的协同设计。 对当前研究的启发 AgentEvolve：RAX 与 Harness² 分别验证了技能库积累和执行轨迹驱动的框架优化，可作为参数冻结 Agent 持续进化的两类互补机制。 RobotEvolve：RAX 表明机器人可在部署时将在线探索转化为控制程序和可复用技能，为具身自进化补充了无需更新模型参数的实践路线。 HarnessEvolve：Harness² 将 Harness 从人工配置对象变成可递归优化的系统组件，可直接启发执行轨迹反馈、框架变异与择优保留机制的设计。 SystemEvolve：Harness² 的任务级—元级双层闭环提供了系统自指改进的具体实现，可用于研究工作流与改进机制本身的联合演化。 PromptEvolve：提示词工程退潮 提示应将优化单条提示扩展为联合优化系统提示、工具约定和执行脚手架的多组件 LM 程序。">
+  <meta itemprop="datePublished" content="2026-10-26T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-10-26T11:09:02+08:00">
+  <meta itemprop="wordCount" content="607">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-26/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="2026-10-26 科研追新">
+  <meta property="og:description" content="当日精选（由提交工具自动创建）。
+今日概览 智能体优化重心上移至系统层：Google 开源 Harness²：双层递归优化智能体执行框架，以任务级和元级递归优化执行框架，在冻结模型权重的前提下利用轨迹反馈持续提升表现。 具身智能探索出推理时技能演化路径：RAX：在线探索扩展驱动机器人持续自我改进 通过在线探索生成控制程序并沉淀可复用技能，在五类仿真基准上平均领先既有 SOTA 37.4 个百分点。 提示工程正在向 Harness 工程转型：提示词工程退潮：核心工作转向智能体 Harness 指出能力释放的关键正从面向用户的提示“咒语”，转向底层提示、工具调用、执行框架与系统工程的协同设计。 对当前研究的启发 AgentEvolve：RAX 与 Harness² 分别验证了技能库积累和执行轨迹驱动的框架优化，可作为参数冻结 Agent 持续进化的两类互补机制。 RobotEvolve：RAX 表明机器人可在部署时将在线探索转化为控制程序和可复用技能，为具身自进化补充了无需更新模型参数的实践路线。 HarnessEvolve：Harness² 将 Harness 从人工配置对象变成可递归优化的系统组件，可直接启发执行轨迹反馈、框架变异与择优保留机制的设计。 SystemEvolve：Harness² 的任务级—元级双层闭环提供了系统自指改进的具体实现，可用于研究工作流与改进机制本身的联合演化。 PromptEvolve：提示词工程退潮 提示应将优化单条提示扩展为联合优化系统提示、工具约定和执行脚手架的多组件 LM 程序。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="updates">
+    <meta property="article:published_time" content="2026-10-26T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-10-26T11:09:02+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="2026-10-26 科研追新">
+  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
+今日概览 智能体优化重心上移至系统层：Google 开源 Harness²：双层递归优化智能体执行框架，以任务级和元级递归优化执行框架，在冻结模型权重的前提下利用轨迹反馈持续提升表现。 具身智能探索出推理时技能演化路径：RAX：在线探索扩展驱动机器人持续自我改进 通过在线探索生成控制程序并沉淀可复用技能，在五类仿真基准上平均领先既有 SOTA 37.4 个百分点。 提示工程正在向 Harness 工程转型：提示词工程退潮：核心工作转向智能体 Harness 指出能力释放的关键正从面向用户的提示“咒语”，转向底层提示、工具调用、执行框架与系统工程的协同设计。 对当前研究的启发 AgentEvolve：RAX 与 Harness² 分别验证了技能库积累和执行轨迹驱动的框架优化，可作为参数冻结 Agent 持续进化的两类互补机制。 RobotEvolve：RAX 表明机器人可在部署时将在线探索转化为控制程序和可复用技能，为具身自进化补充了无需更新模型参数的实践路线。 HarnessEvolve：Harness² 将 Harness 从人工配置对象变成可递归优化的系统组件，可直接启发执行轨迹反馈、框架变异与择优保留机制的设计。 SystemEvolve：Harness² 的任务级—元级双层闭环提供了系统自指改进的具体实现，可用于研究工作流与改进机制本身的联合演化。 PromptEvolve：提示词工程退潮 提示应将优化单条提示扩展为联合优化系统提示、工具约定和执行脚手架的多组件 LM 程序。">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-26/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-25/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2026-10-26 科研追新",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-26\/"
+    },"genre": "updates","wordcount":  607 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-26\/","datePublished": "2026-10-26T00:00:00+08:00","dateModified": "2026-10-26T11:09:02+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/trends/"
+                
+                
+              ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/trends/"
+                  
+                  
+                ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/updates/" title="Updates">Updates</a></li><li class="breadcrumb-item active" aria-current="page">2026-10-26 科研追新</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>2026-10-26 科研追新</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    LLM-DailyDigest</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2026-10-26 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-26">2026-10-26</time></span>&nbsp;<span title="更新于 2026-10-26 11:09:02"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-26">2026-10-26</time></span>&nbsp;<span title="607 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#对当前研究的启发">对当前研究的启发</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><blockquote>
+<p>当日精选（由提交工具自动创建）。</p></blockquote>
+<!-- daily-summary:start -->
+<h2 id="今日概览">今日概览</h2>
+<ul>
+<li><strong>智能体优化重心上移至系统层</strong>：Google 开源 <a href="#harness-2">Harness²：双层递归优化智能体执行框架</a>，以任务级和元级递归优化执行框架，在冻结模型权重的前提下利用轨迹反馈持续提升表现。</li>
+<li><strong>具身智能探索出推理时技能演化路径</strong>：<a href="#rax">RAX：在线探索扩展驱动机器人持续自我改进</a> 通过在线探索生成控制程序并沉淀可复用技能，在五类仿真基准上平均领先既有 SOTA 37.4 个百分点。</li>
+<li><strong>提示工程正在向 Harness 工程转型</strong>：<a href="#harness">提示词工程退潮：核心工作转向智能体 Harness</a> 指出能力释放的关键正从面向用户的提示“咒语”，转向底层提示、工具调用、执行框架与系统工程的协同设计。</li>
+</ul>
+<h2 id="对当前研究的启发">对当前研究的启发</h2>
+<ul>
+<li><strong>AgentEvolve</strong>：<a href="#rax">RAX</a> 与 <a href="#harness-2">Harness²</a> 分别验证了技能库积累和执行轨迹驱动的框架优化，可作为参数冻结 Agent 持续进化的两类互补机制。</li>
+<li><strong>RobotEvolve</strong>：<a href="#rax">RAX</a> 表明机器人可在部署时将在线探索转化为控制程序和可复用技能，为具身自进化补充了无需更新模型参数的实践路线。</li>
+<li><strong>HarnessEvolve</strong>：<a href="#harness-2">Harness²</a> 将 Harness 从人工配置对象变成可递归优化的系统组件，可直接启发执行轨迹反馈、框架变异与择优保留机制的设计。</li>
+<li><strong>SystemEvolve</strong>：<a href="#harness-2">Harness²</a> 的任务级—元级双层闭环提供了系统自指改进的具体实现，可用于研究工作流与改进机制本身的联合演化。</li>
+<li><strong>PromptEvolve</strong>：<a href="#harness">提示词工程退潮</a> 提示应将优化单条提示扩展为联合优化系统提示、工具约定和执行脚手架的多组件 LM 程序。</li>
+</ul>
+<!-- daily-summary:end -->
+</div><section class="daily-items daily-tiered">
+          <nav class="daily-nav">
+            <span class="daily-nav-label">共 3 条</span><a href="#daily-featured">⭐ 重点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">3 条</span></h2>
+          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="harness-2" class="summary-card daily-item">
+  <h2 id="harness-2-title" class="daily-item-title">Harness²：双层递归优化智能体执行框架</h2><p class="single-subtitle daily-item-summary">Google 开源 Harness²，通过任务级与元级双层递归优化智能体执行框架，在不修改模型权重的情况下持续提升任务表现。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%A4%8D%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验复用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.14224" target="_blank" rel="noopener">https://arxiv.org/abs/2610.14224</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/google-research/harness2" target="_blank" rel="noopener">https://github.com/google-research/harness2</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/sgr4lqvQsaqBYAnkdNeMYg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/sgr4lqvQsaqBYAnkdNeMYg</a></div></div><div class="daily-item-content"><ul>
+<li>Harness² 将系统提示词、护栏、记忆、工具指导、子智能体、技能、脚本和插件定义为八类可编辑的智能体执行组件。</li>
+<li>任务级优化采用 PPC（Propose–Probe–Compose）机制，根据执行轨迹提出修改方案，通过实际试运行探测效果，再组合表现最佳的改动。</li>
+<li>元级优化会保存成功修改的原因、执行证据和通用经验，用于指导后续未知任务中的框架调整。</li>
+<li>在锁定模型权重且不依赖真实标签验证的条件下，单步优化使 GLM-5 与 Gemini 3.5 Flash 在 WorkBuddy-Bench、JobBench 和 LAB 等基准上获得明显提升。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为闭源 API 模型提供无需访问或微调权重的非侵入式能力升级路径。</li>
+<li>展示以执行轨迹和实测结果为依据，自动改进提示词、工具、记忆及插件等智能体脚手架的方案。</li>
+<li>可将任务内试错经验沉淀为跨任务规则，增强智能体对动态网页、API 和业务流程的适应能力。</li>
+<li>为生产级智能体建立“轨迹分析—候选修改—执行验证—经验复用”的闭环演化机制。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">HarnessEvolve | 重磅！谷歌开源双层RSI框架Harness²，Gemini 3.5性能原地暴涨https://mp.weixin.qq.com/s/sgr4lqvQsaqBYAnkdNeMYg</div>
+  </details></article>
+<article id="rax" class="summary-card daily-item">
+  <h2 id="rax-title" class="daily-item-title">RAX：在线探索扩展驱动机器人持续自我改进</h2><p class="single-subtitle daily-item-summary">RAX 让参数冻结的机器人智能体通过在线探索生成控制程序并积累可复用技能，在五大仿真基准上平均领先既有 SOTA 37.4 个百分点。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技能演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.22496" target="_blank" rel="noopener">https://arxiv.org/abs/2610.22496</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/robot-agent-exploration/rax" target="_blank" rel="noopener">https://github.com/robot-agent-exploration/rax</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://huggingface.co/datasets/robot-agent-exploration/robot-session-logs" target="_blank" rel="noopener">https://huggingface.co/datasets/robot-agent-exploration/robot-session-logs</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/21Pf0S8GnBH33qeGsoo93w" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/21Pf0S8GnBH33qeGsoo93w</a></div></div><div class="daily-item-content"><p>RAX（Robot Agent eXploration）将测试时在线探索引入机器人学习，由通用 Coding Agent 连接感知与控制接口，依据执行反馈持续修改程序。探索成功后，系统把感知、规划和控制逻辑固化为 Code as Policy，并沉淀进技能库，以支持跨任务、跨环境和跨机器人本体复用。在模型参数冻结且不使用遥操作动作示范的条件下，RAX 在 RoboDojo、BEHAVIOR-1K、HumanoidArena、DexJoCo 和 LIBERO-Pro 上平均领先既有 SOTA 37.4 个百分点。真实机器人实验表明，系统可在不到两小时的自主探索中掌握精密插孔、柔性物体操作和长程全身控制等任务，并将空气炸锅任务的执行时间从约 72 分钟缩短至 18 秒。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示以“扩展在线探索”替代单纯扩展示范数据和策略训练的具身智能发展路径。</li>
+<li>为新机器人本体提供接口化适配方案，无需重新采集大量动作示范或微调策略模型。</li>
+<li>将高成本探索固化为可检查、可组合、可快速执行的程序化技能，降低后续任务的推理与部署成本。</li>
+<li>为具身智能中的持续学习、自我改进和跨本体技能迁移提供可复现实验平台。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">RobotEvolve | 机器人的o1时刻来了！哈佛、伯克利、英伟达推出探索Scaling Law，五大基准平均领先37.4个点https://mp.weixin.qq.com/s/21Pf0S8GnBH33qeGsoo93w</div>
+  </details></article>
+<article id="harness" class="summary-card daily-item">
+  <h2 id="harness-title" class="daily-item-title">提示词工程退潮：核心工作转向智能体 Harness</h2><p class="single-subtitle daily-item-summary">Riley Goodside认为面向普通用户的“咒语式”提示词工程正逐渐失去必要性，而底层提示、执行框架与系统工程正在成为释放模型能力的关键。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：提示优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/promptevolve/">PromptEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;提示工程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/YoTQ9Yq_mcoF_vIZvGOV2g" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/YoTQ9Yq_mcoF_vIZvGOV2g</a></div></div><div class="daily-item-content"><p>Riley Goodside称普通用户已不必依赖复杂模板、角色设定和固定措辞，随着前沿模型理解能力增强，直接描述目标通常即可获得较好结果。文章以Chainguard借助前沿模型和自建执行框架发现PHP高危漏洞为例，指出成果主要依赖沙箱、源码、工具与执行引擎组成的完整 Harness，而非精巧提示词。提示词工程并未完全消失，底层系统提示、小模型适配和应用内提示仍是重要工程工作。其角色正从面向用户的独立职业技能，转变为智能体脚手架、技能封装和系统设计的一部分。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>提示优化应从打磨固定措辞，转向明确任务目标、约束条件和验收标准。</li>
+<li>构建智能体应用时，应优先投入执行框架、安全沙箱、工具链和反馈闭环。</li>
+<li>复杂提示策略仍可作为底层系统能力，但宜由产品或框架封装，而非要求普通用户掌握。</li>
+<li>PromptEvolve可重点研究提示、脚手架与模型能力之间的协同演化。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">PromptEvolve | 提示词工程已死！祖师爷Riley Goodside亲手砸饭碗https://mp.weixin.qq.com/s/YoTQ9Yq_mcoF_vIZvGOV2g</div>
+  </details></article>
+</section>
+        <script>
+        (function(){
+          
+          function reveal(){
+            var h = location.hash.slice(1);
+            if(!h) return;
+            try{ h = decodeURIComponent(h); }catch(e){   }
+            var el = document.getElementById(h);
+            if(!el) return;
+            var p = el;
+            while(p){ if(p.tagName === 'DETAILS') p.open = true; p = p.parentElement; }
+            el.scrollIntoView({block:'start'});
+          }
+          window.addEventListener('hashchange', reveal);
+          if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal();
+          document.querySelectorAll('[data-daily-toggle]').forEach(function(b){
+            b.addEventListener('click', function(){
+              var open = b.getAttribute('data-daily-toggle') === 'open';
+              document.querySelectorAll('.daily-tiered details').forEach(function(d){ d.open = open; });
+            });
+          });
+        })();
+        </script></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
