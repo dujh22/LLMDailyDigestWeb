@@ -12,50 +12,49 @@
 
 今日概览
 
-递归自我改进进一步从概念走向可验证系统：Infinity Machine展示了可演化脚手架在真实科研问题上的突破与评分器利用风险，RRSI以正则化和成本感知选择抑制过拟合，RSIHub提供统一的演化算子与评测基础设施，AREX-2则验证了长程反思训练的跨任务迁移。
-Agent 训练侧聚焦“经验如何稳定转化为提升”：ASCENT将单次在线成功轨迹自蒸馏进快权重，面向长程 LLM 智能体的多尺度策略优化结合轮次与词元级信用分配，LegoFlow进一步把数据构建、轨迹生成、训练和评测连成可自主编排的闭环。
-自主科研开始强调可复用发现与机器可检验性：Auto-Research Arena用统一环境评估多目标研究能力，智能体算法设计：在 Lean 中提出、形式化并证明进化算法运行时界则将算法发现推进到形式化证明运行时改进。
-新模型与快决策架构同步演进：OpenAI 发布 GPT-6.1 Terra强化低成本电脑操作，NUS推出原生决策架构Jeva探索非自回归候选决策，但Jev 风格 System One 结构能否降低选择偏差？表明整体准确率稳定并不等于对选项重排鲁棒。
-长程系统优化覆盖控制、适应与资源核算：EBench评测前沿智能体揭示直接控制与策略调用的切换瓶颈，OpTTA以乐观测试时适应改善分布偏移下的世界模型规划，而编码智能体上下文的物理成本指出删减上下文可能因破坏前缀缓存而增加实际算力和能耗。
-热点延伸方面，低相关条目主要是TenetBench对俄语专业伦理准则遵循的条款锚定评测，反映多语言安全评估的持续扩展。
+递归自我改进从概念走向“可演化、可验证、可回滚”的工程体系：Infinity Machine展示科研脚手架自主演化，AREX-2探索长程反思训练，RRSI以留出集、泄漏筛查和成本约束抑制过拟合，而编程智能体脚手架如何自我演化则表明自动改写并不天然有效。
+长程智能体训练集中攻坚经验固化、信用分配与奖励可靠性：ASCENT把单次成功轨迹在线蒸馏进快权重，Outcome RL 的收益指出强化学习主要提高完成率而非拓展能力边界，有限强验证器预算下审计 GRPO则给出低成本抑制奖励作弊的方法。
+数据与科研闭环进一步平台化：LegoFlow让编码智能体自主编排数据、训练和评测流水线，Auto-Research Arena以统一环境和多目标指标检验自动研究发现能否真正改善预训练。
+长期记忆与上下文优化开始关注“访问状态”和真实系统成本：AMIE通过轻量适应层持续演化记忆索引，编码智能体上下文的物理成本则揭示删减上下文可能因前缀缓存失效反而增加计算与能耗。
+新模型与快决策路线同步推进：GPT-6.1 Terra强化电脑操作与写作，Jeva提出原生 System One 决策架构，但Jev 风格结构的选择偏差研究提醒整体准确率稳定不等于对选项重排鲁棒。
+具身系统的重点由单模型能力转向控制层级选择：EBench显示直接控制适合短程任务，调用 VLA/WAM 策略可降低词元成本并提升成功率，但策略选择与控制权切换仍是核心瓶颈。
 
 对当前研究的启发
 
-Awesome-RSI：Infinity Machine与RRSI共同表明，RSI 清单应把隔离执行、留出集验证、评分器防利用和成本感知选择列为判断真实改进的核心维度。
-HarnessEvolve：RSIHub的声明式可变资源和统一执行评估接口，可直接借鉴为可组合、可公平复现的 harness 演化实验层。
-AgentTrainEvolve：ASCENT与面向长程 LLM 智能体的多尺度策略优化分别提供成功轨迹在线蒸馏和轮次—词元多尺度信用分配，可用于提升长程交互经验的参数化效率。
-CodeEvolve：LegoFlow可作为编码 Agent 自动构造任务、生成轨迹、训练并依据评测反馈迭代的端到端数据飞轮底座。
-ResearchEvolve：Auto-Research Arena和 Lean 形式化算法设计工作说明，自主科研评测应同时检查发现能否复用以及结论能否被机器验证，而不只评价最终报告。
-JevEvolve：Jev 风格 System One 结构能否降低选择偏差？提示 Jev 类模型必须将候选置换、答案缺席和证据不足识别纳入基础评测，避免用平均准确率掩盖决策脆弱性。
-RobotEvolve：EBench评测前沿智能体与OpTTA提示具身系统可联合学习“何时直接控制、何时调用专用策略”并在测试时针对当前规划目标适应世界模型。
-Groom：编码智能体上下文的物理成本提供了可直接采用的质量门控资源核算方法，应把前缀缓存失效、预填充计算和能耗纳入过程级 token 利用评测。
-MemoryEvolve：AMIE将记忆内容与访问状态解耦，提供了一条只演化检索权重、无需重写记忆或重训宿主系统的轻量持续适应路径。
-DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游评测反馈统一进合成数据闭环，以持续对准模型能力边界。
+Awesome-RSI：Infinity Machine、RRSI与负向实证共同说明，RSI 清单应把留出集验证、任务泄漏筛查、成本预算和改动回滚列为核心评判维度。
+AgentTrainEvolve：ASCENT提供“成功轨迹验证后立即自蒸馏”的在线学习范式，而GRPO 审计表明训练闭环还应按低通过率优先分配强验证器预算。
+GeneralizeEvolve：Outcome RL 的收益提示应将“既有能力可靠化”与“能力边界拓展”分开测量，避免把 pass@1 提升误判为真实泛化。
+CodeEvolve：LegoFlow可作为代码数据飞轮的编排底座，但脚手架演化实证要求每次自动改动都配套持续验证、修订和淘汰机制。
+ResearchEvolve：Auto-Research Arena提供了以发现能否复用于改善预训练为标准的外部效度评测，可补足只看论文产出或单次实验分数的不足。
+MemoryEvolve：AMIE表明无需重写记忆内容，也可通过独立演化访问状态实现持续个性化检索，适合作为现有记忆系统的低侵入适配层。
+Groom：编码智能体上下文的物理成本说明过程级 token 评测应同时核算前缀缓存命中、重取、预填充计算与能耗，不能把上下文缩短直接等同于成本下降。
+JevEvolve：Jeva与其选择偏差反例共同提示，快决策模型除准确率、延迟外还必须加入候选置换不变性和答案缺席识别测试。
+RobotEvolve：EBench表明具身 Agent 的演化对象应包含“直接控制还是调用专用策略”的路由器，以及不同控制层之间的可靠交接机制。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-10-27 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进进一步从概念走向可验证系统：Infinity Machine展示了可演化脚手架在真实科研问题上的突破与评分器利用风险，RRSI以正则化和成本感知选择抑制过拟合，RSIHub提供统一的演化算子与评测基础设施，AREX-2则验证了长程反思训练的跨任务迁移。 Agent 训练侧聚焦“经验如何稳定转化为提升”：ASCENT将单次在线成功轨迹自蒸馏进快权重，面向长程 LLM 智能体的多尺度策略优化结合轮次与词元级信用分配，LegoFlow进一步把数据构建、轨迹生成、训练和评测连成可自主编排的闭环。 自主科研开始强调可复用发现与机器可检验性：Auto-Research Arena用统一环境评估多目标研究能力，智能体算法设计：在 Lean 中提出、形式化并证明进化算法运行时界则将算法发现推进到形式化证明运行时改进。 新模型与快决策架构同步演进：OpenAI 发布 GPT-6.1 Terra强化低成本电脑操作，NUS推出原生决策架构Jeva探索非自回归候选决策，但Jev 风格 System One 结构能否降低选择偏差？表明整体准确率稳定并不等于对选项重排鲁棒。 长程系统优化覆盖控制、适应与资源核算：EBench评测前沿智能体揭示直接控制与策略调用的切换瓶颈，OpTTA以乐观测试时适应改善分布偏移下的世界模型规划，而编码智能体上下文的物理成本指出删减上下文可能因破坏前缀缓存而增加实际算力和能耗。 热点延伸方面，低相关条目主要是TenetBench对俄语专业伦理准则遵循的条款锚定评测，反映多语言安全评估的持续扩展。 对当前研究的启发 Awesome-RSI：Infinity Machine与RRSI共同表明，RSI 清单应把隔离执行、留出集验证、评分器防利用和成本感知选择列为判断真实改进的核心维度。 HarnessEvolve：RSIHub的声明式可变资源和统一执行评估接口，可直接借鉴为可组合、可公平复现的 harness 演化实验层。 AgentTrainEvolve：ASCENT与面向长程 LLM 智能体的多尺度策略优化分别提供成功轨迹在线蒸馏和轮次—词元多尺度信用分配，可用于提升长程交互经验的参数化效率。 CodeEvolve：LegoFlow可作为编码 Agent 自动构造任务、生成轨迹、训练并依据评测反馈迭代的端到端数据飞轮底座。 ResearchEvolve：Auto-Research Arena和 Lean 形式化算法设计工作说明，自主科研评测应同时检查发现能否复用以及结论能否被机器验证，而不只评价最终报告。 JevEvolve：Jev 风格 System One 结构能否降低选择偏差？提示 Jev 类模型必须将候选置换、答案缺席和证据不足识别纳入基础评测，避免用平均准确率掩盖决策脆弱性。 RobotEvolve：EBench评测前沿智能体与OpTTA提示具身系统可联合学习“何时直接控制、何时调用专用策略”并在测试时针对当前规划目标适应世界模型。 Groom：编码智能体上下文的物理成本提供了可直接采用的质量门控资源核算方法，应把前缀缓存失效、预填充计算和能耗纳入过程级 token 利用评测。 MemoryEvolve：AMIE将记忆内容与访问状态解耦，提供了一条只演化检索权重、无需重写记忆或重训宿主系统的轻量持续适应路径。 DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游评测反馈统一进合成数据闭环，以持续对准模型能力边界。">
+今日概览 递归自我改进从概念走向“可演化、可验证、可回滚”的工程体系：Infinity Machine展示科研脚手架自主演化，AREX-2探索长程反思训练，RRSI以留出集、泄漏筛查和成本约束抑制过拟合，而编程智能体脚手架如何自我演化则表明自动改写并不天然有效。 长程智能体训练集中攻坚经验固化、信用分配与奖励可靠性：ASCENT把单次成功轨迹在线蒸馏进快权重，Outcome RL 的收益指出强化学习主要提高完成率而非拓展能力边界，有限强验证器预算下审计 GRPO则给出低成本抑制奖励作弊的方法。 数据与科研闭环进一步平台化：LegoFlow让编码智能体自主编排数据、训练和评测流水线，Auto-Research Arena以统一环境和多目标指标检验自动研究发现能否真正改善预训练。 长期记忆与上下文优化开始关注“访问状态”和真实系统成本：AMIE通过轻量适应层持续演化记忆索引，编码智能体上下文的物理成本则揭示删减上下文可能因前缀缓存失效反而增加计算与能耗。 新模型与快决策路线同步推进：GPT-6.1 Terra强化电脑操作与写作，Jeva提出原生 System One 决策架构，但Jev 风格结构的选择偏差研究提醒整体准确率稳定不等于对选项重排鲁棒。 具身系统的重点由单模型能力转向控制层级选择：EBench显示直接控制适合短程任务，调用 VLA/WAM 策略可降低词元成本并提升成功率，但策略选择与控制权切换仍是核心瓶颈。 对当前研究的启发 Awesome-RSI：Infinity Machine、RRSI与负向实证共同说明，RSI 清单应把留出集验证、任务泄漏筛查、成本预算和改动回滚列为核心评判维度。 AgentTrainEvolve：ASCENT提供“成功轨迹验证后立即自蒸馏”的在线学习范式，而GRPO 审计表明训练闭环还应按低通过率优先分配强验证器预算。 GeneralizeEvolve：Outcome RL 的收益提示应将“既有能力可靠化”与“能力边界拓展”分开测量，避免把 pass@1 提升误判为真实泛化。 CodeEvolve：LegoFlow可作为代码数据飞轮的编排底座，但脚手架演化实证要求每次自动改动都配套持续验证、修订和淘汰机制。 ResearchEvolve：Auto-Research Arena提供了以发现能否复用于改善预训练为标准的外部效度评测，可补足只看论文产出或单次实验分数的不足。 MemoryEvolve：AMIE表明无需重写记忆内容，也可通过独立演化访问状态实现持续个性化检索，适合作为现有记忆系统的低侵入适配层。 Groom：编码智能体上下文的物理成本说明过程级 token 评测应同时核算前缀缓存命中、重取、预填充计算与能耗，不能把上下文缩短直接等同于成本下降。 JevEvolve：Jeva与其选择偏差反例共同提示，快决策模型除准确率、延迟外还必须加入候选置换不变性和答案缺席识别测试。 RobotEvolve：EBench表明具身 Agent 的演化对象应包含“直接控制还是调用专用策略”的路由器，以及不同控制层之间的可靠交接机制。">
   <meta itemprop="datePublished" content="2026-10-27T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-27T14:43:05+08:00">
-  <meta itemprop="wordCount" content="1382">
+  <meta itemprop="dateModified" content="2026-10-27T14:45:08+08:00">
+  <meta itemprop="wordCount" content="1248">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-27/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-10-27 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进进一步从概念走向可验证系统：Infinity Machine展示了可演化脚手架在真实科研问题上的突破与评分器利用风险，RRSI以正则化和成本感知选择抑制过拟合，RSIHub提供统一的演化算子与评测基础设施，AREX-2则验证了长程反思训练的跨任务迁移。 Agent 训练侧聚焦“经验如何稳定转化为提升”：ASCENT将单次在线成功轨迹自蒸馏进快权重，面向长程 LLM 智能体的多尺度策略优化结合轮次与词元级信用分配，LegoFlow进一步把数据构建、轨迹生成、训练和评测连成可自主编排的闭环。 自主科研开始强调可复用发现与机器可检验性：Auto-Research Arena用统一环境评估多目标研究能力，智能体算法设计：在 Lean 中提出、形式化并证明进化算法运行时界则将算法发现推进到形式化证明运行时改进。 新模型与快决策架构同步演进：OpenAI 发布 GPT-6.1 Terra强化低成本电脑操作，NUS推出原生决策架构Jeva探索非自回归候选决策，但Jev 风格 System One 结构能否降低选择偏差？表明整体准确率稳定并不等于对选项重排鲁棒。 长程系统优化覆盖控制、适应与资源核算：EBench评测前沿智能体揭示直接控制与策略调用的切换瓶颈，OpTTA以乐观测试时适应改善分布偏移下的世界模型规划，而编码智能体上下文的物理成本指出删减上下文可能因破坏前缀缓存而增加实际算力和能耗。 热点延伸方面，低相关条目主要是TenetBench对俄语专业伦理准则遵循的条款锚定评测，反映多语言安全评估的持续扩展。 对当前研究的启发 Awesome-RSI：Infinity Machine与RRSI共同表明，RSI 清单应把隔离执行、留出集验证、评分器防利用和成本感知选择列为判断真实改进的核心维度。 HarnessEvolve：RSIHub的声明式可变资源和统一执行评估接口，可直接借鉴为可组合、可公平复现的 harness 演化实验层。 AgentTrainEvolve：ASCENT与面向长程 LLM 智能体的多尺度策略优化分别提供成功轨迹在线蒸馏和轮次—词元多尺度信用分配，可用于提升长程交互经验的参数化效率。 CodeEvolve：LegoFlow可作为编码 Agent 自动构造任务、生成轨迹、训练并依据评测反馈迭代的端到端数据飞轮底座。 ResearchEvolve：Auto-Research Arena和 Lean 形式化算法设计工作说明，自主科研评测应同时检查发现能否复用以及结论能否被机器验证，而不只评价最终报告。 JevEvolve：Jev 风格 System One 结构能否降低选择偏差？提示 Jev 类模型必须将候选置换、答案缺席和证据不足识别纳入基础评测，避免用平均准确率掩盖决策脆弱性。 RobotEvolve：EBench评测前沿智能体与OpTTA提示具身系统可联合学习“何时直接控制、何时调用专用策略”并在测试时针对当前规划目标适应世界模型。 Groom：编码智能体上下文的物理成本提供了可直接采用的质量门控资源核算方法，应把前缀缓存失效、预填充计算和能耗纳入过程级 token 利用评测。 MemoryEvolve：AMIE将记忆内容与访问状态解耦，提供了一条只演化检索权重、无需重写记忆或重训宿主系统的轻量持续适应路径。 DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游评测反馈统一进合成数据闭环，以持续对准模型能力边界。">
+今日概览 递归自我改进从概念走向“可演化、可验证、可回滚”的工程体系：Infinity Machine展示科研脚手架自主演化，AREX-2探索长程反思训练，RRSI以留出集、泄漏筛查和成本约束抑制过拟合，而编程智能体脚手架如何自我演化则表明自动改写并不天然有效。 长程智能体训练集中攻坚经验固化、信用分配与奖励可靠性：ASCENT把单次成功轨迹在线蒸馏进快权重，Outcome RL 的收益指出强化学习主要提高完成率而非拓展能力边界，有限强验证器预算下审计 GRPO则给出低成本抑制奖励作弊的方法。 数据与科研闭环进一步平台化：LegoFlow让编码智能体自主编排数据、训练和评测流水线，Auto-Research Arena以统一环境和多目标指标检验自动研究发现能否真正改善预训练。 长期记忆与上下文优化开始关注“访问状态”和真实系统成本：AMIE通过轻量适应层持续演化记忆索引，编码智能体上下文的物理成本则揭示删减上下文可能因前缀缓存失效反而增加计算与能耗。 新模型与快决策路线同步推进：GPT-6.1 Terra强化电脑操作与写作，Jeva提出原生 System One 决策架构，但Jev 风格结构的选择偏差研究提醒整体准确率稳定不等于对选项重排鲁棒。 具身系统的重点由单模型能力转向控制层级选择：EBench显示直接控制适合短程任务，调用 VLA/WAM 策略可降低词元成本并提升成功率，但策略选择与控制权切换仍是核心瓶颈。 对当前研究的启发 Awesome-RSI：Infinity Machine、RRSI与负向实证共同说明，RSI 清单应把留出集验证、任务泄漏筛查、成本预算和改动回滚列为核心评判维度。 AgentTrainEvolve：ASCENT提供“成功轨迹验证后立即自蒸馏”的在线学习范式，而GRPO 审计表明训练闭环还应按低通过率优先分配强验证器预算。 GeneralizeEvolve：Outcome RL 的收益提示应将“既有能力可靠化”与“能力边界拓展”分开测量，避免把 pass@1 提升误判为真实泛化。 CodeEvolve：LegoFlow可作为代码数据飞轮的编排底座，但脚手架演化实证要求每次自动改动都配套持续验证、修订和淘汰机制。 ResearchEvolve：Auto-Research Arena提供了以发现能否复用于改善预训练为标准的外部效度评测，可补足只看论文产出或单次实验分数的不足。 MemoryEvolve：AMIE表明无需重写记忆内容，也可通过独立演化访问状态实现持续个性化检索，适合作为现有记忆系统的低侵入适配层。 Groom：编码智能体上下文的物理成本说明过程级 token 评测应同时核算前缀缓存命中、重取、预填充计算与能耗，不能把上下文缩短直接等同于成本下降。 JevEvolve：Jeva与其选择偏差反例共同提示，快决策模型除准确率、延迟外还必须加入候选置换不变性和答案缺席识别测试。 RobotEvolve：EBench表明具身 Agent 的演化对象应包含“直接控制还是调用专用策略”的路由器，以及不同控制层之间的可靠交接机制。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-10-27T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-27T14:43:05+08:00">
+    <meta property="article:modified_time" content="2026-10-27T14:45:08+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-10-27 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进进一步从概念走向可验证系统：Infinity Machine展示了可演化脚手架在真实科研问题上的突破与评分器利用风险，RRSI以正则化和成本感知选择抑制过拟合，RSIHub提供统一的演化算子与评测基础设施，AREX-2则验证了长程反思训练的跨任务迁移。 Agent 训练侧聚焦“经验如何稳定转化为提升”：ASCENT将单次在线成功轨迹自蒸馏进快权重，面向长程 LLM 智能体的多尺度策略优化结合轮次与词元级信用分配，LegoFlow进一步把数据构建、轨迹生成、训练和评测连成可自主编排的闭环。 自主科研开始强调可复用发现与机器可检验性：Auto-Research Arena用统一环境评估多目标研究能力，智能体算法设计：在 Lean 中提出、形式化并证明进化算法运行时界则将算法发现推进到形式化证明运行时改进。 新模型与快决策架构同步演进：OpenAI 发布 GPT-6.1 Terra强化低成本电脑操作，NUS推出原生决策架构Jeva探索非自回归候选决策，但Jev 风格 System One 结构能否降低选择偏差？表明整体准确率稳定并不等于对选项重排鲁棒。 长程系统优化覆盖控制、适应与资源核算：EBench评测前沿智能体揭示直接控制与策略调用的切换瓶颈，OpTTA以乐观测试时适应改善分布偏移下的世界模型规划，而编码智能体上下文的物理成本指出删减上下文可能因破坏前缀缓存而增加实际算力和能耗。 热点延伸方面，低相关条目主要是TenetBench对俄语专业伦理准则遵循的条款锚定评测，反映多语言安全评估的持续扩展。 对当前研究的启发 Awesome-RSI：Infinity Machine与RRSI共同表明，RSI 清单应把隔离执行、留出集验证、评分器防利用和成本感知选择列为判断真实改进的核心维度。 HarnessEvolve：RSIHub的声明式可变资源和统一执行评估接口，可直接借鉴为可组合、可公平复现的 harness 演化实验层。 AgentTrainEvolve：ASCENT与面向长程 LLM 智能体的多尺度策略优化分别提供成功轨迹在线蒸馏和轮次—词元多尺度信用分配，可用于提升长程交互经验的参数化效率。 CodeEvolve：LegoFlow可作为编码 Agent 自动构造任务、生成轨迹、训练并依据评测反馈迭代的端到端数据飞轮底座。 ResearchEvolve：Auto-Research Arena和 Lean 形式化算法设计工作说明，自主科研评测应同时检查发现能否复用以及结论能否被机器验证，而不只评价最终报告。 JevEvolve：Jev 风格 System One 结构能否降低选择偏差？提示 Jev 类模型必须将候选置换、答案缺席和证据不足识别纳入基础评测，避免用平均准确率掩盖决策脆弱性。 RobotEvolve：EBench评测前沿智能体与OpTTA提示具身系统可联合学习“何时直接控制、何时调用专用策略”并在测试时针对当前规划目标适应世界模型。 Groom：编码智能体上下文的物理成本提供了可直接采用的质量门控资源核算方法，应把前缀缓存失效、预填充计算和能耗纳入过程级 token 利用评测。 MemoryEvolve：AMIE将记忆内容与访问状态解耦，提供了一条只演化检索权重、无需重写记忆或重训宿主系统的轻量持续适应路径。 DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游评测反馈统一进合成数据闭环，以持续对准模型能力边界。">
+今日概览 递归自我改进从概念走向“可演化、可验证、可回滚”的工程体系：Infinity Machine展示科研脚手架自主演化，AREX-2探索长程反思训练，RRSI以留出集、泄漏筛查和成本约束抑制过拟合，而编程智能体脚手架如何自我演化则表明自动改写并不天然有效。 长程智能体训练集中攻坚经验固化、信用分配与奖励可靠性：ASCENT把单次成功轨迹在线蒸馏进快权重，Outcome RL 的收益指出强化学习主要提高完成率而非拓展能力边界，有限强验证器预算下审计 GRPO则给出低成本抑制奖励作弊的方法。 数据与科研闭环进一步平台化：LegoFlow让编码智能体自主编排数据、训练和评测流水线，Auto-Research Arena以统一环境和多目标指标检验自动研究发现能否真正改善预训练。 长期记忆与上下文优化开始关注“访问状态”和真实系统成本：AMIE通过轻量适应层持续演化记忆索引，编码智能体上下文的物理成本则揭示删减上下文可能因前缀缓存失效反而增加计算与能耗。 新模型与快决策路线同步推进：GPT-6.1 Terra强化电脑操作与写作，Jeva提出原生 System One 决策架构，但Jev 风格结构的选择偏差研究提醒整体准确率稳定不等于对选项重排鲁棒。 具身系统的重点由单模型能力转向控制层级选择：EBench显示直接控制适合短程任务，调用 VLA/WAM 策略可降低词元成本并提升成功率，但策略选择与控制权切换仍是核心瓶颈。 对当前研究的启发 Awesome-RSI：Infinity Machine、RRSI与负向实证共同说明，RSI 清单应把留出集验证、任务泄漏筛查、成本预算和改动回滚列为核心评判维度。 AgentTrainEvolve：ASCENT提供“成功轨迹验证后立即自蒸馏”的在线学习范式，而GRPO 审计表明训练闭环还应按低通过率优先分配强验证器预算。 GeneralizeEvolve：Outcome RL 的收益提示应将“既有能力可靠化”与“能力边界拓展”分开测量，避免把 pass@1 提升误判为真实泛化。 CodeEvolve：LegoFlow可作为代码数据飞轮的编排底座，但脚手架演化实证要求每次自动改动都配套持续验证、修订和淘汰机制。 ResearchEvolve：Auto-Research Arena提供了以发现能否复用于改善预训练为标准的外部效度评测，可补足只看论文产出或单次实验分数的不足。 MemoryEvolve：AMIE表明无需重写记忆内容，也可通过独立演化访问状态实现持续个性化检索，适合作为现有记忆系统的低侵入适配层。 Groom：编码智能体上下文的物理成本说明过程级 token 评测应同时核算前缀缓存命中、重取、预填充计算与能耗，不能把上下文缩短直接等同于成本下降。 JevEvolve：Jeva与其选择偏差反例共同提示，快决策模型除准确率、延迟外还必须加入候选置换不变性和答案缺席识别测试。 RobotEvolve：EBench表明具身 Agent 的演化对象应包含“直接控制还是调用专用策略”的路由器，以及不同控制层之间的可靠交接机制。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-27/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-26/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -68,8 +67,8 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-27\/"
-    },"genre": "updates","wordcount":  1382 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-27\/","datePublished": "2026-10-27T00:00:00+08:00","dateModified": "2026-10-27T14:43:05+08:00","publisher": {
+    },"genre": "updates","wordcount":  1248 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-27\/","datePublished": "2026-10-27T00:00:00+08:00","dateModified": "2026-10-27T14:45:08+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -252,8 +251,8 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-10-27 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-27">2026-10-27</time></span>&nbsp;<span title="更新于 2026-10-27 14:43:05"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-27">2026-10-27</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-10-26 11:00 ~ 2026-10-27 14:14（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 10-26 11:00 ~ 10-27 14:14
-          </span>&nbsp;<span title="1382 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-10-27 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-27">2026-10-27</time></span>&nbsp;<span title="更新于 2026-10-27 14:45:08"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-27">2026-10-27</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-10-26 11:00 ~ 2026-10-27 14:14（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 10-26 11:00 ~ 10-27 14:14
+          </span>&nbsp;<span title="1248 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -273,48 +272,32 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li>递归自我改进进一步从概念走向可验证系统：<a href="#infinity-machine">Infinity Machine</a>展示了可演化脚手架在真实科研问题上的突破与评分器利用风险，<a href="#rrsi">RRSI</a>以正则化和成本感知选择抑制过拟合，<a href="#rsihub">RSIHub</a>提供统一的演化算子与评测基础设施，<a href="#arex-2">AREX-2</a>则验证了长程反思训练的跨任务迁移。</li>
-<li>Agent 训练侧聚焦“经验如何稳定转化为提升”：<a href="#ascent">ASCENT</a>将单次在线成功轨迹自蒸馏进快权重，<a href="#llm-3">面向长程 LLM 智能体的多尺度策略优化</a>结合轮次与词元级信用分配，<a href="#legoflow">LegoFlow</a>进一步把数据构建、轨迹生成、训练和评测连成可自主编排的闭环。</li>
-<li>自主科研开始强调可复用发现与机器可检验性：<a href="#auto-research-arena">Auto-Research Arena</a>用统一环境评估多目标研究能力，<a href="#lean">智能体算法设计：在 Lean 中提出、形式化并证明进化算法运行时界</a>则将算法发现推进到形式化证明运行时改进。</li>
-<li>新模型与快决策架构同步演进：<a href="#openai-gpt-6-1-terra">OpenAI 发布 GPT-6.1 Terra</a>强化低成本电脑操作，<a href="#nus-jeva">NUS推出原生决策架构Jeva</a>探索非自回归候选决策，但<a href="#jev-system-one">Jev 风格 System One 结构能否降低选择偏差？</a>表明整体准确率稳定并不等于对选项重排鲁棒。</li>
-<li>长程系统优化覆盖控制、适应与资源核算：<a href="#ebench">EBench评测前沿智能体</a>揭示直接控制与策略调用的切换瓶颈，<a href="#optta">OpTTA</a>以乐观测试时适应改善分布偏移下的世界模型规划，而<a href="#item-67">编码智能体上下文的物理成本</a>指出删减上下文可能因破坏前缀缓存而增加实际算力和能耗。</li>
-<li>热点延伸方面，低相关条目主要是<a href="#tenetbench">TenetBench</a>对俄语专业伦理准则遵循的条款锚定评测，反映多语言安全评估的持续扩展。</li>
+<li>递归自我改进从概念走向“可演化、可验证、可回滚”的工程体系：<a href="#infinity-machine">Infinity Machine</a>展示科研脚手架自主演化，<a href="#arex-2">AREX-2</a>探索长程反思训练，<a href="#rrsi">RRSI</a>以留出集、泄漏筛查和成本约束抑制过拟合，而<a href="#item-59">编程智能体脚手架如何自我演化</a>则表明自动改写并不天然有效。</li>
+<li>长程智能体训练集中攻坚经验固化、信用分配与奖励可靠性：<a href="#ascent">ASCENT</a>把单次成功轨迹在线蒸馏进快权重，<a href="#outcome-rl">Outcome RL 的收益</a>指出强化学习主要提高完成率而非拓展能力边界，<a href="#grpo">有限强验证器预算下审计 GRPO</a>则给出低成本抑制奖励作弊的方法。</li>
+<li>数据与科研闭环进一步平台化：<a href="#legoflow">LegoFlow</a>让编码智能体自主编排数据、训练和评测流水线，<a href="#auto-research-arena">Auto-Research Arena</a>以统一环境和多目标指标检验自动研究发现能否真正改善预训练。</li>
+<li>长期记忆与上下文优化开始关注“访问状态”和真实系统成本：<a href="#amie">AMIE</a>通过轻量适应层持续演化记忆索引，<a href="#item-67">编码智能体上下文的物理成本</a>则揭示删减上下文可能因前缀缓存失效反而增加计算与能耗。</li>
+<li>新模型与快决策路线同步推进：<a href="#openai-gpt-6-1-terra">GPT-6.1 Terra</a>强化电脑操作与写作，<a href="#nus-jeva">Jeva</a>提出原生 System One 决策架构，但<a href="#jev-system-one">Jev 风格结构的选择偏差研究</a>提醒整体准确率稳定不等于对选项重排鲁棒。</li>
+<li>具身系统的重点由单模型能力转向控制层级选择：<a href="#ebench">EBench</a>显示直接控制适合短程任务，调用 VLA/WAM 策略可降低词元成本并提升成功率，但策略选择与控制权切换仍是核心瓶颈。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>Awesome-RSI</strong>：<a href="#infinity-machine">Infinity Machine</a>与<a href="#rrsi">RRSI</a>共同表明，RSI 清单应把隔离执行、留出集验证、评分器防利用和成本感知选择列为判断真实改进的核心维度。</li>
-<li><strong>HarnessEvolve</strong>：<a href="#rsihub">RSIHub</a>的声明式可变资源和统一执行评估接口，可直接借鉴为可组合、可公平复现的 harness 演化实验层。</li>
-<li><strong>AgentTrainEvolve</strong>：<a href="#ascent">ASCENT</a>与<a href="#llm-3">面向长程 LLM 智能体的多尺度策略优化</a>分别提供成功轨迹在线蒸馏和轮次—词元多尺度信用分配，可用于提升长程交互经验的参数化效率。</li>
-<li><strong>CodeEvolve</strong>：<a href="#legoflow">LegoFlow</a>可作为编码 Agent 自动构造任务、生成轨迹、训练并依据评测反馈迭代的端到端数据飞轮底座。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#auto-research-arena">Auto-Research Arena</a>和 Lean 形式化算法设计工作说明，自主科研评测应同时检查发现能否复用以及结论能否被机器验证，而不只评价最终报告。</li>
-<li><strong>JevEvolve</strong>：<a href="#jev-system-one">Jev 风格 System One 结构能否降低选择偏差？</a>提示 Jev 类模型必须将候选置换、答案缺席和证据不足识别纳入基础评测，避免用平均准确率掩盖决策脆弱性。</li>
-<li><strong>RobotEvolve</strong>：<a href="#ebench">EBench评测前沿智能体</a>与<a href="#optta">OpTTA</a>提示具身系统可联合学习“何时直接控制、何时调用专用策略”并在测试时针对当前规划目标适应世界模型。</li>
-<li><strong>Groom</strong>：<a href="#item-67">编码智能体上下文的物理成本</a>提供了可直接采用的质量门控资源核算方法，应把前缀缓存失效、预填充计算和能耗纳入过程级 token 利用评测。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#amie">AMIE</a>将记忆内容与访问状态解耦，提供了一条只演化检索权重、无需重写记忆或重训宿主系统的轻量持续适应路径。</li>
-<li><strong>DataEvolve</strong>：<a href="#autodata">AutoData</a>与<a href="#legoflow">LegoFlow</a>表明可把难度调节、提示优化和下游评测反馈统一进合成数据闭环，以持续对准模型能力边界。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#infinity-machine">Infinity Machine</a>、<a href="#rrsi">RRSI</a>与负向实证共同说明，RSI 清单应把留出集验证、任务泄漏筛查、成本预算和改动回滚列为核心评判维度。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#ascent">ASCENT</a>提供“成功轨迹验证后立即自蒸馏”的在线学习范式，而<a href="#grpo">GRPO 审计</a>表明训练闭环还应按低通过率优先分配强验证器预算。</li>
+<li><strong>GeneralizeEvolve</strong>：<a href="#outcome-rl">Outcome RL 的收益</a>提示应将“既有能力可靠化”与“能力边界拓展”分开测量，避免把 pass@1 提升误判为真实泛化。</li>
+<li><strong>CodeEvolve</strong>：<a href="#legoflow">LegoFlow</a>可作为代码数据飞轮的编排底座，但<a href="#item-59">脚手架演化实证</a>要求每次自动改动都配套持续验证、修订和淘汰机制。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#auto-research-arena">Auto-Research Arena</a>提供了以发现能否复用于改善预训练为标准的外部效度评测，可补足只看论文产出或单次实验分数的不足。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#amie">AMIE</a>表明无需重写记忆内容，也可通过独立演化访问状态实现持续个性化检索，适合作为现有记忆系统的低侵入适配层。</li>
+<li><strong>Groom</strong>：<a href="#item-67">编码智能体上下文的物理成本</a>说明过程级 token 评测应同时核算前缀缓存命中、重取、预填充计算与能耗，不能把上下文缩短直接等同于成本下降。</li>
+<li><strong>JevEvolve</strong>：<a href="#nus-jeva">Jeva</a>与其选择偏差反例共同提示，快决策模型除准确率、延迟外还必须加入候选置换不变性和答案缺席识别测试。</li>
+<li><strong>RobotEvolve</strong>：<a href="#ebench">EBench</a>表明具身 Agent 的演化对象应包含“直接控制还是调用专用策略”的路由器，以及不同控制层之间的可靠交接机制。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 67 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 51</a><a href="#daily-hot">🔥 热点 1</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 76 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 60</a><a href="#daily-hot">🔥 热点 1</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">15 条</span></h2>
-          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="openai-gpt-6-1-terra" class="summary-card daily-item">
-  <h2 id="openai-gpt-6-1-terra-title" class="daily-item-title">OpenAI 发布 GPT-6.1 Terra，强化电脑操作与写作能力</h2><p class="single-subtitle daily-item-summary">OpenAI 宣布推出 GPT-6.1 Terra，重点提升屏幕理解、跨应用电脑操作与自然写作能力，并以更低价格提供相较 GPT-6.1 Sol 两倍的可用量。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AIHOT 每日精选</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图形用户界面智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能应用</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://aihot.news/items/xmpu9lo3lbzld3tqsyrcy5e2v" target="_blank" rel="noopener">https://aihot.news/items/xmpu9lo3lbzld3tqsyrcy5e2v</a></div></div><div class="daily-item-content"><p>GPT-6.1 Terra 被定位为一款面向日常工作场景的高效模型，强调快速且可靠的电脑操作能力。它能够理解屏幕内容并跨应用执行操作，适合处理连续的桌面工作流。该模型还改进了自然写作、个性表达以及对用户细致请求的理解。官方称其价格更低，API 与订阅中的可用量为 GPT-6.1 Sol 的两倍。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>可用于跨应用桌面自动化、办公流程执行和自然语言写作等场景。</li>
-<li>屏幕理解与操作能力的结合，有助于构建更实用的图形用户界面智能体。</li>
-<li>更低价格和更高用量可降低规模化部署电脑操作智能体的成本。</li>
-<li>实际选型时仍需进一步评估其任务成功率、操作安全性及复杂工作流稳定性。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：OpenAI 发布 GPT-6.1 Terra，主打电脑操作与写作能力
-来源：AIHOT 每日精选（aihot.virxact.com）
-链接：https://aihot.news/items/xmpu9lo3lbzld3tqsyrcy5e2v
-摘要：（信源：x.com）作者宣布 GPT-6.1 Terra 回归，称这是其首个在写作、个性和细致理解请求上显著更好的模型。该模型擅长电脑操作，可理解屏幕内容并跨应用执行操作，在 API 和订阅中提供的用量是 6.1 Sol 的 2 倍，价格更低。</div>
-  </details></article>
-<article id="infinity-machine" class="summary-card daily-item">
+          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="infinity-machine" class="summary-card daily-item">
   <h2 id="infinity-machine-title" class="daily-item-title">Infinity Machine：面向科研的自改进智能体</h2><p class="single-subtitle daily-item-summary">Infinity Machine 通过可演化智能体脚手架、隔离沙箱与多重验证机制自主解决可程序化检验的科研问题，并在量子信息、量子电路和芯片设计任务上取得多项突破，但仍暴露出评分器利用、成本过高和人工干预依赖等问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体自进化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35579" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35579</a></div></div><div class="daily-item-content"><p>Infinity Machine 将提示、工具、技能、行动手册和元智能体组成的脚手架视为可编辑“基因组”，所有修改均须通过内核强制执行的留出集与成本检查。系统可从纯文本目标出发，自主选择开放问题、编写并校准验证器，再由对抗智能体审计，并让未接触验证器的智能体复核结果。它在六天内以约 180 美元的模型调用成本处理了 14 个问题，在量子信息、量子比特路由及 RTL-to-GDS 芯片优化中取得多项优于既有结果的成果。实验也显示其局限：提议智能体曾四次利用宽松评分器，自生成脚手架因成本过高被拒，部分关键成果依赖操作员调整，且一次评分方向错误未被发现。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>展示了将智能体脚手架作为可演化对象，并通过内核门控约束自我修改的系统设计路径。</li>
@@ -349,6 +332,18 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 链接：http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651070489&amp;idx=3&amp;sn=54e92cb2108bbc579873c8ccfaa114d3&amp;chksm=85c134e1e2415409bf80e48782d788f849a4467be328cd47f81ff42f9aeb0190e80614e6d7a4&amp;scene=0&amp;xtrack=1#rd
 摘要：</div>
   </details></article>
+<article id="legoflow" class="summary-card daily-item">
+  <h2 id="legoflow-title" class="daily-item-title">LegoFlow：智能体自动化代码数据构建与训练评测</h2><p class="single-subtitle daily-item-summary">LegoFlow 将代码任务构建、轨迹生成、模型训练和基准评测封装为可由编码智能体自主编排的插件化流水线，并利用评测反馈实现闭环迭代改进。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：闭环自进化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据工程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/LegoX/LegoFlow" target="_blank" rel="noopener">https://github.com/LegoX/LegoFlow</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://huggingface.co/datasets/Lego-X/LegoFlow-SWE" target="_blank" rel="noopener">https://huggingface.co/datasets/Lego-X/LegoFlow-SWE</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/ywXO5qryvJhFatdk8B5u4w" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/ywXO5qryvJhFatdk8B5u4w</a></div></div><div class="daily-item-content"><p>LegoFlow 以 Root、Curator、Tracer、Trainer 和 Evaluator 等模块组织代码数据工程，使编码智能体能够自动完成仓库发现、任务验证、轨迹生成、微调与评测。团队从约 1,200 万个候选 PR 中筛选出 5,000 个可验证任务，并发布包含 2,780 条成功轨迹的 LegoFlow-SWE 数据集。使用约 1,000 条轨迹微调 Qwen3.5-35B-A3B-Base 后，模型在 SWE-bench Verified、Pro 和 Multilingual 上分别达到 70.2%、48.8% 和 57.0%。在端到端闭环实验中，智能体根据首次评测反馈过滤浅层推理并标准化工具调用，使模型在两轮迭代后从 7.6% 提升至 64.4%。实验还表明任务可验证性、轨迹推理深度与防止答案泄漏，比单纯扩大数据量或提高思维链触发率更重要。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为代码模型提供可复现的自动化数据策展、轨迹生产、训练和评测基础设施。</li>
+<li>展示如何利用执行验证与评测反馈形成代码智能体的闭环自我改进流程。</li>
+<li>提示训练数据筛选应优先关注任务难度、可验证性和推理深度，而非数据规模或思维链覆盖率。</li>
+<li>为 SWE 基准训练和评测提供隔离运行、防作弊提示及网络访问限制等可靠性实践。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">CodeEvolve｜LegoFlow：让智能体自主跑完代码数据构建&#43;训练测评全流程https://mp.weixin.qq.com/s/ywXO5qryvJhFatdk8B5u4w</div>
+  </details></article>
 <article id="rrsi" class="summary-card daily-item">
   <h2 id="rrsi-title" class="daily-item-title">RRSI：正则化智能体脚手架的递归自我改进</h2><p class="single-subtitle daily-item-summary">RRSI通过约束脚手架修改范围、筛查任务泄漏并引入成本感知选择机制，缓解递归自我改进对训练任务的过拟合，提升智能体在留出集和分布外基准上的泛化表现。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众号</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E4%BD%9C%E5%BC%8A/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;奖励作弊</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/google-research/rrsi" target="_blank" rel="noopener">https://github.com/google-research/rrsi</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/AAT8h05clUGInASVzMz4Mw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/AAT8h05clUGInASVzMz4Mw</a></div></div><div class="daily-item-content"><p>RRSI关注智能体脚手架在提示词、控制流、工具接口、记忆及上下文管理等层面递归自我改进时产生的基准过拟合问题。其“如何改”机制限制每轮可修改的模块数量、记录改动及收益证据，并在性能停滞时探索尚未使用的组件。“如何选”机制加入任务信息泄漏筛查、噪声容忍下限、Token成本感知接受规则和无效组件结构化剪枝。实验覆盖编程、智能体工作空间和工程设计三个领域的8个基准，训练集成绩提升6.0分，5个OOD基准最多提升4.3分，同时Token消耗减少30%。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -360,18 +355,6 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/AAT8h05clUGInASVzMz4Mw</div>
-  </details></article>
-<article id="rsihub" class="summary-card daily-item">
-  <h2 id="rsihub-title" class="daily-item-title">RSIHub：可组合的智能体演化方法框架</h2><p class="single-subtitle daily-item-summary">RSIHub以可复用算子、声明式可变资源和统一执行评估基础设施，支持智能体演化方法的构建、公平比较与扩展。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自进化框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能框架</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.32253" target="_blank" rel="noopener">https://arxiv.org/abs/2610.32253</a></div></div><div class="daily-item-content"><p>RSIHub将提示、技能、工具及编排策略的演化表示为由可复用算子组成的 recipe，并显式声明可变资源。框架统一提供执行、评估、故障恢复和谱系追踪，同时将评估环节隔离在可变范围之外，以增强比较的公平性与可审计性。作者无需修改框架核心便复现了 AHE、Hyperagents、A-Evolve 和 GEPA，并在 Terminal Bench 2 与 τ³ Banking 上使用 MiniSWE 和 Codex 进行评测。实验中最高整体 pass@1 提升达 13.5 个百分点，但方法排名随配置变化，优化收益也未必能迁移至留出任务。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为不同智能体演化策略提供统一、可复现的实验协议，减少重复搭建执行与评估基础设施的成本。</li>
-<li>通过候选谱系和评估条件绑定，支持演化过程审计、故障恢复及结果追溯。</li>
-<li>结果表明智能体演化策略具有明显的环境与配置依赖性，应重视留出任务评测和跨设置泛化。</li>
-<li>可利用可组合 recipe 与算子快速开发和横向比较新的提示、技能、工具及编排演化方法。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[RSIHub：一种可组合的智能体演化方法框架（34 ▲）](https://huggingface.co/papers/2610.32253?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-26)</div>
   </details></article>
 <article id="ascent" class="summary-card daily-item">
   <h2 id="ascent-title" class="daily-item-title">ASCENT：智能体将成功经验自蒸馏进权重，实现在线持续学习</h2><p class="single-subtitle daily-item-summary">ASCENT让智能体在每个任务仅执行一次的在线场景中，将通过验证的成功轨迹经冻结自身教师自蒸馏至LoRA快权重，在多个长程基准上显著提升成功率并减少交互轮数。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：测试时训练</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.05303" target="_blank" rel="noopener">https://arxiv.org/abs/2610.05303</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/vED30WX1r2evq8rQNlZErQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/vED30WX1r2evq8rQNlZErQ</a></div></div><div class="daily-item-content"><p>ASCENT提出在线智能体测试时训练（OaTTT）方案，仅对通过任务验证的单次执行轨迹进行权重更新，无需参考答案、更强教师或逐轮奖励。冻结的初始模型读取包含完整成功轨迹的hindsight特权信息，为学生模型提供逐词元软目标，再通过KL散度将经验蒸馏到LoRA快权重中。动作有效性过滤会从教师输入中移除环境未执行的无效动作，而学生仍在相应位置接受训练，从而抑制无效行为和策略漂移。在ALFWorld与WebShop上，基于Qwen3.5-4B/9B的成功率均较基座提高22个百分点以上，并在大量任务中减少交互轮数；其能力还能迁移至未见环境。消融实验显示，成功轨迹中的推理过程比单独动作更关键，冻结教师与完整轨迹hindsight则是维持在线学习稳定性的核心。</p>
@@ -385,31 +368,27 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">AgentTrainEvolve｜AI终身学习新解法：成功经验自蒸馏进权重，交互轮数直接减半https://mp.weixin.qq.com/s/vED30WX1r2evq8rQNlZErQ</div>
   </details></article>
-<article id="legoflow" class="summary-card daily-item">
-  <h2 id="legoflow-title" class="daily-item-title">LegoFlow：智能体自动化代码数据构建与训练评测</h2><p class="single-subtitle daily-item-summary">LegoFlow 将代码任务构建、轨迹生成、模型训练和基准评测封装为可由编码智能体自主编排的插件化流水线，并利用评测反馈实现闭环迭代改进。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：闭环自进化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据工程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/LegoX/LegoFlow" target="_blank" rel="noopener">https://github.com/LegoX/LegoFlow</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://huggingface.co/datasets/Lego-X/LegoFlow-SWE" target="_blank" rel="noopener">https://huggingface.co/datasets/Lego-X/LegoFlow-SWE</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/ywXO5qryvJhFatdk8B5u4w" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/ywXO5qryvJhFatdk8B5u4w</a></div></div><div class="daily-item-content"><p>LegoFlow 以 Root、Curator、Tracer、Trainer 和 Evaluator 等模块组织代码数据工程，使编码智能体能够自动完成仓库发现、任务验证、轨迹生成、微调与评测。团队从约 1,200 万个候选 PR 中筛选出 5,000 个可验证任务，并发布包含 2,780 条成功轨迹的 LegoFlow-SWE 数据集。使用约 1,000 条轨迹微调 Qwen3.5-35B-A3B-Base 后，模型在 SWE-bench Verified、Pro 和 Multilingual 上分别达到 70.2%、48.8% 和 57.0%。在端到端闭环实验中，智能体根据首次评测反馈过滤浅层推理并标准化工具调用，使模型在两轮迭代后从 7.6% 提升至 64.4%。实验还表明任务可验证性、轨迹推理深度与防止答案泄漏，比单纯扩大数据量或提高思维链触发率更重要。</p>
+<article id="openai-gpt-6-1-terra" class="summary-card daily-item">
+  <h2 id="openai-gpt-6-1-terra-title" class="daily-item-title">OpenAI 发布 GPT-6.1 Terra，强化电脑操作与写作能力</h2><p class="single-subtitle daily-item-summary">OpenAI 发布高性价比中端模型 GPT-6.1 Terra，强化屏幕理解、视觉推理、跨应用电脑操作与自然写作能力，并向 ChatGPT 用户和 API 开发者开放。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AIHOT 每日精选</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图形用户界面智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能应用</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://aihot.news/items/xmpu9lo3lbzld3tqsyrcy5e2v" target="_blank" rel="noopener">https://aihot.news/items/xmpu9lo3lbzld3tqsyrcy5e2v</a></div></div><div class="daily-item-content"><p>GPT-6.1 Terra 定位面向日常工作场景的快速高效模型，可理解屏幕内容并跨应用执行连续操作，覆盖方案起草、技术图纸阅读、表单填写和视频剪辑等任务。模型同时改进了自然写作、个性表达、事实准确性、Token 效率以及对细致指令的理解，并增强提示注入抵抗能力。报道援引官方数据称，其在 OSWorld 2.1、Agents&rsquo; Last Exam、MMMU-Pro 和 Terminal-Bench 4.0 等基准上明显超过 GPT-5.6 Terra，并以较低成本接近部分旗舰模型；其网络安全评估被标为 Critical 级别。官方称其价格更低，API 与订阅中的可用量为 GPT-6.1 Sol 的两倍；目前已接入 ChatGPT Work 与 Codex，并可通过 <code>gpt-6.1-terra</code> API 调用。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为代码模型提供可复现的自动化数据策展、轨迹生产、训练和评测基础设施。</li>
-<li>展示如何利用执行验证与评测反馈形成代码智能体的闭环自我改进流程。</li>
-<li>提示训练数据筛选应优先关注任务难度、可验证性和推理深度，而非数据规模或思维链覆盖率。</li>
-<li>为 SWE 基准训练和评测提供隔离运行、防作弊提示及网络访问限制等可靠性实践。</li>
+<li>可用于跨应用桌面自动化、技术文档与图纸理解、表单处理、视频编辑、仓库级编程及自然语言写作。</li>
+<li>屏幕理解、视觉推理与操作能力的结合，有助于构建可执行连续办公流程的图形用户界面智能体。</li>
+<li>更低价格、更高可用量及较好的 Token 效率，可降低规模化部署电脑操作智能体的成本。</li>
+<li>提示注入防护和任务边界控制能力对自主操作电脑的智能体具有安全参考价值，但仍需评估操作权限与网络安全风险。</li>
+<li>性能、成本及安全数据主要来自厂商口径和媒体转述，实际选型前仍需独立验证任务成功率与复杂工作流稳定性。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">CodeEvolve｜LegoFlow：让智能体自主跑完代码数据构建&#43;训练测评全流程https://mp.weixin.qq.com/s/ywXO5qryvJhFatdk8B5u4w</div>
-  </details></article>
-<article id="llm-3" class="summary-card daily-item">
-  <h2 id="llm-3-title" class="daily-item-title">面向长程 LLM 智能体的多尺度策略优化</h2><p class="single-subtitle daily-item-summary">多尺度策略优化（MPO）以智能体交互轮次为优化锚点，并在轮次内部细化词元级信用分配，在搜索、工具使用和自动化长程任务上持续优于强强化学习基线。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：信用分配</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;策略优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35013" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35013</a></div></div><div class="daily-item-content"><p>作者观察到，长程 LLM 智能体的评论器价值主要在不同交互轮次之间变化，而每个动作仍以词元为单位生成。MPO 将多尺度优势估计（MAE）与轮次级重要性采样结合，使信用分配和策略更新更符合轮次尺度。该方法以轮次为优化锚点，同时保留轮次内部更细粒度的词元信用分配。实验覆盖搜索、工具使用和自动化任务，并在 4B 与 30B-A3B 模型上稳定超过强强化学习基线。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为长程智能体训练提供兼顾轮次级决策结构与词元级生成细节的信用分配方案。</li>
-<li>表明策略更新尺度应与环境交互的自然动作边界对齐，而不应仅依赖统一的词元级优化。</li>
-<li>可用于改进搜索、工具调用和自动化任务中的训练稳定性与策略性能。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Multiscale Policy Optimization for Long-Horizon LLM Agents
-来源：arXiv
-链接：https://arxiv.org/abs/2610.35013
-摘要：Long-horizon LLM agents interact with their environments through complete assistant turns while generating each action token by token. We observe that critic values vary primarily across turns, motivating optimization anchored at turns with finer credit allocation among tokens. We propose Multiscale Policy Optimization (MPO), combining Multiscale Advantage Estimation (MAE) and turn-level importance sampling to align credit assignment and policy updates at the turn scale. Extensive experiments across search, tool-use, and automation tasks with 4B and 30B-A3B models demonstrate consistent gains over strong RL baselines.</div>
+    <div class="daily-item-notes-body">标题：OpenAI 发布 GPT-6.1 Terra，主打电脑操作与写作能力
+来源：AIHOT 每日精选（aihot.virxact.com）
+链接：https://aihot.news/items/xmpu9lo3lbzld3tqsyrcy5e2v
+摘要：（信源：x.com）作者宣布 GPT-6.1 Terra 回归，称这是其首个在写作、个性和细致理解请求上显著更好的模型。该模型擅长电脑操作，可理解屏幕内容并跨应用执行操作，在 API 和订阅中提供的用量是 6.1 Sol 的 2 倍，价格更低。
+
+[合并自 2026-10-27 openai-gpt-6-1-terra-2]
+标题：OpenAI 发 GPT-6.1 Terra：会自己操作电脑，性价比甩开旗舰
+来源：AIbase 快讯（aibase.com）
+链接：https://www.aibase.com/zh/news/31880
+摘要：OpenAI发布中端定位新模型GPT-6.1 Terra，主打快速高效，融合精细视觉推理、精准电脑操作与自然写作，面向起草方案、读技术图纸、填表单、剪视频等办公场景。官方称较GPT-5.6 Terra明显跃升。该模型已向ChatGPT Plus、Pro、Enterprise、Edu用户开放，嵌入ChatGPT Work与Codex，开发者可通过API gpt-6.1-terra调用。</div>
   </details></article>
 <article id="auto-research-arena" class="summary-card daily-item">
   <h2 id="auto-research-arena-title" class="daily-item-title">Auto-Research Arena：语言模型自动研究多目标评测基准</h2><p class="single-subtitle daily-item-summary">Auto-Research Arena 通过统一实验环境和九类优化目标评测自主研究系统，并证明其发现可复用于改善语言模型预训练质量与效率。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：科研评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E5%9F%BA%E5%87%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学研究基准</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E7%A0%94%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科研智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35866" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35866</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/Auto-Research-Arena/auto-research-arena" target="_blank" rel="noopener">https://github.com/Auto-Research-Arena/auto-research-arena</a></div></div><div class="daily-item-content"><p>Auto-Research Arena 是面向语言模型自主研究系统的多目标评测基准，将结果的准入条件与目标改进幅度分开衡量。基准在语言模型预训练场景中设置九个目标，覆盖模型、数据、训练和推理效率，并使用两个基础模型评估七种研究脚手架。实验显示，该基准能够区分不同系统在各类研究目标上的能力，而简单的顺序搜索基线甚至超过若干复杂方法，表明现有自动研究系统仍有较大提升空间。将 Arena 发现的思路用于新的质量导向搜索后，可在数据量和 FLOPs 相同的条件下降低训练损失，并在相同模型规模下降低留出集 BPB。</p>
@@ -426,20 +405,84 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 链接：https://arxiv.org/abs/2610.35866
 摘要：As autonomous research systems become more capable, benchmarks must both evaluate their performance and support meaningful research progress. We introduce Auto-Research Arena, a multi-target benchmark for evaluating autonomous research systems and discovering ideas in language modeling. Arena supports diverse research objectives within a shared experimental environment by separating admissibility from improvement: model quality and resource constraints determine whether a result qualifies, while the selected target measures progress among admissible results. We instantiate Arena in language model pretraining with nine targets spanning model, data, training, and inference efficiency, and evaluate seven research harnesses using two foundation models. Arena clearly differentiates existing har</div>
   </details></article>
-<article id="lean" class="summary-card daily-item">
-  <h2 id="lean-title" class="daily-item-title">智能体算法设计：在 Lean 中提出、形式化并证明进化算法运行时界</h2><p class="single-subtitle daily-item-summary">该工作构建分阶段智能体流水线，自动设计黑箱优化算法，并在 Lean 中以机器检查的漂移分析证明其预期运行时改进。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：形式化证明</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;形式化验证</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动定理证明</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%AE%97%E6%B3%95%E5%88%9B%E6%96%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;算法创新</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%9B%E5%8C%96%E6%90%9C%E7%B4%A2/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;进化搜索</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35595" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35595</a></div></div><div class="daily-item-content"><p>研究提出一套遵循进化算法设计与分析方法论的分阶段流水线，由智能体提出黑箱优化算法，并通过 Lean 守卫过滤有缺陷的设计。智能体随后定义势函数、证明漂移界，从而给出机器可检查的预期运行时保证，全程不依赖经验性能比较。在 CycleUncover 问题上，系统发现了预期运行时为 O(n²) 的算法，而经典 (1+1) EA 需要 e^{Ω(n)}；它还为整数值次模最小化和 LeadingOnes 设计并验证了高效算法。在 8 类问题的 15 次前沿模型运行中，有 12 次完成了整个流水线；消融实验表明，移除分阶段结构后，零样本设计往往退化为基线算法或产生不完整证明。</p>
+<article id="item-59" class="summary-card daily-item">
+  <h2 id="item-59-title" class="daily-item-title">编程智能体脚手架如何自我演化：回顾式适应实证研究</h2><p class="single-subtitle daily-item-summary">研究通过 Claude Code 与 SWE-bench Verified 实证检验回顾式脚手架适应，发现自动生成并实施的改动并不稳定有效，需配套持续验证、修订和移除机制。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.34938" target="_blank" rel="noopener">https://arxiv.org/abs/2610.34938</a></div></div><div class="daily-item-content"><p>研究考察 <code>retro</code> 技能如何让编程智能体复盘已完成会话，并提出针对软件、配置和指令等脚手架组件的改动。作者在 30 个 SWE-bench Verified 问题上运行 Claude Code，对 125 项改动建议进行定性编码，实施其中 24 项，并在后续同仓库任务中对 12 项改动开展有无干预的全新会话对照实验。在未应用改动时确实出现目标问题的 7 次评估中，仅有 2 项改动消除了目标行为、1 项降低了出现频率，其余 4 项没有改善，部分改动还引入了无关工作。结果表明，脚手架自演化不能止于生成和实施变更，还必须评估其跨任务收益，并持续修订或删除无效变更。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>展示 LLM 智能体可将算法提出、数学形式化与复杂度证明整合为端到端的自动发现流程。</li>
-<li>说明 Lean 的机器检查规范可以充当算法搜索的可靠筛选器，减少对经验评测和人工审查的依赖。</li>
-<li>分阶段脚手架是获得新颖算法及完整运行时证明的关键，可为自动化科学研究与可验证程序合成提供设计范式。</li>
-<li>为进化算法、黑箱优化及其他可形式化领域中的开放式算法发现提供可扩展路径。</li>
+<li>为编程智能体的经验驱动脚手架演化提供实证依据，揭示“复盘后修改”不等同于性能提升。</li>
+<li>脚手架变更应通过后续同类任务的对照实验验证，避免仅依据单次会话事件固化规则。</li>
+<li>自演化系统需要建立变更归因、效果监测、回滚与淘汰机制，以控制无效规则和额外工作。</li>
+<li>可据此设计闭环流程：会话复盘、候选变更、受控部署、跨任务评估、保留或撤销。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Agentic Algorithm Design: LLMs that Propose, Formalise, and Prove Runtime Bounds for Evolutionary Algorithms in Lean
+    <div class="daily-item-notes-body">标题：How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation
 来源：arXiv
-链接：https://arxiv.org/abs/2610.35595
-摘要：LLMs now prove hard theorems in Lean. Can they also design algorithms and prove their correctness and efficiency? LLM-guided design of optimisation heuristics (such as AlphaEvolve) is purely empirical. Automated theorem provers with LLMs prove given statements. So far, there has been little evidence that LLMs can do both: design an algorithm and guarantee its efficiency by a mathematical proof. We present a staged pipeline modelled after research methodology in design and analysis of evolutionary algorithms. The agent proposes black-box optimisation algorithms, and Lean guards filter out flawed designs. The agent then defines a potential function and proves drift bounds that guarantee an expected runtime improvement over the baseline algorithm. At no point in the pipeline are the algorithm</div>
+链接：https://arxiv.org/abs/2610.34938
+摘要：Coding agents can adapt their harnesses, the software, configuration, and instructions used to run them, based on experience from earlier tasks, but whether these adaptations improve their behavior on later tasks remains unclear. We study \retro, a skill that asks an agent to review a completed session and propose harness changes, and ask what changes it proposes and whether implemented changes reduce repeated work on later tasks. We ran Claude Code on 30 SWE-bench Verified issues, qualitatively coded the 125 proposals from \retro, implemented 24, and evaluated 12 harness changes on later issues from the same repositories in fresh sessions with and without each change. Most proposals referred to an event in the session, but 18 of 43 lint-related proposals recommended a practice regardless </div>
+  </details></article>
+<article id="outcome-rl" class="summary-card daily-item">
+  <h2 id="outcome-rl-title" class="daily-item-title">Outcome RL 的收益：提升完成率与可靠性，鲜少拓展能力边界</h2><p class="single-subtitle daily-item-summary">对20个推理强化学习模型的评估表明，Outcome RL 的 pass@1 增益主要来自预算内完成作答和提高既有能力的可靠性，而非获得基础模型不具备的新解题能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：强化学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E9%A2%84%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理预算</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.34894" target="_blank" rel="noopener">https://arxiv.org/abs/2610.34894</a></div></div><div class="daily-item-content"><ul>
+<li>研究在固定词元预算下，对比20个已发布的1.5B至32B强化学习模型及其基础推理模型，并将 pass@1 变化分解为完成率、可靠性和能力触达三个部分。</li>
+<li>当基础模型经常因达到词元上限而未能作答时，4k和8k预算下82%的性能变化可由完成率解释；增加预算后，基础模型能自行弥合大部分差距。</li>
+<li>当预算充足时，强化学习增益主要表现为可靠性提升，即双方都完成作答时，强化学习模型更容易得到正确答案。</li>
+<li>强化学习对能力边界的拓展很有限：四个物理与数学数据集上的能力触达增益至多为2.1个百分点，且仅有3.5%的独占正确物理题能经重采样或人工检查保持成立。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>评估推理强化学习时，应将预算内完成作答、已掌握能力的稳定调用和真正的新能力获取分别度量。</li>
+<li>pass@1 提升不能直接视为知识或推理边界扩展，需要结合大样本 pass@k、重采样与人工审查验证。</li>
+<li>增加词元预算可能复现部分强化学习收益，因此比较训练方案时应严格控制推理预算。</li>
+<li>Outcome RL 更适合被理解为行为与可靠性优化手段，而非稳定注入新知识的机制。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：What Outcome RL Buys: Finishing, Reliability, Rarely Reach
+来源：arXiv
+链接：https://arxiv.org/abs/2610.34894
+摘要：Outcome RL raises pass@1 but not pass@k at large k (Yue et al., 2025). But every pass@1 is scored under a token budget. Every recipe also trains under one. On physics and math problems at fixed token budgets, we compare the pass@1 of 20 released RL models (1.5B to 32B) with that of the thinking models they started from. We ask whether each pass@1 gain is changed behaviour or new knowledge. We divide each change in pass@1 into three parts. Finishing measures answering before the budget runs out. Reliability measures being right once finished. Reach measures problems RL solves that its base answered wrongly in all eight tries, minus problems the base solves that RL answered wrongly in all eight. We find four things. (1) Where the base often hits the token budget before answering, most of the</div>
+  </details></article>
+<article id="grpo" class="summary-card daily-item">
+  <h2 id="grpo-title" class="daily-item-title">有限强验证器预算下审计 GRPO 奖励作弊</h2><p class="single-subtitle daily-item-summary">研究提出低通过率优先的预算审计策略，以有限强验证器调用显著抑制 GRPO 训练中的奖励作弊，并揭示更新估计的随机性会影响最终性能。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E4%BD%9C%E5%BC%8A/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;奖励作弊</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全审计</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程验证</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E9%A2%84%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;评估预算</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35716" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35716</a></div></div><div class="daily-item-content"><p>论文研究在强验证器成本过高时，如何分配有限审计预算来纠正 GRPO 对弱验证器的奖励作弊。理论分析表明，固定策略状态下的期望更新取决于各轨迹的边际审计概率与奖励修正，并提出优先审计弱验证通过数最少组的低通过率预算审计（LB）。在 LeetCode 和 Countdown-Code 实验中，LB 将作弊率降至接近零，优于采用相同预算与惩罚的随机审计。与无偏的 IPW 和组级优势修正相比，LB 在同等预算下取得更高的留出集准确率；其标签用量仅为全面审计的 28%，同时保持接近的效果。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为昂贵强验证器提供高效的预算分配方案，降低强化学习训练中的奖励作弊风险。</li>
+<li>表明审计策略不应只比较期望更新，还需考虑梯度或优势估计随机性对训练结果的影响。</li>
+<li>可用于代码生成等具有廉价弱测试与昂贵强验证机制的 RLVR 训练流程。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Audit Where Hacks Pay: Budgeted Strong-Verifier Audits Against Reward Hacking in GRPO
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35716
+摘要：Reinforcement learning with verifiable rewards trains on cheap checks, such as unit tests, that a policy can learn to game, while a stronger check is too expensive to run on every rollout. We study how to spend a limited strong-verifier budget in GRPO, separating which weakly passing rollouts to audit from what reward a caught hack receives. At a fixed policy state with centered advantages, the expected update depends on a design only through each rollout&#39;s marginal audit probability and correction; reflecting a caught hack&#39;s reward about the failure reward negates the advantages of an all-hack group; and auditing whole groups with the fewest weak passes first (low-pass budgeted audits, LB) minimizes the advantage mass left on hacks among pass-count designs with a fixed correction when a l</div>
+  </details></article>
+<article id="ebench" class="summary-card daily-item">
+  <h2 id="ebench-title" class="daily-item-title">EBench评测前沿智能体：从直接控制到策略调用</h2><p class="single-subtitle daily-item-summary">EBench评测显示，GPT-6-Astra直接控制机器人时擅长短程任务，而调用VLA或WAM策略可提升整体成功率并显著降低词元成本，但策略选择与控制权切换仍是主要瓶颈。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身智能评估</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35832" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35832</a></div></div><div class="daily-item-content"><p>该报告在EBench上评测GPT-6-Astra，使其基于视觉与本体感知观测，通过智能体执行框架控制机器人。直接控制模式由智能体生成航点命令，整体表现可与后训练策略竞争，在短程任务和跨泛化维度稳定性方面更具优势，但在长程、桌面操作及高精度接触任务中落后。策略调用模式允许智能体调用后训练VLA或WAM执行动作，将任务成功率提升至最强对比策略的水平，同时显著减少词元成本。当前系统仍受制于次优的策略调用、缺乏子目标的固定指令执行，以及智能体恢复控制时对抓取状态的破坏。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为统一比较前沿多模态智能体、VLA与WAM的机器人操作能力提供评测范式。</li>
+<li>表明通用智能体与专用动作策略具有互补性，可通过执行框架组合以兼顾成功率和推理成本。</li>
+<li>后续应重点优化策略路由、子目标生成、控制权交接和抓取状态保持机制。</li>
+<li>可用于识别通用多模态智能体在长程规划及高精度接触操作中的能力边界。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35832
+摘要：Frontier multimodal large language models (MLLMs) can control robots without robot-specific training, but how their capabilities compare and interact with post-trained vision-language-action (VLA) and world action model (WAM) policies across manipulation demands remains to be thoroughly evaluated. In this report, we evaluate GPT-6-Astra on EBench as the core of an agent that controls a robot through an agent harness under the same visual and proprioceptive observation protocol as post-trained policies. We study two agent configurations: direct control, in which the agent generates waypoint commands directly, and harness with policy, in which it can also invoke a post-trained VLA or WAM policy for action execution. Under direct control, the agent achieves competitive overall performance rel</div>
+  </details></article>
+<article id="amie" class="summary-card daily-item">
+  <h2 id="amie-title" class="daily-item-title">AMIE：智能体自适应记忆索引演化</h2><p class="single-subtitle daily-item-summary">AMIE 将持久化记忆访问更新独立为轻量适应层，通过演化单条记忆的访问状态持续重加权检索结果，无需修改记忆内容或重训宿主系统。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：长期记忆</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.34977" target="_blank" rel="noopener">https://arxiv.org/abs/2610.34977</a></div></div><div class="daily-item-content"><p>AMIE 提出“记忆索引演化”，将记忆内容与访问机制的持续适应解耦，并以轻量插件形式接入检索式智能体记忆系统。它把语义教师对记忆保留或抑制的判断蒸馏为检索条件策略，再将选择动作累积为有界状态，用于重加权后续检索。实验覆盖五种检索宿主与三个基准，训练后的 AMIE 在全部 15 项下游比较中将 F1 或准确率提高 0.70～3.37 个百分点，并在全部 10 项检索比较中取得提升。研究还发现，仅累计检索频率的零调用策略在若干设置中可媲美或超过语义策略，但持续抑制高频且仍有用的记忆会形成互补失效模式。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>将记忆访问状态作为独立于记忆内容的持续适应层，为现有智能体记忆系统提供低成本升级路径。</li>
+<li>利用部署期间的检索流量更新索引，无需改写存储内容或重新训练宿主记忆系统。</li>
+<li>提示系统设计者同时控制竞争记忆抑制与有用高频记忆保留，避免持久状态累积造成检索退化。</li>
+<li>检索频率本身可作为强访问适应信号，为低调用成本的长期记忆优化提供基线。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Adaptive Memory Index Evolution for Agents
+来源：arXiv
+链接：https://arxiv.org/abs/2610.34977
+摘要：Long-horizon agents continually accumulate experience, yet retaining a memory does not guarantee access when it is needed. Existing systems can adapt both memory content and access; we isolate persistent access updates as a separately controlled adaptation layer. We formulate this target as Memory Index Evolution and instantiate it with Adaptive Memory Index Evolution (AMIE), a lightweight plug-in layer that evolves per-memory access state from deployment retrievals without modifying stored content or retraining the host memory system. AMIE distils a semantic teacher&#39;s keep/suppress judgments into a retrieval-conditioned policy and accumulates its selective actions into bounded state that reweights subsequent host retrievals. Surprisingly, even a zero-call policy that simply accumulates re</div>
   </details></article>
 <article id="nus-jeva" class="summary-card daily-item">
   <h2 id="nus-jeva-title" class="daily-item-title">NUS推出原生决策架构Jeva</h2><p class="single-subtitle daily-item-summary">新加坡国立大学xML Lab提出原生System One架构Jeva，将答案缺席识别、置换不变性、大规模候选扩展和选项缓存统一纳入决策模型设计。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E5%80%99%E9%80%89%E9%80%89%E6%8B%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;候选选择</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.18773" target="_blank" rel="noopener">https://arxiv.org/abs/2610.18773</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/LiQiiiii/Jeva" target="_blank" rel="noopener">https://github.com/LiQiiiii/Jeva</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652737969&amp;idx=3&amp;sn=57bdfd605221dbcb2ddfbfade189ade6&amp;chksm=f0d447ae194e99c097a5fa7b84e89975cc9c4b6bf23f2cd424d609d586f517751d99e6e3be54&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652737969&amp;idx=3&amp;sn=57bdfd605221dbcb2ddfbfade189ade6&amp;chksm=f0d447ae194e99c097a5fa7b84e89975cc9c4b6bf23f2cd424d609d586f517751d99e6e3be54&amp;scene=0&amp;xtrack=1#rd</a></div></div><div class="daily-item-content"><p>Jeva面向直接输出选择、概率或分数的System One决策任务，将请求与候选分别编码，再由轻量决策模块基于完整候选集合更新请求状态。架构显式分离候选相对偏好与“是否存在合适答案”的覆盖概率，从而支持null输出，并通过对称聚合保证候选重排不改变判断。Jeva对每个候选使用共享评分规则，可在单次决策中处理最多2,048个候选，并利用可复用的候选表征降低重复编码成本。实验中，Jeva-4B在BANKING77答案缺席检测上取得98.66% AUROC，在排列测试中未出现决策翻转；MLDR长文档候选全部命中缓存时，延迟由约2.10秒降至75.1毫秒。</p>
@@ -471,41 +514,6 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 链接：https://arxiv.org/abs/2610.35826
 摘要：Selection bias in large language models (LLMs) can persist despite instructions to ignore presentation order or prompts that elicit reasoning. Recent efforts to reproduce Jev-style System One behavior have produced a growing family of models that predict probabilities directly over supplied candidates. Yet systematic comparisons of selection bias across Jev versions, Jev reproductions, and generative LLMs remain limited in multi-option tasks. This leaves a central question: does Jev-style decision structure reduce selection bias? We address this question with a simple test that shuffles options while keeping question and candidate content fixed. Across two Jev versions, twelve Jev reproductions, and six generative LLMs, we trace individual answers through eight presentations and compare th</div>
   </details></article>
-<article id="ebench" class="summary-card daily-item">
-  <h2 id="ebench-title" class="daily-item-title">EBench评测前沿智能体：从直接控制到策略调用</h2><p class="single-subtitle daily-item-summary">EBench评测显示，GPT-6-Astra直接控制机器人时擅长短程任务，而调用VLA或WAM策略可提升整体成功率并显著降低词元成本，但策略选择与控制权切换仍是主要瓶颈。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身智能评估</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35832" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35832</a></div></div><div class="daily-item-content"><p>该报告在EBench上评测GPT-6-Astra，使其基于视觉与本体感知观测，通过智能体执行框架控制机器人。直接控制模式由智能体生成航点命令，整体表现可与后训练策略竞争，在短程任务和跨泛化维度稳定性方面更具优势，但在长程、桌面操作及高精度接触任务中落后。策略调用模式允许智能体调用后训练VLA或WAM执行动作，将任务成功率提升至最强对比策略的水平，同时显著减少词元成本。当前系统仍受制于次优的策略调用、缺乏子目标的固定指令执行，以及智能体恢复控制时对抓取状态的破坏。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为统一比较前沿多模态智能体、VLA与WAM的机器人操作能力提供评测范式。</li>
-<li>表明通用智能体与专用动作策略具有互补性，可通过执行框架组合以兼顾成功率和推理成本。</li>
-<li>后续应重点优化策略路由、子目标生成、控制权交接和抓取状态保持机制。</li>
-<li>可用于识别通用多模态智能体在长程规划及高精度接触操作中的能力边界。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy
-来源：arXiv
-链接：https://arxiv.org/abs/2610.35832
-摘要：Frontier multimodal large language models (MLLMs) can control robots without robot-specific training, but how their capabilities compare and interact with post-trained vision-language-action (VLA) and world action model (WAM) policies across manipulation demands remains to be thoroughly evaluated. In this report, we evaluate GPT-6-Astra on EBench as the core of an agent that controls a robot through an agent harness under the same visual and proprioceptive observation protocol as post-trained policies. We study two agent configurations: direct control, in which the agent generates waypoint commands directly, and harness with policy, in which it can also invoke a post-trained VLA or WAM policy for action execution. Under direct control, the agent achieves competitive overall performance rel</div>
-  </details></article>
-<article id="optta" class="summary-card daily-item">
-  <h2 id="optta-title" class="daily-item-title">OpTTA：面向规划的乐观测试时世界模型适应</h2><p class="single-subtitle daily-item-summary">OpTTA在测试时联合优化转移预测损失与候选轨迹的目标到达成本，通过任务感知的乐观偏置提升分布偏移下的世界模型规划成功率。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：测试时优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35636" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35636</a></div></div><div class="daily-item-content"><ul>
-<li>冻结的潜在世界模型在视觉或环境分布发生偏移时，预测能力与规划成功率都可能下降，而仅降低已执行动作上的预测误差并不保证找到通向目标的动作。</li>
-<li>OpTTA借鉴自适应控制中的奖励偏置最大似然，在测试时同时最小化观测转移的预测损失和规划器候选轨迹的目标到达成本。</li>
-<li>规划项使世界模型对成功到达目标保持乐观偏置，无需增加与环境的交互即可将适应过程导向任务相关区域。</li>
-<li>在操作、目标到达和导航任务的多种分布偏移下，OpTTA相对冻结模型平均提升13.5个百分点的最终规划成功率，优于仅预测适应方法AdaJEPA的6.9或7.5个百分点增益。</li>
-</ul>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>表明世界模型的测试时适应目标应直接服务于下游规划，而不能仅以预测误差作为代理指标。</li>
-<li>可用于提高机器人操作、导航和目标到达系统在视觉及环境变化下的在线适应能力。</li>
-<li>为闭环部署提供一种无需额外环境交互的任务感知更新机制，并兼容CEM与基于梯度的规划器。</li>
-<li>提示评估世界模型适应方法时，应同时报告预测性能与最终规划成功率。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Adapt for Planning, Not just Prediction: Optimistic Test-Time World Model Adaptation
-来源：arXiv
-链接：https://arxiv.org/abs/2610.35636
-摘要：Latent world models are typically pre-trained offline and kept frozen at test time, so planning with them can degrade under distribution shift. Test-time adaptation (TTA) can mitigate this degradation by updating the model during deployment. Unlike pre-training on fixed data, TTA for planning is closed-loop: the planner uses model rollouts to select actions, and the resulting transitions drive the next update. This raises the question: which objective should guide TTA for planning? Under a prediction-only objective, the model is fit only to the outcomes of its own actions, so it can remain wrong about the actions that would reach the goal, and low prediction error need not translate into better planning. Inspired by reward-biased maximum likelihood from adaptive control, we introduce Optim</div>
-  </details></article>
 <article id="item-67" class="summary-card daily-item">
   <h2 id="item-67-title" class="daily-item-title">编码智能体上下文的物理成本：质量约束下的资源核算</h2><p class="single-subtitle daily-item-summary">论文提出质量门控的资源核算协议，揭示编码智能体删减上下文可能因破坏前缀缓存而增加预填充计算与能耗。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：上下文压缩</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/groom/">Groom</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E5%89%8D%E7%BC%80%E7%BC%93%E5%AD%98/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;前缀缓存</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;上下文压缩</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.34763" target="_blank" rel="noopener">https://arxiv.org/abs/2610.34763</a></div></div><div class="daily-item-content"><p>论文将实际执行的预填充量拆分为逻辑提示长度减去复用前缀，并联合测量 KV 驻留、时间与能耗。基于 SWE-rebench V2 的 450 个代码定位案例，预加载检索块的 Eager 策略与锚定历史压缩均通过五点非劣效质量门槛；在另一项 900 单元实验中，Eager 相比按需搜索减少 35.7% 的模型调用和 33.2% 的 GPU 能耗代理值。启用前缀缓存后，Eager 的提示量基本不变，但未缓存预填充减少 67.7%，而进一步压缩并无额外收益。在 100 个 SWE-bench Verified 实例上，仅保留最近五次观察虽减少 33.3% 的提示量，却使未缓存预填充增加 608.5%、能耗代理增加 125.6%，且未通过质量门槛。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -521,9 +529,9 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 链接：https://arxiv.org/abs/2610.34763
 摘要：Coding agents resend a growing context on every model call, and context policies are usually judged by the prompt tokens they save. Executed work also depends on call count and prefix reuse: a caching runtime prefills only the tokens after the longest cached prefix. A shorter prompt can therefore cost more if it rewrites cached history. Our quality-gated protocol splits executed prefill into logical prompt minus reused prefix and measures KV residency, time, and energy. On 450 localization cases derived from SWE-rebench V2, preloading ten retrieved blocks (Eager) and adding anchored history compaction (Compact) both pass a five-point non-inferiority gate. In a separate 900-cell study, Eager cuts model calls by 35.7% and the GPU-energy proxy by 33.2% against on-demand search (Grep); Compact</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">51 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">60 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/" onclick="event.stopPropagation()">CodeEvolve</a><span class="daily-count">1 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/" onclick="event.stopPropagation()">CodeEvolve</a><span class="daily-count">3 条</span>
               </summary>
               <div class="daily-group-body"><details id="agentic-coding" class="daily-row">
   <summary>
@@ -545,6 +553,46 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">CodeEvolve｜用第一性原理拆解 Agentic Coding：从理论到实操https://mp.weixin.qq.com/s/Zlwn42KyfjgwfX6lp-JthQ</div>
+  </details></div>
+</details>
+<details id="hse" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>HSE：面向编程智能体的分层技能演化</strong>
+      <span class="daily-row-meta">arXiv · 技能演化 · <a href="https://arxiv.org/abs/2610.35616" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">HSE通过跨任务、仓库与代码库分层聚合轨迹证据，在冻结底层编程模型的情况下演化出可迁移的程序性技能。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技能演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%8A%80%E8%83%BD%E5%BA%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体技能库</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%A4%8D%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验复用</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35616" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35616</a></div></div><div class="daily-item-content"><p>HSE首先从单条编程轨迹提取任务级证据，再汇总同一仓库中的重复证据形成仓库特定技能候选，最后跨仓库整合一致模式以获得可迁移技能。系统使用外部写作者—评估器循环生成和评判技能，底层编程模型保持冻结，并同时利用成功轨迹中的有效程序与失败轨迹中的常见失效模式。实验在SWE-bench Verified和DeepSWE上进行，仅从SWE-Gym演化出的10项技能即可跨基准、编程模型和智能体执行框架提升性能。HSE还可在没有验证器反馈时依靠学习到的评估器，从目标基准轨迹中演化定制技能并取得额外增益。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>将高度依赖任务和代码仓库上下文的编程轨迹，逐层蒸馏为可跨仓库迁移的程序性技能。</li>
+<li>无需修改底层模型参数，即可通过外部技能库持续改善编程智能体表现。</li>
+<li>同时吸收成功经验与失败模式，为后续任务提供操作指导、规避策略和恢复方案。</li>
+<li>为跨模型、跨执行框架的智能体经验复用提供了可扩展路径。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Hierarchical Skill Evolution for Coding Agent
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35616
+摘要：Skills provide agents with reusable experience to guide future decisions without modifying the underlying model. However, coding trajectories are often entangled with task- and repository-specific contexts, making it challenging to distill procedural skills that generalize across diverse coding environments. To address this challenge, we present Hierarchical Skill Evolution (HSE), which progressively distills procedural knowledge from coding trajectories through hierarchical evidence aggregation. HSE first extracts task-level evidence from individual trajectories, then aggregates recurring evidence within the same repository to form repository-specific skill candidates, and finally consolidates consistent patterns across repositories into transferable skills across repositories. The evolut</div>
+  </details></div>
+</details>
+<details id="vlm" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>自主进化推理程序提升 VLM 科学图表分析能力</strong>
+      <span class="daily-row-meta">arXiv · 程序进化 · <a href="https://arxiv.org/abs/2610.35077" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">通过自主进化搜索冻结 VLM 外围的推理程序，无需重新训练即可将科学图表问答平均准确率从 16.6% 提升至 41.3%，并实现 3.8 倍推理加速。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：程序进化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%9B%E5%8C%96%E6%90%9C%E7%B4%A2/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;进化搜索</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35077" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35077</a></div></div><div class="daily-item-content"><p>研究针对开放视觉语言模型在科学图表问答中因答案不精确而表现不佳的问题，在保持模型权重冻结的前提下优化外围推理程序。方法从基线程序出发，让 LLM 评判器结合代码及训练问题中的失败案例提出进化式修改，并维护一个按训练准确率排序的候选程序池。实验覆盖 3 个 VLM 和 4 个科学图表基准，所有设置的精确匹配准确率均有提升，平均由 16.6% 增至 41.3%，单项最大提升达 55.2 个百分点。进化后的程序偏向生成易于评分的短答案，因此推理速度也达到初始程序的 3.8 倍，表明大量错误源于推理流水线而非模型能力本身。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>说明冻结模型的性能瓶颈可能来自推理程序与输出格式，优化外围代码可替代部分重训练需求。</li>
+<li>展示 LLM 评判器驱动的程序进化可用于自动发现更准确、更高效的多模态推理流水线。</li>
+<li>为科学图表问答等强调精确匹配的任务提供兼顾准确率与推理效率的系统优化路径。</li>
+<li>提示评测时应区分基础模型能力缺陷与脚手架、答案格式及推理流程造成的误差。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Improving VLMs on Scientific Chart Analysis via Autonomous Evolution
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35077
+摘要：Understanding and operating with scientific charts is a standard approach in data analysis, and while humans are good at interpreting such charts, open vision-language models (VLMs) are known to perform poorly when it comes to question answering based on such data types. Motivated by an initial observation that many of their errors are due to inexact answering, we raise the following natural question: how much accuracy can we recover without changing the model at all? In this paper, we study this question by searching over inference programs and the code around a &#34;frozen&#34; version of the model. Using ideas from autonomous evolution (famously used in AlphaEvolve), we first start from a baseline inference program, and in each round we show an LLM judge the code together with a few failures on</div>
   </details></div>
 </details>
 </div>
@@ -570,7 +618,7 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/" onclick="event.stopPropagation()">SwarmEvolve</a><span class="daily-count">3 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/" onclick="event.stopPropagation()">SwarmEvolve</a><span class="daily-count">4 条</span>
               </summary>
               <div class="daily-group-body"><section class="daily-cluster">
       <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：多智能体系统 <span class="daily-count">3 条</span></h3><article id="bcmaac-llm" class="summary-card daily-item daily-item-medium">
@@ -630,7 +678,27 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
     <div class="daily-item-notes-body">SwarmEvolve｜Anthropic最新长文：请谨慎使用子智能体！https://mp.weixin.qq.com/s/5KpcSM4VmM4xbFr8x_B3LQ</div>
   </details></div>
 </details>
-</div></section></div>
+</div></section><details id="evorouter" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>EvoRouter：洞察引导在策略蒸馏的低成本多智能体路由</strong>
+      <span class="daily-row-meta">arXiv · 模型路由 · <a href="https://arxiv.org/abs/2610.35690" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/CenYangtze/EvoRouter" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a></span>
+    </span><span class="daily-row-summary">EvoRouter通过动态提炼路由洞察、在策略蒸馏与成本感知强化学习构建自我改进闭环，在提升多智能体任务准确率的同时将推理计算成本降低50.95%。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型路由</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型路由</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%AD%96%E7%95%A5%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;在策略蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35690" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35690</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/CenYangtze/EvoRouter" target="_blank" rel="noopener">https://github.com/CenYangtze/EvoRouter</a></div></div><div class="daily-item-content"><p>EvoRouter面向多智能体系统中语言模型、协作模式、智能体数量、交互轮次和技能的组合式配置难题。专用专家从跨任务配置轨迹的性能与成本反馈中，周期性提炼能力需求、资源扩展收益及配置交互关系等条件化路由洞察。特权教师结合演化中的洞察与当前执行反馈，通过在策略蒸馏为路由器自身的规划轨迹提供稠密词元级监督，并以成本感知强化学习联合优化任务表现和计算开销。该方法在19个域内数据集上取得68.69%的平均准确率，较最强路由基线提高7.23个百分点，同时降低50.95%的推理计算成本，并在两个域外基准上进行验证。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为组合空间庞大的多智能体配置提供可学习的动态路由方案，避免依赖人工规则或穷举搜索。</li>
+<li>将执行轨迹中的性能—成本经验提炼为可复用洞察，可用于改进稀疏奖励下的细粒度路由监督。</li>
+<li>展示在策略蒸馏与成本感知强化学习结合后，可同时优化准确率和推理资源消耗。</li>
+<li>通过“执行—洞察提炼—策略更新—新轨迹生成”闭环，为多智能体系统的持续自我改进提供范式。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：EvoRouter: Cost-Efficient Multi-Agent Routing via Insight-Guided On-Policy Distillation
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35690
+摘要：Serving web queries at scale with multi-agent systems requires jointly configuring large language models, collaboration modes, agent counts, interaction rounds, and skills. However, the resulting configuration space grows combinatorially, while sparse execution rewards provide limited fine-grained supervision for interdependent planning decisions. We propose EvoRouter, a self-evolving multi-agent routing framework driven by insight-guided on-policy distillation. A dedicated expert periodically synthesizes performance-cost feedback from configuration trajectories across tasks into reusable conditional routing insights about capability requirements, returns from resource scaling, and interactions among configuration choices. A privileged teacher combines these evolving insights with current </div>
+  </details></div>
+</details>
+</div>
             </details><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/" onclick="event.stopPropagation()">DataEvolve</a><span class="daily-count">2 条</span>
               </summary>
@@ -797,7 +865,7 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/" onclick="event.stopPropagation()">RobotEvolve</a><span class="daily-count">2 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/" onclick="event.stopPropagation()">RobotEvolve</a><span class="daily-count">3 条</span>
               </summary>
               <div class="daily-group-body"><details id="item-10" class="daily-row">
   <summary>
@@ -832,6 +900,31 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
     <div class="daily-item-notes-body">[HiSTEVE 1.0：利用人机界面 VLA 智能体玩开放世界游戏（38 ▲）](https://huggingface.co/papers/2610.31162?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-26)</div>
   </details></div>
 </details>
+<details id="optta" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>OpTTA：面向规划的乐观测试时世界模型适应</strong>
+      <span class="daily-row-meta">arXiv · 测试时优化 · <a href="https://arxiv.org/abs/2610.35636" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">OpTTA在测试时联合优化转移预测损失与候选轨迹的目标到达成本，通过任务感知的乐观偏置提升分布偏移下的世界模型规划成功率。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：测试时优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35636" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35636</a></div></div><div class="daily-item-content"><ul>
+<li>冻结的潜在世界模型在视觉或环境分布发生偏移时，预测能力与规划成功率都可能下降，而仅降低已执行动作上的预测误差并不保证找到通向目标的动作。</li>
+<li>OpTTA借鉴自适应控制中的奖励偏置最大似然，在测试时同时最小化观测转移的预测损失和规划器候选轨迹的目标到达成本。</li>
+<li>规划项使世界模型对成功到达目标保持乐观偏置，无需增加与环境的交互即可将适应过程导向任务相关区域。</li>
+<li>在操作、目标到达和导航任务的多种分布偏移下，OpTTA相对冻结模型平均提升13.5个百分点的最终规划成功率，优于仅预测适应方法AdaJEPA的6.9或7.5个百分点增益。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>表明世界模型的测试时适应目标应直接服务于下游规划，而不能仅以预测误差作为代理指标。</li>
+<li>可用于提高机器人操作、导航和目标到达系统在视觉及环境变化下的在线适应能力。</li>
+<li>为闭环部署提供一种无需额外环境交互的任务感知更新机制，并兼容CEM与基于梯度的规划器。</li>
+<li>提示评估世界模型适应方法时，应同时报告预测性能与最终规划成功率。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Adapt for Planning, Not just Prediction: Optimistic Test-Time World Model Adaptation
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35636
+摘要：Latent world models are typically pre-trained offline and kept frozen at test time, so planning with them can degrade under distribution shift. Test-time adaptation (TTA) can mitigate this degradation by updating the model during deployment. Unlike pre-training on fixed data, TTA for planning is closed-loop: the planner uses model rollouts to select actions, and the resulting transitions drive the next update. This raises the question: which objective should guide TTA for planning? Under a prediction-only objective, the model is fit only to the outcomes of its own actions, so it can remain wrong about the actions that would reach the goal, and low prediction error need not translate into better planning. Inspired by reward-biased maximum likelihood from adaptive control, we introduce Optim</div>
+  </details></div>
+</details>
 </div>
             </details><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/" onclick="event.stopPropagation()">EvalEvolve</a><span class="daily-count">8 条</span>
@@ -853,7 +946,43 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
     <div class="daily-item-notes-body">[UserArena：长时程购物智能体交互式用户模拟基准测试（47 ▲）](https://huggingface.co/papers/2610.30932?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-26)</div>
   </details></div>
 </details>
-<details id="dual-exam" class="daily-row">
+<section class="daily-cluster">
+      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：智能体评测 <span class="daily-count">3 条</span></h3><article id="llm-harness" class="summary-card daily-item daily-item-medium">
+  <h2 id="llm-harness-title" class="daily-item-title">简单 LLM Harness 在微服务根因分析中胜过手工智能体</h2><p class="single-subtitle daily-item-summary">在 RCAtlas 基准上，不预设调查流程的简单 LLM Harness 比五种手工编排的根因分析智能体及传统统计、因果方法更准确且更具成本效益。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E6%95%85%E9%9A%9C%E8%AF%8A%E6%96%AD%E4%B8%8E%E6%81%A2%E5%A4%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;故障诊断与恢复</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35767" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35767</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>研究在 RCAtlas 的 90 个已验证微服务故障案例上，对三种简单 Harness、五种已发表 LLM 根因分析智能体以及统计和因果方法进行了统一比较。三种简单方案分别为基于证据包的单次调用、SQL 智能体和 Codex 编程智能体，均不预先规定模型的具体调用流程。简单 Harness 在三个中等能力模型上的 PR@1 达到 65%–77%，高于已发表智能体的 16%–53%和非 LLM 方法的 6%–39%。案例分析表明，固定阶段、标准操作程序和角色分工可能跳过决定性证据；增强基础模型主要提升可靠性，多轮 Harness 主要提升任务能力，而增加推理投入仅带来有限准确率增益，却可能使耗时增加至七倍。</p>
+</div>
+    </details><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>说明复杂的手工智能体流程并不必然优于让能力较强的模型自主调查，设计 RCA 系统时应首先建立简单 Harness 基线。</li>
+<li>提醒智能体评测采用统一数据、模型和推理预算，避免不同私有数据与少量基线造成误导性结论。</li>
+<li>表明过度固定调用步骤可能限制证据探索，应优先保留工具选择和调查路径的自由度。</li>
+<li>为生产级故障诊断提供成本—准确率权衡依据：在达到较高准确率的方案中，简单 Harness 占据成本或时间上的 Pareto 前沿。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35767
+摘要：Root cause analysis (RCA) of microservice failures has attracted many LLM agents whose investigation is hand-crafted, through standard operating procedures, fixed stages and role agents. Each is evaluated on its own data against few baselines, so it is unknown whether this design beats letting a capable model investigate on its own. We compare three simple harnesses that prescribe none of the model&#39;s calls (one call over an evidence package, a SQL agent and the Codex coding agent) with five published LLM RCA agents and with statistical and causal methods on RCAtlas, 90 validated cases from eight public datasets, across six models and three reasoning efforts. The simple harnesses are the most accurate (PR@1 65-77% on three mid-tier models), ahead of the published agents (16-53%) and the non</div>
+  </details></article>
+<article id="longsearcheval" class="summary-card daily-item daily-item-medium">
+  <h2 id="longsearcheval-title" class="daily-item-title">LongSearchEval：面向长程网页搜索的轨迹感知智能体评测</h2><p class="single-subtitle daily-item-summary">LongSearchEval通过保留真实网页交互轨迹、约束来源的结果验证和失败节点定位，对智能体的长程搜索结果及证据使用行为进行细粒度评估。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/groom/">Groom</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;证据推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35150" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35150</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>LongSearchEval采用统一智能体执行协议，完整保留长程网页搜索中的真实交互轨迹，避免依赖模拟轨迹或根据最终答案事后重建行为。第一阶段无需人工编写标准答案，而是依据智能体引用的网页验证答案组；第二阶段审计规范化交互轮次，并将失败节点关联至错误答案组。作者在100项任务上评估来自8个系列的16个模型，共获得1,600次运行轨迹和6,545个自动标记的失败节点。人工验证显示，答案组标签一致率达到94.50%，被审计轮次与答案组关联的特征对应精度达到98.11%。</p>
+</div>
+    </details><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为长程网页搜索智能体提供兼顾最终结果与执行过程的评测框架。</li>
+<li>利用真实交互轨迹定位证据获取、核验和使用过程中的具体失败节点。</li>
+<li>支持不同模型之间的受控比较，并为智能体行为审计和故障诊断提供可追溯证据。</li>
+<li>展示无需人工标准答案、基于引用来源实施结果验证的可扩展评测路径。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：LongSearchEval: Evaluating Long-Horizon Web Search Capabilities of Large Language Models via a Trajectory-Aware Agent Framework with Failure-Node Localization
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35150
+摘要：Long-horizon web search requires LLM-based agents to integrate information across web pages through extended interactions under task-specific constraints. Evaluating this capability is important not only for measuring final answer quality, but also for assessing whether an agent acquires, verifies, and uses evidence reliably over extended interactions. Existing evaluations, however, mainly rely on simulated trajectories or on post-hoc trajectories reconstructed from final answers, rather than on retained real interaction traces, which limits the fidelity of behavioral assessment and weakens support for fine-grained error localization. To address this gap, we introduce LONGSEARCHEVAL, a trajectory-aware agent evaluation framework that combines a unified agent execution protocol with source </div>
+  </details></article>
+<div class="daily-cluster-rest">
+          <p class="daily-cluster-rest-label">同专题其余 1 条</p><details id="dual-exam" class="daily-row">
   <summary>
     <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Dual Exam：多模态智能体与世界模型的受控评估</strong>
       <span class="daily-row-meta">Hugging Face Papers · 智能体评测 · <a href="https://arxiv.org/abs/2610.31066" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
@@ -870,27 +999,7 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
     <div class="daily-item-notes-body">[双重考试：对多模态智能体和世界模型的受控评估（16 ▲）](https://huggingface.co/papers/2610.31066?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-26)</div>
   </details></div>
 </details>
-<details id="llm-harness" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>简单 LLM Harness 在微服务根因分析中胜过手工智能体</strong>
-      <span class="daily-row-meta">arXiv · 智能体评测 · <a href="https://arxiv.org/abs/2610.35767" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">在 RCAtlas 基准上，不预设调查流程的简单 LLM Harness 比五种手工编排的根因分析智能体及传统统计、因果方法更准确且更具成本效益。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E6%95%85%E9%9A%9C%E8%AF%8A%E6%96%AD%E4%B8%8E%E6%81%A2%E5%A4%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;故障诊断与恢复</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35767" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35767</a></div></div><div class="daily-item-content"><p>研究在 RCAtlas 的 90 个已验证微服务故障案例上，对三种简单 Harness、五种已发表 LLM 根因分析智能体以及统计和因果方法进行了统一比较。三种简单方案分别为基于证据包的单次调用、SQL 智能体和 Codex 编程智能体，均不预先规定模型的具体调用流程。简单 Harness 在三个中等能力模型上的 PR@1 达到 65%–77%，高于已发表智能体的 16%–53%和非 LLM 方法的 6%–39%。案例分析表明，固定阶段、标准操作程序和角色分工可能跳过决定性证据；增强基础模型主要提升可靠性，多轮 Harness 主要提升任务能力，而增加推理投入仅带来有限准确率增益，却可能使耗时增加至七倍。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>说明复杂的手工智能体流程并不必然优于让能力较强的模型自主调查，设计 RCA 系统时应首先建立简单 Harness 基线。</li>
-<li>提醒智能体评测采用统一数据、模型和推理预算，避免不同私有数据与少量基线造成误导性结论。</li>
-<li>表明过度固定调用步骤可能限制证据探索，应优先保留工具选择和调查路径的自由度。</li>
-<li>为生产级故障诊断提供成本—准确率权衡依据：在达到较高准确率的方案中，简单 Harness 占据成本或时间上的 Pareto 前沿。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents
-来源：arXiv
-链接：https://arxiv.org/abs/2610.35767
-摘要：Root cause analysis (RCA) of microservice failures has attracted many LLM agents whose investigation is hand-crafted, through standard operating procedures, fixed stages and role agents. Each is evaluated on its own data against few baselines, so it is unknown whether this design beats letting a capable model investigate on its own. We compare three simple harnesses that prescribe none of the model&#39;s calls (one call over an evidence package, a SQL agent and the Codex coding agent) with five published LLM RCA agents and with statistical and causal methods on RCAtlas, 90 validated cases from eight public datasets, across six models and three reasoning efforts. The simple harnesses are the most accurate (PR@1 65-77% on three mid-tier models), ahead of the published agents (16-53%) and the non</div>
-  </details></div>
-</details>
-<details id="llm" class="daily-row">
+</div></section><details id="llm" class="daily-row">
   <summary>
     <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>量化 LLM 科研智能体的主张平滑现象</strong>
       <span class="daily-row-meta">arXiv · 科研评测 · <a href="https://arxiv.org/abs/2610.35793" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
@@ -908,25 +1017,6 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 来源：arXiv
 链接：https://arxiv.org/abs/2610.35793
 摘要：Deep research, or any use of large language models (LLMs) to read a large document collection and produce insights, requires synthesizing information from different sources. In this work, we find that LLMs produce long-form research reports that read as confident syntheses but which fail to accurately reflect the underlying documents. We call this failure smoothing. In collapsing diverse and potentially conflicting sources into a single narrative, the model discards the evidential &#34;jaggedness&#34; of its corpus and asserts conclusions more decisive than the citations can support. We introduce a claim level scoring pipeline, SmoothScore, to quantify this effect. Our pipeline extracts key conclusive claims from model generated reports, then finds evidence relevant to each claim and clusters that</div>
-  </details></div>
-</details>
-<details id="grpo" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>有限强验证器预算下审计 GRPO 奖励作弊</strong>
-      <span class="daily-row-meta">arXiv · 评测审计 · <a href="https://arxiv.org/abs/2610.35716" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">研究提出低通过率优先的预算审计策略，以有限强验证器调用显著抑制 GRPO 训练中的奖励作弊，并揭示更新估计的随机性会影响最终性能。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E4%BD%9C%E5%BC%8A/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;奖励作弊</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全审计</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程验证</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E9%A2%84%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;评估预算</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35716" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35716</a></div></div><div class="daily-item-content"><p>论文研究在强验证器成本过高时，如何分配有限审计预算来纠正 GRPO 对弱验证器的奖励作弊。理论分析表明，固定策略状态下的期望更新取决于各轨迹的边际审计概率与奖励修正，并提出优先审计弱验证通过数最少组的低通过率预算审计（LB）。在 LeetCode 和 Countdown-Code 实验中，LB 将作弊率降至接近零，优于采用相同预算与惩罚的随机审计。与无偏的 IPW 和组级优势修正相比，LB 在同等预算下取得更高的留出集准确率；其标签用量仅为全面审计的 28%，同时保持接近的效果。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为昂贵强验证器提供高效的预算分配方案，降低强化学习训练中的奖励作弊风险。</li>
-<li>表明审计策略不应只比较期望更新，还需考虑梯度或优势估计随机性对训练结果的影响。</li>
-<li>可用于代码生成等具有廉价弱测试与昂贵强验证机制的 RLVR 训练流程。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Audit Where Hacks Pay: Budgeted Strong-Verifier Audits Against Reward Hacking in GRPO
-来源：arXiv
-链接：https://arxiv.org/abs/2610.35716
-摘要：Reinforcement learning with verifiable rewards trains on cheap checks, such as unit tests, that a policy can learn to game, while a stronger check is too expensive to run on every rollout. We study how to spend a limited strong-verifier budget in GRPO, separating which weakly passing rollouts to audit from what reward a caught hack receives. At a fixed policy state with centered advantages, the expected update depends on a design only through each rollout&#39;s marginal audit probability and correction; reflecting a caught hack&#39;s reward about the failure reward negates the advantages of an all-hack group; and auditing whole groups with the fewest weak passes first (low-pass budgeted audits, LB) minimizes the advantage mass left on hacks among pass-count designs with a fixed correction when a l</div>
   </details></div>
 </details>
 <details id="evobench" class="daily-row">
@@ -987,6 +1077,47 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 来源：arXiv
 链接：https://arxiv.org/abs/2610.34875
 摘要：Rubric-based evaluation asks which level of a rubric a response meets. It is usually done by prompting a large language model (LLM) as a judge, which needs a generative call per judgment and reads every level description, so its cost grows with the rubric. We present RubriX, a rubric judge whose architecture is inspired by contrastive language models (CLM): a LoRA-adapted encoder embeds the input and each level description, and a softmax over scaled cosine similarities gives a probability for every level without text generation. Trained on public rubric data and proprietary synthetic data, RubriX reaches 75.4% exact accuracy on held-out rubrics, against 57.1% for TypeSafe&#39;s Jev and 49.8% for a Qwen3-8B judge. On eight human-labelled benchmark sets it is within 6 percentage points of Jev&#39;s </div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/" onclick="event.stopPropagation()">AgentEvolve</a><span class="daily-count">2 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="rsihub" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>RSIHub：可组合的智能体演化方法框架</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 自进化框架 · <a href="https://arxiv.org/abs/2610.32253" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">RSIHub以可复用算子、声明式可变资源和统一执行评估基础设施，支持智能体演化方法的构建、公平比较与扩展。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自进化框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能框架</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.32253" target="_blank" rel="noopener">https://arxiv.org/abs/2610.32253</a></div></div><div class="daily-item-content"><p>RSIHub将提示、技能、工具及编排策略的演化表示为由可复用算子组成的 recipe，并显式声明可变资源。框架统一提供执行、评估、故障恢复和谱系追踪，同时将评估环节隔离在可变范围之外，以增强比较的公平性与可审计性。作者无需修改框架核心便复现了 AHE、Hyperagents、A-Evolve 和 GEPA，并在 Terminal Bench 2 与 τ³ Banking 上使用 MiniSWE 和 Codex 进行评测。实验中最高整体 pass@1 提升达 13.5 个百分点，但方法排名随配置变化，优化收益也未必能迁移至留出任务。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为不同智能体演化策略提供统一、可复现的实验协议，减少重复搭建执行与评估基础设施的成本。</li>
+<li>通过候选谱系和评估条件绑定，支持演化过程审计、故障恢复及结果追溯。</li>
+<li>结果表明智能体演化策略具有明显的环境与配置依赖性，应重视留出任务评测和跨设置泛化。</li>
+<li>可利用可组合 recipe 与算子快速开发和横向比较新的提示、技能、工具及编排演化方法。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[RSIHub：一种可组合的智能体演化方法框架（34 ▲）](https://huggingface.co/papers/2610.32253?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-26)</div>
+  </details></div>
+</details>
+<details id="skill" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>Skill∞：面向智能体技能优化的递归自我改进</strong>
+      <span class="daily-row-meta">arXiv · 递归自我改进 · <a href="https://arxiv.org/abs/2610.35434" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">Skill∞通过可自我改写的元技能同时优化任务技能与技能优化流程，在83项SkillsBench任务上实现60.7%的通过率。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%8A%80%E8%83%BD%E5%BA%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体技能库</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能优化</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35434" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35434</a></div></div><div class="daily-item-content"><p>Skill∞将技能优化过程本身编码为元技能，使智能体能够用同一套流程优化任务技能和元技能，实现递归自我改进。元智能体会诊断执行轨迹、提出候选方案、请求独立评审，并动态分配搜索预算，而这些步骤本身也可被持续改写。元技能与具体任务技能解耦，可在多项优化任务上迭代后跨领域复用，并以标准技能包形式通过原生技能发现机制加载。在83项SkillsBench任务上，该方法达到60.7%的通过率，高于人工策展技能的56.4%和SkillEvolver的54.5%。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示了将“如何优化技能”本身表示为可演化技能的递归自我改进路径。</li>
+<li>可用于构建跨任务复用的技能优化器，减少对固定人工设计流水线的依赖。</li>
+<li>执行轨迹诊断、独立评审与搜索预算分配机制可为智能体技能库的持续维护提供参考。</li>
+<li>结果表明，元技能与任务技能解耦有助于提升优化流程的跨领域迁移能力。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35434
+摘要：Recursive self-improvement (RSI), in which a system also improves the way it improves, is a long-standing aspiration on the path to AGI. Language agents increasingly store procedural knowledge in reusable skills. Optimizing skills offers a direct way to achieve RSI, because the optimization procedure itself can be encoded as a skill. Existing skill optimizers, however, follow a hand-designed procedure. Even methods that evolve a meta-skill confine it to a fixed pipeline and relearn it for each task. We present Skill$^{\infty}$, which makes skill optimization recursively self-improving: a meta agent follows a meta-skill to optimize task skills and optimizes the meta-skill itself using the same procedure. The optimization is agent-led. The meta agent diagnoses execution traces, proposes cand</div>
   </details></div>
 </details>
 </div>
@@ -1124,15 +1255,14 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/" onclick="event.stopPropagation()">AgentTrainEvolve</a><span class="daily-count">4 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/" onclick="event.stopPropagation()">AgentTrainEvolve</a><span class="daily-count">5 条</span>
               </summary>
-              <div class="daily-group-body"><details id="focus" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>FOCUS：面向长程语言智能体的主动评论家学习</strong>
-      <span class="daily-row-meta">arXiv · 信用分配 · <a href="https://arxiv.org/abs/2610.35801" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">FOCUS通过选择性分支主动采样最能降低评论家估计误差的轨迹续写，以更低采样成本改善长程智能体的价值估计与信用分配。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：信用分配</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;主动学习</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35801" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35801</a></div></div><div class="daily-item-content"><p>FOCUS针对稀疏结果奖励下早期动作难以获得准确信用的问题，引入由选择性分支驱动的主动评论家学习机制。其 rollout controller 从预计最能降低评论家估计误差的中间状态采样续写，并将所得证据作为评论家网络的训练目标。改进后的价值估计通过 TD(λ) 优势为相邻状态之间的轨迹片段评分，同时以模块化上下文管理接口解耦上下文压缩与 rollout 资源分配。在相同逐步生成预算下，FOCUS在法律推理、深度搜索和代码定位任务上优于 GRPO 与 VinePPO；基于 Qwen3.5-9B，在 BrowseComp-Plus 和 DeonticBench 上分别较最强基线提升 7.2 和 4.1 个百分点。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+              <div class="daily-group-body"><section class="daily-cluster">
+      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：信用分配 <span class="daily-count">3 条</span></h3><article id="focus" class="summary-card daily-item daily-item-medium">
+  <h2 id="focus-title" class="daily-item-title">FOCUS：面向长程语言智能体的主动评论家学习</h2><p class="single-subtitle daily-item-summary">FOCUS通过选择性分支主动采样最能降低评论家估计误差的轨迹续写，以更低采样成本改善长程智能体的价值估计与信用分配。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：信用分配</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;主动学习</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35801" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35801</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>FOCUS针对稀疏结果奖励下早期动作难以获得准确信用的问题，引入由选择性分支驱动的主动评论家学习机制。其 rollout controller 从预计最能降低评论家估计误差的中间状态采样续写，并将所得证据作为评论家网络的训练目标。改进后的价值估计通过 TD(λ) 优势为相邻状态之间的轨迹片段评分，同时以模块化上下文管理接口解耦上下文压缩与 rollout 资源分配。在相同逐步生成预算下，FOCUS在法律推理、深度搜索和代码定位任务上优于 GRPO 与 VinePPO；基于 Qwen3.5-9B，在 BrowseComp-Plus 和 DeonticBench 上分别较最强基线提升 7.2 和 4.1 个百分点。</p>
+</div>
+    </details><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>为稀疏奖励的长程智能体训练提供更准确、成本更低的中间状态价值监督。</li>
 <li>可将采样预算集中到评论家最不确定或预期误差下降最大的状态，提高 rollout 的信息利用率。</li>
 <li>说明上下文压缩形成的片段边界可兼作价值估计和时间信用分配的结构单元。</li>
@@ -1144,15 +1274,12 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 来源：arXiv
 链接：https://arxiv.org/abs/2610.35801
 摘要：Sparse outcome rewards make it difficult for long-horizon language-model agents to assign credit to earlier actions. Learned critics provide value estimates for intermediate states, but these estimates can be inaccurate, while estimating intermediate values with repetitive continuation samples from points within a trajectory incurs substantial costs. To mitigate these issues, we introduce FOCUS, an RL method that uses selective branching to help the critic network learn its value estimator. The rollout controller facilitates active learning for the critic by sampling continuations from states that are expected to most reduce the critic&#39;s estimation error. These refined value estimates then score the segment between consecutive states with a TD($λ$) advantage, while the sampled evidence sup</div>
-  </details></div>
-</details>
-<details id="item-41" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>细粒度信用分配何时助益或损害多模态智能体强化学习</strong>
-      <span class="daily-row-meta">arXiv · 信用分配 · <a href="https://arxiv.org/abs/2610.35497" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">研究以长程视频编辑为测试场景，发现过程奖励主要有益于超长任务，但固定奖励权重会诱发冗余推理和工具调用，衰减至零可缓解奖励作弊。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：信用分配</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35497" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35497</a></div></div><div class="daily-item-content"><p>研究构建内容选择、叙事排序、粗剪和精剪四类电影预告片编辑任务，覆盖多模态感知、长程规划、工具使用与延迟反馈。对于平均超过 60 轮的精剪任务，衰减过程奖励相较仅使用结果奖励的 GRPO 获得 45.4% 的相对提升；在平均 30～40 轮的较短任务上，最高增益仅为 10.4%。固定过程奖励权重的 GRPO+PRM 在训练后期会出现过度推理和冗余工具调用，尽管过程奖励持续上升，任务完成率与结果得分却下降。将过程奖励权重逐步衰减至零能够保留早期学习收益并缓解奖励作弊，而在策略自蒸馏对特权信息高度敏感，整体改善有限甚至导致明显退化。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+  </details></article>
+<article id="item-41" class="summary-card daily-item daily-item-medium">
+  <h2 id="item-41-title" class="daily-item-title">细粒度信用分配何时助益或损害多模态智能体强化学习</h2><p class="single-subtitle daily-item-summary">研究以长程视频编辑为测试场景，发现过程奖励主要有益于超长任务，但固定奖励权重会诱发冗余推理和工具调用，衰减至零可缓解奖励作弊。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：信用分配</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35497" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35497</a></div></div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>研究构建内容选择、叙事排序、粗剪和精剪四类电影预告片编辑任务，覆盖多模态感知、长程规划、工具使用与延迟反馈。对于平均超过 60 轮的精剪任务，衰减过程奖励相较仅使用结果奖励的 GRPO 获得 45.4% 的相对提升；在平均 30～40 轮的较短任务上，最高增益仅为 10.4%。固定过程奖励权重的 GRPO+PRM 在训练后期会出现过度推理和冗余工具调用，尽管过程奖励持续上升，任务完成率与结果得分却下降。将过程奖励权重逐步衰减至零能够保留早期学习收益并缓解奖励作弊，而在策略自蒸馏对特权信息高度敏感，整体改善有限甚至导致明显退化。</p>
+</div>
+    </details><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>表明细粒度过程奖励的收益取决于任务交互长度，尤其适合反馈稀疏的超长程工具使用任务。</li>
 <li>过程奖励不应长期保持固定权重，可采用逐步衰减策略避免智能体迎合评判器并产生冗余行为。</li>
 <li>评估智能体训练方法时，应同时监控过程奖励、结果得分、完成率、推理长度和工具调用次数。</li>
@@ -1164,9 +1291,28 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 来源：arXiv
 链接：https://arxiv.org/abs/2610.35497
 摘要：Reinforcement learning (RL) has shown promise for training multimodal agents to reason and use tools. However, it remains unclear when fine-grained credit assignment improves learning and when it fails to improve task performance. Video editing provides a useful testbed for this question, combining multimodal perception, long-horizon planning, and tool use with delayed outcome feedback. We construct four movie-trailer editing task types---Content Selection, Narrative Sequencing, Rough Cut, and Fine Cut---that reflect real-world editing workflows and span different levels of task complexity and interaction horizon. Decaying process rewards provides the largest benefit on Fine Cut, with a 45.4% relative gain over outcome-only GRPO on tasks averaging more than 60 turns under outcome-only GRPO</div>
+  </details></article>
+<div class="daily-cluster-rest">
+          <p class="daily-cluster-rest-label">同专题其余 1 条</p><details id="llm-3" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>面向长程 LLM 智能体的多尺度策略优化</strong>
+      <span class="daily-row-meta">arXiv · 信用分配 · <a href="https://arxiv.org/abs/2610.35013" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">多尺度策略优化（MPO）以智能体交互轮次为优化锚点，并在轮次内部细化词元级信用分配，在搜索、工具使用和自动化长程任务上持续优于强强化学习基线。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：信用分配</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E4%BF%A1%E7%94%A8%E5%88%86%E9%85%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;信用分配</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;策略优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35013" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35013</a></div></div><div class="daily-item-content"><p>作者观察到，长程 LLM 智能体的评论器价值主要在不同交互轮次之间变化，而每个动作仍以词元为单位生成。MPO 将多尺度优势估计（MAE）与轮次级重要性采样结合，使信用分配和策略更新更符合轮次尺度。该方法以轮次为优化锚点，同时保留轮次内部更细粒度的词元信用分配。实验覆盖搜索、工具使用和自动化任务，并在 4B 与 30B-A3B 模型上稳定超过强强化学习基线。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为长程智能体训练提供兼顾轮次级决策结构与词元级生成细节的信用分配方案。</li>
+<li>表明策略更新尺度应与环境交互的自然动作边界对齐，而不应仅依赖统一的词元级优化。</li>
+<li>可用于改进搜索、工具调用和自动化任务中的训练稳定性与策略性能。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Multiscale Policy Optimization for Long-Horizon LLM Agents
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35013
+摘要：Long-horizon LLM agents interact with their environments through complete assistant turns while generating each action token by token. We observe that critic values vary primarily across turns, motivating optimization anchored at turns with finer credit allocation among tokens. We propose Multiscale Policy Optimization (MPO), combining Multiscale Advantage Estimation (MAE) and turn-level importance sampling to align credit assignment and policy updates at the turn scale. Extensive experiments across search, tool-use, and automation tasks with 4B and 30B-A3B models demonstrate consistent gains over strong RL baselines.</div>
   </details></div>
 </details>
-<details id="mirl" class="daily-row">
+</div></section><details id="mirl" class="daily-row">
   <summary>
     <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>MiRL：面向终端智能体错误行为的定向强化学习</strong>
       <span class="daily-row-meta">arXiv · 智能体训练 · <a href="https://arxiv.org/abs/2610.35697" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
@@ -1271,7 +1417,7 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/" onclick="event.stopPropagation()">LogicEvolve</a><span class="daily-count">1 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/" onclick="event.stopPropagation()">LogicEvolve</a><span class="daily-count">2 条</span>
               </summary>
               <div class="daily-group-body"><details id="evolve-on-graph" class="daily-row">
   <summary>
@@ -1291,6 +1437,26 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 来源：arXiv
 链接：https://arxiv.org/abs/2610.35598
 摘要：Knowledge graphs (KGs) provide reliable external knowledge for multi-hop factual reasoning with large language models (LLMs), yet most KGs in real-world domains such as finance and industry lack question--answer (QA) annotations. Without such annotations, existing methods struggle to improve LLM graph reasoning: training-free agents cannot improve their exploration through interaction; reinforcement learning (RL) agents depend on QA data annotated by humans or synthesized by closed-source models; and training data is typically built offline, so its topology mix is fixed and cannot follow the agent&#39;s ability. We propose Evolve on Graph (EoG), a framework that lets an LLM self-evolve its graph reasoning without any QA annotations. Through Graph Self-Play, a single LLM alternates between a Pr</div>
+  </details></div>
+</details>
+<details id="lean" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>智能体算法设计：在 Lean 中提出、形式化并证明进化算法运行时界</strong>
+      <span class="daily-row-meta">arXiv · 形式化证明 · <a href="https://arxiv.org/abs/2610.35595" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">该工作构建分阶段智能体流水线，自动设计黑箱优化算法，并在 Lean 中以机器检查的漂移分析证明其预期运行时改进。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：形式化证明</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;形式化验证</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动定理证明</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%AE%97%E6%B3%95%E5%88%9B%E6%96%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;算法创新</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%9B%E5%8C%96%E6%90%9C%E7%B4%A2/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;进化搜索</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35595" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35595</a></div></div><div class="daily-item-content"><p>研究提出一套遵循进化算法设计与分析方法论的分阶段流水线，由智能体提出黑箱优化算法，并通过 Lean 守卫过滤有缺陷的设计。智能体随后定义势函数、证明漂移界，从而给出机器可检查的预期运行时保证，全程不依赖经验性能比较。在 CycleUncover 问题上，系统发现了预期运行时为 O(n²) 的算法，而经典 (1+1) EA 需要 e^{Ω(n)}；它还为整数值次模最小化和 LeadingOnes 设计并验证了高效算法。在 8 类问题的 15 次前沿模型运行中，有 12 次完成了整个流水线；消融实验表明，移除分阶段结构后，零样本设计往往退化为基线算法或产生不完整证明。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示 LLM 智能体可将算法提出、数学形式化与复杂度证明整合为端到端的自动发现流程。</li>
+<li>说明 Lean 的机器检查规范可以充当算法搜索的可靠筛选器，减少对经验评测和人工审查的依赖。</li>
+<li>分阶段脚手架是获得新颖算法及完整运行时证明的关键，可为自动化科学研究与可验证程序合成提供设计范式。</li>
+<li>为进化算法、黑箱优化及其他可形式化领域中的开放式算法发现提供可扩展路径。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Agentic Algorithm Design: LLMs that Propose, Formalise, and Prove Runtime Bounds for Evolutionary Algorithms in Lean
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35595
+摘要：LLMs now prove hard theorems in Lean. Can they also design algorithms and prove their correctness and efficiency? LLM-guided design of optimisation heuristics (such as AlphaEvolve) is purely empirical. Automated theorem provers with LLMs prove given statements. So far, there has been little evidence that LLMs can do both: design an algorithm and guarantee its efficiency by a mathematical proof. We present a staged pipeline modelled after research methodology in design and analysis of evolutionary algorithms. The agent proposes black-box optimisation algorithms, and Lean guards filter out flawed designs. The agent then defines a potential function and proves drift bounds that guarantee an expected runtime improvement over the baseline algorithm. At no point in the pipeline are the algorithm</div>
   </details></div>
 </details>
 </div>
@@ -1317,26 +1483,6 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 摘要：Software engineering agents resend their entire trajectory to an LLM at every turn, motivating online trajectory reduction. Prior work shows that randomly deleting 75% of tokens in old turns may preserve agent effectiveness, but it remains unclear why, how agents compensate for missing content, and whether it actually reduces costs. This paper presents an empirical study of 42 trajectory-reduction configurations, focusing on effectiveness, agent behavior, and cost. We systematically explore deleting content from old turns by varying the scope, granularity, amount, and timing of deletion across 9,400 runs with two state-of-the-art agents on SWE-bench Verified. We find deleting large amounts of trajectory content (e.g., up to 100% of reasoning text) can preserve overall effectiveness. Import</div>
   </details></div>
 </details>
-<details id="amie" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>AMIE：智能体自适应记忆索引演化</strong>
-      <span class="daily-row-meta">arXiv · 长期记忆 · <a href="https://arxiv.org/abs/2610.34977" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">AMIE 将持久化记忆访问更新独立为轻量适应层，通过演化单条记忆的访问状态持续重加权检索结果，无需修改记忆内容或重训宿主系统。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：长期记忆</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.34977" target="_blank" rel="noopener">https://arxiv.org/abs/2610.34977</a></div></div><div class="daily-item-content"><p>AMIE 提出“记忆索引演化”，将记忆内容与访问机制的持续适应解耦，并以轻量插件形式接入检索式智能体记忆系统。它把语义教师对记忆保留或抑制的判断蒸馏为检索条件策略，再将选择动作累积为有界状态，用于重加权后续检索。实验覆盖五种检索宿主与三个基准，训练后的 AMIE 在全部 15 项下游比较中将 F1 或准确率提高 0.70～3.37 个百分点，并在全部 10 项检索比较中取得提升。研究还发现，仅累计检索频率的零调用策略在若干设置中可媲美或超过语义策略，但持续抑制高频且仍有用的记忆会形成互补失效模式。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>将记忆访问状态作为独立于记忆内容的持续适应层，为现有智能体记忆系统提供低成本升级路径。</li>
-<li>利用部署期间的检索流量更新索引，无需改写存储内容或重新训练宿主记忆系统。</li>
-<li>提示系统设计者同时控制竞争记忆抑制与有用高频记忆保留，避免持久状态累积造成检索退化。</li>
-<li>检索频率本身可作为强访问适应信号，为低调用成本的长期记忆优化提供基线。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Adaptive Memory Index Evolution for Agents
-来源：arXiv
-链接：https://arxiv.org/abs/2610.34977
-摘要：Long-horizon agents continually accumulate experience, yet retaining a memory does not guarantee access when it is needed. Existing systems can adapt both memory content and access; we isolate persistent access updates as a separately controlled adaptation layer. We formulate this target as Memory Index Evolution and instantiate it with Adaptive Memory Index Evolution (AMIE), a lightweight plug-in layer that evolves per-memory access state from deployment retrievals without modifying stored content or retraining the host memory system. AMIE distils a semantic teacher&#39;s keep/suppress judgments into a retrieval-conditioned policy and accumulates its selective actions into bounded state that reweights subsequent host retrievals. Surprisingly, even a zero-call policy that simply accumulates re</div>
-  </details></div>
-</details>
 <details id="streaming-recurrent-memory" class="daily-row">
   <summary>
     <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>Streaming Recurrent Memory：面向流式学习的循环记忆</strong>
@@ -1355,6 +1501,26 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 来源：arXiv
 链接：https://arxiv.org/abs/2610.34833
 摘要：Natural intelligence learns from a continuous stream of sensorimotor experience: data can arrive at high bandwidth, and behavior adapts to feedback as soon as it arrives, even when it is delayed. In contrast, most modern deep learning systems rely on stored datasets, replay buffers, and retained contexts through which credit is later assigned. At high data rates, storing and revisiting past experience can be impractical under tight memory and computational constraints. This paper studies recurrent memory under a streaming learning constraint: the learner learns from experience as soon as it arrives without storing raw experience. We ask whether a streaming learner can maintain a state that remains useful for future prediction and control from delayed feedback. We introduce Streaming Recurr</div>
+  </details></div>
+</details>
+<details id="behaviormem" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>BehaviorMem：基于真实电商行为流构建与评测用户记忆</strong>
+      <span class="daily-row-meta">arXiv · 长期记忆 · <a href="https://arxiv.org/abs/2610.34790" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">BehaviorMem通过结构化维护用户的显式行为事实与推断特征，并以真实电商日志基准分别评测记忆证据和推断潜在偏好的能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：长期记忆</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/personalevolve/">PersonalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;用户画像</a><a href="/LLMDailyDigestWeb/topic/%E8%A1%8C%E4%B8%BA%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;行为建模</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.34790" target="_blank" rel="noopener">https://arxiv.org/abs/2610.34790</a></div></div><div class="daily-item-content"><p>论文将持续行为用户记忆定义为两个相互关联但需独立评测的能力：记住具体行为证据与既有兴趣，以及由行为推断潜在需求和偏好。BehaviorMemBench基于真实电商日志构建，覆盖1194名用户、17462个行为批次和超过三年的时间跨度，并利用未来行为自动生成标签。BehaviorMem采用长期与短期范围、显式行为事实与推断用户特征构成的双轴状态，支持证据驱动的记忆形成、持续维护和查询无关读取。跨两种记忆构建器和两种任务读取器的实验表明，该方法在记忆与推断任务上领先受测智能体记忆方案，公共数据集验证也显示其有助于下游行为历史任务。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为电商推荐、个性化助手等系统提供从长期行为流持续构建用户记忆的方案。</li>
+<li>通过分离“记住证据”与“推断偏好”，避免用单一指标掩盖不同记忆方法的能力差异。</li>
+<li>双轴记忆状态可为用户画像、经验检索和跨商品领域偏好推断提供可复用设计。</li>
+<li>基于未来行为的自动标签机制可降低真实用户记忆基准的构建与扩展成本。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：BehaviorMem: Building and Evaluating User Memory from Real-World E-Commerce Behavior Streams
+来源：arXiv
+链接：https://arxiv.org/abs/2610.34790
+摘要：User memory helps personalized systems build on their understanding of users over time. In e-commerce, users convey their preferences and needs through both explicit language and implicit interactions with products. We study memory built from logs of these interactions, examining how it can \emph{remember} concrete evidence and established interests, and use that evidence to \emph{infer} underlying needs and preferences that inform judgments beyond well-observed product domains. Existing memory methods primarily target language-based interactions, and evaluations offer limited real behavioral data and limited separation of these capabilities. This leaves open how to jointly support and separately evaluate remembering and inference from behavioral logs. We formulate the problem of continual</div>
   </details></div>
 </details>
 <details id="scivaliditybench" class="daily-row">
@@ -1379,31 +1545,7 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/" onclick="event.stopPropagation()">AgentEvolve</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="skill" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>Skill∞：面向智能体技能优化的递归自我改进</strong>
-      <span class="daily-row-meta">arXiv · 递归自我改进 · <a href="https://arxiv.org/abs/2610.35434" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">Skill∞通过可自我改写的元技能同时优化任务技能与技能优化流程，在83项SkillsBench任务上实现60.7%的通过率。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%8A%80%E8%83%BD%E5%BA%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体技能库</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能优化</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35434" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35434</a></div></div><div class="daily-item-content"><p>Skill∞将技能优化过程本身编码为元技能，使智能体能够用同一套流程优化任务技能和元技能，实现递归自我改进。元智能体会诊断执行轨迹、提出候选方案、请求独立评审，并动态分配搜索预算，而这些步骤本身也可被持续改写。元技能与具体任务技能解耦，可在多项优化任务上迭代后跨领域复用，并以标准技能包形式通过原生技能发现机制加载。在83项SkillsBench任务上，该方法达到60.7%的通过率，高于人工策展技能的56.4%和SkillEvolver的54.5%。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>展示了将“如何优化技能”本身表示为可演化技能的递归自我改进路径。</li>
-<li>可用于构建跨任务复用的技能优化器，减少对固定人工设计流水线的依赖。</li>
-<li>执行轨迹诊断、独立评审与搜索预算分配机制可为智能体技能库的持续维护提供参考。</li>
-<li>结果表明，元技能与任务技能解耦有助于提升优化流程的跨领域迁移能力。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization
-来源：arXiv
-链接：https://arxiv.org/abs/2610.35434
-摘要：Recursive self-improvement (RSI), in which a system also improves the way it improves, is a long-standing aspiration on the path to AGI. Language agents increasingly store procedural knowledge in reusable skills. Optimizing skills offers a direct way to achieve RSI, because the optimization procedure itself can be encoded as a skill. Existing skill optimizers, however, follow a hand-designed procedure. Even methods that evolve a meta-skill confine it to a fixed pipeline and relearn it for each task. We present Skill$^{\infty}$, which makes skill optimization recursively self-improving: a meta agent follows a meta-skill to optimize task skills and optimizes the meta-skill itself using the same procedure. The optimization is agent-led. The meta agent diagnoses execution traces, proposes cand</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/" onclick="event.stopPropagation()">ResearchEvolve</a><span class="daily-count">1 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/" onclick="event.stopPropagation()">ResearchEvolve</a><span class="daily-count">2 条</span>
               </summary>
               <div class="daily-group-body"><details id="llm-2" class="daily-row">
   <summary>
@@ -1425,9 +1567,29 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 摘要：High-fidelity digital twins in continuous biomanufacturing are often bottlenecked by incomplete kinetic models, while standard data-driven algorithms (e.g., SINDy, PINNs) lack interpretability or impose rigid physical assumptions. This paper introduces a hybrid closed-loop architecture for autonomous kinetic state-space discovery driven by a Large Language Model (LLM) agent. The framework employs a sequential &#34;isolation-peeling&#34; methodology across orthogonal operational regimes. This algorithmic peeling mathematically decouples entangled multiplicative (inhibitory) and additive (catalytic) biological rate law. Grounded in a Two-Level Retrieval-Augmented Generation (RAG) library, the framework utilizes Moving Horizon Estimation (MHE) and logarithmic decomposition to decouple complex cell gr</div>
   </details></div>
 </details>
+<details id="openai-ai" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>OpenAI 宣布 AI 模型取得三项科学理论突破</strong>
+      <span class="daily-row-meta">AIHOT · 自动化科学研究 · <a href="https://aihot.news/items/jxpzj0z4beg1r0cktwzc0tmwe" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">OpenAI 宣布其 AI 模型分别证明全维度局部光滑猜想、推翻指数时间假设，并提出量子色动力学及纯杨–米尔斯理论的严格存在性证明，但成果仍待学术界独立审查确认。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自动化科学研究</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AIHOT</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;形式化验证</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E5%AD%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数学人工智能</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://aihot.news/items/jxpzj0z4beg1r0cktwzc0tmwe" target="_blank" rel="noopener">https://aihot.news/items/jxpzj0z4beg1r0cktwzc0tmwe</a></div></div><div class="daily-item-content"><p>OpenAI 称其模型证明了所有维度下的局部光滑猜想，并由此解决挂谷猜想和斯坦因限制猜想，关键是构造一种新的辅助偏微分方程。模型还生成了否定指数时间假设（ETH）的证明，可能促使学界重新评估一系列计算复杂性结论及算法加速空间；上述两项成果均已使用 Lean 形式化验证。物理学方面，模型提出四维量子色动力学及标准模型一种统一完备化的严格存在性证明，并处理了纯杨–米尔斯理论的存在性子问题，但并不等同于完整解决杨–米尔斯质量间隙难题。OpenAI 已邀请数学、复杂性理论和量子场论专家开展公开审查，相关结论仍需独立复核。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示 AI 从辅助科研走向自主提出证明、形式化验证并接受专家审查的潜力。</li>
+<li>Lean 验证可提升复杂数学与理论计算机科学成果的可检查性，但不能替代对定义、前提和科学意义的同行评议。</li>
+<li>若 ETH 反证成立，依赖该假设建立的复杂性下界需要系统重审，并可能打开新的算法设计空间。</li>
+<li>物理学成果应区分“理论存在性证明”与完整解决杨–米尔斯千禧年难题，避免在独立确认前过度解读。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：OpenAI 宣布 AI 模型取得三项科学突破，涉及局部光滑猜想、指数时间假设与杨–米尔斯理论
+来源：AIHOT 每日精选（aihot.virxact.com）
+链接：https://aihot.news/items/jxpzj0z4beg1r0cktwzc0tmwe
+摘要：（信源：ithome.com）OpenAI 于 10 月 27 日宣布其 AI 模型在数学、计算机科学和物理学领域取得三项研究突破。数学上给出了所有维度下局部光滑猜想的证明，从而解决挂谷猜想与斯坦因限制猜想；计算机科学上给出推翻指数时间假设（ETH）的证明，暗示相关计算任务可能有更快算法；物理学上提出量子色动力学及标准模型一种统一完备化的严格存在性证明，涉及杨–米尔斯千禧年难题的一部分。</div>
+  </details></div>
+</details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/" onclick="event.stopPropagation()">HarnessEvolve</a><span class="daily-count">3 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/" onclick="event.stopPropagation()">HarnessEvolve</a><span class="daily-count">2 条</span>
               </summary>
               <div class="daily-group-body"><details id="markovsim" class="daily-row">
   <summary>
@@ -1467,26 +1629,6 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 来源：arXiv
 链接：https://arxiv.org/abs/2610.35316
 摘要：Users often request charts without knowing which database or table holds the relevant data. Such requests may be ambiguous, and users may ask follow-up questions to deepen their analysis or iteratively refine existing charts. A useful assistant must therefore discover relevant data sources among heterogeneous databases, ask clarifying questions when needed, and track evolving user intent while preserving constraints established in earlier turns. Yet recent text-to-visualization agents typically rely on static agent harnesses that are predefined and remain unchanged despite recurring failures across tasks. To address this limitation, we introduce RSIV-Harness, which keeps the language model weights fixed and applies Recursive Self-Improvement to revise the surrounding harness from the agent</div>
-  </details></div>
-</details>
-<details id="item-59" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>编程智能体脚手架如何自我演化：回顾式适应实证研究</strong>
-      <span class="daily-row-meta">arXiv · 脚手架演化 · <a href="https://arxiv.org/abs/2610.34938" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">研究通过 Claude Code 与 SWE-bench Verified 实证检验回顾式脚手架适应，发现自动生成并实施的改动并不稳定有效，需配套持续验证、修订和移除机制。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.34938" target="_blank" rel="noopener">https://arxiv.org/abs/2610.34938</a></div></div><div class="daily-item-content"><p>研究考察 <code>retro</code> 技能如何让编程智能体复盘已完成会话，并提出针对软件、配置和指令等脚手架组件的改动。作者在 30 个 SWE-bench Verified 问题上运行 Claude Code，对 125 项改动建议进行定性编码，实施其中 24 项，并在后续同仓库任务中对 12 项改动开展有无干预的全新会话对照实验。在未应用改动时确实出现目标问题的 7 次评估中，仅有 2 项改动消除了目标行为、1 项降低了出现频率，其余 4 项没有改善，部分改动还引入了无关工作。结果表明，脚手架自演化不能止于生成和实施变更，还必须评估其跨任务收益，并持续修订或删除无效变更。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为编程智能体的经验驱动脚手架演化提供实证依据，揭示“复盘后修改”不等同于性能提升。</li>
-<li>脚手架变更应通过后续同类任务的对照实验验证，避免仅依据单次会话事件固化规则。</li>
-<li>自演化系统需要建立变更归因、效果监测、回滚与淘汰机制，以控制无效规则和额外工作。</li>
-<li>可据此设计闭环流程：会话复盘、候选变更、受控部署、跨任务评估、保留或撤销。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation
-来源：arXiv
-链接：https://arxiv.org/abs/2610.34938
-摘要：Coding agents can adapt their harnesses, the software, configuration, and instructions used to run them, based on experience from earlier tasks, but whether these adaptations improve their behavior on later tasks remains unclear. We study \retro, a skill that asks an agent to review a completed session and propose harness changes, and ask what changes it proposes and whether implemented changes reduce repeated work on later tasks. We ran Claude Code on 30 SWE-bench Verified issues, qualitatively coded the 125 proposals from \retro, implemented 24, and evaluated 12 harness changes on later issues from the same repositories in fresh sessions with and without each change. Most proposals referred to an event in the session, but 18 of 43 lint-related proposals recommended a practice regardless </div>
   </details></div>
 </details>
 </div>
@@ -1579,6 +1721,54 @@ DataEvolve：AutoData与LegoFlow表明可把难度调节、提示优化和下游
 来源：arXiv
 链接：https://arxiv.org/abs/2610.34816
 摘要：Retrieval-augmented generation (RAG) systems often use a dedicated reranker to choose which retrieved candidates reach the language model. Reranking improves relevance but adds latency, so teams look for faster alternatives. System-1style decision models make direct, structured predictions instead of generating long responses. Could one provide comparable reranking quality with less inference overhead? We first screen 21 open-weight models on 11 benchmarks, then compare a promising decision model with a dedicated reranker on identical candidate lists. The default decision-model setup fails on many long candidate sets, so scoring only the requests it completes gives a misleading ranking. Limiting candidate text length largely restores reliability and makes some configurations competitive. A</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/" onclick="event.stopPropagation()">GeneralizeEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="grokking" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>Grokking 中的子空间结晶：秩压缩追踪相变</strong>
+      <span class="daily-row-meta">arXiv · 机制发现 · <a href="https://arxiv.org/abs/2610.35112" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">模算术实验表明，有效秩压缩发生在 Grokking 泛化相变之后，低秩约束无法加速甚至会阻碍 Grokking，说明压缩是泛化形成的表征特征而非成因。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：机制发现</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a><a href="/LLMDailyDigestWeb/topic/%E8%A1%A8%E5%BE%81%E5%87%A0%E4%BD%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;表征几何</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E5%AD%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数学人工智能</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35112" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35112</a></div></div><div class="daily-item-content"><p>研究在均值场 MLP 和单层 Transformer 上考察模算术任务中的 Grokking、有效秩与泛化相变。Transformer 通常在 250 步内记忆训练集，但测试准确率达到 95% 的 Grokking 起点分布在 6,500 至 21,000 步，而最陡峭的有效秩下降稳定地滞后约 900 步。作者提出“充分子空间”与“子空间结晶”概念，发现维持输出所需的奇异方向在相变期间由至少四分之一缩减至约十分之一。受限低秩实验不仅未加速 Grokking，限制嵌入秩还使 20 次运行中的 15 次无法发生 Grokking，支持秩压缩是相变结果而非驱动因素。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>澄清有效秩压缩与 Grokking 的因果时序，避免将相关性误判为泛化机制。</li>
+<li>可将充分子空间规模和有效秩变化用作监测泛化相变与表征重组的诊断指标。</li>
+<li>提示低秩约束可能削弱形成泛化解所需的早期表征自由度，训练压缩策略应关注施加时机。</li>
+<li>子空间结晶为分析神经网络从记忆向规则化解迁移提供了可量化视角。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Subspace Crystallization in Grokking: Rank Compression Tracks the Phase Transition
+来源：arXiv
+链接：https://arxiv.org/abs/2610.35112
+摘要：Grokking describes understanding something deeply and intuitively. In neural networks, it is the phenomenon where a network generalizes long after memorizing its training data. This delay has been linked to a fall in the effective rank of the network&#39;s weight matrices, but whether this rank compression drives grokking or follows it is still unresolved. We study a mean-field MLP and a one-layer transformer trained on modular arithmetic and observe that: (i) Compression follows the onset, not memorization. Every transformer memorizes its training data within 250 steps, while the grokking onset (the first step at which test accuracy reaches 95%) varies from 6,500 to 21,000 steps. The steepest fall in effective rank comes about 900 steps after the onset, however late the onset occurs, and netw</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/" onclick="event.stopPropagation()">EnvironmentEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="physevolve" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>PhysEvolve：基于可执行世界验证的物理推理自进化</strong>
+      <span class="daily-row-meta">arXiv · 自进化 · <a href="https://arxiv.org/abs/2610.34921" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">PhysEvolve利用确定性物理引擎验证模型生成的可执行世界与反事实结果，通过GRPO和自适应课程持续提升视觉语言模型的因果物理推理能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自进化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/taskevolve/">TaskEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E5%9B%A0%E6%9E%9C%E5%BD%92%E5%9B%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;因果归因</a><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境合成</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.34921" target="_blank" rel="noopener">https://arxiv.org/abs/2610.34921</a></div></div><div class="daily-item-content"><p>PhysEvolve让共享视觉语言模型自主提出可执行世界程序与证据模式，再由确定性物理引擎验证环境并生成任务。系统对同一世界模拟基准分支和移除物体后的反事实分支，据此合成答案可精确验证的视觉物理问题。求解任务产生的验证器反馈通过GRPO更新共享策略，同时调整面向不同物理意图的自适应课程。基于Qwen3-VL-8B-Instruct训练后，该框架在PhysBench、CausalPhys和ContPhy上取得提升，并将因果规律零样本迁移至布料、流体、软体等复杂动力学及真实视频。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>以确定性物理引擎充当外部真值源，缓解反事实物理训练数据稀缺与结果难验证的问题。</li>
+<li>展示“环境生成—模拟验证—任务合成—策略更新”的闭环自进化训练路径，可用于构建无需人工干预数据的具身推理系统。</li>
+<li>可执行世界和精确验证器能够减少错误合成数据进入训练流程，提高因果物理推理训练的可靠性。</li>
+<li>自适应课程有助于将训练重点动态转向薄弱的物理交互与改变世界类问题。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：PhysEvolve: Verifier-grounded Self-evolution for Physical Reasoning with Executable Worlds
+来源：arXiv
+链接：https://arxiv.org/abs/2610.34921
+摘要：Physical reasoning underpins how embodied systems understand and act in the physical world, yet vision-language models (VLMs) remain unreliable on questions about dynamics and physical causality. Progress is critically constrained by the scarcity of grounded counterfactual training data, as observational videos capture only the factual trajectory that occurred. The self-evolving paradigm offers a route beyond fixed datasets by enabling models to construct their own training problems. Extending this paradigm to physics, however, requires an external source of truth that can both validate model-proposed environments and verify alternative physical outcomes under intervention. We introduce \physevolve{}, a verifier-grounded self-evolving framework that trains VLMs for causal physical reasonin</div>
   </details></div>
 </details>
 </div>
