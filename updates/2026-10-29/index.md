@@ -6,24 +6,25 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **模型与个人智能体发布**：OpenAI 推出兼顾桌面操作能力、速度与成本的 [GPT-6.1 Terra](#openai-gpt-6-1-terra-astra)，蚂蚁百灵则开源强化长程任务和工具使用的 [Ling-3.1-flash-1019](#personal-agent-ling-3-1-flash-1019)，智能体竞争进一步从模型指标转向真实任务效费比。
-- **递归自我改进走向可执行闭环**：[Apex-35B-V1.0](#35b-apex-35b-v1-0) 将 AI 参与实验、分析与成果回用纳入模型研发，[The Trinity](#the-trinity) 则联合演化可验证环境、能力树和 Harness，体现 RSI 从概念讨论转向系统化实现。
-- **工作流与多智能体结构成为主要演化对象**：[Evo²](#evo) 在冻结执行器的条件下协同搜索工作流与演化策略，[DynaFlow](#dynaflow) 学习按任务动态编排子智能体，显示系统级优化正由固定脚手架转向可学习的运行时组织。
-- **长期学习与记忆迎来密集检验**（5 条）：[DeepMind：自演化智能体能否持续学习？](#deepmind) 与 [CLE](#cle-llm) 揭示连续任务中的遗忘和跨任务干扰，[Memory Tax](#memory-tax) 质疑复杂记忆系统相对朴素 RAG 的净收益，[TTME](#ttme) 和 [HABIT-Bench](#habit-bench) 分别给出测试时记忆演化与长期用户习惯归纳的新路径。
-- **可验证反馈继续推动训练与基础设施自动优化**：[Trajectory2Gym](#trajectory2gym) 以决策依据和依赖覆盖合成工具交互，[ForgeKernel](#forgekernel) 则在华为、英伟达硬件榜单验证跨平台算子自进化，表明数据与系统两端都在形成自动验证闭环。
-- **热点延伸集中于主动式与多模态生成**：低相关性条目涵盖 [主动式 AI 的 6A 框架](#ai-6a)、世界一致视频生成、空间音频和长视频取证，反映业界对连续感知、意图预判及复杂时序内容的关注升温。
+- **新模型与个人智能体加速落地**：OpenAI 推出低成本电脑操作模型 [GPT-6.1 Terra](#openai-gpt-6-1-terra-astra)，蚂蚁开源面向长程个人任务的 [Ling-3.1-flash-1019](#personal-agent-ling-3-1-flash-1019)，超衍智能则以 [Apex-35B-V1.0](#35b-apex-35b-v1-0) 展示 AI 参与训练实验与成果回用的模型自进化路线。
+- **递归与系统级自进化从概念走向可验证闭环**：[The Trinity](#the-trinity) 协同演化环境、能力树与 Harness，[Evo²](#evo) 在冻结模型时搜索工作流及演化策略，[ForgeKernel](#forgekernel) 则以跨硬件榜单成绩证明自动生成和优化基础设施的实用性。
+- **持续学习与记忆进入“净收益”检验阶段**：[DeepMind 的连续任务研究](#deepmind) 与 [CLE](#cle-llm) 均揭示现有智能体的遗忘和经验复用瓶颈，[Memory Tax](#memory-tax) 进一步发现复杂记忆系统未必优于朴素 RAG，而 [TTME](#ttme) 展示了低成本外部记忆演化的可行替代路线。
+- **Agent 训练、编排与运行评测同步演进**：[Trajectory2Gym](#trajectory2gym) 合成决策驱动的工具交互，[DynaFlow](#dynaflow) 学习任务自适应的多智能体工作流，[TraceTrial-Bench](#tracetrial-bench) 则把评测推进到运行框架故障归因与轨迹审计层面。
+- **自主科研开始强化机制发现能力**：[Principia](#principia) 在测试时循环形成并修正因果假设和科学原理，与记忆演化路线共同指向无需频繁更新参数的闭环科学发现系统。
+- **热点延伸**主要覆盖主动式 AI 框架、空间音视频生成、长视频取证与空间 VLM 等多模态方向，反映连续交互和时空一致性仍是当日外围热点。
 
 ## 对当前研究的启发
-- **Awesome-RSI**：[The Trinity](#the-trinity) 将环境生成、能力刻画和 Harness 演化组成可验证闭环，可作为区分真正递归改进与单轮自优化的系统案例。
-- **SystemEvolve**：[Evo²](#evo) 与 [DynaFlow](#dynaflow) 表明可将工作流改写和多智能体编排直接纳入动作空间，并用外部评测或过滤后的轨迹持续优化系统结构。
-- **AgentEvolve**：[TTME](#ttme) 证明冻结权重、仅演化外部记忆也能在连续科学任务中超过测试时训练，为部署后免训练自进化提供了高效路线。
-- **MemoryEvolve**：[Memory Tax](#memory-tax) 提示记忆研究必须报告相对原始历史检索的净增益及处理成本，而不能只与无记忆基线比较。
-- **GeneralizeEvolve**：[DeepMind 的持续学习评估](#deepmind) 与 [CLE](#cle-llm) 可用于系统测量自进化在连续任务流中的可塑性、跨任务迁移和灾难性遗忘。
-- **AgentTrainEvolve**：[Trajectory2Gym](#trajectory2gym) 可将“依赖覆盖充分、决策依据明确”作为多轮工具轨迹的生成与筛选准则，改善有状态 Agent 训练数据质量。
-- **EnvironmentEvolve**：[The Trinity](#the-trinity) 的 Creator–Explorer–Evolver 分工展示了环境生成器、能力边界探索器与系统优化器协同演化的具体架构。
-- **InfraEvolve**：[ForgeKernel](#forgekernel) 在两类硬件评测上的领先结果验证了以正确性和性能为机器反馈、跨后端自动搜索算子的产业可行性。
-- **PersonalEvolve**：[HABIT-Bench](#habit-bench) 将个性化能力拆解为从长期弱证据中推断、更新和适时应用习惯，可直接作为个人 Agent 画像演化的评测模板。
-- **NewApply**：[GPT-6.1 Terra](#openai-gpt-6-1-terra-astra) 以接近高端模型的电脑操作能力实现数量级成本下降，说明真实桌面 Agent 的落地评估应优先转向单位任务成本、速度与可靠性。
+- **Awesome-RSI**：[The Trinity](#the-trinity) 将环境生成、能力刻画和 Harness 演化纳入同一闭环，可作为判定 RSI 是否真正改进“改进机制本身”的代表案例。
+- **AgentEvolve**：[TTME](#ttme) 证明冻结权重、只演化外部记忆也能持续提升科学任务表现，可直接补充推理时经验积累与免训练自进化路线。
+- **MemoryEvolve**：[Memory Tax](#memory-tax) 与 [HABIT-Bench](#habit-bench) 表明记忆研究应同时测量相对原始历史检索的净收益，以及跨数百次会话归纳弱证据习惯的能力。
+- **GeneralizeEvolve**：[DeepMind 的连续任务研究](#deepmind) 和 [CLE](#cle-llm) 提供了从跨任务干扰、遗忘及经验迁移角度区分真实持续学习与局部适配的评测框架。
+- **HarnessEvolve**：[Evo²](#evo) 展示了冻结执行器后联合搜索工作流与演化策略的方法，可用于研究 Harness 改进能否跨任务持续迁移。
+- **Groom**：[TraceTrial-Bench](#tracetrial-bench) 的轨迹、多源证据与机制链归因可直接借鉴到过程级 token 利用评测，定位成本消耗与失败机制。
+- **AgentTrainEvolve**：[Trajectory2Gym](#trajectory2gym) 以组合依赖覆盖和决策依据充分性合成交互，为多轮工具调用训练提供了比表层轨迹模仿更有针对性的数据构造准则。
+- **SystemEvolve**：[DynaFlow](#dynaflow) 将工作流合成纳入主智能体动作空间，说明系统架构可以作为在线决策对象，而不必预先固定为人工设计的图。
+- **InfraEvolve**：[ForgeKernel](#forgekernel) 在华为与英伟达硬件上的共同领先证明，真实硬件反馈能够支撑跨平台算子生成、验证与择优保留的进化闭环。
+- **ResearchEvolve**：[Principia](#principia) 的“观察—因果假设—原理—修正”循环可为自主科研系统增加显式机制模型，避免仅靠试错搜索实验结果。
+- **PersonalEvolve**：[Ling-3.1-flash-1019](#personal-agent-ling-3-1-flash-1019) 与 [HABIT-Bench](#habit-bench) 分别提供个人智能体底座和长期弱证据画像评测，可用于构建“部署—积累习惯—验证个性化收益”的闭环。
 
 <!-- daily-summary:end -->
 

@@ -12,50 +12,51 @@
 
 今日概览
 
-模型与个人智能体发布：OpenAI 推出兼顾桌面操作能力、速度与成本的 GPT-6.1 Terra，蚂蚁百灵则开源强化长程任务和工具使用的 Ling-3.1-flash-1019，智能体竞争进一步从模型指标转向真实任务效费比。
-递归自我改进走向可执行闭环：Apex-35B-V1.0 将 AI 参与实验、分析与成果回用纳入模型研发，The Trinity 则联合演化可验证环境、能力树和 Harness，体现 RSI 从概念讨论转向系统化实现。
-工作流与多智能体结构成为主要演化对象：Evo² 在冻结执行器的条件下协同搜索工作流与演化策略，DynaFlow 学习按任务动态编排子智能体，显示系统级优化正由固定脚手架转向可学习的运行时组织。
-长期学习与记忆迎来密集检验（5 条）：DeepMind：自演化智能体能否持续学习？ 与 CLE 揭示连续任务中的遗忘和跨任务干扰，Memory Tax 质疑复杂记忆系统相对朴素 RAG 的净收益，TTME 和 HABIT-Bench 分别给出测试时记忆演化与长期用户习惯归纳的新路径。
-可验证反馈继续推动训练与基础设施自动优化：Trajectory2Gym 以决策依据和依赖覆盖合成工具交互，ForgeKernel 则在华为、英伟达硬件榜单验证跨平台算子自进化，表明数据与系统两端都在形成自动验证闭环。
-热点延伸集中于主动式与多模态生成：低相关性条目涵盖 主动式 AI 的 6A 框架、世界一致视频生成、空间音频和长视频取证，反映业界对连续感知、意图预判及复杂时序内容的关注升温。
+新模型与个人智能体加速落地：OpenAI 推出低成本电脑操作模型 GPT-6.1 Terra，蚂蚁开源面向长程个人任务的 Ling-3.1-flash-1019，超衍智能则以 Apex-35B-V1.0 展示 AI 参与训练实验与成果回用的模型自进化路线。
+递归与系统级自进化从概念走向可验证闭环：The Trinity 协同演化环境、能力树与 Harness，Evo² 在冻结模型时搜索工作流及演化策略，ForgeKernel 则以跨硬件榜单成绩证明自动生成和优化基础设施的实用性。
+持续学习与记忆进入“净收益”检验阶段：DeepMind 的连续任务研究 与 CLE 均揭示现有智能体的遗忘和经验复用瓶颈，Memory Tax 进一步发现复杂记忆系统未必优于朴素 RAG，而 TTME 展示了低成本外部记忆演化的可行替代路线。
+Agent 训练、编排与运行评测同步演进：Trajectory2Gym 合成决策驱动的工具交互，DynaFlow 学习任务自适应的多智能体工作流，TraceTrial-Bench 则把评测推进到运行框架故障归因与轨迹审计层面。
+自主科研开始强化机制发现能力：Principia 在测试时循环形成并修正因果假设和科学原理，与记忆演化路线共同指向无需频繁更新参数的闭环科学发现系统。
+热点延伸主要覆盖主动式 AI 框架、空间音视频生成、长视频取证与空间 VLM 等多模态方向，反映连续交互和时空一致性仍是当日外围热点。
 
 对当前研究的启发
 
-Awesome-RSI：The Trinity 将环境生成、能力刻画和 Harness 演化组成可验证闭环，可作为区分真正递归改进与单轮自优化的系统案例。
-SystemEvolve：Evo² 与 DynaFlow 表明可将工作流改写和多智能体编排直接纳入动作空间，并用外部评测或过滤后的轨迹持续优化系统结构。
-AgentEvolve：TTME 证明冻结权重、仅演化外部记忆也能在连续科学任务中超过测试时训练，为部署后免训练自进化提供了高效路线。
-MemoryEvolve：Memory Tax 提示记忆研究必须报告相对原始历史检索的净增益及处理成本，而不能只与无记忆基线比较。
-GeneralizeEvolve：DeepMind 的持续学习评估 与 CLE 可用于系统测量自进化在连续任务流中的可塑性、跨任务迁移和灾难性遗忘。
-AgentTrainEvolve：Trajectory2Gym 可将“依赖覆盖充分、决策依据明确”作为多轮工具轨迹的生成与筛选准则，改善有状态 Agent 训练数据质量。
-EnvironmentEvolve：The Trinity 的 Creator–Explorer–Evolver 分工展示了环境生成器、能力边界探索器与系统优化器协同演化的具体架构。
-InfraEvolve：ForgeKernel 在两类硬件评测上的领先结果验证了以正确性和性能为机器反馈、跨后端自动搜索算子的产业可行性。
-PersonalEvolve：HABIT-Bench 将个性化能力拆解为从长期弱证据中推断、更新和适时应用习惯，可直接作为个人 Agent 画像演化的评测模板。
-NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量级成本下降，说明真实桌面 Agent 的落地评估应优先转向单位任务成本、速度与可靠性。
+Awesome-RSI：The Trinity 将环境生成、能力刻画和 Harness 演化纳入同一闭环，可作为判定 RSI 是否真正改进“改进机制本身”的代表案例。
+AgentEvolve：TTME 证明冻结权重、只演化外部记忆也能持续提升科学任务表现，可直接补充推理时经验积累与免训练自进化路线。
+MemoryEvolve：Memory Tax 与 HABIT-Bench 表明记忆研究应同时测量相对原始历史检索的净收益，以及跨数百次会话归纳弱证据习惯的能力。
+GeneralizeEvolve：DeepMind 的连续任务研究 和 CLE 提供了从跨任务干扰、遗忘及经验迁移角度区分真实持续学习与局部适配的评测框架。
+HarnessEvolve：Evo² 展示了冻结执行器后联合搜索工作流与演化策略的方法，可用于研究 Harness 改进能否跨任务持续迁移。
+Groom：TraceTrial-Bench 的轨迹、多源证据与机制链归因可直接借鉴到过程级 token 利用评测，定位成本消耗与失败机制。
+AgentTrainEvolve：Trajectory2Gym 以组合依赖覆盖和决策依据充分性合成交互，为多轮工具调用训练提供了比表层轨迹模仿更有针对性的数据构造准则。
+SystemEvolve：DynaFlow 将工作流合成纳入主智能体动作空间，说明系统架构可以作为在线决策对象，而不必预先固定为人工设计的图。
+InfraEvolve：ForgeKernel 在华为与英伟达硬件上的共同领先证明，真实硬件反馈能够支撑跨平台算子生成、验证与择优保留的进化闭环。
+ResearchEvolve：Principia 的“观察—因果假设—原理—修正”循环可为自主科研系统增加显式机制模型，避免仅靠试错搜索实验结果。
+PersonalEvolve：Ling-3.1-flash-1019 与 HABIT-Bench 分别提供个人智能体底座和长期弱证据画像评测，可用于构建“部署—积累习惯—验证个性化收益”的闭环。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-10-29 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 模型与个人智能体发布：OpenAI 推出兼顾桌面操作能力、速度与成本的 GPT-6.1 Terra，蚂蚁百灵则开源强化长程任务和工具使用的 Ling-3.1-flash-1019，智能体竞争进一步从模型指标转向真实任务效费比。 递归自我改进走向可执行闭环：Apex-35B-V1.0 将 AI 参与实验、分析与成果回用纳入模型研发，The Trinity 则联合演化可验证环境、能力树和 Harness，体现 RSI 从概念讨论转向系统化实现。 工作流与多智能体结构成为主要演化对象：Evo² 在冻结执行器的条件下协同搜索工作流与演化策略，DynaFlow 学习按任务动态编排子智能体，显示系统级优化正由固定脚手架转向可学习的运行时组织。 长期学习与记忆迎来密集检验（5 条）：DeepMind：自演化智能体能否持续学习？ 与 CLE 揭示连续任务中的遗忘和跨任务干扰，Memory Tax 质疑复杂记忆系统相对朴素 RAG 的净收益，TTME 和 HABIT-Bench 分别给出测试时记忆演化与长期用户习惯归纳的新路径。 可验证反馈继续推动训练与基础设施自动优化：Trajectory2Gym 以决策依据和依赖覆盖合成工具交互，ForgeKernel 则在华为、英伟达硬件榜单验证跨平台算子自进化，表明数据与系统两端都在形成自动验证闭环。 热点延伸集中于主动式与多模态生成：低相关性条目涵盖 主动式 AI 的 6A 框架、世界一致视频生成、空间音频和长视频取证，反映业界对连续感知、意图预判及复杂时序内容的关注升温。 对当前研究的启发 Awesome-RSI：The Trinity 将环境生成、能力刻画和 Harness 演化组成可验证闭环，可作为区分真正递归改进与单轮自优化的系统案例。 SystemEvolve：Evo² 与 DynaFlow 表明可将工作流改写和多智能体编排直接纳入动作空间，并用外部评测或过滤后的轨迹持续优化系统结构。 AgentEvolve：TTME 证明冻结权重、仅演化外部记忆也能在连续科学任务中超过测试时训练，为部署后免训练自进化提供了高效路线。 MemoryEvolve：Memory Tax 提示记忆研究必须报告相对原始历史检索的净增益及处理成本，而不能只与无记忆基线比较。 GeneralizeEvolve：DeepMind 的持续学习评估 与 CLE 可用于系统测量自进化在连续任务流中的可塑性、跨任务迁移和灾难性遗忘。 AgentTrainEvolve：Trajectory2Gym 可将“依赖覆盖充分、决策依据明确”作为多轮工具轨迹的生成与筛选准则，改善有状态 Agent 训练数据质量。 EnvironmentEvolve：The Trinity 的 Creator–Explorer–Evolver 分工展示了环境生成器、能力边界探索器与系统优化器协同演化的具体架构。 InfraEvolve：ForgeKernel 在两类硬件评测上的领先结果验证了以正确性和性能为机器反馈、跨后端自动搜索算子的产业可行性。 PersonalEvolve：HABIT-Bench 将个性化能力拆解为从长期弱证据中推断、更新和适时应用习惯，可直接作为个人 Agent 画像演化的评测模板。 NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量级成本下降，说明真实桌面 Agent 的落地评估应优先转向单位任务成本、速度与可靠性。">
+今日概览 新模型与个人智能体加速落地：OpenAI 推出低成本电脑操作模型 GPT-6.1 Terra，蚂蚁开源面向长程个人任务的 Ling-3.1-flash-1019，超衍智能则以 Apex-35B-V1.0 展示 AI 参与训练实验与成果回用的模型自进化路线。 递归与系统级自进化从概念走向可验证闭环：The Trinity 协同演化环境、能力树与 Harness，Evo² 在冻结模型时搜索工作流及演化策略，ForgeKernel 则以跨硬件榜单成绩证明自动生成和优化基础设施的实用性。 持续学习与记忆进入“净收益”检验阶段：DeepMind 的连续任务研究 与 CLE 均揭示现有智能体的遗忘和经验复用瓶颈，Memory Tax 进一步发现复杂记忆系统未必优于朴素 RAG，而 TTME 展示了低成本外部记忆演化的可行替代路线。 Agent 训练、编排与运行评测同步演进：Trajectory2Gym 合成决策驱动的工具交互，DynaFlow 学习任务自适应的多智能体工作流，TraceTrial-Bench 则把评测推进到运行框架故障归因与轨迹审计层面。 自主科研开始强化机制发现能力：Principia 在测试时循环形成并修正因果假设和科学原理，与记忆演化路线共同指向无需频繁更新参数的闭环科学发现系统。 热点延伸主要覆盖主动式 AI 框架、空间音视频生成、长视频取证与空间 VLM 等多模态方向，反映连续交互和时空一致性仍是当日外围热点。 对当前研究的启发 Awesome-RSI：The Trinity 将环境生成、能力刻画和 Harness 演化纳入同一闭环，可作为判定 RSI 是否真正改进“改进机制本身”的代表案例。 AgentEvolve：TTME 证明冻结权重、只演化外部记忆也能持续提升科学任务表现，可直接补充推理时经验积累与免训练自进化路线。 MemoryEvolve：Memory Tax 与 HABIT-Bench 表明记忆研究应同时测量相对原始历史检索的净收益，以及跨数百次会话归纳弱证据习惯的能力。 GeneralizeEvolve：DeepMind 的连续任务研究 和 CLE 提供了从跨任务干扰、遗忘及经验迁移角度区分真实持续学习与局部适配的评测框架。 HarnessEvolve：Evo² 展示了冻结执行器后联合搜索工作流与演化策略的方法，可用于研究 Harness 改进能否跨任务持续迁移。 Groom：TraceTrial-Bench 的轨迹、多源证据与机制链归因可直接借鉴到过程级 token 利用评测，定位成本消耗与失败机制。 AgentTrainEvolve：Trajectory2Gym 以组合依赖覆盖和决策依据充分性合成交互，为多轮工具调用训练提供了比表层轨迹模仿更有针对性的数据构造准则。 SystemEvolve：DynaFlow 将工作流合成纳入主智能体动作空间，说明系统架构可以作为在线决策对象，而不必预先固定为人工设计的图。 InfraEvolve：ForgeKernel 在华为与英伟达硬件上的共同领先证明，真实硬件反馈能够支撑跨平台算子生成、验证与择优保留的进化闭环。 ResearchEvolve：Principia 的“观察—因果假设—原理—修正”循环可为自主科研系统增加显式机制模型，避免仅靠试错搜索实验结果。 PersonalEvolve：Ling-3.1-flash-1019 与 HABIT-Bench 分别提供个人智能体底座和长期弱证据画像评测，可用于构建“部署—积累习惯—验证个性化收益”的闭环。">
   <meta itemprop="datePublished" content="2026-10-29T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-29T10:21:29+08:00">
-  <meta itemprop="wordCount" content="1312">
+  <meta itemprop="dateModified" content="2026-10-29T10:29:05+08:00">
+  <meta itemprop="wordCount" content="1345">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-29/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-10-29 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 模型与个人智能体发布：OpenAI 推出兼顾桌面操作能力、速度与成本的 GPT-6.1 Terra，蚂蚁百灵则开源强化长程任务和工具使用的 Ling-3.1-flash-1019，智能体竞争进一步从模型指标转向真实任务效费比。 递归自我改进走向可执行闭环：Apex-35B-V1.0 将 AI 参与实验、分析与成果回用纳入模型研发，The Trinity 则联合演化可验证环境、能力树和 Harness，体现 RSI 从概念讨论转向系统化实现。 工作流与多智能体结构成为主要演化对象：Evo² 在冻结执行器的条件下协同搜索工作流与演化策略，DynaFlow 学习按任务动态编排子智能体，显示系统级优化正由固定脚手架转向可学习的运行时组织。 长期学习与记忆迎来密集检验（5 条）：DeepMind：自演化智能体能否持续学习？ 与 CLE 揭示连续任务中的遗忘和跨任务干扰，Memory Tax 质疑复杂记忆系统相对朴素 RAG 的净收益，TTME 和 HABIT-Bench 分别给出测试时记忆演化与长期用户习惯归纳的新路径。 可验证反馈继续推动训练与基础设施自动优化：Trajectory2Gym 以决策依据和依赖覆盖合成工具交互，ForgeKernel 则在华为、英伟达硬件榜单验证跨平台算子自进化，表明数据与系统两端都在形成自动验证闭环。 热点延伸集中于主动式与多模态生成：低相关性条目涵盖 主动式 AI 的 6A 框架、世界一致视频生成、空间音频和长视频取证，反映业界对连续感知、意图预判及复杂时序内容的关注升温。 对当前研究的启发 Awesome-RSI：The Trinity 将环境生成、能力刻画和 Harness 演化组成可验证闭环，可作为区分真正递归改进与单轮自优化的系统案例。 SystemEvolve：Evo² 与 DynaFlow 表明可将工作流改写和多智能体编排直接纳入动作空间，并用外部评测或过滤后的轨迹持续优化系统结构。 AgentEvolve：TTME 证明冻结权重、仅演化外部记忆也能在连续科学任务中超过测试时训练，为部署后免训练自进化提供了高效路线。 MemoryEvolve：Memory Tax 提示记忆研究必须报告相对原始历史检索的净增益及处理成本，而不能只与无记忆基线比较。 GeneralizeEvolve：DeepMind 的持续学习评估 与 CLE 可用于系统测量自进化在连续任务流中的可塑性、跨任务迁移和灾难性遗忘。 AgentTrainEvolve：Trajectory2Gym 可将“依赖覆盖充分、决策依据明确”作为多轮工具轨迹的生成与筛选准则，改善有状态 Agent 训练数据质量。 EnvironmentEvolve：The Trinity 的 Creator–Explorer–Evolver 分工展示了环境生成器、能力边界探索器与系统优化器协同演化的具体架构。 InfraEvolve：ForgeKernel 在两类硬件评测上的领先结果验证了以正确性和性能为机器反馈、跨后端自动搜索算子的产业可行性。 PersonalEvolve：HABIT-Bench 将个性化能力拆解为从长期弱证据中推断、更新和适时应用习惯，可直接作为个人 Agent 画像演化的评测模板。 NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量级成本下降，说明真实桌面 Agent 的落地评估应优先转向单位任务成本、速度与可靠性。">
+今日概览 新模型与个人智能体加速落地：OpenAI 推出低成本电脑操作模型 GPT-6.1 Terra，蚂蚁开源面向长程个人任务的 Ling-3.1-flash-1019，超衍智能则以 Apex-35B-V1.0 展示 AI 参与训练实验与成果回用的模型自进化路线。 递归与系统级自进化从概念走向可验证闭环：The Trinity 协同演化环境、能力树与 Harness，Evo² 在冻结模型时搜索工作流及演化策略，ForgeKernel 则以跨硬件榜单成绩证明自动生成和优化基础设施的实用性。 持续学习与记忆进入“净收益”检验阶段：DeepMind 的连续任务研究 与 CLE 均揭示现有智能体的遗忘和经验复用瓶颈，Memory Tax 进一步发现复杂记忆系统未必优于朴素 RAG，而 TTME 展示了低成本外部记忆演化的可行替代路线。 Agent 训练、编排与运行评测同步演进：Trajectory2Gym 合成决策驱动的工具交互，DynaFlow 学习任务自适应的多智能体工作流，TraceTrial-Bench 则把评测推进到运行框架故障归因与轨迹审计层面。 自主科研开始强化机制发现能力：Principia 在测试时循环形成并修正因果假设和科学原理，与记忆演化路线共同指向无需频繁更新参数的闭环科学发现系统。 热点延伸主要覆盖主动式 AI 框架、空间音视频生成、长视频取证与空间 VLM 等多模态方向，反映连续交互和时空一致性仍是当日外围热点。 对当前研究的启发 Awesome-RSI：The Trinity 将环境生成、能力刻画和 Harness 演化纳入同一闭环，可作为判定 RSI 是否真正改进“改进机制本身”的代表案例。 AgentEvolve：TTME 证明冻结权重、只演化外部记忆也能持续提升科学任务表现，可直接补充推理时经验积累与免训练自进化路线。 MemoryEvolve：Memory Tax 与 HABIT-Bench 表明记忆研究应同时测量相对原始历史检索的净收益，以及跨数百次会话归纳弱证据习惯的能力。 GeneralizeEvolve：DeepMind 的连续任务研究 和 CLE 提供了从跨任务干扰、遗忘及经验迁移角度区分真实持续学习与局部适配的评测框架。 HarnessEvolve：Evo² 展示了冻结执行器后联合搜索工作流与演化策略的方法，可用于研究 Harness 改进能否跨任务持续迁移。 Groom：TraceTrial-Bench 的轨迹、多源证据与机制链归因可直接借鉴到过程级 token 利用评测，定位成本消耗与失败机制。 AgentTrainEvolve：Trajectory2Gym 以组合依赖覆盖和决策依据充分性合成交互，为多轮工具调用训练提供了比表层轨迹模仿更有针对性的数据构造准则。 SystemEvolve：DynaFlow 将工作流合成纳入主智能体动作空间，说明系统架构可以作为在线决策对象，而不必预先固定为人工设计的图。 InfraEvolve：ForgeKernel 在华为与英伟达硬件上的共同领先证明，真实硬件反馈能够支撑跨平台算子生成、验证与择优保留的进化闭环。 ResearchEvolve：Principia 的“观察—因果假设—原理—修正”循环可为自主科研系统增加显式机制模型，避免仅靠试错搜索实验结果。 PersonalEvolve：Ling-3.1-flash-1019 与 HABIT-Bench 分别提供个人智能体底座和长期弱证据画像评测，可用于构建“部署—积累习惯—验证个性化收益”的闭环。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-10-29T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-29T10:21:29+08:00">
+    <meta property="article:modified_time" content="2026-10-29T10:29:05+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-10-29 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 模型与个人智能体发布：OpenAI 推出兼顾桌面操作能力、速度与成本的 GPT-6.1 Terra，蚂蚁百灵则开源强化长程任务和工具使用的 Ling-3.1-flash-1019，智能体竞争进一步从模型指标转向真实任务效费比。 递归自我改进走向可执行闭环：Apex-35B-V1.0 将 AI 参与实验、分析与成果回用纳入模型研发，The Trinity 则联合演化可验证环境、能力树和 Harness，体现 RSI 从概念讨论转向系统化实现。 工作流与多智能体结构成为主要演化对象：Evo² 在冻结执行器的条件下协同搜索工作流与演化策略，DynaFlow 学习按任务动态编排子智能体，显示系统级优化正由固定脚手架转向可学习的运行时组织。 长期学习与记忆迎来密集检验（5 条）：DeepMind：自演化智能体能否持续学习？ 与 CLE 揭示连续任务中的遗忘和跨任务干扰，Memory Tax 质疑复杂记忆系统相对朴素 RAG 的净收益，TTME 和 HABIT-Bench 分别给出测试时记忆演化与长期用户习惯归纳的新路径。 可验证反馈继续推动训练与基础设施自动优化：Trajectory2Gym 以决策依据和依赖覆盖合成工具交互，ForgeKernel 则在华为、英伟达硬件榜单验证跨平台算子自进化，表明数据与系统两端都在形成自动验证闭环。 热点延伸集中于主动式与多模态生成：低相关性条目涵盖 主动式 AI 的 6A 框架、世界一致视频生成、空间音频和长视频取证，反映业界对连续感知、意图预判及复杂时序内容的关注升温。 对当前研究的启发 Awesome-RSI：The Trinity 将环境生成、能力刻画和 Harness 演化组成可验证闭环，可作为区分真正递归改进与单轮自优化的系统案例。 SystemEvolve：Evo² 与 DynaFlow 表明可将工作流改写和多智能体编排直接纳入动作空间，并用外部评测或过滤后的轨迹持续优化系统结构。 AgentEvolve：TTME 证明冻结权重、仅演化外部记忆也能在连续科学任务中超过测试时训练，为部署后免训练自进化提供了高效路线。 MemoryEvolve：Memory Tax 提示记忆研究必须报告相对原始历史检索的净增益及处理成本，而不能只与无记忆基线比较。 GeneralizeEvolve：DeepMind 的持续学习评估 与 CLE 可用于系统测量自进化在连续任务流中的可塑性、跨任务迁移和灾难性遗忘。 AgentTrainEvolve：Trajectory2Gym 可将“依赖覆盖充分、决策依据明确”作为多轮工具轨迹的生成与筛选准则，改善有状态 Agent 训练数据质量。 EnvironmentEvolve：The Trinity 的 Creator–Explorer–Evolver 分工展示了环境生成器、能力边界探索器与系统优化器协同演化的具体架构。 InfraEvolve：ForgeKernel 在两类硬件评测上的领先结果验证了以正确性和性能为机器反馈、跨后端自动搜索算子的产业可行性。 PersonalEvolve：HABIT-Bench 将个性化能力拆解为从长期弱证据中推断、更新和适时应用习惯，可直接作为个人 Agent 画像演化的评测模板。 NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量级成本下降，说明真实桌面 Agent 的落地评估应优先转向单位任务成本、速度与可靠性。">
+今日概览 新模型与个人智能体加速落地：OpenAI 推出低成本电脑操作模型 GPT-6.1 Terra，蚂蚁开源面向长程个人任务的 Ling-3.1-flash-1019，超衍智能则以 Apex-35B-V1.0 展示 AI 参与训练实验与成果回用的模型自进化路线。 递归与系统级自进化从概念走向可验证闭环：The Trinity 协同演化环境、能力树与 Harness，Evo² 在冻结模型时搜索工作流及演化策略，ForgeKernel 则以跨硬件榜单成绩证明自动生成和优化基础设施的实用性。 持续学习与记忆进入“净收益”检验阶段：DeepMind 的连续任务研究 与 CLE 均揭示现有智能体的遗忘和经验复用瓶颈，Memory Tax 进一步发现复杂记忆系统未必优于朴素 RAG，而 TTME 展示了低成本外部记忆演化的可行替代路线。 Agent 训练、编排与运行评测同步演进：Trajectory2Gym 合成决策驱动的工具交互，DynaFlow 学习任务自适应的多智能体工作流，TraceTrial-Bench 则把评测推进到运行框架故障归因与轨迹审计层面。 自主科研开始强化机制发现能力：Principia 在测试时循环形成并修正因果假设和科学原理，与记忆演化路线共同指向无需频繁更新参数的闭环科学发现系统。 热点延伸主要覆盖主动式 AI 框架、空间音视频生成、长视频取证与空间 VLM 等多模态方向，反映连续交互和时空一致性仍是当日外围热点。 对当前研究的启发 Awesome-RSI：The Trinity 将环境生成、能力刻画和 Harness 演化纳入同一闭环，可作为判定 RSI 是否真正改进“改进机制本身”的代表案例。 AgentEvolve：TTME 证明冻结权重、只演化外部记忆也能持续提升科学任务表现，可直接补充推理时经验积累与免训练自进化路线。 MemoryEvolve：Memory Tax 与 HABIT-Bench 表明记忆研究应同时测量相对原始历史检索的净收益，以及跨数百次会话归纳弱证据习惯的能力。 GeneralizeEvolve：DeepMind 的连续任务研究 和 CLE 提供了从跨任务干扰、遗忘及经验迁移角度区分真实持续学习与局部适配的评测框架。 HarnessEvolve：Evo² 展示了冻结执行器后联合搜索工作流与演化策略的方法，可用于研究 Harness 改进能否跨任务持续迁移。 Groom：TraceTrial-Bench 的轨迹、多源证据与机制链归因可直接借鉴到过程级 token 利用评测，定位成本消耗与失败机制。 AgentTrainEvolve：Trajectory2Gym 以组合依赖覆盖和决策依据充分性合成交互，为多轮工具调用训练提供了比表层轨迹模仿更有针对性的数据构造准则。 SystemEvolve：DynaFlow 将工作流合成纳入主智能体动作空间，说明系统架构可以作为在线决策对象，而不必预先固定为人工设计的图。 InfraEvolve：ForgeKernel 在华为与英伟达硬件上的共同领先证明，真实硬件反馈能够支撑跨平台算子生成、验证与择优保留的进化闭环。 ResearchEvolve：Principia 的“观察—因果假设—原理—修正”循环可为自主科研系统增加显式机制模型，避免仅靠试错搜索实验结果。 PersonalEvolve：Ling-3.1-flash-1019 与 HABIT-Bench 分别提供个人智能体底座和长期弱证据画像评测，可用于构建“部署—积累习惯—验证个性化收益”的闭环。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-29/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-27/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -68,8 +69,8 @@ NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-29\/"
-    },"genre": "updates","wordcount":  1312 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-29\/","datePublished": "2026-10-29T00:00:00+08:00","dateModified": "2026-10-29T10:21:29+08:00","publisher": {
+    },"genre": "updates","wordcount":  1345 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-10-29\/","datePublished": "2026-10-29T00:00:00+08:00","dateModified": "2026-10-29T10:29:05+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -252,7 +253,7 @@ NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-10-29 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-29">2026-10-29</time></span>&nbsp;<span title="更新于 2026-10-29 10:21:29"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-29">2026-10-29</time></span>&nbsp;<span title="1312 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-10-29 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-29">2026-10-29</time></span>&nbsp;<span title="更新于 2026-10-29 10:29:05"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-10-29">2026-10-29</time></span>&nbsp;<span title="1345 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -272,32 +273,33 @@ NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量�
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>模型与个人智能体发布</strong>：OpenAI 推出兼顾桌面操作能力、速度与成本的 <a href="#openai-gpt-6-1-terra-astra">GPT-6.1 Terra</a>，蚂蚁百灵则开源强化长程任务和工具使用的 <a href="#personal-agent-ling-3-1-flash-1019">Ling-3.1-flash-1019</a>，智能体竞争进一步从模型指标转向真实任务效费比。</li>
-<li><strong>递归自我改进走向可执行闭环</strong>：<a href="#35b-apex-35b-v1-0">Apex-35B-V1.0</a> 将 AI 参与实验、分析与成果回用纳入模型研发，<a href="#the-trinity">The Trinity</a> 则联合演化可验证环境、能力树和 Harness，体现 RSI 从概念讨论转向系统化实现。</li>
-<li><strong>工作流与多智能体结构成为主要演化对象</strong>：<a href="#evo">Evo²</a> 在冻结执行器的条件下协同搜索工作流与演化策略，<a href="#dynaflow">DynaFlow</a> 学习按任务动态编排子智能体，显示系统级优化正由固定脚手架转向可学习的运行时组织。</li>
-<li><strong>长期学习与记忆迎来密集检验</strong>（5 条）：<a href="#deepmind">DeepMind：自演化智能体能否持续学习？</a> 与 <a href="#cle-llm">CLE</a> 揭示连续任务中的遗忘和跨任务干扰，<a href="#memory-tax">Memory Tax</a> 质疑复杂记忆系统相对朴素 RAG 的净收益，<a href="#ttme">TTME</a> 和 <a href="#habit-bench">HABIT-Bench</a> 分别给出测试时记忆演化与长期用户习惯归纳的新路径。</li>
-<li><strong>可验证反馈继续推动训练与基础设施自动优化</strong>：<a href="#trajectory2gym">Trajectory2Gym</a> 以决策依据和依赖覆盖合成工具交互，<a href="#forgekernel">ForgeKernel</a> 则在华为、英伟达硬件榜单验证跨平台算子自进化，表明数据与系统两端都在形成自动验证闭环。</li>
-<li><strong>热点延伸集中于主动式与多模态生成</strong>：低相关性条目涵盖 <a href="#ai-6a">主动式 AI 的 6A 框架</a>、世界一致视频生成、空间音频和长视频取证，反映业界对连续感知、意图预判及复杂时序内容的关注升温。</li>
+<li><strong>新模型与个人智能体加速落地</strong>：OpenAI 推出低成本电脑操作模型 <a href="#openai-gpt-6-1-terra-astra">GPT-6.1 Terra</a>，蚂蚁开源面向长程个人任务的 <a href="#personal-agent-ling-3-1-flash-1019">Ling-3.1-flash-1019</a>，超衍智能则以 <a href="#35b-apex-35b-v1-0">Apex-35B-V1.0</a> 展示 AI 参与训练实验与成果回用的模型自进化路线。</li>
+<li><strong>递归与系统级自进化从概念走向可验证闭环</strong>：<a href="#the-trinity">The Trinity</a> 协同演化环境、能力树与 Harness，<a href="#evo">Evo²</a> 在冻结模型时搜索工作流及演化策略，<a href="#forgekernel">ForgeKernel</a> 则以跨硬件榜单成绩证明自动生成和优化基础设施的实用性。</li>
+<li><strong>持续学习与记忆进入“净收益”检验阶段</strong>：<a href="#deepmind">DeepMind 的连续任务研究</a> 与 <a href="#cle-llm">CLE</a> 均揭示现有智能体的遗忘和经验复用瓶颈，<a href="#memory-tax">Memory Tax</a> 进一步发现复杂记忆系统未必优于朴素 RAG，而 <a href="#ttme">TTME</a> 展示了低成本外部记忆演化的可行替代路线。</li>
+<li><strong>Agent 训练、编排与运行评测同步演进</strong>：<a href="#trajectory2gym">Trajectory2Gym</a> 合成决策驱动的工具交互，<a href="#dynaflow">DynaFlow</a> 学习任务自适应的多智能体工作流，<a href="#tracetrial-bench">TraceTrial-Bench</a> 则把评测推进到运行框架故障归因与轨迹审计层面。</li>
+<li><strong>自主科研开始强化机制发现能力</strong>：<a href="#principia">Principia</a> 在测试时循环形成并修正因果假设和科学原理，与记忆演化路线共同指向无需频繁更新参数的闭环科学发现系统。</li>
+<li><strong>热点延伸</strong>主要覆盖主动式 AI 框架、空间音视频生成、长视频取证与空间 VLM 等多模态方向，反映连续交互和时空一致性仍是当日外围热点。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>Awesome-RSI</strong>：<a href="#the-trinity">The Trinity</a> 将环境生成、能力刻画和 Harness 演化组成可验证闭环，可作为区分真正递归改进与单轮自优化的系统案例。</li>
-<li><strong>SystemEvolve</strong>：<a href="#evo">Evo²</a> 与 <a href="#dynaflow">DynaFlow</a> 表明可将工作流改写和多智能体编排直接纳入动作空间，并用外部评测或过滤后的轨迹持续优化系统结构。</li>
-<li><strong>AgentEvolve</strong>：<a href="#ttme">TTME</a> 证明冻结权重、仅演化外部记忆也能在连续科学任务中超过测试时训练，为部署后免训练自进化提供了高效路线。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#memory-tax">Memory Tax</a> 提示记忆研究必须报告相对原始历史检索的净增益及处理成本，而不能只与无记忆基线比较。</li>
-<li><strong>GeneralizeEvolve</strong>：<a href="#deepmind">DeepMind 的持续学习评估</a> 与 <a href="#cle-llm">CLE</a> 可用于系统测量自进化在连续任务流中的可塑性、跨任务迁移和灾难性遗忘。</li>
-<li><strong>AgentTrainEvolve</strong>：<a href="#trajectory2gym">Trajectory2Gym</a> 可将“依赖覆盖充分、决策依据明确”作为多轮工具轨迹的生成与筛选准则，改善有状态 Agent 训练数据质量。</li>
-<li><strong>EnvironmentEvolve</strong>：<a href="#the-trinity">The Trinity</a> 的 Creator–Explorer–Evolver 分工展示了环境生成器、能力边界探索器与系统优化器协同演化的具体架构。</li>
-<li><strong>InfraEvolve</strong>：<a href="#forgekernel">ForgeKernel</a> 在两类硬件评测上的领先结果验证了以正确性和性能为机器反馈、跨后端自动搜索算子的产业可行性。</li>
-<li><strong>PersonalEvolve</strong>：<a href="#habit-bench">HABIT-Bench</a> 将个性化能力拆解为从长期弱证据中推断、更新和适时应用习惯，可直接作为个人 Agent 画像演化的评测模板。</li>
-<li><strong>NewApply</strong>：<a href="#openai-gpt-6-1-terra-astra">GPT-6.1 Terra</a> 以接近高端模型的电脑操作能力实现数量级成本下降，说明真实桌面 Agent 的落地评估应优先转向单位任务成本、速度与可靠性。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#the-trinity">The Trinity</a> 将环境生成、能力刻画和 Harness 演化纳入同一闭环，可作为判定 RSI 是否真正改进“改进机制本身”的代表案例。</li>
+<li><strong>AgentEvolve</strong>：<a href="#ttme">TTME</a> 证明冻结权重、只演化外部记忆也能持续提升科学任务表现，可直接补充推理时经验积累与免训练自进化路线。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#memory-tax">Memory Tax</a> 与 <a href="#habit-bench">HABIT-Bench</a> 表明记忆研究应同时测量相对原始历史检索的净收益，以及跨数百次会话归纳弱证据习惯的能力。</li>
+<li><strong>GeneralizeEvolve</strong>：<a href="#deepmind">DeepMind 的连续任务研究</a> 和 <a href="#cle-llm">CLE</a> 提供了从跨任务干扰、遗忘及经验迁移角度区分真实持续学习与局部适配的评测框架。</li>
+<li><strong>HarnessEvolve</strong>：<a href="#evo">Evo²</a> 展示了冻结执行器后联合搜索工作流与演化策略的方法，可用于研究 Harness 改进能否跨任务持续迁移。</li>
+<li><strong>Groom</strong>：<a href="#tracetrial-bench">TraceTrial-Bench</a> 的轨迹、多源证据与机制链归因可直接借鉴到过程级 token 利用评测，定位成本消耗与失败机制。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#trajectory2gym">Trajectory2Gym</a> 以组合依赖覆盖和决策依据充分性合成交互，为多轮工具调用训练提供了比表层轨迹模仿更有针对性的数据构造准则。</li>
+<li><strong>SystemEvolve</strong>：<a href="#dynaflow">DynaFlow</a> 将工作流合成纳入主智能体动作空间，说明系统架构可以作为在线决策对象，而不必预先固定为人工设计的图。</li>
+<li><strong>InfraEvolve</strong>：<a href="#forgekernel">ForgeKernel</a> 在华为与英伟达硬件上的共同领先证明，真实硬件反馈能够支撑跨平台算子生成、验证与择优保留的进化闭环。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#principia">Principia</a> 的“观察—因果假设—原理—修正”循环可为自主科研系统增加显式机制模型，避免仅靠试错搜索实验结果。</li>
+<li><strong>PersonalEvolve</strong>：<a href="#personal-agent-ling-3-1-flash-1019">Ling-3.1-flash-1019</a> 与 <a href="#habit-bench">HABIT-Bench</a> 分别提供个人智能体底座和长期弱证据画像评测，可用于构建“部署—积累习惯—验证个性化收益”的闭环。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 31 条</span><a href="#daily-featured">⭐ 重点 13</a><a href="#daily-related">🔬 相关 12</a><a href="#daily-hot">🔥 热点 6</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 34 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 13</a><a href="#daily-hot">🔥 热点 6</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">13 条</span></h2>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">15 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="openai-gpt-6-1-terra-astra" class="summary-card daily-item">
   <h2 id="openai-gpt-6-1-terra-astra-title" class="daily-item-title">OpenAI 发布 GPT-6.1 Terra：电脑操作能力比肩 Astra，成本降至十分之一</h2><p class="single-subtitle daily-item-summary">OpenAI 发布面向电脑操作与日常工作的 GPT-6.1 Terra，在视觉推理、桌面任务和编程能力上显著提升，并以更低定价和更高速度接近 GPT-6 Astra 的表现。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/w3jWPCkJyM4OtjY5mF22LA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/w3jWPCkJyM4OtjY5mF22LA</a></div></div><div class="daily-item-content"><p>GPT-6.1 Terra 主打低成本、高速度的电脑操作能力，可处理文档撰写、表格填写、技术图纸解读、视频剪辑及软件操作等任务。文章称其在 Agents&rsquo; Last Exam、MMMU-Pro 和 OSWorld 2.1 等评测中显著优于 GPT-5.6 Terra，并以约十分之一的单 Token 价格取得接近 GPT-6 Astra 的表现。该模型在 Terminal-Bench 4.0 上的最高成绩为 50.3%，事实错误率最低降至 4.3%，同时增强了对提示注入攻击的抵抗能力。模型已向 ChatGPT Work、Codex 及 OpenAI API 开放，API 模型 ID 为 <code>gpt-6.1-terra</code>。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -382,6 +384,18 @@ NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[测试时记忆演化能否胜过测试时训练，助力科学发现？（101 ▲）](https://huggingface.co/papers/2610.32046?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-28)</div>
   </details></article>
+<article id="tracetrial-bench" class="summary-card daily-item">
+  <h2 id="tracetrial-bench-title" class="daily-item-title">TraceTrial-Bench：智能体运行框架可靠性与故障归因基准</h2><p class="single-subtitle daily-item-summary">TraceTrial-Bench通过执行轨迹、多源证据和机制链归因，对智能体运行框架的可靠性及其与底层模型行为的交互进行可审计评测。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/groom/">Groom</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E6%95%85%E9%9A%9C%E5%BD%92%E5%9B%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;故障归因</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%A8%E8%BF%B9%E5%AE%A1%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;轨迹审计</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.32285" target="_blank" rel="noopener">https://arxiv.org/abs/2610.32285</a></div></div><div class="daily-item-content"><p>TraceTrial-Bench将智能体运行框架的可靠性划分为上下文、执行、治理、生命周期、可观测性、工具和验证七个组成部分，并构建95项专家级机制导向任务。基准引入轨迹追踪（TT）模块记录智能体执行过程，以双层评估框架分别衡量任务表现与运行框架可靠性。多源证据获取（MEA）模块从智能体上下文、运行框架和执行环境收集证据，故障归因（FA）模块则利用显式机制链完成运行级归因。针对4种运行框架、9个模型的3420次运行，框架宏平均得分为59.8%至72.0%，且31.1%的运行虽完成任务，却至少违反一项框架可靠性标准。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为不同智能体运行框架提供可复现、可审计且保留其原生行为的横向比较方案。</li>
+<li>将任务成功率与框架可靠性分离，避免以最终结果掩盖执行、治理或验证环节的缺陷。</li>
+<li>通过轨迹和多源证据定位故障机制，可用于运行时诊断、框架优化及可靠性回归测试。</li>
+<li>揭示底层模型能力与运行框架设计之间的交互，为可信智能体系统选型提供依据。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[追踪记录的考验：智能体运行框架的可靠性与故障归因基准测试（249 ▲）](https://huggingface.co/papers/2610.32285?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-27)</div>
+  </details></article>
 <article id="trajectory2gym" class="summary-card daily-item">
   <h2 id="trajectory2gym-title" class="daily-item-title">Trajectory2Gym：面向工具使用智能体的决策驱动交互合成</h2><p class="single-subtitle daily-item-summary">Trajectory2Gym围绕组合依赖覆盖与决策依据充分性合成可执行交互，在五种Qwen3规模上显著提升工具使用智能体的多轮与有状态任务表现。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体训练</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体数据合成</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.33568" target="_blank" rel="noopener">https://arxiv.org/abs/2610.33568</a></div></div><div class="daily-item-content"><p>Trajectory2Gym指出，成功的工具调用轨迹未必适合作为监督数据，因为其中可能缺少多步依赖，或包含无法由智能体当时可见信息支持的动作。该方法针对支持不足的组合结构构造可执行交互，并仅从实际执行中具有充分决策依据的动作提取监督信号。它通过结构支持选择分配训练经验，并采用父级归一化监督微调，将完整语义交互作为训练权重单位。在五种Qwen3规模上，该方法均提升Tau1、Tau2和BFCL表现，三个基准等权平均提高16.9至29.8个百分点，尤其有利于有状态和多轮交互。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -417,6 +431,23 @@ NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[DynaFlow：学习自由形式的多智能体编排（189 ▲）](https://huggingface.co/papers/2610.34467?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-27)</div>
+  </details></article>
+<article id="principia" class="summary-card daily-item">
+  <h2 id="principia-title" class="daily-item-title">Principia：测试时假设与原理构建驱动科学发现</h2><p class="single-subtitle daily-item-summary">Principia 在测试时从实验观察中形成因果假设、归纳科学原理并持续修正，以闭环方式提升多类科学发现任务的效果。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：机制发现</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a><a href="/LLMDailyDigestWeb/topic/%E9%97%AD%E7%8E%AF%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;闭环科学研究</a><a href="/LLMDailyDigestWeb/topic/%E5%9B%A0%E6%9E%9C%E5%BD%92%E5%9B%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;因果归因</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.32195" target="_blank" rel="noopener">https://arxiv.org/abs/2610.32195</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/DongkiKim95/Principia" target="_blank" rel="noopener">https://github.com/DongkiKim95/Principia</a></div></div><div class="daily-item-content"><ul>
+<li>Principia 是一个面向科学发现的 LLM 框架，可在测试时构建并持续完善任务相关的科学原理。</li>
+<li>框架首先比较相关输入及其观测结果，形成比较性因果假设，再从多个假设中归纳反复出现的关系。</li>
+<li>新构建的假设和原理会被用于产生后续观测，而新观测又会触发假设修订与原理重构，形成知识持续演化的闭环。</li>
+<li>在分子优化、蛋白质工程、基因扰动和分子性质预测基准上，该方法优于依赖内部知识、外部资料或经验摘要的基线，生成的原理也与科学文献较为一致。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为科研智能体提供“观测—假设—原理—新观测”的闭环机制，使其不必完全依赖预训练知识或静态外部资料。</li>
+<li>可用于从逐步积累的实验结果中提炼任务特定的因果规律，辅助实验设计和候选方案优化。</li>
+<li>表明测试时持续更新结构化科学知识，可能比简单存储经验摘要更适合复杂科学发现任务。</li>
+<li>可作为分子设计、蛋白质工程和基因干预等领域自动化发现系统的原理归纳模块。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Principia：通过测试时假设构建原理以实现科学发现（27 ▲）](https://huggingface.co/papers/2610.32195?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-27)</div>
   </details></article>
 <article id="35b-apex-35b-v1-0" class="summary-card daily-item">
   <h2 id="35b-apex-35b-v1-0-title" class="daily-item-title">超衍智能发布35B自进化模型 Apex-35B-V1.0</h2><p class="single-subtitle daily-item-summary">超衍智能发布基于 Qwen3.6-35B-A3B 训练的 Apex-35B-V1.0，并以 AI 参与实验、分析和成果回用的递归自我改进流程提升科研、智能体、编程与推理能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/apexin-ai/Apex-35B-V1.0" target="_blank" rel="noopener">https://github.com/apexin-ai/Apex-35B-V1.0</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/ebcoQ-nClgWK4oT43B-QNw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/ebcoQ-nClgWK4oT43B-QNw</a></div></div><div class="daily-item-content"><p>Apex-35B-V1.0 是超衍智能发布的首款 35B 模型，基于 Qwen3.6-35B-A3B 进行中期训练和后训练，并加入自有数据与研究轨迹。其研发流程引入递归自我改进，让 AI 参与实验执行和结果分析，并将验证有效的成果用于后续模型迭代。发布方称，该模型在研究、智能体、编程和推理四类共 21 项基准中，20 项领先同量级基础模型，对比 Recursive Flint 则取得 18 项领先、1 项持平。模型重点覆盖论文复现、科学问题求解、工具调用、代码工程和深度搜索等任务，相关权重与代码已公开。</p>
@@ -454,7 +485,7 @@ NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[HABIT-Bench：评估智能体记忆根据长期弱证据进行习惯诱导的能力（79 ▲）](https://huggingface.co/papers/2610.24520?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-28)</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">12 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">13 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/" onclick="event.stopPropagation()">Awesome-RSI</a><span class="daily-count">3 条</span>
               </summary>
@@ -680,6 +711,27 @@ NewApply：GPT-6.1 Terra 以接近高端模型的电脑操作能力实现数量�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[离散词元能否成为视觉信号在语义上无损的表示？（82 ▲）](https://huggingface.co/papers/2610.37662?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-28)</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/" onclick="event.stopPropagation()">EvolveLRM</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="fork" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>FORK：精确率目标缓解评分标准强化学习中的奖励投机</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 奖励机制设计 · <a href="https://arxiv.org/abs/2610.33512" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">FORK 奖励通过联合优化评分标准覆盖率与回答精确率，在保持覆盖率的同时减少冗余和事实错误，显著缓解基于评分标准强化学习中的奖励投机。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：奖励机制设计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E4%BD%9C%E5%BC%8A/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;奖励作弊</a><a href="/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;奖励建模</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%8C%BB%E7%96%97%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;医疗人工智能</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.33512" target="_blank" rel="noopener">https://arxiv.org/abs/2610.33512</a></div></div><div class="daily-item-content"><p>基于评分标准的奖励通常侧重最大化条目覆盖率，本质上偏向召回率，容易诱导模型生成冗长、非必要甚至事实错误的内容。FORK 奖励在覆盖率目标之外引入精确率目标，要求回答中的每个信息单元既有必要性又具备事实正确性。该目标分别通过评分标准驱动的必要性信用和事实正确性评分器进行度量。实验显示，FORK 在维持相近评分标准覆盖率的同时缩短回答并提高精确率，在 RubricHub-Medical 和 HealthBench 上相对基础策略的胜率分别由 10.6% 提升至 68.0%、由 22.1% 提升至 74.1%。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为不可验证任务中的强化学习提供兼顾覆盖率、简洁性和事实正确性的奖励设计。</li>
+<li>表明只优化评分标准覆盖率会产生类似“召回率偏置”的奖励投机，需要对回答中的每个内容单元施加精确率约束。</li>
+<li>可用于改进医疗问答等高风险场景的后训练，减少冗余陈述和事实错误。</li>
+<li>提示奖励评估应关注覆盖率与整体回答质量之间的帕累托权衡，而非单一分数最大化。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[追求精确：精确性目标缓解基于评分标准的强化学习中的奖励投机（33 ▲）](https://huggingface.co/papers/2610.33512?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-10-27)</div>
   </details></div>
 </details>
 </div>
