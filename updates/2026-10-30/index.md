@@ -6,26 +6,25 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- 递归自我改进从概念验证走向可审计系统：[RSI-Master](#rsi-master) 以动态研究 DAG 驱动自主后训练，[RSI Arena](#rsi-arena) 则揭示人类偏好提升未必同步改善能力与安全，[CMU开源Hermit](#cmu-hermit-harness-rsi) 进一步将持续改进能力外置到统一 Harness 层。
-- 环境演化成为 Agent 与机器人训练的关键扩展路径：[WorkRover](#workrover) 用执行反馈递归修复长程协同环境并细化信用分配，[Gym-Anything](#gym-anything) 通过创建—审计闭环规模化生成机器人仿真。
-- 推理模型训练集中攻克自主数据、探索与过程监督：[LongZero](#longzero) 实现零外部数据的长上下文任务合成，[PSN-RLVR](#psn-rlvr) 以轨迹一致的参数扰动恢复探索能力，多项工作还分别改进教师纠正、分层奖励与置信度对齐。
-- 具身智能进一步转向真实规模的经验共享与持续学习：[群体经验学习 CEL](#cel) 在96台机器人上验证跨个体经验复用，[CausGround](#causground) 则将交互经验提炼为无需更新参数即可迁移的因果动作知识。
-- 自主科研同时推进“发现能力”与“质量验证”：[MoLRSI](#molrsi) 将工作流、架构和持久记忆纳入分子发现的递归改进，[协作式 AI 智能体自主开展固态量子自旋实验研究](#item-32) 展示了多智能体通过反驳实验发现并修正测量漂移的闭环。
-- 模型与系统侧出现开放权重旗舰、扩散 Agent 模型及缓存量化等进展，其中[Mistral Large 4](#mistral-1t-large-4) 开放1T参数多模态权重；热点延伸则集中在流式音视频分离、全向视频生成、指令容量与模型安全评估。
+- 递归自我改进正从概念验证走向可审计实验系统：[RSI-Master](#rsi-master) 以研究 DAG 管理自主后训练，[RSI Arena](#rsi-arena) 则揭示人类偏好提升不等于能力与安全同步改善，[Hermit](#cmu-hermit-harness-rsi) 进一步把持续进化闭环外置到统一 Harness 层。
+- 环境与具身自进化加速规模化：[WorkRover](#workrover) 用执行反馈递归修复长程协同环境，[Gym-Anything](#gym-anything) 以创建—审计闭环生成 200 个机器人仿真环境，[CEL](#cel) 则在 96 台真机上验证群体经验共享与持续学习。
+- 推理训练同时推进数据、探索与边界认知：[LongZero](#longzero) 实现零外部数据的长上下文任务自合成，[PSN-RLVR](#psn-rlvr) 以轨迹一致的参数扰动恢复探索，而 [RLVR 无免费午餐](#rlvr-pass-1-pass-k) 从理论上指出 pass@1 增益可能以 pass@k 和策略多样性为代价。
+- 智能体评测明显转向过程证据与环境审计：[EnvOS](#envos) 区分智能体失误、环境变化和评分器错误，[VeriCUA](#vericua) 通过动态取证验证计算机操作结果，[PAPERBENCHX](#paperbenchx) 则暴露科研智能体生成可独立验证证据的能力缺口。
+- 自主科研与持续学习出现更强闭环：[MoLRSI](#molrsi) 联合改进科研工作流、模型与持久记忆并获得湿实验验证，Google 的[“睡眠”机制](#google)则通过周期性知识巩固缓解持续学习中的灾难性遗忘。
+- 新模型侧以开放权重和垂直能力为主，[Mistral Large 4](#mistral-1t-large-4) 开放 1T 参数多模态模型权重；热点延伸集中于流式音视频分离、全向视频生成、指令容量测量和模型失控风险评估，但相关性较低，不列入重点条目。
 
 ## 对当前研究的启发
-- **Awesome-RSI**：RSI-Master 的可审计实验 DAG 与 RSI Arena 的偏好—能力—安全错位表明，RSI 基准必须同时记录改进过程、资源约束和多维退化，而不能只看单一最终得分。
-- **HarnessEvolve**：Hermit 的外置 Adapter 与 KARMA 的可验证、可回滚原子知识编辑说明，冻结模型后仍可把 Harness 设计成统一且可持续演化的能力层。
-- **EnvironmentEvolve**：WorkRover 的执行反馈修复和 Gym-Anything 的对抗式创建—审计闭环，可直接用于建立“生成、运行、验错、修复、验收”的自动环境生产线。
-- **AgentTrainEvolve**：WorkRover 将终端奖励归因到具体回合、ZEST-Search 让任务提出者与求解器协同演化，为长程 Agentic RL 的信用分配和零标签课程生成提供了可组合方案。
-- **EvolveLRM**：PSN-RLVR、PIVOT 与 H²R 分别从探索、在线纠正和分层中间奖励入手，可组合成兼顾解法多样性与密集学习信号的 RLVR 配方。
-- **RobotEvolve**：CEL 的96台真机异步经验共享与 Gym-Anything 的规模化仿真生成，为构建“群体采集—失败检索—仿真扩增—真机回灌”的具身数据飞轮提供了直接路径。
-- **EvalEvolve**：EnvOS 的前后环境审计、VeriCUA 的动态取证及前缀可执行性协议共同表明，动态 Agent 评测应把环境变化、过程失效和评分器错误分开归因。
-- **Groom**：前缀可执行性与 EnvOS 的证据复核可用于把 token 消耗映射到有效推进、错误恢复和无效重复，并以可审计证据替代 Agent 自述。
-- **ResearchEvolve**：量子自旋实验中的相互审查与反驳性实验，以及 MoLRSI 的真实实验验证，说明科研智能体应把异常检测、反证实验和外部实证设为闭环中的强制关卡。
-- **MemoryEvolve**：Google“睡眠”框架的清醒期采集与睡眠期巩固，以及 CORAL 的自主检查点和上下文重置，为长期记忆的写入、压缩与参数化巩固提供了双时间尺度设计。
-- **DataEvolve**：合成数据预预训练的计算量对齐负结果说明，数据自进化必须以等算力自然数据基线衡量真实边际收益，并联合优化验证阈值、噪声与训练阶段。
-- **CacheEvolve**：低比特 GDN 的梯度感知精度分配和 dLLM-KVQ 的轨迹感知校准表明，缓存压缩策略需要针对状态随时间或去噪步骤演化的误差结构进行自适应管理。
+- **Awesome-RSI**：[RSI-Master](#rsi-master)与[RSI Arena](#rsi-arena)表明 RSI 基准应同时记录实验谱系、作弊风险、通用能力和安全变化，不能以单一偏好分数判定“持续改进”。
+- **HarnessEvolve**：[Hermit](#cmu-hermit-harness-rsi)提供了将训练、评估、部署和反馈学习统一到可插拔 Adapter 的实现路径，而[EnvOS](#envos)可补充环境认证与事后审计层。
+- **EnvironmentEvolve**：[WorkRover](#workrover)的递归修复和[Gym-Anything](#gym-anything)的对抗式创建—审计可组合成“生成、执行、验错、修复、再验证”的环境进化流水线。
+- **RobotEvolve**：[CEL](#cel)证明跨机器人共享失败与成功经验能够扩展到近百台真机，可将群体经验池纳入现有 sim-to-real 数据回灌闭环。
+- **EvolveLRM**：[PSN-RLVR](#psn-rlvr)与[RLVR 无免费午餐](#rlvr-pass-1-pass-k)共同提示训练时应联合监控 pass@1、pass@k、策略熵和解法多样性，并以参数空间探索缓解能力集中化。
+- **DataEvolve**：[LongZero](#longzero)展示了无需教师和外部语料的长上下文任务生成闭环，但“合成数据预预训练”的负结果提示必须做计算量对齐与验证筛选。
+- **EvalEvolve**：[EnvOS](#envos)、[VeriCUA](#vericua)和[PAPERBENCHX](#paperbenchx)说明下一代动态评测应把环境状态认证、过程取证与独立复现实验作为统一 ground truth。
+- **Groom**：[VeriCUA](#vericua)的 GUI—代码组合证据和 EnvOS 的错误归因机制可直接用于把 token 消耗关联到可验证的中间进展、恢复行为与最终证据。
+- **ResearchEvolve**：[MoLRSI](#molrsi)证明工作流、架构和记忆联合 RSI 能产生实验成果，而[PAPERBENCHX](#paperbenchx)提示项目评测必须要求跨领域独立复现而非只审阅论文文本。
+- **MemoryEvolve**：Google 的[“睡眠”机制](#google)可借鉴为记忆系统的周期性巩固阶段，用自生成回放、蒸馏和容量扩展协调新知识吸收与旧知识保持。
+- **NewModel**：[Mistral Large 4](#mistral-1t-large-4)值得重点分析其 1T 稀疏多模态架构、低 Token 配方及限制 MaaS 转售的开放权重许可对部署生态的影响。
 
 <!-- daily-summary:end -->
 
