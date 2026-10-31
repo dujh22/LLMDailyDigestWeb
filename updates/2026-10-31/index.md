@@ -6,22 +6,21 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- 递归自我改进形成两条互补路线：[RISE](#rise-rlvr) 以交错 RLVR 和在策略蒸馏外推“未来教师”，[A-RSI](#a-rsi) 则通过奖励波动驱动任务刷新，实现零外部数据的多模态自训练闭环。
-- 动态、可验证评测进一步走向真实任务：[Few Shots](#few-shots-agent) 允许 Agent 提交带程序验证器的科学挑战，[Co-Design Bench](#co-design-bench) 则以真实编码会话和“判定后反驳”协议评估多模态软件工程 Agent。
-- 多模态模型同时推进统一化与机制理解：[Youtu-Parsing-Omni](#youtu-parsing-omni) 用统一编码器、输出模式和自演化蒸馏覆盖全模态解析，[JEPA 表征研究](#jepa) 与[稀疏检索头分析](#mllm) 分别解释跨模态对齐和证据检索机制。
-- 系统与应用侧出现可落地进展：[VibeGame](#vibegame-ai) 以专业化对抗智能体和免训练自进化生成完整游戏，[LOWN](#lown) 则通过按去噪步骤路由视觉计算，将扩散视觉语言模型的平均解码 FLOPs 降至 35.3%。
-- 热点延伸集中在生成架构：实时无限世界生成开始引入可渲染的 3D 高斯长期记忆，像素空间生成 Transformer 则探索频谱分槽以兼顾细节质量和计算成本。
+- 递归自我改进形成两条新路径：[RISE](#rise-rlvr) 以 RLVR 未来轨迹和在策略蒸馏构造动态教师，[A-RSI](#a-rsi) 则通过奖励波动驱动任务刷新，实现零外部数据的多模态自训练。
+- 动态评测与自动出题进一步走向“可验证、可调难度”：‌[Few Shots](#few-shots-agent) 引入程序验证器与双 Agent 校验，[基准测试是难度分布的经验度量](#item-13) 用 BenchFill 补齐难度覆盖，[Co-Design Bench](#co-design-bench) 则将真实多模态编码协作纳入评测。
+- Agent 自进化开始落到复杂可执行产物：[VibeGame](#vibegame-ai) 以专业化对抗 Agent 团队和免训练演化机制，从提示词端到端生成可玩 2D 游戏。
+- 多模态模型兼顾统一能力、表征机制与效率：[Youtu-Parsing-Omni](#youtu-parsing-omni) 统一解析四类模态，[JEPA](#jepa) 为跨模态共同表征提供理论刻画，[LOWN](#lown) 将扩散视觉语言模型的平均解码 FLOPs 降至 35.3%。
+- 热点延伸集中在生成架构：[L3G-World](#l3g-world-3d) 探索带 3D 高斯长期记忆的实时无限世界，[SpecSlot](#specslot-transformer) 则改进像素空间生成式 Transformer 的计算效率。
 
 ## 对当前研究的启发
-- **Awesome-RSI**：[RISE](#rise-rlvr) 的未来教师外推与[A-RSI](#a-rsi) 的能力边界任务刷新提供了两种可组合的 RSI 驱动力，可用于研究“更新机制进化”与“课程进化”的协同稳定性。
-- **EvolveLLM**：[RISE](#rise-rlvr) 表明可直接蒸馏模型自身尚未完成的 RLVR 更新轨迹，为减少外部教师和额外采样成本的持续自训练提供了具体方案。
-- **DataEvolve**：[A-RSI](#a-rsi) 依据奖励波动和准确率动态替换合成任务，可作为防止固定自生成数据集饱和与分布坍缩的在线数据调度机制。
-- **EvalEvolve**：[Few Shots](#few-shots-agent) 将开放出题、程序验证和双 Agent 校验结合，可直接借鉴为持续刷新且保留可复现 ground truth 的动态科学基准。
-- **ResearchEvolve**：[Few Shots](#few-shots-agent) 把科学问题提出、答案复现和验证器构造纳入统一平台，为自主科研系统建立公开竞争和迭代改进闭环提供了基础设施范式。
-- **HarnessEvolve**：[Co-Design Bench](#co-design-bench) 的真实仓库编辑环境与“判定后反驳”协议，可用于降低无参考 Agent 评测中的单一裁判偏差并强化交付物验证。
-- **TaskEvolve**：[VibeGame](#vibegame-ai) 的结构化可读写引擎、专业化智能体分工和免训练迭代机制，为“生成—试玩—诊断—修复”的可玩任务演化闭环提供了完整样板。
-- **SwarmEvolve**：[VibeGame](#vibegame-ai) 的八智能体对抗协作展示了无需参数训练的群体改进路径，可进一步研究角色结构和竞争协议能否由执行反馈自动演化。
-- **SystemEvolve**：[LOWN](#lown) 将是否处理视觉输入变成逐去噪步骤的自适应路由决策，为系统在固定质量约束下动态分配多模态算力提供了可迁移机制。
+- **Awesome-RSI**：[RISE](#rise-rlvr) 的“未来自身作为教师”与 [A-RSI](#a-rsi) 的自适应任务刷新，提供了两种无需固定外部教师的 RSI 闭环设计。
+- **EvolveLLM**：[RISE](#rise-rlvr) 表明可直接蒸馏模型自身外推后的 RLVR 更新轨迹，从而减少自改进所需的额外教师与采样成本。
+- **DataEvolve**：[A-RSI](#a-rsi) 可将奖励波动和准确率转化为合成数据刷新信号，使数据分布持续对准当前能力边界。
+- **EvalEvolve**：[Few Shots](#few-shots-agent) 的可复现答案与双 Agent 校验可增强自动出题可信度，而 [BenchFill](#item-13) 提供了按难度分布缺口定向补题的方法。
+- **ResearchEvolve**：[Few Shots](#few-shots-agent) 将科学问题提交、程序验证和纪录刷新组合成开放平台，可作为自主科研 Agent 生成与验证挑战的基础设施。
+- **AgentEvolve**：[VibeGame](#vibegame-ai) 展示了冻结参数后通过角色化对抗、试玩反馈和经验复用持续改进复杂产物的可落地路径。
+- **TaskEvolve**：[VibeGame](#vibegame-ai) 的可读写游戏引擎使“生成—运行—诊断—修复”闭环具备结构化状态与自动验收条件。
+- **HarnessEvolve**：[Co-Design Bench](#co-design-bench) 的真实仓库编辑任务和“判定后反驳”协议，可用于增强编码 Agent harness 的无参考、抗误判评测。
 
 <!-- daily-summary:end -->
 
