@@ -12,50 +12,49 @@
 
 今日概览
 
-递归自我改进正从方法盘点走向真实闭环：趋势综述归纳了可验证反馈、脚手架演化与防塌缩等关键条件，百度搜索通过在线反馈闭环实现递归自我进化则展示用户反馈驱动的数据飞轮，PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo进一步验证规划、执行和脚手架协同演化的收益。
-自动科研开始以物理实验和形式验证强化可信度：EvoSim：自进化多物理场建模系统依据实验偏差持续修订物理机制与方程，FARMS：面向自动化计算科学的可验证知识基础则用来源语境和 Lean 验证构建可复用知识底座。
-训练范式与模型架构同步收敛：单一算法统一训练基础模型尝试以最大似然统一预训练、SFT 与强化学习，ActionOPD：面向智能体决策的动作级在策略蒸馏实现跨模型动作蒸馏，长上下文混合架构：线性注意力与滑窗注意力的协同机制则厘清混合注意力的扩长与外推机制。
-评测重点转向基准生命周期和真实协作风险：BHI：为158个大模型评测基准进行健康度评分量化基准的区分度、抗饱和度与影响力，CLASHarness：多智能体冲突场景评测与数据合成框架揭示前沿智能体在冲突协作任务上的端到端通过率仍不足 30%。
-具身泛化方面，连续动作世界模型：跨具身时空动力学先验学习探索跨机器人形态和控制频率的统一动作先验；热点延伸则集中于在策略蒸馏科普、学术写作和高校求职等实践内容。
+递归自我改进加速走向真实系统闭环：百度搜索通过在线反馈闭环实现递归自我进化把线上检索反馈转为持续训练信号，PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo则验证了规划、执行与脚手架协同演化的具身路径。
+自动化科研开始同时进化模型、方法与可信知识：EvoSim：自进化多物理场建模系统以实验偏差驱动物理机制和方程修订，FARMS：面向自动化计算科学的可验证知识基础进一步用 Lean 为科研智能体提供可追溯、可验证的知识底座。
+训练侧出现更统一、更贴近智能体实际状态分布的方法：ActionOPD：面向智能体决策的动作级在策略蒸馏支持跨模型家族的语义动作蒸馏，单一算法统一训练基础模型则尝试以最大似然框架贯通预训练、SFT 与强化学习。
+评测重点由静态得分转向基准健康度和协作可靠性：BHI：为158个大模型评测基准进行健康度评分量化基准的区分度与抗饱和性，CLASHarness：多智能体冲突场景评测与数据合成框架揭示前沿智能体在冲突协作任务中的端到端通过率仍不足 30%。
+模型与具身基础能力继续向长程和跨本体泛化推进：长上下文混合架构：线性注意力与滑窗注意力的协同机制澄清混合注意力的互补机制，连续动作世界模型：跨具身时空动力学先验学习探索跨机器人形态与控制频率的经验迁移。
+热点延伸主要集中于在策略蒸馏工程解读、学术写作和高校求职工作流，适合作为方法背景与科研实践参考，但与核心研究主线关联较弱。
 
 对当前研究的启发
 
-AgentEvolve：百度搜索通过在线反馈闭环实现递归自我进化表明可将真实任务失败、用户反馈和成功轨迹持续回写为技能与工作流记忆，从而连接推理时积累与后续系统迭代。
-AgentTrainEvolve：ActionOPD：面向智能体决策的动作级在策略蒸馏提供了不依赖教师 Token 概率和同源 Tokenizer、直接在学生访问状态上蒸馏动作策略的可用训练方案。
-Awesome-RSI：递归自我改进（RSI）：2026 年论文趋势盘点可用于按可验证闭环、脚手架演化、防自蒸馏塌缩和安全评估四条主线重构 RSI 资源分类。
-PhysicalEvolve：EvoSim：自进化多物理场建模系统展示了以实验偏差为裁判、同时修订物理模型与研究方法的双层进化闭环。
-RobotEvolve：PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo与跨具身连续动作世界模型共同提示，可联合优化脚手架、规划执行和跨本体动力学先验以提升迁移效率。
-EvalEvolve：BHI：为158个大模型评测基准进行健康度评分提供了筛查基准饱和与失效风险的元评测指标，而 CLASHarness 可补充面向动态冲突和可信收尾的 Agent 评测维度。
-SwarmEvolve：CLASHarness：多智能体冲突场景评测与数据合成框架说明群体协作研究不能只测正常分工，还应系统生成队友误导、证据冲突和责任交接场景。
-ResearchEvolve：FARMS：面向自动化计算科学的可验证知识基础表明自主科研可把文献知识转化为带来源、定量保证和形式证明的可执行资产，降低结果不可审计的风险。
-CacheEvolve：长上下文混合架构：线性注意力与滑窗注意力的协同机制为固定缓存预算下组合局部精确记忆、全局压缩状态与 NoPE 外推提供了架构依据。
-EvolveLLM：单一算法统一训练基础模型提示可在同一最大似然目标中混合静态语料与在线强化学习数据，以减少阶段割裂并支持持续学习。
-GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学习提供了检验自进化能力能否跨机器人形态、控制频率和经验分布迁移的具体技术载体。
+AgentEvolve：百度搜索通过在线反馈闭环实现递归自我进化提供了从真实长程任务轨迹沉淀反馈的生产范式，可进一步拆分并比较无参工作流记忆与参数再训练各自带来的增益。
+AgentTrainEvolve：ActionOPD：面向智能体决策的动作级在策略蒸馏表明可在学生实际访问状态上以语义动作奖励完成跨模型蒸馏，适合用于工具调用 Agent 的在线策略迭代。
+Awesome-RSI：递归自我改进（RSI）：2026 年论文趋势盘点提出的可机器验证闭环、脚手架演化、防自蒸馏塌缩与安全评估，可直接作为 RSI 工作的收录和比较维度。
+PhysicalEvolve：EvoSim：自进化多物理场建模系统展示了以实验偏差同时修订物理模型和研究方法的双层进化闭环，可作为物理机制自改进系统的参考架构。
+RobotEvolve：PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo与连续动作世界模型分别提供系统级协同演化和跨本体动力学迁移方案，可组合探索具身经验跨任务复用。
+EvalEvolve：BHI：为158个大模型评测基准进行健康度评分可用于建立基准淘汰与更新机制，而 CLASHarness 的冲突任务合成方式可扩展动态多智能体评测。
+CacheEvolve：长上下文混合架构：线性注意力与滑窗注意力的协同机制给出了不同注意力组件的功能分工，可用于设计固定缓存预算下兼顾局部精度与长度外推的混合结构。
+ResearchEvolve：FARMS：面向自动化计算科学的可验证知识基础说明科研智能体可将文献语境、算法保证与形式化证明绑定，降低自主科研中错误知识被反复复用的风险。
+EvolveLLM：单一算法统一训练基础模型为把静态数据与在线生成经验纳入同一持续学习目标提供了路径，可用于检验统一训练是否缓解阶段切换和能力遗忘。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-01 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进正从方法盘点走向真实闭环：趋势综述归纳了可验证反馈、脚手架演化与防塌缩等关键条件，百度搜索通过在线反馈闭环实现递归自我进化则展示用户反馈驱动的数据飞轮，PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo进一步验证规划、执行和脚手架协同演化的收益。 自动科研开始以物理实验和形式验证强化可信度：EvoSim：自进化多物理场建模系统依据实验偏差持续修订物理机制与方程，FARMS：面向自动化计算科学的可验证知识基础则用来源语境和 Lean 验证构建可复用知识底座。 训练范式与模型架构同步收敛：单一算法统一训练基础模型尝试以最大似然统一预训练、SFT 与强化学习，ActionOPD：面向智能体决策的动作级在策略蒸馏实现跨模型动作蒸馏，长上下文混合架构：线性注意力与滑窗注意力的协同机制则厘清混合注意力的扩长与外推机制。 评测重点转向基准生命周期和真实协作风险：BHI：为158个大模型评测基准进行健康度评分量化基准的区分度、抗饱和度与影响力，CLASHarness：多智能体冲突场景评测与数据合成框架揭示前沿智能体在冲突协作任务上的端到端通过率仍不足 30%。 具身泛化方面，连续动作世界模型：跨具身时空动力学先验学习探索跨机器人形态和控制频率的统一动作先验；热点延伸则集中于在策略蒸馏科普、学术写作和高校求职等实践内容。 对当前研究的启发 AgentEvolve：百度搜索通过在线反馈闭环实现递归自我进化表明可将真实任务失败、用户反馈和成功轨迹持续回写为技能与工作流记忆，从而连接推理时积累与后续系统迭代。 AgentTrainEvolve：ActionOPD：面向智能体决策的动作级在策略蒸馏提供了不依赖教师 Token 概率和同源 Tokenizer、直接在学生访问状态上蒸馏动作策略的可用训练方案。 Awesome-RSI：递归自我改进（RSI）：2026 年论文趋势盘点可用于按可验证闭环、脚手架演化、防自蒸馏塌缩和安全评估四条主线重构 RSI 资源分类。 PhysicalEvolve：EvoSim：自进化多物理场建模系统展示了以实验偏差为裁判、同时修订物理模型与研究方法的双层进化闭环。 RobotEvolve：PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo与跨具身连续动作世界模型共同提示，可联合优化脚手架、规划执行和跨本体动力学先验以提升迁移效率。 EvalEvolve：BHI：为158个大模型评测基准进行健康度评分提供了筛查基准饱和与失效风险的元评测指标，而 CLASHarness 可补充面向动态冲突和可信收尾的 Agent 评测维度。 SwarmEvolve：CLASHarness：多智能体冲突场景评测与数据合成框架说明群体协作研究不能只测正常分工，还应系统生成队友误导、证据冲突和责任交接场景。 ResearchEvolve：FARMS：面向自动化计算科学的可验证知识基础表明自主科研可把文献知识转化为带来源、定量保证和形式证明的可执行资产，降低结果不可审计的风险。 CacheEvolve：长上下文混合架构：线性注意力与滑窗注意力的协同机制为固定缓存预算下组合局部精确记忆、全局压缩状态与 NoPE 外推提供了架构依据。 EvolveLLM：单一算法统一训练基础模型提示可在同一最大似然目标中混合静态语料与在线强化学习数据，以减少阶段割裂并支持持续学习。 GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学习提供了检验自进化能力能否跨机器人形态、控制频率和经验分布迁移的具体技术载体。">
+今日概览 递归自我改进加速走向真实系统闭环：百度搜索通过在线反馈闭环实现递归自我进化把线上检索反馈转为持续训练信号，PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo则验证了规划、执行与脚手架协同演化的具身路径。 自动化科研开始同时进化模型、方法与可信知识：EvoSim：自进化多物理场建模系统以实验偏差驱动物理机制和方程修订，FARMS：面向自动化计算科学的可验证知识基础进一步用 Lean 为科研智能体提供可追溯、可验证的知识底座。 训练侧出现更统一、更贴近智能体实际状态分布的方法：ActionOPD：面向智能体决策的动作级在策略蒸馏支持跨模型家族的语义动作蒸馏，单一算法统一训练基础模型则尝试以最大似然框架贯通预训练、SFT 与强化学习。 评测重点由静态得分转向基准健康度和协作可靠性：BHI：为158个大模型评测基准进行健康度评分量化基准的区分度与抗饱和性，CLASHarness：多智能体冲突场景评测与数据合成框架揭示前沿智能体在冲突协作任务中的端到端通过率仍不足 30%。 模型与具身基础能力继续向长程和跨本体泛化推进：长上下文混合架构：线性注意力与滑窗注意力的协同机制澄清混合注意力的互补机制，连续动作世界模型：跨具身时空动力学先验学习探索跨机器人形态与控制频率的经验迁移。 热点延伸主要集中于在策略蒸馏工程解读、学术写作和高校求职工作流，适合作为方法背景与科研实践参考，但与核心研究主线关联较弱。 对当前研究的启发 AgentEvolve：百度搜索通过在线反馈闭环实现递归自我进化提供了从真实长程任务轨迹沉淀反馈的生产范式，可进一步拆分并比较无参工作流记忆与参数再训练各自带来的增益。 AgentTrainEvolve：ActionOPD：面向智能体决策的动作级在策略蒸馏表明可在学生实际访问状态上以语义动作奖励完成跨模型蒸馏，适合用于工具调用 Agent 的在线策略迭代。 Awesome-RSI：递归自我改进（RSI）：2026 年论文趋势盘点提出的可机器验证闭环、脚手架演化、防自蒸馏塌缩与安全评估，可直接作为 RSI 工作的收录和比较维度。 PhysicalEvolve：EvoSim：自进化多物理场建模系统展示了以实验偏差同时修订物理模型和研究方法的双层进化闭环，可作为物理机制自改进系统的参考架构。 RobotEvolve：PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo与连续动作世界模型分别提供系统级协同演化和跨本体动力学迁移方案，可组合探索具身经验跨任务复用。 EvalEvolve：BHI：为158个大模型评测基准进行健康度评分可用于建立基准淘汰与更新机制，而 CLASHarness 的冲突任务合成方式可扩展动态多智能体评测。 CacheEvolve：长上下文混合架构：线性注意力与滑窗注意力的协同机制给出了不同注意力组件的功能分工，可用于设计固定缓存预算下兼顾局部精度与长度外推的混合结构。 ResearchEvolve：FARMS：面向自动化计算科学的可验证知识基础说明科研智能体可将文献语境、算法保证与形式化证明绑定，降低自主科研中错误知识被反复复用的风险。 EvolveLLM：单一算法统一训练基础模型为把静态数据与在线生成经验纳入同一持续学习目标提供了路径，可用于检验统一训练是否缓解阶段切换和能力遗忘。">
   <meta itemprop="datePublished" content="2026-11-01T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-01T12:53:51+08:00">
-  <meta itemprop="wordCount" content="1457">
+  <meta itemprop="dateModified" content="2026-11-01T12:55:14+08:00">
+  <meta itemprop="wordCount" content="1366">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-01/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-01 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进正从方法盘点走向真实闭环：趋势综述归纳了可验证反馈、脚手架演化与防塌缩等关键条件，百度搜索通过在线反馈闭环实现递归自我进化则展示用户反馈驱动的数据飞轮，PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo进一步验证规划、执行和脚手架协同演化的收益。 自动科研开始以物理实验和形式验证强化可信度：EvoSim：自进化多物理场建模系统依据实验偏差持续修订物理机制与方程，FARMS：面向自动化计算科学的可验证知识基础则用来源语境和 Lean 验证构建可复用知识底座。 训练范式与模型架构同步收敛：单一算法统一训练基础模型尝试以最大似然统一预训练、SFT 与强化学习，ActionOPD：面向智能体决策的动作级在策略蒸馏实现跨模型动作蒸馏，长上下文混合架构：线性注意力与滑窗注意力的协同机制则厘清混合注意力的扩长与外推机制。 评测重点转向基准生命周期和真实协作风险：BHI：为158个大模型评测基准进行健康度评分量化基准的区分度、抗饱和度与影响力，CLASHarness：多智能体冲突场景评测与数据合成框架揭示前沿智能体在冲突协作任务上的端到端通过率仍不足 30%。 具身泛化方面，连续动作世界模型：跨具身时空动力学先验学习探索跨机器人形态和控制频率的统一动作先验；热点延伸则集中于在策略蒸馏科普、学术写作和高校求职等实践内容。 对当前研究的启发 AgentEvolve：百度搜索通过在线反馈闭环实现递归自我进化表明可将真实任务失败、用户反馈和成功轨迹持续回写为技能与工作流记忆，从而连接推理时积累与后续系统迭代。 AgentTrainEvolve：ActionOPD：面向智能体决策的动作级在策略蒸馏提供了不依赖教师 Token 概率和同源 Tokenizer、直接在学生访问状态上蒸馏动作策略的可用训练方案。 Awesome-RSI：递归自我改进（RSI）：2026 年论文趋势盘点可用于按可验证闭环、脚手架演化、防自蒸馏塌缩和安全评估四条主线重构 RSI 资源分类。 PhysicalEvolve：EvoSim：自进化多物理场建模系统展示了以实验偏差为裁判、同时修订物理模型与研究方法的双层进化闭环。 RobotEvolve：PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo与跨具身连续动作世界模型共同提示，可联合优化脚手架、规划执行和跨本体动力学先验以提升迁移效率。 EvalEvolve：BHI：为158个大模型评测基准进行健康度评分提供了筛查基准饱和与失效风险的元评测指标，而 CLASHarness 可补充面向动态冲突和可信收尾的 Agent 评测维度。 SwarmEvolve：CLASHarness：多智能体冲突场景评测与数据合成框架说明群体协作研究不能只测正常分工，还应系统生成队友误导、证据冲突和责任交接场景。 ResearchEvolve：FARMS：面向自动化计算科学的可验证知识基础表明自主科研可把文献知识转化为带来源、定量保证和形式证明的可执行资产，降低结果不可审计的风险。 CacheEvolve：长上下文混合架构：线性注意力与滑窗注意力的协同机制为固定缓存预算下组合局部精确记忆、全局压缩状态与 NoPE 外推提供了架构依据。 EvolveLLM：单一算法统一训练基础模型提示可在同一最大似然目标中混合静态语料与在线强化学习数据，以减少阶段割裂并支持持续学习。 GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学习提供了检验自进化能力能否跨机器人形态、控制频率和经验分布迁移的具体技术载体。">
+今日概览 递归自我改进加速走向真实系统闭环：百度搜索通过在线反馈闭环实现递归自我进化把线上检索反馈转为持续训练信号，PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo则验证了规划、执行与脚手架协同演化的具身路径。 自动化科研开始同时进化模型、方法与可信知识：EvoSim：自进化多物理场建模系统以实验偏差驱动物理机制和方程修订，FARMS：面向自动化计算科学的可验证知识基础进一步用 Lean 为科研智能体提供可追溯、可验证的知识底座。 训练侧出现更统一、更贴近智能体实际状态分布的方法：ActionOPD：面向智能体决策的动作级在策略蒸馏支持跨模型家族的语义动作蒸馏，单一算法统一训练基础模型则尝试以最大似然框架贯通预训练、SFT 与强化学习。 评测重点由静态得分转向基准健康度和协作可靠性：BHI：为158个大模型评测基准进行健康度评分量化基准的区分度与抗饱和性，CLASHarness：多智能体冲突场景评测与数据合成框架揭示前沿智能体在冲突协作任务中的端到端通过率仍不足 30%。 模型与具身基础能力继续向长程和跨本体泛化推进：长上下文混合架构：线性注意力与滑窗注意力的协同机制澄清混合注意力的互补机制，连续动作世界模型：跨具身时空动力学先验学习探索跨机器人形态与控制频率的经验迁移。 热点延伸主要集中于在策略蒸馏工程解读、学术写作和高校求职工作流，适合作为方法背景与科研实践参考，但与核心研究主线关联较弱。 对当前研究的启发 AgentEvolve：百度搜索通过在线反馈闭环实现递归自我进化提供了从真实长程任务轨迹沉淀反馈的生产范式，可进一步拆分并比较无参工作流记忆与参数再训练各自带来的增益。 AgentTrainEvolve：ActionOPD：面向智能体决策的动作级在策略蒸馏表明可在学生实际访问状态上以语义动作奖励完成跨模型蒸馏，适合用于工具调用 Agent 的在线策略迭代。 Awesome-RSI：递归自我改进（RSI）：2026 年论文趋势盘点提出的可机器验证闭环、脚手架演化、防自蒸馏塌缩与安全评估，可直接作为 RSI 工作的收录和比较维度。 PhysicalEvolve：EvoSim：自进化多物理场建模系统展示了以实验偏差同时修订物理模型和研究方法的双层进化闭环，可作为物理机制自改进系统的参考架构。 RobotEvolve：PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo与连续动作世界模型分别提供系统级协同演化和跨本体动力学迁移方案，可组合探索具身经验跨任务复用。 EvalEvolve：BHI：为158个大模型评测基准进行健康度评分可用于建立基准淘汰与更新机制，而 CLASHarness 的冲突任务合成方式可扩展动态多智能体评测。 CacheEvolve：长上下文混合架构：线性注意力与滑窗注意力的协同机制给出了不同注意力组件的功能分工，可用于设计固定缓存预算下兼顾局部精度与长度外推的混合结构。 ResearchEvolve：FARMS：面向自动化计算科学的可验证知识基础说明科研智能体可将文献语境、算法保证与形式化证明绑定，降低自主科研中错误知识被反复复用的风险。 EvolveLLM：单一算法统一训练基础模型为把静态数据与在线生成经验纳入同一持续学习目标提供了路径，可用于检验统一训练是否缓解阶段切换和能力遗忘。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-01T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-01T12:53:51+08:00">
+    <meta property="article:modified_time" content="2026-11-01T12:55:14+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-01 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进正从方法盘点走向真实闭环：趋势综述归纳了可验证反馈、脚手架演化与防塌缩等关键条件，百度搜索通过在线反馈闭环实现递归自我进化则展示用户反馈驱动的数据飞轮，PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo进一步验证规划、执行和脚手架协同演化的收益。 自动科研开始以物理实验和形式验证强化可信度：EvoSim：自进化多物理场建模系统依据实验偏差持续修订物理机制与方程，FARMS：面向自动化计算科学的可验证知识基础则用来源语境和 Lean 验证构建可复用知识底座。 训练范式与模型架构同步收敛：单一算法统一训练基础模型尝试以最大似然统一预训练、SFT 与强化学习，ActionOPD：面向智能体决策的动作级在策略蒸馏实现跨模型动作蒸馏，长上下文混合架构：线性注意力与滑窗注意力的协同机制则厘清混合注意力的扩长与外推机制。 评测重点转向基准生命周期和真实协作风险：BHI：为158个大模型评测基准进行健康度评分量化基准的区分度、抗饱和度与影响力，CLASHarness：多智能体冲突场景评测与数据合成框架揭示前沿智能体在冲突协作任务上的端到端通过率仍不足 30%。 具身泛化方面，连续动作世界模型：跨具身时空动力学先验学习探索跨机器人形态和控制频率的统一动作先验；热点延伸则集中于在策略蒸馏科普、学术写作和高校求职等实践内容。 对当前研究的启发 AgentEvolve：百度搜索通过在线反馈闭环实现递归自我进化表明可将真实任务失败、用户反馈和成功轨迹持续回写为技能与工作流记忆，从而连接推理时积累与后续系统迭代。 AgentTrainEvolve：ActionOPD：面向智能体决策的动作级在策略蒸馏提供了不依赖教师 Token 概率和同源 Tokenizer、直接在学生访问状态上蒸馏动作策略的可用训练方案。 Awesome-RSI：递归自我改进（RSI）：2026 年论文趋势盘点可用于按可验证闭环、脚手架演化、防自蒸馏塌缩和安全评估四条主线重构 RSI 资源分类。 PhysicalEvolve：EvoSim：自进化多物理场建模系统展示了以实验偏差为裁判、同时修订物理模型与研究方法的双层进化闭环。 RobotEvolve：PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo与跨具身连续动作世界模型共同提示，可联合优化脚手架、规划执行和跨本体动力学先验以提升迁移效率。 EvalEvolve：BHI：为158个大模型评测基准进行健康度评分提供了筛查基准饱和与失效风险的元评测指标，而 CLASHarness 可补充面向动态冲突和可信收尾的 Agent 评测维度。 SwarmEvolve：CLASHarness：多智能体冲突场景评测与数据合成框架说明群体协作研究不能只测正常分工，还应系统生成队友误导、证据冲突和责任交接场景。 ResearchEvolve：FARMS：面向自动化计算科学的可验证知识基础表明自主科研可把文献知识转化为带来源、定量保证和形式证明的可执行资产，降低结果不可审计的风险。 CacheEvolve：长上下文混合架构：线性注意力与滑窗注意力的协同机制为固定缓存预算下组合局部精确记忆、全局压缩状态与 NoPE 外推提供了架构依据。 EvolveLLM：单一算法统一训练基础模型提示可在同一最大似然目标中混合静态语料与在线强化学习数据，以减少阶段割裂并支持持续学习。 GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学习提供了检验自进化能力能否跨机器人形态、控制频率和经验分布迁移的具体技术载体。">
+今日概览 递归自我改进加速走向真实系统闭环：百度搜索通过在线反馈闭环实现递归自我进化把线上检索反馈转为持续训练信号，PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo则验证了规划、执行与脚手架协同演化的具身路径。 自动化科研开始同时进化模型、方法与可信知识：EvoSim：自进化多物理场建模系统以实验偏差驱动物理机制和方程修订，FARMS：面向自动化计算科学的可验证知识基础进一步用 Lean 为科研智能体提供可追溯、可验证的知识底座。 训练侧出现更统一、更贴近智能体实际状态分布的方法：ActionOPD：面向智能体决策的动作级在策略蒸馏支持跨模型家族的语义动作蒸馏，单一算法统一训练基础模型则尝试以最大似然框架贯通预训练、SFT 与强化学习。 评测重点由静态得分转向基准健康度和协作可靠性：BHI：为158个大模型评测基准进行健康度评分量化基准的区分度与抗饱和性，CLASHarness：多智能体冲突场景评测与数据合成框架揭示前沿智能体在冲突协作任务中的端到端通过率仍不足 30%。 模型与具身基础能力继续向长程和跨本体泛化推进：长上下文混合架构：线性注意力与滑窗注意力的协同机制澄清混合注意力的互补机制，连续动作世界模型：跨具身时空动力学先验学习探索跨机器人形态与控制频率的经验迁移。 热点延伸主要集中于在策略蒸馏工程解读、学术写作和高校求职工作流，适合作为方法背景与科研实践参考，但与核心研究主线关联较弱。 对当前研究的启发 AgentEvolve：百度搜索通过在线反馈闭环实现递归自我进化提供了从真实长程任务轨迹沉淀反馈的生产范式，可进一步拆分并比较无参工作流记忆与参数再训练各自带来的增益。 AgentTrainEvolve：ActionOPD：面向智能体决策的动作级在策略蒸馏表明可在学生实际访问状态上以语义动作奖励完成跨模型蒸馏，适合用于工具调用 Agent 的在线策略迭代。 Awesome-RSI：递归自我改进（RSI）：2026 年论文趋势盘点提出的可机器验证闭环、脚手架演化、防自蒸馏塌缩与安全评估，可直接作为 RSI 工作的收录和比较维度。 PhysicalEvolve：EvoSim：自进化多物理场建模系统展示了以实验偏差同时修订物理模型和研究方法的双层进化闭环，可作为物理机制自改进系统的参考架构。 RobotEvolve：PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo与连续动作世界模型分别提供系统级协同演化和跨本体动力学迁移方案，可组合探索具身经验跨任务复用。 EvalEvolve：BHI：为158个大模型评测基准进行健康度评分可用于建立基准淘汰与更新机制，而 CLASHarness 的冲突任务合成方式可扩展动态多智能体评测。 CacheEvolve：长上下文混合架构：线性注意力与滑窗注意力的协同机制给出了不同注意力组件的功能分工，可用于设计固定缓存预算下兼顾局部精度与长度外推的混合结构。 ResearchEvolve：FARMS：面向自动化计算科学的可验证知识基础说明科研智能体可将文献语境、算法保证与形式化证明绑定，降低自主科研中错误知识被反复复用的风险。 EvolveLLM：单一算法统一训练基础模型为把静态数据与在线生成经验纳入同一持续学习目标提供了路径，可用于检验统一训练是否缓解阶段切换和能力遗忘。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-01/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-10-31/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -68,8 +67,8 @@ GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-01\/"
-    },"genre": "updates","wordcount":  1457 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-01\/","datePublished": "2026-11-01T00:00:00+08:00","dateModified": "2026-11-01T12:53:51+08:00","publisher": {
+    },"genre": "updates","wordcount":  1366 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-01\/","datePublished": "2026-11-01T00:00:00+08:00","dateModified": "2026-11-01T12:55:14+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -252,8 +251,8 @@ GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-01 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-01">2026-11-01</time></span>&nbsp;<span title="更新于 2026-11-01 12:53:51"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-01">2026-11-01</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-10-31 11:55 ~ 2026-11-01 12:35（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 10-31 11:55 ~ 11-01 12:35
-          </span>&nbsp;<span title="1457 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-01 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-01">2026-11-01</time></span>&nbsp;<span title="更新于 2026-11-01 12:55:14"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-01">2026-11-01</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-10-31 11:55 ~ 2026-11-01 12:35（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 10-31 11:55 ~ 11-01 12:35
+          </span>&nbsp;<span title="1366 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -273,32 +272,31 @@ GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学�
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li>递归自我改进正从方法盘点走向真实闭环：趋势综述归纳了可验证反馈、脚手架演化与防塌缩等关键条件，<a href="#item-1">百度搜索通过在线反馈闭环实现递归自我进化</a>则展示用户反馈驱动的数据飞轮，<a href="#physicalrsi-1-0-robodojo">PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo</a>进一步验证规划、执行和脚手架协同演化的收益。</li>
-<li>自动科研开始以物理实验和形式验证强化可信度：<a href="#evosim">EvoSim：自进化多物理场建模系统</a>依据实验偏差持续修订物理机制与方程，<a href="#farms">FARMS：面向自动化计算科学的可验证知识基础</a>则用来源语境和 Lean 验证构建可复用知识底座。</li>
-<li>训练范式与模型架构同步收敛：<a href="#item-13">单一算法统一训练基础模型</a>尝试以最大似然统一预训练、SFT 与强化学习，<a href="#actionopd">ActionOPD：面向智能体决策的动作级在策略蒸馏</a>实现跨模型动作蒸馏，<a href="#item-11">长上下文混合架构：线性注意力与滑窗注意力的协同机制</a>则厘清混合注意力的扩长与外推机制。</li>
-<li>评测重点转向基准生命周期和真实协作风险：<a href="#bhi-158">BHI：为158个大模型评测基准进行健康度评分</a>量化基准的区分度、抗饱和度与影响力，<a href="#clasharness">CLASHarness：多智能体冲突场景评测与数据合成框架</a>揭示前沿智能体在冲突协作任务上的端到端通过率仍不足 30%。</li>
-<li>具身泛化方面，<a href="#item-15">连续动作世界模型：跨具身时空动力学先验学习</a>探索跨机器人形态和控制频率的统一动作先验；热点延伸则集中于在策略蒸馏科普、学术写作和高校求职等实践内容。</li>
+<li>递归自我改进加速走向真实系统闭环：<a href="#item-1">百度搜索通过在线反馈闭环实现递归自我进化</a>把线上检索反馈转为持续训练信号，<a href="#physicalrsi-1-0-robodojo">PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo</a>则验证了规划、执行与脚手架协同演化的具身路径。</li>
+<li>自动化科研开始同时进化模型、方法与可信知识：<a href="#evosim">EvoSim：自进化多物理场建模系统</a>以实验偏差驱动物理机制和方程修订，<a href="#farms">FARMS：面向自动化计算科学的可验证知识基础</a>进一步用 Lean 为科研智能体提供可追溯、可验证的知识底座。</li>
+<li>训练侧出现更统一、更贴近智能体实际状态分布的方法：<a href="#actionopd">ActionOPD：面向智能体决策的动作级在策略蒸馏</a>支持跨模型家族的语义动作蒸馏，<a href="#item-13">单一算法统一训练基础模型</a>则尝试以最大似然框架贯通预训练、SFT 与强化学习。</li>
+<li>评测重点由静态得分转向基准健康度和协作可靠性：<a href="#bhi-158">BHI：为158个大模型评测基准进行健康度评分</a>量化基准的区分度与抗饱和性，<a href="#clasharness">CLASHarness：多智能体冲突场景评测与数据合成框架</a>揭示前沿智能体在冲突协作任务中的端到端通过率仍不足 30%。</li>
+<li>模型与具身基础能力继续向长程和跨本体泛化推进：<a href="#item-11">长上下文混合架构：线性注意力与滑窗注意力的协同机制</a>澄清混合注意力的互补机制，<a href="#item-15">连续动作世界模型：跨具身时空动力学先验学习</a>探索跨机器人形态与控制频率的经验迁移。</li>
+<li>热点延伸主要集中于在策略蒸馏工程解读、学术写作和高校求职工作流，适合作为方法背景与科研实践参考，但与核心研究主线关联较弱。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>AgentEvolve</strong>：<a href="#item-1">百度搜索通过在线反馈闭环实现递归自我进化</a>表明可将真实任务失败、用户反馈和成功轨迹持续回写为技能与工作流记忆，从而连接推理时积累与后续系统迭代。</li>
-<li><strong>AgentTrainEvolve</strong>：<a href="#actionopd">ActionOPD：面向智能体决策的动作级在策略蒸馏</a>提供了不依赖教师 Token 概率和同源 Tokenizer、直接在学生访问状态上蒸馏动作策略的可用训练方案。</li>
-<li><strong>Awesome-RSI</strong>：<a href="#rsi-2026">递归自我改进（RSI）：2026 年论文趋势盘点</a>可用于按可验证闭环、脚手架演化、防自蒸馏塌缩和安全评估四条主线重构 RSI 资源分类。</li>
-<li><strong>PhysicalEvolve</strong>：<a href="#evosim">EvoSim：自进化多物理场建模系统</a>展示了以实验偏差为裁判、同时修订物理模型与研究方法的双层进化闭环。</li>
-<li><strong>RobotEvolve</strong>：<a href="#physicalrsi-1-0-robodojo">PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo</a>与跨具身连续动作世界模型共同提示，可联合优化脚手架、规划执行和跨本体动力学先验以提升迁移效率。</li>
-<li><strong>EvalEvolve</strong>：<a href="#bhi-158">BHI：为158个大模型评测基准进行健康度评分</a>提供了筛查基准饱和与失效风险的元评测指标，而 CLASHarness 可补充面向动态冲突和可信收尾的 Agent 评测维度。</li>
-<li><strong>SwarmEvolve</strong>：<a href="#clasharness">CLASHarness：多智能体冲突场景评测与数据合成框架</a>说明群体协作研究不能只测正常分工，还应系统生成队友误导、证据冲突和责任交接场景。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#farms">FARMS：面向自动化计算科学的可验证知识基础</a>表明自主科研可把文献知识转化为带来源、定量保证和形式证明的可执行资产，降低结果不可审计的风险。</li>
-<li><strong>CacheEvolve</strong>：<a href="#item-11">长上下文混合架构：线性注意力与滑窗注意力的协同机制</a>为固定缓存预算下组合局部精确记忆、全局压缩状态与 NoPE 外推提供了架构依据。</li>
-<li><strong>EvolveLLM</strong>：<a href="#item-13">单一算法统一训练基础模型</a>提示可在同一最大似然目标中混合静态语料与在线强化学习数据，以减少阶段割裂并支持持续学习。</li>
-<li><strong>GeneralizeEvolve</strong>：<a href="#item-15">连续动作世界模型：跨具身时空动力学先验学习</a>提供了检验自进化能力能否跨机器人形态、控制频率和经验分布迁移的具体技术载体。</li>
+<li><strong>AgentEvolve</strong>：<a href="#item-1">百度搜索通过在线反馈闭环实现递归自我进化</a>提供了从真实长程任务轨迹沉淀反馈的生产范式，可进一步拆分并比较无参工作流记忆与参数再训练各自带来的增益。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#actionopd">ActionOPD：面向智能体决策的动作级在策略蒸馏</a>表明可在学生实际访问状态上以语义动作奖励完成跨模型蒸馏，适合用于工具调用 Agent 的在线策略迭代。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#rsi-2026">递归自我改进（RSI）：2026 年论文趋势盘点</a>提出的可机器验证闭环、脚手架演化、防自蒸馏塌缩与安全评估，可直接作为 RSI 工作的收录和比较维度。</li>
+<li><strong>PhysicalEvolve</strong>：<a href="#evosim">EvoSim：自进化多物理场建模系统</a>展示了以实验偏差同时修订物理模型和研究方法的双层进化闭环，可作为物理机制自改进系统的参考架构。</li>
+<li><strong>RobotEvolve</strong>：<a href="#physicalrsi-1-0-robodojo">PhysicalRSI 1.0通过具身递归自我改进登顶RoboDojo</a>与连续动作世界模型分别提供系统级协同演化和跨本体动力学迁移方案，可组合探索具身经验跨任务复用。</li>
+<li><strong>EvalEvolve</strong>：<a href="#bhi-158">BHI：为158个大模型评测基准进行健康度评分</a>可用于建立基准淘汰与更新机制，而 CLASHarness 的冲突任务合成方式可扩展动态多智能体评测。</li>
+<li><strong>CacheEvolve</strong>：<a href="#item-11">长上下文混合架构：线性注意力与滑窗注意力的协同机制</a>给出了不同注意力组件的功能分工，可用于设计固定缓存预算下兼顾局部精度与长度外推的混合结构。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#farms">FARMS：面向自动化计算科学的可验证知识基础</a>说明科研智能体可将文献语境、算法保证与形式化证明绑定，降低自主科研中错误知识被反复复用的风险。</li>
+<li><strong>EvolveLLM</strong>：<a href="#item-13">单一算法统一训练基础模型</a>为把静态数据与在线生成经验纳入同一持续学习目标提供了路径，可用于检验统一训练是否缓解阶段切换和能力遗忘。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 15 条</span><a href="#daily-featured">⭐ 重点 11</a><a href="#daily-related">🔬 相关 1</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 15 条</span><a href="#daily-featured">⭐ 重点 12</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">11 条</span></h2>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">12 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="item-1" class="summary-card daily-item">
   <h2 id="item-1-title" class="daily-item-title">百度搜索通过在线反馈闭环实现递归自我进化</h2><p class="single-subtitle daily-item-summary">百度搜索将真实检索和用户反馈转化为训练信号，通过多智能体协同的“检索—反馈—再训练”闭环持续迭代，并将搜索从答案入口扩展为长程任务服务平台。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>钛媒体APP</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/ZQtxqlSoSUavkH_BWpz0CQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/ZQtxqlSoSUavkH_BWpz0CQ</a></div></div><div class="daily-item-content"><p>百度搜索通过在线反馈闭环实现多智能体协同自进化，将每次真实检索与用户反馈沉淀为训练信号，据称整体迭代效率提升80%以上。其服务形态从返回链接或答案，转向理解用户约束、调用工具并持续推进旅行规划、信息提醒等长程任务。升级后的搜索AI API采用内容、引擎、架构和应用四层体系，支持API、MCP与Skill接入，并强调高并发、低时延和信息可信度。百度App还通过文心助手和AI镜头融合多步检索、视觉识别、动态追踪及连续对话，尝试构建个性化、可行动且可持续的个人助手。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -335,6 +333,21 @@ GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">PhysicalEvolve｜AI如何解析物理世界？清华联合清屿科技等团队推出自进化多物理场建模系统EvoSim https://mp.weixin.qq.com/s/28C3URVrOK4V4JSRlWNCgg</div>
   </details></article>
+<article id="bhi-158" class="summary-card daily-item">
+  <h2 id="bhi-158-title" class="daily-item-title">BHI：为158个大模型评测基准进行健康度评分</h2><p class="single-subtitle daily-item-summary">研究团队提出基准健康指数 BHI，从能力区分度、抗饱和度和影响力三个维度评估158个大模型基准的持续有效性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E6%80%81%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动态基准测试</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E9%80%8F%E6%98%8E%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;评估透明度</a><a href="/LLMDailyDigestWeb/topic/%E6%9E%84%E5%BF%B5%E6%95%88%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;构念效度</a><a href="/LLMDailyDigestWeb/topic/%E5%9F%BA%E5%87%86%E6%B1%A1%E6%9F%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;基准污染</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651071332&amp;idx=3&amp;sn=7cc64e4b48436f5cdc7cc2766d84639a&amp;chksm=854388765e152ec8cf31c838fdb0393340eddb4c50672e95a77d3ac25866b17604f1e9602ad4&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651071332&amp;idx=3&amp;sn=7cc64e4b48436f5cdc7cc2766d84639a&amp;chksm=854388765e152ec8cf31c838fdb0393340eddb4c50672e95a77d3ac25866b17604f1e9602ad4&amp;scene=0&amp;xtrack=1#rd</a></div></div><div class="daily-item-content"><p>研究基于117个模型的技术报告整理出158个评测基准，并提出基准健康指数（BHI），衡量基准是否仍能提供有价值的模型比较结果。BHI 综合能力区分度、抗饱和度和影响力三个维度，并采用留一基准法（LOBO）避免使用待评基准自身的成绩估计模型能力。CRITIC 方法根据各维度的信息量与相关性自动确定权重，最终排名中 Humanity&rsquo;s Last Exam、Agents&rsquo; Last Exam 和 AutomationBench 位列前三。稳健性实验显示，随机移除30%的模型后，新旧排名的 Spearman 相关系数仍高于0.97，但跨报告测试条件差异和能力突破仍会限制饱和时间预测的准确性。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为模型开发者筛选仍具区分能力和挑战空间的评测基准提供量化依据。</li>
+<li>帮助识别分数压缩、天花板效应及实际采用率不足的过时基准。</li>
+<li>支持基准维护者根据新模型和新评测记录持续更新健康度，而非仅依赖引用量或历史热度。</li>
+<li>提醒评测实践同时审查提示词、工具配置和测试条件，避免将微小分差误判为真实能力差异。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：NeurIPS 2026 ED Oral丨Benchmark也有保质期？我们给158个评测基准打了分
+来源：机器之心（微信公众号）
+链接：http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651071332&amp;idx=3&amp;sn=7cc64e4b48436f5cdc7cc2766d84639a&amp;chksm=854388765e152ec8cf31c838fdb0393340eddb4c50672e95a77d3ac25866b17604f1e9602ad4&amp;scene=0&amp;xtrack=1#rd
+摘要：</div>
+  </details></article>
 <article id="item-13" class="summary-card daily-item">
   <h2 id="item-13-title" class="daily-item-title">单一算法统一训练基础模型</h2><p class="single-subtitle daily-item-summary">该工作将预训练、中期训练、SFT 与强化学习统一为基于最大似然的单一训练算法，并通过混合静态数据和强化学习生成数据改善准确率、计算效率与持续学习能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型训练</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据工程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.40564" target="_blank" rel="noopener">https://arxiv.org/abs/2610.40564</a></div></div><div class="daily-item-content"><ul>
 <li>作者将合适的强化学习目标推导为对模型生成目标分布的最大似然拟合，从而统一预训练、中期训练、SFT 和强化学习。</li>
@@ -354,21 +367,6 @@ GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学�
 来源：arXiv
 链接：https://arxiv.org/abs/2610.40564
 摘要：Foundation models are typically trained in stages: pretraining, midtraining, supervised fine-tuning (SFT), and reinforcement learning (RL), with changes in both data and learning algorithms. We show that this algorithmic separation is not fundamental. By deriving suitable RL objectives as maximum-likelihood fitting to model-generated target distributions, we place all of these stages under a single likelihood-based training algorithm, unified training. This perspective turns the foundation-model training lifecycle into a problem of choosing which data to train on, in what proportions, and when, with conventional staged training as a special case. We instantiate this framework in a unified training system that mixes static data and RL generations within a single trainer. Across controlled a</div>
-  </details></article>
-<article id="bhi-158" class="summary-card daily-item">
-  <h2 id="bhi-158-title" class="daily-item-title">BHI：为158个大模型评测基准进行健康度评分</h2><p class="single-subtitle daily-item-summary">研究团队提出基准健康指数 BHI，从能力区分度、抗饱和度和影响力三个维度评估158个大模型基准的持续有效性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E6%80%81%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动态基准测试</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E9%80%8F%E6%98%8E%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;评估透明度</a><a href="/LLMDailyDigestWeb/topic/%E6%9E%84%E5%BF%B5%E6%95%88%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;构念效度</a><a href="/LLMDailyDigestWeb/topic/%E5%9F%BA%E5%87%86%E6%B1%A1%E6%9F%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;基准污染</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651071332&amp;idx=3&amp;sn=7cc64e4b48436f5cdc7cc2766d84639a&amp;chksm=854388765e152ec8cf31c838fdb0393340eddb4c50672e95a77d3ac25866b17604f1e9602ad4&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651071332&amp;idx=3&amp;sn=7cc64e4b48436f5cdc7cc2766d84639a&amp;chksm=854388765e152ec8cf31c838fdb0393340eddb4c50672e95a77d3ac25866b17604f1e9602ad4&amp;scene=0&amp;xtrack=1#rd</a></div></div><div class="daily-item-content"><p>研究基于117个模型的技术报告整理出158个评测基准，并提出基准健康指数（BHI），衡量基准是否仍能提供有价值的模型比较结果。BHI 综合能力区分度、抗饱和度和影响力三个维度，并采用留一基准法（LOBO）避免使用待评基准自身的成绩估计模型能力。CRITIC 方法根据各维度的信息量与相关性自动确定权重，最终排名中 Humanity&rsquo;s Last Exam、Agents&rsquo; Last Exam 和 AutomationBench 位列前三。稳健性实验显示，随机移除30%的模型后，新旧排名的 Spearman 相关系数仍高于0.97，但跨报告测试条件差异和能力突破仍会限制饱和时间预测的准确性。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为模型开发者筛选仍具区分能力和挑战空间的评测基准提供量化依据。</li>
-<li>帮助识别分数压缩、天花板效应及实际采用率不足的过时基准。</li>
-<li>支持基准维护者根据新模型和新评测记录持续更新健康度，而非仅依赖引用量或历史热度。</li>
-<li>提醒评测实践同时审查提示词、工具配置和测试条件，避免将微小分差误判为真实能力差异。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：NeurIPS 2026 ED Oral丨Benchmark也有保质期？我们给158个评测基准打了分
-来源：机器之心（微信公众号）
-链接：http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651071332&amp;idx=3&amp;sn=7cc64e4b48436f5cdc7cc2766d84639a&amp;chksm=854388765e152ec8cf31c838fdb0393340eddb4c50672e95a77d3ac25866b17604f1e9602ad4&amp;scene=0&amp;xtrack=1#rd
-摘要：</div>
   </details></article>
 <article id="farms" class="summary-card daily-item">
   <h2 id="farms-title" class="daily-item-title">FARMS：面向自动化计算科学的可验证知识基础</h2><p class="single-subtitle daily-item-summary">FARMS 将计算数学文献转化为关联来源语境、算法含义与定量保证的可复用知识，并通过 Lean 验证支撑可信的自动化计算科学。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自动化科学研究</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;形式化验证</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学计算</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.40560" target="_blank" rel="noopener">https://arxiv.org/abs/2610.40560</a></div></div><div class="daily-item-content"><p>FARMS 通过来源预处理、可复用表示和语义审查，将计算数学知识转化为 AI 可解释、可复用的计算知识。系统把形式化陈述与原始来源、算法含义及定量保证相连接，并使用 Lean 检查由显式来源前提推出的结论。在随机数值线性代数与数值偏微分方程的 171 个目标中，157 个通过处理流程，单目标平均估算成本为 0.85～2.29 美元。作者还以热流求解和波响应压缩为例，展示了形式化知识如何连接到实际计算技能。</p>
@@ -458,16 +456,8 @@ GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/zCzN0B12Foa-ZD1SzgIfyw</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">1 条 · 按研究项目分组</span></h2>
-          <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/" onclick="event.stopPropagation()">Awesome-RSI</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="2026-rsi" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>2026年递归自我改进（RSI）十大顶会论文综述</strong>
-      <span class="daily-row-meta">微信公众号 · 递归自我改进 · <a href="https://mp.weixin.qq.com/s/31I_mPqF3oMcUS1nkRIeIA" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
-    </span><span class="daily-row-summary">文章精选并解析2026年10篇RSI顶会论文，从智能体自修改、元智能体演化、搜索策略进化和群体经验共享等角度梳理递归自我改进的技术版图。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众号</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%9B%E5%8C%96%E6%90%9C%E7%B4%A2/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;进化搜索</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/31I_mPqF3oMcUS1nkRIeIA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/31I_mPqF3oMcUS1nkRIeIA</a></div></div><div class="daily-item-content"><ul>
+<article id="2026-rsi" class="summary-card daily-item">
+  <h2 id="2026-rsi-title" class="daily-item-title">2026年递归自我改进（RSI）十大顶会论文综述</h2><p class="single-subtitle daily-item-summary">文章精选并解析2026年10篇RSI顶会论文，从智能体自修改、元智能体演化、搜索策略进化和群体经验共享等角度梳理递归自我改进的技术版图。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众号</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%9B%E5%8C%96%E6%90%9C%E7%B4%A2/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;进化搜索</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/31I_mPqF3oMcUS1nkRIeIA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/31I_mPqF3oMcUS1nkRIeIA</a></div></div><div class="daily-item-content"><ul>
 <li>文章将RSI概括为AI参与改进自身问题求解方法、研发工具乃至后继AI系统，并利用真实实验反馈形成持续迭代闭环。</li>
 <li>Darwin Gödel Machine通过父代选择、代码自修改、经验评测和开放式档案更新，让编程智能体沿多分支进化，并以基准测试替代难以落地的形式化收益证明。</li>
 <li>Hyperagents进一步允许任务智能体与负责提出改进方案的元智能体共同自修改，使“如何改进智能体”本身也成为演化对象，并展示元级改进能力的跨域迁移。</li>
@@ -482,10 +472,8 @@ GeneralizeEvolve：连续动作世界模型：跨具身时空动力学先验学�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/31I_mPqF3oMcUS1nkRIeIA</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group daily-group-hot" id="daily-hot" open>
+  </details></article>
+<details class="daily-group daily-group-hot" id="daily-hot" open>
             <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">3 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
             <div class="daily-group-body">
               <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="item-5" class="daily-row">
