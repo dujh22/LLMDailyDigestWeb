@@ -6,18 +6,20 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **Agent Harness 从单会话工具走向可持续、自修复的运行系统**（2 项）：[DeepSeek提出下一代 Super-agent Harness 架构](#deepseek-super-agent-harness)以 Router-Worker、事件驱动和运行时自愈支撑并发长程任务，[HarnessEvolve：基于参考轨迹的可靠智能体自我进化](#harnessevolve)则通过首偏离点定位与双质量门实现可靠的脚手架迭代。
-- **自进化对象扩展到记忆架构与奖励准则**（2 项）：[MemEvolve：智能体记忆架构的元进化](#memevolve)联合优化经验和记忆结构，[Self-Evolving Rubrics：自进化准则驱动强化学习](#self-evolving-rubrics)展示动态准则为开放式生成及多步 Agent 提供持续、细粒度奖励的路径。
-- **长程协作与持续学习呈现系统化趋势**（2 项）：[LobeHub 的 Super-agent 组织协作实验](#lobehub-super-agent)以分层智能体、持久运行时和自动验收模拟自治组织，[Falcon快速权重注意力实现持续学习](#falcon)则把递归快速权重记忆转化为在线学习机制，兼顾持续适应与长度外推。
-- **编码 Agent 的治理开始直接进入系统提示与产品边界**：[Claude Code修改系统提示词，限制复刻现有游戏](#claude-code)体现了通过 Harness 层施加版权与安全约束的现实尝试，也暴露出易绕过和误拒绝问题。
+- Agent 系统开始从单会话脚手架走向可持续运行与自我改进：[DeepSeek 提出下一代 Super-agent Harness 架构](#deepseek-super-agent-harness)以分层并发、状态持久化和 Watchdog 支撑长期在线，[HarnessEvolve](#harnessevolve)则用参考轨迹与双质量门约束脚手架进化，LobeHub 进一步探索多智能体组织的自动交接与验收。
+- 记忆自进化同时向架构搜索、结构化经验和参数化在线学习推进：[MemEvolve](#memevolve)联合优化经验与记忆架构，[MEMIG](#memig)展示可索引干预记忆在抗体优化中的价值，[Falcon](#falcon)则把快速权重记忆建模为在线学习过程。
+- 奖励与信用分配成为长程 Agent 训练的关键主线：[Self-Evolving Rubrics](#self-evolving-rubrics)汇总动态准则生成路线，[CivHarness](#civharness-freeciv)通过分支回放和局面评判器缓解长程博弈中的记分板陷阱。
+- 具身智能出现覆盖部署后学习的完整闭环：[智元发布具身智能模型 GO-3 Preview](#go-3-preview)串联预训练、虚实后训练和真机持续学习，体现机器人基础模型由一次性交付转向真实环境中的持续进化。
+- 安全治理开始直接介入编码 Agent 的系统提示，但 Claude Code 限制复刻现有游戏的做法也暴露出规则易绕过、误拒原创需求以及仅靠提示层约束可靠性不足的问题。
 
 ## 对当前研究的启发
-- **HarnessEvolve**：[HarnessEvolve](#harnessevolve)的首偏离点信用分配、质量门与性能门可直接用于构建“定位失败—生成修改—防泄漏与防退化—跨框架验证”的脚手架进化闭环。
-- **MemoryEvolve**：[MemEvolve](#memevolve)表明不应只优化记忆内容的写入与检索策略，还可把记忆架构本身纳入外层元进化，并以近似固定 API 成本约束搜索。
-- **AgentTrainEvolve**：[Self-Evolving Rubrics](#self-evolving-rubrics)提供了将开放式目标动态分解为细粒度、随策略能力演化的奖励准则的方法，可缓解多轮 Agentic RL 的奖励稀疏与信用分配问题。
-- **SwarmEvolve**：[LobeHub 的组织协作实验](#lobehub-super-agent)提示可把跨项目交接、分层权限和 Acceptance 自动验收视为群体协作结构的可进化变量，而非固定编排规则。
-- **SystemEvolve**：[DeepSeek Super-agent Harness](#deepseek-super-agent-harness)的事件驱动 Router-Worker 与运行时自愈机制，为系统级自进化提供了可持续在线、并发试验和故障恢复的底层载体。
-- **CacheEvolve**：[Falcon](#falcon)将固定状态的递归快速权重解释为在线学习，为固定预算下可学习的记忆更新、归一化与遗忘策略提供了模型架构侧参照。
+- **HarnessEvolve**：[HarnessEvolve](#harnessevolve)的首偏离点定位、质量门与性能门可直接用于构建既防泄漏又防提示膨胀和能力退化的脚手架进化流程。
+- **SystemEvolve**：[DeepSeek Super-agent Harness](#deepseek-super-agent-harness)表明 Router-Worker、事件驱动、存算分离与自愈监控可作为长期在线自进化系统的基础运行时。
+- **MemoryEvolve**：[MemEvolve](#memevolve)提示记忆研究不应只优化写入和检索策略，还可把记忆架构本身纳入外层元进化闭环。
+- **AgentTrainEvolve**：[CivHarness](#civharness-freeciv)的分支未来回放可将延迟后果转化为可训练的局面价值信号，为长程交互中的信用分配提供具体方案。
+- **EvolveLLM**：[Self-Evolving Rubrics](#self-evolving-rubrics)展示了让评价准则随策略能力共同演化的路径，可为开放式生成任务持续提供比固定奖励更细粒度的训练信号。
+- **RobotEvolve**：[GO-3 Preview](#go-3-preview)将虚实后训练与部署后持续学习串成闭环，可作为检验机器人自进化是否真正跨越 sim-to-real 的系统范式。
+- **ResearchEvolve**：[MEMIG](#memig)说明科研 Agent 的经验应保存为可定量检索的“干预—效果—交互关系”，而非难以验证和复用的自由文本反思。
 
 <!-- daily-summary:end -->
 
