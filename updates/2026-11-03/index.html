@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>2026-11-03 科研追新 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="
+当日精选（由提交工具自动创建）。
+
+今日概览
+
+递归自我改进出现两条关键路线：Astra 直接编程神经网络权重探索绕过梯度下降的权重空间读写与修复，R²Orch则通过自博弈、任务选择和技能内化持续改进智能体编排器。
+Agent 的持续学习与经验复用进一步系统化：Meta Routed CL以任务聚类和路由记忆提升奖励并显著降低 API 成本，Trajectory2Gym通过决策接地的合成交互补强有状态多轮工具任务。
+具身智能开始强化实时运行时与低延迟控制：REA采用异步“脑—小脑”架构协调慢推理与快速策略，OSWAM则把世界动作模型压缩到单步扩散，实现约 3 倍加速。
+数据、评测与持续学习基础环节同步推进：BHI审计 158 个基准的区分度、抗饱和度与影响力，SimpleLoRIF用梯度归因定位导致安全退化的数据，CaRE将类增量持续学习扩展到 300 余项任务。
+新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。
+
+对当前研究的启发
+
+Awesome-RSI：Astra 权重空间编程把“自我修改”推进到直接读取和重写模型参数，而 R²Orch提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。
+AgentTrainEvolve：R²Orch的自动选题—自博弈—失败内化闭环与 Trajectory2Gym的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。
+AgentEvolve：Meta Routed CL表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。
+MemoryEvolve：Meta Routed CL将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。
+JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。
+DataEvolve：SimpleLoRIF说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。
+EvalEvolve：BHI的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。
+EvolveLRM：LARC用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。
+RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。
+
+" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="2026-11-03 科研追新">
+  <meta itemprop="description" content="当日精选（由提交工具自动创建）。
+今日概览 递归自我改进出现两条关键路线：Astra 直接编程神经网络权重探索绕过梯度下降的权重空间读写与修复，R²Orch则通过自博弈、任务选择和技能内化持续改进智能体编排器。 Agent 的持续学习与经验复用进一步系统化：Meta Routed CL以任务聚类和路由记忆提升奖励并显著降低 API 成本，Trajectory2Gym通过决策接地的合成交互补强有状态多轮工具任务。 具身智能开始强化实时运行时与低延迟控制：REA采用异步“脑—小脑”架构协调慢推理与快速策略，OSWAM则把世界动作模型压缩到单步扩散，实现约 3 倍加速。 数据、评测与持续学习基础环节同步推进：BHI审计 158 个基准的区分度、抗饱和度与影响力，SimpleLoRIF用梯度归因定位导致安全退化的数据，CaRE将类增量持续学习扩展到 300 余项任务。 新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程把“自我修改”推进到直接读取和重写模型参数，而 R²Orch提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。 AgentTrainEvolve：R²Orch的自动选题—自博弈—失败内化闭环与 Trajectory2Gym的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。 AgentEvolve：Meta Routed CL表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。 MemoryEvolve：Meta Routed CL将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。 DataEvolve：SimpleLoRIF说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。 EvalEvolve：BHI的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。 EvolveLRM：LARC用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。 RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。">
+  <meta itemprop="datePublished" content="2026-11-03T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-11-03T12:13:11+08:00">
+  <meta itemprop="wordCount" content="1069">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-03/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="2026-11-03 科研追新">
+  <meta property="og:description" content="当日精选（由提交工具自动创建）。
+今日概览 递归自我改进出现两条关键路线：Astra 直接编程神经网络权重探索绕过梯度下降的权重空间读写与修复，R²Orch则通过自博弈、任务选择和技能内化持续改进智能体编排器。 Agent 的持续学习与经验复用进一步系统化：Meta Routed CL以任务聚类和路由记忆提升奖励并显著降低 API 成本，Trajectory2Gym通过决策接地的合成交互补强有状态多轮工具任务。 具身智能开始强化实时运行时与低延迟控制：REA采用异步“脑—小脑”架构协调慢推理与快速策略，OSWAM则把世界动作模型压缩到单步扩散，实现约 3 倍加速。 数据、评测与持续学习基础环节同步推进：BHI审计 158 个基准的区分度、抗饱和度与影响力，SimpleLoRIF用梯度归因定位导致安全退化的数据，CaRE将类增量持续学习扩展到 300 余项任务。 新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程把“自我修改”推进到直接读取和重写模型参数，而 R²Orch提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。 AgentTrainEvolve：R²Orch的自动选题—自博弈—失败内化闭环与 Trajectory2Gym的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。 AgentEvolve：Meta Routed CL表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。 MemoryEvolve：Meta Routed CL将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。 DataEvolve：SimpleLoRIF说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。 EvalEvolve：BHI的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。 EvolveLRM：LARC用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。 RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="updates">
+    <meta property="article:published_time" content="2026-11-03T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-11-03T12:13:11+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="2026-11-03 科研追新">
+  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
+今日概览 递归自我改进出现两条关键路线：Astra 直接编程神经网络权重探索绕过梯度下降的权重空间读写与修复，R²Orch则通过自博弈、任务选择和技能内化持续改进智能体编排器。 Agent 的持续学习与经验复用进一步系统化：Meta Routed CL以任务聚类和路由记忆提升奖励并显著降低 API 成本，Trajectory2Gym通过决策接地的合成交互补强有状态多轮工具任务。 具身智能开始强化实时运行时与低延迟控制：REA采用异步“脑—小脑”架构协调慢推理与快速策略，OSWAM则把世界动作模型压缩到单步扩散，实现约 3 倍加速。 数据、评测与持续学习基础环节同步推进：BHI审计 158 个基准的区分度、抗饱和度与影响力，SimpleLoRIF用梯度归因定位导致安全退化的数据，CaRE将类增量持续学习扩展到 300 余项任务。 新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程把“自我修改”推进到直接读取和重写模型参数，而 R²Orch提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。 AgentTrainEvolve：R²Orch的自动选题—自博弈—失败内化闭环与 Trajectory2Gym的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。 AgentEvolve：Meta Routed CL表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。 MemoryEvolve：Meta Routed CL将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。 DataEvolve：SimpleLoRIF说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。 EvalEvolve：BHI的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。 EvolveLRM：LARC用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。 RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-03/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-02/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2026-11-03 科研追新",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-03\/"
+    },"genre": "updates","wordcount":  1069 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-03\/","datePublished": "2026-11-03T00:00:00+08:00","dateModified": "2026-11-03T12:13:11+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/trends/"
+                
+                
+              ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/trends/"
+                  
+                  
+                ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/updates/" title="Updates">Updates</a></li><li class="breadcrumb-item active" aria-current="page">2026-11-03 科研追新</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>2026-11-03 科研追新</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    LLM-DailyDigest</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2026-11-03 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-03">2026-11-03</time></span>&nbsp;<span title="更新于 2026-11-03 12:13:11"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-03">2026-11-03</time></span>&nbsp;<span title="1069 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#对当前研究的启发">对当前研究的启发</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><blockquote>
+<p>当日精选（由提交工具自动创建）。</p></blockquote>
+<!-- daily-summary:start -->
+<h2 id="今日概览">今日概览</h2>
+<ul>
+<li>递归自我改进出现两条关键路线：<a href="#astra-qwen">Astra 直接编程神经网络权重</a>探索绕过梯度下降的权重空间读写与修复，<a href="#r-orch">R²Orch</a>则通过自博弈、任务选择和技能内化持续改进智能体编排器。</li>
+<li>Agent 的持续学习与经验复用进一步系统化：<a href="#meta-routed-cl">Meta Routed CL</a>以任务聚类和路由记忆提升奖励并显著降低 API 成本，<a href="#trajectory2gym">Trajectory2Gym</a>通过决策接地的合成交互补强有状态多轮工具任务。</li>
+<li>具身智能开始强化实时运行时与低延迟控制：<a href="#rea">REA</a>采用异步“脑—小脑”架构协调慢推理与快速策略，<a href="#oswam">OSWAM</a>则把世界动作模型压缩到单步扩散，实现约 3 倍加速。</li>
+<li>数据、评测与持续学习基础环节同步推进：<a href="#bhi-158-llm">BHI</a>审计 158 个基准的区分度、抗饱和度与影响力，<a href="#simplelorif">SimpleLoRIF</a>用梯度归因定位导致安全退化的数据，<a href="#care-300">CaRE</a>将类增量持续学习扩展到 300 余项任务。</li>
+<li>新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。</li>
+</ul>
+<h2 id="对当前研究的启发">对当前研究的启发</h2>
+<ul>
+<li><strong>Awesome-RSI</strong>：<a href="#astra-qwen">Astra 权重空间编程</a>把“自我修改”推进到直接读取和重写模型参数，而 <a href="#r-orch">R²Orch</a>提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#r-orch">R²Orch</a>的自动选题—自博弈—失败内化闭环与 <a href="#trajectory2gym">Trajectory2Gym</a>的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。</li>
+<li><strong>AgentEvolve</strong>：<a href="#meta-routed-cl">Meta Routed CL</a>表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#meta-routed-cl">Meta Routed CL</a>将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。</li>
+<li><strong>JevEvolve</strong>：<a href="#rea">REA</a>的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。</li>
+<li><strong>DataEvolve</strong>：<a href="#simplelorif">SimpleLoRIF</a>说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。</li>
+<li><strong>EvalEvolve</strong>：<a href="#bhi-158-llm">BHI</a>的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。</li>
+<li><strong>EvolveLRM</strong>：<a href="#larc">LARC</a>用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。</li>
+<li><strong>RobotEvolve</strong>：<a href="#rea">REA</a>与 <a href="#oswam">OSWAM</a>分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。</li>
+</ul>
+<!-- daily-summary:end -->
+</div><section class="daily-items daily-tiered">
+          <nav class="daily-nav">
+            <span class="daily-nav-label">共 16 条</span><a href="#daily-featured">⭐ 重点 11</a><a href="#daily-related">🔬 相关 2</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">11 条</span></h2>
+          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="r-orch" class="summary-card daily-item">
+  <h2 id="r-orch-title" class="daily-item-title">R²Orch：通过技能内化与自博弈实现智能体编排的递归自我改进</h2><p class="single-subtitle daily-item-summary">R²Orch以双层自博弈和技能内化循环训练智能体编排器，使其自动选择可学习任务、将失败内化为参数并逐步实现零技能部署。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体编排</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8D%9A%E5%BC%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自博弈</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.22740" target="_blank" rel="noopener">https://arxiv.org/abs/2610.22740</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/beita6969/R2Orch" target="_blank" rel="noopener">https://github.com/beita6969/R2Orch</a></div></div><div class="daily-item-content"><p>R²Orch提出递归自博弈编排范式：内循环在自主选择的任务上改进编排器，外循环则优化内循环的改进过程。其“递归可学习性”目标鼓励任务提议器选择在逐步撤除技能时仍能产生差异化结果的任务，以缓解固定课程和优势坍缩问题。Skill Withdrawal机制在受控自博弈评估确认编排器无需某项技能也能保持表现后，将该技能撤除，并把失败蒸馏为技能、再内化到参数中。实验覆盖12个数据集，在问答、数学、代码和交互任务上均持续优于基线，并推动编排器趋向零外部技能部署。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为无需人工设计课程的智能体训练提供双层递归优化框架。</li>
+<li>通过递归可学习性维持任务结果差异，缓解同质化回报导致的优势坍缩。</li>
+<li>将显式技能逐步内化到模型参数，可降低部署阶段的技能库依赖与编排开销。</li>
+<li>Skill Withdrawal可作为检验技能是否已被模型真正掌握的受控评估机制。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[R$^2$Orch：在技能内化循环中通过自我博弈实现智能体编排的递归自我改进（89 ▲）](https://huggingface.co/papers/2610.22740?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></article>
+<article id="astra-qwen" class="summary-card daily-item">
+  <h2 id="astra-qwen-title" class="daily-item-title">Astra 直接编程神经网络权重，显著提升 Qwen 数学能力</h2><p class="single-subtitle daily-item-summary">MIT CSAIL 展示 Weight-Space Programming，让 GPT-6 Astra 无需梯度下降即可读取、修复乃至从零编写神经网络权重。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/JhpDYH4I18BPu8cnyF9G3A" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/JhpDYH4I18BPu8cnyF9G3A</a></div></div><div class="daily-item-content"><p>MIT CSAIL 团队提出 Weight-Space Programming，使通用语言模型能够依据自然语言目标直接分析和修改神经网络权重，而无需优化器或梯度下降。Astra 仅修改 Qwen3.5-0.8B 约 0.016% 的参数，便将其 MATH-500 成绩从 7.9% 提升至 48.1%，并显著改善指令遵循能力。实验还显示，Astra 可以从权重识别网络所学任务、修复陷入局部最优的控制策略，并从零构造游戏与围棋策略网络。部分零训练生成的策略网络超过了经过大规模 PPO 训练的基线，显示模型推理可能成为传统数值优化之外的新型权重编辑途径。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为无需梯度和再训练的模型修复、能力注入与快速迭代提供新路径。</li>
+<li>表明前沿语言模型可能具备直接解释参数结构和定位行为缺陷的初步能力。</li>
+<li>可用于探索由模型自主诊断并修改其他模型的递归自我改进闭环。</li>
+<li>仍需验证其在更大参数规模、不同架构及安全约束下的稳定性与可复现性。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/JhpDYH4I18BPu8cnyF9G3A</div>
+  </details></article>
+<article id="rea" class="summary-card daily-item">
+  <h2 id="rea-title" class="daily-item-title">REA：异步脑-小脑控制的路由式具身智能体运行时</h2><p class="single-subtitle daily-item-summary">REA 通过路由记忆、边界触发判断门和共享预算升级机制，统一协调基础模型与快速具身策略，实现无需等待高层推理的异步控制。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%BF%90%E8%A1%8C%E6%97%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体运行时</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E6%81%A2%E5%A4%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行恢复</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.42053" target="_blank" rel="noopener">https://arxiv.org/abs/2610.42053</a></div></div><div class="daily-item-content"><p>REA 将负责审慎推理的 System 2、承担具身路由的 System 1 和执行快速反应的 System 0 策略整合进统一运行时，并规定正在运行的策略不得等待高层“脑”模块。系统利用路由记忆预存各策略的实测成功率，通过边界触发的判断门选择性咨询基础模型，并以共享预算的升级阶梯约束故障恢复。在 60 个 LIBERO-Pro 任务的 3,000 个测试回合中，REA 达到 95.9% 成功率，同时将控制步数和控制时间分别降低 25% 和 17%。在 RoboTwin 2.0 上，VLA 与 VLA+代码配置分别达到 84% 和 86% 成功率，并进一步迁移到 BEHAVIOR-1K 和真实 Unitree G1 人形机器人。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为基础模型高层规划与 VLA、全身控制器等低延迟策略的异步协作提供统一运行时设计。</li>
+<li>通过“执行策略不等待脑模块”的原则避免智能体循环阻塞实时控制。</li>
+<li>路由记忆与边界触发机制可减少重复回退和静默故障漏检，适用于长程具身任务的受限恢复。</li>
+<li>统一容纳学习策略与程序化策略，为跨策略栈评估、策略路由和真实机器人部署提供参考。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[REA：用于异步脑-小脑控制的路由式具身智能体运行时（44 ▲）](https://huggingface.co/papers/2610.42053?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></article>
+<article id="meta-routed-cl" class="summary-card daily-item">
+  <h2 id="meta-routed-cl-title" class="daily-item-title">Meta提出路由式持续学习架构Routed CL</h2><p class="single-subtitle daily-item-summary">Meta FAIR提出Routed CL，通过按任务聚类、路由记忆系统并隔离经验，将智能体归一化奖励提高15%至30%，同时降低65%至72%的API成本。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：持续学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%A4%8D%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验复用</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.38796" target="_blank" rel="noopener">https://arxiv.org/abs/2610.38796</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/YfICz_rESlgDod8bJwAczQ?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/YfICz_rESlgDod8bJwAczQ?scene=1</a></div></div><div class="daily-item-content"><p>Meta FAIR提出路由式持续学习（Routed CL），将历史执行轨迹划分为多个簇，并为每个簇维护独立记忆，以减少异构任务之间的经验干扰。基于LLM的路由器会结合当前问题、记忆系统说明和簇摘要，决定复用已有簇或创建新簇，同时为任务选择原始轨迹、推理策略或结构化状态等不同记忆表示。上下文记忆适配器负责在任务执行前注入相关记忆，并在完成后使用新轨迹更新对应簇。混合任务流实验显示，该架构在四种语言模型上的平均归一化奖励均超过无状态ICL、全局ICL和路由ICL，API成本估算降低65%至72%。当前工作尚未验证并发更新、旧状态读取、跨模型共享记忆簇以及多簇联合读写等场景。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为持续运行的智能体提供可插拔的经验复用架构，无需改变原有智能体执行方式。</li>
+<li>通过任务聚类和记忆隔离缓解不同任务经验混合导致的负迁移与上下文干扰。</li>
+<li>根据任务特征动态选择记忆表示，在保留有效经验的同时压缩上下文和API成本。</li>
+<li>后续可探索多簇联合检索、一次轨迹更新多个簇，以及并发和跨模型条件下的状态一致性。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/YfICz_rESlgDod8bJwAczQ?scene=1</div>
+  </details></article>
+<article id="trajectory2gym" class="summary-card daily-item">
+  <h2 id="trajectory2gym-title" class="daily-item-title">Trajectory2Gym：面向工具智能体的决策接地交互合成</h2><p class="single-subtitle daily-item-summary">Trajectory2Gym 通过合成跨步依赖交互、逐决策接地认证和结构化数据分配，仅用全参数 SFT 就显著提升工具智能体在有状态多轮任务上的表现。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：数据合成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体数据合成</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/V2ZVlGaifV7T5TCXGjeTZg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/V2ZVlGaifV7T5TCXGjeTZg</a></div></div><div class="daily-item-content"><p>Trajectory2Gym 将工具智能体训练数据的筛选标准从整条轨迹是否成功，细化为每个动作在决策时是否具有可见依据、执行有效且符合工作流顺序。它围绕信息依赖、状态变化、错误恢复等能力路径定向合成交互，并保留失败调用作为上下文，但通过损失掩码取消对无效动作的模仿监督。系统还按能力路径分配样本深度，并采用父级交互归一化，避免一条交互因渲染成多行样本而获得过高训练权重。在五个 Qwen3 尺度上，仅使用全参数 SFT 即将 Tau1 与 Tau2 等权均值从 20.04 提升至 40.92，其中 4B 模型在 Tau2 上达到 69.17，超过 Qwen3-30B-A3B 的公开起点。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为工具智能体构造包含跨步依赖、状态变化和错误恢复的数据，而非单纯扩充成功轨迹数量。</li>
+<li>将监督信号落实到单个决策，减少无依据动作、错误调用和顺序错误对模仿学习的污染。</li>
+<li>在固定 token 预算下优先覆盖更多能力路径，并控制每条路径的支持深度，避免重复样本挤占训练预算。</li>
+<li>对多轮轨迹拆分、思维链子问题等数据管线采用父级归一化，防止渲染次数造成隐性权重漂移。</li>
+<li>提示后续可探索在策略采样与在线认证，但需进一步评估逐决策认证的成本和判据稳定性。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">Dataevolve | https://mp.weixin.qq.com/s/V2ZVlGaifV7T5TCXGjeTZg</div>
+  </details></article>
+<article id="bhi-158-llm" class="summary-card daily-item">
+  <h2 id="bhi-158-llm-title" class="daily-item-title">BHI：为158个LLM评测基准评估健康度</h2><p class="single-subtitle daily-item-summary">阿里数据团队提出基准健康指数 BHI，从能力区分度、抗饱和度和影响力三个维度评估158个主流评测基准的持续有效性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E6%80%81%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动态基准测试</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E9%87%8F%E6%95%88%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测量效度</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E9%80%8F%E6%98%8E%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;评估透明度</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/UdJ6nxf_nf_UJ3MHvZUQ7Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/UdJ6nxf_nf_UJ3MHvZUQ7Q</a></div></div><div class="daily-item-content"><ul>
+<li>研究基于117个模型的技术报告整理出158个评测基准，并提出基准健康指数（BHI），用于诊断基准是否仍能提供有价值的模型比较结果。</li>
+<li>BHI 综合考察能力区分度、抗饱和度和能力加权的实际采用影响力，并通过留一基准法（LOBO）避免使用被评基准自身估计模型能力造成循环评价。</li>
+<li>CRITIC 方法为三个维度分配数据驱动权重，最终排名中 Humanity&rsquo;s Last Exam、Agents&rsquo; Last Exam 和 AutomationBench 位列前三。</li>
+<li>消融实验、外部健康状态对照及随机移除30%模型后的稳定性分析表明，BHI 能较稳健地识别饱和或仍处于前沿的基准，但仍受提示词、工具配置和测试条件差异影响。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为模型开发者选择仍具区分力和挑战空间的评测基准提供量化依据。</li>
+<li>支持定期识别分数压缩、天花板效应及采用热度与实际价值脱钩的问题。</li>
+<li>可作为动态维护评测套件、淘汰饱和基准和引入新基准的审计工具。</li>
+<li>提醒评测实践不能只依赖引用量或单一跑分，应结合多维指标与持续更新的数据。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">evalevolve|https://mp.weixin.qq.com/s/UdJ6nxf_nf_UJ3MHvZUQ7Q</div>
+  </details></article>
+<article id="oswam" class="summary-card daily-item">
+  <h2 id="oswam-title" class="daily-item-title">OSWAM：单步动作生成的世界动作模型</h2><p class="single-subtitle daily-item-summary">OSWAM通过想象令牌与未来条件特权信息蒸馏，将世界动作模型的动作生成压缩至单次扩散步骤，在自动驾驶和具身控制中实现约3倍加速及最低40毫秒实时推理。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理加速</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动驾驶</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35850" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35850</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://gwenzhang.github.io/OSWAM/" target="_blank" rel="noopener">https://gwenzhang.github.io/OSWAM/</a></div></div><div class="daily-item-content"><ul>
+<li>直接策略世界动作模型虽然省去了显式未来视觉预测，但通常仍需数十次去噪才能生成高质量动作，难以满足实时控制需求。</li>
+<li>OSWAM使用“想象令牌”初始化扩散过程，为动作生成注入物理先验与动作条件表征，避免从随机噪声中反复恢复连贯动作序列。</li>
+<li>该模型进一步采用带未来条件的特权信息蒸馏，增强单步生成动作对未来状态的感知能力。</li>
+<li>实验显示，OSWAM仅用一次扩散步骤即可达到或超过多步WAM基线，推理速度提升约3倍，并在NVIDIA RTX 5090上实现最低40毫秒的编译推理延迟。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为自动驾驶与机器人控制提供低延迟的世界动作模型方案，适合实时闭环决策。</li>
+<li>表明结构化动作先验可替代部分迭代去噪计算，为扩散策略的单步化提供设计思路。</li>
+<li>可将未来信息作为训练期特权信号进行蒸馏，在不增加部署期开销的情况下提升动作质量。</li>
+<li>为评估动作生成模型时同时考察任务性能、去噪步数和端到端延迟提供参考。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[OSWAM：一种通过单步动作生成实现的有效世界动作模型（22 ▲）](https://huggingface.co/papers/2610.35850?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></article>
+<article id="simplelorif" class="summary-card daily-item">
+  <h2 id="simplelorif-title" class="daily-item-title">SimpleLoRIF：沿梯度追溯安全性退化的训练数据</h2><p class="single-subtitle daily-item-summary">SimpleLoRIF通过可扩展的梯度归因定位与不安全行为对齐的微调样本，并以过滤后的SafeTulu数据显著降低多种模型的越狱攻击成功率。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：数据归因</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%BD%92%E5%9B%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据归因</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E8%BF%87%E6%BB%A4/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据质量过滤</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AF%B9%E9%BD%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全对齐</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.37481" target="_blank" rel="noopener">https://arxiv.org/abs/2610.37481</a></div></div><div class="daily-item-content"><p>SimpleLoRIF将低秩梯度归因加以简化，并仅对Transformer最后四个模块执行反向传播，从而支持约百万规模样本的数据集分析。实验发现，即使微调数据表面无害，其梯度也可能与不安全行为高度对齐，例如不安全代码数据可关联到微调后涌现的广泛有害行为，AUC最高达到0.865。研究团队移除Tulu 3中与不安全响应梯度最对齐的20%样本，构建了SafeTulu，在Qwen、Llama和OLMo上将GCG攻击成功率最多降低22%，同时基本保持或提升通用能力。被移除数据的分析还揭示了工具执行失败、叙事算术等可能被忽视的安全退化来源。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为大规模后训练数据提供基于梯度信号的安全归因与过滤手段，弥补内容过滤器难以识别表面无害风险样本的不足。</li>
+<li>表明微调安全退化可能源于训练样本与不安全行为之间的参数更新方向一致性，而不只取决于样本是否包含显式有害内容。</li>
+<li>SafeTulu的结果说明，在维持模型能力的同时，通过数据级干预可以有效增强对越狱攻击的抵抗力。</li>
+<li>可利用公开的SafeTulu构建工具调整移除比例或仅过滤特定数据子集，以研究不同安全—能力权衡。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[循着梯度追溯安全性退化的训练数据根源（26 ▲）](https://huggingface.co/papers/2610.37481?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></article>
+<article id="care-300" class="summary-card daily-item">
+  <h2 id="care-300-title" class="daily-item-title">CaRE：扩展至300&#43;任务的持续学习架构</h2><p class="single-subtitle daily-item-summary">香港大学提出基于双层路由混合专家的CaRE架构，并配套构建OmniBenchmark-1K基准，将类增量持续学习扩展至300多个非重叠任务。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：持续学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/taskevolve/">TaskEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E7%81%BE%E9%9A%BE%E6%80%A7%E9%81%97%E5%BF%98/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;灾难性遗忘</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型路由</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉表征学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2602.03473" target="_blank" rel="noopener">https://arxiv.org/abs/2602.03473</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/LMMMEng/CaRE" target="_blank" rel="noopener">https://github.com/LMMMEng/CaRE</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://github.com/LMMMEng/CaRE" target="_blank" rel="noopener">https://github.com/LMMMEng/CaRE</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/R37RnY2bHRQkzXBkCU9ziA?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/R37RnY2bHRQkzXBkCU9ziA?scene=1</a></div></div><div class="daily-item-content"><ul>
+<li>CaRE在预训练ViT的每个Transformer Block中嵌入双层路由混合专家模块BR-MoE，为新任务增量学习类感知器、路由网络和专家适配器。</li>
+<li>第一阶段依据预测熵逐层选出与输入最相关的历史任务路由器，第二阶段再从相关任务群中选择并融合互补专家，同时通过EMA共享专家积累跨任务通用知识。</li>
+<li>团队构建的OmniBenchmark-1K包含1000个类别、约19万张图像和21个视觉领域，可支持100至301个任务的超长序列评测。</li>
+<li>实验显示CaRE在300多个非重叠任务上保持稳定，并在ImageNet-R、ImageNet-A和ObjectNet等短序列基准上取得领先表现。</li>
+</ul>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为长期部署系统缓解灾难性遗忘提供可扩展的参数高效持续学习方案。</li>
+<li>说明逐层动态路由与专家知识复用能够兼顾稳定性、可塑性及跨任务知识互补。</li>
+<li>OmniBenchmark-1K可用于检验持续学习算法在数百任务规模下的真实性能，减少仅依赖短任务序列造成的评估偏差。</li>
+<li>双层路由机制可进一步探索图像、语言和音频等跨模态持续学习场景。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">taskevolve &amp; dataevolve | https://mp.weixin.qq.com/s/R37RnY2bHRQkzXBkCU9ziA?scene=1</div>
+  </details></article>
+<article id="larc" class="summary-card daily-item">
+  <h2 id="larc-title" class="daily-item-title">LARC：统一多模态模型的连续空间潜在推理</h2><p class="single-subtitle daily-item-summary">LARC通过课程监督微调与信息增益强化学习，将离散词元思维链迁移至连续隐藏状态，在统一多模态模型中提升图像生成质量、提示遵循和测试时扩展能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多模态推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%BD%9C%E7%A9%BA%E9%97%B4%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;潜空间推理</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.42149" target="_blank" rel="noopener">https://arxiv.org/abs/2610.42149</a></div></div><div class="daily-item-content"><p>LARC针对语言推理位于离散词元空间、图像生成位于连续空间的模态错配问题，提出直接在连续隐藏状态中进行潜在推理。训练分为两个阶段：课程监督微调逐步将词元级推理转换为潜在推理，随后通过信息增益强化学习在无真实推理监督下实现自我演化。该方法在多个文生图基准上改善生成质量、提示遵循能力与组合保真度，并在GenEval上较BAGEL提升7个百分点。实验还显示，LARC在并行和顺序测试时扩展策略下均具有明确的扩展收益，并优于基于词元的生成方式。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为统一多模态模型提供一种跨越离散语言推理与连续视觉生成之间表示鸿沟的方案。</li>
+<li>表明连续隐藏状态可作为视觉生成任务的推理载体，缓解显式思维链带来的词元级瓶颈。</li>
+<li>信息增益强化学习可在缺少真实推理轨迹时持续优化潜在推理过程。</li>
+<li>潜在推理与测试时计算结合，有望提升复杂组合式图像生成的可控性和生成质量。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[统一多模态模型中的连续空间潜在推理（25 ▲）](https://huggingface.co/papers/2610.42149?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></article>
+<article id="apriel-voice-27b-preview" class="summary-card daily-item">
+  <h2 id="apriel-voice-27b-preview-title" class="daily-item-title">Apriel Voice 27B Preview：统一语音推理与工具调用的开放模型</h2><p class="single-subtitle daily-item-summary">Apriel Voice 27B Preview 基于 Gemma 4 26B-A4B 构建，以统一推理骨干直接处理语音、维持对话并生成回答或工具调用，同时保留文本和图像输入能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.40738" target="_blank" rel="noopener">https://arxiv.org/abs/2610.40738</a></div></div><div class="daily-item-content"><p>Apriel Voice 27B Preview 是一个开放的语音语言模型，无需独立对话模型即可直接处理语音并生成自然语言响应或工具调用。模型基于后训练的 Gemma 4 26B-A4B 检查点，通过两阶段流程建立语音接口，并联合适配投影器与主干网络。训练结合监督微调、文本回放、来源相关的交叉熵与前向 KL 散度监督，并使用自动构建的语音条件对话和高效在线蒸馏。思考模式下，模型在 Big Bench Audio、Speech-BFCL 和 τ-Voice 上分别取得 98.90、81.13 和 65.51% 的任务成功率，平均延迟为 1.91 秒。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示了将语音理解、上下文推理和工具调用统一到同一推理骨干中的可行路径。</li>
+<li>两阶段语音适配与文本回放可用于缓解新增语音能力时对原有文本能力的干扰。</li>
+<li>本地教师服务、师生计算重叠及融合全词表损失为降低在线蒸馏成本提供了工程参考。</li>
+<li>其工具调用成绩与低延迟部署结果可作为交互式语音智能体开发的基线。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Apriel Voice 27B Preview：面向语音、推理和工具使用的开放模型（33 ▲）](https://huggingface.co/papers/2610.40738?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></article>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">2 条 · 按研究项目分组</span></h2>
+          <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/" onclick="event.stopPropagation()">NewApply</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="wefair" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>WeFair：基于反馈保真度的短视频个性化查询改写</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 偏好优化 · <a href="https://arxiv.org/abs/2610.16927" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">WeFair按演示、偏好与验证三个保真度层级利用人类反馈，在低延迟约束下提升短视频搜索的个性化查询改写效果并抑制意图漂移。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：偏好优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/personalevolve/">PersonalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%81%8F%E5%A5%BD%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;偏好优化</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能应用</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.16927" target="_blank" rel="noopener">https://arxiv.org/abs/2610.16927</a></div></div><div class="daily-item-content"><p>WeFair面向微信短视频搜索，从真实搜索会话中挖掘原始查询及用户后续改写，并筛选具有上下文支持的训练样本。其训练流程按照反馈保真度分为三个阶段：监督微调阶段学习上下文到查询、推理及直接预测，偏好阶段通过DPO利用后续消费反馈，验证阶段通过GRPO奖励与用户改写或保留目标的精确一致。实验表明，严格的验证奖励比辅助奖励更能约束意图漂移，WeFair-2B在整体准确率和意图保持方面优于强基线。线上A/B测试中，有效视频观看率相对提升2.593%，查询再次改写率相对下降2.350%，系统已部署并服务每日超过1亿次查询。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为搜索查询改写提供按反馈可信程度分层的对齐流程，避免将高互动内容误当作用户即时意图。</li>
+<li>展示SFT、DPO与GRPO组合训练在个性化搜索场景中的实际价值。</li>
+<li>说明精确验证信号可作为约束意图漂移的关键机制，并可能优于宽松的辅助奖励。</li>
+<li>为低延迟、高流量推荐与搜索系统部署小型个性化改写器提供工程参考。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[WeFair：面向短视频搜索个性化查询改写、基于保真度的人类反馈对齐（26 ▲）](https://huggingface.co/papers/2610.16927?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/" onclick="event.stopPropagation()">NewModel</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="wizard" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Wizard：智能体式实时操控任意游戏世界</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 世界模型 · <a href="https://arxiv.org/abs/2610.40339" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">Wizard结合智能体状态控制、骨架与几何结构代理及视频生成，实现对新场景、新角色和新动作的零样本实时精细操控。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%B8%B8%E6%88%8F%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;游戏生成</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.40339" target="_blank" rel="noopener">https://arxiv.org/abs/2610.40339</a></div></div><div class="daily-item-content"><p>Wizard是一种智能体式游戏世界模型，将显式游戏逻辑和可控世界表征与视觉生成相结合。其数据覆盖750个场景和178个角色，并以骨架及几何信息作为视频生成的中间结构代理。自适应掩码机制用于增强条件信号与生成视频轨迹之间的对齐。智能体框架显式维护和更新游戏状态，使玩家能够自由配置虚拟世界，并在保持视觉质量与玩法一致性的同时实时控制角色动作。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为玩家驱动的实时游戏创作提供可泛化、可精细控制的世界模拟框架。</li>
+<li>展示结构化骨架与几何代理在提升视频生成可控性和机械一致性方面的价值。</li>
+<li>可用于构建支持新场景、新角色和新动作零样本迁移的交互式游戏系统。</li>
+<li>为智能体状态管理与生成式世界模型的融合提供参考。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Wizard：通过智能体式控制实时操控任意世界（24 ▲）](https://huggingface.co/papers/2610.40339?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group daily-group-hot" id="daily-hot" open>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">3 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
+            <div class="daily-group-body">
+              <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="openai-gpt-6-2-astra-claude-5-5" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>OpenAI GPT-6.2 Astra与Claude 5.5旗舰模型曝光</strong>
+      <span class="daily-row-meta">新智元 · 模型发布 · <a href="https://mp.weixin.qq.com/s/8JEFMDRFwoqgWN2PhMKmqA" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">新智元汇总多方爆料称，OpenAI正在灰度测试GPT-6.2 Astra，Anthropic则可能准备发布Claude Mythos 5.5与Fable 5.5，但相关规格和案例尚待官方确认。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;网络安全</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/8JEFMDRFwoqgWN2PhMKmqA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/8JEFMDRFwoqgWN2PhMKmqA</a></div></div><div class="daily-item-content"><p>文章称开发者从Codex接口和用量统计中发现“gpt-6.2-astra”，并称该版本重点改善长程编码、子智能体协作及工具调用安全性。Anthropic官网源码据称出现Claude Mythos 5.5字样，报道将其描述为面向受信任网安与科研机构的低护栏版本。面向通用开发者的Fable 5.5据称支持100万Token输入上下文和12.8万Token输出，并强化长时间编码、Three.js与3D内容生成能力。文中涉及流量占比、Linux内核攻破和发布时间等信息主要来自抓包、源码截图及社交媒体爆料，尚不能视为官方发布结论。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>跟踪OpenAI与Anthropic下一代旗舰在智能体编程、长上下文和网络安全方向的产品布局。</li>
+<li>关注长程工具调用中的越权、操作隐瞒与安全护栏分级问题，为智能体安全评测提供案例。</li>
+<li>可将长时间自主编码、百万Token上下文和3D代码生成纳入后续能力评测，但应等待官方文档或可复现实验验证。</li>
+<li>对泄露信息与营销性案例保持审慎，区分灰度测试、目录占位、内部版本和正式发布。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">NewModel | OpenAI GPT-6.2 Astra。Anthropic Claude Mythos 5.5。https://mp.weixin.qq.com/s/8JEFMDRFwoqgWN2PhMKmqA</div>
+  </details></div>
+</details>
+<details id="frameforge" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>FrameForge：借助视频基础模型先验统一图像生成</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 图像生成 · <a href="https://arxiv.org/abs/2610.36545" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">FrameForge通过输入自适应的虚拟时间关系复用视频基础模型先验，在主体驱动生成、边缘图生成和图像编辑等统一条件图像生成任务上取得领先表现。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：图像生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;时序建模</a><a href="/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%83%8F%E7%BC%96%E8%BE%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图像编辑</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.36545" target="_blank" rel="noopener">https://arxiv.org/abs/2610.36545</a></div></div><div class="daily-item-content"><p>FrameForge将统一条件图像生成建模为条件帧与目标帧之间的输入自适应虚拟时间关系，以突破固定时间位置对不同任务的限制。Mixture of Temporal Experts（MoTE）通过动态选择具有不同虚拟间隔的时间RoPE专家，刻画目标与条件之间的变化距离。Chain of Temporal Reasoning（CoTR）引入潜在中间状态和推理瓶颈注意力掩码，促使信息沿条件到中间状态再到目标的路径传播。DreamBench、COCO2017和GEdit-Bench实验表明，该方法在主体驱动生成、Canny边缘到图像生成及图像编辑任务中优于对比方法。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示了如何将视频基础模型学习到的时序变换先验迁移到统一条件图像生成。</li>
+<li>输入自适应的时间专家机制可为不同视觉变换任务动态选择合适的虚拟时间尺度。</li>
+<li>潜在中间状态与注意力瓶颈为复杂图像编辑引入了显式的分步变换路径。</li>
+<li>可为统一视觉生成系统、多任务图像编辑和视频模型跨任务复用提供架构参考。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[FrameForge：利用视频基础模型的先验知识实现统一图像生成（112 ▲）](https://huggingface.co/papers/2610.36545?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></div>
+</details>
+<details id="relift" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-0">★0</span> <strong>ReLift：将稠密三维跟踪转化为轨迹修复</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 三维跟踪 · <a href="https://arxiv.org/abs/2610.42136" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">ReLift利用预训练二维跟踪器和三维几何模型生成提升轨迹，再通过纯几何轨迹校正器修复误差与补全遮挡运动，实现高效且可复用的稠密三维跟踪。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-0" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 0</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：三维跟踪</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频理解</a><a href="/LLMDailyDigestWeb/topic/%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;空间智能</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉表征学习</a><a href="/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;时序建模</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.42136" target="_blank" rel="noopener">https://arxiv.org/abs/2610.42136</a></div></div><div class="daily-item-content"><p>ReLift将单目视频中的稠密三维跟踪重新表述为几何轨迹修复与补全问题，而非联合学习对应关系、深度和遮挡运动。其轨迹校正器沿轨迹内部及轨迹之间交替执行注意力计算，以保留可靠观测、纠正错误位置并补全缺失运动。该框架仅使用几何输入，并通过模拟提升误差直接在三维轨迹上训练，因此可与不同二维跟踪器和几何模型组合而无需重新训练。在WorldTrack上，ReLift相较最强基线的全点与动态点平均精度分别提升2.1和3.0 APD，快速配置的运行速度也超过4RC。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>将稀缺的4D监督集中用于轨迹细化，可降低端到端联合训练对大规模视频标注的依赖。</li>
+<li>与二维跟踪器和三维几何提供方解耦，使系统能够直接受益于上游组件的持续升级。</li>
+<li>通过模拟对应、深度及遮挡错误训练轨迹修复器，为模块化三维视觉系统提供可复用设计范式。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[ReLift：将稠密三维跟踪视为提升轨迹修复（22 ▲）](https://huggingface.co/papers/2610.42136?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+  </details></div>
+</details>
+</div>
+          </details></section>
+        <script>
+        (function(){
+          
+          function reveal(){
+            var h = location.hash.slice(1);
+            if(!h) return;
+            try{ h = decodeURIComponent(h); }catch(e){   }
+            var el = document.getElementById(h);
+            if(!el) return;
+            var p = el;
+            while(p){ if(p.tagName === 'DETAILS') p.open = true; p = p.parentElement; }
+            el.scrollIntoView({block:'start'});
+          }
+          window.addEventListener('hashchange', reveal);
+          if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal();
+          document.querySelectorAll('[data-daily-toggle]').forEach(function(b){
+            b.addEventListener('click', function(){
+              var open = b.getAttribute('data-daily-toggle') === 'open';
+              document.querySelectorAll('.daily-tiered details').forEach(function(d){ d.open = open; });
+            });
+          });
+        })();
+        </script></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
