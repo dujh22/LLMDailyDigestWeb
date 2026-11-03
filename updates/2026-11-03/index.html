@@ -12,48 +12,47 @@
 
 今日概览
 
-递归自我改进出现两条关键路线：Astra 直接编程神经网络权重探索绕过梯度下降的权重空间读写与修复，R²Orch则通过自博弈、任务选择和技能内化持续改进智能体编排器。
-Agent 的持续学习与经验复用进一步系统化：Meta Routed CL以任务聚类和路由记忆提升奖励并显著降低 API 成本，Trajectory2Gym通过决策接地的合成交互补强有状态多轮工具任务。
-具身智能开始强化实时运行时与低延迟控制：REA采用异步“脑—小脑”架构协调慢推理与快速策略，OSWAM则把世界动作模型压缩到单步扩散，实现约 3 倍加速。
-数据、评测与持续学习基础环节同步推进：BHI审计 158 个基准的区分度、抗饱和度与影响力，SimpleLoRIF用梯度归因定位导致安全退化的数据，CaRE将类增量持续学习扩展到 300 余项任务。
-新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。
+递归自我改进从“优化输出”推进到“改写模型与系统”： Astra 直接编程神经网络权重探索无需梯度下降的权重空间编程，R²Orch则以自博弈和技能内化形成智能体编排器的参数化改进闭环。
+智能体持续学习聚焦经验组织与训练数据构造：Meta Routed CL以任务路由和隔离记忆兼顾收益、遗忘与成本，Trajectory2Gym合成跨步依赖的决策接地交互，CaRE则将类增量学习扩展至300多个任务。
+具身智能加速融合快慢控制与世界模型：REA用异步脑—小脑架构协调高层推理和快速策略，OSWAM将动作生成压缩至单步扩散，HiFOR通过分层未来预测为机器人动作提供针对性前瞻。
+评测与数据治理开始面向长期有效性：BHI系统审计158个基准的区分度、抗饱和度与影响力，SimpleLoRIF则用梯度归因追溯导致安全退化的微调样本。
+新模型方向出现语音工具调用与连续潜空间推理等进展；热点延伸还包括尚待官方确认的GPT-6.2 Astra/Claude 5.5爆料、视频先验图像生成和稠密三维跟踪。
 
 对当前研究的启发
 
-Awesome-RSI：Astra 权重空间编程把“自我修改”推进到直接读取和重写模型参数，而 R²Orch提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。
-AgentTrainEvolve：R²Orch的自动选题—自博弈—失败内化闭环与 Trajectory2Gym的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。
-AgentEvolve：Meta Routed CL表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。
-MemoryEvolve：Meta Routed CL将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。
-JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。
-DataEvolve：SimpleLoRIF说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。
-EvalEvolve：BHI的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。
-EvolveLRM：LARC用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。
-RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。
+Awesome-RSI：Astra 权重空间编程与R²Orch分别把递归改进对象推进到模型权重和智能体编排器，可作为“改进机制自身被改进”的两类关键案例。
+AgentTrainEvolve：R²Orch的双层自博弈课程与Trajectory2Gym的跨步决策接地合成，可组合成“自动选题—生成长程交互—失败内化”的训练闭环。
+AgentEvolve：Meta Routed CL表明按任务聚类、路由并隔离经验能够同时提升复用收益和降低调用成本，为冻结参数下的技能与工作流记忆管理提供直接设计依据。
+DataEvolve：Trajectory2Gym将数据分配落实到逐决策接地认证，而SimpleLoRIF可反向定位有害样本，两者共同支持“合成—归因—过滤”的数据飞轮。
+EvalEvolve：BHI提供了区分度、抗饱和度和影响力三维健康指标，可用于决定哪些静态基准应更新、降权或退出进化式评测集合。
+GeneralizeEvolve：CaRE和Meta Routed CL分别从专家路由与经验隔离切入大规模持续学习，可用于研究跨任务扩展时如何控制灾难性遗忘。
+JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“何时走快速策略、何时升级基础模型慢思考”的动态路由边界提供了具身实现。
+RobotEvolve：OSWAM的单步实时动作生成与HiFOR的分层未来预测形成互补，可用于兼顾机器人闭环控制的低延迟和长时规划能力。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-03 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进出现两条关键路线：Astra 直接编程神经网络权重探索绕过梯度下降的权重空间读写与修复，R²Orch则通过自博弈、任务选择和技能内化持续改进智能体编排器。 Agent 的持续学习与经验复用进一步系统化：Meta Routed CL以任务聚类和路由记忆提升奖励并显著降低 API 成本，Trajectory2Gym通过决策接地的合成交互补强有状态多轮工具任务。 具身智能开始强化实时运行时与低延迟控制：REA采用异步“脑—小脑”架构协调慢推理与快速策略，OSWAM则把世界动作模型压缩到单步扩散，实现约 3 倍加速。 数据、评测与持续学习基础环节同步推进：BHI审计 158 个基准的区分度、抗饱和度与影响力，SimpleLoRIF用梯度归因定位导致安全退化的数据，CaRE将类增量持续学习扩展到 300 余项任务。 新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程把“自我修改”推进到直接读取和重写模型参数，而 R²Orch提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。 AgentTrainEvolve：R²Orch的自动选题—自博弈—失败内化闭环与 Trajectory2Gym的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。 AgentEvolve：Meta Routed CL表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。 MemoryEvolve：Meta Routed CL将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。 DataEvolve：SimpleLoRIF说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。 EvalEvolve：BHI的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。 EvolveLRM：LARC用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。 RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。">
+今日概览 递归自我改进从“优化输出”推进到“改写模型与系统”： Astra 直接编程神经网络权重探索无需梯度下降的权重空间编程，R²Orch则以自博弈和技能内化形成智能体编排器的参数化改进闭环。 智能体持续学习聚焦经验组织与训练数据构造：Meta Routed CL以任务路由和隔离记忆兼顾收益、遗忘与成本，Trajectory2Gym合成跨步依赖的决策接地交互，CaRE则将类增量学习扩展至300多个任务。 具身智能加速融合快慢控制与世界模型：REA用异步脑—小脑架构协调高层推理和快速策略，OSWAM将动作生成压缩至单步扩散，HiFOR通过分层未来预测为机器人动作提供针对性前瞻。 评测与数据治理开始面向长期有效性：BHI系统审计158个基准的区分度、抗饱和度与影响力，SimpleLoRIF则用梯度归因追溯导致安全退化的微调样本。 新模型方向出现语音工具调用与连续潜空间推理等进展；热点延伸还包括尚待官方确认的GPT-6.2 Astra/Claude 5.5爆料、视频先验图像生成和稠密三维跟踪。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程与R²Orch分别把递归改进对象推进到模型权重和智能体编排器，可作为“改进机制自身被改进”的两类关键案例。 AgentTrainEvolve：R²Orch的双层自博弈课程与Trajectory2Gym的跨步决策接地合成，可组合成“自动选题—生成长程交互—失败内化”的训练闭环。 AgentEvolve：Meta Routed CL表明按任务聚类、路由并隔离经验能够同时提升复用收益和降低调用成本，为冻结参数下的技能与工作流记忆管理提供直接设计依据。 DataEvolve：Trajectory2Gym将数据分配落实到逐决策接地认证，而SimpleLoRIF可反向定位有害样本，两者共同支持“合成—归因—过滤”的数据飞轮。 EvalEvolve：BHI提供了区分度、抗饱和度和影响力三维健康指标，可用于决定哪些静态基准应更新、降权或退出进化式评测集合。 GeneralizeEvolve：CaRE和Meta Routed CL分别从专家路由与经验隔离切入大规模持续学习，可用于研究跨任务扩展时如何控制灾难性遗忘。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“何时走快速策略、何时升级基础模型慢思考”的动态路由边界提供了具身实现。 RobotEvolve：OSWAM的单步实时动作生成与HiFOR的分层未来预测形成互补，可用于兼顾机器人闭环控制的低延迟和长时规划能力。">
   <meta itemprop="datePublished" content="2026-11-03T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-03T12:13:11+08:00">
-  <meta itemprop="wordCount" content="1069">
+  <meta itemprop="dateModified" content="2026-11-03T12:16:55+08:00">
+  <meta itemprop="wordCount" content="1041">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-03/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-03 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进出现两条关键路线：Astra 直接编程神经网络权重探索绕过梯度下降的权重空间读写与修复，R²Orch则通过自博弈、任务选择和技能内化持续改进智能体编排器。 Agent 的持续学习与经验复用进一步系统化：Meta Routed CL以任务聚类和路由记忆提升奖励并显著降低 API 成本，Trajectory2Gym通过决策接地的合成交互补强有状态多轮工具任务。 具身智能开始强化实时运行时与低延迟控制：REA采用异步“脑—小脑”架构协调慢推理与快速策略，OSWAM则把世界动作模型压缩到单步扩散，实现约 3 倍加速。 数据、评测与持续学习基础环节同步推进：BHI审计 158 个基准的区分度、抗饱和度与影响力，SimpleLoRIF用梯度归因定位导致安全退化的数据，CaRE将类增量持续学习扩展到 300 余项任务。 新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程把“自我修改”推进到直接读取和重写模型参数，而 R²Orch提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。 AgentTrainEvolve：R²Orch的自动选题—自博弈—失败内化闭环与 Trajectory2Gym的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。 AgentEvolve：Meta Routed CL表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。 MemoryEvolve：Meta Routed CL将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。 DataEvolve：SimpleLoRIF说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。 EvalEvolve：BHI的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。 EvolveLRM：LARC用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。 RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。">
+今日概览 递归自我改进从“优化输出”推进到“改写模型与系统”： Astra 直接编程神经网络权重探索无需梯度下降的权重空间编程，R²Orch则以自博弈和技能内化形成智能体编排器的参数化改进闭环。 智能体持续学习聚焦经验组织与训练数据构造：Meta Routed CL以任务路由和隔离记忆兼顾收益、遗忘与成本，Trajectory2Gym合成跨步依赖的决策接地交互，CaRE则将类增量学习扩展至300多个任务。 具身智能加速融合快慢控制与世界模型：REA用异步脑—小脑架构协调高层推理和快速策略，OSWAM将动作生成压缩至单步扩散，HiFOR通过分层未来预测为机器人动作提供针对性前瞻。 评测与数据治理开始面向长期有效性：BHI系统审计158个基准的区分度、抗饱和度与影响力，SimpleLoRIF则用梯度归因追溯导致安全退化的微调样本。 新模型方向出现语音工具调用与连续潜空间推理等进展；热点延伸还包括尚待官方确认的GPT-6.2 Astra/Claude 5.5爆料、视频先验图像生成和稠密三维跟踪。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程与R²Orch分别把递归改进对象推进到模型权重和智能体编排器，可作为“改进机制自身被改进”的两类关键案例。 AgentTrainEvolve：R²Orch的双层自博弈课程与Trajectory2Gym的跨步决策接地合成，可组合成“自动选题—生成长程交互—失败内化”的训练闭环。 AgentEvolve：Meta Routed CL表明按任务聚类、路由并隔离经验能够同时提升复用收益和降低调用成本，为冻结参数下的技能与工作流记忆管理提供直接设计依据。 DataEvolve：Trajectory2Gym将数据分配落实到逐决策接地认证，而SimpleLoRIF可反向定位有害样本，两者共同支持“合成—归因—过滤”的数据飞轮。 EvalEvolve：BHI提供了区分度、抗饱和度和影响力三维健康指标，可用于决定哪些静态基准应更新、降权或退出进化式评测集合。 GeneralizeEvolve：CaRE和Meta Routed CL分别从专家路由与经验隔离切入大规模持续学习，可用于研究跨任务扩展时如何控制灾难性遗忘。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“何时走快速策略、何时升级基础模型慢思考”的动态路由边界提供了具身实现。 RobotEvolve：OSWAM的单步实时动作生成与HiFOR的分层未来预测形成互补，可用于兼顾机器人闭环控制的低延迟和长时规划能力。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-03T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-03T12:13:11+08:00">
+    <meta property="article:modified_time" content="2026-11-03T12:16:55+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-03 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进出现两条关键路线：Astra 直接编程神经网络权重探索绕过梯度下降的权重空间读写与修复，R²Orch则通过自博弈、任务选择和技能内化持续改进智能体编排器。 Agent 的持续学习与经验复用进一步系统化：Meta Routed CL以任务聚类和路由记忆提升奖励并显著降低 API 成本，Trajectory2Gym通过决策接地的合成交互补强有状态多轮工具任务。 具身智能开始强化实时运行时与低延迟控制：REA采用异步“脑—小脑”架构协调慢推理与快速策略，OSWAM则把世界动作模型压缩到单步扩散，实现约 3 倍加速。 数据、评测与持续学习基础环节同步推进：BHI审计 158 个基准的区分度、抗饱和度与影响力，SimpleLoRIF用梯度归因定位导致安全退化的数据，CaRE将类增量持续学习扩展到 300 余项任务。 新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程把“自我修改”推进到直接读取和重写模型参数，而 R²Orch提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。 AgentTrainEvolve：R²Orch的自动选题—自博弈—失败内化闭环与 Trajectory2Gym的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。 AgentEvolve：Meta Routed CL表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。 MemoryEvolve：Meta Routed CL将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。 DataEvolve：SimpleLoRIF说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。 EvalEvolve：BHI的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。 EvolveLRM：LARC用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。 RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。">
+今日概览 递归自我改进从“优化输出”推进到“改写模型与系统”： Astra 直接编程神经网络权重探索无需梯度下降的权重空间编程，R²Orch则以自博弈和技能内化形成智能体编排器的参数化改进闭环。 智能体持续学习聚焦经验组织与训练数据构造：Meta Routed CL以任务路由和隔离记忆兼顾收益、遗忘与成本，Trajectory2Gym合成跨步依赖的决策接地交互，CaRE则将类增量学习扩展至300多个任务。 具身智能加速融合快慢控制与世界模型：REA用异步脑—小脑架构协调高层推理和快速策略，OSWAM将动作生成压缩至单步扩散，HiFOR通过分层未来预测为机器人动作提供针对性前瞻。 评测与数据治理开始面向长期有效性：BHI系统审计158个基准的区分度、抗饱和度与影响力，SimpleLoRIF则用梯度归因追溯导致安全退化的微调样本。 新模型方向出现语音工具调用与连续潜空间推理等进展；热点延伸还包括尚待官方确认的GPT-6.2 Astra/Claude 5.5爆料、视频先验图像生成和稠密三维跟踪。 对当前研究的启发 Awesome-RSI：Astra 权重空间编程与R²Orch分别把递归改进对象推进到模型权重和智能体编排器，可作为“改进机制自身被改进”的两类关键案例。 AgentTrainEvolve：R²Orch的双层自博弈课程与Trajectory2Gym的跨步决策接地合成，可组合成“自动选题—生成长程交互—失败内化”的训练闭环。 AgentEvolve：Meta Routed CL表明按任务聚类、路由并隔离经验能够同时提升复用收益和降低调用成本，为冻结参数下的技能与工作流记忆管理提供直接设计依据。 DataEvolve：Trajectory2Gym将数据分配落实到逐决策接地认证，而SimpleLoRIF可反向定位有害样本，两者共同支持“合成—归因—过滤”的数据飞轮。 EvalEvolve：BHI提供了区分度、抗饱和度和影响力三维健康指标，可用于决定哪些静态基准应更新、降权或退出进化式评测集合。 GeneralizeEvolve：CaRE和Meta Routed CL分别从专家路由与经验隔离切入大规模持续学习，可用于研究跨任务扩展时如何控制灾难性遗忘。 JevEvolve：REA的边界触发判断门与共享预算升级机制，为学习“何时走快速策略、何时升级基础模型慢思考”的动态路由边界提供了具身实现。 RobotEvolve：OSWAM的单步实时动作生成与HiFOR的分层未来预测形成互补，可用于兼顾机器人闭环控制的低延迟和长时规划能力。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-03/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-02/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -66,8 +65,8 @@ RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-03\/"
-    },"genre": "updates","wordcount":  1069 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-03\/","datePublished": "2026-11-03T00:00:00+08:00","dateModified": "2026-11-03T12:13:11+08:00","publisher": {
+    },"genre": "updates","wordcount":  1041 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-03\/","datePublished": "2026-11-03T00:00:00+08:00","dateModified": "2026-11-03T12:16:55+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -250,7 +249,7 @@ RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-03 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-03">2026-11-03</time></span>&nbsp;<span title="更新于 2026-11-03 12:13:11"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-03">2026-11-03</time></span>&nbsp;<span title="1069 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-03 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-03">2026-11-03</time></span>&nbsp;<span title="更新于 2026-11-03 12:16:55"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-03">2026-11-03</time></span>&nbsp;<span title="1041 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -270,30 +269,29 @@ RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li>递归自我改进出现两条关键路线：<a href="#astra-qwen">Astra 直接编程神经网络权重</a>探索绕过梯度下降的权重空间读写与修复，<a href="#r-orch">R²Orch</a>则通过自博弈、任务选择和技能内化持续改进智能体编排器。</li>
-<li>Agent 的持续学习与经验复用进一步系统化：<a href="#meta-routed-cl">Meta Routed CL</a>以任务聚类和路由记忆提升奖励并显著降低 API 成本，<a href="#trajectory2gym">Trajectory2Gym</a>通过决策接地的合成交互补强有状态多轮工具任务。</li>
-<li>具身智能开始强化实时运行时与低延迟控制：<a href="#rea">REA</a>采用异步“脑—小脑”架构协调慢推理与快速策略，<a href="#oswam">OSWAM</a>则把世界动作模型压缩到单步扩散，实现约 3 倍加速。</li>
-<li>数据、评测与持续学习基础环节同步推进：<a href="#bhi-158-llm">BHI</a>审计 158 个基准的区分度、抗饱和度与影响力，<a href="#simplelorif">SimpleLoRIF</a>用梯度归因定位导致安全退化的数据，<a href="#care-300">CaRE</a>将类增量持续学习扩展到 300 余项任务。</li>
-<li>新模型与热点延伸覆盖统一语音推理、连续潜空间推理、可控游戏世界及视觉生成/跟踪；另有 GPT-6.2 Astra 与 Claude 5.5 的非官方爆料，规格仍待确认。</li>
+<li>递归自我改进从“优化输出”推进到“改写模型与系统”： <a href="#astra-qwen">Astra 直接编程神经网络权重</a>探索无需梯度下降的权重空间编程，<a href="#r-orch">R²Orch</a>则以自博弈和技能内化形成智能体编排器的参数化改进闭环。</li>
+<li>智能体持续学习聚焦经验组织与训练数据构造：<a href="#meta-routed-cl">Meta Routed CL</a>以任务路由和隔离记忆兼顾收益、遗忘与成本，<a href="#trajectory2gym">Trajectory2Gym</a>合成跨步依赖的决策接地交互，<a href="#care-300">CaRE</a>则将类增量学习扩展至300多个任务。</li>
+<li>具身智能加速融合快慢控制与世界模型：<a href="#rea">REA</a>用异步脑—小脑架构协调高层推理和快速策略，<a href="#oswam">OSWAM</a>将动作生成压缩至单步扩散，<a href="#hifor">HiFOR</a>通过分层未来预测为机器人动作提供针对性前瞻。</li>
+<li>评测与数据治理开始面向长期有效性：<a href="#bhi-158-llm">BHI</a>系统审计158个基准的区分度、抗饱和度与影响力，<a href="#simplelorif">SimpleLoRIF</a>则用梯度归因追溯导致安全退化的微调样本。</li>
+<li>新模型方向出现语音工具调用与连续潜空间推理等进展；热点延伸还包括尚待官方确认的GPT-6.2 Astra/Claude 5.5爆料、视频先验图像生成和稠密三维跟踪。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>Awesome-RSI</strong>：<a href="#astra-qwen">Astra 权重空间编程</a>把“自我修改”推进到直接读取和重写模型参数，而 <a href="#r-orch">R²Orch</a>提供了可迭代验证的系统级自博弈闭环，可分别作为激进与渐进 RSI 路线的代表案例。</li>
-<li><strong>AgentTrainEvolve</strong>：<a href="#r-orch">R²Orch</a>的自动选题—自博弈—失败内化闭环与 <a href="#trajectory2gym">Trajectory2Gym</a>的跨步依赖交互合成，可组合成从课程生成到参数更新的工具智能体训练管线。</li>
-<li><strong>AgentEvolve</strong>：<a href="#meta-routed-cl">Meta Routed CL</a>表明按任务隔离并路由历史经验能同时改善效果与成本，可用于设计部署期技能库的聚类、检索和复用策略。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#meta-routed-cl">Meta Routed CL</a>将任务聚类、记忆路由和经验隔离绑定起来，为抑制长期记忆干扰及量化记忆系统成本收益提供了直接架构参考。</li>
-<li><strong>JevEvolve</strong>：<a href="#rea">REA</a>的边界触发判断门与共享预算升级机制，为学习“快策略直接执行还是升级至慢推理”的动态路由边界提供了具身场景原型。</li>
-<li><strong>DataEvolve</strong>：<a href="#simplelorif">SimpleLoRIF</a>说明可沿梯度把行为退化追溯到具体训练样本，可将数据筛选从启发式质量打分升级为面向目标行为的因果式归因。</li>
-<li><strong>EvalEvolve</strong>：<a href="#bhi-158-llm">BHI</a>的区分度、抗饱和度和影响力三维健康指数，可作为动态决定基准保留、更新或淘汰的元评测信号。</li>
-<li><strong>EvolveLRM</strong>：<a href="#larc">LARC</a>用信息增益强化学习将显式思维链迁移到连续隐藏状态，为研究潜在推理的测试时扩展能力及其可验证性提供了新对象。</li>
-<li><strong>RobotEvolve</strong>：<a href="#rea">REA</a>与 <a href="#oswam">OSWAM</a>分别从异步运行时和单步动作生成压缩控制延迟，可共同支撑机器人“慢规划—快执行”的实时闭环。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#astra-qwen">Astra 权重空间编程</a>与<a href="#r-orch">R²Orch</a>分别把递归改进对象推进到模型权重和智能体编排器，可作为“改进机制自身被改进”的两类关键案例。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#r-orch">R²Orch</a>的双层自博弈课程与<a href="#trajectory2gym">Trajectory2Gym</a>的跨步决策接地合成，可组合成“自动选题—生成长程交互—失败内化”的训练闭环。</li>
+<li><strong>AgentEvolve</strong>：<a href="#meta-routed-cl">Meta Routed CL</a>表明按任务聚类、路由并隔离经验能够同时提升复用收益和降低调用成本，为冻结参数下的技能与工作流记忆管理提供直接设计依据。</li>
+<li><strong>DataEvolve</strong>：<a href="#trajectory2gym">Trajectory2Gym</a>将数据分配落实到逐决策接地认证，而<a href="#simplelorif">SimpleLoRIF</a>可反向定位有害样本，两者共同支持“合成—归因—过滤”的数据飞轮。</li>
+<li><strong>EvalEvolve</strong>：<a href="#bhi-158-llm">BHI</a>提供了区分度、抗饱和度和影响力三维健康指标，可用于决定哪些静态基准应更新、降权或退出进化式评测集合。</li>
+<li><strong>GeneralizeEvolve</strong>：<a href="#care-300">CaRE</a>和<a href="#meta-routed-cl">Meta Routed CL</a>分别从专家路由与经验隔离切入大规模持续学习，可用于研究跨任务扩展时如何控制灾难性遗忘。</li>
+<li><strong>JevEvolve</strong>：<a href="#rea">REA</a>的边界触发判断门与共享预算升级机制，为学习“何时走快速策略、何时升级基础模型慢思考”的动态路由边界提供了具身实现。</li>
+<li><strong>RobotEvolve</strong>：<a href="#oswam">OSWAM</a>的单步实时动作生成与<a href="#hifor">HiFOR</a>的分层未来预测形成互补，可用于兼顾机器人闭环控制的低延迟和长时规划能力。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 16 条</span><a href="#daily-featured">⭐ 重点 11</a><a href="#daily-related">🔬 相关 2</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 17 条</span><a href="#daily-featured">⭐ 重点 12</a><a href="#daily-related">🔬 相关 2</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">11 条</span></h2>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">12 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="r-orch" class="summary-card daily-item">
   <h2 id="r-orch-title" class="daily-item-title">R²Orch：通过技能内化与自博弈实现智能体编排的递归自我改进</h2><p class="single-subtitle daily-item-summary">R²Orch以双层自博弈和技能内化循环训练智能体编排器，使其自动选择可学习任务、将失败内化为参数并逐步实现零技能部署。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体编排</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8D%9A%E5%BC%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自博弈</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.22740" target="_blank" rel="noopener">https://arxiv.org/abs/2610.22740</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/beita6969/R2Orch" target="_blank" rel="noopener">https://github.com/beita6969/R2Orch</a></div></div><div class="daily-item-content"><p>R²Orch提出递归自博弈编排范式：内循环在自主选择的任务上改进编排器，外循环则优化内循环的改进过程。其“递归可学习性”目标鼓励任务提议器选择在逐步撤除技能时仍能产生差异化结果的任务，以缓解固定课程和优势坍缩问题。Skill Withdrawal机制在受控自博弈评估确认编排器无需某项技能也能保持表现后，将该技能撤除，并把失败蒸馏为技能、再内化到参数中。实验覆盖12个数据集，在问答、数学、代码和交互任务上均持续优于基线，并推动编排器趋向零外部技能部署。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -389,17 +387,16 @@ RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[OSWAM：一种通过单步动作生成实现的有效世界动作模型（22 ▲）](https://huggingface.co/papers/2610.35850?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
   </details></article>
-<article id="simplelorif" class="summary-card daily-item">
-  <h2 id="simplelorif-title" class="daily-item-title">SimpleLoRIF：沿梯度追溯安全性退化的训练数据</h2><p class="single-subtitle daily-item-summary">SimpleLoRIF通过可扩展的梯度归因定位与不安全行为对齐的微调样本，并以过滤后的SafeTulu数据显著降低多种模型的越狱攻击成功率。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：数据归因</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%BD%92%E5%9B%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据归因</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E8%BF%87%E6%BB%A4/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据质量过滤</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AF%B9%E9%BD%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全对齐</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.37481" target="_blank" rel="noopener">https://arxiv.org/abs/2610.37481</a></div></div><div class="daily-item-content"><p>SimpleLoRIF将低秩梯度归因加以简化，并仅对Transformer最后四个模块执行反向传播，从而支持约百万规模样本的数据集分析。实验发现，即使微调数据表面无害，其梯度也可能与不安全行为高度对齐，例如不安全代码数据可关联到微调后涌现的广泛有害行为，AUC最高达到0.865。研究团队移除Tulu 3中与不安全响应梯度最对齐的20%样本，构建了SafeTulu，在Qwen、Llama和OLMo上将GCG攻击成功率最多降低22%，同时基本保持或提升通用能力。被移除数据的分析还揭示了工具执行失败、叙事算术等可能被忽视的安全退化来源。</p>
+<article id="hifor" class="summary-card daily-item">
+  <h2 id="hifor-title" class="daily-item-title">HiFOR：动作引导世界锚定与分层前瞻的视觉-语言-动作模型</h2><p class="single-subtitle daily-item-summary">HiFOR通过跨时间尺度的分层未来预测、结构化潜在世界建模和动作引导检索，为视觉-语言-动作模型生成机器人操作动作提供针对性的未来信息。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身基础模型</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;时序建模</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.40373" target="_blank" rel="noopener">https://arxiv.org/abs/2610.40373</a></div></div><div class="daily-item-content"><p>HiFOR联合预测短期状态演化、语义里程碑和最终目标状态，以统一建模局部动力学与长期任务目标。其分层依赖掩码（HDM）在不同预测时间尺度之间建立依赖关系，增强未来状态的一致性。结构感知潜在世界模型按照时间跨度、视角和空间维度组织未来表征，并在去噪过程中依据不断演化的动作表征检索相关信息。该方法在两个仿真基准和六项真实机器人操作任务上的实验验证了有效性。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为大规模后训练数据提供基于梯度信号的安全归因与过滤手段，弥补内容过滤器难以识别表面无害风险样本的不足。</li>
-<li>表明微调安全退化可能源于训练样本与不安全行为之间的参数更新方向一致性，而不只取决于样本是否包含显式有害内容。</li>
-<li>SafeTulu的结果说明，在维持模型能力的同时，通过数据级干预可以有效增强对越狱攻击的抵抗力。</li>
-<li>可利用公开的SafeTulu构建工具调整移除比例或仅过滤特定数据子集，以研究不同安全—能力权衡。</li>
+<li>为VLA模型提供兼顾短期状态变化与长期任务目标的分层规划机制。</li>
+<li>通过动作条件检索过滤与当前决策无关的预测信息，避免将全部未来表征直接注入动作策略。</li>
+<li>展示结构化潜在世界表征在真实机器人操作和跨时间尺度决策中的应用价值。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[循着梯度追溯安全性退化的训练数据根源（26 ▲）](https://huggingface.co/papers/2610.37481?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
+    <div class="daily-item-notes-body">[HiFOR：面向视觉-语言-动作模型的动作引导式世界锚定与分层前瞻（23 ▲)](https://huggingface.co/papers/2610.40373?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
   </details></article>
 <article id="care-300" class="summary-card daily-item">
   <h2 id="care-300-title" class="daily-item-title">CaRE：扩展至300&#43;任务的持续学习架构</h2><p class="single-subtitle daily-item-summary">香港大学提出基于双层路由混合专家的CaRE架构，并配套构建OmniBenchmark-1K基准，将类增量持续学习扩展至300多个非重叠任务。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：持续学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/taskevolve/">TaskEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E7%81%BE%E9%9A%BE%E6%80%A7%E9%81%97%E5%BF%98/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;灾难性遗忘</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型路由</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉表征学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2602.03473" target="_blank" rel="noopener">https://arxiv.org/abs/2602.03473</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/LMMMEng/CaRE" target="_blank" rel="noopener">https://github.com/LMMMEng/CaRE</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://github.com/LMMMEng/CaRE" target="_blank" rel="noopener">https://github.com/LMMMEng/CaRE</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/R37RnY2bHRQkzXBkCU9ziA?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/R37RnY2bHRQkzXBkCU9ziA?scene=1</a></div></div><div class="daily-item-content"><ul>
@@ -417,6 +414,18 @@ RobotEvolve：REA与 OSWAM分别从异步运行时和单步动作生成压缩控
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">taskevolve &amp; dataevolve | https://mp.weixin.qq.com/s/R37RnY2bHRQkzXBkCU9ziA?scene=1</div>
+  </details></article>
+<article id="simplelorif" class="summary-card daily-item">
+  <h2 id="simplelorif-title" class="daily-item-title">SimpleLoRIF：沿梯度追溯安全性退化的训练数据</h2><p class="single-subtitle daily-item-summary">SimpleLoRIF通过可扩展的梯度归因定位与不安全行为对齐的微调样本，并以过滤后的SafeTulu数据显著降低多种模型的越狱攻击成功率。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：数据归因</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%BD%92%E5%9B%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据归因</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E8%BF%87%E6%BB%A4/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据质量过滤</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AF%B9%E9%BD%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全对齐</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.37481" target="_blank" rel="noopener">https://arxiv.org/abs/2610.37481</a></div></div><div class="daily-item-content"><p>SimpleLoRIF将低秩梯度归因加以简化，并仅对Transformer最后四个模块执行反向传播，从而支持约百万规模样本的数据集分析。实验发现，即使微调数据表面无害，其梯度也可能与不安全行为高度对齐，例如不安全代码数据可关联到微调后涌现的广泛有害行为，AUC最高达到0.865。研究团队移除Tulu 3中与不安全响应梯度最对齐的20%样本，构建了SafeTulu，在Qwen、Llama和OLMo上将GCG攻击成功率最多降低22%，同时基本保持或提升通用能力。被移除数据的分析还揭示了工具执行失败、叙事算术等可能被忽视的安全退化来源。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为大规模后训练数据提供基于梯度信号的安全归因与过滤手段，弥补内容过滤器难以识别表面无害风险样本的不足。</li>
+<li>表明微调安全退化可能源于训练样本与不安全行为之间的参数更新方向一致性，而不只取决于样本是否包含显式有害内容。</li>
+<li>SafeTulu的结果说明，在维持模型能力的同时，通过数据级干预可以有效增强对越狱攻击的抵抗力。</li>
+<li>可利用公开的SafeTulu构建工具调整移除比例或仅过滤特定数据子集，以研究不同安全—能力权衡。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[循着梯度追溯安全性退化的训练数据根源（26 ▲）](https://huggingface.co/papers/2610.37481?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-02)</div>
   </details></article>
 <article id="larc" class="summary-card daily-item">
   <h2 id="larc-title" class="daily-item-title">LARC：统一多模态模型的连续空间潜在推理</h2><p class="single-subtitle daily-item-summary">LARC通过课程监督微调与信息增益强化学习，将离散词元思维链迁移至连续隐藏状态，在统一多模态模型中提升图像生成质量、提示遵循和测试时扩展能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多模态推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%BD%9C%E7%A9%BA%E9%97%B4%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;潜空间推理</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.42149" target="_blank" rel="noopener">https://arxiv.org/abs/2610.42149</a></div></div><div class="daily-item-content"><p>LARC针对语言推理位于离散词元空间、图像生成位于连续空间的模态错配问题，提出直接在连续隐藏状态中进行潜在推理。训练分为两个阶段：课程监督微调逐步将词元级推理转换为潜在推理，随后通过信息增益强化学习在无真实推理监督下实现自我演化。该方法在多个文生图基准上改善生成质量、提示遵循能力与组合保真度，并在GenEval上较BAGEL提升7个百分点。实验还显示，LARC在并行和顺序测试时扩展策略下均具有明确的扩展收益，并优于基于词元的生成方式。</p>
