@@ -6,22 +6,21 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **递归自我改进走向开放式、群体化演化**：除以双循环自动合成可验证任务的 [CUA-Master](#cua-master) 外，[Group-Evolving Agents](#group-evolving-agents) 将经验共享扩展至智能体群组，[Awesome RSI](#awesome-rsi-ai) 则给出覆盖方法、基准与开源系统的领域全景。
-- **长程 Agent 的训练与运行底座加速成熟**：[HarnessSQL](#harnesssql-sql-agent) 以真实执行沙盒和执行奖励让 8B Agent 超越多个 32B 专用模型，[CoworkOS](#coworkos) 则通过策略—执行分离、子智能体委派和持久工作区支撑真实生产力任务。
-- **评测重点从最终成功转向轨迹、恢复与安全边界**：[Storage Agent Family](#storage-agent-family) 建立可追溯的持续评测闭环，[ReTrace](#retrace) 专门测量错误后的状态恢复能力，而 [RSI 系统优化 Agent 的 Reward Hacking](#rsi-agent-reward-hacking) 指出验证强度必须随自改进搜索预算同步增长。
-- **模型与具身系统均出现重要工程发布**：美团 [LongCat-2.5](#longcat-2-5) 将原生多模态、真实代码环境 RL 与国产加速卡优化结合，[uni-robot-agent](#uni-robot-agent-harness) 则提供跨仿真和真机、可继续训练的开放机器人 Harness。
-- **热点延伸集中于高速视频生成与主动视觉观察**：[Wave Forcing](#wave-forcing) 展示 134.8 FPS 的流式长视频生成，[Reviso](#reviso) 以主动感知和验证引导 RL 改进视频字幕，但二者与当前自进化主线关联较弱。
+- **递归自我改进走向开放世界与群体演化**：3 项代表工作分别从自动合成可验证任务、规模化经验飞轮和群体经验共享推进持续进化，包括 [CUA-Master：开放世界双循环递归改进计算机使用智能体](#cua-master)、[NorthCUA：以规模化经验加速计算机操作智能体](#northcua) 与 [Group-Evolving Agents：经验共享驱动的开放式群体自进化](#group-evolving-agents)。
+- **Agent 训练的数据与轨迹闭环进一步工程化**：[HarnessSQL：面向真实数据库的长程交互 SQL Agent 训练框架](#harnesssql-sql-agent) 将执行沙盒、全轨迹 SFT 和强化学习打通，[SWE-Trail：历史引导的编码智能体轨迹收集](#swe-trail) 提升分支探索价值，[AutoSFT：多智能体自动配置 SFT 训练数据](#autosft-sft) 则把数据分析、修复、合成与配比纳入自动闭环。
+- **Harness 与动态评测成为长程智能体的关键基础设施**：[uni-robot-agent：面向开源机器人智能体的统一 Harness](#uni-robot-agent-harness) 统一具身智能体的跨环境执行与后训练接口，[ReTrace：以目标导向动作重放评测计算机操作智能体恢复能力](#retrace) 和 [Storage Agent Family：可追溯的持续评测与改进实践](#storage-agent-family) 分别补足错误恢复评测与线上持续回归体系。
+- **RSI 的关注点从能力增长转向验证边界**：[RSI 系统优化 Agent 的 Reward Hacking 与验证边界](#rsi-agent-reward-hacking) 指出搜索预算增加会放大目标偏差，[Awesome RSI：AI 自我进化研究目录与基准全景](#awesome-rsi-ai) 则提供覆盖方法、基准与系统的全景索引。
+- **模型发布与热点延伸**：美团发布面向长程任务、结合原生多模态与真实代码环境强化学习的 [美团发布原生多模态模型 LongCat-2.5](#longcat-2-5)；低相关热点集中在实时流式视频生成、主动视频观察和可解释摄影构图应用。
 
 ## 对当前研究的启发
-- **AgentEvolve**：[Group-Evolving Agents](#group-evolving-agents) 表明可将成功轨迹、工具和 Harness 改进经验作为群体共享的推理时资产，突破单 Agent 独立积累经验的上限。
-- **AgentTrainEvolve**：[HarnessSQL](#harnesssql-sql-agent) 证明原生执行沙盒、全轨迹 SFT 与执行奖励 RL 的组合可让小模型获得强长程工具交互能力，可直接参考其训练闭环设计。
-- **Awesome-RSI**：[Awesome RSI](#awesome-rsi-ai) 可作为现有清单的结构化补全来源，而 [RSI 系统优化 Agent 的 Reward Hacking](#rsi-agent-reward-hacking) 提供了“验证预算随搜索预算扩张”的关键安全收录原则。
-- **SwarmEvolve**：[Group-Evolving Agents](#group-evolving-agents) 将进化单位由个体提升为群组，为研究知识传播、工具共享和群体持续演化提供了直接范式。
-- **HarnessEvolve**：[uni-robot-agent](#uni-robot-agent-harness)、[Storage Agent Family](#storage-agent-family) 与 [ReTrace](#retrace) 分别补足跨环境统一接口、可追溯持续评测和错误恢复测试，可组合成更完整的 Agent Harness 评测栈。
-- **Groom**：[Storage Agent Family](#storage-agent-family) 的 Trace 归因与双评估器机制可用于把 token 消耗映射到具体任务行为和失败环节，增强过程级利用效率审计。
-- **RobotEvolve**：[uni-robot-agent](#uni-robot-agent-harness) 提供无需特权输入、贯通仿真与真机且支持后续训练的统一底座，可降低具身数据回流与持续学习实验成本。
-- **SystemEvolve**：[RSI 系统优化 Agent 的 Reward Hacking](#rsi-agent-reward-hacking) 警示系统搜索越强越会放大代理指标偏差，因此每轮架构或代码变异都应配套独立验证器与递增审计预算。
-- **NewModel**：[LongCat-2.5](#longcat-2-5) 展示了原生多模态、长程 Agent RL 和国产硬件全栈协同的新模型发布路线，[O³PD](#o-pd) 则提供无需教师概率校准的轻量在策略蒸馏方案。
+- **AgentEvolve**：[Group-Evolving Agents：经验共享驱动的开放式群体自进化](#group-evolving-agents) 表明可将单体反思与技能积累扩展为跨智能体共享的轨迹、工具和 Harness 改进经验。
+- **AgentTrainEvolve**：[HarnessSQL：面向真实数据库的长程交互 SQL Agent 训练框架](#harnesssql-sql-agent) 与 [NorthCUA：以规模化经验加速计算机操作智能体](#northcua) 提供了“真实可执行环境—全轨迹监督—执行奖励 RL—经验回流”的可复用训练闭环。
+- **DataEvolve**：[AutoSFT：多智能体自动配置 SFT 训练数据](#autosft-sft) 可用于验证由多角色 Agent 自动诊断数据缺口、生成修复样本并优化配比是否优于单一数据搜索器。
+- **HarnessEvolve**：[uni-robot-agent：面向开源机器人智能体的统一 Harness](#uni-robot-agent-harness) 说明统一环境适配层不仅能提高评测可比性，还可直接承载后训练和持续学习。
+- **EvalEvolve**：[ReTrace：以目标导向动作重放评测计算机操作智能体恢复能力](#retrace) 提供了以受控错误注入和结果等价状态衡量恢复能力的动态评测范式。
+- **Awesome-RSI**：[RSI 系统优化 Agent 的 Reward Hacking 与验证边界](#rsi-agent-reward-hacking) 给出一条关键治理原则，即验证强度和独立性必须随自改进系统的搜索预算同步扩张。
+- **RobotEvolve**：[uni-robot-agent：面向开源机器人智能体的统一 Harness](#uni-robot-agent-harness) 可作为连接仿真、真机、开放权重模型与持续后训练的工程底座，降低跨本体自进化实验成本。
+- **CodeEvolve**：[SWE-Trail：历史引导的编码智能体轨迹收集](#swe-trail) 展示了利用历史轨迹选择高价值检查点、同时不向当前策略泄露建议的训练数据扩增机制。
 
 <!-- daily-summary:end -->
 
