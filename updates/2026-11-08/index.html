@@ -12,46 +12,51 @@
 
 今日概览
 
-智能体训练环境与数据合成成为今日主线（3 项）：WildAWM：用合成“个人电脑”训练计算机使用智能体验证纯合成电脑环境可带来跨基准泛化，Firefly：先探索后出题的可验证工具调用数据合成则打通真实 API 探索、反向出题与离线验证闭环。
-智能体持续进化覆盖推理与训练两侧：Anthropic公开Claude离线“做梦”长期记忆架构以跨会话回放、纠错和知识维基沉淀经验，Naive-N0.5-Flash推动个人端AI自主训练AI进一步尝试让个人设备自主完成训练全流程。
-快决策模型与训练效率均有新进展：Drex：迈向基础决策模型用候选概率分布替代开放式生成以降低决策延迟，ICRPM以前瞻风险预测优化Rollout任务采样则在不增加 rollout 的前提下优化高风险任务选择。
-具身基础模型继续向大规模异构经验与迁移泛化推进：Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案融合 5 万小时第一人称人类经验与机器人数据，SLA：通过持续预训练扩展空间-语言-动作模型探索将三维空间理解内化为可迁移能力。
-评测侧开始同时关注长程能力与成本：VisSearch-Bench：多模态智能体长时程视觉搜索评测揭示当前系统完整任务成功率仍不足三成，BestRand：稳定低成本的基准压缩则改善低成本子集评测的长尾误差；热点延伸集中在视觉规划、多轮图像编辑和三维化身修复。
+智能体训练环境与数据合成加速融合（3 条）：WildAWM：用合成“个人电脑”训练计算机使用智能体以全合成桌面环境实现跨分布泛化，Firefly：先探索后出题的可验证工具调用数据合成从真实 API 反向生成可验证任务，ICRPM以前瞻风险预测优化Rollout任务采样则在不增加 rollout 的前提下优化训练任务选择。
+部署期自进化从记忆扩展到整个执行系统：VISTA：机器人通过自编程实现不动权重的具身自进化通过自主改写 Harness 将成功率从 17.5% 提至 95.0%，Anthropic公开Claude离线“做梦”长期记忆架构展示了跨会话回放、纠错和知识巩固机制。
+新模型探索覆盖自主训练与低延迟决策：Naive-N0.5-Flash推动个人端AI自主训练AI尝试在个人设备上闭环完成数据、训练和纠错，Drex：迈向基础决策模型则以直接输出候选概率分布的开放权重模型探索“快决策”路线。
+具身基础模型继续扩大经验规模与迁移范围：Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案利用大规模第一人称人类经验实现具身上下文学习，SLA：通过持续预训练扩展空间-语言-动作模型通过异构机器人数据持续预训练内化可迁移空间能力。
+智能体评测同时关注长程能力与评测成本：VisSearch-Bench：多模态智能体长时程视觉搜索评测揭示最佳系统完整任务成功率仅 26.47%，BestRand：稳定低成本的基准压缩则以随机子集筛选降低成本并改善长尾与分布外稳定性。
+热点延伸集中在视觉与三维生成，包括高速具身视觉规划、多轮图像编辑抗漂移和高斯化身伪影修复，但与当前核心研究方向关联较弱。
 
 对当前研究的启发
 
-EnvironmentEvolve：WildAWM 与 Firefly表明环境生成应联合设计可执行载体、长程任务和可靠验证器，并用分布外表现检验合成环境是否真正扩展能力。
-AgentTrainEvolve：Firefly的“先探索 API、再反向出题”可直接用于构造工具调用课程，而 ICRPM 可作为无需额外 rollout 的风险感知任务调度器。
-MemoryEvolve：Claude的离线“做梦”架构提供了可落地的记忆巩固范式，即定期回放原始轨迹、纠正旧结论并重组为可检索的分层知识。
-GeneralizeEvolve：WildAWM仅凭合成环境就在八个分布外基准上提升，为研究“环境多样性是否带来真实跨域泛化”提供了强实验样板。
-JevEvolve：Drex直接输出有限候选的概率分布，适合作为快决策模块的开放基线，并可进一步研究其与慢推理模型之间的动态升级边界。
-EvalEvolve：VisSearch-Bench与BestRand分别补足长时程多模态智能体的过程能力测量和低成本稳定评测，可组合用于持续更新但预算受限的评测体系。
-RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频和异构机器人数据统一纳入持续预训练，以增强跨本体迁移与具身上下文学习。
+SystemEvolve：VISTA证明冻结模型权重、仅让 Meta-agent 搜索并改写执行 Harness 就可能带来数量级提升，可将工作流代码、工具配置与验收反馈纳入系统级演化闭环。
+AgentEvolve：Anthropic 的长期记忆架构提供了“任务间歇回放—错误纠正—知识维基化”的部署期经验沉淀管线，可用于增强跨会话自我改进。
+MemoryEvolve：Anthropic 的离线“做梦”机制表明记忆巩固不应只是摘要压缩，还应重放原始记录并主动修正旧知识与索引。
+EnvironmentEvolve：Firefly与WildAWM共同说明可扩展环境应联合生成执行载体、长程任务和可靠验证器，而非只合成任务文本。
+DataEvolve：Firefly的“先探索真实 API、再反向出题”可用于提高工具调用合成数据的真实性、覆盖度和可验证性。
+AgentTrainEvolve：ICRPM可作为 Agentic RL 的低成本课程调度器，利用历史风险预测策略更新后的任务价值，减少无效 rollout。
+GeneralizeEvolve：WildAWM仅依赖合成环境却在八个分布外基准上提升，为研究“环境多样性是否比真实轨迹来源更决定泛化”提供了强案例。
+JevEvolve：Drex的候选概率直出结构可作为高频动作选择与工具路由的快模型，并进一步研究何时升级到慢推理模型。
+EvalEvolve：BestRand可降低动态基准的持续评测成本，而VisSearch-Bench提供了视觉上下文管理、证据整合和长程搜索过程的新评测切面。
+RobotEvolve：VISTA与Open-HumanWAM分别展示了 Harness 自编程和人类经验预训练两条互补路线，可组合为“经验迁移—执行系统自适应—真机验证”的具身进化闭环。
+Awesome-RSI：Naive-N0.5-Flash提供了个人设备上训练闭环与递归改进的候选案例，但应重点追踪其多轮改进是否单调、评测是否独立以及错误是否累积。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-08 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体训练环境与数据合成成为今日主线（3 项）：WildAWM：用合成“个人电脑”训练计算机使用智能体验证纯合成电脑环境可带来跨基准泛化，Firefly：先探索后出题的可验证工具调用数据合成则打通真实 API 探索、反向出题与离线验证闭环。 智能体持续进化覆盖推理与训练两侧：Anthropic公开Claude离线“做梦”长期记忆架构以跨会话回放、纠错和知识维基沉淀经验，Naive-N0.5-Flash推动个人端AI自主训练AI进一步尝试让个人设备自主完成训练全流程。 快决策模型与训练效率均有新进展：Drex：迈向基础决策模型用候选概率分布替代开放式生成以降低决策延迟，ICRPM以前瞻风险预测优化Rollout任务采样则在不增加 rollout 的前提下优化高风险任务选择。 具身基础模型继续向大规模异构经验与迁移泛化推进：Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案融合 5 万小时第一人称人类经验与机器人数据，SLA：通过持续预训练扩展空间-语言-动作模型探索将三维空间理解内化为可迁移能力。 评测侧开始同时关注长程能力与成本：VisSearch-Bench：多模态智能体长时程视觉搜索评测揭示当前系统完整任务成功率仍不足三成，BestRand：稳定低成本的基准压缩则改善低成本子集评测的长尾误差；热点延伸集中在视觉规划、多轮图像编辑和三维化身修复。 对当前研究的启发 EnvironmentEvolve：WildAWM 与 Firefly表明环境生成应联合设计可执行载体、长程任务和可靠验证器，并用分布外表现检验合成环境是否真正扩展能力。 AgentTrainEvolve：Firefly的“先探索 API、再反向出题”可直接用于构造工具调用课程，而 ICRPM 可作为无需额外 rollout 的风险感知任务调度器。 MemoryEvolve：Claude的离线“做梦”架构提供了可落地的记忆巩固范式，即定期回放原始轨迹、纠正旧结论并重组为可检索的分层知识。 GeneralizeEvolve：WildAWM仅凭合成环境就在八个分布外基准上提升，为研究“环境多样性是否带来真实跨域泛化”提供了强实验样板。 JevEvolve：Drex直接输出有限候选的概率分布，适合作为快决策模块的开放基线，并可进一步研究其与慢推理模型之间的动态升级边界。 EvalEvolve：VisSearch-Bench与BestRand分别补足长时程多模态智能体的过程能力测量和低成本稳定评测，可组合用于持续更新但预算受限的评测体系。 RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频和异构机器人数据统一纳入持续预训练，以增强跨本体迁移与具身上下文学习。">
+今日概览 智能体训练环境与数据合成加速融合（3 条）：WildAWM：用合成“个人电脑”训练计算机使用智能体以全合成桌面环境实现跨分布泛化，Firefly：先探索后出题的可验证工具调用数据合成从真实 API 反向生成可验证任务，ICRPM以前瞻风险预测优化Rollout任务采样则在不增加 rollout 的前提下优化训练任务选择。 部署期自进化从记忆扩展到整个执行系统：VISTA：机器人通过自编程实现不动权重的具身自进化通过自主改写 Harness 将成功率从 17.5% 提至 95.0%，Anthropic公开Claude离线“做梦”长期记忆架构展示了跨会话回放、纠错和知识巩固机制。 新模型探索覆盖自主训练与低延迟决策：Naive-N0.5-Flash推动个人端AI自主训练AI尝试在个人设备上闭环完成数据、训练和纠错，Drex：迈向基础决策模型则以直接输出候选概率分布的开放权重模型探索“快决策”路线。 具身基础模型继续扩大经验规模与迁移范围：Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案利用大规模第一人称人类经验实现具身上下文学习，SLA：通过持续预训练扩展空间-语言-动作模型通过异构机器人数据持续预训练内化可迁移空间能力。 智能体评测同时关注长程能力与评测成本：VisSearch-Bench：多模态智能体长时程视觉搜索评测揭示最佳系统完整任务成功率仅 26.47%，BestRand：稳定低成本的基准压缩则以随机子集筛选降低成本并改善长尾与分布外稳定性。 热点延伸集中在视觉与三维生成，包括高速具身视觉规划、多轮图像编辑抗漂移和高斯化身伪影修复，但与当前核心研究方向关联较弱。 对当前研究的启发 SystemEvolve：VISTA证明冻结模型权重、仅让 Meta-agent 搜索并改写执行 Harness 就可能带来数量级提升，可将工作流代码、工具配置与验收反馈纳入系统级演化闭环。 AgentEvolve：Anthropic 的长期记忆架构提供了“任务间歇回放—错误纠正—知识维基化”的部署期经验沉淀管线，可用于增强跨会话自我改进。 MemoryEvolve：Anthropic 的离线“做梦”机制表明记忆巩固不应只是摘要压缩，还应重放原始记录并主动修正旧知识与索引。 EnvironmentEvolve：Firefly与WildAWM共同说明可扩展环境应联合生成执行载体、长程任务和可靠验证器，而非只合成任务文本。 DataEvolve：Firefly的“先探索真实 API、再反向出题”可用于提高工具调用合成数据的真实性、覆盖度和可验证性。 AgentTrainEvolve：ICRPM可作为 Agentic RL 的低成本课程调度器，利用历史风险预测策略更新后的任务价值，减少无效 rollout。 GeneralizeEvolve：WildAWM仅依赖合成环境却在八个分布外基准上提升，为研究“环境多样性是否比真实轨迹来源更决定泛化”提供了强案例。 JevEvolve：Drex的候选概率直出结构可作为高频动作选择与工具路由的快模型，并进一步研究何时升级到慢推理模型。 EvalEvolve：BestRand可降低动态基准的持续评测成本，而VisSearch-Bench提供了视觉上下文管理、证据整合和长程搜索过程的新评测切面。 RobotEvolve：VISTA与Open-HumanWAM分别展示了 Harness 自编程和人类经验预训练两条互补路线，可组合为“经验迁移—执行系统自适应—真机验证”的具身进化闭环。 Awesome-RSI：Naive-N0.5-Flash提供了个人设备上训练闭环与递归改进的候选案例，但应重点追踪其多轮改进是否单调、评测是否独立以及错误是否累积。">
   <meta itemprop="datePublished" content="2026-11-08T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-08T16:37:33+08:00">
-  <meta itemprop="wordCount" content="1131">
+  <meta itemprop="dateModified" content="2026-11-08T16:38:06+08:00">
+  <meta itemprop="wordCount" content="1500">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-08/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-08 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体训练环境与数据合成成为今日主线（3 项）：WildAWM：用合成“个人电脑”训练计算机使用智能体验证纯合成电脑环境可带来跨基准泛化，Firefly：先探索后出题的可验证工具调用数据合成则打通真实 API 探索、反向出题与离线验证闭环。 智能体持续进化覆盖推理与训练两侧：Anthropic公开Claude离线“做梦”长期记忆架构以跨会话回放、纠错和知识维基沉淀经验，Naive-N0.5-Flash推动个人端AI自主训练AI进一步尝试让个人设备自主完成训练全流程。 快决策模型与训练效率均有新进展：Drex：迈向基础决策模型用候选概率分布替代开放式生成以降低决策延迟，ICRPM以前瞻风险预测优化Rollout任务采样则在不增加 rollout 的前提下优化高风险任务选择。 具身基础模型继续向大规模异构经验与迁移泛化推进：Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案融合 5 万小时第一人称人类经验与机器人数据，SLA：通过持续预训练扩展空间-语言-动作模型探索将三维空间理解内化为可迁移能力。 评测侧开始同时关注长程能力与成本：VisSearch-Bench：多模态智能体长时程视觉搜索评测揭示当前系统完整任务成功率仍不足三成，BestRand：稳定低成本的基准压缩则改善低成本子集评测的长尾误差；热点延伸集中在视觉规划、多轮图像编辑和三维化身修复。 对当前研究的启发 EnvironmentEvolve：WildAWM 与 Firefly表明环境生成应联合设计可执行载体、长程任务和可靠验证器，并用分布外表现检验合成环境是否真正扩展能力。 AgentTrainEvolve：Firefly的“先探索 API、再反向出题”可直接用于构造工具调用课程，而 ICRPM 可作为无需额外 rollout 的风险感知任务调度器。 MemoryEvolve：Claude的离线“做梦”架构提供了可落地的记忆巩固范式，即定期回放原始轨迹、纠正旧结论并重组为可检索的分层知识。 GeneralizeEvolve：WildAWM仅凭合成环境就在八个分布外基准上提升，为研究“环境多样性是否带来真实跨域泛化”提供了强实验样板。 JevEvolve：Drex直接输出有限候选的概率分布，适合作为快决策模块的开放基线，并可进一步研究其与慢推理模型之间的动态升级边界。 EvalEvolve：VisSearch-Bench与BestRand分别补足长时程多模态智能体的过程能力测量和低成本稳定评测，可组合用于持续更新但预算受限的评测体系。 RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频和异构机器人数据统一纳入持续预训练，以增强跨本体迁移与具身上下文学习。">
+今日概览 智能体训练环境与数据合成加速融合（3 条）：WildAWM：用合成“个人电脑”训练计算机使用智能体以全合成桌面环境实现跨分布泛化，Firefly：先探索后出题的可验证工具调用数据合成从真实 API 反向生成可验证任务，ICRPM以前瞻风险预测优化Rollout任务采样则在不增加 rollout 的前提下优化训练任务选择。 部署期自进化从记忆扩展到整个执行系统：VISTA：机器人通过自编程实现不动权重的具身自进化通过自主改写 Harness 将成功率从 17.5% 提至 95.0%，Anthropic公开Claude离线“做梦”长期记忆架构展示了跨会话回放、纠错和知识巩固机制。 新模型探索覆盖自主训练与低延迟决策：Naive-N0.5-Flash推动个人端AI自主训练AI尝试在个人设备上闭环完成数据、训练和纠错，Drex：迈向基础决策模型则以直接输出候选概率分布的开放权重模型探索“快决策”路线。 具身基础模型继续扩大经验规模与迁移范围：Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案利用大规模第一人称人类经验实现具身上下文学习，SLA：通过持续预训练扩展空间-语言-动作模型通过异构机器人数据持续预训练内化可迁移空间能力。 智能体评测同时关注长程能力与评测成本：VisSearch-Bench：多模态智能体长时程视觉搜索评测揭示最佳系统完整任务成功率仅 26.47%，BestRand：稳定低成本的基准压缩则以随机子集筛选降低成本并改善长尾与分布外稳定性。 热点延伸集中在视觉与三维生成，包括高速具身视觉规划、多轮图像编辑抗漂移和高斯化身伪影修复，但与当前核心研究方向关联较弱。 对当前研究的启发 SystemEvolve：VISTA证明冻结模型权重、仅让 Meta-agent 搜索并改写执行 Harness 就可能带来数量级提升，可将工作流代码、工具配置与验收反馈纳入系统级演化闭环。 AgentEvolve：Anthropic 的长期记忆架构提供了“任务间歇回放—错误纠正—知识维基化”的部署期经验沉淀管线，可用于增强跨会话自我改进。 MemoryEvolve：Anthropic 的离线“做梦”机制表明记忆巩固不应只是摘要压缩，还应重放原始记录并主动修正旧知识与索引。 EnvironmentEvolve：Firefly与WildAWM共同说明可扩展环境应联合生成执行载体、长程任务和可靠验证器，而非只合成任务文本。 DataEvolve：Firefly的“先探索真实 API、再反向出题”可用于提高工具调用合成数据的真实性、覆盖度和可验证性。 AgentTrainEvolve：ICRPM可作为 Agentic RL 的低成本课程调度器，利用历史风险预测策略更新后的任务价值，减少无效 rollout。 GeneralizeEvolve：WildAWM仅依赖合成环境却在八个分布外基准上提升，为研究“环境多样性是否比真实轨迹来源更决定泛化”提供了强案例。 JevEvolve：Drex的候选概率直出结构可作为高频动作选择与工具路由的快模型，并进一步研究何时升级到慢推理模型。 EvalEvolve：BestRand可降低动态基准的持续评测成本，而VisSearch-Bench提供了视觉上下文管理、证据整合和长程搜索过程的新评测切面。 RobotEvolve：VISTA与Open-HumanWAM分别展示了 Harness 自编程和人类经验预训练两条互补路线，可组合为“经验迁移—执行系统自适应—真机验证”的具身进化闭环。 Awesome-RSI：Naive-N0.5-Flash提供了个人设备上训练闭环与递归改进的候选案例，但应重点追踪其多轮改进是否单调、评测是否独立以及错误是否累积。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-08T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-08T16:37:33+08:00">
+    <meta property="article:modified_time" content="2026-11-08T16:38:06+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-08 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体训练环境与数据合成成为今日主线（3 项）：WildAWM：用合成“个人电脑”训练计算机使用智能体验证纯合成电脑环境可带来跨基准泛化，Firefly：先探索后出题的可验证工具调用数据合成则打通真实 API 探索、反向出题与离线验证闭环。 智能体持续进化覆盖推理与训练两侧：Anthropic公开Claude离线“做梦”长期记忆架构以跨会话回放、纠错和知识维基沉淀经验，Naive-N0.5-Flash推动个人端AI自主训练AI进一步尝试让个人设备自主完成训练全流程。 快决策模型与训练效率均有新进展：Drex：迈向基础决策模型用候选概率分布替代开放式生成以降低决策延迟，ICRPM以前瞻风险预测优化Rollout任务采样则在不增加 rollout 的前提下优化高风险任务选择。 具身基础模型继续向大规模异构经验与迁移泛化推进：Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案融合 5 万小时第一人称人类经验与机器人数据，SLA：通过持续预训练扩展空间-语言-动作模型探索将三维空间理解内化为可迁移能力。 评测侧开始同时关注长程能力与成本：VisSearch-Bench：多模态智能体长时程视觉搜索评测揭示当前系统完整任务成功率仍不足三成，BestRand：稳定低成本的基准压缩则改善低成本子集评测的长尾误差；热点延伸集中在视觉规划、多轮图像编辑和三维化身修复。 对当前研究的启发 EnvironmentEvolve：WildAWM 与 Firefly表明环境生成应联合设计可执行载体、长程任务和可靠验证器，并用分布外表现检验合成环境是否真正扩展能力。 AgentTrainEvolve：Firefly的“先探索 API、再反向出题”可直接用于构造工具调用课程，而 ICRPM 可作为无需额外 rollout 的风险感知任务调度器。 MemoryEvolve：Claude的离线“做梦”架构提供了可落地的记忆巩固范式，即定期回放原始轨迹、纠正旧结论并重组为可检索的分层知识。 GeneralizeEvolve：WildAWM仅凭合成环境就在八个分布外基准上提升，为研究“环境多样性是否带来真实跨域泛化”提供了强实验样板。 JevEvolve：Drex直接输出有限候选的概率分布，适合作为快决策模块的开放基线，并可进一步研究其与慢推理模型之间的动态升级边界。 EvalEvolve：VisSearch-Bench与BestRand分别补足长时程多模态智能体的过程能力测量和低成本稳定评测，可组合用于持续更新但预算受限的评测体系。 RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频和异构机器人数据统一纳入持续预训练，以增强跨本体迁移与具身上下文学习。">
+今日概览 智能体训练环境与数据合成加速融合（3 条）：WildAWM：用合成“个人电脑”训练计算机使用智能体以全合成桌面环境实现跨分布泛化，Firefly：先探索后出题的可验证工具调用数据合成从真实 API 反向生成可验证任务，ICRPM以前瞻风险预测优化Rollout任务采样则在不增加 rollout 的前提下优化训练任务选择。 部署期自进化从记忆扩展到整个执行系统：VISTA：机器人通过自编程实现不动权重的具身自进化通过自主改写 Harness 将成功率从 17.5% 提至 95.0%，Anthropic公开Claude离线“做梦”长期记忆架构展示了跨会话回放、纠错和知识巩固机制。 新模型探索覆盖自主训练与低延迟决策：Naive-N0.5-Flash推动个人端AI自主训练AI尝试在个人设备上闭环完成数据、训练和纠错，Drex：迈向基础决策模型则以直接输出候选概率分布的开放权重模型探索“快决策”路线。 具身基础模型继续扩大经验规模与迁移范围：Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案利用大规模第一人称人类经验实现具身上下文学习，SLA：通过持续预训练扩展空间-语言-动作模型通过异构机器人数据持续预训练内化可迁移空间能力。 智能体评测同时关注长程能力与评测成本：VisSearch-Bench：多模态智能体长时程视觉搜索评测揭示最佳系统完整任务成功率仅 26.47%，BestRand：稳定低成本的基准压缩则以随机子集筛选降低成本并改善长尾与分布外稳定性。 热点延伸集中在视觉与三维生成，包括高速具身视觉规划、多轮图像编辑抗漂移和高斯化身伪影修复，但与当前核心研究方向关联较弱。 对当前研究的启发 SystemEvolve：VISTA证明冻结模型权重、仅让 Meta-agent 搜索并改写执行 Harness 就可能带来数量级提升，可将工作流代码、工具配置与验收反馈纳入系统级演化闭环。 AgentEvolve：Anthropic 的长期记忆架构提供了“任务间歇回放—错误纠正—知识维基化”的部署期经验沉淀管线，可用于增强跨会话自我改进。 MemoryEvolve：Anthropic 的离线“做梦”机制表明记忆巩固不应只是摘要压缩，还应重放原始记录并主动修正旧知识与索引。 EnvironmentEvolve：Firefly与WildAWM共同说明可扩展环境应联合生成执行载体、长程任务和可靠验证器，而非只合成任务文本。 DataEvolve：Firefly的“先探索真实 API、再反向出题”可用于提高工具调用合成数据的真实性、覆盖度和可验证性。 AgentTrainEvolve：ICRPM可作为 Agentic RL 的低成本课程调度器，利用历史风险预测策略更新后的任务价值，减少无效 rollout。 GeneralizeEvolve：WildAWM仅依赖合成环境却在八个分布外基准上提升，为研究“环境多样性是否比真实轨迹来源更决定泛化”提供了强案例。 JevEvolve：Drex的候选概率直出结构可作为高频动作选择与工具路由的快模型，并进一步研究何时升级到慢推理模型。 EvalEvolve：BestRand可降低动态基准的持续评测成本，而VisSearch-Bench提供了视觉上下文管理、证据整合和长程搜索过程的新评测切面。 RobotEvolve：VISTA与Open-HumanWAM分别展示了 Harness 自编程和人类经验预训练两条互补路线，可组合为“经验迁移—执行系统自适应—真机验证”的具身进化闭环。 Awesome-RSI：Naive-N0.5-Flash提供了个人设备上训练闭环与递归改进的候选案例，但应重点追踪其多轮改进是否单调、评测是否独立以及错误是否累积。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-08/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-06/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -64,8 +69,8 @@ RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-08\/"
-    },"genre": "updates","wordcount":  1131 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-08\/","datePublished": "2026-11-08T00:00:00+08:00","dateModified": "2026-11-08T16:37:33+08:00","publisher": {
+    },"genre": "updates","wordcount":  1500 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-08\/","datePublished": "2026-11-08T00:00:00+08:00","dateModified": "2026-11-08T16:38:06+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -248,7 +253,7 @@ RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-08 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-08">2026-11-08</time></span>&nbsp;<span title="更新于 2026-11-08 16:37:33"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-08">2026-11-08</time></span>&nbsp;<span title="1131 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-08 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-08">2026-11-08</time></span>&nbsp;<span title="更新于 2026-11-08 16:38:06"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-08">2026-11-08</time></span>&nbsp;<span title="1500 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -268,29 +273,46 @@ RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频�
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li>智能体训练环境与数据合成成为今日主线（3 项）：<a href="#wildawm">WildAWM：用合成“个人电脑”训练计算机使用智能体</a>验证纯合成电脑环境可带来跨基准泛化，<a href="#firefly">Firefly：先探索后出题的可验证工具调用数据合成</a>则打通真实 API 探索、反向出题与离线验证闭环。</li>
-<li>智能体持续进化覆盖推理与训练两侧：<a href="#anthropic-claude">Anthropic公开Claude离线“做梦”长期记忆架构</a>以跨会话回放、纠错和知识维基沉淀经验，<a href="#naive-n0-5-flash-ai-ai">Naive-N0.5-Flash推动个人端AI自主训练AI</a>进一步尝试让个人设备自主完成训练全流程。</li>
-<li>快决策模型与训练效率均有新进展：<a href="#drex">Drex：迈向基础决策模型</a>用候选概率分布替代开放式生成以降低决策延迟，<a href="#icrpm-rollout">ICRPM以前瞻风险预测优化Rollout任务采样</a>则在不增加 rollout 的前提下优化高风险任务选择。</li>
-<li>具身基础模型继续向大规模异构经验与迁移泛化推进：<a href="#open-humanwam">Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案</a>融合 5 万小时第一人称人类经验与机器人数据，<a href="#sla">SLA：通过持续预训练扩展空间-语言-动作模型</a>探索将三维空间理解内化为可迁移能力。</li>
-<li>评测侧开始同时关注长程能力与成本：<a href="#vissearch-bench">VisSearch-Bench：多模态智能体长时程视觉搜索评测</a>揭示当前系统完整任务成功率仍不足三成，<a href="#bestrand">BestRand：稳定低成本的基准压缩</a>则改善低成本子集评测的长尾误差；热点延伸集中在视觉规划、多轮图像编辑和三维化身修复。</li>
+<li>智能体训练环境与数据合成加速融合（3 条）：<a href="#wildawm">WildAWM：用合成“个人电脑”训练计算机使用智能体</a>以全合成桌面环境实现跨分布泛化，<a href="#firefly">Firefly：先探索后出题的可验证工具调用数据合成</a>从真实 API 反向生成可验证任务，<a href="#icrpm-rollout">ICRPM以前瞻风险预测优化Rollout任务采样</a>则在不增加 rollout 的前提下优化训练任务选择。</li>
+<li>部署期自进化从记忆扩展到整个执行系统：<a href="#vista">VISTA：机器人通过自编程实现不动权重的具身自进化</a>通过自主改写 Harness 将成功率从 17.5% 提至 95.0%，<a href="#anthropic-claude">Anthropic公开Claude离线“做梦”长期记忆架构</a>展示了跨会话回放、纠错和知识巩固机制。</li>
+<li>新模型探索覆盖自主训练与低延迟决策：<a href="#naive-n0-5-flash-ai-ai">Naive-N0.5-Flash推动个人端AI自主训练AI</a>尝试在个人设备上闭环完成数据、训练和纠错，<a href="#drex">Drex：迈向基础决策模型</a>则以直接输出候选概率分布的开放权重模型探索“快决策”路线。</li>
+<li>具身基础模型继续扩大经验规模与迁移范围：<a href="#open-humanwam">Open-HumanWAM：扩展人类与机器人经验的开放具身基础模型方案</a>利用大规模第一人称人类经验实现具身上下文学习，<a href="#sla">SLA：通过持续预训练扩展空间-语言-动作模型</a>通过异构机器人数据持续预训练内化可迁移空间能力。</li>
+<li>智能体评测同时关注长程能力与评测成本：<a href="#vissearch-bench">VisSearch-Bench：多模态智能体长时程视觉搜索评测</a>揭示最佳系统完整任务成功率仅 26.47%，<a href="#bestrand">BestRand：稳定低成本的基准压缩</a>则以随机子集筛选降低成本并改善长尾与分布外稳定性。</li>
+<li>热点延伸集中在视觉与三维生成，包括高速具身视觉规划、多轮图像编辑抗漂移和高斯化身伪影修复，但与当前核心研究方向关联较弱。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>EnvironmentEvolve</strong>：WildAWM 与 Firefly表明环境生成应联合设计可执行载体、长程任务和可靠验证器，并用分布外表现检验合成环境是否真正扩展能力。</li>
-<li><strong>AgentTrainEvolve</strong>：Firefly的“先探索 API、再反向出题”可直接用于构造工具调用课程，而 ICRPM 可作为无需额外 rollout 的风险感知任务调度器。</li>
-<li><strong>MemoryEvolve</strong>：Claude的离线“做梦”架构提供了可落地的记忆巩固范式，即定期回放原始轨迹、纠正旧结论并重组为可检索的分层知识。</li>
-<li><strong>GeneralizeEvolve</strong>：WildAWM仅凭合成环境就在八个分布外基准上提升，为研究“环境多样性是否带来真实跨域泛化”提供了强实验样板。</li>
-<li><strong>JevEvolve</strong>：Drex直接输出有限候选的概率分布，适合作为快决策模块的开放基线，并可进一步研究其与慢推理模型之间的动态升级边界。</li>
-<li><strong>EvalEvolve</strong>：VisSearch-Bench与BestRand分别补足长时程多模态智能体的过程能力测量和低成本稳定评测，可组合用于持续更新但预算受限的评测体系。</li>
-<li><strong>RobotEvolve</strong>：Open-HumanWAM与SLA说明可将大规模第一人称人类视频和异构机器人数据统一纳入持续预训练，以增强跨本体迁移与具身上下文学习。</li>
+<li><strong>SystemEvolve</strong>：<a href="#vista">VISTA</a>证明冻结模型权重、仅让 Meta-agent 搜索并改写执行 Harness 就可能带来数量级提升，可将工作流代码、工具配置与验收反馈纳入系统级演化闭环。</li>
+<li><strong>AgentEvolve</strong>：<a href="#anthropic-claude">Anthropic 的长期记忆架构</a>提供了“任务间歇回放—错误纠正—知识维基化”的部署期经验沉淀管线，可用于增强跨会话自我改进。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#anthropic-claude">Anthropic 的离线“做梦”机制</a>表明记忆巩固不应只是摘要压缩，还应重放原始记录并主动修正旧知识与索引。</li>
+<li><strong>EnvironmentEvolve</strong>：<a href="#firefly">Firefly</a>与<a href="#wildawm">WildAWM</a>共同说明可扩展环境应联合生成执行载体、长程任务和可靠验证器，而非只合成任务文本。</li>
+<li><strong>DataEvolve</strong>：<a href="#firefly">Firefly</a>的“先探索真实 API、再反向出题”可用于提高工具调用合成数据的真实性、覆盖度和可验证性。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#icrpm-rollout">ICRPM</a>可作为 Agentic RL 的低成本课程调度器，利用历史风险预测策略更新后的任务价值，减少无效 rollout。</li>
+<li><strong>GeneralizeEvolve</strong>：<a href="#wildawm">WildAWM</a>仅依赖合成环境却在八个分布外基准上提升，为研究“环境多样性是否比真实轨迹来源更决定泛化”提供了强案例。</li>
+<li><strong>JevEvolve</strong>：<a href="#drex">Drex</a>的候选概率直出结构可作为高频动作选择与工具路由的快模型，并进一步研究何时升级到慢推理模型。</li>
+<li><strong>EvalEvolve</strong>：<a href="#bestrand">BestRand</a>可降低动态基准的持续评测成本，而<a href="#vissearch-bench">VisSearch-Bench</a>提供了视觉上下文管理、证据整合和长程搜索过程的新评测切面。</li>
+<li><strong>RobotEvolve</strong>：<a href="#vista">VISTA</a>与<a href="#open-humanwam">Open-HumanWAM</a>分别展示了 Harness 自编程和人类经验预训练两条互补路线，可组合为“经验迁移—执行系统自适应—真机验证”的具身进化闭环。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#naive-n0-5-flash-ai-ai">Naive-N0.5-Flash</a>提供了个人设备上训练闭环与递归改进的候选案例，但应重点追踪其多轮改进是否单调、评测是否独立以及错误是否累积。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 17 条</span><a href="#daily-featured">⭐ 重点 11</a><a href="#daily-related">🔬 相关 3</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 17 条</span><a href="#daily-featured">⭐ 重点 12</a><a href="#daily-related">🔬 相关 2</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">11 条</span></h2>
-          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="wildawm" class="summary-card daily-item">
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">12 条</span></h2>
+          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="vista" class="summary-card daily-item">
+  <h2 id="vista-title" class="daily-item-title">VISTA：机器人通过自编程实现不动权重的具身自进化</h2><p class="single-subtitle daily-item-summary">清华大学与新加坡国立大学团队提出VISTA，让Meta-agent自主修改机器人执行Harness，在模型权重固定的情况下将LIBERO-Pro整体任务成功率从17.5%提升至95.0%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35051" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35051</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/AgenticEI/VISTA" target="_blank" rel="noopener">https://github.com/AgenticEI/VISTA</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/G0S05yeSoOSjX06XeMiGIg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/G0S05yeSoOSjX06XeMiGIg</a></div></div><div class="daily-item-content"><p>VISTA将机器人实验执行与Harness开发交给Meta-agent，通过分析代码、运行记录和环境反馈，自主编写或修改技能、指令及决策逻辑。候选Harness在仿真环境中接受独立评估，只有优于当前版本时才会被保留，并将代码、继承关系与验证证据持续记录。该框架不更新底层模型参数，却将LIBERO-Pro整体任务成功率从17.5%提高到95.0%，并在LIBERO、RoboCasa和RoboTwin等基准上取得明显增益。其核心是把执行中获得的经验固化为可继承的代码与技能，使机器人能力能够通过脚手架迭代持续演化。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示了无需微调模型权重、仅通过演化执行Harness即可显著提升具身智能体能力的路径。</li>
+<li>可将机器人试错经验沉淀为可复用、可验证和可继承的技能代码，降低持续学习成本。</li>
+<li>候选版本的冻结评估与择优替换机制，为自修改智能体提供了基础的质量控制和回滚思路。</li>
+<li>为机器人在真实环境中自主开发、验证并积累新技能提供了可扩展框架。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">RobotEvolve｜机器人自己写代码修自己，成功率从17.5%涨到95%：具身智能有了不动权重的自进化框架https://mp.weixin.qq.com/s/G0S05yeSoOSjX06XeMiGIg</div>
+  </details></article>
+<article id="wildawm" class="summary-card daily-item">
   <h2 id="wildawm-title" class="daily-item-title">WildAWM：用合成“个人电脑”训练计算机使用智能体</h2><p class="single-subtitle daily-item-summary">WildAWM 合成可执行的个人电脑环境、跨 GUI/MCP/CLI 的长程任务及可靠验证器，仅在合成环境中训练便显著提升智能体在八个分布外基准上的表现。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：环境合成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%8E%AF%E5%A2%83%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;环境合成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.26828" target="_blank" rel="noopener">https://arxiv.org/abs/2610.26828</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/MSR-Orchard/WildAWM" target="_blank" rel="noopener">https://github.com/MSR-Orchard/WildAWM</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://huggingface.co/collections/ChilleD/agent-world-model-in-the-wild" target="_blank" rel="noopener">https://huggingface.co/collections/ChilleD/agent-world-model-in-the-wild</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/gamAVH5qDdXx-Y0sXXvodA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/gamAVH5qDdXx-Y0sXXvodA</a></div></div><div class="daily-item-content"><p>WildAWM 使用代码与数据库合成包含文件系统、浏览器、Shell、应用及 MCP 服务的完整个人电脑，共构建36个虚构人物和640个连续世界状态。系统生成必须横跨 GUI、MCP、CLI 的长程任务，并通过评判一致性、初始未完成、可解性、难度和反事实探针五道关卡，从2,551个草稿中筛出341个任务。研究以验证脚本、LLM Judge 和高权限 Agent Judge 共同审计执行轨迹，最终验证器与 Agent Judge 多数投票的一致率达到95%，Cohen&rsquo;s κ 为0.90。使用 SFT 与 GRPO 训练两个 Qwen 模型后，其在八个未见过的 Web、Claw 和 GUI 智能体基准上均获提升，其中 Qwen3.6-35B-A3B 平均分由42.84升至53.42。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>以可复制、可重置且离线隔离的合成电脑替代真实系统，降低计算机使用智能体训练的成本与安全风险。</li>
@@ -387,17 +409,6 @@ RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">DataEvolve｜rollout预算最该花在哪？不是Transformer，而是风险预测的向前一步｜NeurIPS&#39;26 https://mp.weixin.qq.com/s/T4tj9m5pdWWb8K1zTEqwsA</div>
   </details></article>
-<article id="sla" class="summary-card daily-item">
-  <h2 id="sla-title" class="daily-item-title">SLA：通过持续预训练扩展空间-语言-动作模型</h2><p class="single-subtitle daily-item-summary">SLA通过异构机器人数据上的持续预训练，将三维空间理解内化为可迁移的视觉-语言-动作基础能力，同时保持原有推理架构不变。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;空间智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.08373" target="_blank" rel="noopener">https://arxiv.org/abs/2611.08373</a></div></div><div class="daily-item-content"><p>SLA基于预训练的π0.5策略，同时优化动作预测，以及中间视觉嵌入与冻结三维感知模型空间表征之间的对齐。研究统一整理了跨具身形态、任务和场景的异构机器人数据，并利用部分可用的深度信息与相机标定进行空间监督。特征依赖门控可自适应聚合多个VLA层的视觉嵌入，以适配不同数据来源和几何标注条件。概率状态丢弃促使策略更多依赖视觉线索，减少对示范轨迹状态的过拟合；所有辅助组件仅在训练时使用，不增加推理阶段的架构负担。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>将三维空间理解从下游任务适配阶段前移到持续预训练阶段，增强其跨任务与跨具身迁移能力。</li>
-<li>展示如何联合利用RGB、深度和相机标定等不完整异构标注，扩展机器人基础模型的训练数据规模。</li>
-<li>训练时引入空间教师、门控聚合和状态丢弃，而推理时复用原VLA架构，为低额外部署成本的具身模型增强提供思路。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[SLA：通过持续预训练扩展空间-语言-动作模型（82 ▲）](https://huggingface.co/papers/2611.08373?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-06)</div>
-  </details></article>
 <article id="vissearch-bench" class="summary-card daily-item">
   <h2 id="vissearch-bench-title" class="daily-item-title">VisSearch-Bench：多模态智能体长时程视觉搜索评测</h2><p class="single-subtitle daily-item-summary">VisSearch-Bench 通过204项人工编写任务评估多模态智能体跨图像、对象与多步搜索过程管理视觉上下文和整合证据的能力，当前最佳系统完整任务成功率仅为26.47%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.04894" target="_blank" rel="noopener">https://arxiv.org/abs/2611.04894</a></div></div><div class="daily-item-content"><p>VisSearch-Bench 包含204项人工编写任务，覆盖7个主要领域和25个子领域，重点考察视觉信息在长时程搜索中的组织、关联与使用。基准设置集合式视觉搜索、顺序视觉搜索、混合宽深搜索、竞争性视觉消歧和视觉结构引导搜索等任务类型。每项任务均提供参考答案、可追溯证据和评分规则，并同时使用完整任务准确率与过程分数衡量结果。对16个多模态模型的测试显示，即使配备搜索工具，最佳系统也只能完整解决26.47%的任务，表明视觉证据与外部检索结果的跨步骤整合仍是明显短板。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -428,6 +439,17 @@ RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[随机就足够了吗？通过 BestRand 实现稳定、低成本的基准压缩（50 ▲）](https://huggingface.co/papers/2611.00883?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-06)</div>
   </details></article>
+<article id="sla" class="summary-card daily-item">
+  <h2 id="sla-title" class="daily-item-title">SLA：通过持续预训练扩展空间-语言-动作模型</h2><p class="single-subtitle daily-item-summary">SLA通过异构机器人数据上的持续预训练，将三维空间理解内化为可迁移的视觉-语言-动作基础能力，同时保持原有推理架构不变。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;空间智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.08373" target="_blank" rel="noopener">https://arxiv.org/abs/2611.08373</a></div></div><div class="daily-item-content"><p>SLA基于预训练的π0.5策略，同时优化动作预测，以及中间视觉嵌入与冻结三维感知模型空间表征之间的对齐。研究统一整理了跨具身形态、任务和场景的异构机器人数据，并利用部分可用的深度信息与相机标定进行空间监督。特征依赖门控可自适应聚合多个VLA层的视觉嵌入，以适配不同数据来源和几何标注条件。概率状态丢弃促使策略更多依赖视觉线索，减少对示范轨迹状态的过拟合；所有辅助组件仅在训练时使用，不增加推理阶段的架构负担。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>将三维空间理解从下游任务适配阶段前移到持续预训练阶段，增强其跨任务与跨具身迁移能力。</li>
+<li>展示如何联合利用RGB、深度和相机标定等不完整异构标注，扩展机器人基础模型的训练数据规模。</li>
+<li>训练时引入空间教师、门控聚合和状态丢弃，而推理时复用原VLA架构，为低额外部署成本的具身模型增强提供思路。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[SLA：通过持续预训练扩展空间-语言-动作模型（82 ▲）](https://huggingface.co/papers/2611.08373?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-06)</div>
+  </details></article>
 <article id="pact" class="summary-card daily-item">
   <h2 id="pact-title" class="daily-item-title">PACT：预填充到自回归的跨模型迁移</h2><p class="single-subtitle daily-item-summary">PLatour以轻量线性桥连接冻结的大小语言模型，并通过PACT-Check检验性能提升究竟源于有效的跨模型通信还是桥接层自身的参数高效适配。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：推理效率</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%BF%81%E7%A7%BB/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型迁移</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%82%E6%95%B0%E9%AB%98%E6%95%88%E5%BE%AE%E8%B0%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;参数高效微调</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.06976" target="_blank" rel="noopener">https://arxiv.org/abs/2611.06976</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/zhenyi4/platour" target="_blank" rel="noopener">https://github.com/zhenyi4/platour</a></div></div><div class="daily-item-content"><p>论文研究预填充到自回归跨模型迁移（PACT），利用较大模型的提示表征辅助较小模型进行低成本生成。作者提出开源框架PLatour，通过任务奖励训练零初始化的轻量线性桥，同时保持发送端与接收端模型冻结，并支持混合注意力架构。该框架在生成任务以及数学、代码基准上超过已有开源基线，但受控实验发现，部分增益可由无信息发送信号、自通信或仅训练接收端复现。为区分真实通信收益与桥接层的参数高效适配作用，作者进一步提出PACT-Check量化发送端信息对系统增益的实际贡献。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -440,7 +462,7 @@ RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[关于预填充到自回归跨模型迁移的机遇与挑战（12 ▲）](https://huggingface.co/papers/2611.06976?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-06)</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">3 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">2 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/" onclick="event.stopPropagation()">NewModel</a><span class="daily-count">1 条</span>
               </summary>
@@ -486,27 +508,6 @@ RobotEvolve：Open-HumanWAM与SLA说明可将大规模第一人称人类视频�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">HarnessEvolve｜智能体 Harness 的演进：从链、图到代码化https://mp.weixin.qq.com/s/iZ_vc2gHIKW_jXINWXUgbw</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/" onclick="event.stopPropagation()">RobotEvolve</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="vista" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>VISTA：机器人通过自编程实现不动权重的具身自进化</strong>
-      <span class="daily-row-meta">量子位 · 脚手架演化 · <a href="https://arxiv.org/abs/2610.35051" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/AgenticEI/VISTA" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a> · <a href="https://mp.weixin.qq.com/s/G0S05yeSoOSjX06XeMiGIg" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
-    </span><span class="daily-row-summary">清华大学与新加坡国立大学团队提出VISTA，让Meta-agent自主修改机器人执行Harness，在模型权重固定的情况下将LIBERO-Pro整体任务成功率从17.5%提升至95.0%。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.35051" target="_blank" rel="noopener">https://arxiv.org/abs/2610.35051</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/AgenticEI/VISTA" target="_blank" rel="noopener">https://github.com/AgenticEI/VISTA</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/G0S05yeSoOSjX06XeMiGIg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/G0S05yeSoOSjX06XeMiGIg</a></div></div><div class="daily-item-content"><p>VISTA将机器人实验执行与Harness开发交给Meta-agent，通过分析代码、运行记录和环境反馈，自主编写或修改技能、指令及决策逻辑。候选Harness在仿真环境中接受独立评估，只有优于当前版本时才会被保留，并将代码、继承关系与验证证据持续记录。该框架不更新底层模型参数，却将LIBERO-Pro整体任务成功率从17.5%提高到95.0%，并在LIBERO、RoboCasa和RoboTwin等基准上取得明显增益。其核心是把执行中获得的经验固化为可继承的代码与技能，使机器人能力能够通过脚手架迭代持续演化。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>展示了无需微调模型权重、仅通过演化执行Harness即可显著提升具身智能体能力的路径。</li>
-<li>可将机器人试错经验沉淀为可复用、可验证和可继承的技能代码，降低持续学习成本。</li>
-<li>候选版本的冻结评估与择优替换机制，为自修改智能体提供了基础的质量控制和回滚思路。</li>
-<li>为机器人在真实环境中自主开发、验证并积累新技能提供了可扩展框架。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">RobotEvolve｜机器人自己写代码修自己，成功率从17.5%涨到95%：具身智能有了不动权重的自进化框架https://mp.weixin.qq.com/s/G0S05yeSoOSjX06XeMiGIg</div>
   </details></div>
 </details>
 </div>
