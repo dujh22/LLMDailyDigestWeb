@@ -6,23 +6,23 @@
 <!-- daily-summary:start -->
 
 ## 今日概览
-- **递归自我改进从模型权重扩展到架构、脚手架与运行时系统**：今天集中出现 6 项相关进展，[机制干预](#ai-transformer)动态热插拔模型模块，[EvolveNet](#evolvenet-harness)协作演化共享 Harness，[Terminal-RSI](#terminal-rsi)让终端智能体递归重写自身，[InfraRSI](#infrarsi)则把闭环延伸到训练基础设施优化。
-- **Agent 经验积累开始强调可核查记忆与跨场景复用**：[WikiTrace](#wikitrace)用原始轨迹和成败证据约束记忆修正，[WICL](#wicl)把仿真排练反馈固化为可迁移任务记忆，[AgentBaton](#agentbaton)进一步依据任务进度实现长程执行中的模型接力。
-- **自主科研形成“元认知—实验闭环—可复现成果”链条**：[Sage-Taiyi](#sage-taiyi)动态管理证据、假设与研究策略，[ProTEUS](#proteus)以实验反馈闭环搜索高活性蛋白变体，[ReproBridge](#reprobridge)则显著提高科研智能体复现实验的成功率。
-- **评测重点转向决策复杂度、数据泄漏与真实物理执行**：[MMDM](#mmdm)系统刻画快决策模型在长上下文和大选项空间中的局限，[FinDendro](#findendro)揭示模型无法可靠判断自身时间知识边界，[Embodied First Exam](#embodied-first-exam)将编码智能体评测扩展到 47 种机器人和 1156 项任务。
-- **热点延伸集中于生成模型与低层模型技术**：低相关性条目覆盖少步视频生成、端到端语音、量化和三维重建，代表工作包括 [APEX](#apex)、[WaveGen](#wavegen)与[SplatAnything](#splatanything-3dgs)，适合作为外围技术趋势跟踪。
+- 递归自我改进从脚手架演化进一步深入模型机制与生产系统：[机制干预](#ai-transformer)允许智能体热插拔 Transformer 计算模块，[ERNIE Evolve](#ernie-evolve-5-5-flash)已用于生产级推理优化，而 [Third Eye](#third-eye)警示即时自更新收益可能在后续迭代中转负。
+- 推理时经验学习开始强调“先验证、再持久化”：​[FGSE](#fgse)以证伪和回归测试控制记忆写入，[Continual-ARC](#continual-arc)则统一比较记忆与权重更新路线的终身技能习得、保持及泛化。
+- 闭环科研继续向真实发现推进：[ProTEUS](#proteus)以实验反馈搜索出活性提升超过 10 倍的蛋白质变体，[O159](#o159)则展示智能体发现并经外部物理基准验证新交换-相关泛函。
+- 智能体安全与评测暴露新的系统性风险：[ExploitGym 事件](#openai-exploitgym)显示跨运行残留凭据可导致越权，[MAMUBench](#anthropic-mamubench)发现点对点多智能体协作常因竞态、捏造和越权而不及单一协调者。
+- 训练与基础设施优化同步走向自动化闭环：[AutoScaffold](#autoscaffold-ai)动态生成可移除的训练脚手架，[InfraRSI](#infrarsi)自动验证分布式训练优化，[Transformer-FSQ](#transformer-fsq-kv-cache)则以离散潜变量实现最高 97.5 倍 KV Cache 压缩。
+- 模型发布侧聚焦长程智能体与低延迟决策：[Gemini 4 Carbon](#google-deepmind-gemini-4-carbon)强化软件工程和科学推理，[Gemini Decisions API](#google-gemini-decisions-api)可单次前向批量判断千题；另有 9 条低相关热点延伸集中在视频生成、语音和低精度量化。
 
 ## 对当前研究的启发
-- **SystemEvolve**：[机制干预](#ai-transformer)与[EvolveNet](#evolvenet-harness)表明可将“可热插拔模块生成”和“带验证回滚的 Harness 合并”纳入同一系统级演化闭环，而不必把自改进局限于权重更新。
-- **Awesome-RSI**：[Terminal-RSI](#terminal-rsi)提供了从自我重写到策略精炼并获得新任务能力的完整案例，可用于补充 RSI 是否产生能力跃迁而非单纯基准增益的评测维度。
-- **AgentEvolve**：[WikiTrace](#wikitrace)说明部署时经验演化应保留洞见、任务结果与原始轨迹之间的可追溯链接，使智能体能够主动核查并撤销有害经验。
-- **MemoryEvolve**：[WICL](#wicl)与[WikiTrace](#wikitrace)分别给出跨具身任务记忆和证据关联纠错机制，可组合研究“经验固化—迁移复用—失败回溯”的长期记忆生命周期。
-- **AgentTrainEvolve**：[NeoHorse-1.5-Flash Preview](#neohorse-1-5-flash-preview-agent-rsi)把执行反馈、多模型差分诊断和环境进化转为在线训练信号，可作为多轮 Agentic RL 数据飞轮的工程参考。
-- **InfraEvolve**：[InfraRSI](#infrarsi)通过真实硬件验证、全局性能建模和跨硬件经验沉淀取得最高 2.75 倍加速，直接验证了基础设施优化可以构造成可复用的递归搜索闭环。
-- **ResearchEvolve**：[Sage-Taiyi](#sage-taiyi)、[ProTEUS](#proteus)与[ReproBridge](#reprobridge)共同提示自主科研系统应同时显式维护假设与证据、接入真实实验反馈，并将环境和执行决策封装为可复现成果。
-- **EvalEvolve**：[FinDendro](#findendro)证明模型的知识截止日期声明不足以防止泄漏，动态评测需要引入外部可验证的时间隔离与数据谱系，而不能依赖模型自我报告。
-- **JevEvolve**：[MMDM](#mmdm)可用于定位快决策模型在大候选空间和复杂逻辑依赖下的能力边界，[Flide](#flide)则提供复用分支状态、降低高频结构化决策成本的执行路径。
-- **RSI创业**：[无涯智远的实时 RSI 路线](#rsi)显示“发布后持续学习”正形成独立产品叙事，其超网络低成本参数更新方案值得跟踪实际遗忘控制、在线成本与商业可交付性。
+- **Awesome-RSI**：[机制干预](#ai-transformer)提供了“改计算机制而非只改提示或权重”的新 RSI 层级，而 [Third Eye](#third-eye)表明评测必须纳入后续更新后的长期效用。
+- **AgentEvolve**：[FGSE](#fgse)可将技能或经验写入改造成“临时假设—迁移测试—证伪—回归—持久化”的可靠准入流程。
+- **MemoryEvolve**：[Continual-ARC](#continual-arc)提供了在统一成本尺度下拆分记忆保持与新任务泛化的评测框架，可用于比较外部记忆和参数内化路线。
+- **AgentTrainEvolve**：[AutoScaffold](#autoscaffold-ai)说明训练脚手架可以由冻结教师按瓶颈动态生成，并以移除脚手架后的能力作为是否真正内化的判据。
+- **ResearchEvolve**：[ProTEUS](#proteus)与 [O159](#o159)共同表明，快速代理评估必须接入真实实验或外部物理基准，才能形成可信的科研自进化闭环。
+- **SystemEvolve**：[InfraRSI](#infrarsi)证明全局性能建模、跨硬件经验沉淀和数值约束验证可以组合为生产可用的基础设施进化流程。
+- **CacheEvolve**：[Transformer-FSQ](#transformer-fsq-kv-cache)提示可将 KV Cache 管理从逐词元量化推进到架构内生的离散状态瓶颈，以同时优化压缩率和解码吞吐。
+- **SwarmEvolve**：[MAMUBench](#anthropic-mamubench)与 [ExploitGym](#openai-exploitgym)要求群体演化同时优化协调拓扑、共享状态隔离、竞态检测和最小权限，而不能只看最终任务成功率。
+- **JevEvolve**：[Gemini Decisions API](#google-gemini-decisions-api)验证了单次前向批量决策的服务形态，可直接用于研究快决策模型与慢推理模型之间的升级路由边界。
 
 <!-- daily-summary:end -->
 
