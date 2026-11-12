@@ -12,50 +12,49 @@
 
 今日概览
 
-递归自我改进走向多层系统实装：今天有 5 项工作覆盖模型结构、终端策略、训练环境、Harness 与基础设施，机制干预允许智能体热插拔自生成模块，Terminal-RSI和NeoHorse-1.5-Flash Preview则展示了长程执行与在线训练中的递归迭代。
-Harness 与基础设施成为可演化对象：EvolveNet通过并行改动、合并与回滚积累跨工作负载经验，InfraRSI则把同类闭环用于分布式训练优化，表明系统级自进化正从概念验证进入可量化的工程收益阶段。
-记忆与世界上下文强化部署后学习：WICL把仿真排练反馈固化为可跨场景、跨具身复用的任务记忆，WikiTrace进一步用成败摘要和原始轨迹为记忆提供可核查证据，分别推进了经验获取与错误记忆修正。
-自主科研形成“认知—实验—复现”闭环：Sage-Taiyi以元认知动态管理证据、假设和研究目标，ProTEUS用物理约束世界模型与实验反馈完成蛋白质闭环进化，ReproBridge则补齐科研成果的标准化复现载体。
-评测重点转向复杂决策与隐性污染风险：MMDM系统检验长上下文、大选项空间下的多任务决策能力，FinDendro发现模型无法可靠声明自身时间知识边界，说明自我报告不能替代可审计的防泄漏设计。
-热点延伸集中在生成模型与高效蒸馏：9 条低相关性热点涵盖少步流式视频、端到端语音、3D 重建及在线蒸馏，例如APEX的条件迁移视频生成与SplatAnything的跨场景 3DGS 归一化。
+递归自我改进从模型权重扩展到架构、脚手架与运行时系统：今天集中出现 6 项相关进展，机制干预动态热插拔模型模块，EvolveNet协作演化共享 Harness，Terminal-RSI让终端智能体递归重写自身，InfraRSI则把闭环延伸到训练基础设施优化。
+Agent 经验积累开始强调可核查记忆与跨场景复用：WikiTrace用原始轨迹和成败证据约束记忆修正，WICL把仿真排练反馈固化为可迁移任务记忆，AgentBaton进一步依据任务进度实现长程执行中的模型接力。
+自主科研形成“元认知—实验闭环—可复现成果”链条：Sage-Taiyi动态管理证据、假设与研究策略，ProTEUS以实验反馈闭环搜索高活性蛋白变体，ReproBridge则显著提高科研智能体复现实验的成功率。
+评测重点转向决策复杂度、数据泄漏与真实物理执行：MMDM系统刻画快决策模型在长上下文和大选项空间中的局限，FinDendro揭示模型无法可靠判断自身时间知识边界，Embodied First Exam将编码智能体评测扩展到 47 种机器人和 1156 项任务。
+热点延伸集中于生成模型与低层模型技术：低相关性条目覆盖少步视频生成、端到端语音、量化和三维重建，代表工作包括 APEX、WaveGen与SplatAnything，适合作为外围技术趋势跟踪。
 
 对当前研究的启发
 
-SystemEvolve：机制干预与EvolveNet分别把可热插拔模型模块和共享 Harness 纳入生成、验证与回滚闭环，可共同构成系统级自改写的分层搜索空间。
-Awesome-RSI：Terminal-RSI使原本无法完成任务的 27B 智能体获得新能力，为判断 RSI 是否真正扩展能力边界提供了比同分布提分更有价值的案例。
-AgentEvolve：EvolveNet按改动作用范围合并多客户端经验，提示部署时自进化可从单智能体私有反思扩展到跨工作负载的共享 Harness 演化。
-MemoryEvolve：WikiTrace将记忆结论绑定成败摘要与原始轨迹，为长期记忆加入可追溯核查和纠错机制，可直接缓解错误经验反复复用造成的退化。
-RobotEvolve：WICL展示了冻结模型通过仿真排练生成任务记忆并跨具身迁移的路线，可作为无需参数更新的机器人持续适应模块。
-AgentTrainEvolve：NeoHorse-1.5-Flash Preview把多模型差分诊断、环境进化和在线学习串联起来，为将执行失败稳定转化为课程与参数更新提供了完整范式。
-InfraEvolve：InfraRSI以真实性能测量验证并沉淀跨硬件优化，结合Flide的精确状态分叉，可分别推进训练基础设施自搜索与决策推理状态复用。
-ResearchEvolve：Sage-Taiyi的显式证据—假设监控与ReproBridge的可执行成果封装，可用于同时提升科研智能体的研究策略调整能力和实验复现率。
-EvalEvolve：FinDendro证明知识截止日期和模型自我声明都不足以排除泄漏，提示动态评测必须依赖外部时间隔离、数据溯源与可执行审计。
-PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实实验反馈修正世界模型，为物理世界自进化提供了高成本实验下的有效闭环模板。
+SystemEvolve：机制干预与EvolveNet表明可将“可热插拔模块生成”和“带验证回滚的 Harness 合并”纳入同一系统级演化闭环，而不必把自改进局限于权重更新。
+Awesome-RSI：Terminal-RSI提供了从自我重写到策略精炼并获得新任务能力的完整案例，可用于补充 RSI 是否产生能力跃迁而非单纯基准增益的评测维度。
+AgentEvolve：WikiTrace说明部署时经验演化应保留洞见、任务结果与原始轨迹之间的可追溯链接，使智能体能够主动核查并撤销有害经验。
+MemoryEvolve：WICL与WikiTrace分别给出跨具身任务记忆和证据关联纠错机制，可组合研究“经验固化—迁移复用—失败回溯”的长期记忆生命周期。
+AgentTrainEvolve：NeoHorse-1.5-Flash Preview把执行反馈、多模型差分诊断和环境进化转为在线训练信号，可作为多轮 Agentic RL 数据飞轮的工程参考。
+InfraEvolve：InfraRSI通过真实硬件验证、全局性能建模和跨硬件经验沉淀取得最高 2.75 倍加速，直接验证了基础设施优化可以构造成可复用的递归搜索闭环。
+ResearchEvolve：Sage-Taiyi、ProTEUS与ReproBridge共同提示自主科研系统应同时显式维护假设与证据、接入真实实验反馈，并将环境和执行决策封装为可复现成果。
+EvalEvolve：FinDendro证明模型的知识截止日期声明不足以防止泄漏，动态评测需要引入外部可验证的时间隔离与数据谱系，而不能依赖模型自我报告。
+JevEvolve：MMDM可用于定位快决策模型在大候选空间和复杂逻辑依赖下的能力边界，Flide则提供复用分支状态、降低高频结构化决策成本的执行路径。
+RSI创业：无涯智远的实时 RSI 路线显示“发布后持续学习”正形成独立产品叙事，其超网络低成本参数更新方案值得跟踪实际遗忘控制、在线成本与商业可交付性。
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-12 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向多层系统实装：今天有 5 项工作覆盖模型结构、终端策略、训练环境、Harness 与基础设施，机制干预允许智能体热插拔自生成模块，Terminal-RSI和NeoHorse-1.5-Flash Preview则展示了长程执行与在线训练中的递归迭代。 Harness 与基础设施成为可演化对象：EvolveNet通过并行改动、合并与回滚积累跨工作负载经验，InfraRSI则把同类闭环用于分布式训练优化，表明系统级自进化正从概念验证进入可量化的工程收益阶段。 记忆与世界上下文强化部署后学习：WICL把仿真排练反馈固化为可跨场景、跨具身复用的任务记忆，WikiTrace进一步用成败摘要和原始轨迹为记忆提供可核查证据，分别推进了经验获取与错误记忆修正。 自主科研形成“认知—实验—复现”闭环：Sage-Taiyi以元认知动态管理证据、假设和研究目标，ProTEUS用物理约束世界模型与实验反馈完成蛋白质闭环进化，ReproBridge则补齐科研成果的标准化复现载体。 评测重点转向复杂决策与隐性污染风险：MMDM系统检验长上下文、大选项空间下的多任务决策能力，FinDendro发现模型无法可靠声明自身时间知识边界，说明自我报告不能替代可审计的防泄漏设计。 热点延伸集中在生成模型与高效蒸馏：9 条低相关性热点涵盖少步流式视频、端到端语音、3D 重建及在线蒸馏，例如APEX的条件迁移视频生成与SplatAnything的跨场景 3DGS 归一化。 对当前研究的启发 SystemEvolve：机制干预与EvolveNet分别把可热插拔模型模块和共享 Harness 纳入生成、验证与回滚闭环，可共同构成系统级自改写的分层搜索空间。 Awesome-RSI：Terminal-RSI使原本无法完成任务的 27B 智能体获得新能力，为判断 RSI 是否真正扩展能力边界提供了比同分布提分更有价值的案例。 AgentEvolve：EvolveNet按改动作用范围合并多客户端经验，提示部署时自进化可从单智能体私有反思扩展到跨工作负载的共享 Harness 演化。 MemoryEvolve：WikiTrace将记忆结论绑定成败摘要与原始轨迹，为长期记忆加入可追溯核查和纠错机制，可直接缓解错误经验反复复用造成的退化。 RobotEvolve：WICL展示了冻结模型通过仿真排练生成任务记忆并跨具身迁移的路线，可作为无需参数更新的机器人持续适应模块。 AgentTrainEvolve：NeoHorse-1.5-Flash Preview把多模型差分诊断、环境进化和在线学习串联起来，为将执行失败稳定转化为课程与参数更新提供了完整范式。 InfraEvolve：InfraRSI以真实性能测量验证并沉淀跨硬件优化，结合Flide的精确状态分叉，可分别推进训练基础设施自搜索与决策推理状态复用。 ResearchEvolve：Sage-Taiyi的显式证据—假设监控与ReproBridge的可执行成果封装，可用于同时提升科研智能体的研究策略调整能力和实验复现率。 EvalEvolve：FinDendro证明知识截止日期和模型自我声明都不足以排除泄漏，提示动态评测必须依赖外部时间隔离、数据溯源与可执行审计。 PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实实验反馈修正世界模型，为物理世界自进化提供了高成本实验下的有效闭环模板。">
+今日概览 递归自我改进从模型权重扩展到架构、脚手架与运行时系统：今天集中出现 6 项相关进展，机制干预动态热插拔模型模块，EvolveNet协作演化共享 Harness，Terminal-RSI让终端智能体递归重写自身，InfraRSI则把闭环延伸到训练基础设施优化。 Agent 经验积累开始强调可核查记忆与跨场景复用：WikiTrace用原始轨迹和成败证据约束记忆修正，WICL把仿真排练反馈固化为可迁移任务记忆，AgentBaton进一步依据任务进度实现长程执行中的模型接力。 自主科研形成“元认知—实验闭环—可复现成果”链条：Sage-Taiyi动态管理证据、假设与研究策略，ProTEUS以实验反馈闭环搜索高活性蛋白变体，ReproBridge则显著提高科研智能体复现实验的成功率。 评测重点转向决策复杂度、数据泄漏与真实物理执行：MMDM系统刻画快决策模型在长上下文和大选项空间中的局限，FinDendro揭示模型无法可靠判断自身时间知识边界，Embodied First Exam将编码智能体评测扩展到 47 种机器人和 1156 项任务。 热点延伸集中于生成模型与低层模型技术：低相关性条目覆盖少步视频生成、端到端语音、量化和三维重建，代表工作包括 APEX、WaveGen与SplatAnything，适合作为外围技术趋势跟踪。 对当前研究的启发 SystemEvolve：机制干预与EvolveNet表明可将“可热插拔模块生成”和“带验证回滚的 Harness 合并”纳入同一系统级演化闭环，而不必把自改进局限于权重更新。 Awesome-RSI：Terminal-RSI提供了从自我重写到策略精炼并获得新任务能力的完整案例，可用于补充 RSI 是否产生能力跃迁而非单纯基准增益的评测维度。 AgentEvolve：WikiTrace说明部署时经验演化应保留洞见、任务结果与原始轨迹之间的可追溯链接，使智能体能够主动核查并撤销有害经验。 MemoryEvolve：WICL与WikiTrace分别给出跨具身任务记忆和证据关联纠错机制，可组合研究“经验固化—迁移复用—失败回溯”的长期记忆生命周期。 AgentTrainEvolve：NeoHorse-1.5-Flash Preview把执行反馈、多模型差分诊断和环境进化转为在线训练信号，可作为多轮 Agentic RL 数据飞轮的工程参考。 InfraEvolve：InfraRSI通过真实硬件验证、全局性能建模和跨硬件经验沉淀取得最高 2.75 倍加速，直接验证了基础设施优化可以构造成可复用的递归搜索闭环。 ResearchEvolve：Sage-Taiyi、ProTEUS与ReproBridge共同提示自主科研系统应同时显式维护假设与证据、接入真实实验反馈，并将环境和执行决策封装为可复现成果。 EvalEvolve：FinDendro证明模型的知识截止日期声明不足以防止泄漏，动态评测需要引入外部可验证的时间隔离与数据谱系，而不能依赖模型自我报告。 JevEvolve：MMDM可用于定位快决策模型在大候选空间和复杂逻辑依赖下的能力边界，Flide则提供复用分支状态、降低高频结构化决策成本的执行路径。 RSI创业：无涯智远的实时 RSI 路线显示“发布后持续学习”正形成独立产品叙事，其超网络低成本参数更新方案值得跟踪实际遗忘控制、在线成本与商业可交付性。">
   <meta itemprop="datePublished" content="2026-11-12T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-12T13:09:37+08:00">
-  <meta itemprop="wordCount" content="1396">
+  <meta itemprop="dateModified" content="2026-11-12T13:10:15+08:00">
+  <meta itemprop="wordCount" content="1365">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-12/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-12 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向多层系统实装：今天有 5 项工作覆盖模型结构、终端策略、训练环境、Harness 与基础设施，机制干预允许智能体热插拔自生成模块，Terminal-RSI和NeoHorse-1.5-Flash Preview则展示了长程执行与在线训练中的递归迭代。 Harness 与基础设施成为可演化对象：EvolveNet通过并行改动、合并与回滚积累跨工作负载经验，InfraRSI则把同类闭环用于分布式训练优化，表明系统级自进化正从概念验证进入可量化的工程收益阶段。 记忆与世界上下文强化部署后学习：WICL把仿真排练反馈固化为可跨场景、跨具身复用的任务记忆，WikiTrace进一步用成败摘要和原始轨迹为记忆提供可核查证据，分别推进了经验获取与错误记忆修正。 自主科研形成“认知—实验—复现”闭环：Sage-Taiyi以元认知动态管理证据、假设和研究目标，ProTEUS用物理约束世界模型与实验反馈完成蛋白质闭环进化，ReproBridge则补齐科研成果的标准化复现载体。 评测重点转向复杂决策与隐性污染风险：MMDM系统检验长上下文、大选项空间下的多任务决策能力，FinDendro发现模型无法可靠声明自身时间知识边界，说明自我报告不能替代可审计的防泄漏设计。 热点延伸集中在生成模型与高效蒸馏：9 条低相关性热点涵盖少步流式视频、端到端语音、3D 重建及在线蒸馏，例如APEX的条件迁移视频生成与SplatAnything的跨场景 3DGS 归一化。 对当前研究的启发 SystemEvolve：机制干预与EvolveNet分别把可热插拔模型模块和共享 Harness 纳入生成、验证与回滚闭环，可共同构成系统级自改写的分层搜索空间。 Awesome-RSI：Terminal-RSI使原本无法完成任务的 27B 智能体获得新能力，为判断 RSI 是否真正扩展能力边界提供了比同分布提分更有价值的案例。 AgentEvolve：EvolveNet按改动作用范围合并多客户端经验，提示部署时自进化可从单智能体私有反思扩展到跨工作负载的共享 Harness 演化。 MemoryEvolve：WikiTrace将记忆结论绑定成败摘要与原始轨迹，为长期记忆加入可追溯核查和纠错机制，可直接缓解错误经验反复复用造成的退化。 RobotEvolve：WICL展示了冻结模型通过仿真排练生成任务记忆并跨具身迁移的路线，可作为无需参数更新的机器人持续适应模块。 AgentTrainEvolve：NeoHorse-1.5-Flash Preview把多模型差分诊断、环境进化和在线学习串联起来，为将执行失败稳定转化为课程与参数更新提供了完整范式。 InfraEvolve：InfraRSI以真实性能测量验证并沉淀跨硬件优化，结合Flide的精确状态分叉，可分别推进训练基础设施自搜索与决策推理状态复用。 ResearchEvolve：Sage-Taiyi的显式证据—假设监控与ReproBridge的可执行成果封装，可用于同时提升科研智能体的研究策略调整能力和实验复现率。 EvalEvolve：FinDendro证明知识截止日期和模型自我声明都不足以排除泄漏，提示动态评测必须依赖外部时间隔离、数据溯源与可执行审计。 PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实实验反馈修正世界模型，为物理世界自进化提供了高成本实验下的有效闭环模板。">
+今日概览 递归自我改进从模型权重扩展到架构、脚手架与运行时系统：今天集中出现 6 项相关进展，机制干预动态热插拔模型模块，EvolveNet协作演化共享 Harness，Terminal-RSI让终端智能体递归重写自身，InfraRSI则把闭环延伸到训练基础设施优化。 Agent 经验积累开始强调可核查记忆与跨场景复用：WikiTrace用原始轨迹和成败证据约束记忆修正，WICL把仿真排练反馈固化为可迁移任务记忆，AgentBaton进一步依据任务进度实现长程执行中的模型接力。 自主科研形成“元认知—实验闭环—可复现成果”链条：Sage-Taiyi动态管理证据、假设与研究策略，ProTEUS以实验反馈闭环搜索高活性蛋白变体，ReproBridge则显著提高科研智能体复现实验的成功率。 评测重点转向决策复杂度、数据泄漏与真实物理执行：MMDM系统刻画快决策模型在长上下文和大选项空间中的局限，FinDendro揭示模型无法可靠判断自身时间知识边界，Embodied First Exam将编码智能体评测扩展到 47 种机器人和 1156 项任务。 热点延伸集中于生成模型与低层模型技术：低相关性条目覆盖少步视频生成、端到端语音、量化和三维重建，代表工作包括 APEX、WaveGen与SplatAnything，适合作为外围技术趋势跟踪。 对当前研究的启发 SystemEvolve：机制干预与EvolveNet表明可将“可热插拔模块生成”和“带验证回滚的 Harness 合并”纳入同一系统级演化闭环，而不必把自改进局限于权重更新。 Awesome-RSI：Terminal-RSI提供了从自我重写到策略精炼并获得新任务能力的完整案例，可用于补充 RSI 是否产生能力跃迁而非单纯基准增益的评测维度。 AgentEvolve：WikiTrace说明部署时经验演化应保留洞见、任务结果与原始轨迹之间的可追溯链接，使智能体能够主动核查并撤销有害经验。 MemoryEvolve：WICL与WikiTrace分别给出跨具身任务记忆和证据关联纠错机制，可组合研究“经验固化—迁移复用—失败回溯”的长期记忆生命周期。 AgentTrainEvolve：NeoHorse-1.5-Flash Preview把执行反馈、多模型差分诊断和环境进化转为在线训练信号，可作为多轮 Agentic RL 数据飞轮的工程参考。 InfraEvolve：InfraRSI通过真实硬件验证、全局性能建模和跨硬件经验沉淀取得最高 2.75 倍加速，直接验证了基础设施优化可以构造成可复用的递归搜索闭环。 ResearchEvolve：Sage-Taiyi、ProTEUS与ReproBridge共同提示自主科研系统应同时显式维护假设与证据、接入真实实验反馈，并将环境和执行决策封装为可复现成果。 EvalEvolve：FinDendro证明模型的知识截止日期声明不足以防止泄漏，动态评测需要引入外部可验证的时间隔离与数据谱系，而不能依赖模型自我报告。 JevEvolve：MMDM可用于定位快决策模型在大候选空间和复杂逻辑依赖下的能力边界，Flide则提供复用分支状态、降低高频结构化决策成本的执行路径。 RSI创业：无涯智远的实时 RSI 路线显示“发布后持续学习”正形成独立产品叙事，其超网络低成本参数更新方案值得跟踪实际遗忘控制、在线成本与商业可交付性。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-12T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-12T13:09:37+08:00">
+    <meta property="article:modified_time" content="2026-11-12T13:10:15+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-12 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归自我改进走向多层系统实装：今天有 5 项工作覆盖模型结构、终端策略、训练环境、Harness 与基础设施，机制干预允许智能体热插拔自生成模块，Terminal-RSI和NeoHorse-1.5-Flash Preview则展示了长程执行与在线训练中的递归迭代。 Harness 与基础设施成为可演化对象：EvolveNet通过并行改动、合并与回滚积累跨工作负载经验，InfraRSI则把同类闭环用于分布式训练优化，表明系统级自进化正从概念验证进入可量化的工程收益阶段。 记忆与世界上下文强化部署后学习：WICL把仿真排练反馈固化为可跨场景、跨具身复用的任务记忆，WikiTrace进一步用成败摘要和原始轨迹为记忆提供可核查证据，分别推进了经验获取与错误记忆修正。 自主科研形成“认知—实验—复现”闭环：Sage-Taiyi以元认知动态管理证据、假设和研究目标，ProTEUS用物理约束世界模型与实验反馈完成蛋白质闭环进化，ReproBridge则补齐科研成果的标准化复现载体。 评测重点转向复杂决策与隐性污染风险：MMDM系统检验长上下文、大选项空间下的多任务决策能力，FinDendro发现模型无法可靠声明自身时间知识边界，说明自我报告不能替代可审计的防泄漏设计。 热点延伸集中在生成模型与高效蒸馏：9 条低相关性热点涵盖少步流式视频、端到端语音、3D 重建及在线蒸馏，例如APEX的条件迁移视频生成与SplatAnything的跨场景 3DGS 归一化。 对当前研究的启发 SystemEvolve：机制干预与EvolveNet分别把可热插拔模型模块和共享 Harness 纳入生成、验证与回滚闭环，可共同构成系统级自改写的分层搜索空间。 Awesome-RSI：Terminal-RSI使原本无法完成任务的 27B 智能体获得新能力，为判断 RSI 是否真正扩展能力边界提供了比同分布提分更有价值的案例。 AgentEvolve：EvolveNet按改动作用范围合并多客户端经验，提示部署时自进化可从单智能体私有反思扩展到跨工作负载的共享 Harness 演化。 MemoryEvolve：WikiTrace将记忆结论绑定成败摘要与原始轨迹，为长期记忆加入可追溯核查和纠错机制，可直接缓解错误经验反复复用造成的退化。 RobotEvolve：WICL展示了冻结模型通过仿真排练生成任务记忆并跨具身迁移的路线，可作为无需参数更新的机器人持续适应模块。 AgentTrainEvolve：NeoHorse-1.5-Flash Preview把多模型差分诊断、环境进化和在线学习串联起来，为将执行失败稳定转化为课程与参数更新提供了完整范式。 InfraEvolve：InfraRSI以真实性能测量验证并沉淀跨硬件优化，结合Flide的精确状态分叉，可分别推进训练基础设施自搜索与决策推理状态复用。 ResearchEvolve：Sage-Taiyi的显式证据—假设监控与ReproBridge的可执行成果封装，可用于同时提升科研智能体的研究策略调整能力和实验复现率。 EvalEvolve：FinDendro证明知识截止日期和模型自我声明都不足以排除泄漏，提示动态评测必须依赖外部时间隔离、数据溯源与可执行审计。 PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实实验反馈修正世界模型，为物理世界自进化提供了高成本实验下的有效闭环模板。">
+今日概览 递归自我改进从模型权重扩展到架构、脚手架与运行时系统：今天集中出现 6 项相关进展，机制干预动态热插拔模型模块，EvolveNet协作演化共享 Harness，Terminal-RSI让终端智能体递归重写自身，InfraRSI则把闭环延伸到训练基础设施优化。 Agent 经验积累开始强调可核查记忆与跨场景复用：WikiTrace用原始轨迹和成败证据约束记忆修正，WICL把仿真排练反馈固化为可迁移任务记忆，AgentBaton进一步依据任务进度实现长程执行中的模型接力。 自主科研形成“元认知—实验闭环—可复现成果”链条：Sage-Taiyi动态管理证据、假设与研究策略，ProTEUS以实验反馈闭环搜索高活性蛋白变体，ReproBridge则显著提高科研智能体复现实验的成功率。 评测重点转向决策复杂度、数据泄漏与真实物理执行：MMDM系统刻画快决策模型在长上下文和大选项空间中的局限，FinDendro揭示模型无法可靠判断自身时间知识边界，Embodied First Exam将编码智能体评测扩展到 47 种机器人和 1156 项任务。 热点延伸集中于生成模型与低层模型技术：低相关性条目覆盖少步视频生成、端到端语音、量化和三维重建，代表工作包括 APEX、WaveGen与SplatAnything，适合作为外围技术趋势跟踪。 对当前研究的启发 SystemEvolve：机制干预与EvolveNet表明可将“可热插拔模块生成”和“带验证回滚的 Harness 合并”纳入同一系统级演化闭环，而不必把自改进局限于权重更新。 Awesome-RSI：Terminal-RSI提供了从自我重写到策略精炼并获得新任务能力的完整案例，可用于补充 RSI 是否产生能力跃迁而非单纯基准增益的评测维度。 AgentEvolve：WikiTrace说明部署时经验演化应保留洞见、任务结果与原始轨迹之间的可追溯链接，使智能体能够主动核查并撤销有害经验。 MemoryEvolve：WICL与WikiTrace分别给出跨具身任务记忆和证据关联纠错机制，可组合研究“经验固化—迁移复用—失败回溯”的长期记忆生命周期。 AgentTrainEvolve：NeoHorse-1.5-Flash Preview把执行反馈、多模型差分诊断和环境进化转为在线训练信号，可作为多轮 Agentic RL 数据飞轮的工程参考。 InfraEvolve：InfraRSI通过真实硬件验证、全局性能建模和跨硬件经验沉淀取得最高 2.75 倍加速，直接验证了基础设施优化可以构造成可复用的递归搜索闭环。 ResearchEvolve：Sage-Taiyi、ProTEUS与ReproBridge共同提示自主科研系统应同时显式维护假设与证据、接入真实实验反馈，并将环境和执行决策封装为可复现成果。 EvalEvolve：FinDendro证明模型的知识截止日期声明不足以防止泄漏，动态评测需要引入外部可验证的时间隔离与数据谱系，而不能依赖模型自我报告。 JevEvolve：MMDM可用于定位快决策模型在大候选空间和复杂逻辑依赖下的能力边界，Flide则提供复用分支状态、降低高频结构化决策成本的执行路径。 RSI创业：无涯智远的实时 RSI 路线显示“发布后持续学习”正形成独立产品叙事，其超网络低成本参数更新方案值得跟踪实际遗忘控制、在线成本与商业可交付性。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-12/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-08/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -68,8 +67,8 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-12\/"
-    },"genre": "updates","wordcount":  1396 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-12\/","datePublished": "2026-11-12T00:00:00+08:00","dateModified": "2026-11-12T13:09:37+08:00","publisher": {
+    },"genre": "updates","wordcount":  1365 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-12\/","datePublished": "2026-11-12T00:00:00+08:00","dateModified": "2026-11-12T13:10:15+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -252,7 +251,7 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-12 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-12">2026-11-12</time></span>&nbsp;<span title="更新于 2026-11-12 13:09:37"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-12">2026-11-12</time></span>&nbsp;<span title="1396 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-12 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-12">2026-11-12</time></span>&nbsp;<span title="更新于 2026-11-12 13:10:15"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-12">2026-11-12</time></span>&nbsp;<span title="1365 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -272,25 +271,24 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>递归自我改进走向多层系统实装</strong>：今天有 5 项工作覆盖模型结构、终端策略、训练环境、Harness 与基础设施，<a href="#ai-transformer">机制干预</a>允许智能体热插拔自生成模块，<a href="#terminal-rsi">Terminal-RSI</a>和<a href="#neohorse-1-5-flash-preview-agent-rsi">NeoHorse-1.5-Flash Preview</a>则展示了长程执行与在线训练中的递归迭代。</li>
-<li><strong>Harness 与基础设施成为可演化对象</strong>：<a href="#evolvenet-harness">EvolveNet</a>通过并行改动、合并与回滚积累跨工作负载经验，<a href="#infrarsi">InfraRSI</a>则把同类闭环用于分布式训练优化，表明系统级自进化正从概念验证进入可量化的工程收益阶段。</li>
-<li><strong>记忆与世界上下文强化部署后学习</strong>：<a href="#wicl">WICL</a>把仿真排练反馈固化为可跨场景、跨具身复用的任务记忆，<a href="#wikitrace">WikiTrace</a>进一步用成败摘要和原始轨迹为记忆提供可核查证据，分别推进了经验获取与错误记忆修正。</li>
-<li><strong>自主科研形成“认知—实验—复现”闭环</strong>：<a href="#sage-taiyi">Sage-Taiyi</a>以元认知动态管理证据、假设和研究目标，<a href="#proteus">ProTEUS</a>用物理约束世界模型与实验反馈完成蛋白质闭环进化，<a href="#reprobridge">ReproBridge</a>则补齐科研成果的标准化复现载体。</li>
-<li><strong>评测重点转向复杂决策与隐性污染风险</strong>：<a href="#mmdm">MMDM</a>系统检验长上下文、大选项空间下的多任务决策能力，<a href="#findendro">FinDendro</a>发现模型无法可靠声明自身时间知识边界，说明自我报告不能替代可审计的防泄漏设计。</li>
-<li><strong>热点延伸集中在生成模型与高效蒸馏</strong>：9 条低相关性热点涵盖少步流式视频、端到端语音、3D 重建及在线蒸馏，例如<a href="#apex">APEX</a>的条件迁移视频生成与<a href="#splatanything-3dgs">SplatAnything</a>的跨场景 3DGS 归一化。</li>
+<li><strong>递归自我改进从模型权重扩展到架构、脚手架与运行时系统</strong>：今天集中出现 6 项相关进展，<a href="#ai-transformer">机制干预</a>动态热插拔模型模块，<a href="#evolvenet-harness">EvolveNet</a>协作演化共享 Harness，<a href="#terminal-rsi">Terminal-RSI</a>让终端智能体递归重写自身，<a href="#infrarsi">InfraRSI</a>则把闭环延伸到训练基础设施优化。</li>
+<li><strong>Agent 经验积累开始强调可核查记忆与跨场景复用</strong>：<a href="#wikitrace">WikiTrace</a>用原始轨迹和成败证据约束记忆修正，<a href="#wicl">WICL</a>把仿真排练反馈固化为可迁移任务记忆，<a href="#agentbaton">AgentBaton</a>进一步依据任务进度实现长程执行中的模型接力。</li>
+<li><strong>自主科研形成“元认知—实验闭环—可复现成果”链条</strong>：<a href="#sage-taiyi">Sage-Taiyi</a>动态管理证据、假设与研究策略，<a href="#proteus">ProTEUS</a>以实验反馈闭环搜索高活性蛋白变体，<a href="#reprobridge">ReproBridge</a>则显著提高科研智能体复现实验的成功率。</li>
+<li><strong>评测重点转向决策复杂度、数据泄漏与真实物理执行</strong>：<a href="#mmdm">MMDM</a>系统刻画快决策模型在长上下文和大选项空间中的局限，<a href="#findendro">FinDendro</a>揭示模型无法可靠判断自身时间知识边界，<a href="#embodied-first-exam">Embodied First Exam</a>将编码智能体评测扩展到 47 种机器人和 1156 项任务。</li>
+<li><strong>热点延伸集中于生成模型与低层模型技术</strong>：低相关性条目覆盖少步视频生成、端到端语音、量化和三维重建，代表工作包括 <a href="#apex">APEX</a>、<a href="#wavegen">WaveGen</a>与<a href="#splatanything-3dgs">SplatAnything</a>，适合作为外围技术趋势跟踪。</li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>SystemEvolve</strong>：<a href="#ai-transformer">机制干预</a>与<a href="#evolvenet-harness">EvolveNet</a>分别把可热插拔模型模块和共享 Harness 纳入生成、验证与回滚闭环，可共同构成系统级自改写的分层搜索空间。</li>
-<li><strong>Awesome-RSI</strong>：<a href="#terminal-rsi">Terminal-RSI</a>使原本无法完成任务的 27B 智能体获得新能力，为判断 RSI 是否真正扩展能力边界提供了比同分布提分更有价值的案例。</li>
-<li><strong>AgentEvolve</strong>：<a href="#evolvenet-harness">EvolveNet</a>按改动作用范围合并多客户端经验，提示部署时自进化可从单智能体私有反思扩展到跨工作负载的共享 Harness 演化。</li>
-<li><strong>MemoryEvolve</strong>：<a href="#wikitrace">WikiTrace</a>将记忆结论绑定成败摘要与原始轨迹，为长期记忆加入可追溯核查和纠错机制，可直接缓解错误经验反复复用造成的退化。</li>
-<li><strong>RobotEvolve</strong>：<a href="#wicl">WICL</a>展示了冻结模型通过仿真排练生成任务记忆并跨具身迁移的路线，可作为无需参数更新的机器人持续适应模块。</li>
-<li><strong>AgentTrainEvolve</strong>：<a href="#neohorse-1-5-flash-preview-agent-rsi">NeoHorse-1.5-Flash Preview</a>把多模型差分诊断、环境进化和在线学习串联起来，为将执行失败稳定转化为课程与参数更新提供了完整范式。</li>
-<li><strong>InfraEvolve</strong>：<a href="#infrarsi">InfraRSI</a>以真实性能测量验证并沉淀跨硬件优化，结合<a href="#flide">Flide</a>的精确状态分叉，可分别推进训练基础设施自搜索与决策推理状态复用。</li>
-<li><strong>ResearchEvolve</strong>：<a href="#sage-taiyi">Sage-Taiyi</a>的显式证据—假设监控与<a href="#reprobridge">ReproBridge</a>的可执行成果封装，可用于同时提升科研智能体的研究策略调整能力和实验复现率。</li>
-<li><strong>EvalEvolve</strong>：<a href="#findendro">FinDendro</a>证明知识截止日期和模型自我声明都不足以排除泄漏，提示动态评测必须依赖外部时间隔离、数据溯源与可执行审计。</li>
-<li><strong>PhysicalEvolve</strong>：<a href="#proteus">ProTEUS</a>以快速物理约束预测筛选候选、再由真实实验反馈修正世界模型，为物理世界自进化提供了高成本实验下的有效闭环模板。</li>
+<li><strong>SystemEvolve</strong>：<a href="#ai-transformer">机制干预</a>与<a href="#evolvenet-harness">EvolveNet</a>表明可将“可热插拔模块生成”和“带验证回滚的 Harness 合并”纳入同一系统级演化闭环，而不必把自改进局限于权重更新。</li>
+<li><strong>Awesome-RSI</strong>：<a href="#terminal-rsi">Terminal-RSI</a>提供了从自我重写到策略精炼并获得新任务能力的完整案例，可用于补充 RSI 是否产生能力跃迁而非单纯基准增益的评测维度。</li>
+<li><strong>AgentEvolve</strong>：<a href="#wikitrace">WikiTrace</a>说明部署时经验演化应保留洞见、任务结果与原始轨迹之间的可追溯链接，使智能体能够主动核查并撤销有害经验。</li>
+<li><strong>MemoryEvolve</strong>：<a href="#wicl">WICL</a>与<a href="#wikitrace">WikiTrace</a>分别给出跨具身任务记忆和证据关联纠错机制，可组合研究“经验固化—迁移复用—失败回溯”的长期记忆生命周期。</li>
+<li><strong>AgentTrainEvolve</strong>：<a href="#neohorse-1-5-flash-preview-agent-rsi">NeoHorse-1.5-Flash Preview</a>把执行反馈、多模型差分诊断和环境进化转为在线训练信号，可作为多轮 Agentic RL 数据飞轮的工程参考。</li>
+<li><strong>InfraEvolve</strong>：<a href="#infrarsi">InfraRSI</a>通过真实硬件验证、全局性能建模和跨硬件经验沉淀取得最高 2.75 倍加速，直接验证了基础设施优化可以构造成可复用的递归搜索闭环。</li>
+<li><strong>ResearchEvolve</strong>：<a href="#sage-taiyi">Sage-Taiyi</a>、<a href="#proteus">ProTEUS</a>与<a href="#reprobridge">ReproBridge</a>共同提示自主科研系统应同时显式维护假设与证据、接入真实实验反馈，并将环境和执行决策封装为可复现成果。</li>
+<li><strong>EvalEvolve</strong>：<a href="#findendro">FinDendro</a>证明模型的知识截止日期声明不足以防止泄漏，动态评测需要引入外部可验证的时间隔离与数据谱系，而不能依赖模型自我报告。</li>
+<li><strong>JevEvolve</strong>：<a href="#mmdm">MMDM</a>可用于定位快决策模型在大候选空间和复杂逻辑依赖下的能力边界，<a href="#flide">Flide</a>则提供复用分支状态、降低高频结构化决策成本的执行路径。</li>
+<li><strong>RSI创业</strong>：<a href="#rsi">无涯智远的实时 RSI 路线</a>显示“发布后持续学习”正形成独立产品叙事，其超网络低成本参数更新方案值得跟踪实际遗忘控制、在线成本与商业可交付性。</li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
@@ -328,18 +326,6 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">EvolveLRM｜AI亲手改写Transformer架构！DeepSeek自我改造暴涨7分https://mp.weixin.qq.com/s/Es57aSUeiunpVBVmiIbDQA</div>
   </details></article>
-<article id="neohorse-1-5-flash-preview-agent-rsi" class="summary-card daily-item">
-  <h2 id="neohorse-1-5-flash-preview-agent-rsi-title" class="daily-item-title">NeoHorse-1.5-Flash Preview开启Agent模型RSI第二轮迭代</h2><p class="single-subtitle daily-item-summary">基元律动发布NeoHorse-1.5-Flash Preview，通过多模型差分诊断、环境进化与在线学习，将Agent执行反馈持续转化为递归自我改进训练信号。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.qbitai.com/2026/11/508603.html" target="_blank" rel="noopener">https://www.qbitai.com/2026/11/508603.html</a></div></div><div class="daily-item-content"><p>NeoHorse-1.5-Flash Preview基于Qwen3.8-Flash训练，总参数180B、激活参数6B，重点增强Agent任务执行和软件工程能力。相较基座模型，其在Agents’ Last Exam和Natural Language to Repository评测中分别提升9.23分和5.92分。该版本代表NeoHorse递归自我改进机制的“第二圈”，通过TokenRhythm多模型平台及OpenSquilla收集真实任务中的执行反馈，并利用模型间结果差异诊断能力短板。训练体系进一步结合多模型差分诊断、对抗式环境进化和群体智能在线学习，持续生成新任务并把执行侧比较信息转化为后续优化信号。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>展示从Agent执行、比较评测到再训练的闭环RSI路径，为持续迭代智能体模型提供工程范式。</li>
-<li>利用多模型输出差异定位能力短板，可提升训练数据选择和能力诊断的针对性。</li>
-<li>通过环境持续生成与筛选新任务，缓解训练任务分布塌缩并扩大能力覆盖范围。</li>
-<li>将模型路由、执行框架与训练反馈联动，为Agent基础设施和模型协同演化提供参考。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">EvolveLRM｜基元律动发布NeoHorse-1.5-Flash Preview，Agent模型RSI进入第二轮迭代https://www.qbitai.com/2026/11/508603.html</div>
-  </details></article>
 <article id="evolvenet-harness" class="summary-card daily-item">
   <h2 id="evolvenet-harness-title" class="daily-item-title">EvolveNet：协作式 Harness 演化推动智能体自我改进</h2><p class="single-subtitle daily-item-summary">EvolveNet 通过多客户端并行演化、按作用范围合并改动及验证回滚，将不同工作负载中的互补经验积累到共享智能体 Harness 中。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Tau Lab</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我改进</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/hRbNsqPNEDqYXxilKzzUIQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/hRbNsqPNEDqYXxilKzzUIQ</a></div></div><div class="daily-item-content"><p>EvolveNet 让多个客户端从同一个共享 Harness 出发，针对各自工作负载并行搜索失败修复与可复用机制，而不更新模型权重。服务器依据程序差异、执行轨迹和回归记录，将改动划分为全局共享机制、有条件启用的局部机制或应拒绝的改动。候选 Harness 必须在独立验证集上通过行为验证才能重新广播，失败时会修订或回滚。实验覆盖 BIRD、DS-1000、LiveCodeBench、SWE-bench Verified 和 ClawEval，结果表明组合互补机制优于未演化 Harness 及仅选择最佳客户端的策略，但合并与验证会引入额外成本。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -363,6 +349,30 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[InfraRSI：利用递归自我改进训练基础设施（15 ▲)](https://huggingface.co/papers/2611.11558?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-10)</div>
+  </details></article>
+<article id="neohorse-1-5-flash-preview-agent-rsi" class="summary-card daily-item">
+  <h2 id="neohorse-1-5-flash-preview-agent-rsi-title" class="daily-item-title">NeoHorse-1.5-Flash Preview开启Agent模型RSI第二轮迭代</h2><p class="single-subtitle daily-item-summary">基元律动发布NeoHorse-1.5-Flash Preview，通过多模型差分诊断、环境进化与在线学习，将Agent执行反馈持续转化为递归自我改进训练信号。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/environmentevolve/">EnvironmentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;SWE 软件工程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.qbitai.com/2026/11/508603.html" target="_blank" rel="noopener">https://www.qbitai.com/2026/11/508603.html</a></div></div><div class="daily-item-content"><p>NeoHorse-1.5-Flash Preview基于Qwen3.8-Flash训练，总参数180B、激活参数6B，重点增强Agent任务执行和软件工程能力。相较基座模型，其在Agents’ Last Exam和Natural Language to Repository评测中分别提升9.23分和5.92分。该版本代表NeoHorse递归自我改进机制的“第二圈”，通过TokenRhythm多模型平台及OpenSquilla收集真实任务中的执行反馈，并利用模型间结果差异诊断能力短板。训练体系进一步结合多模型差分诊断、对抗式环境进化和群体智能在线学习，持续生成新任务并把执行侧比较信息转化为后续优化信号。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>展示从Agent执行、比较评测到再训练的闭环RSI路径，为持续迭代智能体模型提供工程范式。</li>
+<li>利用多模型输出差异定位能力短板，可提升训练数据选择和能力诊断的针对性。</li>
+<li>通过环境持续生成与筛选新任务，缓解训练任务分布塌缩并扩大能力覆盖范围。</li>
+<li>将模型路由、执行框架与训练反馈联动，为Agent基础设施和模型协同演化提供参考。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">EvolveLRM｜基元律动发布NeoHorse-1.5-Flash Preview，Agent模型RSI进入第二轮迭代https://www.qbitai.com/2026/11/508603.html</div>
+  </details></article>
+<article id="rsi" class="summary-card daily-item">
+  <h2 id="rsi-title" class="daily-item-title">无涯智远押注实时 RSI：让模型在运行中持续学习</h2><p class="single-subtitle daily-item-summary">北京大学助理教授张牧涵创办无涯智远，尝试通过超网络低成本生成参数更新，使模型在发布后持续内化新知识与经验，同时缓解灾难性遗忘。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：持续学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>DeepTech深科技</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/SqPTvYP3IKzKrtADBC8kXg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/SqPTvYP3IKzKrtADBC8kXg</a></div></div><div class="daily-item-content"><p>无涯智远提出实时递归自我改进（Real-time RSI）路线，希望模型在与用户和环境交互时，将可长期复用的信息及时写入参数，而非只依赖长上下文、RAG 或外部记忆。其核心方案是训练超网络，根据新材料的内部表征直接生成基座模型各层的参数更新，减少针对每份材料反复执行梯度下降的成本。团队称，早期实验显示该机制可跨语言内化未见材料，并呈现随超网络训练量和参数规模提升的 scaling law；内部测试中，连续写入数百 K 内容后通用能力几乎未下降。该路线仍需重点解决高频参数更新的计算开销、灾难性遗忘、知识冲突及长期效果验证等问题，目标是支持能够伴随个人或企业持续成长的个性化智能体。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为个人智能体建立参数级长期记忆，使其能从长期阅读、对话和工作经历中持续积累知识与能力。</li>
+<li>以超网络生成参数更新，为高频在线学习提供比多轮反向传播更低成本的潜在实现路径。</li>
+<li>将参数内化与长上下文、RAG、外部记忆和工具调用结合，按信息的稳定性、复用价值与更新成本选择存储位置。</li>
+<li>为实时 RSI 的评估提供关键维度：新知识使用效果、写入成本、跨材料泛化能力以及旧知识和通用能力的保持程度。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">MemoryEvolve｜北大助理教授创业押注实时RSI：让AI摆脱“出厂即定型”https://mp.weixin.qq.com/s/SqPTvYP3IKzKrtADBC8kXg</div>
   </details></article>
 <article id="wikitrace" class="summary-card daily-item">
   <h2 id="wikitrace-title" class="daily-item-title">WikiTrace：证据关联记忆减少智能体性能退化</h2><p class="single-subtitle daily-item-summary">WikiTrace 将记忆洞见与任务成败摘要及原始轨迹关联，使 LLM 智能体能够核查和修正记忆，从而降低错误记忆引发的性能退化。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：长期记忆</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%BA%AF%E6%BA%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;证据溯源</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.14320" target="_blank" rel="noopener">https://arxiv.org/abs/2611.14320</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/yukyeongleee/wikitrace" target="_blank" rel="noopener">https://github.com/yukyeongleee/wikitrace</a></div></div><div class="daily-item-content"><p>外部记忆虽然能将历史任务轨迹提炼为经验，但错误、误用或误读的经验也会使智能体在原本可以完成的任务上失败。WikiTrace 将每条简洁洞见与对应轨迹的成败原因摘要、原始执行轨迹建立链接，为记忆提供可核查证据。遇到细节不足、洞见冲突或源自失败任务的记忆时，智能体可通过终端工具逐层回溯证据，并在行动前补充或修正洞见。该系统在五个智能体基准上持续优于现有记忆方案和仅使用相同洞见的基线，同时减少了记忆诱发的性能退化。</p>
@@ -412,18 +422,6 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[ProTEUS：一种用于闭环蛋白质进化的突变解析世界模型（13 ▲）](https://huggingface.co/papers/2611.13348?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-11)</div>
   </details></article>
-<article id="mmdm" class="summary-card daily-item">
-  <h2 id="mmdm-title" class="daily-item-title">MMDM：大规模多任务决策能力评测基准</h2><p class="single-subtitle daily-item-summary">MMDM以长上下文、大选项空间和复杂逻辑依赖为核心，系统评测28个System-1决策模型在16类多任务决策场景中的能力与局限。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;逻辑推理</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.14309" target="_blank" rel="noopener">https://arxiv.org/abs/2611.14309</a></div></div><div class="daily-item-content"><p>MMDM包含5,448道高质量题目，覆盖16类任务以及单选、多选和软标签决策形式，并通过新建任务、基于来源的重组与改写降低测试材料泄露风险。基准涵盖智能体状态追踪、工具与技能选择、偏好判断和评分规约打分等场景，选项数量为2至1,024个，输入最长达到64,817个词元。对28个决策模型的评测显示，现有模型在常识任务上表现较好，但面对选项相互依赖、约束决策和多选任务时明显退化。所有模型的最佳困难多选准确率仅为36.81%，表明联合推理、约束感知选择和完整多选恢复仍是关键瓶颈。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为System-1决策模型提供覆盖长上下文、大规模选项空间与复杂依赖关系的统一测试平台。</li>
-<li>可用于诊断模型在状态追踪、工具选择、约束规划及多选恢复方面的具体短板。</li>
-<li>通过新构造和重组题目减少基准污染影响，更可靠地衡量跨任务泛化能力。</li>
-<li>评测结果提示后续训练应重点增强联合推理、约束遵循和多标签完整召回能力。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[MMDM：大规模多任务决策能力测评（25 ▲）](https://huggingface.co/papers/2611.14309?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-11)</div>
-  </details></article>
 <article id="findendro" class="summary-card daily-item">
   <h2 id="findendro-title" class="daily-item-title">FinDendro：金融回测中的时间自我认知评测</h2><p class="single-subtitle daily-item-summary">FinDendro 基准发现前沿模型对自身时间知识边界的报告并不可靠，知识截止日期、自我声明和历史日期提示均无法保证金融回测不受训练数据泄漏影响。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型可靠性</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%B0%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;不确定性估计</a><a href="/LLMDailyDigestWeb/topic/%E5%9F%BA%E5%87%86%E6%B1%A1%E6%9F%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;基准污染</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E9%87%8F%E5%8C%96%E9%87%91%E8%9E%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;量化金融</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.06808" target="_blank" rel="noopener">https://arxiv.org/abs/2611.06808</a></div></div><div class="daily-item-content"><p>FinDendro 收录了 1999—2026 年间 2,226 条带日期的美国金融事实，覆盖月度宏观经济指标、月末股票价格和美联储决策。每条事实被构造成数值问答、自我声明为“知道”或“猜测”的 Recall/Predict 问题，以及指定历史日期的预测问题，并通过控制持续性与主导结果将随机准确率维持在约 0.27。实验显示，多数前沿模型会低估自己实际掌握的知识，例如 GPT-5 在受控事实上的准确率为 76%，却仅对 38% 的事实声称“知道”，且对自称不知道的事实仍有 61% 的正确率。模型的知识声明可能超出实测知识边界最多七个季度；加入历史日期会显著减少其“事先知道”的声明，但不会同步降低准确率。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
@@ -436,17 +434,17 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[LLMs 并不知道自己知道什么：用于金融回测的时间自我认知基准测试（22 ▲）](https://huggingface.co/papers/2611.06808?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-09)</div>
   </details></article>
-<article id="worldfoundry" class="summary-card daily-item">
-  <h2 id="worldfoundry-title" class="daily-item-title">WorldFoundry：面向世界智能的统一基础设施</h2><p class="single-subtitle daily-item-summary">WorldFoundry 提供覆盖视频、3D/4D、具身动作与交互式系统的开源统一基础设施，以可复现方式运行和评估世界模型的持久状态、可控性及动态一致性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能框架</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.10771" target="_blank" rel="noopener">https://arxiv.org/abs/2611.10771</a></div></div><div class="daily-item-content"><p>论文将生成式世界模型定义为具有持久、历史条件化环境表征的预测动力系统，要求其能响应动作或干预并生成时序连贯的轨迹。WorldFoundry 统一了模型与基准发现、运行环境和资产准备、执行编排、产物管理以及交互式可视化，同时通过模态适配器保留各类系统的原生执行语义。其显式清单、持久化产物契约和证据感知评分卡将“可执行性”与“评估结论”分离，使每项结果均可追溯至支撑证据。当前目录收录 270 个模型、74 个基准和 62 项注册指标，支持跨视频、3D/4D及具身交互系统的可复现比较。</p>
+<article id="mmdm" class="summary-card daily-item">
+  <h2 id="mmdm-title" class="daily-item-title">MMDM：大规模多任务决策能力评测基准</h2><p class="single-subtitle daily-item-summary">MMDM以长上下文、大选项空间和复杂逻辑依赖为核心，系统评测28个System-1决策模型在16类多任务决策场景中的能力与局限。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;逻辑推理</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.14309" target="_blank" rel="noopener">https://arxiv.org/abs/2611.14309</a></div></div><div class="daily-item-content"><p>MMDM包含5,448道高质量题目，覆盖16类任务以及单选、多选和软标签决策形式，并通过新建任务、基于来源的重组与改写降低测试材料泄露风险。基准涵盖智能体状态追踪、工具与技能选择、偏好判断和评分规约打分等场景，选项数量为2至1,024个，输入最长达到64,817个词元。对28个决策模型的评测显示，现有模型在常识任务上表现较好，但面对选项相互依赖、约束决策和多选任务时明显退化。所有模型的最佳困难多选准确率仅为36.81%，表明联合推理、约束感知选择和完整多选恢复仍是关键瓶颈。</p>
 </div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为异构世界模型提供统一、可复现的运行与评估工作流，降低跨模态比较的工程成本。</li>
-<li>将持久状态、因果一致性、可控动态和闭环交互纳入评估，避免仅凭视觉逼真度判断世界建模能力。</li>
-<li>通过产物契约与证据感知评分卡强化评估结果的可追溯性和可审计性。</li>
-<li>可作为构建世界模型基准平台、执行基础设施及交互式分析工具的参考架构。</li>
+<li>为System-1决策模型提供覆盖长上下文、大规模选项空间与复杂依赖关系的统一测试平台。</li>
+<li>可用于诊断模型在状态追踪、工具选择、约束规划及多选恢复方面的具体短板。</li>
+<li>通过新构造和重组题目减少基准污染影响，更可靠地衡量跨任务泛化能力。</li>
+<li>评测结果提示后续训练应重点增强联合推理、约束遵循和多标签完整召回能力。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[WorldFoundry：迈向世界智能的统一基础设施（54 ▲）](https://huggingface.co/papers/2611.10771?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-10)</div>
+    <div class="daily-item-notes-body">[MMDM：大规模多任务决策能力测评（25 ▲）](https://huggingface.co/papers/2611.14309?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-11)</div>
   </details></article>
 <article id="flide" class="summary-card daily-item">
   <h2 id="flide-title" class="daily-item-title">Flide：以精确状态分叉加速决策推理</h2><p class="single-subtitle daily-item-summary">Flide 通过将决策请求的逻辑分支树映射为单一扁平词元流，并利用 ForkAttention 精确复用状态，实现最高相较 vLLM 和 SGLang 9.5 倍的查询加速。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：推理效率</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理加速</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%AF%E4%BF%A1%E6%89%A7%E8%A1%8C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;可信执行</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E6%8C%81%E4%B9%85%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态持久化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.42148" target="_blank" rel="noopener">https://arxiv.org/abs/2610.42148</a></div></div><div class="daily-item-content"><p>Flide 面向 Jev 等决策模型，解决现有生成式推理引擎在分支决策负载中反复计算前缀或扭曲输出概率的问题。其将请求的逻辑树结构与物理执行解耦，把多个分支组织在单一扁平词元流中执行。核心机制 ForkAttention 使用驻留 GPU 的索引处理标准注意力与循环式 Gated DeltaNet 层，并保证在精确算术下每个分支与独立前向计算等价。实验显示，Flide 的查询速度最高达到 vLLM 和 SGLang 的 9.5 倍，同时在总变差距离上最接近 float32 参考结果。</p>
@@ -548,6 +546,60 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
 </details>
 </div>
             </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/" onclick="event.stopPropagation()">InfraEvolve</a><span class="daily-count">3 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="worldfoundry" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>WorldFoundry：面向世界智能的统一基础设施</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 世界模型 · <a href="https://arxiv.org/abs/2611.10771" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">WorldFoundry 提供覆盖视频、3D/4D、具身动作与交互式系统的开源统一基础设施，以可复现方式运行和评估世界模型的持久状态、可控性及动态一致性。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能框架</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.10771" target="_blank" rel="noopener">https://arxiv.org/abs/2611.10771</a></div></div><div class="daily-item-content"><p>论文将生成式世界模型定义为具有持久、历史条件化环境表征的预测动力系统，要求其能响应动作或干预并生成时序连贯的轨迹。WorldFoundry 统一了模型与基准发现、运行环境和资产准备、执行编排、产物管理以及交互式可视化，同时通过模态适配器保留各类系统的原生执行语义。其显式清单、持久化产物契约和证据感知评分卡将“可执行性”与“评估结论”分离，使每项结果均可追溯至支撑证据。当前目录收录 270 个模型、74 个基准和 62 项注册指标，支持跨视频、3D/4D及具身交互系统的可复现比较。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为异构世界模型提供统一、可复现的运行与评估工作流，降低跨模态比较的工程成本。</li>
+<li>将持久状态、因果一致性、可控动态和闭环交互纳入评估，避免仅凭视觉逼真度判断世界建模能力。</li>
+<li>通过产物契约与证据感知评分卡强化评估结果的可追溯性和可审计性。</li>
+<li>可作为构建世界模型基准平台、执行基础设施及交互式分析工具的参考架构。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[WorldFoundry：迈向世界智能的统一基础设施（54 ▲）](https://huggingface.co/papers/2611.10771?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-10)</div>
+  </details></div>
+</details>
+<details id="item-19" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>在线策略蒸馏的训练—推理不匹配容忍度</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 在策略蒸馏 · <a href="https://arxiv.org/abs/2611.11450" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/benyucong/train-inference-mismatch-opd" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a></span>
+    </span><span class="daily-row-summary">研究发现在线策略蒸馏存在可量化的训练—推理不匹配预算，并可通过模型特定的 FP8 配置和异步 rollout 在保持训练质量的同时显著提升效率。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：在策略蒸馏</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%AD%96%E7%95%A5%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;在策略蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.11450" target="_blank" rel="noopener">https://arxiv.org/abs/2611.11450</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/benyucong/train-inference-mismatch-opd" target="_blank" rel="noopener">https://github.com/benyucong/train-inference-mismatch-opd</a></div></div><div class="daily-item-content"><p>在线策略蒸馏使用学生模型自身生成的响应进行训练，并由固定教师提供指导，但量化推理、异步 rollout 和权重陈旧会造成训练—推理不匹配。实验在多个学生—教师组合上统一测量量化、权重陈旧和注入噪声的影响，发现 OPD 能容忍较大程度的不匹配，超过经验预算后训练质量才明显下降。不同模型及层对低精度的敏感性存在差异，而且权重噪声会改变生成时到达的前缀分布，这类误差无法通过逐 token 校正完全消除。作者提出轻量级准入检查来筛选 rollout 配置；模型特定的 FP8 方案可容纳至少 1.93 倍的 KV-cache token，结合异步 rollout 后达到相同训练质量的速度提升至 1.62 倍。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为量化推理和异步 rollout 提供可操作的不匹配预算，避免逐一执行完整训练实验。</li>
+<li>表明 OPD 相比部分强化学习方法更能容忍 rollout 引擎与训练模型之间的差异，可支持更激进的系统优化。</li>
+<li>FP8 配置需要按模型乃至敏感层定制，不能假设统一量化方案对所有模型同样有效。</li>
+<li>评估不匹配时应关注生成前缀分布偏移，而不能只依赖逐 token 的重要性修正。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[在线策略蒸馏能容忍多大程度的训练与推理不匹配？（11 ▲)](https://huggingface.co/papers/2611.11450?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-10)</div>
+  </details></div>
+</details>
+<details id="item-27" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>结构感知内核加速精确相对位置注意力</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 系统优化 · <a href="https://arxiv.org/abs/2611.01182" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">该工作将加性相对位置项精确集成到 FlashAttention 式分块计算中，显著降低长序列注意力的计算与显存开销。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：系统优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理加速</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.01182" target="_blank" rel="noopener">https://arxiv.org/abs/2611.01182</a></div></div><div class="daily-item-content"><p>作者提出一种支持加性相对位置项的精确注意力算法，可直接融入 FlashAttention 风格的分块计算。该算法利用偏移感知分块减少重复索引和访存，并复用必要的键、查询与位置关系乘积。反向传播采用基于偏移的梯度分片与聚合，从而避免原子操作竞争，并通过统一的 Triton 内核支持多种相对位置注意力机制。在 8K 序列上，其前向和反向速度分别提升 1.8–6.4 倍与 2.0–21 倍，峰值显存最高降低 128 倍，并使长上下文端到端转录加速 1.8 倍。</p>
+</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+<li>为相对位置注意力提供可直接替换现有实现的硬件高效内核，降低其在长上下文场景中的部署门槛。</li>
+<li>展示了如何利用位置偏移的结构规律优化分块、数据复用和梯度聚合，可用于其他结构化注意力算子的内核设计。</li>
+<li>对音频转录等偏好相对位置编码的任务，可同时改善训练、反向传播和端到端推理效率。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[通过结构感知内核实现快速、精确的相对位置注意力（19 ▲）](https://huggingface.co/papers/2611.01182?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-09)</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/" onclick="event.stopPropagation()">AgentTrainEvolve</a><span class="daily-count">2 条</span>
               </summary>
               <div class="daily-group-body"><details id="reframe" class="daily-row">
@@ -582,43 +634,6 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[Video-Coder：强化用于视频生成的智能体编程（16 ▲）](https://huggingface.co/papers/2611.09894?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-09)</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/" onclick="event.stopPropagation()">InfraEvolve</a><span class="daily-count">2 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="item-19" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>在线策略蒸馏的训练—推理不匹配容忍度</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 在策略蒸馏 · <a href="https://arxiv.org/abs/2611.11450" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/benyucong/train-inference-mismatch-opd" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a></span>
-    </span><span class="daily-row-summary">研究发现在线策略蒸馏存在可量化的训练—推理不匹配预算，并可通过模型特定的 FP8 配置和异步 rollout 在保持训练质量的同时显著提升效率。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：在策略蒸馏</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%AD%96%E7%95%A5%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;在策略蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.11450" target="_blank" rel="noopener">https://arxiv.org/abs/2611.11450</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/benyucong/train-inference-mismatch-opd" target="_blank" rel="noopener">https://github.com/benyucong/train-inference-mismatch-opd</a></div></div><div class="daily-item-content"><p>在线策略蒸馏使用学生模型自身生成的响应进行训练，并由固定教师提供指导，但量化推理、异步 rollout 和权重陈旧会造成训练—推理不匹配。实验在多个学生—教师组合上统一测量量化、权重陈旧和注入噪声的影响，发现 OPD 能容忍较大程度的不匹配，超过经验预算后训练质量才明显下降。不同模型及层对低精度的敏感性存在差异，而且权重噪声会改变生成时到达的前缀分布，这类误差无法通过逐 token 校正完全消除。作者提出轻量级准入检查来筛选 rollout 配置；模型特定的 FP8 方案可容纳至少 1.93 倍的 KV-cache token，结合异步 rollout 后达到相同训练质量的速度提升至 1.62 倍。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为量化推理和异步 rollout 提供可操作的不匹配预算，避免逐一执行完整训练实验。</li>
-<li>表明 OPD 相比部分强化学习方法更能容忍 rollout 引擎与训练模型之间的差异，可支持更激进的系统优化。</li>
-<li>FP8 配置需要按模型乃至敏感层定制，不能假设统一量化方案对所有模型同样有效。</li>
-<li>评估不匹配时应关注生成前缀分布偏移，而不能只依赖逐 token 的重要性修正。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[在线策略蒸馏能容忍多大程度的训练与推理不匹配？（11 ▲)](https://huggingface.co/papers/2611.11450?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-10)</div>
-  </details></div>
-</details>
-<details id="item-27" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>结构感知内核加速精确相对位置注意力</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 系统优化 · <a href="https://arxiv.org/abs/2611.01182" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">该工作将加性相对位置项精确集成到 FlashAttention 式分块计算中，显著降低长序列注意力的计算与显存开销。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：系统优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理加速</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.01182" target="_blank" rel="noopener">https://arxiv.org/abs/2611.01182</a></div></div><div class="daily-item-content"><p>作者提出一种支持加性相对位置项的精确注意力算法，可直接融入 FlashAttention 风格的分块计算。该算法利用偏移感知分块减少重复索引和访存，并复用必要的键、查询与位置关系乘积。反向传播采用基于偏移的梯度分片与聚合，从而避免原子操作竞争，并通过统一的 Triton 内核支持多种相对位置注意力机制。在 8K 序列上，其前向和反向速度分别提升 1.8–6.4 倍与 2.0–21 倍，峰值显存最高降低 128 倍，并使长上下文端到端转录加速 1.8 倍。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为相对位置注意力提供可直接替换现有实现的硬件高效内核，降低其在长上下文场景中的部署门槛。</li>
-<li>展示了如何利用位置偏移的结构规律优化分块、数据复用和梯度聚合，可用于其他结构化注意力算子的内核设计。</li>
-<li>对音频转录等偏好相对位置编码的任务，可同时改善训练、反向传播和端到端推理效率。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[通过结构感知内核实现快速、精确的相对位置注意力（19 ▲）](https://huggingface.co/papers/2611.01182?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-09)</div>
   </details></div>
 </details>
 </div>
@@ -741,27 +756,6 @@ PhysicalEvolve：ProTEUS以快速物理约束预测筛选候选、再由真实�
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[Longtail-SWE：面向代表性不足语言的高质量软件工程任务（19 ▲)](https://huggingface.co/papers/2611.10304?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-10)</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/" onclick="event.stopPropagation()">MemoryEvolve</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="rsi" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>无涯智远押注实时 RSI：让模型在运行中持续学习</strong>
-      <span class="daily-row-meta">DeepTech深科技 · 持续学习 · <a href="https://mp.weixin.qq.com/s/SqPTvYP3IKzKrtADBC8kXg" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
-    </span><span class="daily-row-summary">北京大学助理教授张牧涵创办无涯智远，尝试通过超网络低成本生成参数更新，使模型在发布后持续内化新知识与经验，同时缓解灾难性遗忘。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：持续学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>DeepTech深科技</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/SqPTvYP3IKzKrtADBC8kXg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/SqPTvYP3IKzKrtADBC8kXg</a></div></div><div class="daily-item-content"><p>无涯智远提出实时递归自我改进（Real-time RSI）路线，希望模型在与用户和环境交互时，将可长期复用的信息及时写入参数，而非只依赖长上下文、RAG 或外部记忆。其核心方案是训练超网络，根据新材料的内部表征直接生成基座模型各层的参数更新，减少针对每份材料反复执行梯度下降的成本。团队称，早期实验显示该机制可跨语言内化未见材料，并呈现随超网络训练量和参数规模提升的 scaling law；内部测试中，连续写入数百 K 内容后通用能力几乎未下降。该路线仍需重点解决高频参数更新的计算开销、灾难性遗忘、知识冲突及长期效果验证等问题，目标是支持能够伴随个人或企业持续成长的个性化智能体。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
-<li>为个人智能体建立参数级长期记忆，使其能从长期阅读、对话和工作经历中持续积累知识与能力。</li>
-<li>以超网络生成参数更新，为高频在线学习提供比多轮反向传播更低成本的潜在实现路径。</li>
-<li>将参数内化与长上下文、RAG、外部记忆和工具调用结合，按信息的稳定性、复用价值与更新成本选择存储位置。</li>
-<li>为实时 RSI 的评估提供关键维度：新知识使用效果、写入成本、跨材料泛化能力以及旧知识和通用能力的保持程度。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">MemoryEvolve｜北大助理教授创业押注实时RSI：让AI摆脱“出厂即定型”https://mp.weixin.qq.com/s/SqPTvYP3IKzKrtADBC8kXg</div>
   </details></div>
 </details>
 </div>
