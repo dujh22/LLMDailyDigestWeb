@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>2026-11-15 科研追新 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="
+当日精选（由提交工具自动创建）。
+
+今日概览
+
+科研自治
+
+MolRSI：用跨任务成败记忆引导分子搜索策略迭代，将抗菌湿实验命中率从8.7%提升至15.9%。
+SPU：隐藏真实湿实验结果并允许模型自主检索计算，补上科研AI缺少真实预测评测的问题。
+AI4AI：把科研控制权拆成搜索方向、方案空间和评价信号，避免用自动化步骤数误判AI的科研自主性。
+
+
+训练稳定
+
+RL训练：把训练前后的既有能力变化纳入评测，揭示只看目标分数会漏掉强化学习造成的能力漂移。
+
+
+工具沉淀
+
+DeepSeek Harness：通过对话生成插件并封装GitHub项目，让一次性想法沉淀为可复用的个人工具。
+
+
+RSI图谱
+
+递归自我改进：用8讲统一梳理AI改进AI的机制、评测与安全，解决相关路线分散、缺少全景框架的问题。
+
+
+
+对当前研究的启发
+
+ResearchEvolve
+
+迁移｜从 MolRSI 把跨任务成败记忆用到假设筛选：对比无记忆搜索，以命中率和实验成本评估。
+迁移｜从 AI4AI 把方向、空间、评价三类控制权用于科研智能体审计：逐步标注人机决策边界。
+
+
+EvalEvolve
+
+迁移｜从 SPU 把隐藏实测结果用于动态评测：对比公开答案任务，统计误差、校准度、拒答率和成本。
+延续｜AI4AI 留下AI评价器可信性问题：固定预算运行五代，对比独立评价器并测隐藏集增益与退化率。
+
+
+EvolveLRM
+
+迁移｜从 RL训练 把能力漂移用于后训练验收：固定多能力题集，报告目标增益、回退率和最差能力降幅。
+
+
+PhysicalEvolve
+
+延续｜MolRSI 尚未把湿实验反馈纳入循环：对比纯计算与实验回灌，测命中率、亲和力和交叉反应。
+
+
+HarnessEvolve
+
+迁移｜从 DeepSeek Harness 把仓库自动封装用于适配器生成：测接入耗时、复用率和任务通过率。
+
+
+PersonalEvolve
+
+迁移｜从 DeepSeek Harness 把临时需求插件化用于个人技能沉淀：选20类重复请求测试复用率与纠错次数。
+
+
+Awesome-RSI
+
+迁移｜从 递归自我改进 把8讲分类用于资源清单重构：按机制、评测、安全补齐论文、实现与未解问题。
+
+
+
+" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="2026-11-15 科研追新">
+  <meta itemprop="description" content="当日精选（由提交工具自动创建）。
+今日概览 科研自治 MolRSI：用跨任务成败记忆引导分子搜索策略迭代，将抗菌湿实验命中率从8.7%提升至15.9%。 SPU：隐藏真实湿实验结果并允许模型自主检索计算，补上科研AI缺少真实预测评测的问题。 AI4AI：把科研控制权拆成搜索方向、方案空间和评价信号，避免用自动化步骤数误判AI的科研自主性。 训练稳定 RL训练：把训练前后的既有能力变化纳入评测，揭示只看目标分数会漏掉强化学习造成的能力漂移。 工具沉淀 DeepSeek Harness：通过对话生成插件并封装GitHub项目，让一次性想法沉淀为可复用的个人工具。 RSI图谱 递归自我改进：用8讲统一梳理AI改进AI的机制、评测与安全，解决相关路线分散、缺少全景框架的问题。 对当前研究的启发 ResearchEvolve 迁移｜从 MolRSI 把跨任务成败记忆用到假设筛选：对比无记忆搜索，以命中率和实验成本评估。 迁移｜从 AI4AI 把方向、空间、评价三类控制权用于科研智能体审计：逐步标注人机决策边界。 EvalEvolve 迁移｜从 SPU 把隐藏实测结果用于动态评测：对比公开答案任务，统计误差、校准度、拒答率和成本。 延续｜AI4AI 留下AI评价器可信性问题：固定预算运行五代，对比独立评价器并测隐藏集增益与退化率。 EvolveLRM 迁移｜从 RL训练 把能力漂移用于后训练验收：固定多能力题集，报告目标增益、回退率和最差能力降幅。 PhysicalEvolve 延续｜MolRSI 尚未把湿实验反馈纳入循环：对比纯计算与实验回灌，测命中率、亲和力和交叉反应。 HarnessEvolve 迁移｜从 DeepSeek Harness 把仓库自动封装用于适配器生成：测接入耗时、复用率和任务通过率。 PersonalEvolve 迁移｜从 DeepSeek Harness 把临时需求插件化用于个人技能沉淀：选20类重复请求测试复用率与纠错次数。 Awesome-RSI 迁移｜从 递归自我改进 把8讲分类用于资源清单重构：按机制、评测、安全补齐论文、实现与未解问题。">
+  <meta itemprop="datePublished" content="2026-11-15T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-11-15T12:33:23+08:00">
+  <meta itemprop="wordCount" content="726">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-15/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="2026-11-15 科研追新">
+  <meta property="og:description" content="当日精选（由提交工具自动创建）。
+今日概览 科研自治 MolRSI：用跨任务成败记忆引导分子搜索策略迭代，将抗菌湿实验命中率从8.7%提升至15.9%。 SPU：隐藏真实湿实验结果并允许模型自主检索计算，补上科研AI缺少真实预测评测的问题。 AI4AI：把科研控制权拆成搜索方向、方案空间和评价信号，避免用自动化步骤数误判AI的科研自主性。 训练稳定 RL训练：把训练前后的既有能力变化纳入评测，揭示只看目标分数会漏掉强化学习造成的能力漂移。 工具沉淀 DeepSeek Harness：通过对话生成插件并封装GitHub项目，让一次性想法沉淀为可复用的个人工具。 RSI图谱 递归自我改进：用8讲统一梳理AI改进AI的机制、评测与安全，解决相关路线分散、缺少全景框架的问题。 对当前研究的启发 ResearchEvolve 迁移｜从 MolRSI 把跨任务成败记忆用到假设筛选：对比无记忆搜索，以命中率和实验成本评估。 迁移｜从 AI4AI 把方向、空间、评价三类控制权用于科研智能体审计：逐步标注人机决策边界。 EvalEvolve 迁移｜从 SPU 把隐藏实测结果用于动态评测：对比公开答案任务，统计误差、校准度、拒答率和成本。 延续｜AI4AI 留下AI评价器可信性问题：固定预算运行五代，对比独立评价器并测隐藏集增益与退化率。 EvolveLRM 迁移｜从 RL训练 把能力漂移用于后训练验收：固定多能力题集，报告目标增益、回退率和最差能力降幅。 PhysicalEvolve 延续｜MolRSI 尚未把湿实验反馈纳入循环：对比纯计算与实验回灌，测命中率、亲和力和交叉反应。 HarnessEvolve 迁移｜从 DeepSeek Harness 把仓库自动封装用于适配器生成：测接入耗时、复用率和任务通过率。 PersonalEvolve 迁移｜从 DeepSeek Harness 把临时需求插件化用于个人技能沉淀：选20类重复请求测试复用率与纠错次数。 Awesome-RSI 迁移｜从 递归自我改进 把8讲分类用于资源清单重构：按机制、评测、安全补齐论文、实现与未解问题。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="updates">
+    <meta property="article:published_time" content="2026-11-15T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-11-15T12:33:23+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="2026-11-15 科研追新">
+  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
+今日概览 科研自治 MolRSI：用跨任务成败记忆引导分子搜索策略迭代，将抗菌湿实验命中率从8.7%提升至15.9%。 SPU：隐藏真实湿实验结果并允许模型自主检索计算，补上科研AI缺少真实预测评测的问题。 AI4AI：把科研控制权拆成搜索方向、方案空间和评价信号，避免用自动化步骤数误判AI的科研自主性。 训练稳定 RL训练：把训练前后的既有能力变化纳入评测，揭示只看目标分数会漏掉强化学习造成的能力漂移。 工具沉淀 DeepSeek Harness：通过对话生成插件并封装GitHub项目，让一次性想法沉淀为可复用的个人工具。 RSI图谱 递归自我改进：用8讲统一梳理AI改进AI的机制、评测与安全，解决相关路线分散、缺少全景框架的问题。 对当前研究的启发 ResearchEvolve 迁移｜从 MolRSI 把跨任务成败记忆用到假设筛选：对比无记忆搜索，以命中率和实验成本评估。 迁移｜从 AI4AI 把方向、空间、评价三类控制权用于科研智能体审计：逐步标注人机决策边界。 EvalEvolve 迁移｜从 SPU 把隐藏实测结果用于动态评测：对比公开答案任务，统计误差、校准度、拒答率和成本。 延续｜AI4AI 留下AI评价器可信性问题：固定预算运行五代，对比独立评价器并测隐藏集增益与退化率。 EvolveLRM 迁移｜从 RL训练 把能力漂移用于后训练验收：固定多能力题集，报告目标增益、回退率和最差能力降幅。 PhysicalEvolve 延续｜MolRSI 尚未把湿实验反馈纳入循环：对比纯计算与实验回灌，测命中率、亲和力和交叉反应。 HarnessEvolve 迁移｜从 DeepSeek Harness 把仓库自动封装用于适配器生成：测接入耗时、复用率和任务通过率。 PersonalEvolve 迁移｜从 DeepSeek Harness 把临时需求插件化用于个人技能沉淀：选20类重复请求测试复用率与纠错次数。 Awesome-RSI 迁移｜从 递归自我改进 把8讲分类用于资源清单重构：按机制、评测、安全补齐论文、实现与未解问题。">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-15/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-14/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2026-11-15 科研追新",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-15\/"
+    },"genre": "updates","wordcount":  726 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-15\/","datePublished": "2026-11-15T00:00:00+08:00","dateModified": "2026-11-15T12:33:23+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/trends/"
+                
+                
+              ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/trends/"
+                  
+                  
+                ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/updates/" title="Updates">Updates</a></li><li class="breadcrumb-item active" aria-current="page">2026-11-15 科研追新</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>2026-11-15 科研追新</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    LLM-DailyDigest</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2026-11-15 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-15">2026-11-15</time></span>&nbsp;<span title="更新于 2026-11-15 12:33:23"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-15">2026-11-15</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-14 10:53 ~ 2026-11-15 12:25（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-14 10:53 ~ 11-15 12:25
+          </span>&nbsp;<span title="726 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 800 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#对当前研究的启发">对当前研究的启发</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><blockquote>
+<p>当日精选（由提交工具自动创建）。</p></blockquote>
+<!-- daily-summary:start -->
+<h2 id="今日概览">今日概览</h2>
+<ul>
+<li><strong>科研自治</strong>
+<ul>
+<li><a href="#molrsi">MolRSI</a>：用跨任务成败记忆引导分子搜索策略迭代，将抗菌湿实验命中率从8.7%提升至15.9%。</li>
+<li><a href="#spu">SPU</a>：隐藏真实湿实验结果并允许模型自主检索计算，补上科研AI缺少真实预测评测的问题。</li>
+<li><a href="#ai4ai">AI4AI</a>：把科研控制权拆成搜索方向、方案空间和评价信号，避免用自动化步骤数误判AI的科研自主性。</li>
+</ul>
+</li>
+<li><strong>训练稳定</strong>
+<ul>
+<li><a href="#item-1">RL训练</a>：把训练前后的既有能力变化纳入评测，揭示只看目标分数会漏掉强化学习造成的能力漂移。</li>
+</ul>
+</li>
+<li><strong>工具沉淀</strong>
+<ul>
+<li><a href="#deepseek-harness">DeepSeek Harness</a>：通过对话生成插件并封装GitHub项目，让一次性想法沉淀为可复用的个人工具。</li>
+</ul>
+</li>
+<li><strong>RSI图谱</strong>
+<ul>
+<li><a href="#ai-ai">递归自我改进</a>：用8讲统一梳理AI改进AI的机制、评测与安全，解决相关路线分散、缺少全景框架的问题。</li>
+</ul>
+</li>
+</ul>
+<h2 id="对当前研究的启发">对当前研究的启发</h2>
+<ul>
+<li><strong>ResearchEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#molrsi">MolRSI</a> 把跨任务成败记忆用到假设筛选：对比无记忆搜索，以命中率和实验成本评估。</li>
+<li>迁移｜从 <a href="#ai4ai">AI4AI</a> 把方向、空间、评价三类控制权用于科研智能体审计：逐步标注人机决策边界。</li>
+</ul>
+</li>
+<li><strong>EvalEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#spu">SPU</a> 把隐藏实测结果用于动态评测：对比公开答案任务，统计误差、校准度、拒答率和成本。</li>
+<li>延续｜<a href="#ai4ai">AI4AI</a> 留下AI评价器可信性问题：固定预算运行五代，对比独立评价器并测隐藏集增益与退化率。</li>
+</ul>
+</li>
+<li><strong>EvolveLRM</strong>
+<ul>
+<li>迁移｜从 <a href="#item-1">RL训练</a> 把能力漂移用于后训练验收：固定多能力题集，报告目标增益、回退率和最差能力降幅。</li>
+</ul>
+</li>
+<li><strong>PhysicalEvolve</strong>
+<ul>
+<li>延续｜<a href="#molrsi">MolRSI</a> 尚未把湿实验反馈纳入循环：对比纯计算与实验回灌，测命中率、亲和力和交叉反应。</li>
+</ul>
+</li>
+<li><strong>HarnessEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#deepseek-harness">DeepSeek Harness</a> 把仓库自动封装用于适配器生成：测接入耗时、复用率和任务通过率。</li>
+</ul>
+</li>
+<li><strong>PersonalEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#deepseek-harness">DeepSeek Harness</a> 把临时需求插件化用于个人技能沉淀：选20类重复请求测试复用率与纠错次数。</li>
+</ul>
+</li>
+<li><strong>Awesome-RSI</strong>
+<ul>
+<li>迁移｜从 <a href="#ai-ai">递归自我改进</a> 把8讲分类用于资源清单重构：按机制、评测、安全补齐论文、实现与未解问题。</li>
+</ul>
+</li>
+</ul>
+<!-- daily-summary:end -->
+</div><section class="daily-items daily-tiered">
+          <nav class="daily-nav">
+            <span class="daily-nav-label">共 6 条</span><a href="#daily-featured">⭐ 重点 6</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">6 条</span></h2>
+          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="molrsi" class="summary-card daily-item">
+  <h2 id="molrsi-title" class="daily-item-title">MolRSI：跨任务经验驱动策略自改进</h2><p class="single-subtitle daily-item-summary">用跨任务经验持续改进分子筛选与设计策略，将抗菌湿实验命中率从8.7%提高至15.9%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E7%A0%94%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科研智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验学习</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.39714" target="_blank" rel="noopener">https://arxiv.org/abs/2610.39714</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651074456&amp;idx=3&amp;sn=3ce02b6ba0021829c919847dffc37e64&amp;chksm=85df8293d329cd21dc2d215f1f949b6eee8d2bdb647a3cd5c8a2feb267f1ece4b436548fa5f5&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651074456&amp;idx=3&amp;sn=3ce02b6ba0021829c919847dffc37e64&amp;chksm=85df8293d329cd21dc2d215f1f949b6eee8d2bdb647a3cd5c8a2feb267f1ece4b436548fa5f5&amp;scene=0&amp;xtrack=1#rd</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在抗菌分子筛选或蛋白设计系统中借鉴其双循环记忆与经验引导树搜索机制，优化候选排序并决定有限湿实验预算的投放对象。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>科研智能体的自我改进关键不只是生成更好候选，而是把历次工作流成败沉淀为可迁移经验，从而持续改善下一次搜索的起点与方向。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：分子发现需在海量候选中同时选择预测模型、筛选条件和实验对象，并兼顾活性、毒性、新颖性或结合特异性。</li>
+<li><strong>旧法为何失效</strong>：人工固定工作流难以系统搜索模型与规则组合，通用科研智能体也无法充分复用跨任务经验，导致新任务起点较差、有限湿实验预算利用率低。</li>
+<li><strong>方法</strong>：MolRSI 将可执行技能组合成科研工作流，以经验引导的蒙特卡洛树搜索优化流程；内循环改进当前任务，外循环通过方案记忆、改进记忆和执行记忆更新后续任务的搜索策略。</li>
+<li><strong>实验</strong>：在约1210万个化合物中筛出107个并获得17个MSSA活性命中，湿实验命中率15.9%，高于专家流程的8.7%；在两个pMHC靶标上获得8个特异性结合命中，而相同预算下Claude Science为0。跨任务经验还使6项抗菌预测任务的平均测试AUPRC全部提升。</li>
+<li><strong>局限与后续</strong>：当前策略改进主要来自计算搜索，尚需将湿实验反馈纳入循环；pMHC候选的定量亲和力、更广泛交叉反应及预测接触仍待结构和功能实验验证。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：AI自己改科研策略，能过湿实验这一关吗？他们把RSI带入分子发现
+来源：机器之心（微信公众号）
+链接：http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651074456&amp;idx=3&amp;sn=3ce02b6ba0021829c919847dffc37e64&amp;chksm=85df8293d329cd21dc2d215f1f949b6eee8d2bdb647a3cd5c8a2feb267f1ece4b436548fa5f5&amp;scene=0&amp;xtrack=1#rd
+摘要：</div>
+  </details></article>
+<article id="spu" class="summary-card daily-item">
+  <h2 id="spu-title" class="daily-item-title">SPU：隐藏实测结果的湿实验预测</h2><p class="single-subtitle daily-item-summary">用隐藏实测结果、允许自主检索计算的长程任务，解决科研AI缺少真实湿实验预测评测的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：科研评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>量子位</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E5%9F%BA%E5%87%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学研究基准</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.qbitai.com/2026/11/510232.html" target="_blank" rel="noopener">https://www.qbitai.com/2026/11/510232.html</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在选择科研模型或规划湿实验前，可将同类任务接入SPU，比较模型的预测可靠性、工具轨迹与调用成本，并据此筛选部署方案。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>科研预测的瓶颈不是推理时长或工具数量，而是能否选对与目标测量量真正相关的判断依据，并让新增证据实际改变结论。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：评估AI能否在真正开展湿实验前，根据实验条件和科学证据预测结果排序，从而减少昂贵实验的试错成本。</li>
+<li><strong>旧法为何失效</strong>：BrainBench侧重直接判断结果，ScienceAgentBench基于已有数据分析，现有长程基准则多检查预设任务产物，均未同时覆盖自主研究过程、工具使用与真实湿实验预测。</li>
+<li><strong>方法</strong>：SPU包含116个任务、4207个湿实验和32个子领域，其中100个公开任务来自85篇近期论文，16个私有任务来自未发表实验。模型可在8小时内联网检索并使用科研软件，最终提交排序；系统在独立断网容器中以Spearman相关系数评分，并用每题4000份随机排序的第95百分位设定随机阈值。</li>
+<li><strong>实验</strong>：首轮评测12款前沿模型、13种配置，最高平均分为0.486，只有约一半任务超过随机水平，各配置过线比例仅34%～52%。GPT-6 Astra提高推理强度后，运行时间和API成本中位数分别增至4.8倍和5.3倍，但预测得分几乎不变。</li>
+<li><strong>局限与后续</strong>：部分模型存在拒答，且表现会随测量目标剧烈变化；100个公开任务计划以Harbor任务包发布，16个未发表实验任务继续用于受控评测。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：「史上最严」湿实验预测基准发布！推理拉满、算力翻5倍也白搭
+来源：量子位（微信公众号）
+链接：https://www.qbitai.com/2026/11/510232.html
+摘要：斯坦福、哈佛、康奈尔……十余家顶尖团队齐坐一桌了</div>
+  </details></article>
+<article id="ai4ai" class="summary-card daily-item">
+  <h2 id="ai4ai-title" class="daily-item-title">AI4AI：三决策研究控制框架</h2><p class="single-subtitle daily-item-summary">用搜索方向、搜索空间和评价信号三类控制权，区分AI是在执行实验还是自主决定如何研究。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自动化科学研究</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E9%80%8F%E6%98%8E%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;评估透明度</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/oXmwKPG7DLCF-sBTBlu87g" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/oXmwKPG7DLCF-sBTBlu87g</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在设计或评审科研智能体时，用D/S/E与L0–L3框架标注人机控制边界，并据此选择独立验证和跨代评测方案。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>科研自主性的关键不在于AI完成了多少步骤，而在于它是否掌握探索目标、可表达方案和成功标准这三类决定研究走向的控制权。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：研究流程自动化不等于研究决策自动化，需要明确AI在选方向、界定候选范围和判断成功标准上分别拥有多少控制权。</li>
+<li><strong>旧法为何失效</strong>：既有分类常以“是否自动生成代码或运行实验”衡量自主性，混淆了执行任务与制定研究决策；内部评价分数还可能因测试变容易而虚高。</li>
+<li><strong>方法</strong>：将AI研发拆为搜索方向D、搜索空间S和评价信号E三项决策，并用L0–L3标记控制来源；同时按学习、推理、数据和基础设施四个分支组织AI4AI工作。</li>
+<li><strong>局限与后续</strong>：AI生成的评价器需要隐藏测试、独立实验或延迟真实结果验证；递归自我改进还需通过多代实验、固定预算、未见任务迁移和选择性回滚建立跨代因果证据。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">自进化｜「让AI研究AI」最新综述：三项关键决策框架，重新审视研究自主性https://mp.weixin.qq.com/s/oXmwKPG7DLCF-sBTBlu87g</div>
+  </details></article>
+<article id="item-1" class="summary-card daily-item">
+  <h2 id="item-1-title" class="daily-item-title">RL训练：大模型能力漂移</h2><p class="single-subtitle daily-item-summary">探讨强化学习训练引发既有能力漂移的问题，为后训练中的能力保持提供分析视角。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：强化学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>语鲸</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E8%BF%81%E7%A7%BB/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;能力迁移</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://h5.lingowhale.com/s/vOU7Qwy" target="_blank" rel="noopener">https://h5.lingowhale.com/s/vOU7Qwy</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在大模型强化学习后训练中，将能力漂移作为评测维度，用于比较训练前后的能力变化。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>强化学习带来的能力变化并非只体现为目标指标提升，还需关注训练对既有能力结构的整体扰动。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：强化学习训练可能在增强目标能力的同时改变模型原有能力，需要识别并控制这种能力漂移。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">EvolveLRM｜《RL训练引发大模型能力漂移》
+https://h5.lingowhale.com/s/vOU7Qwy</div>
+  </details></article>
+<article id="deepseek-harness" class="summary-card daily-item">
+  <h2 id="deepseek-harness-title" class="daily-item-title">DeepSeek Harness：可演化插件工作台</h2><p class="single-subtitle daily-item-summary">DeepSeek 推出插件化智能体工作台，让用户通过对话把临时想法或 GitHub 项目快速变成可复用的个人工具。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：插件架构</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/personalevolve/">PersonalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%8F%92%E4%BB%B6%E6%9E%B6%E6%9E%84/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;插件架构</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%B7%A5%E5%85%B7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体工具</a><a href="/LLMDailyDigestWeb/topic/%E6%9C%AC%E5%9C%B0%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;本地智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/zFgb_EUXWimu-mjwvBeCqg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/zFgb_EUXWimu-mjwvBeCqg</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在个人知识管理和轻量应用开发中，可直接用 DSH 对话生成或改造插件，并将 GitHub 项目封装成可复用工具。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体的长期黏性不只来自完成单次任务，而来自把临时想法持续沉淀为可组合、可演化的个人工具资产。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：DeepSeek Harness 是可通过对话持续扩展的智能体工作台，运行成功的功能可沉淀为插件，并与知识库、阅读助手等已有插件联动。</li>
+<li><strong>关键能力</strong>：用户可从零生成插件、二次改造社区插件，或将 GitHub 项目封装成带界面的本地工具；其第三方插件已超过 3.5 万个，约 60% 的活跃用户制作或安装过第三方插件。</li>
+<li><strong>限制</strong>：低门槛开发容易造成插件膨胀和僵尸插件；社区插件质量参差不齐，串联调用还会增加排查成本、上下文长度与 Token 消耗。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">开发可用｜DeepSeek Harness成了第一个让我上瘾的Agent https://mp.weixin.qq.com/s/zFgb_EUXWimu-mjwvBeCqg</div>
+  </details></article>
+<article id="ai-ai" class="summary-card daily-item">
+  <h2 id="ai-ai-title" class="daily-item-title">递归自我改进：AI改进AI路线全景</h2><p class="single-subtitle daily-item-summary">UP主KRATOS_WEN_推出8讲课程，系统梳理AI改进AI的理论、技术路线、评测与安全问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>哔哩哔哩</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能安全治理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.bilibili.com/video/BV19dny6NEE3/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV19dny6NEE3/</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在学习或研究递归自我改进时，可按8讲路线建立技术分类框架，并据此梳理训练信号、评测方法与安全风险。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>AI能否持续自我改进，关键不只在生成新方案，更在于能否获得可靠、可验证且不会随迭代退化的改进信号。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：一套共8讲、每讲约40分钟的递归自我改进课程，讨论AI改进AI能否成立及如何实现。</li>
+<li><strong>关键能力</strong>：覆盖增长理论、搜索与自对弈、自生成数据、自训练、AI反馈、可验证奖励，以及程序和智能体改进，并分析改进信号、目标函数、实验消融、科研能力测量和安全问题。</li>
+<li><strong>限制</strong>：页面暂无课程总结，具体实验结论、引用文献与开放问题需逐讲观看确认。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">https://www.bilibili.com/video/BV19dny6NEE3/?-Arouter=story&amp;buvid=Y940AD9458AC58564283B3D47E095A73B68C&amp;from_spmid=tm.recommend.0.0&amp;is_story_h5=false&amp;mid=KZwNXUvbKV2Pd%2FtZb6lqcw%3D%3D&amp;plat_id=163&amp;share_from=ugc&amp;share_medium=iphone&amp;share_plat=ios&amp;share_session_id=EF3DE1E6-8731-463E-A778-B696437413A4&amp;share_source=weixin&amp;share_tag=s_i&amp;spmid=main.ugc-video-detail-vertical.0.0&amp;timestamp=1794701353&amp;unique_k=3GvEJUj&amp;up_id=525460380</div>
+  </details></article>
+</section>
+        <script>
+        (function(){
+          
+          function reveal(){
+            var h = location.hash.slice(1);
+            if(!h) return;
+            try{ h = decodeURIComponent(h); }catch(e){   }
+            var el = document.getElementById(h);
+            if(!el) return;
+            var p = el;
+            while(p){ if(p.tagName === 'DETAILS') p.open = true; p = p.parentElement; }
+            el.scrollIntoView({block:'start'});
+          }
+          window.addEventListener('hashchange', reveal);
+          if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal();
+          document.querySelectorAll('[data-daily-toggle]').forEach(function(b){
+            b.addEventListener('click', function(){
+              var open = b.getAttribute('data-daily-toggle') === 'open';
+              document.querySelectorAll('.daily-tiered details').forEach(function(d){ d.open = open; });
+            });
+          });
+        })();
+        </script></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
