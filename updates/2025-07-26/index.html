@@ -233,14 +233,16 @@
     ><blockquote>
 <p>当日精选（由提交工具自动创建）。</p></blockquote>
 </div><section class="daily-items"><article id="glm-4-5" class="summary-card daily-item">
-  <h2 id="glm-4-5-title" class="daily-item-title">GLM-4.5 逻辑能力评测：推理模式显著降低幻觉与计算误差</h2><p class="single-subtitle daily-item-summary">GLM-4.5 基础模式存在明显的幻觉、计算误差和暴力穷举倾向，而推理模式在准确性与稳定性方面有显著改善。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;逻辑推理</a></p><div class="daily-item-content"><p>GLM-4.5 基础模式会对输入和自身输出产生幻觉，包括引用不可访问的图片、用占位符代替统计结果，以及遗漏报告核心观点等。其数学计算容易在过程中累积小错误，导致最终答案看似合理但实际不正确；相比之下，推理模式在函数求交和年报数据汇总等任务中准确率明显更高。面对数独、解密和数字规律等复杂问题，基础模式约有半数概率采用暴力穷举，少数输出还可能陷入死循环。新版发生死循环的比例已降至 2% 以下，但推理模式在个别高难度任务中仍会出现穷举行为。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+  <h2 id="glm-4-5-title" class="daily-item-title">GLM-4.5 逻辑能力评测：推理模式显著降低幻觉与计算误差</h2><p class="single-subtitle daily-item-summary">GLM-4.5 基础模式存在明显的幻觉、计算误差和暴力穷举倾向，而推理模式在准确性与稳定性方面有显著改善。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;逻辑推理</a></p><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>评估 GLM-4.5 时应区分基础模式与推理模式，避免以单一运行结果概括整体能力。</li>
 <li>对数学计算、报告提炼等高可靠性任务，优先启用推理模式并增加结果校验。</li>
 <li>可将无效引用、占位符、暴力穷举和死循环纳入模型幻觉与稳定性评测指标。</li>
 <li>训练数据清洗和复杂任务的搜索策略约束，可能是后续优化重点。</li>
 </ul>
-</div><details class="daily-item-notes">
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>GLM-4.5 基础模式会对输入和自身输出产生幻觉，包括引用不可访问的图片、用占位符代替统计结果，以及遗漏报告核心观点等。其数学计算容易在过程中累积小错误，导致最终答案看似合理但实际不正确；相比之下，推理模式在函数求交和年报数据汇总等任务中准确率明显更高。面对数独、解密和数字规律等复杂问题，基础模式约有半数概率采用暴力穷举，少数输出还可能陷入死循环。新版发生死循环的比例已降至 2% 以下，但推理模式在个别高难度任务中仍会出现穷举行为。</p>
+</div>
+    </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">1. 逻辑能力
    1. 幻觉过重：基础模式的幻觉是全方面的，不但对prompt输入本身存在幻觉，其输出有时也存在“梦游”现象，输出一些自己也不知道是什么的内容。比如在输出中试图引用一张图片来解释原理，但图片Url无法访问。大概是训练材料混入的脏数据。#42报告提炼问题，基础模式放弃了计算统计数据，使用占位符，对报告中核心观点的摘要也提炼不完整。在仅有的1pass中虽然计算了统计值，但计算错误。不过好在推理模式中，幻觉控制要好的多，没有出现类似问题。相关问题表现达到推理模型平均水准。
@@ -250,13 +252,15 @@
 ## 2025-7-26</div>
   </details></article>
 <article id="3-0-35" class="summary-card daily-item">
-  <h2 id="3-0-35-title" class="daily-item-title">中国移动发布九天基础大模型3.0，性能提升35%</h2><p class="single-subtitle daily-item-summary">中国移动焕新发布九天基础大模型3.0，通过端到端技术升级实现性能提升，并进一步增强生成内容的可控性。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众号</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/3VkR9VBaSs6eMZEaWqfdYg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/3VkR9VBaSs6eMZEaWqfdYg</a></div></div><div class="daily-item-content"><p>2025年7月26日，在世界人工智能大会期间，中国移动发布九天基础大模型3.0。新版本聚焦端到端技术升级，整体性能据称提升35%。模型同时增强了生成可控性，并支持更便捷的图像编辑能力。九天3.0延续“高安全、高可控、全国产、全行业”的定位。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+  <h2 id="3-0-35-title" class="daily-item-title">中国移动发布九天基础大模型3.0，性能提升35%</h2><p class="single-subtitle daily-item-summary">中国移动焕新发布九天基础大模型3.0，通过端到端技术升级实现性能提升，并进一步增强生成内容的可控性。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众号</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/3VkR9VBaSs6eMZEaWqfdYg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/3VkR9VBaSs6eMZEaWqfdYg</a></div></div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>为运营商及行业客户提供自主可控的基础模型能力</li>
 <li>强化可控内容生成与图像编辑等多模态应用</li>
 <li>展示国产大模型在安全性、可控性和行业落地方面的升级方向</li>
 </ul>
-</div><details class="daily-item-notes">
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>2025年7月26日，在世界人工智能大会期间，中国移动发布九天基础大模型3.0。新版本聚焦端到端技术升级，整体性能据称提升35%。模型同时增强了生成可控性，并支持更便捷的图像编辑能力。九天3.0延续“高安全、高可控、全国产、全行业”的定位。</p>
+</div>
+    </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">2. [九天大模型大变身：性能狂飙35%！还能一键P大象](https://mp.weixin.qq.com/s/3VkR9VBaSs6eMZEaWqfdYg)
 

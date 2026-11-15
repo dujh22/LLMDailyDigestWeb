@@ -233,14 +233,16 @@
     ><blockquote>
 <p>当日精选（由提交工具自动创建）。</p></blockquote>
 </div><section class="daily-items"><article id="item-1" class="summary-card daily-item">
-  <h2 id="item-1-title" class="daily-item-title">多数投票驱动的推理模型迭代式自我训练</h2><p class="single-subtitle daily-item-summary">Nayoung Lee 等人探索利用模型生成更难问题、多数投票筛选答案并反复训练，从而在迷宫求解和乘法运算等推理任务上实现迭代式能力提升。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自进化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;逻辑推理</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/pdf/2502.01612" target="_blank" rel="noopener">https://arxiv.org/pdf/2502.01612</a></div></div><div class="daily-item-content"><p>研究提出一种循环式自我训练方案：由具备较强推理能力的基础模型生成更具挑战性的问题，再筛选出高质量答案作为新训练数据。答案筛选可以采用多数投票，也可以引入更多测试时计算。模型随后基于这些问题与优质解继续训练，并重复生成、筛选和训练过程。Nayoung Lee 等人在迷宫解谜、乘法运算等任务上研究了这一机制。</p>
-</div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
+  <h2 id="item-1-title" class="daily-item-title">多数投票驱动的推理模型迭代式自我训练</h2><p class="single-subtitle daily-item-summary">Nayoung Lee 等人探索利用模型生成更难问题、多数投票筛选答案并反复训练，从而在迷宫求解和乘法运算等推理任务上实现迭代式能力提升。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：自进化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;</p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;逻辑推理</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/pdf/2502.01612" target="_blank" rel="noopener">https://arxiv.org/pdf/2502.01612</a></div></div><div class="daily-item-purpose"><strong>用途与启示</strong><ul>
 <li>为缺少人工标注的逻辑推理任务提供可迭代的数据合成与训练路径</li>
 <li>表明多数投票和测试时计算可以充当自我训练过程中的答案质量控制机制</li>
 <li>可用于研究模型能否持续生成超出当前训练分布难度的问题并实现能力自举</li>
 <li>提醒实践中关注错误答案被反复训练后产生的累积与放大风险</li>
 </ul>
-</div><details class="daily-item-notes">
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><p>研究提出一种循环式自我训练方案：由具备较强推理能力的基础模型生成更具挑战性的问题，再筛选出高质量答案作为新训练数据。答案筛选可以采用多数投票，也可以引入更多测试时计算。模型随后基于这些问题与优质解继续训练，并重复生成、筛选和训练过程。Nayoung Lee 等人在迷宫解谜、乘法运算等任务上研究了这一机制。</p>
+</div>
+    </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">2. 一个可能的示例循环如下：
 
