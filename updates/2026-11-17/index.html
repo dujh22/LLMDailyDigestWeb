@@ -12,101 +12,106 @@
 
 今日概览
 
-系统自进化
+递归改进
 
-HarnessDev：让智能体从种子框架自行创建并迭代执行系统，再用跨模型和未见任务测试揭示反馈优化造成的过拟合。
-RiseHarness：对照成功与失败轨迹诊断执行流程，无需更新模型即可提高长程终端任务的重复成功率。
-HARNESS-ZERO：用审核智能体把专用执行规则改写成训练轨迹，移除脚手架后成功率仍从23.3%升至44.3%。
-Harness-of-Harness：以规划、开发、独立验收和版本证据闭环约束持续编码，三轮平均相对提升52.25%。
+Post-Training RSI：把数据、奖励、验证器、搜索策略都纳入递归优化，避免自提升退化为反复训练模型权重。
+Terminal-RSI：交替固化已验证行为与精炼策略，把零散修复汇聚成完整任务成功，宏平均成功率提升29.90个百分点。
 
 
-经验进化
+脚手架演化
 
-SkillMaster：把技能创建、修订和保留纳入策略，并按其对后续任务的实际帮助训练可持续进化的技能库。
-DeLoop：从重复调用后的自发恢复动作自动构造偏好数据，让长程智能体学会停止空转而无需人工标注。
-MEM-SQL：分层保存并按需组合已验证查询，使文本转SQL复用历史证据，执行准确率从37.1%升至50.0%。
-
-
-持续自治
-
-持续在线个人智能：用感知、记忆、行动闭环及分级审查，让个人助手跨请求保持状态并安全修改自身行为。
+HarnessDev：让智能体从种子框架自主创建并迭代执行系统，补上固定脚手架无法检验自进化与泛化的问题。
+HARNESS-ZERO：用审核智能体把专用脚手架的纠正蒸馏进模型，移除脚手架后成功率仍从23.3%升至44.3%。
+Harness-of-Harness：以规划、开发、独立测试和版本证据闭环维持多轮软件开发，三轮平均相对提升52.25%。
+RiseHarness：对照成功与失败轨迹持续修改执行流程，提升长程终端任务重复运行时的稳定性。
 
 
-模型与部署
+经验与记忆
 
-Qwen4-Max：以按需激活部分参数和压缩上下文降低长程编程、办公及多模态任务的实际调用成本。
-Mobile AI Factory：让智能体依据真机测量自动微调和量化端侧模型，配置搜索耗时降至穷举的1/19。
-
-
-具身与空间
-
-Agentic Robotics：用基础模型、具身执行层和双层评测统一开放世界机器人的闭环决策与安全验收。
-VibePrevisBench：以242项任务分别检查场景代码事实和最终画面可见性，定位四维场景编程的真实失败原因。
+SkillMaster：按技能对后续任务的实际贡献决定创建、修订和保留，让智能体自主维护可复用技能库。
+ReHarness：用新轨迹反向修订导致当前决策的旧反思，使智能体适应分布变化而不只追加记忆。
+DeLoop：从重复动作及其后续恢复动作自动生成偏好数据，无需人工标注即可训练智能体减少空转。
+MEM-SQL：分层保存并按需复用已验证查询，避免每次从头生成 SQL，执行准确率从37.1%升至50.0%。
 
 
-热点延伸：Gamer、DySENSE
+常驻智能
+
+持续在线个人智能：以感知、记忆、行动三模块持续闭环，解决个人助手跨请求失去状态且难以安全自我改进的问题。
+
+
+系统与模型
+
+Mobile AI Factory：让智能体依据目标手机实测自动搜索微调与量化配置，把 GPU 搜索时间降至穷举的1/19。
+Qwen4-Max：以稀疏专家计算和上下文压缩降低编程、办公及长程任务的模型调用成本。
+
+
+热点延伸：Gamer、DySENSE、MMFlash
 
 对当前研究的启发
 
 HarnessEvolve
 
-迁移｜从 HarnessDev 把“创建—迭代—未见任务测试”用于框架验收：跨模型复跑并报告迁移跌幅
-迁移｜从 RiseHarness 把成败双轨迹用于版本诊断：提取差异、生成修改并以重复成功率决定采纳
-
-
-AgentEvolve
-
-迁移｜从 SkillMaster 把反事实技能效用用于技能淘汰：屏蔽候选技能，按后续任务收益决定保留
-延续｜MEM-SQL 留下多条记忆组合准确率骤降：对比单条与多条复用的准确率、延迟和访问量
-
-
-AutonomousAgentEvolve
-
-迁移｜从 持续在线个人智能 把感知—记忆—行动闭环用于唤醒周期：逐轮记录事件、状态、动作和审查结果
-延续｜持续在线个人智能 留下长期记忆纠错与修改撤回问题：注入冲突记忆，测检出率和回滚成功率
+迁移｜从 HarnessDev 把创建、反馈迭代、跨模型迁移和未见任务测试用于脚手架验收：统一记录成功率、成本与排名变化
+延续｜RiseHarness 未覆盖始终失败轨迹：加入故障注入与中间检查点，对比双轨迹基线的恢复率、成本和方差
 
 
 AgentTrainEvolve
 
-迁移｜从 DeLoop 把“重复动作—恢复动作”用于DPO数据构造：比较循环率、成功率和交互步数
-延续｜HARNESS-ZERO 留下强审核模型依赖和2.4倍延迟：对比逐轮、批量与终局审核的成本和成功率
+迁移｜从 DeLoop 把“重复调用—恢复动作”用于偏好训练：从工具日志挖掘样本，以DPO评测循环率、成功率和调用成本
+延续｜Terminal-RSI 缺少等算力消融：固定轨迹数与Token预算，对比完整循环及各删减版的成功率和跨任务泛化
+
+
+AgentEvolve
+
+迁移｜从 SkillMaster 把反事实下游效用用于技能淘汰：屏蔽单项技能重跑相似任务，按成功率差更新保留权重
+延续｜MEM-SQL 的多历史组合复用明显退化：构造多表连接任务，对比分层与扁平检索的准确率、延迟和成本
+
+
+AutonomousAgentEvolve
+
+延续｜持续在线个人智能 缺少自改追踪与撤回：记录每次修改并设置回滚组，对比危险修改拦截率和故障恢复时间
+
+
+Awesome-RSI
+
+迁移｜从 Post-Training RSI 把数据、奖励、验证器和搜索策略设为共同进化对象：逐周期测量改进速率与退化率
 
 
 CodeEvolve
 
-迁移｜从 Harness-of-Harness 把独立验收和版本证据用于持续开发：每轮回归并阻断无证据改动
+迁移｜从 Harness-of-Harness 把独立验收和版本化证据用于编码闭环：每轮保存测试、缺陷与回归结果后再规划
 
 
 InfraEvolve
 
-迁移｜从 Mobile AI Factory 把真机测量用于配置搜索：联合优化准确率、峰值内存和端到端延迟
+迁移｜从 Mobile AI Factory 把真机测量接入配置搜索：按设备联合优化量化位宽、后端、时延、内存与能耗
 
 
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-17 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 系统自进化 HarnessDev：让智能体从种子框架自行创建并迭代执行系统，再用跨模型和未见任务测试揭示反馈优化造成的过拟合。 RiseHarness：对照成功与失败轨迹诊断执行流程，无需更新模型即可提高长程终端任务的重复成功率。 HARNESS-ZERO：用审核智能体把专用执行规则改写成训练轨迹，移除脚手架后成功率仍从23.3%升至44.3%。 Harness-of-Harness：以规划、开发、独立验收和版本证据闭环约束持续编码，三轮平均相对提升52.25%。 经验进化 SkillMaster：把技能创建、修订和保留纳入策略，并按其对后续任务的实际帮助训练可持续进化的技能库。 DeLoop：从重复调用后的自发恢复动作自动构造偏好数据，让长程智能体学会停止空转而无需人工标注。 MEM-SQL：分层保存并按需组合已验证查询，使文本转SQL复用历史证据，执行准确率从37.1%升至50.0%。 持续自治 持续在线个人智能：用感知、记忆、行动闭环及分级审查，让个人助手跨请求保持状态并安全修改自身行为。 模型与部署 Qwen4-Max：以按需激活部分参数和压缩上下文降低长程编程、办公及多模态任务的实际调用成本。 Mobile AI Factory：让智能体依据真机测量自动微调和量化端侧模型，配置搜索耗时降至穷举的1/19。 具身与空间 Agentic Robotics：用基础模型、具身执行层和双层评测统一开放世界机器人的闭环决策与安全验收。 VibePrevisBench：以242项任务分别检查场景代码事实和最终画面可见性，定位四维场景编程的真实失败原因。 热点延伸：Gamer、DySENSE 对当前研究的启发 HarnessEvolve 迁移｜从 HarnessDev 把“创建—迭代—未见任务测试”用于框架验收：跨模型复跑并报告迁移跌幅 迁移｜从 RiseHarness 把成败双轨迹用于版本诊断：提取差异、生成修改并以重复成功率决定采纳 AgentEvolve 迁移｜从 SkillMaster 把反事实技能效用用于技能淘汰：屏蔽候选技能，按后续任务收益决定保留 延续｜MEM-SQL 留下多条记忆组合准确率骤降：对比单条与多条复用的准确率、延迟和访问量 AutonomousAgentEvolve 迁移｜从 持续在线个人智能 把感知—记忆—行动闭环用于唤醒周期：逐轮记录事件、状态、动作和审查结果 延续｜持续在线个人智能 留下长期记忆纠错与修改撤回问题：注入冲突记忆，测检出率和回滚成功率 AgentTrainEvolve 迁移｜从 DeLoop 把“重复动作—恢复动作”用于DPO数据构造：比较循环率、成功率和交互步数 延续｜HARNESS-ZERO 留下强审核模型依赖和2.4倍延迟：对比逐轮、批量与终局审核的成本和成功率 CodeEvolve 迁移｜从 Harness-of-Harness 把独立验收和版本证据用于持续开发：每轮回归并阻断无证据改动 InfraEvolve 迁移｜从 Mobile AI Factory 把真机测量用于配置搜索：联合优化准确率、峰值内存和端到端延迟">
+今日概览 递归改进 Post-Training RSI：把数据、奖励、验证器、搜索策略都纳入递归优化，避免自提升退化为反复训练模型权重。 Terminal-RSI：交替固化已验证行为与精炼策略，把零散修复汇聚成完整任务成功，宏平均成功率提升29.90个百分点。 脚手架演化 HarnessDev：让智能体从种子框架自主创建并迭代执行系统，补上固定脚手架无法检验自进化与泛化的问题。 HARNESS-ZERO：用审核智能体把专用脚手架的纠正蒸馏进模型，移除脚手架后成功率仍从23.3%升至44.3%。 Harness-of-Harness：以规划、开发、独立测试和版本证据闭环维持多轮软件开发，三轮平均相对提升52.25%。 RiseHarness：对照成功与失败轨迹持续修改执行流程，提升长程终端任务重复运行时的稳定性。 经验与记忆 SkillMaster：按技能对后续任务的实际贡献决定创建、修订和保留，让智能体自主维护可复用技能库。 ReHarness：用新轨迹反向修订导致当前决策的旧反思，使智能体适应分布变化而不只追加记忆。 DeLoop：从重复动作及其后续恢复动作自动生成偏好数据，无需人工标注即可训练智能体减少空转。 MEM-SQL：分层保存并按需复用已验证查询，避免每次从头生成 SQL，执行准确率从37.1%升至50.0%。 常驻智能 持续在线个人智能：以感知、记忆、行动三模块持续闭环，解决个人助手跨请求失去状态且难以安全自我改进的问题。 系统与模型 Mobile AI Factory：让智能体依据目标手机实测自动搜索微调与量化配置，把 GPU 搜索时间降至穷举的1/19。 Qwen4-Max：以稀疏专家计算和上下文压缩降低编程、办公及长程任务的模型调用成本。 热点延伸：Gamer、DySENSE、MMFlash 对当前研究的启发 HarnessEvolve 迁移｜从 HarnessDev 把创建、反馈迭代、跨模型迁移和未见任务测试用于脚手架验收：统一记录成功率、成本与排名变化 延续｜RiseHarness 未覆盖始终失败轨迹：加入故障注入与中间检查点，对比双轨迹基线的恢复率、成本和方差 AgentTrainEvolve 迁移｜从 DeLoop 把“重复调用—恢复动作”用于偏好训练：从工具日志挖掘样本，以DPO评测循环率、成功率和调用成本 延续｜Terminal-RSI 缺少等算力消融：固定轨迹数与Token预算，对比完整循环及各删减版的成功率和跨任务泛化 AgentEvolve 迁移｜从 SkillMaster 把反事实下游效用用于技能淘汰：屏蔽单项技能重跑相似任务，按成功率差更新保留权重 延续｜MEM-SQL 的多历史组合复用明显退化：构造多表连接任务，对比分层与扁平检索的准确率、延迟和成本 AutonomousAgentEvolve 延续｜持续在线个人智能 缺少自改追踪与撤回：记录每次修改并设置回滚组，对比危险修改拦截率和故障恢复时间 Awesome-RSI 迁移｜从 Post-Training RSI 把数据、奖励、验证器和搜索策略设为共同进化对象：逐周期测量改进速率与退化率 CodeEvolve 迁移｜从 Harness-of-Harness 把独立验收和版本化证据用于编码闭环：每轮保存测试、缺陷与回归结果后再规划 InfraEvolve 迁移｜从 Mobile AI Factory 把真机测量接入配置搜索：按设备联合优化量化位宽、后端、时延、内存与能耗">
   <meta itemprop="datePublished" content="2026-11-17T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-17T14:08:37+08:00">
-  <meta itemprop="wordCount" content="1119">
+  <meta itemprop="dateModified" content="2026-11-17T14:09:14+08:00">
+  <meta itemprop="wordCount" content="1238">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-17/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-17 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 系统自进化 HarnessDev：让智能体从种子框架自行创建并迭代执行系统，再用跨模型和未见任务测试揭示反馈优化造成的过拟合。 RiseHarness：对照成功与失败轨迹诊断执行流程，无需更新模型即可提高长程终端任务的重复成功率。 HARNESS-ZERO：用审核智能体把专用执行规则改写成训练轨迹，移除脚手架后成功率仍从23.3%升至44.3%。 Harness-of-Harness：以规划、开发、独立验收和版本证据闭环约束持续编码，三轮平均相对提升52.25%。 经验进化 SkillMaster：把技能创建、修订和保留纳入策略，并按其对后续任务的实际帮助训练可持续进化的技能库。 DeLoop：从重复调用后的自发恢复动作自动构造偏好数据，让长程智能体学会停止空转而无需人工标注。 MEM-SQL：分层保存并按需组合已验证查询，使文本转SQL复用历史证据，执行准确率从37.1%升至50.0%。 持续自治 持续在线个人智能：用感知、记忆、行动闭环及分级审查，让个人助手跨请求保持状态并安全修改自身行为。 模型与部署 Qwen4-Max：以按需激活部分参数和压缩上下文降低长程编程、办公及多模态任务的实际调用成本。 Mobile AI Factory：让智能体依据真机测量自动微调和量化端侧模型，配置搜索耗时降至穷举的1/19。 具身与空间 Agentic Robotics：用基础模型、具身执行层和双层评测统一开放世界机器人的闭环决策与安全验收。 VibePrevisBench：以242项任务分别检查场景代码事实和最终画面可见性，定位四维场景编程的真实失败原因。 热点延伸：Gamer、DySENSE 对当前研究的启发 HarnessEvolve 迁移｜从 HarnessDev 把“创建—迭代—未见任务测试”用于框架验收：跨模型复跑并报告迁移跌幅 迁移｜从 RiseHarness 把成败双轨迹用于版本诊断：提取差异、生成修改并以重复成功率决定采纳 AgentEvolve 迁移｜从 SkillMaster 把反事实技能效用用于技能淘汰：屏蔽候选技能，按后续任务收益决定保留 延续｜MEM-SQL 留下多条记忆组合准确率骤降：对比单条与多条复用的准确率、延迟和访问量 AutonomousAgentEvolve 迁移｜从 持续在线个人智能 把感知—记忆—行动闭环用于唤醒周期：逐轮记录事件、状态、动作和审查结果 延续｜持续在线个人智能 留下长期记忆纠错与修改撤回问题：注入冲突记忆，测检出率和回滚成功率 AgentTrainEvolve 迁移｜从 DeLoop 把“重复动作—恢复动作”用于DPO数据构造：比较循环率、成功率和交互步数 延续｜HARNESS-ZERO 留下强审核模型依赖和2.4倍延迟：对比逐轮、批量与终局审核的成本和成功率 CodeEvolve 迁移｜从 Harness-of-Harness 把独立验收和版本证据用于持续开发：每轮回归并阻断无证据改动 InfraEvolve 迁移｜从 Mobile AI Factory 把真机测量用于配置搜索：联合优化准确率、峰值内存和端到端延迟">
+今日概览 递归改进 Post-Training RSI：把数据、奖励、验证器、搜索策略都纳入递归优化，避免自提升退化为反复训练模型权重。 Terminal-RSI：交替固化已验证行为与精炼策略，把零散修复汇聚成完整任务成功，宏平均成功率提升29.90个百分点。 脚手架演化 HarnessDev：让智能体从种子框架自主创建并迭代执行系统，补上固定脚手架无法检验自进化与泛化的问题。 HARNESS-ZERO：用审核智能体把专用脚手架的纠正蒸馏进模型，移除脚手架后成功率仍从23.3%升至44.3%。 Harness-of-Harness：以规划、开发、独立测试和版本证据闭环维持多轮软件开发，三轮平均相对提升52.25%。 RiseHarness：对照成功与失败轨迹持续修改执行流程，提升长程终端任务重复运行时的稳定性。 经验与记忆 SkillMaster：按技能对后续任务的实际贡献决定创建、修订和保留，让智能体自主维护可复用技能库。 ReHarness：用新轨迹反向修订导致当前决策的旧反思，使智能体适应分布变化而不只追加记忆。 DeLoop：从重复动作及其后续恢复动作自动生成偏好数据，无需人工标注即可训练智能体减少空转。 MEM-SQL：分层保存并按需复用已验证查询，避免每次从头生成 SQL，执行准确率从37.1%升至50.0%。 常驻智能 持续在线个人智能：以感知、记忆、行动三模块持续闭环，解决个人助手跨请求失去状态且难以安全自我改进的问题。 系统与模型 Mobile AI Factory：让智能体依据目标手机实测自动搜索微调与量化配置，把 GPU 搜索时间降至穷举的1/19。 Qwen4-Max：以稀疏专家计算和上下文压缩降低编程、办公及长程任务的模型调用成本。 热点延伸：Gamer、DySENSE、MMFlash 对当前研究的启发 HarnessEvolve 迁移｜从 HarnessDev 把创建、反馈迭代、跨模型迁移和未见任务测试用于脚手架验收：统一记录成功率、成本与排名变化 延续｜RiseHarness 未覆盖始终失败轨迹：加入故障注入与中间检查点，对比双轨迹基线的恢复率、成本和方差 AgentTrainEvolve 迁移｜从 DeLoop 把“重复调用—恢复动作”用于偏好训练：从工具日志挖掘样本，以DPO评测循环率、成功率和调用成本 延续｜Terminal-RSI 缺少等算力消融：固定轨迹数与Token预算，对比完整循环及各删减版的成功率和跨任务泛化 AgentEvolve 迁移｜从 SkillMaster 把反事实下游效用用于技能淘汰：屏蔽单项技能重跑相似任务，按成功率差更新保留权重 延续｜MEM-SQL 的多历史组合复用明显退化：构造多表连接任务，对比分层与扁平检索的准确率、延迟和成本 AutonomousAgentEvolve 延续｜持续在线个人智能 缺少自改追踪与撤回：记录每次修改并设置回滚组，对比危险修改拦截率和故障恢复时间 Awesome-RSI 迁移｜从 Post-Training RSI 把数据、奖励、验证器和搜索策略设为共同进化对象：逐周期测量改进速率与退化率 CodeEvolve 迁移｜从 Harness-of-Harness 把独立验收和版本化证据用于编码闭环：每轮保存测试、缺陷与回归结果后再规划 InfraEvolve 迁移｜从 Mobile AI Factory 把真机测量接入配置搜索：按设备联合优化量化位宽、后端、时延、内存与能耗">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-17T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-17T14:08:37+08:00">
+    <meta property="article:modified_time" content="2026-11-17T14:09:14+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-17 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 系统自进化 HarnessDev：让智能体从种子框架自行创建并迭代执行系统，再用跨模型和未见任务测试揭示反馈优化造成的过拟合。 RiseHarness：对照成功与失败轨迹诊断执行流程，无需更新模型即可提高长程终端任务的重复成功率。 HARNESS-ZERO：用审核智能体把专用执行规则改写成训练轨迹，移除脚手架后成功率仍从23.3%升至44.3%。 Harness-of-Harness：以规划、开发、独立验收和版本证据闭环约束持续编码，三轮平均相对提升52.25%。 经验进化 SkillMaster：把技能创建、修订和保留纳入策略，并按其对后续任务的实际帮助训练可持续进化的技能库。 DeLoop：从重复调用后的自发恢复动作自动构造偏好数据，让长程智能体学会停止空转而无需人工标注。 MEM-SQL：分层保存并按需组合已验证查询，使文本转SQL复用历史证据，执行准确率从37.1%升至50.0%。 持续自治 持续在线个人智能：用感知、记忆、行动闭环及分级审查，让个人助手跨请求保持状态并安全修改自身行为。 模型与部署 Qwen4-Max：以按需激活部分参数和压缩上下文降低长程编程、办公及多模态任务的实际调用成本。 Mobile AI Factory：让智能体依据真机测量自动微调和量化端侧模型，配置搜索耗时降至穷举的1/19。 具身与空间 Agentic Robotics：用基础模型、具身执行层和双层评测统一开放世界机器人的闭环决策与安全验收。 VibePrevisBench：以242项任务分别检查场景代码事实和最终画面可见性，定位四维场景编程的真实失败原因。 热点延伸：Gamer、DySENSE 对当前研究的启发 HarnessEvolve 迁移｜从 HarnessDev 把“创建—迭代—未见任务测试”用于框架验收：跨模型复跑并报告迁移跌幅 迁移｜从 RiseHarness 把成败双轨迹用于版本诊断：提取差异、生成修改并以重复成功率决定采纳 AgentEvolve 迁移｜从 SkillMaster 把反事实技能效用用于技能淘汰：屏蔽候选技能，按后续任务收益决定保留 延续｜MEM-SQL 留下多条记忆组合准确率骤降：对比单条与多条复用的准确率、延迟和访问量 AutonomousAgentEvolve 迁移｜从 持续在线个人智能 把感知—记忆—行动闭环用于唤醒周期：逐轮记录事件、状态、动作和审查结果 延续｜持续在线个人智能 留下长期记忆纠错与修改撤回问题：注入冲突记忆，测检出率和回滚成功率 AgentTrainEvolve 迁移｜从 DeLoop 把“重复动作—恢复动作”用于DPO数据构造：比较循环率、成功率和交互步数 延续｜HARNESS-ZERO 留下强审核模型依赖和2.4倍延迟：对比逐轮、批量与终局审核的成本和成功率 CodeEvolve 迁移｜从 Harness-of-Harness 把独立验收和版本证据用于持续开发：每轮回归并阻断无证据改动 InfraEvolve 迁移｜从 Mobile AI Factory 把真机测量用于配置搜索：联合优化准确率、峰值内存和端到端延迟">
+今日概览 递归改进 Post-Training RSI：把数据、奖励、验证器、搜索策略都纳入递归优化，避免自提升退化为反复训练模型权重。 Terminal-RSI：交替固化已验证行为与精炼策略，把零散修复汇聚成完整任务成功，宏平均成功率提升29.90个百分点。 脚手架演化 HarnessDev：让智能体从种子框架自主创建并迭代执行系统，补上固定脚手架无法检验自进化与泛化的问题。 HARNESS-ZERO：用审核智能体把专用脚手架的纠正蒸馏进模型，移除脚手架后成功率仍从23.3%升至44.3%。 Harness-of-Harness：以规划、开发、独立测试和版本证据闭环维持多轮软件开发，三轮平均相对提升52.25%。 RiseHarness：对照成功与失败轨迹持续修改执行流程，提升长程终端任务重复运行时的稳定性。 经验与记忆 SkillMaster：按技能对后续任务的实际贡献决定创建、修订和保留，让智能体自主维护可复用技能库。 ReHarness：用新轨迹反向修订导致当前决策的旧反思，使智能体适应分布变化而不只追加记忆。 DeLoop：从重复动作及其后续恢复动作自动生成偏好数据，无需人工标注即可训练智能体减少空转。 MEM-SQL：分层保存并按需复用已验证查询，避免每次从头生成 SQL，执行准确率从37.1%升至50.0%。 常驻智能 持续在线个人智能：以感知、记忆、行动三模块持续闭环，解决个人助手跨请求失去状态且难以安全自我改进的问题。 系统与模型 Mobile AI Factory：让智能体依据目标手机实测自动搜索微调与量化配置，把 GPU 搜索时间降至穷举的1/19。 Qwen4-Max：以稀疏专家计算和上下文压缩降低编程、办公及长程任务的模型调用成本。 热点延伸：Gamer、DySENSE、MMFlash 对当前研究的启发 HarnessEvolve 迁移｜从 HarnessDev 把创建、反馈迭代、跨模型迁移和未见任务测试用于脚手架验收：统一记录成功率、成本与排名变化 延续｜RiseHarness 未覆盖始终失败轨迹：加入故障注入与中间检查点，对比双轨迹基线的恢复率、成本和方差 AgentTrainEvolve 迁移｜从 DeLoop 把“重复调用—恢复动作”用于偏好训练：从工具日志挖掘样本，以DPO评测循环率、成功率和调用成本 延续｜Terminal-RSI 缺少等算力消融：固定轨迹数与Token预算，对比完整循环及各删减版的成功率和跨任务泛化 AgentEvolve 迁移｜从 SkillMaster 把反事实下游效用用于技能淘汰：屏蔽单项技能重跑相似任务，按成功率差更新保留权重 延续｜MEM-SQL 的多历史组合复用明显退化：构造多表连接任务，对比分层与扁平检索的准确率、延迟和成本 AutonomousAgentEvolve 延续｜持续在线个人智能 缺少自改追踪与撤回：记录每次修改并设置回滚组，对比危险修改拦截率和故障恢复时间 Awesome-RSI 迁移｜从 Post-Training RSI 把数据、奖励、验证器和搜索策略设为共同进化对象：逐周期测量改进速率与退化率 CodeEvolve 迁移｜从 Harness-of-Harness 把独立验收和版本化证据用于编码闭环：每轮保存测试、缺陷与回归结果后再规划 InfraEvolve 迁移｜从 Mobile AI Factory 把真机测量接入配置搜索：按设备联合优化量化位宽、后端、时延、内存与能耗">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-17/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-16/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -119,8 +124,8 @@ InfraEvolve
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-17\/"
-    },"genre": "updates","wordcount":  1119 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-17\/","datePublished": "2026-11-17T00:00:00+08:00","dateModified": "2026-11-17T14:08:37+08:00","publisher": {
+    },"genre": "updates","wordcount":  1238 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-17\/","datePublished": "2026-11-17T00:00:00+08:00","dateModified": "2026-11-17T14:09:14+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -303,7 +308,7 @@ InfraEvolve
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-17 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-17">2026-11-17</time></span>&nbsp;<span title="更新于 2026-11-17 14:08:37"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-17">2026-11-17</time></span>&nbsp;<span title="1119 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-17 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-17">2026-11-17</time></span>&nbsp;<span title="更新于 2026-11-17 14:09:14"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-17">2026-11-17</time></span>&nbsp;<span title="1238 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -323,84 +328,119 @@ InfraEvolve
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>系统自进化</strong>
+<li><strong>递归改进</strong>
 <ul>
-<li><a href="#harnessdev">HarnessDev</a>：让智能体从种子框架自行创建并迭代执行系统，再用跨模型和未见任务测试揭示反馈优化造成的过拟合。</li>
-<li><a href="#riseharness">RiseHarness</a>：对照成功与失败轨迹诊断执行流程，无需更新模型即可提高长程终端任务的重复成功率。</li>
-<li><a href="#harness-zero">HARNESS-ZERO</a>：用审核智能体把专用执行规则改写成训练轨迹，移除脚手架后成功率仍从23.3%升至44.3%。</li>
-<li><a href="#harness-of-harness">Harness-of-Harness</a>：以规划、开发、独立验收和版本证据闭环约束持续编码，三轮平均相对提升52.25%。</li>
+<li><a href="#post-training-rsi">Post-Training RSI</a>：把数据、奖励、验证器、搜索策略都纳入递归优化，避免自提升退化为反复训练模型权重。</li>
+<li><a href="#terminal-rsi">Terminal-RSI</a>：交替固化已验证行为与精炼策略，把零散修复汇聚成完整任务成功，宏平均成功率提升29.90个百分点。</li>
 </ul>
 </li>
-<li><strong>经验进化</strong>
+<li><strong>脚手架演化</strong>
 <ul>
-<li><a href="#skillmaster">SkillMaster</a>：把技能创建、修订和保留纳入策略，并按其对后续任务的实际帮助训练可持续进化的技能库。</li>
-<li><a href="#deloop">DeLoop</a>：从重复调用后的自发恢复动作自动构造偏好数据，让长程智能体学会停止空转而无需人工标注。</li>
-<li><a href="#mem-sql">MEM-SQL</a>：分层保存并按需组合已验证查询，使文本转SQL复用历史证据，执行准确率从37.1%升至50.0%。</li>
+<li><a href="#harnessdev">HarnessDev</a>：让智能体从种子框架自主创建并迭代执行系统，补上固定脚手架无法检验自进化与泛化的问题。</li>
+<li><a href="#harness-zero">HARNESS-ZERO</a>：用审核智能体把专用脚手架的纠正蒸馏进模型，移除脚手架后成功率仍从23.3%升至44.3%。</li>
+<li><a href="#harness-of-harness">Harness-of-Harness</a>：以规划、开发、独立测试和版本证据闭环维持多轮软件开发，三轮平均相对提升52.25%。</li>
+<li><a href="#riseharness">RiseHarness</a>：对照成功与失败轨迹持续修改执行流程，提升长程终端任务重复运行时的稳定性。</li>
 </ul>
 </li>
-<li><strong>持续自治</strong>
+<li><strong>经验与记忆</strong>
 <ul>
-<li><a href="#item-1">持续在线个人智能</a>：用感知、记忆、行动闭环及分级审查，让个人助手跨请求保持状态并安全修改自身行为。</li>
+<li><a href="#skillmaster">SkillMaster</a>：按技能对后续任务的实际贡献决定创建、修订和保留，让智能体自主维护可复用技能库。</li>
+<li><a href="#reharness">ReHarness</a>：用新轨迹反向修订导致当前决策的旧反思，使智能体适应分布变化而不只追加记忆。</li>
+<li><a href="#deloop">DeLoop</a>：从重复动作及其后续恢复动作自动生成偏好数据，无需人工标注即可训练智能体减少空转。</li>
+<li><a href="#mem-sql">MEM-SQL</a>：分层保存并按需复用已验证查询，避免每次从头生成 SQL，执行准确率从37.1%升至50.0%。</li>
 </ul>
 </li>
-<li><strong>模型与部署</strong>
+<li><strong>常驻智能</strong>
 <ul>
-<li><a href="#qwen4-max">Qwen4-Max</a>：以按需激活部分参数和压缩上下文降低长程编程、办公及多模态任务的实际调用成本。</li>
-<li><a href="#mobile-ai-factory">Mobile AI Factory</a>：让智能体依据真机测量自动微调和量化端侧模型，配置搜索耗时降至穷举的1/19。</li>
+<li><a href="#item-1">持续在线个人智能</a>：以感知、记忆、行动三模块持续闭环，解决个人助手跨请求失去状态且难以安全自我改进的问题。</li>
 </ul>
 </li>
-<li><strong>具身与空间</strong>
+<li><strong>系统与模型</strong>
 <ul>
-<li><a href="#agentic-robotics">Agentic Robotics</a>：用基础模型、具身执行层和双层评测统一开放世界机器人的闭环决策与安全验收。</li>
-<li><a href="#vibeprevisbench">VibePrevisBench</a>：以242项任务分别检查场景代码事实和最终画面可见性，定位四维场景编程的真实失败原因。</li>
+<li><a href="#mobile-ai-factory">Mobile AI Factory</a>：让智能体依据目标手机实测自动搜索微调与量化配置，把 GPU 搜索时间降至穷举的1/19。</li>
+<li><a href="#qwen4-max">Qwen4-Max</a>：以稀疏专家计算和上下文压缩降低编程、办公及长程任务的模型调用成本。</li>
 </ul>
 </li>
-<li><strong>热点延伸</strong>：<a href="#gamer">Gamer</a>、<a href="#dysense">DySENSE</a></li>
+<li><strong>热点延伸</strong>：<a href="#gamer">Gamer</a>、<a href="#dysense">DySENSE</a>、<a href="#mmflash">MMFlash</a></li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
 <li><strong>HarnessEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#harnessdev">HarnessDev</a> 把“创建—迭代—未见任务测试”用于框架验收：跨模型复跑并报告迁移跌幅</li>
-<li>迁移｜从 <a href="#riseharness">RiseHarness</a> 把成败双轨迹用于版本诊断：提取差异、生成修改并以重复成功率决定采纳</li>
-</ul>
-</li>
-<li><strong>AgentEvolve</strong>
-<ul>
-<li>迁移｜从 <a href="#skillmaster">SkillMaster</a> 把反事实技能效用用于技能淘汰：屏蔽候选技能，按后续任务收益决定保留</li>
-<li>延续｜<a href="#mem-sql">MEM-SQL</a> 留下多条记忆组合准确率骤降：对比单条与多条复用的准确率、延迟和访问量</li>
-</ul>
-</li>
-<li><strong>AutonomousAgentEvolve</strong>
-<ul>
-<li>迁移｜从 <a href="#item-1">持续在线个人智能</a> 把感知—记忆—行动闭环用于唤醒周期：逐轮记录事件、状态、动作和审查结果</li>
-<li>延续｜<a href="#item-1">持续在线个人智能</a> 留下长期记忆纠错与修改撤回问题：注入冲突记忆，测检出率和回滚成功率</li>
+<li>迁移｜从 <a href="#harnessdev">HarnessDev</a> 把创建、反馈迭代、跨模型迁移和未见任务测试用于脚手架验收：统一记录成功率、成本与排名变化</li>
+<li>延续｜<a href="#riseharness">RiseHarness</a> 未覆盖始终失败轨迹：加入故障注入与中间检查点，对比双轨迹基线的恢复率、成本和方差</li>
 </ul>
 </li>
 <li><strong>AgentTrainEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#deloop">DeLoop</a> 把“重复动作—恢复动作”用于DPO数据构造：比较循环率、成功率和交互步数</li>
-<li>延续｜<a href="#harness-zero">HARNESS-ZERO</a> 留下强审核模型依赖和2.4倍延迟：对比逐轮、批量与终局审核的成本和成功率</li>
+<li>迁移｜从 <a href="#deloop">DeLoop</a> 把“重复调用—恢复动作”用于偏好训练：从工具日志挖掘样本，以DPO评测循环率、成功率和调用成本</li>
+<li>延续｜<a href="#terminal-rsi">Terminal-RSI</a> 缺少等算力消融：固定轨迹数与Token预算，对比完整循环及各删减版的成功率和跨任务泛化</li>
+</ul>
+</li>
+<li><strong>AgentEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#skillmaster">SkillMaster</a> 把反事实下游效用用于技能淘汰：屏蔽单项技能重跑相似任务，按成功率差更新保留权重</li>
+<li>延续｜<a href="#mem-sql">MEM-SQL</a> 的多历史组合复用明显退化：构造多表连接任务，对比分层与扁平检索的准确率、延迟和成本</li>
+</ul>
+</li>
+<li><strong>AutonomousAgentEvolve</strong>
+<ul>
+<li>延续｜<a href="#item-1">持续在线个人智能</a> 缺少自改追踪与撤回：记录每次修改并设置回滚组，对比危险修改拦截率和故障恢复时间</li>
+</ul>
+</li>
+<li><strong>Awesome-RSI</strong>
+<ul>
+<li>迁移｜从 <a href="#post-training-rsi">Post-Training RSI</a> 把数据、奖励、验证器和搜索策略设为共同进化对象：逐周期测量改进速率与退化率</li>
 </ul>
 </li>
 <li><strong>CodeEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#harness-of-harness">Harness-of-Harness</a> 把独立验收和版本证据用于持续开发：每轮回归并阻断无证据改动</li>
+<li>迁移｜从 <a href="#harness-of-harness">Harness-of-Harness</a> 把独立验收和版本化证据用于编码闭环：每轮保存测试、缺陷与回归结果后再规划</li>
 </ul>
 </li>
 <li><strong>InfraEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#mobile-ai-factory">Mobile AI Factory</a> 把真机测量用于配置搜索：联合优化准确率、峰值内存和端到端延迟</li>
+<li>迁移｜从 <a href="#mobile-ai-factory">Mobile AI Factory</a> 把真机测量接入配置搜索：按设备联合优化量化位宽、后端、时延、内存与能耗</li>
 </ul>
 </li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 22 条</span><a href="#daily-featured">⭐ 重点 12</a><a href="#daily-related">🔬 相关 7</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 22 条</span><a href="#daily-featured">⭐ 重点 13</a><a href="#daily-related">🔬 相关 6</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">12 条</span></h2>
-          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="harnessdev" class="summary-card daily-item">
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">13 条</span></h2>
+          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="post-training-rsi" class="summary-card daily-item">
+  <h2 id="post-training-rsi-title" class="daily-item-title">Post-Training RSI：后训练全栈递归</h2><p class="single-subtitle daily-item-summary">将数据、奖励、验证器、搜索与研究动作空间一并递归优化，避免自提升停留在重复训练权重。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众号</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/fGMhtusD1HfJZOJkCGIPNQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/fGMhtusD1HfJZOJkCGIPNQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在自动化后训练或科研智能体中，借鉴其递归对象分类与改进速率判据，设计同时优化数据、奖励、验证器和搜索策略的闭环实验系统。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>递归自提升的核心不是反复更新权重，而是让目标决定哪些系统层可被改写，并用跨周期证据证明“提出改进的机制”自身也在进步。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：以大语言模型后训练为思想实验，提出目标相对的递归自提升框架；递归对象不只包括参数权重，还涵盖数据分布、目标函数、奖励、验证器、搜索、记忆、评估、安全与研究动作空间。</li>
+<li><strong>关键能力</strong>：按递归对象统一解释 SFT、RLHF、DPO、GRPO、RLVR、在策略蒸馏和测试时训练，并以“惊讶”的采集、加权与内化刻画不同训练范式；真正的自提升要求负责提出下一轮改动的系统本身持续增强。</li>
+<li><strong>限制</strong>：文章主要是研究范式与实验协议构想，未提供完整实现或统一量化验证；开放式动作空间还面临奖励作弊、验证器覆盖不足、分布漂移和安全授权等问题。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/fGMhtusD1HfJZOJkCGIPNQ</div>
+  </details></article>
+<article id="terminal-rsi" class="summary-card daily-item">
+  <h2 id="terminal-rsi-title" class="daily-item-title">Terminal-RSI：递归改写与策略精炼</h2><p class="single-subtitle daily-item-summary">交替保留已验证行为并精炼策略，解决终端智能体局部修复难以汇聚为完整成功的问题，宏平均成功率提升29.90个百分点。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Tau Lab</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.22192" target="_blank" rel="noopener">https://arxiv.org/abs/2610.22192</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/LI2edgZxywDY3qA8yGbYvw?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/LI2edgZxywDY3qA8yGbYvw?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在终端操作或仓库修复智能体训练中，借鉴RSR-RPR交替循环、critic继承校准和TB-GAE，将已验证的局部修复逐轮转化为完整任务成功。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>递归改进能否持续，关键不在重复训练次数，而在于只跨阶段传递经验证的行为与已校准的价值判断，使局部进展始终受最终成功约束。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：终端智能体常能修复依赖或通过局部检查，却无法达到受保护验证器要求的完整终态；长日志还会干扰跨交互回合的信用分配。</li>
+<li><strong>旧法为何失效</strong>：标准GAE会让观察文本长度影响优势衰减，统一的局部奖励又可能使失败轨迹获得过高回报；策略反复改写后，旧critic也难以适应新策略与奖励分布。</li>
+<li><strong>方法</strong>：Terminal-RSI交替执行递归自我改写RSR与递归策略精炼RPR，只保留通过验证和泄漏检查的轨迹，并继承critic，经预热校准后联合优化。TB-GAE按交互回合而非日志token分配信用，FDR与SPR则按任务家族校准局部进度并优先奖励严格成功。</li>
+<li><strong>实验</strong>：在Terminal-Bench 2.1、3.0、4.0、Hard、LHTB和SWR100上评测，27B模型的四套Terminal-Bench宏平均成功率达到50.58%，较Base提升29.90个百分点；LHTB严格完成数由0/46升至5/46。对4,352条轨迹重评分后，失败轨迹的奖励占比由50.09%降至28.72%。</li>
+<li><strong>局限与后续</strong>：五阶段同时改变数据、奖励、学习率和初始化，缺少计算量匹配的组件消融；目前主要验证单一27B基座，评测重复次数有限，验证器也无法保证未编码的架构要求得到满足。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/LI2edgZxywDY3qA8yGbYvw?scene=1</div>
+  </details></article>
+<article id="harnessdev" class="summary-card daily-item">
   <h2 id="harnessdev-title" class="daily-item-title">HarnessDev：自主执行框架演化</h2><p class="single-subtitle daily-item-summary">用从种子框架自主创建并迭代的基准，解决执行框架长期被固定评测的问题，并揭示反馈优化易过拟合。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2609.01437" target="_blank" rel="noopener">https://arxiv.org/abs/2609.01437</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/whH7PVjIxsRateDXjCamnA?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/whH7PVjIxsRateDXjCamnA?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在智能体执行框架研发中，可借鉴其Creation/Evolution协议，将框架创建、反馈迭代、跨模型迁移和未见任务测试纳入验收流程。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>执行框架本身是智能体能力的一部分，而只针对当前模型和反馈集优化会形成脆弱的模型—框架耦合，无法等同于可泛化的自我进化。</p>
 </div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
@@ -431,22 +471,6 @@ InfraEvolve
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">HarnessEvolve｜NeurIPS 2026｜不再依赖外挂：清华把「自我进化技能」训进Agent大脑https://mp.weixin.qq.com/s/l7MxH1DPsVtqz4OZSF8lxg</div>
-  </details></article>
-<article id="item-1" class="summary-card daily-item">
-  <h2 id="item-1-title" class="daily-item-title">持续在线个人智能：三模块持续闭环</h2><p class="single-subtitle daily-item-summary">用感知、记忆、行动持续协同的闭环，定义无需用户反复唤醒且能安全自我改进的个人助手。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/personalevolve/">PersonalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/autonomousagentevolve/">AutonomousAgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%B8%B8%E9%A9%BB%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;常驻智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E6%8C%81%E4%B9%85%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态持久化</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/YHbLlX368ac6qccGvIJNxw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/YHbLlX368ac6qccGvIJNxw</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在个人助理、可穿戴设备或具身智能系统设计中，借鉴三模块六通道框架与L0-L5分级审查持续运行、状态保留和安全自演化能力。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>持续在线不是后台驻留或单项记忆能力，而是跨请求维持感知、记忆与行动协同，并由用户边界约束机制演化的系统属性。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：个人助手即使能后台运行，也常在对话结束后丢失承诺、错过变化或停止自主决策，尚缺乏对“持续在线”的统一定义与发展路线。</li>
-<li><strong>旧法为何失效</strong>：单独增加长期记忆、主动搭话或定时任务，只能实现状态保留或机械触发；感知遗漏、错误记忆反复调用和行动结果延迟，还会造成“记忆陷阱”与重复执行。</li>
-<li><strong>方法</strong>：综述632篇文献及119个系统和产品，将持续在线定义为“运行连续性+状态持久性”组成的持续闭环，并以感知、记忆、行动三个模块及六条有向通道刻画系统；进一步提出L0至L5分级、受用户边界约束的自演化证据链，以及诊断工具HALO。</li>
-<li><strong>实验</strong>：对119个系统定级后，52个尚未达到持续在线，67个达到可自主决定行动或等待的L3及以上；仅5项研究达到受用户边界约束的L5，尚无公开产品达到该级别。</li>
-<li><strong>局限与后续</strong>：产品等级仅依据公开资料，代表可验证能力的下限；未来需补足感知遗漏、长期记忆正确性、延迟结果评估及自我修改可追溯、可检查、可撤回等能力。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">PersonalEvolve｜个人智能体咋总掉线？9顶校发布126页「持续在线智能体」路线图https://mp.weixin.qq.com/s/YHbLlX368ac6qccGvIJNxw</div>
   </details></article>
 <article id="harness-zero" class="summary-card daily-item">
   <h2 id="harness-zero-title" class="daily-item-title">HARNESS-ZERO：智能体驱动的脚手架蒸馏</h2><p class="single-subtitle daily-item-summary">用审核智能体把专用脚手架的纠正转成可执行轨迹，移除脚手架后成功率仍由23.3%升至44.3%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Tau Lab</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/37PsXqObNN0ZAzLCrwxK7Q?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/37PsXqObNN0ZAzLCrwxK7Q?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在需要统一部署脚手架的工具型智能体中，可借鉴执行前审核与轨迹微调机制，把专用流程能力压入模型权重后仅保留简化运行环境。</p>
@@ -480,6 +504,38 @@ InfraEvolve
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/RkldRsJGOs0tZc40gv0hVA?scene=1</div>
   </details></article>
+<article id="reharness" class="summary-card daily-item">
+  <h2 id="reharness-title" class="daily-item-title">ReHarness：反向修订式持续学习</h2><p class="single-subtitle daily-item-summary">用交互轨迹反向修订已存反思，让智能体在分布变化中持续更新经验并兼顾稳定性与可塑性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：持续学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>哔哩哔哩</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%BA%BF%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;在线学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.bilibili.com/video/BV1X2xD6PERt/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1X2xD6PERt/</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在需要长期在线运行的智能体系统中，借鉴其轨迹驱动的反向修订机制更新经验记忆，以适应持续分布偏移。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>持续学习不应只把反馈写入未来状态，还应反向校正产生当前决策的历史经验，从而同时维持知识稳定性与更新能力。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：长序列交互中的智能体需要在线适应分布偏移，同时避免旧经验过度泛化或迅速失效。</li>
+<li><strong>旧法为何失效</strong>：现有调度框架多依赖前向信息流更新状态，或需要额外的回放与验证数据，难以满足严格的在线流式学习设定。</li>
+<li><strong>方法</strong>：ReHarness在前向读写之外加入反向修订；每处理一个样本，便利用其交互轨迹修订对应的检索反思，将反馈沿文本调度状态反向传播。</li>
+<li><strong>实验</strong>：在3组持续学习基准和3种基座语言模型上，持续优于原始上下文、记忆与反思方法及提示优化方案；修订内容具有依据且语义合理。</li>
+<li><strong>局限与后续</strong>：讲座摘要未提供具体指标、计算开销及更长期交互下的效果。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">【[麻省理工&amp;Meta]智能体持续学习的循环Harness】 https://www.bilibili.com/video/BV1X2xD6PERt/?share_source=copy_web</div>
+  </details></article>
+<article id="item-1" class="summary-card daily-item">
+  <h2 id="item-1-title" class="daily-item-title">持续在线个人智能：三模块持续闭环</h2><p class="single-subtitle daily-item-summary">用感知、记忆、行动持续协同的闭环，定义无需用户反复唤醒且能安全自我改进的个人助手。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/personalevolve/">PersonalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/autonomousagentevolve/">AutonomousAgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%B8%B8%E9%A9%BB%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;常驻智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E6%8C%81%E4%B9%85%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态持久化</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/YHbLlX368ac6qccGvIJNxw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/YHbLlX368ac6qccGvIJNxw</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在个人助理、可穿戴设备或具身智能系统设计中，借鉴三模块六通道框架与L0-L5分级审查持续运行、状态保留和安全自演化能力。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>持续在线不是后台驻留或单项记忆能力，而是跨请求维持感知、记忆与行动协同，并由用户边界约束机制演化的系统属性。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：个人助手即使能后台运行，也常在对话结束后丢失承诺、错过变化或停止自主决策，尚缺乏对“持续在线”的统一定义与发展路线。</li>
+<li><strong>旧法为何失效</strong>：单独增加长期记忆、主动搭话或定时任务，只能实现状态保留或机械触发；感知遗漏、错误记忆反复调用和行动结果延迟，还会造成“记忆陷阱”与重复执行。</li>
+<li><strong>方法</strong>：综述632篇文献及119个系统和产品，将持续在线定义为“运行连续性+状态持久性”组成的持续闭环，并以感知、记忆、行动三个模块及六条有向通道刻画系统；进一步提出L0至L5分级、受用户边界约束的自演化证据链，以及诊断工具HALO。</li>
+<li><strong>实验</strong>：对119个系统定级后，52个尚未达到持续在线，67个达到可自主决定行动或等待的L3及以上；仅5项研究达到受用户边界约束的L5，尚无公开产品达到该级别。</li>
+<li><strong>局限与后续</strong>：产品等级仅依据公开资料，代表可验证能力的下限；未来需补足感知遗漏、长期记忆正确性、延迟结果评估及自我修改可追溯、可检查、可撤回等能力。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">PersonalEvolve｜个人智能体咋总掉线？9顶校发布126页「持续在线智能体」路线图https://mp.weixin.qq.com/s/YHbLlX368ac6qccGvIJNxw</div>
+  </details></article>
 <article id="riseharness" class="summary-card daily-item">
   <h2 id="riseharness-title" class="daily-item-title">RiseHarness：双轨迹驱动脚手架进化</h2><p class="single-subtitle daily-item-summary">用成功与失败运行的双轨迹对照迭代改进执行脚手架，提升长程终端智能体重复完成任务的稳定性。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E8%BD%A8%E8%BF%B9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行轨迹</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%88%E7%AB%AF%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;终端任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/VIRKJrfm2J9LqkQw_1eQoQ?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/VIRKJrfm2J9LqkQw_1eQoQ?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在长程终端智能体系统中借鉴其双轨迹诊断与版本采纳机制，在不更新模型权重的情况下持续优化命令执行、反馈和完成确认流程。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体“有能力但不稳定”的根因常在模型特定的交互脚手架中，因此运行时机制应按模型行为适配，而不能假设整套配置可跨模型通用。</p>
@@ -510,6 +566,20 @@ InfraEvolve
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[移动 AI 工厂：为您的移动设备构建专用语言模型（19 ▲）](https://huggingface.co/papers/2611.13509?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-16)</div>
+  </details></article>
+<article id="qwen4-max" class="summary-card daily-item">
+  <h2 id="qwen4-max-title" class="daily-item-title">Qwen4-Max：稀疏长上下文高效推理</h2><p class="single-subtitle daily-item-summary">阿里推出Qwen4-Max，以稀疏MoE和更少用量让用户低成本完成编程、办公与长程任务。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AGI Bar</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/5gbr6cURLNXQtXbRYZ9hEg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/5gbr6cURLNXQtXbRYZ9hEg</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在编程智能体、长文档处理、Office自动化和行业分析系统中通过兼容OpenAI或Anthropic格式的API调用，以降低长程任务成本。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>旗舰模型的实际经济性不仅取决于token单价，还取决于稀疏激活与上下文压缩能否同步减少每个任务的计算量和token消耗。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：Qwen4系列首款旗舰模型，采用2.4T总参数、71B激活参数的MoE架构，支持原生视觉、1M上下文和最长393K输出。</li>
+<li><strong>关键能力</strong>：通过GDN与QSA混合注意力、Gated Residual和N-gram Embedding降低长序列计算量；同任务少用24%–49%的token，平均费用降低58%。DeepSWE、Terminal-Bench 4.0和Agents&rsquo; Last Exam分别取得75.7、48.5和46.7分。</li>
+<li><strong>限制</strong>：Qwen4-Max主要通过千问平台、应用及API提供；目前仅宣布后续陆续开源Qwen4小尺寸模型。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">NewModel｜Qwen4-Max：思考更高效，单任务费用降 58%， AGI Bar 本周免费用https://mp.weixin.qq.com/s/5gbr6cURLNXQtXbRYZ9hEg</div>
   </details></article>
 <article id="deloop" class="summary-card daily-item">
   <h2 id="deloop-title" class="daily-item-title">DeLoop：重复动作自监督脱环</h2><p class="single-subtitle daily-item-summary">用同一轨迹中的重复调用与恢复动作自动构造偏好数据，减少长程智能体空转并降低交互成本。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：经验学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Tau Lab</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%81%8F%E5%A5%BD%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;偏好优化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.19376" target="_blank" rel="noopener">https://arxiv.org/abs/2610.19376</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/h3aLY1sNkEFrr9OjLLvJYw?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/h3aLY1sNkEFrr9OjLLvJYw?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在长程工具调用智能体的后训练中，从执行日志自动挖掘“重复动作—恢复动作”偏好对，并用DPO降低循环调用和运行成本。</p>
@@ -543,52 +613,7 @@ InfraEvolve
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[MEM-SQL：记忆增强型文本转 SQL（17 ▲）](https://huggingface.co/papers/2611.18338?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-16)</div>
   </details></article>
-<article id="qwen4-max" class="summary-card daily-item">
-  <h2 id="qwen4-max-title" class="daily-item-title">Qwen4-Max：稀疏长上下文高效推理</h2><p class="single-subtitle daily-item-summary">阿里推出Qwen4-Max，以稀疏MoE和更少用量让用户低成本完成编程、办公与长程任务。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AGI Bar</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/5gbr6cURLNXQtXbRYZ9hEg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/5gbr6cURLNXQtXbRYZ9hEg</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在编程智能体、长文档处理、Office自动化和行业分析系统中通过兼容OpenAI或Anthropic格式的API调用，以降低长程任务成本。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>旗舰模型的实际经济性不仅取决于token单价，还取决于稀疏激活与上下文压缩能否同步减少每个任务的计算量和token消耗。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>是什么</strong>：Qwen4系列首款旗舰模型，采用2.4T总参数、71B激活参数的MoE架构，支持原生视觉、1M上下文和最长393K输出。</li>
-<li><strong>关键能力</strong>：通过GDN与QSA混合注意力、Gated Residual和N-gram Embedding降低长序列计算量；同任务少用24%–49%的token，平均费用降低58%。DeepSWE、Terminal-Bench 4.0和Agents&rsquo; Last Exam分别取得75.7、48.5和46.7分。</li>
-<li><strong>限制</strong>：Qwen4-Max主要通过千问平台、应用及API提供；目前仅宣布后续陆续开源Qwen4小尺寸模型。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">NewModel｜Qwen4-Max：思考更高效，单任务费用降 58%， AGI Bar 本周免费用https://mp.weixin.qq.com/s/5gbr6cURLNXQtXbRYZ9hEg</div>
-  </details></article>
-<article id="agentic-robotics" class="summary-card daily-item">
-  <h2 id="agentic-robotics-title" class="daily-item-title">Agentic Robotics：具身闭环决策框架</h2><p class="single-subtitle daily-item-summary">以基础模型和具身脚手架构建闭环决策核心，统一开放世界机器人的定义、评测与持续自治路线。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身基础模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%AF%E4%BF%A1%E6%89%A7%E8%A1%8C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;可信执行</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.18359" target="_blank" rel="noopener">https://arxiv.org/abs/2611.18359</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在开放世界机器人系统中借鉴 Embodied System 2 搭建闭环决策架构，并将其双层评测框架作为具身智能体的设计与验收基线。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>具身自治的关键不只是增强通用推理，而是让推理在物理约束和不可逆风险下持续转化为可执行、可验证的行动。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：智能体机器人尚缺少统一定义、可靠评测框架和研究路线，通用推理也难以在物理约束下转化为有效且可验证的动作。</li>
-<li><strong>旧法为何失效</strong>：为每类任务单独训练策略难以覆盖开放世界任务；只评估模型能力，也无法反映机器人闭环执行中的反应时限、机械限制和不可逆后果。</li>
-<li><strong>方法</strong>：提出 Embodied System 2，将基础模型与具身脚手架结合为决策核心，形成观察、意图理解、推理、技能与工具调用、结果验证及策略调整的闭环；评测同时覆盖模型能力与闭环系统表现。</li>
-<li><strong>局限与后续</strong>：可靠物理自治仍需应对环境突变、有限反应时间、机械约束和不可逆操作，并逐步从执行单个动作扩展到安全承担长期角色。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[构想智能体机器人：机器人系统的新时代（109 ▲）](https://huggingface.co/papers/2611.18359?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-16)</div>
-  </details></article>
-<article id="vibeprevisbench" class="summary-card daily-item">
-  <h2 id="vibeprevisbench-title" class="daily-item-title">VibePrevisBench：四维场景编程评测</h2><p class="single-subtitle daily-item-summary">用场景执行检查与视频可见性评判，衡量编程智能体在 Blender 中重建长程四维场景的能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：代码评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;空间智能</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.15789" target="_blank" rel="noopener">https://arxiv.org/abs/2611.15789</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>可在 Blender 场景生成智能体的开发中直接采用其 242 项任务和双层检查机制，评测代码执行、空间重建及渲染可见性。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体主动查看渲染结果并不等于具备纠错能力，可靠的视觉编程必须把底层场景事实与画面可感知性分开验证。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：编程智能体可在 Blender 中重建包含布局、运动和相机轨迹的四维场景，但缺少同时检查可执行场景及其多镜头代理视频的基准。</li>
-<li><strong>旧法为何失效</strong>：仅观看渲染视频无法确认底层场景是否满足要求，仅检查代码或场景结构也无法判断目标事实能否在画面中被识别。</li>
-<li><strong>方法</strong>：VibePrevisBench 包含脚本、照片、续写和参考视频等四类共 242 个任务；规则式 Scene Check 重运行代码，并从九个维度对照隐藏事实，VLM 式 Screen Check 再判断已满足的事实是否在代理视频中清晰可见。</li>
-<li><strong>实验</strong>：评测 11 个前沿编程智能体后发现，多模态空间理解和相机运动理解是主要能力分水岭；智能体普遍掌握基础运镜与场面调度，但难以完成高难要求，且虽会检查渲染结果，却往往不能纠正错误。</li>
-<li><strong>局限与后续</strong>：智能体仍需更强的空间与相机视觉理解、针对高难要求的显式检查，以及逐项对照任务简述验证渲染结果的机制。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[VibePrevisBench：评估用于在 Blender 中生成 4D 场景的智能体编程能力（84 ▲）](https://huggingface.co/papers/2611.15789?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-16)</div>
-  </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">7 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">6 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/" onclick="event.stopPropagation()">NewModel</a><span class="daily-count">4 条</span>
               </summary>
@@ -665,69 +690,47 @@ InfraEvolve
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/" onclick="event.stopPropagation()">Awesome-RSI</a><span class="daily-count">1 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/" onclick="event.stopPropagation()">RobotEvolve</a><span class="daily-count">1 条</span>
               </summary>
-              <div class="daily-group-body"><details id="post-training-rsi" class="daily-row">
+              <div class="daily-group-body"><details id="agentic-robotics" class="daily-row">
   <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>Post-Training RSI：后训练全栈递归</strong>
-      <span class="daily-row-meta">微信公众号 · 递归自我改进 · <a href="https://mp.weixin.qq.com/s/fGMhtusD1HfJZOJkCGIPNQ" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
-    </span><span class="daily-row-summary">将数据、奖励、验证器、搜索与研究动作空间一并递归优化，避免自提升停留在重复训练权重。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众号</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E5%90%8E%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;后训练</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/fGMhtusD1HfJZOJkCGIPNQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/fGMhtusD1HfJZOJkCGIPNQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在自动化后训练或科研智能体中，借鉴其递归对象分类与改进速率判据，设计同时优化数据、奖励、验证器和搜索策略的闭环实验系统。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>递归自提升的核心不是反复更新权重，而是让目标决定哪些系统层可被改写，并用跨周期证据证明“提出改进的机制”自身也在进步。</p>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Agentic Robotics：具身闭环决策框架</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 具身基础模型 · <a href="https://arxiv.org/abs/2611.18359" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">以基础模型和具身脚手架构建闭环决策核心，统一开放世界机器人的定义、评测与持续自治路线。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身基础模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%AF%E4%BF%A1%E6%89%A7%E8%A1%8C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;可信执行</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.18359" target="_blank" rel="noopener">https://arxiv.org/abs/2611.18359</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在开放世界机器人系统中借鉴 Embodied System 2 搭建闭环决策架构，并将其双层评测框架作为具身智能体的设计与验收基线。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>具身自治的关键不只是增强通用推理，而是让推理在物理约束和不可逆风险下持续转化为可执行、可验证的行动。</p>
 </div><div class="daily-item-content"><ul>
-<li><strong>是什么</strong>：以大语言模型后训练为思想实验，提出目标相对的递归自提升框架；递归对象不只包括参数权重，还涵盖数据分布、目标函数、奖励、验证器、搜索、记忆、评估、安全与研究动作空间。</li>
-<li><strong>关键能力</strong>：按递归对象统一解释 SFT、RLHF、DPO、GRPO、RLVR、在策略蒸馏和测试时训练，并以“惊讶”的采集、加权与内化刻画不同训练范式；真正的自提升要求负责提出下一轮改动的系统本身持续增强。</li>
-<li><strong>限制</strong>：文章主要是研究范式与实验协议构想，未提供完整实现或统一量化验证；开放式动作空间还面临奖励作弊、验证器覆盖不足、分布漂移和安全授权等问题。</li>
+<li><strong>问题</strong>：智能体机器人尚缺少统一定义、可靠评测框架和研究路线，通用推理也难以在物理约束下转化为有效且可验证的动作。</li>
+<li><strong>旧法为何失效</strong>：为每类任务单独训练策略难以覆盖开放世界任务；只评估模型能力，也无法反映机器人闭环执行中的反应时限、机械限制和不可逆后果。</li>
+<li><strong>方法</strong>：提出 Embodied System 2，将基础模型与具身脚手架结合为决策核心，形成观察、意图理解、推理、技能与工具调用、结果验证及策略调整的闭环；评测同时覆盖模型能力与闭环系统表现。</li>
+<li><strong>局限与后续</strong>：可靠物理自治仍需应对环境突变、有限反应时间、机械约束和不可逆操作，并逐步从执行单个动作扩展到安全承担长期角色。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/fGMhtusD1HfJZOJkCGIPNQ</div>
+    <div class="daily-item-notes-body">[构想智能体机器人：机器人系统的新时代（109 ▲）](https://huggingface.co/papers/2611.18359?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-16)</div>
   </details></div>
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/" onclick="event.stopPropagation()">HarnessEvolve</a><span class="daily-count">1 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/" onclick="event.stopPropagation()">EvalEvolve</a><span class="daily-count">1 条</span>
               </summary>
-              <div class="daily-group-body"><details id="reharness" class="daily-row">
+              <div class="daily-group-body"><details id="vibeprevisbench" class="daily-row">
   <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>ReHarness：反向修订式持续学习</strong>
-      <span class="daily-row-meta">哔哩哔哩 · 持续学习 · <a href="https://www.bilibili.com/video/BV1X2xD6PERt/" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
-    </span><span class="daily-row-summary">用交互轨迹反向修订已存反思，让智能体在分布变化中持续更新经验并兼顾稳定性与可塑性。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：持续学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>哔哩哔哩</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%BA%BF%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;在线学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://www.bilibili.com/video/BV1X2xD6PERt/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1X2xD6PERt/</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在需要长期在线运行的智能体系统中，借鉴其轨迹驱动的反向修订机制更新经验记忆，以适应持续分布偏移。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>持续学习不应只把反馈写入未来状态，还应反向校正产生当前决策的历史经验，从而同时维持知识稳定性与更新能力。</p>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>VibePrevisBench：四维场景编程评测</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 代码评测 · <a href="https://arxiv.org/abs/2611.15789" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用场景执行检查与视频可见性评判，衡量编程智能体在 Blender 中重建长程四维场景的能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：代码评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;空间智能</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.15789" target="_blank" rel="noopener">https://arxiv.org/abs/2611.15789</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>可在 Blender 场景生成智能体的开发中直接采用其 242 项任务和双层检查机制，评测代码执行、空间重建及渲染可见性。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体主动查看渲染结果并不等于具备纠错能力，可靠的视觉编程必须把底层场景事实与画面可感知性分开验证。</p>
 </div><div class="daily-item-content"><ul>
-<li><strong>问题</strong>：长序列交互中的智能体需要在线适应分布偏移，同时避免旧经验过度泛化或迅速失效。</li>
-<li><strong>旧法为何失效</strong>：现有调度框架多依赖前向信息流更新状态，或需要额外的回放与验证数据，难以满足严格的在线流式学习设定。</li>
-<li><strong>方法</strong>：ReHarness在前向读写之外加入反向修订；每处理一个样本，便利用其交互轨迹修订对应的检索反思，将反馈沿文本调度状态反向传播。</li>
-<li><strong>实验</strong>：在3组持续学习基准和3种基座语言模型上，持续优于原始上下文、记忆与反思方法及提示优化方案；修订内容具有依据且语义合理。</li>
-<li><strong>局限与后续</strong>：讲座摘要未提供具体指标、计算开销及更长期交互下的效果。</li>
+<li><strong>问题</strong>：编程智能体可在 Blender 中重建包含布局、运动和相机轨迹的四维场景，但缺少同时检查可执行场景及其多镜头代理视频的基准。</li>
+<li><strong>旧法为何失效</strong>：仅观看渲染视频无法确认底层场景是否满足要求，仅检查代码或场景结构也无法判断目标事实能否在画面中被识别。</li>
+<li><strong>方法</strong>：VibePrevisBench 包含脚本、照片、续写和参考视频等四类共 242 个任务；规则式 Scene Check 重运行代码，并从九个维度对照隐藏事实，VLM 式 Screen Check 再判断已满足的事实是否在代理视频中清晰可见。</li>
+<li><strong>实验</strong>：评测 11 个前沿编程智能体后发现，多模态空间理解和相机运动理解是主要能力分水岭；智能体普遍掌握基础运镜与场面调度，但难以完成高难要求，且虽会检查渲染结果，却往往不能纠正错误。</li>
+<li><strong>局限与后续</strong>：智能体仍需更强的空间与相机视觉理解、针对高难要求的显式检查，以及逐项对照任务简述验证渲染结果的机制。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">【[麻省理工&amp;Meta]智能体持续学习的循环Harness】 https://www.bilibili.com/video/BV1X2xD6PERt/?share_source=copy_web</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/" onclick="event.stopPropagation()">AgentTrainEvolve</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="terminal-rsi" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>Terminal-RSI：递归改写与策略精炼</strong>
-      <span class="daily-row-meta">Tau Lab · 递归自我改进 · <a href="https://arxiv.org/abs/2610.22192" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://mp.weixin.qq.com/s/LI2edgZxywDY3qA8yGbYvw?scene=1" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
-    </span><span class="daily-row-summary">交替保留已验证行为并精炼策略，解决终端智能体局部修复难以汇聚为完整成功的问题，宏平均成功率提升29.90个百分点。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Tau Lab</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.22192" target="_blank" rel="noopener">https://arxiv.org/abs/2610.22192</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/LI2edgZxywDY3qA8yGbYvw?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/LI2edgZxywDY3qA8yGbYvw?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在终端操作或仓库修复智能体训练中，借鉴RSR-RPR交替循环、critic继承校准和TB-GAE，将已验证的局部修复逐轮转化为完整任务成功。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>递归改进能否持续，关键不在重复训练次数，而在于只跨阶段传递经验证的行为与已校准的价值判断，使局部进展始终受最终成功约束。</p>
-</div><div class="daily-item-content"><ul>
-<li><strong>问题</strong>：终端智能体常能修复依赖或通过局部检查，却无法达到受保护验证器要求的完整终态；长日志还会干扰跨交互回合的信用分配。</li>
-<li><strong>旧法为何失效</strong>：标准GAE会让观察文本长度影响优势衰减，统一的局部奖励又可能使失败轨迹获得过高回报；策略反复改写后，旧critic也难以适应新策略与奖励分布。</li>
-<li><strong>方法</strong>：Terminal-RSI交替执行递归自我改写RSR与递归策略精炼RPR，只保留通过验证和泄漏检查的轨迹，并继承critic，经预热校准后联合优化。TB-GAE按交互回合而非日志token分配信用，FDR与SPR则按任务家族校准局部进度并优先奖励严格成功。</li>
-<li><strong>实验</strong>：在Terminal-Bench 2.1、3.0、4.0、Hard、LHTB和SWR100上评测，27B模型的四套Terminal-Bench宏平均成功率达到50.58%，较Base提升29.90个百分点；LHTB严格完成数由0/46升至5/46。对4,352条轨迹重评分后，失败轨迹的奖励占比由50.09%降至28.72%。</li>
-<li><strong>局限与后续</strong>：五阶段同时改变数据、奖励、学习率和初始化，缺少计算量匹配的组件消融；目前主要验证单一27B基座，评测重复次数有限，验证器也无法保证未编码的架构要求得到满足。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/LI2edgZxywDY3qA8yGbYvw?scene=1</div>
+    <div class="daily-item-notes-body">[VibePrevisBench：评估用于在 Blender 中生成 4D 场景的智能体编程能力（84 ▲）](https://huggingface.co/papers/2611.15789?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-16)</div>
   </details></div>
 </details>
 </div>
