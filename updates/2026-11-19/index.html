@@ -14,98 +14,90 @@
 
 智能体进化
 
-SEED：从当前策略的成功轨迹提炼可更新技能，为长程智能体补上稀疏成败奖励无法提供的逐步监督。
-认知共生体：把用户关系与长期记忆存到模型之外，使个人智能体跨设备、换模型后仍能延续服务。
+SEED：把成功轨迹提炼成持续更新的技能，为长程智能体提供比最终成败更细的训练信号。
+认知共生体：将用户关系与记忆保存在模型之外，使个人智能体更换设备或模型后仍能延续。
+VideoNexus：让独立感知智能体把长视频压成带时间定位的证据，避免细节挤占规划上下文。
 
 
 模型架构
 
-MBT：以并行 Transformer 分支共享注意力缓存，同时提高语言建模质量并降低长文本生成成本。
-权重空间编程：让大模型编写可读可改的稀疏事实表而非 Transformer 权重，以约 1/1800 参数取得更高准确率。
+MBT：用并行计算分支共享注意力缓存，同时提高语言建模质量并降低长文本解码成本。
+权重空间编程：用可读可改的稀疏事实表承载大模型直接编写的权重，参数减少约1800倍。
 
 
-具身协作
+具身智能
 
-ForceHarness：把高频力觉反馈封装成自主闭环动作，使冻结多模态模型的真机接触操作成功率从 3.3% 升至 90.0%。
-TCP4D：用统一四维场景表示从普通视频恢复工具运动，并将动作示范迁移到不同机器人。
-Heave-Ho：结合局部观测控制与语音同步，让无网络的人形机器人团队完成长时全身协作并扩展至 10 台。
-
-
-证据压缩
-
-VideoNexus：让独立感知智能体只回传带时间位置的关键视频证据，避免长视频细节挤占规划上下文。
+ForceHarness：把高频力觉反馈封装成自主闭环动作，使冻结模型的真机接触操作成功率从3.3%升至90.0%。
+TCP4D：以机器人末端工具为统一坐标，从普通视频恢复动作并跨机器人生成训练示范。
+Heave-Ho：用局部控制与语音口令同步，让无网络连接的人形机器人团队从2台扩展到10台。
 
 
-热点延伸：FastFrames、π⁴
+热点延伸：FastFrames、π⁴、Breath-Dx
 
 对当前研究的启发
 
 AgentTrainEvolve
 
-迁移｜从 SEED 把“轨迹后技能重打分”用于长程工具调用训练：对比结果奖励与混合奖励的成功率、信用分配和样本效率。
+迁移｜从 SEED 把轨迹后验技能用到长程工具调用训练：按步骤重打分，与仅用终局奖励比较成功率和收敛速度。
+
+
+PersonalEvolve
+
+迁移｜从 认知共生体 把模型外关系层用到个人画像：跨模型复用同一记忆库，测试偏好保持率与错误记忆率。
+延续｜认知共生体 留下谄媚和思想数据泄露风险：加入防篡改日志，对比不同权限等级的操纵率与泄露率。
 
 
 CacheEvolve
 
-迁移｜从 MBT 把跨分支共享 KV 用到固定缓存预算：扫描分支数与上下文长度，测困惑度、显存和解码吞吐。
-迁移｜从 VideoNexus 把带时间戳的证据包用于视频缓存压缩：固定 token 预算，对比均匀采样的准确率与成本。
+迁移｜从 MBT 把跨分支共享KV用到固定预算缓存：对比独立缓存的显存、吞吐和长文本困惑度。
+迁移｜从 VideoNexus 把带时间定位的证据压缩用于智能体上下文：测压缩率、答案准确率和证据召回率。
 
 
 PhysicalEvolve
 
-迁移｜从 ForceHarness 把自终止力控原语用于冻结 VLM 控制：在插接和擦拭任务测成功率、峰值力与调用次数。
+迁移｜从 ForceHarness 把高频反馈下沉为自治原语：让冻结模型只接收物理摘要，测成功率、时延和过载次数。
 
 
 RobotEvolve
 
-迁移｜从 TCP4D 把工具中心点作为跨本体动作接口：用同一视频训练两类机械臂，测零样本迁移成功率。
+迁移｜从 TCP4D 把工具中心点作为跨本体接口：由单目视频合成示范，对比同本体数据量和迁移成功率。
 
 
 SwarmEvolve
 
-迁移｜从 Heave-Ho 把语音领从同步用于断网协作：比较语音、无线通信和无同步在 2—10 台机器人上的完成率与延迟。
-
-
-MemoryEvolve
-
-延续｜认知共生体 留下虚假记忆与关系操纵风险：注入冲突记忆，对比审计日志前后的误写率、纠错率和谄媚率。
+迁移｜从 Heave-Ho 把语音领从同步用于无网络协作：从2台扩至10台，测完成率、失同步次数和规模退化。
 
 
 NewModel
 
-延续｜权重空间编程 尚未胜过预训练大模型：在分类与生成任务对比稀疏表、同参数 Transformer 和预训练模型的精度与编辑成本。
-
-
-Groom
-
-迁移｜从 VideoNexus 把“单位证据 token 的答案贡献”用于过程评测：逐项删减证据，统计准确率下降与 token 节省。
+延续｜权重空间编程 尚未超过预训练模型：在生成任务中对比稀疏表与小型Transformer的准确率、参数量和可编辑性。
 
 
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-19 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体进化 SEED：从当前策略的成功轨迹提炼可更新技能，为长程智能体补上稀疏成败奖励无法提供的逐步监督。 认知共生体：把用户关系与长期记忆存到模型之外，使个人智能体跨设备、换模型后仍能延续服务。 模型架构 MBT：以并行 Transformer 分支共享注意力缓存，同时提高语言建模质量并降低长文本生成成本。 权重空间编程：让大模型编写可读可改的稀疏事实表而非 Transformer 权重，以约 1/1800 参数取得更高准确率。 具身协作 ForceHarness：把高频力觉反馈封装成自主闭环动作，使冻结多模态模型的真机接触操作成功率从 3.3% 升至 90.0%。 TCP4D：用统一四维场景表示从普通视频恢复工具运动，并将动作示范迁移到不同机器人。 Heave-Ho：结合局部观测控制与语音同步，让无网络的人形机器人团队完成长时全身协作并扩展至 10 台。 证据压缩 VideoNexus：让独立感知智能体只回传带时间位置的关键视频证据，避免长视频细节挤占规划上下文。 热点延伸：FastFrames、π⁴ 对当前研究的启发 AgentTrainEvolve 迁移｜从 SEED 把“轨迹后技能重打分”用于长程工具调用训练：对比结果奖励与混合奖励的成功率、信用分配和样本效率。 CacheEvolve 迁移｜从 MBT 把跨分支共享 KV 用到固定缓存预算：扫描分支数与上下文长度，测困惑度、显存和解码吞吐。 迁移｜从 VideoNexus 把带时间戳的证据包用于视频缓存压缩：固定 token 预算，对比均匀采样的准确率与成本。 PhysicalEvolve 迁移｜从 ForceHarness 把自终止力控原语用于冻结 VLM 控制：在插接和擦拭任务测成功率、峰值力与调用次数。 RobotEvolve 迁移｜从 TCP4D 把工具中心点作为跨本体动作接口：用同一视频训练两类机械臂，测零样本迁移成功率。 SwarmEvolve 迁移｜从 Heave-Ho 把语音领从同步用于断网协作：比较语音、无线通信和无同步在 2—10 台机器人上的完成率与延迟。 MemoryEvolve 延续｜认知共生体 留下虚假记忆与关系操纵风险：注入冲突记忆，对比审计日志前后的误写率、纠错率和谄媚率。 NewModel 延续｜权重空间编程 尚未胜过预训练大模型：在分类与生成任务对比稀疏表、同参数 Transformer 和预训练模型的精度与编辑成本。 Groom 迁移｜从 VideoNexus 把“单位证据 token 的答案贡献”用于过程评测：逐项删减证据，统计准确率下降与 token 节省。">
+今日概览 智能体进化 SEED：把成功轨迹提炼成持续更新的技能，为长程智能体提供比最终成败更细的训练信号。 认知共生体：将用户关系与记忆保存在模型之外，使个人智能体更换设备或模型后仍能延续。 VideoNexus：让独立感知智能体把长视频压成带时间定位的证据，避免细节挤占规划上下文。 模型架构 MBT：用并行计算分支共享注意力缓存，同时提高语言建模质量并降低长文本解码成本。 权重空间编程：用可读可改的稀疏事实表承载大模型直接编写的权重，参数减少约1800倍。 具身智能 ForceHarness：把高频力觉反馈封装成自主闭环动作，使冻结模型的真机接触操作成功率从3.3%升至90.0%。 TCP4D：以机器人末端工具为统一坐标，从普通视频恢复动作并跨机器人生成训练示范。 Heave-Ho：用局部控制与语音口令同步，让无网络连接的人形机器人团队从2台扩展到10台。 热点延伸：FastFrames、π⁴、Breath-Dx 对当前研究的启发 AgentTrainEvolve 迁移｜从 SEED 把轨迹后验技能用到长程工具调用训练：按步骤重打分，与仅用终局奖励比较成功率和收敛速度。 PersonalEvolve 迁移｜从 认知共生体 把模型外关系层用到个人画像：跨模型复用同一记忆库，测试偏好保持率与错误记忆率。 延续｜认知共生体 留下谄媚和思想数据泄露风险：加入防篡改日志，对比不同权限等级的操纵率与泄露率。 CacheEvolve 迁移｜从 MBT 把跨分支共享KV用到固定预算缓存：对比独立缓存的显存、吞吐和长文本困惑度。 迁移｜从 VideoNexus 把带时间定位的证据压缩用于智能体上下文：测压缩率、答案准确率和证据召回率。 PhysicalEvolve 迁移｜从 ForceHarness 把高频反馈下沉为自治原语：让冻结模型只接收物理摘要，测成功率、时延和过载次数。 RobotEvolve 迁移｜从 TCP4D 把工具中心点作为跨本体接口：由单目视频合成示范，对比同本体数据量和迁移成功率。 SwarmEvolve 迁移｜从 Heave-Ho 把语音领从同步用于无网络协作：从2台扩至10台，测完成率、失同步次数和规模退化。 NewModel 延续｜权重空间编程 尚未超过预训练模型：在生成任务中对比稀疏表与小型Transformer的准确率、参数量和可编辑性。">
   <meta itemprop="datePublished" content="2026-11-19T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-19T11:14:14+08:00">
-  <meta itemprop="wordCount" content="869">
+  <meta itemprop="dateModified" content="2026-11-19T11:16:15+08:00">
+  <meta itemprop="wordCount" content="850">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-19/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-19 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体进化 SEED：从当前策略的成功轨迹提炼可更新技能，为长程智能体补上稀疏成败奖励无法提供的逐步监督。 认知共生体：把用户关系与长期记忆存到模型之外，使个人智能体跨设备、换模型后仍能延续服务。 模型架构 MBT：以并行 Transformer 分支共享注意力缓存，同时提高语言建模质量并降低长文本生成成本。 权重空间编程：让大模型编写可读可改的稀疏事实表而非 Transformer 权重，以约 1/1800 参数取得更高准确率。 具身协作 ForceHarness：把高频力觉反馈封装成自主闭环动作，使冻结多模态模型的真机接触操作成功率从 3.3% 升至 90.0%。 TCP4D：用统一四维场景表示从普通视频恢复工具运动，并将动作示范迁移到不同机器人。 Heave-Ho：结合局部观测控制与语音同步，让无网络的人形机器人团队完成长时全身协作并扩展至 10 台。 证据压缩 VideoNexus：让独立感知智能体只回传带时间位置的关键视频证据，避免长视频细节挤占规划上下文。 热点延伸：FastFrames、π⁴ 对当前研究的启发 AgentTrainEvolve 迁移｜从 SEED 把“轨迹后技能重打分”用于长程工具调用训练：对比结果奖励与混合奖励的成功率、信用分配和样本效率。 CacheEvolve 迁移｜从 MBT 把跨分支共享 KV 用到固定缓存预算：扫描分支数与上下文长度，测困惑度、显存和解码吞吐。 迁移｜从 VideoNexus 把带时间戳的证据包用于视频缓存压缩：固定 token 预算，对比均匀采样的准确率与成本。 PhysicalEvolve 迁移｜从 ForceHarness 把自终止力控原语用于冻结 VLM 控制：在插接和擦拭任务测成功率、峰值力与调用次数。 RobotEvolve 迁移｜从 TCP4D 把工具中心点作为跨本体动作接口：用同一视频训练两类机械臂，测零样本迁移成功率。 SwarmEvolve 迁移｜从 Heave-Ho 把语音领从同步用于断网协作：比较语音、无线通信和无同步在 2—10 台机器人上的完成率与延迟。 MemoryEvolve 延续｜认知共生体 留下虚假记忆与关系操纵风险：注入冲突记忆，对比审计日志前后的误写率、纠错率和谄媚率。 NewModel 延续｜权重空间编程 尚未胜过预训练大模型：在分类与生成任务对比稀疏表、同参数 Transformer 和预训练模型的精度与编辑成本。 Groom 迁移｜从 VideoNexus 把“单位证据 token 的答案贡献”用于过程评测：逐项删减证据，统计准确率下降与 token 节省。">
+今日概览 智能体进化 SEED：把成功轨迹提炼成持续更新的技能，为长程智能体提供比最终成败更细的训练信号。 认知共生体：将用户关系与记忆保存在模型之外，使个人智能体更换设备或模型后仍能延续。 VideoNexus：让独立感知智能体把长视频压成带时间定位的证据，避免细节挤占规划上下文。 模型架构 MBT：用并行计算分支共享注意力缓存，同时提高语言建模质量并降低长文本解码成本。 权重空间编程：用可读可改的稀疏事实表承载大模型直接编写的权重，参数减少约1800倍。 具身智能 ForceHarness：把高频力觉反馈封装成自主闭环动作，使冻结模型的真机接触操作成功率从3.3%升至90.0%。 TCP4D：以机器人末端工具为统一坐标，从普通视频恢复动作并跨机器人生成训练示范。 Heave-Ho：用局部控制与语音口令同步，让无网络连接的人形机器人团队从2台扩展到10台。 热点延伸：FastFrames、π⁴、Breath-Dx 对当前研究的启发 AgentTrainEvolve 迁移｜从 SEED 把轨迹后验技能用到长程工具调用训练：按步骤重打分，与仅用终局奖励比较成功率和收敛速度。 PersonalEvolve 迁移｜从 认知共生体 把模型外关系层用到个人画像：跨模型复用同一记忆库，测试偏好保持率与错误记忆率。 延续｜认知共生体 留下谄媚和思想数据泄露风险：加入防篡改日志，对比不同权限等级的操纵率与泄露率。 CacheEvolve 迁移｜从 MBT 把跨分支共享KV用到固定预算缓存：对比独立缓存的显存、吞吐和长文本困惑度。 迁移｜从 VideoNexus 把带时间定位的证据压缩用于智能体上下文：测压缩率、答案准确率和证据召回率。 PhysicalEvolve 迁移｜从 ForceHarness 把高频反馈下沉为自治原语：让冻结模型只接收物理摘要，测成功率、时延和过载次数。 RobotEvolve 迁移｜从 TCP4D 把工具中心点作为跨本体接口：由单目视频合成示范，对比同本体数据量和迁移成功率。 SwarmEvolve 迁移｜从 Heave-Ho 把语音领从同步用于无网络协作：从2台扩至10台，测完成率、失同步次数和规模退化。 NewModel 延续｜权重空间编程 尚未超过预训练模型：在生成任务中对比稀疏表与小型Transformer的准确率、参数量和可编辑性。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-19T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-19T11:14:14+08:00">
+    <meta property="article:modified_time" content="2026-11-19T11:16:15+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-19 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 智能体进化 SEED：从当前策略的成功轨迹提炼可更新技能，为长程智能体补上稀疏成败奖励无法提供的逐步监督。 认知共生体：把用户关系与长期记忆存到模型之外，使个人智能体跨设备、换模型后仍能延续服务。 模型架构 MBT：以并行 Transformer 分支共享注意力缓存，同时提高语言建模质量并降低长文本生成成本。 权重空间编程：让大模型编写可读可改的稀疏事实表而非 Transformer 权重，以约 1/1800 参数取得更高准确率。 具身协作 ForceHarness：把高频力觉反馈封装成自主闭环动作，使冻结多模态模型的真机接触操作成功率从 3.3% 升至 90.0%。 TCP4D：用统一四维场景表示从普通视频恢复工具运动，并将动作示范迁移到不同机器人。 Heave-Ho：结合局部观测控制与语音同步，让无网络的人形机器人团队完成长时全身协作并扩展至 10 台。 证据压缩 VideoNexus：让独立感知智能体只回传带时间位置的关键视频证据，避免长视频细节挤占规划上下文。 热点延伸：FastFrames、π⁴ 对当前研究的启发 AgentTrainEvolve 迁移｜从 SEED 把“轨迹后技能重打分”用于长程工具调用训练：对比结果奖励与混合奖励的成功率、信用分配和样本效率。 CacheEvolve 迁移｜从 MBT 把跨分支共享 KV 用到固定缓存预算：扫描分支数与上下文长度，测困惑度、显存和解码吞吐。 迁移｜从 VideoNexus 把带时间戳的证据包用于视频缓存压缩：固定 token 预算，对比均匀采样的准确率与成本。 PhysicalEvolve 迁移｜从 ForceHarness 把自终止力控原语用于冻结 VLM 控制：在插接和擦拭任务测成功率、峰值力与调用次数。 RobotEvolve 迁移｜从 TCP4D 把工具中心点作为跨本体动作接口：用同一视频训练两类机械臂，测零样本迁移成功率。 SwarmEvolve 迁移｜从 Heave-Ho 把语音领从同步用于断网协作：比较语音、无线通信和无同步在 2—10 台机器人上的完成率与延迟。 MemoryEvolve 延续｜认知共生体 留下虚假记忆与关系操纵风险：注入冲突记忆，对比审计日志前后的误写率、纠错率和谄媚率。 NewModel 延续｜权重空间编程 尚未胜过预训练大模型：在分类与生成任务对比稀疏表、同参数 Transformer 和预训练模型的精度与编辑成本。 Groom 迁移｜从 VideoNexus 把“单位证据 token 的答案贡献”用于过程评测：逐项删减证据，统计准确率下降与 token 节省。">
+今日概览 智能体进化 SEED：把成功轨迹提炼成持续更新的技能，为长程智能体提供比最终成败更细的训练信号。 认知共生体：将用户关系与记忆保存在模型之外，使个人智能体更换设备或模型后仍能延续。 VideoNexus：让独立感知智能体把长视频压成带时间定位的证据，避免细节挤占规划上下文。 模型架构 MBT：用并行计算分支共享注意力缓存，同时提高语言建模质量并降低长文本解码成本。 权重空间编程：用可读可改的稀疏事实表承载大模型直接编写的权重，参数减少约1800倍。 具身智能 ForceHarness：把高频力觉反馈封装成自主闭环动作，使冻结模型的真机接触操作成功率从3.3%升至90.0%。 TCP4D：以机器人末端工具为统一坐标，从普通视频恢复动作并跨机器人生成训练示范。 Heave-Ho：用局部控制与语音口令同步，让无网络连接的人形机器人团队从2台扩展到10台。 热点延伸：FastFrames、π⁴、Breath-Dx 对当前研究的启发 AgentTrainEvolve 迁移｜从 SEED 把轨迹后验技能用到长程工具调用训练：按步骤重打分，与仅用终局奖励比较成功率和收敛速度。 PersonalEvolve 迁移｜从 认知共生体 把模型外关系层用到个人画像：跨模型复用同一记忆库，测试偏好保持率与错误记忆率。 延续｜认知共生体 留下谄媚和思想数据泄露风险：加入防篡改日志，对比不同权限等级的操纵率与泄露率。 CacheEvolve 迁移｜从 MBT 把跨分支共享KV用到固定预算缓存：对比独立缓存的显存、吞吐和长文本困惑度。 迁移｜从 VideoNexus 把带时间定位的证据压缩用于智能体上下文：测压缩率、答案准确率和证据召回率。 PhysicalEvolve 迁移｜从 ForceHarness 把高频反馈下沉为自治原语：让冻结模型只接收物理摘要，测成功率、时延和过载次数。 RobotEvolve 迁移｜从 TCP4D 把工具中心点作为跨本体接口：由单目视频合成示范，对比同本体数据量和迁移成功率。 SwarmEvolve 迁移｜从 Heave-Ho 把语音领从同步用于无网络协作：从2台扩至10台，测完成率、失同步次数和规模退化。 NewModel 延续｜权重空间编程 尚未超过预训练模型：在生成任务中对比稀疏表与小型Transformer的准确率、参数量和可编辑性。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-19/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-18/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -118,8 +110,8 @@ Groom
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-19\/"
-    },"genre": "updates","wordcount":  869 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-19\/","datePublished": "2026-11-19T00:00:00+08:00","dateModified": "2026-11-19T11:14:14+08:00","publisher": {
+    },"genre": "updates","wordcount":  850 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-19\/","datePublished": "2026-11-19T00:00:00+08:00","dateModified": "2026-11-19T11:16:15+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -302,7 +294,7 @@ Groom
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-19 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-19">2026-11-19</time></span>&nbsp;<span title="更新于 2026-11-19 11:14:14"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-19">2026-11-19</time></span>&nbsp;<span title="869 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-19 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-19">2026-11-19</time></span>&nbsp;<span title="更新于 2026-11-19 11:16:15"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-19">2026-11-19</time></span>&nbsp;<span title="850 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -324,78 +316,70 @@ Groom
 <ul>
 <li><strong>智能体进化</strong>
 <ul>
-<li><a href="#seed">SEED</a>：从当前策略的成功轨迹提炼可更新技能，为长程智能体补上稀疏成败奖励无法提供的逐步监督。</li>
-<li><a href="#item-1">认知共生体</a>：把用户关系与长期记忆存到模型之外，使个人智能体跨设备、换模型后仍能延续服务。</li>
+<li><a href="#seed">SEED</a>：把成功轨迹提炼成持续更新的技能，为长程智能体提供比最终成败更细的训练信号。</li>
+<li><a href="#item-1">认知共生体</a>：将用户关系与记忆保存在模型之外，使个人智能体更换设备或模型后仍能延续。</li>
+<li><a href="#videonexus">VideoNexus</a>：让独立感知智能体把长视频压成带时间定位的证据，避免细节挤占规划上下文。</li>
 </ul>
 </li>
 <li><strong>模型架构</strong>
 <ul>
-<li><a href="#mbt">MBT</a>：以并行 Transformer 分支共享注意力缓存，同时提高语言建模质量并降低长文本生成成本。</li>
-<li><a href="#transformer">权重空间编程</a>：让大模型编写可读可改的稀疏事实表而非 Transformer 权重，以约 1/1800 参数取得更高准确率。</li>
+<li><a href="#mbt">MBT</a>：用并行计算分支共享注意力缓存，同时提高语言建模质量并降低长文本解码成本。</li>
+<li><a href="#transformer">权重空间编程</a>：用可读可改的稀疏事实表承载大模型直接编写的权重，参数减少约1800倍。</li>
 </ul>
 </li>
-<li><strong>具身协作</strong>
+<li><strong>具身智能</strong>
 <ul>
-<li><a href="#forceharness">ForceHarness</a>：把高频力觉反馈封装成自主闭环动作，使冻结多模态模型的真机接触操作成功率从 3.3% 升至 90.0%。</li>
-<li><a href="#tcp4d-tcp">TCP4D</a>：用统一四维场景表示从普通视频恢复工具运动，并将动作示范迁移到不同机器人。</li>
-<li><a href="#heave-ho">Heave-Ho</a>：结合局部观测控制与语音同步，让无网络的人形机器人团队完成长时全身协作并扩展至 10 台。</li>
+<li><a href="#forceharness">ForceHarness</a>：把高频力觉反馈封装成自主闭环动作，使冻结模型的真机接触操作成功率从3.3%升至90.0%。</li>
+<li><a href="#tcp4d-tcp">TCP4D</a>：以机器人末端工具为统一坐标，从普通视频恢复动作并跨机器人生成训练示范。</li>
+<li><a href="#heave-ho">Heave-Ho</a>：用局部控制与语音口令同步，让无网络连接的人形机器人团队从2台扩展到10台。</li>
 </ul>
 </li>
-<li><strong>证据压缩</strong>
-<ul>
-<li><a href="#videonexus">VideoNexus</a>：让独立感知智能体只回传带时间位置的关键视频证据，避免长视频细节挤占规划上下文。</li>
-</ul>
-</li>
-<li><strong>热点延伸</strong>：<a href="#fastframes">FastFrames</a>、<a href="#item-10">π⁴</a></li>
+<li><strong>热点延伸</strong>：<a href="#fastframes">FastFrames</a>、<a href="#item-10">π⁴</a>、<a href="#breath-dx">Breath-Dx</a></li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
 <li><strong>AgentTrainEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#seed">SEED</a> 把“轨迹后技能重打分”用于长程工具调用训练：对比结果奖励与混合奖励的成功率、信用分配和样本效率。</li>
+<li>迁移｜从 <a href="#seed">SEED</a> 把轨迹后验技能用到长程工具调用训练：按步骤重打分，与仅用终局奖励比较成功率和收敛速度。</li>
+</ul>
+</li>
+<li><strong>PersonalEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#item-1">认知共生体</a> 把模型外关系层用到个人画像：跨模型复用同一记忆库，测试偏好保持率与错误记忆率。</li>
+<li>延续｜<a href="#item-1">认知共生体</a> 留下谄媚和思想数据泄露风险：加入防篡改日志，对比不同权限等级的操纵率与泄露率。</li>
 </ul>
 </li>
 <li><strong>CacheEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#mbt">MBT</a> 把跨分支共享 KV 用到固定缓存预算：扫描分支数与上下文长度，测困惑度、显存和解码吞吐。</li>
-<li>迁移｜从 <a href="#videonexus">VideoNexus</a> 把带时间戳的证据包用于视频缓存压缩：固定 token 预算，对比均匀采样的准确率与成本。</li>
+<li>迁移｜从 <a href="#mbt">MBT</a> 把跨分支共享KV用到固定预算缓存：对比独立缓存的显存、吞吐和长文本困惑度。</li>
+<li>迁移｜从 <a href="#videonexus">VideoNexus</a> 把带时间定位的证据压缩用于智能体上下文：测压缩率、答案准确率和证据召回率。</li>
 </ul>
 </li>
 <li><strong>PhysicalEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#forceharness">ForceHarness</a> 把自终止力控原语用于冻结 VLM 控制：在插接和擦拭任务测成功率、峰值力与调用次数。</li>
+<li>迁移｜从 <a href="#forceharness">ForceHarness</a> 把高频反馈下沉为自治原语：让冻结模型只接收物理摘要，测成功率、时延和过载次数。</li>
 </ul>
 </li>
 <li><strong>RobotEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#tcp4d-tcp">TCP4D</a> 把工具中心点作为跨本体动作接口：用同一视频训练两类机械臂，测零样本迁移成功率。</li>
+<li>迁移｜从 <a href="#tcp4d-tcp">TCP4D</a> 把工具中心点作为跨本体接口：由单目视频合成示范，对比同本体数据量和迁移成功率。</li>
 </ul>
 </li>
 <li><strong>SwarmEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#heave-ho">Heave-Ho</a> 把语音领从同步用于断网协作：比较语音、无线通信和无同步在 2—10 台机器人上的完成率与延迟。</li>
-</ul>
-</li>
-<li><strong>MemoryEvolve</strong>
-<ul>
-<li>延续｜<a href="#item-1">认知共生体</a> 留下虚假记忆与关系操纵风险：注入冲突记忆，对比审计日志前后的误写率、纠错率和谄媚率。</li>
+<li>迁移｜从 <a href="#heave-ho">Heave-Ho</a> 把语音领从同步用于无网络协作：从2台扩至10台，测完成率、失同步次数和规模退化。</li>
 </ul>
 </li>
 <li><strong>NewModel</strong>
 <ul>
-<li>延续｜<a href="#transformer">权重空间编程</a> 尚未胜过预训练大模型：在分类与生成任务对比稀疏表、同参数 Transformer 和预训练模型的精度与编辑成本。</li>
-</ul>
-</li>
-<li><strong>Groom</strong>
-<ul>
-<li>迁移｜从 <a href="#videonexus">VideoNexus</a> 把“单位证据 token 的答案贡献”用于过程评测：逐项删减证据，统计准确率下降与 token 节省。</li>
+<li>延续｜<a href="#transformer">权重空间编程</a> 尚未超过预训练模型：在生成任务中对比稀疏表与小型Transformer的准确率、参数量和可编辑性。</li>
 </ul>
 </li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 10 条</span><a href="#daily-featured">⭐ 重点 8</a><a href="#daily-hot">🔥 热点 2</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 11 条</span><a href="#daily-featured">⭐ 重点 8</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">8 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="seed" class="summary-card daily-item">
@@ -445,21 +429,6 @@ Groom
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[ForceHarness：将力转化为行动与物理能力，赋能冻结的前沿模型（39 ▲）](https://huggingface.co/papers/2611.21099?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-18)</div>
   </details></article>
-<article id="videonexus" class="summary-card daily-item">
-  <h2 id="videonexus-title" class="daily-item-title">VideoNexus：独立感知的证据压缩</h2><p class="single-subtitle daily-item-summary">用独立感知子智能体回传紧凑时序证据，避免长视频细节挤占规划上下文并降低成本。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：上下文压缩</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频理解</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;上下文压缩</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.21392" target="_blank" rel="noopener">https://arxiv.org/abs/2611.21392</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在长视频问答或视频检索智能体中借鉴其独立感知上下文与紧凑证据接口，减少规划器输入和调用成本。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>长视频推理的关键瓶颈不只是采样长度，而是感知结果以何种粒度进入规划上下文；证据接口越紧凑且时间定位越明确，越能兼顾细节与效率。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：长视频问答需要定位证据、辨认视觉细节并整合观察结果，密集视觉内容会同时加重感知与推理上下文负担。</li>
-<li><strong>旧法为何失效</strong>：直接向规划器返回视频帧会持续扩张上下文；稀疏采样可能遗漏决定性细节，逐帧描述也无法阻止上下文增长。</li>
-<li><strong>方法</strong>：VideoNexus 将细粒度视频感知与证据驱动的规划推理解耦；规划器决定检查位置、解析目标和采样密度，感知子智能体在独立上下文中处理原生音视频，仅回传紧凑且带时间定位的证据。</li>
-<li><strong>实验</strong>：以 Gemini 3.8 Flash 同时负责规划和感知时，在完整 LVBench 上达到 88.6%，较同骨干静态输入和内置智能体处理分别高 3.6、1.1 个百分点，API 成本仅为后者的 44%；使用 Kimi K3 时，较官方 Video-GAIA ReAct 脚手架高 8.5 个百分点。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[VideoNexus：超越推理上下文的视频感知（19 ▲）](https://huggingface.co/papers/2611.21392?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-18)</div>
-  </details></article>
 <article id="item-1" class="summary-card daily-item">
   <h2 id="item-1-title" class="daily-item-title">认知共生体：关系可迁移的终身增强</h2><p class="single-subtitle daily-item-summary">用可穿戴、多设备协同且关系可迁移的终身智能体，解决云端助手不在场、换模型即失忆的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/personalevolve/">PersonalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/autonomousagentevolve/">AutonomousAgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能应用</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能安全治理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.05376" target="_blank" rel="noopener">https://arxiv.org/abs/2611.05376</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/tabOubDz4J48ShhSXX3u4g" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/tabOubDz4J48ShhSXX3u4g</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在可穿戴个人智能体或具身机器人系统中，借鉴其模型外持久化关系层、快慢双回路及可审计治理架构。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>个人AI的长期价值不应绑定某代模型，而应沉淀在可迁移、可审计且由用户掌控的关系层中。</p>
@@ -474,6 +443,21 @@ Groom
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">PersonalEvolve｜牛津59页长文首提「认知共生体」，具身智能新终局浮出水面https://mp.weixin.qq.com/s/tabOubDz4J48ShhSXX3u4g</div>
+  </details></article>
+<article id="videonexus" class="summary-card daily-item">
+  <h2 id="videonexus-title" class="daily-item-title">VideoNexus：独立感知的证据压缩</h2><p class="single-subtitle daily-item-summary">用独立感知子智能体回传紧凑时序证据，避免长视频细节挤占规划上下文并降低成本。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：上下文压缩</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频理解</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;上下文压缩</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.21392" target="_blank" rel="noopener">https://arxiv.org/abs/2611.21392</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在长视频问答或视频检索智能体中借鉴其独立感知上下文与紧凑证据接口，减少规划器输入和调用成本。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>长视频推理的关键瓶颈不只是采样长度，而是感知结果以何种粒度进入规划上下文；证据接口越紧凑且时间定位越明确，越能兼顾细节与效率。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：长视频问答需要定位证据、辨认视觉细节并整合观察结果，密集视觉内容会同时加重感知与推理上下文负担。</li>
+<li><strong>旧法为何失效</strong>：直接向规划器返回视频帧会持续扩张上下文；稀疏采样可能遗漏决定性细节，逐帧描述也无法阻止上下文增长。</li>
+<li><strong>方法</strong>：VideoNexus 将细粒度视频感知与证据驱动的规划推理解耦；规划器决定检查位置、解析目标和采样密度，感知子智能体在独立上下文中处理原生音视频，仅回传紧凑且带时间定位的证据。</li>
+<li><strong>实验</strong>：以 Gemini 3.8 Flash 同时负责规划和感知时，在完整 LVBench 上达到 88.6%，较同骨干静态输入和内置智能体处理分别高 3.6、1.1 个百分点，API 成本仅为后者的 44%；使用 Kimi K3 时，较官方 Video-GAIA ReAct 脚手架高 8.5 个百分点。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[VideoNexus：超越推理上下文的视频感知（19 ▲）](https://huggingface.co/papers/2611.21392?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-18)</div>
   </details></article>
 <article id="tcp4d-tcp" class="summary-card daily-item">
   <h2 id="tcp4d-tcp-title" class="daily-item-title">TCP4D：统一TCP跟踪与轨迹生成</h2><p class="single-subtitle daily-item-summary">用共享四维场景表征从单目视频恢复机器人动作并生成未来轨迹，还可跨机器人合成示范数据。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：三维跟踪</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/dataevolve/">DataEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a><a href="/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E8%BF%81%E7%A7%BB/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;能力迁移</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.23143" target="_blank" rel="noopener">https://arxiv.org/abs/2611.23143</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在机器人模仿学习与跨本体迁移系统中，借鉴共享四维表征从单目视频提取TCP动作标签，并合成目标机器人示范用于策略训练。</p>
@@ -522,7 +506,7 @@ Groom
     <div class="daily-item-notes-body">[权重空间编程不需要 Transformer（49 ▲）](https://huggingface.co/papers/2611.22055?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-18)</div>
   </details></article>
 <details class="daily-group daily-group-hot" id="daily-hot" open>
-            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">2 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">3 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
             <div class="daily-group-body">
               <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="fastframes" class="daily-row">
   <summary>
@@ -558,6 +542,25 @@ Groom
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[$π^4$：用于四维场景几何与运动的基础模型（13 ▲)](https://huggingface.co/papers/2611.23144?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-18)</div>
+  </details></div>
+</details>
+<details id="breath-dx" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>Breath-Dx：漂移感知疾病筛查基准</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 医疗人工智能评测 · <a href="https://arxiv.org/abs/2611.15348" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用显式考虑传感器漂移的时间切分，真实评测电子鼻呼气信号的疾病筛查能力。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：医疗人工智能评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8C%BB%E7%96%97%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;医疗人工智能</a><a href="/LLMDailyDigestWeb/topic/%E6%97%B6%E5%BA%8F%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;时序建模</a><a href="/LLMDailyDigestWeb/topic/%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;真实世界基准测试</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.15348" target="_blank" rel="noopener">https://arxiv.org/abs/2611.15348</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在电子鼻疾病筛查系统中直接使用S-OH数据、时间切分和评测协议比较时序分类器，并检验模型对传感器漂移的鲁棒性。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>随机划分会利用传感器漂移携带的时间信号而高估临床性能，可靠的呼气诊断评测必须同时控制时间漂移与人口统计混杂。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：电子鼻可通过呼气分析无创筛查疾病，但缺少能在传感器漂移等真实条件下系统比较分类方法的公开基准。</li>
+<li><strong>旧法为何失效</strong>：既有研究多使用小型私有数据集和不一致的实验协议，通常采用随机交叉验证，难以比较且会低估时间漂移带来的性能损失。</li>
+<li><strong>方法</strong>：Breath-Dx基于Scent of Health数据集，提供覆盖9类诊断、1,234名患者和17通道多变量时间序列的显式时间训练/测试切分，并统一评测表格特征、卷积、图模型及时序架构等10种方法。</li>
+<li><strong>实验</strong>：时间验证相较随机交叉验证造成0.05–0.12的AUC下降；最佳方法在部分肺部疾病上达到0.74–0.76 ROC AUC，但部分疾病仍接近随机水平。循环架构跨疾病表现最稳定，专用时序方法取得最高峰值结果。</li>
+<li><strong>局限与后续</strong>：年龄等人口统计混杂因素会显著影响结果；呼气信号对部分疾病具有独立诊断价值，但对另一些疾病相比年龄信息增益有限。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Breath-Dx：用于电子鼻疾病筛查的时间序列分类基准（32 ▲）](https://huggingface.co/papers/2611.15348?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-18)</div>
   </details></div>
 </details>
 </div>
