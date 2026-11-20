@@ -14,98 +14,111 @@
 
 研发闭环
 
-OpenAI RSI：以智能体试做、人类审核再并行扩展形成“AI 开发 AI”闭环，将中长任务零干预成功率从 23% 提至 46%。
-OpenAI：让四家外部机构驻场审查训练与内部模型，把高风险 AI 监督从发布验收前移到研发全过程。
+OpenAI RSI：并行研发智能体配合人类审核与批量扩展，将2至4小时任务的零干预成功率从23%提升至46%。
+Evo²：让模型权重与智能体脚手架互相提供训练反馈，解决二者分开优化难以形成持续改进闭环的问题。
 
 
-协同演化
+过程监管
 
-Evo²：把智能体脚手架的执行成败回灌模型训练，同时搜索新脚手架，解决权重与系统框架各自优化的问题。
-Game2Player：让环境构建者与玩家互相验收，把网页游戏自动转成可验证任务和视觉智能体训练轨迹。
-
-
-评测与泛化
-
-MultiAgentBench：用统一环境分别测试协作与竞争，解决单体任务分数无法衡量智能体互动质量的问题。
-CurvDelta：把能力保持限制写入低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。
+OpenAI：让四家外部机构驻场审查训练与内部模型，把安全监管从发布前验收嵌入AI辅助研发全过程。
 
 
-训练数据
+环境与数据
 
-HINT-WAM：用示范中的未来视频指导策略自身轨迹，无需奖励或模拟器交互即可获得稠密动作监督。
-LogT：自动合成视觉位置准确、逻辑连贯的工具调用轨迹，使模型学会按需放大搜索图像，训练成本降低超 120 倍。
+Game2Player：让环境构建者与玩家共同迭代，把网页游戏自动转成可验证任务和可规模化训练轨迹。
+LogT：用逻辑一致的视觉搜索轨迹自动合成微调数据，使模型学会何时放大图像并将训练成本降低超120倍。
 
 
-热点延伸：PROLA、LightTAR、WorldRuler、Code World Model 2.0
+持续学习
+
+CurvDelta：把能力保持限制写进低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。
+
+
+具身训练
+
+HINT-WAM：以示范中的未来视频作为训练期教师，在策略自身轨迹上提供无需奖励和模拟器交互的稠密动作监督。
+
+
+群体评测
+
+MultiAgentBench：以统一环境分别衡量智能体间的协作与竞争，避免用单体任务成绩代替群体互动能力。
+
+
+热点延伸：PROLA、LightTAR、WorldRuler、Code World Model 2.0、StrideWorld
 
 对当前研究的启发
 
-MonitorEvolve
-
-迁移｜从 OpenAI 把外部机构驻场审计用于研发监管：覆盖训练、内部部署与发布复测，记录发现、修复和放行责任。
-
-
 Awesome-RSI
 
-迁移｜从 OpenAI RSI 把“单例执行—人审纠错—并行扩展”用于 RSI 实验：持续统计零干预成功率与人工接管率。
+迁移｜从 OpenAI RSI 把“单例执行—人审修正—批量扩展”用于RSI闭环：按任务时长统计零干预成功率与人工接管率
+
+
+MonitorEvolve
+
+迁移｜从 OpenAI 把外部驻场审计用于模型研发监管：覆盖训练、内部部署和发布复测，记录告警、干预与缺陷闭环
 
 
 SystemEvolve
 
-迁移｜从 Evo² 把脚手架编辑成败转为训练数据：交替更新模型权重与工作流，并保留跨任务有效修改。
-延续｜Evo² 的跨任务优势尚不稳定：对比仅训权重、仅改脚手架与协同进化，报告全量任务迁移率和置信区间。
+迁移｜从 Evo² 把脚手架编辑成败转为训练数据：交替更新模型权重与Harness，并保留跨任务有效改动
+延续｜Evo² 留下跨任务收益不稳定且显著性不足：多种子比较权重单改、Harness单改与联合进化
+
+
+AgentTrainEvolve
+
+迁移｜从 Game2Player 把玩家执行轨迹用于训练：按任务进度加权有效步骤，并与普通SFT比较长程成功率
 
 
 EnvironmentEvolve
 
-迁移｜从 Game2Player 把玩家执行同时用于环境验收和轨迹采集：按完成进度筛选任务，再回灌有效操作。
+迁移｜从 Game2Player 把“生成环境—试玩验收—回收轨迹”用于环境生产：以可执行率、可验证率和难度覆盖率筛选
 
 
 DataEvolve
 
-迁移｜从 LogT 把视觉落地与逻辑一致性用于轨迹筛选：自动剔除放大区域错误或调用链矛盾的合成样本。
+迁移｜从 LogT 把逻辑一致性检查用于视觉工具轨迹合成：过滤目标未落地或调用顺序矛盾的数据后再微调
+
+
+EvolveLLM
+
+迁移｜从 CurvDelta 把低曲率更新用于持续学习：对比LoRA与CurvLoRA的新能力增益、旧能力保持率和遗忘率
 
 
 RobotEvolve
 
-迁移｜从 HINT-WAM 把未来观测作为训练期教师：在策略自身状态上蒸馏动作分布，以真机成功率检验收益。
+迁移｜从 HINT-WAM 把未来观测作为训练期教师：在策略自采样状态上蒸馏动作分布，评测成功率与分布偏移
 
 
 SwarmEvolve
 
-迁移｜从 MultiAgentBench 把互动质量设为独立指标：固定单体模型，对比通信拓扑的协作收益与竞争鲁棒性。
-
-
-GeneralizeEvolve
-
-迁移｜从 CurvDelta 把能力保持编码进更新空间：对比普通 LoRA，测新任务增益、旧任务遗忘率与参数成本。
+迁移｜从 MultiAgentBench 把协作与竞争拆成独立指标：比较通信拓扑时同时报告团队收益、个体收益与协调成本
 
 
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-20 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 研发闭环 OpenAI RSI：以智能体试做、人类审核再并行扩展形成“AI 开发 AI”闭环，将中长任务零干预成功率从 23% 提至 46%。 OpenAI：让四家外部机构驻场审查训练与内部模型，把高风险 AI 监督从发布验收前移到研发全过程。 协同演化 Evo²：把智能体脚手架的执行成败回灌模型训练，同时搜索新脚手架，解决权重与系统框架各自优化的问题。 Game2Player：让环境构建者与玩家互相验收，把网页游戏自动转成可验证任务和视觉智能体训练轨迹。 评测与泛化 MultiAgentBench：用统一环境分别测试协作与竞争，解决单体任务分数无法衡量智能体互动质量的问题。 CurvDelta：把能力保持限制写入低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。 训练数据 HINT-WAM：用示范中的未来视频指导策略自身轨迹，无需奖励或模拟器交互即可获得稠密动作监督。 LogT：自动合成视觉位置准确、逻辑连贯的工具调用轨迹，使模型学会按需放大搜索图像，训练成本降低超 120 倍。 热点延伸：PROLA、LightTAR、WorldRuler、Code World Model 2.0 对当前研究的启发 MonitorEvolve 迁移｜从 OpenAI 把外部机构驻场审计用于研发监管：覆盖训练、内部部署与发布复测，记录发现、修复和放行责任。 Awesome-RSI 迁移｜从 OpenAI RSI 把“单例执行—人审纠错—并行扩展”用于 RSI 实验：持续统计零干预成功率与人工接管率。 SystemEvolve 迁移｜从 Evo² 把脚手架编辑成败转为训练数据：交替更新模型权重与工作流，并保留跨任务有效修改。 延续｜Evo² 的跨任务优势尚不稳定：对比仅训权重、仅改脚手架与协同进化，报告全量任务迁移率和置信区间。 EnvironmentEvolve 迁移｜从 Game2Player 把玩家执行同时用于环境验收和轨迹采集：按完成进度筛选任务，再回灌有效操作。 DataEvolve 迁移｜从 LogT 把视觉落地与逻辑一致性用于轨迹筛选：自动剔除放大区域错误或调用链矛盾的合成样本。 RobotEvolve 迁移｜从 HINT-WAM 把未来观测作为训练期教师：在策略自身状态上蒸馏动作分布，以真机成功率检验收益。 SwarmEvolve 迁移｜从 MultiAgentBench 把互动质量设为独立指标：固定单体模型，对比通信拓扑的协作收益与竞争鲁棒性。 GeneralizeEvolve 迁移｜从 CurvDelta 把能力保持编码进更新空间：对比普通 LoRA，测新任务增益、旧任务遗忘率与参数成本。">
+今日概览 研发闭环 OpenAI RSI：并行研发智能体配合人类审核与批量扩展，将2至4小时任务的零干预成功率从23%提升至46%。 Evo²：让模型权重与智能体脚手架互相提供训练反馈，解决二者分开优化难以形成持续改进闭环的问题。 过程监管 OpenAI：让四家外部机构驻场审查训练与内部模型，把安全监管从发布前验收嵌入AI辅助研发全过程。 环境与数据 Game2Player：让环境构建者与玩家共同迭代，把网页游戏自动转成可验证任务和可规模化训练轨迹。 LogT：用逻辑一致的视觉搜索轨迹自动合成微调数据，使模型学会何时放大图像并将训练成本降低超120倍。 持续学习 CurvDelta：把能力保持限制写进低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。 具身训练 HINT-WAM：以示范中的未来视频作为训练期教师，在策略自身轨迹上提供无需奖励和模拟器交互的稠密动作监督。 群体评测 MultiAgentBench：以统一环境分别衡量智能体间的协作与竞争，避免用单体任务成绩代替群体互动能力。 热点延伸：PROLA、LightTAR、WorldRuler、Code World Model 2.0、StrideWorld 对当前研究的启发 Awesome-RSI 迁移｜从 OpenAI RSI 把“单例执行—人审修正—批量扩展”用于RSI闭环：按任务时长统计零干预成功率与人工接管率 MonitorEvolve 迁移｜从 OpenAI 把外部驻场审计用于模型研发监管：覆盖训练、内部部署和发布复测，记录告警、干预与缺陷闭环 SystemEvolve 迁移｜从 Evo² 把脚手架编辑成败转为训练数据：交替更新模型权重与Harness，并保留跨任务有效改动 延续｜Evo² 留下跨任务收益不稳定且显著性不足：多种子比较权重单改、Harness单改与联合进化 AgentTrainEvolve 迁移｜从 Game2Player 把玩家执行轨迹用于训练：按任务进度加权有效步骤，并与普通SFT比较长程成功率 EnvironmentEvolve 迁移｜从 Game2Player 把“生成环境—试玩验收—回收轨迹”用于环境生产：以可执行率、可验证率和难度覆盖率筛选 DataEvolve 迁移｜从 LogT 把逻辑一致性检查用于视觉工具轨迹合成：过滤目标未落地或调用顺序矛盾的数据后再微调 EvolveLLM 迁移｜从 CurvDelta 把低曲率更新用于持续学习：对比LoRA与CurvLoRA的新能力增益、旧能力保持率和遗忘率 RobotEvolve 迁移｜从 HINT-WAM 把未来观测作为训练期教师：在策略自采样状态上蒸馏动作分布，评测成功率与分布偏移 SwarmEvolve 迁移｜从 MultiAgentBench 把协作与竞争拆成独立指标：比较通信拓扑时同时报告团队收益、个体收益与协调成本">
   <meta itemprop="datePublished" content="2026-11-20T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-20T16:24:08+08:00">
-  <meta itemprop="wordCount" content="910">
+  <meta itemprop="dateModified" content="2026-11-20T16:30:30+08:00">
+  <meta itemprop="wordCount" content="990">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-20/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-20 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 研发闭环 OpenAI RSI：以智能体试做、人类审核再并行扩展形成“AI 开发 AI”闭环，将中长任务零干预成功率从 23% 提至 46%。 OpenAI：让四家外部机构驻场审查训练与内部模型，把高风险 AI 监督从发布验收前移到研发全过程。 协同演化 Evo²：把智能体脚手架的执行成败回灌模型训练，同时搜索新脚手架，解决权重与系统框架各自优化的问题。 Game2Player：让环境构建者与玩家互相验收，把网页游戏自动转成可验证任务和视觉智能体训练轨迹。 评测与泛化 MultiAgentBench：用统一环境分别测试协作与竞争，解决单体任务分数无法衡量智能体互动质量的问题。 CurvDelta：把能力保持限制写入低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。 训练数据 HINT-WAM：用示范中的未来视频指导策略自身轨迹，无需奖励或模拟器交互即可获得稠密动作监督。 LogT：自动合成视觉位置准确、逻辑连贯的工具调用轨迹，使模型学会按需放大搜索图像，训练成本降低超 120 倍。 热点延伸：PROLA、LightTAR、WorldRuler、Code World Model 2.0 对当前研究的启发 MonitorEvolve 迁移｜从 OpenAI 把外部机构驻场审计用于研发监管：覆盖训练、内部部署与发布复测，记录发现、修复和放行责任。 Awesome-RSI 迁移｜从 OpenAI RSI 把“单例执行—人审纠错—并行扩展”用于 RSI 实验：持续统计零干预成功率与人工接管率。 SystemEvolve 迁移｜从 Evo² 把脚手架编辑成败转为训练数据：交替更新模型权重与工作流，并保留跨任务有效修改。 延续｜Evo² 的跨任务优势尚不稳定：对比仅训权重、仅改脚手架与协同进化，报告全量任务迁移率和置信区间。 EnvironmentEvolve 迁移｜从 Game2Player 把玩家执行同时用于环境验收和轨迹采集：按完成进度筛选任务，再回灌有效操作。 DataEvolve 迁移｜从 LogT 把视觉落地与逻辑一致性用于轨迹筛选：自动剔除放大区域错误或调用链矛盾的合成样本。 RobotEvolve 迁移｜从 HINT-WAM 把未来观测作为训练期教师：在策略自身状态上蒸馏动作分布，以真机成功率检验收益。 SwarmEvolve 迁移｜从 MultiAgentBench 把互动质量设为独立指标：固定单体模型，对比通信拓扑的协作收益与竞争鲁棒性。 GeneralizeEvolve 迁移｜从 CurvDelta 把能力保持编码进更新空间：对比普通 LoRA，测新任务增益、旧任务遗忘率与参数成本。">
+今日概览 研发闭环 OpenAI RSI：并行研发智能体配合人类审核与批量扩展，将2至4小时任务的零干预成功率从23%提升至46%。 Evo²：让模型权重与智能体脚手架互相提供训练反馈，解决二者分开优化难以形成持续改进闭环的问题。 过程监管 OpenAI：让四家外部机构驻场审查训练与内部模型，把安全监管从发布前验收嵌入AI辅助研发全过程。 环境与数据 Game2Player：让环境构建者与玩家共同迭代，把网页游戏自动转成可验证任务和可规模化训练轨迹。 LogT：用逻辑一致的视觉搜索轨迹自动合成微调数据，使模型学会何时放大图像并将训练成本降低超120倍。 持续学习 CurvDelta：把能力保持限制写进低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。 具身训练 HINT-WAM：以示范中的未来视频作为训练期教师，在策略自身轨迹上提供无需奖励和模拟器交互的稠密动作监督。 群体评测 MultiAgentBench：以统一环境分别衡量智能体间的协作与竞争，避免用单体任务成绩代替群体互动能力。 热点延伸：PROLA、LightTAR、WorldRuler、Code World Model 2.0、StrideWorld 对当前研究的启发 Awesome-RSI 迁移｜从 OpenAI RSI 把“单例执行—人审修正—批量扩展”用于RSI闭环：按任务时长统计零干预成功率与人工接管率 MonitorEvolve 迁移｜从 OpenAI 把外部驻场审计用于模型研发监管：覆盖训练、内部部署和发布复测，记录告警、干预与缺陷闭环 SystemEvolve 迁移｜从 Evo² 把脚手架编辑成败转为训练数据：交替更新模型权重与Harness，并保留跨任务有效改动 延续｜Evo² 留下跨任务收益不稳定且显著性不足：多种子比较权重单改、Harness单改与联合进化 AgentTrainEvolve 迁移｜从 Game2Player 把玩家执行轨迹用于训练：按任务进度加权有效步骤，并与普通SFT比较长程成功率 EnvironmentEvolve 迁移｜从 Game2Player 把“生成环境—试玩验收—回收轨迹”用于环境生产：以可执行率、可验证率和难度覆盖率筛选 DataEvolve 迁移｜从 LogT 把逻辑一致性检查用于视觉工具轨迹合成：过滤目标未落地或调用顺序矛盾的数据后再微调 EvolveLLM 迁移｜从 CurvDelta 把低曲率更新用于持续学习：对比LoRA与CurvLoRA的新能力增益、旧能力保持率和遗忘率 RobotEvolve 迁移｜从 HINT-WAM 把未来观测作为训练期教师：在策略自采样状态上蒸馏动作分布，评测成功率与分布偏移 SwarmEvolve 迁移｜从 MultiAgentBench 把协作与竞争拆成独立指标：比较通信拓扑时同时报告团队收益、个体收益与协调成本">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-20T16:24:08+08:00">
+    <meta property="article:modified_time" content="2026-11-20T16:30:30+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-20 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 研发闭环 OpenAI RSI：以智能体试做、人类审核再并行扩展形成“AI 开发 AI”闭环，将中长任务零干预成功率从 23% 提至 46%。 OpenAI：让四家外部机构驻场审查训练与内部模型，把高风险 AI 监督从发布验收前移到研发全过程。 协同演化 Evo²：把智能体脚手架的执行成败回灌模型训练，同时搜索新脚手架，解决权重与系统框架各自优化的问题。 Game2Player：让环境构建者与玩家互相验收，把网页游戏自动转成可验证任务和视觉智能体训练轨迹。 评测与泛化 MultiAgentBench：用统一环境分别测试协作与竞争，解决单体任务分数无法衡量智能体互动质量的问题。 CurvDelta：把能力保持限制写入低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。 训练数据 HINT-WAM：用示范中的未来视频指导策略自身轨迹，无需奖励或模拟器交互即可获得稠密动作监督。 LogT：自动合成视觉位置准确、逻辑连贯的工具调用轨迹，使模型学会按需放大搜索图像，训练成本降低超 120 倍。 热点延伸：PROLA、LightTAR、WorldRuler、Code World Model 2.0 对当前研究的启发 MonitorEvolve 迁移｜从 OpenAI 把外部机构驻场审计用于研发监管：覆盖训练、内部部署与发布复测，记录发现、修复和放行责任。 Awesome-RSI 迁移｜从 OpenAI RSI 把“单例执行—人审纠错—并行扩展”用于 RSI 实验：持续统计零干预成功率与人工接管率。 SystemEvolve 迁移｜从 Evo² 把脚手架编辑成败转为训练数据：交替更新模型权重与工作流，并保留跨任务有效修改。 延续｜Evo² 的跨任务优势尚不稳定：对比仅训权重、仅改脚手架与协同进化，报告全量任务迁移率和置信区间。 EnvironmentEvolve 迁移｜从 Game2Player 把玩家执行同时用于环境验收和轨迹采集：按完成进度筛选任务，再回灌有效操作。 DataEvolve 迁移｜从 LogT 把视觉落地与逻辑一致性用于轨迹筛选：自动剔除放大区域错误或调用链矛盾的合成样本。 RobotEvolve 迁移｜从 HINT-WAM 把未来观测作为训练期教师：在策略自身状态上蒸馏动作分布，以真机成功率检验收益。 SwarmEvolve 迁移｜从 MultiAgentBench 把互动质量设为独立指标：固定单体模型，对比通信拓扑的协作收益与竞争鲁棒性。 GeneralizeEvolve 迁移｜从 CurvDelta 把能力保持编码进更新空间：对比普通 LoRA，测新任务增益、旧任务遗忘率与参数成本。">
+今日概览 研发闭环 OpenAI RSI：并行研发智能体配合人类审核与批量扩展，将2至4小时任务的零干预成功率从23%提升至46%。 Evo²：让模型权重与智能体脚手架互相提供训练反馈，解决二者分开优化难以形成持续改进闭环的问题。 过程监管 OpenAI：让四家外部机构驻场审查训练与内部模型，把安全监管从发布前验收嵌入AI辅助研发全过程。 环境与数据 Game2Player：让环境构建者与玩家共同迭代，把网页游戏自动转成可验证任务和可规模化训练轨迹。 LogT：用逻辑一致的视觉搜索轨迹自动合成微调数据，使模型学会何时放大图像并将训练成本降低超120倍。 持续学习 CurvDelta：把能力保持限制写进低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。 具身训练 HINT-WAM：以示范中的未来视频作为训练期教师，在策略自身轨迹上提供无需奖励和模拟器交互的稠密动作监督。 群体评测 MultiAgentBench：以统一环境分别衡量智能体间的协作与竞争，避免用单体任务成绩代替群体互动能力。 热点延伸：PROLA、LightTAR、WorldRuler、Code World Model 2.0、StrideWorld 对当前研究的启发 Awesome-RSI 迁移｜从 OpenAI RSI 把“单例执行—人审修正—批量扩展”用于RSI闭环：按任务时长统计零干预成功率与人工接管率 MonitorEvolve 迁移｜从 OpenAI 把外部驻场审计用于模型研发监管：覆盖训练、内部部署和发布复测，记录告警、干预与缺陷闭环 SystemEvolve 迁移｜从 Evo² 把脚手架编辑成败转为训练数据：交替更新模型权重与Harness，并保留跨任务有效改动 延续｜Evo² 留下跨任务收益不稳定且显著性不足：多种子比较权重单改、Harness单改与联合进化 AgentTrainEvolve 迁移｜从 Game2Player 把玩家执行轨迹用于训练：按任务进度加权有效步骤，并与普通SFT比较长程成功率 EnvironmentEvolve 迁移｜从 Game2Player 把“生成环境—试玩验收—回收轨迹”用于环境生产：以可执行率、可验证率和难度覆盖率筛选 DataEvolve 迁移｜从 LogT 把逻辑一致性检查用于视觉工具轨迹合成：过滤目标未落地或调用顺序矛盾的数据后再微调 EvolveLLM 迁移｜从 CurvDelta 把低曲率更新用于持续学习：对比LoRA与CurvLoRA的新能力增益、旧能力保持率和遗忘率 RobotEvolve 迁移｜从 HINT-WAM 把未来观测作为训练期教师：在策略自采样状态上蒸馏动作分布，评测成功率与分布偏移 SwarmEvolve 迁移｜从 MultiAgentBench 把协作与竞争拆成独立指标：比较通信拓扑时同时报告团队收益、个体收益与协调成本">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-20/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-19/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -118,8 +131,8 @@ GeneralizeEvolve
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-20\/"
-    },"genre": "updates","wordcount":  910 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-20\/","datePublished": "2026-11-20T00:00:00+08:00","dateModified": "2026-11-20T16:24:08+08:00","publisher": {
+    },"genre": "updates","wordcount":  990 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-20\/","datePublished": "2026-11-20T00:00:00+08:00","dateModified": "2026-11-20T16:30:30+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -302,7 +315,7 @@ GeneralizeEvolve
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-20 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-20">2026-11-20</time></span>&nbsp;<span title="更新于 2026-11-20 16:24:08"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-20">2026-11-20</time></span>&nbsp;<span title="910 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-20 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-20">2026-11-20</time></span>&nbsp;<span title="更新于 2026-11-20 16:30:30"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-20">2026-11-20</time></span>&nbsp;<span title="990 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -324,78 +337,91 @@ GeneralizeEvolve
 <ul>
 <li><strong>研发闭环</strong>
 <ul>
-<li><a href="#openai-rsi">OpenAI RSI</a>：以智能体试做、人类审核再并行扩展形成“AI 开发 AI”闭环，将中长任务零干预成功率从 23% 提至 46%。</li>
-<li><a href="#openai">OpenAI</a>：让四家外部机构驻场审查训练与内部模型，把高风险 AI 监督从发布验收前移到研发全过程。</li>
+<li><a href="#openai-rsi">OpenAI RSI</a>：并行研发智能体配合人类审核与批量扩展，将2至4小时任务的零干预成功率从23%提升至46%。</li>
+<li><a href="#evo-harness">Evo²</a>：让模型权重与智能体脚手架互相提供训练反馈，解决二者分开优化难以形成持续改进闭环的问题。</li>
 </ul>
 </li>
-<li><strong>协同演化</strong>
+<li><strong>过程监管</strong>
 <ul>
-<li><a href="#evo-harness">Evo²</a>：把智能体脚手架的执行成败回灌模型训练，同时搜索新脚手架，解决权重与系统框架各自优化的问题。</li>
-<li><a href="#game2player">Game2Player</a>：让环境构建者与玩家互相验收，把网页游戏自动转成可验证任务和视觉智能体训练轨迹。</li>
+<li><a href="#openai">OpenAI</a>：让四家外部机构驻场审查训练与内部模型，把安全监管从发布前验收嵌入AI辅助研发全过程。</li>
 </ul>
 </li>
-<li><strong>评测与泛化</strong>
+<li><strong>环境与数据</strong>
 <ul>
-<li><a href="#multiagentbench">MultiAgentBench</a>：用统一环境分别测试协作与竞争，解决单体任务分数无法衡量智能体互动质量的问题。</li>
-<li><a href="#curvdelta">CurvDelta</a>：把能力保持限制写入低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。</li>
+<li><a href="#game2player">Game2Player</a>：让环境构建者与玩家共同迭代，把网页游戏自动转成可验证任务和可规模化训练轨迹。</li>
+<li><a href="#logt">LogT</a>：用逻辑一致的视觉搜索轨迹自动合成微调数据，使模型学会何时放大图像并将训练成本降低超120倍。</li>
 </ul>
 </li>
-<li><strong>训练数据</strong>
+<li><strong>持续学习</strong>
 <ul>
-<li><a href="#hint-wam">HINT-WAM</a>：用示范中的未来视频指导策略自身轨迹，无需奖励或模拟器交互即可获得稠密动作监督。</li>
-<li><a href="#logt">LogT</a>：自动合成视觉位置准确、逻辑连贯的工具调用轨迹，使模型学会按需放大搜索图像，训练成本降低超 120 倍。</li>
+<li><a href="#curvdelta">CurvDelta</a>：把能力保持限制写进低曲率参数更新空间，减少模型学习新知识或定向遗忘时的通用能力损失。</li>
 </ul>
 </li>
-<li><strong>热点延伸</strong>：<a href="#prola">PROLA</a>、<a href="#lighttar">LightTAR</a>、<a href="#worldruler">WorldRuler</a>、<a href="#code-world-model-2-0">Code World Model 2.0</a></li>
+<li><strong>具身训练</strong>
+<ul>
+<li><a href="#hint-wam">HINT-WAM</a>：以示范中的未来视频作为训练期教师，在策略自身轨迹上提供无需奖励和模拟器交互的稠密动作监督。</li>
+</ul>
+</li>
+<li><strong>群体评测</strong>
+<ul>
+<li><a href="#multiagentbench">MultiAgentBench</a>：以统一环境分别衡量智能体间的协作与竞争，避免用单体任务成绩代替群体互动能力。</li>
+</ul>
+</li>
+<li><strong>热点延伸</strong>：<a href="#prola">PROLA</a>、<a href="#lighttar">LightTAR</a>、<a href="#worldruler">WorldRuler</a>、<a href="#code-world-model-2-0">Code World Model 2.0</a>、<a href="#strideworld">StrideWorld</a></li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>MonitorEvolve</strong>
-<ul>
-<li>迁移｜从 <a href="#openai">OpenAI</a> 把外部机构驻场审计用于研发监管：覆盖训练、内部部署与发布复测，记录发现、修复和放行责任。</li>
-</ul>
-</li>
 <li><strong>Awesome-RSI</strong>
 <ul>
-<li>迁移｜从 <a href="#openai-rsi">OpenAI RSI</a> 把“单例执行—人审纠错—并行扩展”用于 RSI 实验：持续统计零干预成功率与人工接管率。</li>
+<li>迁移｜从 <a href="#openai-rsi">OpenAI RSI</a> 把“单例执行—人审修正—批量扩展”用于RSI闭环：按任务时长统计零干预成功率与人工接管率</li>
+</ul>
+</li>
+<li><strong>MonitorEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#openai">OpenAI</a> 把外部驻场审计用于模型研发监管：覆盖训练、内部部署和发布复测，记录告警、干预与缺陷闭环</li>
 </ul>
 </li>
 <li><strong>SystemEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#evo-harness">Evo²</a> 把脚手架编辑成败转为训练数据：交替更新模型权重与工作流，并保留跨任务有效修改。</li>
-<li>延续｜<a href="#evo-harness">Evo²</a> 的跨任务优势尚不稳定：对比仅训权重、仅改脚手架与协同进化，报告全量任务迁移率和置信区间。</li>
+<li>迁移｜从 <a href="#evo-harness">Evo²</a> 把脚手架编辑成败转为训练数据：交替更新模型权重与Harness，并保留跨任务有效改动</li>
+<li>延续｜<a href="#evo-harness">Evo²</a> 留下跨任务收益不稳定且显著性不足：多种子比较权重单改、Harness单改与联合进化</li>
+</ul>
+</li>
+<li><strong>AgentTrainEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#game2player">Game2Player</a> 把玩家执行轨迹用于训练：按任务进度加权有效步骤，并与普通SFT比较长程成功率</li>
 </ul>
 </li>
 <li><strong>EnvironmentEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#game2player">Game2Player</a> 把玩家执行同时用于环境验收和轨迹采集：按完成进度筛选任务，再回灌有效操作。</li>
+<li>迁移｜从 <a href="#game2player">Game2Player</a> 把“生成环境—试玩验收—回收轨迹”用于环境生产：以可执行率、可验证率和难度覆盖率筛选</li>
 </ul>
 </li>
 <li><strong>DataEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#logt">LogT</a> 把视觉落地与逻辑一致性用于轨迹筛选：自动剔除放大区域错误或调用链矛盾的合成样本。</li>
+<li>迁移｜从 <a href="#logt">LogT</a> 把逻辑一致性检查用于视觉工具轨迹合成：过滤目标未落地或调用顺序矛盾的数据后再微调</li>
+</ul>
+</li>
+<li><strong>EvolveLLM</strong>
+<ul>
+<li>迁移｜从 <a href="#curvdelta">CurvDelta</a> 把低曲率更新用于持续学习：对比LoRA与CurvLoRA的新能力增益、旧能力保持率和遗忘率</li>
 </ul>
 </li>
 <li><strong>RobotEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#hint-wam">HINT-WAM</a> 把未来观测作为训练期教师：在策略自身状态上蒸馏动作分布，以真机成功率检验收益。</li>
+<li>迁移｜从 <a href="#hint-wam">HINT-WAM</a> 把未来观测作为训练期教师：在策略自采样状态上蒸馏动作分布，评测成功率与分布偏移</li>
 </ul>
 </li>
 <li><strong>SwarmEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#multiagentbench">MultiAgentBench</a> 把互动质量设为独立指标：固定单体模型，对比通信拓扑的协作收益与竞争鲁棒性。</li>
-</ul>
-</li>
-<li><strong>GeneralizeEvolve</strong>
-<ul>
-<li>迁移｜从 <a href="#curvdelta">CurvDelta</a> 把能力保持编码进更新空间：对比普通 LoRA，测新任务增益、旧任务遗忘率与参数成本。</li>
+<li>迁移｜从 <a href="#multiagentbench">MultiAgentBench</a> 把协作与竞争拆成独立指标：比较通信拓扑时同时报告团队收益、个体收益与协调成本</li>
 </ul>
 </li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 15 条</span><a href="#daily-featured">⭐ 重点 8</a><a href="#daily-related">🔬 相关 3</a><a href="#daily-hot">🔥 热点 4</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 16 条</span><a href="#daily-featured">⭐ 重点 8</a><a href="#daily-related">🔬 相关 3</a><a href="#daily-hot">🔥 热点 5</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">8 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="openai-rsi" class="summary-card daily-item">
@@ -457,20 +483,6 @@ GeneralizeEvolve
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[Game2Player：通过环境与玩家协同开发，扩展视觉智能体的游戏体验（25 ▲）](https://huggingface.co/papers/2611.24154?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-19)</div>
   </details></article>
-<article id="multiagentbench" class="summary-card daily-item">
-  <h2 id="multiagentbench-title" class="daily-item-title">MultiAgentBench：协作竞争能力评测</h2><p class="single-subtitle daily-item-summary">用统一基准评估大语言模型智能体在多智能体环境中的协作与竞争能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>语鲸</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://h5.lingowhale.com/s/pZxNXtO" target="_blank" rel="noopener">https://h5.lingowhale.com/s/pZxNXtO</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在多智能体系统开发中将 MultiAgentBench 作为基线，比较不同模型或智能体框架的协作与竞争表现。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>多智能体能力不能由单体任务成绩替代衡量，智能体间的互动质量本身应成为独立评测对象。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：评估大语言模型智能体在多智能体场景中的协作与竞争能力，为系统选型和能力比较提供统一依据。</li>
-<li><strong>方法</strong>：MultiAgentBench 将智能体间的协作与竞争纳入同一评测框架。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">EvolveLRM｜《MultiAgentBench:Evaluating the Collaboration and Competition ofLLM agents》
-https://h5.lingowhale.com/s/pZxNXtO</div>
-  </details></article>
 <article id="curvdelta" class="summary-card daily-item">
   <h2 id="curvdelta-title" class="daily-item-title">CurvDelta：低曲率约束式学习遗忘</h2><p class="single-subtitle daily-item-summary">将能力保持约束编码进低曲率参数更新空间，使模型学习或定向遗忘时尽量不损害通用能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：机器遗忘</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/generalizeevolve/">GeneralizeEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E9%81%97%E5%BF%98/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型遗忘</a><a href="/LLMDailyDigestWeb/topic/%E5%8F%82%E6%95%B0%E9%AB%98%E6%95%88%E5%BE%AE%E8%B0%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;参数高效微调</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.24654" target="_blank" rel="noopener">https://arxiv.org/abs/2611.24654</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在需要增量学习或选择性遗忘的语言模型系统中，借鉴低曲率投影或CurvLoRA进行能力保持型参数更新。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>能力保持不必仅作为额外训练目标，而可直接转化为参数更新空间的几何约束，从源头限制适应带来的副作用。</p>
@@ -515,6 +527,20 @@ https://h5.lingowhale.com/s/pZxNXtO</div>
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[LogT：借助图像进行逻辑思考，实现视觉搜索（12 ▲)](https://huggingface.co/papers/2611.19200?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-19)</div>
+  </details></article>
+<article id="multiagentbench" class="summary-card daily-item">
+  <h2 id="multiagentbench-title" class="daily-item-title">MultiAgentBench：协作竞争能力评测</h2><p class="single-subtitle daily-item-summary">用统一基准评估大语言模型智能体在多智能体环境中的协作与竞争能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>语鲸</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://h5.lingowhale.com/s/pZxNXtO" target="_blank" rel="noopener">https://h5.lingowhale.com/s/pZxNXtO</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在多智能体系统开发中将 MultiAgentBench 作为基线，比较不同模型或智能体框架的协作与竞争表现。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>多智能体能力不能由单体任务成绩替代衡量，智能体间的互动质量本身应成为独立评测对象。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：评估大语言模型智能体在多智能体场景中的协作与竞争能力，为系统选型和能力比较提供统一依据。</li>
+<li><strong>方法</strong>：MultiAgentBench 将智能体间的协作与竞争纳入同一评测框架。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">EvolveLRM｜《MultiAgentBench:Evaluating the Collaboration and Competition ofLLM agents》
+https://h5.lingowhale.com/s/pZxNXtO</div>
   </details></article>
 <h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">3 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
@@ -578,7 +604,7 @@ https://h5.lingowhale.com/s/pZxNXtO</div>
 </details>
 </div>
             </details><details class="daily-group daily-group-hot" id="daily-hot" open>
-            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">4 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">5 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
             <div class="daily-group-body">
               <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="prola" class="daily-row">
   <summary>
@@ -650,6 +676,25 @@ https://h5.lingowhale.com/s/pZxNXtO</div>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[代码世界模型 2.0：迈向无限可控的视频生成（14 ▲)](https://huggingface.co/papers/2611.22925?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-19)</div>
+  </details></div>
+</details>
+<details id="strideworld" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>StrideWorld：预固定参照一致性评测</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 评测基准 · <a href="https://arxiv.org/abs/2611.24408" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/chuangwang123/strideworld" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a></span>
+    </span><span class="daily-row-summary">用运动前固定的几何与步幅参照，检出交互式视频世界模型中被自适应参照掩盖的场景形变和动作漂移。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频理解</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E6%80%81%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动态基准测试</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.24408" target="_blank" rel="noopener">https://arxiv.org/abs/2611.24408</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/chuangwang123/strideworld" target="_blank" rel="noopener">https://github.com/chuangwang123/strideworld</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://github.com/chuangwang123/strideworld" target="_blank" rel="noopener">https://github.com/chuangwang123/strideworld</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在交互式视频世界模型开发中直接使用其代码、数据和排行榜，评测场景刚性、动作步幅稳定性及组合路线执行偏差。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>评测参照若由待测输出事后拟合，就会把结构和动作错误一并吸收；参照必须在被测运动前确定，才能真实暴露时序漂移。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：交互式视频世界模型需在相机移动时维持三维场景结构，并让同一动作产生稳定效果，但现有评测难以准确发现渐进形变和运动漂移。</li>
+<li><strong>旧法为何失效</strong>：以待测视频自身重建的场景或允许自由缩放的命令轨迹作为参照，会吸收场景形变、速度变化及路线长度误差。</li>
+<li><strong>方法</strong>：StrideWorld在运动发生前固定参照，以起始视角的真实几何评测场景刚性；先测量模型最初几步的单动作步幅，再用模型自身步幅检验后续动作一致性。</li>
+<li><strong>实验</strong>：指标在已知相机运动的渲染视频上得到验证，并与人类判断一致。对来自140个起始视角的开放模型视频评测显示，除一个模型外均出现形变，最大偏移达同路径刚性渲染的7.3倍；仅两个按估计场景深度缩放命令的模型能让多数组合路线接近自身步幅预测位置。</li>
+<li><strong>局限与后续</strong>：组合路线中多个模型频繁停滞；使用少量渲染片段微调两个模型后，可消除大部分路线中途停滞。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[StrideWorld：交互式视频世界模型中的场景刚性与动作一致性基准测试（12 ▲)](https://huggingface.co/papers/2611.24408?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-19)</div>
   </details></div>
 </details>
 </div>
