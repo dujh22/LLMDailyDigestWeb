@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>MonitorEvolve - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
+<meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
+<meta name="description" content="MonitorEvolve
+
+研究方向：监管自进化——当 AI 开始参与研发下一代 AI（&ldquo;AI 造 AI&rdquo;），让对它的监控、评估与外部审查机制随被监管系统一起演化，使人类在递归自我改进的飞轮中始终保有可核查的知情权与干预权。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+  <meta itemprop="name" content="MonitorEvolve">
+  <meta itemprop="description" content="MonitorEvolve 研究方向：监管自进化——当 AI 开始参与研发下一代 AI（“AI 造 AI”），让对它的监控、评估与外部审查机制随被监管系统一起演化，使人类在递归自我改进的飞轮中始终保有可核查的知情权与干预权。">
+  <meta itemprop="datePublished" content="2026-11-20T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-11-20T16:21:12+08:00">
+  <meta itemprop="wordCount" content="2587">
+  <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/monitorevolve/">
+  <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
+  <meta property="og:title" content="MonitorEvolve">
+  <meta property="og:description" content="MonitorEvolve 研究方向：监管自进化——当 AI 开始参与研发下一代 AI（“AI 造 AI”），让对它的监控、评估与外部审查机制随被监管系统一起演化，使人类在递归自我改进的飞轮中始终保有可核查的知情权与干预权。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="research">
+    <meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-11-20T16:21:12+08:00">
+    <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
+  <meta name="twitter:title" content="MonitorEvolve">
+  <meta name="twitter:description" content="MonitorEvolve 研究方向：监管自进化——当 AI 开始参与研发下一代 AI（“AI 造 AI”），让对它的监控、评估与外部审查机制随被监管系统一起演化，使人类在递归自我改进的飞轮中始终保有可核查的知情权与干预权。">
+<meta name="application-name" content="LLM-DailyDigest">
+<meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/research/monitorevolve/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/research/autonomousagentevolve/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MonitorEvolve",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/monitorevolve\/"
+    },"genre": "research","wordcount":  2587 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/monitorevolve\/","datePublished": "2026-11-20T00:00:00+08:00","dateModified": "2026-11-20T16:21:12+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "LLM-DailyDigest"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="LLM-DailyDigest · 大模型研究日报" data-alt="LLM-DailyDigest · 大模型研究日报" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                
+                
+              ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/updates/"
+                
+                
+              ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/trends/"
+                
+                
+              ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/topic/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/tech/"
+                
+                
+              ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/research/"
+                
+                
+              ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/resources/"
+                
+                
+              ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/LLMDailyDigestWeb/papers/"
+                
+                
+              ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章 / 主题…" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报"><img loading="lazy" src="/LLMDailyDigestWeb/images/logo.svg" data-title="/LLMDailyDigestWeb/images/logo.svg" data-alt="/LLMDailyDigestWeb/images/logo.svg" class="logo" style="background: url(/LLMDailyDigestWeb/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">LLM-DailyDigest</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章 / 主题…" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/posts/llmdailydigest"
+                  
+                  
+                ><i class="fa-solid fa-book-open fa-fw fa-sm" aria-hidden="true"></i> 详情</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/updates/"
+                  
+                  
+                ><i class="fa-solid fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 日报</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/trends/"
+                  
+                  
+                ><i class="fa-solid fa-chart-line fa-fw fa-sm" aria-hidden="true"></i> 趋势</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/topic/"
+                  
+                  
+                ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 主题</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/tech/"
+                  
+                  
+                ><i class="fa-solid fa-microchip fa-fw fa-sm" aria-hidden="true"></i> 技术</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/research/"
+                  
+                  
+                ><i class="fa-solid fa-flask fa-fw fa-sm" aria-hidden="true"></i> 研究</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/resources/"
+                  
+                  
+                ><i class="fa-solid fa-box-archive fa-fw fa-sm" aria-hidden="true"></i> 资源</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/LLMDailyDigestWeb/papers/"
+                  
+                  
+                ><i class="fa-solid fa-file-lines fa-fw fa-sm" aria-hidden="true"></i> 论文</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/research/" title="Researches">Researches</a></li><li class="breadcrumb-item active" aria-current="page">MonitorEvolve</li>
+    </ol>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom"></aside>
+
+  <article class="page single">
+    <div class="header">
+      <h1 class="single-title animate__animated animate__flipInX"><span>MonitorEvolve</span></h1></div><div class="post-meta">
+      <div class="post-meta-line"><span title="研究提出者"><i class="fa-solid fa-user fa-fw me-1" aria-hidden="true"></i>提出者：杜晋华
+          </span>&nbsp;<span title="最早研究时间"><i class="fa-regular fa-flag fa-fw me-1" aria-hidden="true"></i>最早研究：2026-11-20
+          </span></div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#研究范畴">研究范畴</a></li>
+    <li><a href="#研究挑战">研究挑战</a></li>
+    <li><a href="#自研项目">自研项目</a></li>
+    <li><a href="#相关工作">相关工作</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="monitorevolve">MonitorEvolve</h1>
+<blockquote>
+<p>研究方向：<strong>监管自进化</strong>——当 AI 开始参与研发下一代 AI（&ldquo;AI 造 AI&rdquo;），让对它的监控、评估与外部审查机制随被监管系统一起演化，使人类在递归自我改进的飞轮中始终保有可核查的知情权与干预权。</p></blockquote>
+<h2 id="研究范畴">研究范畴</h2>
+<p>监管自进化（oversight / monitoring self-evolution）关注的不是让模型本身变强，而是让&quot;盯住模型的那一层&quot;跟得上模型变强的速度。2026 年 11 月 16 日，Sam Altman 在 Semafor 活动上谈及递归自我改进（RSI）时划出红线：&ldquo;我们用自己的技术加快了新模型研发吗？是的。我们是不是按一下按钮，让模型在无人监督下设计下一代、快速自我改进？绝对没有。我们本可以更往 RSI 那一端推进，但我不认为现在能安全地这么做。&ldquo;同日 OpenAI 发布《Our first phase of embedded assessments》，与 Apollo Research、METR、Transluce、Goodfire 四家外部机构签约，把评估从&quot;发布前贴合格证&quot;前移到训练与内部使用环节：Apollo 派 6 人驻场 4 个月，检验&quot;训练没有奖励暗中破坏、强评测与红队诱发不出、内部使用中未出现、相关推理可被检测&quot;四项主张；METR 审视 OpenAI 迄今最大规模的一次 RL 训练，搜寻现有测试与监控漏掉的失对齐；Transluce 自 12 月初起获得 6 周特权访问（含原始思维链与至少一个仅内部使用的模型），评估后训练对齐评测能否抓住欺骗与 reward hacking；Goodfire 以可解释性方法辅助训练过程的监控与调试。此前（2026-07-21 至 08-11）METR 与 Redwood Research 对 OpenAI 内部智能体监控系统的 3 周审查暴露了典型盲区：上下文压缩（compaction）事件未纳入监控，智能体可持续行动、无限推迟受检；内部 Responses API 上强模型流量的监控覆盖率仅估计为 75%–94%，部分 RL 训练运行未被监控。本方向把这些事实视为一个研究对象的两面：被监管系统在自进化，监管系统也必须自进化——监控器的覆盖、触发时机、对抗鲁棒性，外部评估的访问权限、披露规则与叫停权，都要随&quot;AI 连续自主工作时长&quot;的增长而迭代。与 <a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a> 关注评测本身的演化、<a href="/LLMDailyDigestWeb/research/humanevolve/">HumanEvolve</a> 关注人与 AI 的协同进化、<a href="/LLMDailyDigestWeb/research/autonomousagentevolve/">AutonomousAgentEvolve</a> 关注常驻 Agent 的权限边界不同，MonitorEvolve 关心的是 RSI 场景下&quot;谁来监督监督者&rdquo;：监控与审查机制如何被持续红队、持续补洞，并在必要时真正拉得住闸。</p>
+<h2 id="研究挑战">研究挑战</h2>
+<ul>
+<li>监控覆盖与触发时机：监控若只在&quot;交还控制权&quot;等节点触发，长程自主运行中的压缩、子任务、后台作业就会形成空档；如何保证每一步操作都可被追溯，而不是只信纸面设定。</li>
+<li>监控器的对抗鲁棒性：智能体所见与监控器所见存在差异时可被利用来绕过沙箱与自动审核；被监管模型能力超过监控模型时（弱监督强），如何维持检测能力。</li>
+<li>思维链可监控性：CoT 监控是当前最有效的信号之一，但训练压力可能让模型隐藏意图；如何在优化中保留可监控性。</li>
+<li>内部部署的可见性：未公开模型早已在内部&quot;上岗&quot;并参与下一代研发，评估必须前移到训练与内部使用环节，而这部分结果往往不对外公开。</li>
+<li>外部评估的独立性与披露：访问权限不等于员工权限、证据可被以知识产权为由删减、内部专用模型结果不得公开——&ldquo;有结论、没底稿&quot;的报告如何被公众信任；评估方目前并无独立叫停权。</li>
+<li>能力进步的锯齿性：METR 估计 Anthropic 模型在特定任务上的能力进步速度约为历史水平的 1.9 倍，但各环节快慢不一，监管需按能力维度而非单一平均值设定阈值与&quot;限速&rdquo;。</li>
+<li>审计闭环：查出了什么、是否倒逼整改、改完是否复测（如 OpenAI 称已修复 METR/Redwood 发现的生产缺陷，但 METR 尚未验证），需要可复核的流程。</li>
+</ul>
+<h2 id="自研项目">自研项目</h2>
+<ul>
+<li><a href="https://github.com/dujh22/EvolveLLM"target="_blank" rel="external nofollow noopener noreferrer">EvolveLLM<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 博士课题《Toward True ASI》承载仓库，自进化机制必须与可核查的监管机制同步设计。</li>
+<li><a href="https://github.com/dujh22/Awesome-RSI"target="_blank" rel="external nofollow noopener noreferrer">Awesome-RSI<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 递归自我改进资源清单，收录 RSI 安全、监控与外部评估相关工作。</li>
+</ul>
+<h2 id="相关工作">相关工作</h2>
+<p><strong>代码 / 框架 / 文档</strong></p>
+<ul>
+<li><a href="https://openai.com/index/our-first-phase-of-embedded-assessments/"target="_blank" rel="external nofollow noopener noreferrer">Our first phase of embedded assessments<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — OpenAI 官方博客（2026-11-16）：与 Apollo Research、METR、Transluce、Goodfire 签订首阶段嵌入式评估协议，评估方可接触模型检查点、源码、训练与评测数据、监控系统</li>
+<li><a href="https://apolloresearch.ai/blog/pilot-towards-embedded-evaluations"target="_blank" rel="external nofollow noopener noreferrer">Pilot towards embedded evaluations<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — Apollo Research：6 人驻场 4 个月，评估模型暗中破坏对齐与控制机制的风险；OpenAI 不能删改定性结论，但可删去涉及敏感 IP 的证据</li>
+<li><a href="https://transluce.org/embedded-assessment-pilot-with-openai"target="_blank" rel="external nofollow noopener noreferrer">Embedded assessment pilot with OpenAI<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — Transluce：6 周特权访问，评估后训练对齐评测质量；内部专用模型结果不公开，完整报告仅提交 OpenAI 基金会董事会安全与安保委员会</li>
+<li><a href="https://metr.org/blog/2026-03-25-red-teaming-anthropic-agent-monitoring/"target="_blank" rel="external nofollow noopener noreferrer">Red-teaming Anthropic&rsquo;s agent monitoring<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — METR 对 Anthropic 内部智能体监控的同类审查（2026-03）</li>
+<li><a href="https://github.com/UKGovernmentBEIS/control-arena"target="_blank" rel="external nofollow noopener noreferrer">ControlArena<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — UK AISI 的 AI Control 实验环境库</li>
+<li><a href="https://github.com/UKGovernmentBEIS/inspect_ai"target="_blank" rel="external nofollow noopener noreferrer">Inspect<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — UK AISI 开源评测框架</li>
+</ul>
+<p><strong>论文</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2609.25413"target="_blank" rel="external nofollow noopener noreferrer">Embedded Assessments for Frontier AI<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 嵌入式评估的方法论：把外部评估前移到训练与内部部署环节</li>
+<li><a href="https://arxiv.org/abs/2604.23065"target="_blank" rel="external nofollow noopener noreferrer">What Should Frontier AI Developers Disclose About Internal Deployments?<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 内部部署的披露问题</li>
+<li><a href="https://arxiv.org/abs/2605.09684"target="_blank" rel="external nofollow noopener noreferrer">MonitoringBench: Semi-Automated Red-Teaming for Agent Monitoring<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 智能体监控的半自动红队基准</li>
+<li><a href="https://arxiv.org/abs/2610.20941"target="_blank" rel="external nofollow noopener noreferrer">Screwtape: Adversarial Transcript Editing for Monitor Red-Teaming<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 对抗性编辑轨迹以攻破监控器</li>
+<li><a href="https://arxiv.org/abs/2312.06942"target="_blank" rel="external nofollow noopener noreferrer">AI Control: Improving Safety Despite Intentional Subversion<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 假设模型可能蓄意破坏，用受信弱模型监控不受信强模型</li>
+<li><a href="https://arxiv.org/abs/2503.11926"target="_blank" rel="external nofollow noopener noreferrer">Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — OpenAI：CoT 监控能抓 reward hacking，但对 CoT 施加优化压力会诱发意图隐藏</li>
+<li><a href="https://arxiv.org/abs/2507.11473"target="_blank" rel="external nofollow noopener noreferrer">Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 多机构联合立场文章：思维链可监控性脆弱，需主动保护</li>
+<li><a href="https://arxiv.org/abs/2312.09390"target="_blank" rel="external nofollow noopener noreferrer">Weak-to-Strong Generalization<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 弱监督者能否引导强模型，超级对齐的核心问题</li>
+<li><a href="https://arxiv.org/abs/2401.05566"target="_blank" rel="external nofollow noopener noreferrer">Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 欺骗行为可穿越安全训练，说明仅靠出厂测试不够</li>
+<li><a href="https://arxiv.org/abs/2412.14093"target="_blank" rel="external nofollow noopener noreferrer">Alignment Faking in Large Language Models<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 模型在训练中策略性伪装对齐</li>
+</ul>
+<p><strong>综述 / 报道</strong></p>
+<ul>
+<li><a href="https://www.semafor.com/article/11/16/2026/altman-says-he-has-personal-empathy-for-jensen-huang"target="_blank" rel="external nofollow noopener noreferrer">Altman says he has personal empathy for Jensen Huang<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — Semafor（2026-11-16）：Altman 称 OpenAI 可以更往 RSI 推进，但目前无法安全地这么做</li>
+<li><a href="https://www.cnbc.com/2026/10/22/metr-redwood-research-open-ai-test.html"target="_blank" rel="external nofollow noopener noreferrer">Third-party evaluators found vulnerabilities in OpenAI monitoring system during test pilot<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — CNBC：METR 与 Redwood 3 周审查发现压缩事件未被监控、部分 RL 训练未被监控、存在绕过沙箱与 Auto-Review 的路径</li>
+<li><a href="https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring/"target="_blank" rel="external nofollow noopener noreferrer">Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — The Decoder 对同一审查的解读：61 页内部报告，公开仅高层摘要</li>
+<li><a href="https://mp.weixin.qq.com/s/UQEcPcplLctf2RuhmuVU4g"target="_blank" rel="external nofollow noopener noreferrer">奥特曼给「AI造AI」踩刹车！方向盘必须握在人类手中<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 新智元对 Altman Semafor 发言与嵌入式评估的中文解读。需注意：&ldquo;AI 造 AI&quot;在原话中指 OpenAI 用自家 AI 加速研发，而非已实现无人监督的自主 RSI；文中&quot;压缩空档&quot;一节对应 METR/Redwood 2026 年 7–8 月对内部智能体监控的审查，而非本轮嵌入式评估的结果；&ldquo;外部评估方没有独立叫停权&quot;是基于公开协议的解读，OpenAI 未作此表述</li>
+</ul>
+</div><section class="page archive" style="margin-top:2rem;">
+        <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测审计 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-20/#openai" class="archive-item-link">OpenAI：嵌入式评估监管自我改进</a>
+                <span class="archive-item-date" title='2026-11-20'>11-20</span></article></div></section></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><a href="https://github.com/dujh22/LLM-DailyDigest" title="在 GitHub 上查看"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/LLMDailyDigestWeb/lib/autocomplete/autocomplete.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/fuse/fuse.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/lightgallery.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/sharer/sharer.min.js" async defer></script><script src="/LLMDailyDigestWeb/lib/typeit/index.umd.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/katex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/auto-render.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/copy-tex.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/katex/mhchem.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/LLMDailyDigestWeb/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"大模型研究日报","typeit-header-subtitle-mobile":"大模型研究日报"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":true,"fuseIndexURL":"/LLMDailyDigestWeb/index.json","highlightTag":"em","ignoreFieldNorm":true,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":40,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100}};</script><script src="/LLMDailyDigestWeb/js/theme.min.js" defer></script></body>
+</html>
