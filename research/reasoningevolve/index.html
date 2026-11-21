@@ -9,27 +9,27 @@
 <meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
 <meta name="description" content="ReasoningEvolve
 
-研究方向：推理时自进化——让 LLM 在推理服务（inference serving）过程中，利用真实用户交互产生的前向计算本身完成任务自适应，在不做反向传播、不引入额外训练开销的前提下&quot;边推理、边进化&quot;。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+研究方向：推理中的自进化——&ldquo;推理&quot;取双重含义：既指推理服务（inference）过程，让模型利用服务中的前向计算与真实交互持续自适应；也指思维推理（reasoning）过程，让模型在思考、求解、反思中不断改进自己的推理能力与推理策略。两者共同指向&quot;边推理、边进化&rdquo;。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="ReasoningEvolve">
-  <meta itemprop="description" content="ReasoningEvolve 研究方向：推理时自进化——让 LLM 在推理服务（inference serving）过程中，利用真实用户交互产生的前向计算本身完成任务自适应，在不做反向传播、不引入额外训练开销的前提下&#34;边推理、边进化&#34;。">
+  <meta itemprop="description" content="ReasoningEvolve 研究方向：推理中的自进化——“推理&#34;取双重含义：既指推理服务（inference）过程，让模型利用服务中的前向计算与真实交互持续自适应；也指思维推理（reasoning）过程，让模型在思考、求解、反思中不断改进自己的推理能力与推理策略。两者共同指向&#34;边推理、边进化”。">
   <meta itemprop="datePublished" content="2026-11-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-21T11:32:33+08:00">
-  <meta itemprop="wordCount" content="2218">
+  <meta itemprop="dateModified" content="2026-11-21T11:44:44+08:00">
+  <meta itemprop="wordCount" content="3190">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/reasoningevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="ReasoningEvolve">
-  <meta property="og:description" content="ReasoningEvolve 研究方向：推理时自进化——让 LLM 在推理服务（inference serving）过程中，利用真实用户交互产生的前向计算本身完成任务自适应，在不做反向传播、不引入额外训练开销的前提下&#34;边推理、边进化&#34;。">
+  <meta property="og:description" content="ReasoningEvolve 研究方向：推理中的自进化——“推理&#34;取双重含义：既指推理服务（inference）过程，让模型利用服务中的前向计算与真实交互持续自适应；也指思维推理（reasoning）过程，让模型在思考、求解、反思中不断改进自己的推理能力与推理策略。两者共同指向&#34;边推理、边进化”。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-11-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-21T11:32:33+08:00">
+    <meta property="article:modified_time" content="2026-11-21T11:44:44+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="ReasoningEvolve">
-  <meta name="twitter:description" content="ReasoningEvolve 研究方向：推理时自进化——让 LLM 在推理服务（inference serving）过程中，利用真实用户交互产生的前向计算本身完成任务自适应，在不做反向传播、不引入额外训练开销的前提下&#34;边推理、边进化&#34;。">
+  <meta name="twitter:description" content="ReasoningEvolve 研究方向：推理中的自进化——“推理&#34;取双重含义：既指推理服务（inference）过程，让模型利用服务中的前向计算与真实交互持续自适应；也指思维推理（reasoning）过程，让模型在思考、求解、反思中不断改进自己的推理能力与推理策略。两者共同指向&#34;边推理、边进化”。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/research/reasoningevolve/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/research/monitorevolve/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/"
-    },"genre": "research","wordcount":  2218 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-21T11:32:33+08:00","publisher": {
+    },"genre": "research","wordcount":  3190 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-21T11:44:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -239,31 +239,46 @@
 </nav></div>
       </div><div class="content" id="content"><h1 id="reasoningevolve">ReasoningEvolve</h1>
 <blockquote>
-<p>研究方向：<strong>推理时自进化</strong>——让 LLM 在推理服务（inference serving）过程中，利用真实用户交互产生的前向计算本身完成任务自适应，在不做反向传播、不引入额外训练开销的前提下&quot;边推理、边进化&quot;。</p></blockquote>
+<p>研究方向：<strong>推理中的自进化</strong>——&ldquo;推理&quot;取双重含义：既指推理服务（inference）过程，让模型利用服务中的前向计算与真实交互持续自适应；也指思维推理（reasoning）过程，让模型在思考、求解、反思中不断改进自己的推理能力与推理策略。两者共同指向&quot;边推理、边进化&rdquo;。</p></blockquote>
 <h2 id="研究范畴">研究范畴</h2>
-<p>推理时自进化（inference-time self-evolution）关注的是把&quot;推理&quot;从单纯消耗算力的服务环节，变成模型持续适配下游任务的进化环节。随着 LLM 大规模部署，推理服务已成为 AI 能耗增长的主要来源，而服务过程中由真实用户交互产生的海量前向计算几乎全部被&quot;用完即弃&quot;。主流的自适应手段分两类：一是调优技术（SFT、LoRA / Adapter 等 PEFT、提示调优、前缀调优、测试时训练），依赖反向传播，相比推理本身有显著额外的显存与算力开销；二是知识增强技术（ICL、RAG、提示工程、激活引导、工具调用），只改输入或注入信息，不触碰模型内部权重。本方向关注第三条路线——<strong>仅前向（forward-only）学习</strong>：只依赖前向传播完成权重层面的自适应，使自适应可以直接嵌入推理服务链路。代表工作是 NeurIPS 2026 论文 <em>Efficient LLM Adaptation with Forward-Only Passes</em>（隆德大学 &amp; Google DeepMind）：它对选定权重矩阵做 SVD 分解，各 SVD 分量引起的激活之和恢复标准前向传播；再用各分量激活相对隐藏状态的<strong>角度集中度</strong>衡量其贡献是&quot;分散&quot;还是&quot;集中&quot;，据此只靠前向传播找出离散度最高、最值得降秩的权重矩阵，裁掉高阶分量、保留低阶分量。与基于梯度的 LASER-Grad 相比峰值显存更低、加速比更高；与穷举搜索的 LASER 相比加速比更高、精度相当，并在高达 57B 参数的 LLaMA2、DeepSeek V1、Mistral、Qwen2 及其 MoE 版本和多模态模型上验证了泛化性。社区关注的核心问题包括：仅前向信号（激活几何、零阶估计、局部损失、进化策略）能否替代梯度给出可靠的更新方向；如何利用用户偏好或自标注验证数据在服务期间在线、低成本地持续适配；以及&quot;推理即训练&quot;如何与推理基础设施、安全与稳定性约束协同。与 <a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a> 关注推理模型的能力进化、<a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a> 关注逻辑推理能力、<a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a> 关注推理时缓存记忆的自适应管理、<a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a> 关注基础设施演化不同，ReasoningEvolve 关心的是：<strong>推理服务的前向计算本身能否成为模型进化的燃料</strong>。</p>
+<p>ReasoningEvolve 把&quot;推理&quot;从一次性消耗算力的环节，变成模型持续进化的环节，涵盖两条相互交织的主线。</p>
+<p><strong>一、推理服务中的自进化（inference-time adaptation）。</strong> 随着 LLM 大规模部署，推理服务已成为 AI 能耗增长的主要来源，而服务过程中由真实用户交互产生的海量前向计算几乎全部被&quot;用完即弃&quot;。主流自适应手段要么是依赖反向传播的调优技术（SFT、LoRA / Adapter 等 PEFT、提示调优、测试时训练），相比推理本身有显著额外开销；要么是只改输入、不触碰权重的知识增强技术（ICL、RAG、提示工程、激活引导）。本方向关注第三条路线——<strong>仅前向（forward-only）学习</strong>：只依赖前向传播完成权重层面的自适应，使其可以直接嵌入推理服务链路。代表工作是 NeurIPS 2026 论文 <em>Efficient LLM Adaptation with Forward-Only Passes</em>（隆德大学 &amp; Google DeepMind）：对选定权重矩阵做 SVD 分解，用各分量激活相对隐藏状态的<strong>角度集中度</strong>衡量其贡献是&quot;分散&quot;还是&quot;集中&quot;，只靠前向传播找出离散度最高、最值得降秩的权重矩阵，裁掉高阶分量、保留低阶分量；与基于梯度的 LASER-Grad 相比峰值显存更低、加速比更高，与穷举搜索的 LASER 相比加速比更高、精度相当，并在高达 57B 参数的多种稠密、MoE 与多模态模型上验证了泛化性。</p>
+<p><strong>二、思维推理中的自进化（reasoning self-evolution）。</strong> 模型在推理过程中产生的思维链、尝试、失败与验证结果，本身就是进化的素材：STaR 类方法用自己生成的正确推理自举训练；测试时扩展（test-time scaling）通过搜索、多数投票、自我验证与反思让单次推理变强；TTRL、无外部奖励 RL、Absolute Zero 等工作在没有标注的情况下，用自一致性、自信度或自我出题在测试时 / 零数据条件下强化推理；Buffer of Thoughts、Dynamic Cheatsheet、ReasoningBank 等把推理经验沉淀为可复用的&quot;思维模板 / 推理记忆&quot;，让模型越用越会想。</p>
+<p>两条主线的交汇点是：<strong>推理时产生的计算与经验，能否以低成本、可持续、安全的方式回写到模型（权重、记忆或策略）中</strong>。社区关注的核心问题包括：仅前向信号（激活几何、零阶估计、进化策略）与无监督推理信号（自一致性、自信度、可验证奖励）能否替代梯度与人工标注给出可靠的更新方向；服务期间如何利用用户偏好或自标注数据在线持续适配；推理时算力与训练时算力如何权衡；以及&quot;推理即训练&quot;如何与推理基础设施、安全与稳定性约束协同。与 <a href="/LLMDailyDigestWeb/research/evolvelrm/">EvolveLRM</a> 聚焦大推理模型的 RL 后训练、<a href="/LLMDailyDigestWeb/research/logicevolve/">LogicEvolve</a> 聚焦逻辑推理能力、<a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a> 聚焦推理时缓存记忆、<a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a> 聚焦外部记忆系统、<a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a> 聚焦基础设施演化不同，ReasoningEvolve 关心的是：<strong>推理过程本身——无论是服务中的前向计算还是思考中的推理轨迹——能否成为模型进化的燃料</strong>。</p>
 <h2 id="研究挑战">研究挑战</h2>
+<p><strong>推理服务侧</strong></p>
 <ul>
-<li>无梯度的更新信号：仅前向方法（前向梯度、零阶优化、进化策略）在深层、大规模模型上的可扩展性仍是难题——方差大、需要多次扰动或多轮前向，如何像角度集中度这样找到&quot;一次前向就够用&quot;的结构性信号。</li>
-<li>从&quot;一次性适配&quot;到&quot;持续进化&quot;：现有代表工作本质上是一次性搜索出待降秩的权重矩阵，离&quot;服务期间在线实时适应&quot;还有距离；如何在连续流量下增量更新、避免灾难性遗忘与漂移。</li>
-<li>监督信号来源：服务过程中缺少标注，需依赖用户偏好、隐式反馈或自标注验证数据，噪声与偏差会直接写进权重。</li>
+<li>无梯度的更新信号：前向梯度、零阶优化、进化策略在深层大模型上方差大、需多次扰动或多轮前向；如何像角度集中度这样找到&quot;一次前向就够用&quot;的结构性信号。</li>
+<li>从&quot;一次性适配&quot;到&quot;持续进化&quot;：现有代表工作本质上是一次性搜索与降秩，离服务期间在线实时适应还有距离；如何在连续流量下增量更新、避免灾难性遗忘与漂移。</li>
 <li>与推理基础设施的耦合：前缀缓存、连续批处理、多租户共享同一权重的前提，与&quot;按任务 / 用户群体改权重&quot;天然冲突，需要新的权重版本管理与调度设计。</li>
 <li>压缩与适配的边界：选择性去除 SVD 高阶分量既是压缩也能提升下游精度（LASER 现象），其机理、适用任务与失效条件尚不清楚。</li>
-<li>评测与安全：如何证明在线自适应带来的是真实任务收益而非对局部分布的过拟合；用户交互驱动的权重修改如何防止投毒、偏见放大与对齐退化。</li>
+</ul>
+<p><strong>思维推理侧</strong></p>
+<ul>
+<li>无监督信号的可靠性：自一致性、自信度、熵等内在信号可能强化&quot;自信的错误&quot;，导致多数投票塌缩与熵坍缩，推理多样性下降。</li>
+<li>推理经验的抽象与迁移：哪些推理轨迹值得沉淀、如何从具体解法提炼可泛化的策略，避免记忆污染与过拟合。</li>
+<li>推理效率：测试时扩展带来过度思考（overthinking）与成本膨胀，需要按难度自适应分配思考预算。</li>
+<li>忠实度与可验证性：思维链未必反映真实计算过程，自我验证本身也可能出错，自进化可能放大推理链上的错误传播。</li>
+</ul>
+<p><strong>共性</strong></p>
+<ul>
+<li>监督信号来源：服务过程缺少标注，依赖用户偏好、隐式反馈或自标注验证数据，噪声与偏差会直接写进权重或记忆。</li>
+<li>评测与安全：如何证明推理中的进化带来的是真实任务收益而非局部分布过拟合；交互驱动的自修改如何防止投毒、偏见放大与对齐退化。</li>
 </ul>
 <h2 id="自研项目">自研项目</h2>
 <ul>
 <li><a href="https://github.com/dujh22/EvolveLLM"target="_blank" rel="external nofollow noopener noreferrer">EvolveLLM<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 博士课题《Toward True ASI》承载仓库，含自进化机制综述与方法论沉淀。</li>
-<li><a href="https://github.com/dujh22/Awesome-RSI"target="_blank" rel="external nofollow noopener noreferrer">Awesome-RSI<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 递归自我改进资源清单，收录推理时 / 测试时自适应相关工作。</li>
+<li><a href="https://github.com/dujh22/CLUB-benchmark"target="_blank" rel="external nofollow noopener noreferrer">CLUB-benchmark (LogicEvolve)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 复杂逻辑推理评测与自进化平台，可用于检验推理自进化的真实收益。</li>
+<li><a href="https://github.com/dujh22/Awesome-RSI"target="_blank" rel="external nofollow noopener noreferrer">Awesome-RSI<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 递归自我改进资源清单，收录推理时 / 测试时自适应与推理自进化相关工作。</li>
 </ul>
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
 <ul>
-<li><a href="https://github.com/pratyushasharma/laser"target="_blank" rel="external nofollow noopener noreferrer">LASER<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 层选择性降秩：去除权重 SVD 高阶分量可提升推理精度，本方向代表工作的对比基线</li>
+<li><a href="https://github.com/pratyushasharma/laser"target="_blank" rel="external nofollow noopener noreferrer">LASER<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 层选择性降秩：去除权重 SVD 高阶分量可提升推理精度，仅前向自适应代表工作的对比基线</li>
 <li><a href="https://github.com/princeton-nlp/MeZO"target="_blank" rel="external nofollow noopener noreferrer">MeZO<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 仅用前向传播的零阶优化微调 LLM</li>
 <li><a href="https://github.com/SakanaAI/self-adaptive-llms"target="_blank" rel="external nofollow noopener noreferrer">Transformer²（self-adaptive-llms）<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — Sakana AI：推理时调整权重奇异值实现自适应</li>
 </ul>
-<p><strong>论文</strong></p>
+<p><strong>论文：推理服务中的自适应</strong></p>
 <ul>
 <li><a href="https://arxiv.org/abs/2611.10610"target="_blank" rel="external nofollow noopener noreferrer">Efficient LLM Adaptation with Forward-Only Passes (NeurIPS 2026)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 利用 SVD 分量激活的角度集中度做仅前向搜索，定位并降秩权重矩阵；<a href="https://neurips.cc/virtual/2026/loc/atlanta/poster/148809"target="_blank" rel="external nofollow noopener noreferrer">NeurIPS 页面<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 <li><a href="https://doi.org/10.36227/techrxiv.176739859.93468234/v1"target="_blank" rel="external nofollow noopener noreferrer">Backpropagation-Free Learning: On the Emergence of Forward-Only Algorithms<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 同一团队的仅前向学习综述（TechRxiv 2026）</li>
@@ -283,15 +298,54 @@
 <li><a href="https://arxiv.org/abs/2404.02948"target="_blank" rel="external nofollow noopener noreferrer">PiSSA: Principal Singular Values and Singular Vectors Adaptation<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 基于主奇异分量的 PEFT</li>
 <li><a href="https://arxiv.org/abs/2106.09685"target="_blank" rel="external nofollow noopener noreferrer">LoRA: Low-Rank Adaptation of Large Language Models<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 依赖反向传播的低秩适配基线</li>
 </ul>
+<p><strong>论文：思维推理中的自进化</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2203.14465"target="_blank" rel="external nofollow noopener noreferrer">STaR: Bootstrapping Reasoning With Reasoning<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 用自己生成的正确推理自举训练，推理自进化的经典起点</li>
+<li><a href="https://arxiv.org/abs/2501.12948"target="_blank" rel="external nofollow noopener noreferrer">DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 纯 RL 激发长链推理与自我反思</li>
+<li><a href="https://arxiv.org/abs/2504.16084"target="_blank" rel="external nofollow noopener noreferrer">TTRL: Test-Time Reinforcement Learning<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 在无标注测试数据上以多数投票为奖励进行 RL</li>
+<li><a href="https://arxiv.org/abs/2505.19590"target="_blank" rel="external nofollow noopener noreferrer">Learning to Reason without External Rewards<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 以模型自信度为内在奖励强化推理</li>
+<li><a href="https://arxiv.org/abs/2505.03335"target="_blank" rel="external nofollow noopener noreferrer">Absolute Zero: Reinforced Self-play Reasoning with Zero Data<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 自我出题、自我求解的零数据推理自进化</li>
+<li><a href="https://arxiv.org/abs/2505.22617"target="_blank" rel="external nofollow noopener noreferrer">The Entropy Mechanism of RL for Reasoning Language Models<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 推理 RL 中的熵坍缩与探索机制</li>
+<li><a href="https://arxiv.org/abs/2408.03314"target="_blank" rel="external nofollow noopener noreferrer">Scaling LLM Test-Time Compute Optimally<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 推理时算力的最优扩展可胜过扩大参数</li>
+<li><a href="https://arxiv.org/abs/2502.06703"target="_blank" rel="external nofollow noopener noreferrer">Can 1B LLM Surpass 405B LLM? Rethinking Compute-Optimal Test-Time Scaling<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 计算最优的测试时扩展策略</li>
+<li><a href="https://arxiv.org/abs/2501.19393"target="_blank" rel="external nofollow noopener noreferrer">s1: Simple test-time scaling<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 预算强制（budget forcing）控制思考长度</li>
+<li><a href="https://arxiv.org/abs/2412.21187"target="_blank" rel="external nofollow noopener noreferrer">Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 推理模型的过度思考问题</li>
+<li><a href="https://arxiv.org/abs/2303.17651"target="_blank" rel="external nofollow noopener noreferrer">Self-Refine: Iterative Refinement with Self-Feedback<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 推理时自我反馈迭代改进</li>
+<li><a href="https://arxiv.org/abs/2303.11366"target="_blank" rel="external nofollow noopener noreferrer">Reflexion: Language Agents with Verbal Reinforcement Learning<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 以语言反思形式积累经验</li>
+<li><a href="https://arxiv.org/abs/2406.04271"target="_blank" rel="external nofollow noopener noreferrer">Buffer of Thoughts: Thought-Augmented Reasoning with LLMs<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 沉淀并复用高层思维模板</li>
+<li><a href="https://arxiv.org/abs/2504.07952"target="_blank" rel="external nofollow noopener noreferrer">Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 推理时持续积累可复用解题策略</li>
+<li><a href="https://arxiv.org/abs/2509.25140"target="_blank" rel="external nofollow noopener noreferrer">ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 从成功与失败中提炼推理记忆，实现测试时自进化</li>
+</ul>
 <p><strong>综述 / 报道</strong></p>
 <ul>
-<li><a href="https://mp.weixin.qq.com/s/WgJNWHiUImUiQmKu-mYevQ"target="_blank" rel="external nofollow noopener noreferrer">NeurIPS 2026 | 如何让LLM在推理中不断进化<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 机器之心对 <em>Efficient LLM Adaptation with Forward-Only Passes</em> 的中文解读。需注意：标题中的&quot;推理&quot;指推理服务（inference），而非逻辑 / 数学推理（reasoning）；论文方法是一次性的仅前向搜索与降秩，&ldquo;服务期间在线实时适应、持续进化&quot;是文末对未来应用的展望，而非论文已验证的结果</li>
+<li><a href="https://mp.weixin.qq.com/s/WgJNWHiUImUiQmKu-mYevQ"target="_blank" rel="external nofollow noopener noreferrer">NeurIPS 2026 | 如何让LLM在推理中不断进化<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 机器之心对 <em>Efficient LLM Adaptation with Forward-Only Passes</em> 的中文解读，属于本方向&quot;推理服务&quot;一侧。需注意：论文方法是一次性的仅前向搜索与降秩，&ldquo;服务期间在线实时适应、持续进化&quot;是文末对未来应用的展望，而非论文已验证的结果</li>
 </ul>
 </div><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>强化学习 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-20/#item-44" class="archive-item-link">成功组数预测强化学习起飞</a>
+                <span class="archive-item-date" title='2026-11-20'>11-20</span>&nbsp;<a href="https://arxiv.org/abs/2611.26084" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>形式化证明 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-21/#claude-lean" class="archive-item-link">Claude：Lean形式化证明黎曼猜想</a>
+                <span class="archive-item-date" title='2026-11-21'>11-21</span></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>推理效率 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-21/#gemini-4-hydrogen-token" class="archive-item-link">Gemini 4 Hydrogen：半量Token高分推理</a>
+                <span class="archive-item-date" title='2026-11-21'>11-21</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>测试时优化 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-21/#forward-only-passes" class="archive-item-link">Forward-Only Passes：角度集中度引导降秩</a>
-                <span class="archive-item-date" title='2026-11-21'>11-21</span>&nbsp;<a href="https://arxiv.org/abs/2611.10610" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div></section></article></main><footer class="footer">
+                <span class="archive-item-date" title='2026-11-21'>11-21</span>&nbsp;<a href="https://arxiv.org/abs/2611.10610" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>缓存优化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-20/#rocokv" class="archive-item-link">RoCoKV：置信冗余感知缓存压缩</a>
+                <span class="archive-item-date" title='2026-11-20'>11-20</span>&nbsp;<a href="https://arxiv.org/abs/2611.25433" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>置信度评估 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-20/#glide" class="archive-item-link">GLiDE：推理蒸馏单遍决策</a>
+                <span class="archive-item-date" title='2026-11-20'>11-20</span>&nbsp;<a href="https://arxiv.org/abs/2611.26509" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>过程奖励模型 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-21/#pair-med" class="archive-item-link">PAIR-MED：策略奖励交替优化</a>
+                <span class="archive-item-date" title='2026-11-21'>11-21</span>&nbsp;<a href="https://arxiv.org/abs/2611.25446" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>闭环自进化 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-21/#space-x" class="archive-item-link">Space-X：证据链驱动空间自进化</a>
+                <span class="archive-item-date" title='2026-11-21'>11-21</span>&nbsp;<a href="https://arxiv.org/abs/2611.24004" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div></section></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
               <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
