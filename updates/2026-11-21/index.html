@@ -12,86 +12,96 @@
 
 今日概览
 
-在线适应
+推理时适应
 
-Forward-Only Passes：仅凭前向激活的方向集中度筛除低价值权重成分，让模型无需反向传播即可低成本适应在线任务。
+Forward-Only Passes：以前向激活的角度集中度筛除低贡献权重分量，让模型无需反向传播即可低成本在线适配任务。
 
 
 具身闭环
 
-TuringSpace：用程序化交互验证码把空间判断绑定到点击、拖拽和纠错，使微调后任务成功率从1.6%升至33.1%。
-Mind2Act World：把机器人任务拆成推理、动作和闭环组合测试，定位失败究竟来自想错、做错还是无法边做边修正。
+TuringSpace：用程序化交互验证码把空间判断绑定到点击拖拽行动，微调后任务成功率从1.6%升至33.1%。
+Mind2Act World：把机器人测试拆成推理、动作和闭环组合三类，定位单项能力正常但协同失败的瓶颈。
+ZeroVLN：用语义工具接口连接视觉判断与连续控制，无需微调视觉语言模型即可通过闭环强化学习掌握导航。
+Depth Pro 2：以统一网络在原生分辨率生成深度图，同时解决单帧边界模糊和视频跨帧抖动。
 
 
 多模态模型
 
-WeMM-Video：统一处理声音与画面，并按任务切换快速回答或显式推理，补齐开源模型的跨模态视频理解短板。
-Depth Pro 2：用单一网络同时保持物体边界清晰和视频跨帧稳定，输出原始分辨率且尺度准确的深度图。
-HiUni：让视觉理解与图像生成共享编码器和主干，仅在输出端分工，减少重复计算并保留细粒度空间信息。
+WeMM-Video：统一训练音频与视觉，并按任务切换快速回答和显式推理，35B版本刷新开源音视频理解最佳成绩。
+HiUni：让视觉理解与图像生成共享编码器和主干，仅在输出端恢复空间细节，减少任务专用计算。
 
 
-热点延伸：AGI之后是什么、MC-Lens、PMD、EgoCaptioner
+可控生成
+
+Coda-DaVinci：由智能体按任务选择三维场景代理的粒度并仿真复核，同时控制视频结构、运动和长时一致性。
+
+
+热点延伸：AGI之后是什么、MC-Lens、PMD、EgoCaptioner、VODA
 
 对当前研究的启发
 
 ReasoningEvolve
 
-迁移｜从 Forward-Only Passes 把前向激活角度集中度用到在线适应：逐层裁剪低贡献成分，记录精度、时延与显存
-延续｜Forward-Only Passes 留下深层LLM扩展性未验证：在7B与32B模型对比LoRA，测适应收益、吞吐和显存
+迁移｜从 Forward-Only Passes 把角度集中度用于在线选秩：逐层裁剪SVD，测精度、时延和显存。
+延续｜Forward-Only Passes 尚未验证深层LLM扩展性：对比逐层与全局选秩，测收益随层数的变化。
 
 
 EvalEvolve
 
-迁移｜从 Mind2Act World 把能力拆分诊断用到具身评测：分别测推理、动作与闭环，并报告组合能力缺口
-延续｜TuringSpace 留下模型固守错误视觉判断的问题：对比强制重看与原流程，测信念纠正率和成功率
+迁移｜从 Mind2Act World 把能力拆分诊断用于具身评测：分别报告推理、动作、闭环成功率及组合损失。
+延续｜TuringSpace 暴露模型固守错误视觉信念：注入截图误读，统计纠错率、幻觉辩护率和恢复步数。
 
 
 EnvironmentEvolve
 
-迁移｜从 TuringSpace 把程序化交互验证码用到环境生成：按模型成功率调整布局难度，持续生成可验证任务
-
-
-PhysicalEvolve
-
-迁移｜从 Depth Pro 2 把时序稳定的度量深度用到机器人感知：对比普通单目深度，测抓取成功率与位姿抖动
-
-
-NewModel
-
-迁移｜从 WeMM-Video 把快答与显式推理双模式用到模型评测：对比固定模式和任务路由，测准确率与响应时延
-迁移｜从 HiUni 把共享视觉骨干用到统一模型消融：同算力对比分离骨干，测理解、生成质量与推理成本
+迁移｜从 TuringSpace 把程序化验证码用于自动课程：按成功率调节遮挡、几何关系和操作链长度。
 
 
 RobotEvolve
 
-延续｜Mind2Act World 留下单项能力难以组合的问题：加入逐步环境反馈训练，对比开环策略，测恢复率与完成率
+延续｜Mind2Act World 留下推理与动作耦合问题：对比开环、定步重规划和反馈触发重规划，测成功率与恢复率。
+
+
+AgentTrainEvolve
+
+迁移｜从 ZeroVLN 把语义工具接口用于具身RL：冻结视觉语言模型，只训练工具选择器和连续动作专家。
+
+
+NewModel
+
+迁移｜从 HiUni 把共享骨干用于统一视觉模型：对比共享与分离骨干的理解、生成质量及训练成本。
+
+
+NewApply
+
+延续｜Coda-DaVinci 留下长视频转场不稳问题：对比固定与自适应代理，测转场一致性和场景遵循率。
 
 
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-21 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 在线适应 Forward-Only Passes：仅凭前向激活的方向集中度筛除低价值权重成分，让模型无需反向传播即可低成本适应在线任务。 具身闭环 TuringSpace：用程序化交互验证码把空间判断绑定到点击、拖拽和纠错，使微调后任务成功率从1.6%升至33.1%。 Mind2Act World：把机器人任务拆成推理、动作和闭环组合测试，定位失败究竟来自想错、做错还是无法边做边修正。 多模态模型 WeMM-Video：统一处理声音与画面，并按任务切换快速回答或显式推理，补齐开源模型的跨模态视频理解短板。 Depth Pro 2：用单一网络同时保持物体边界清晰和视频跨帧稳定，输出原始分辨率且尺度准确的深度图。 HiUni：让视觉理解与图像生成共享编码器和主干，仅在输出端分工，减少重复计算并保留细粒度空间信息。 热点延伸：AGI之后是什么、MC-Lens、PMD、EgoCaptioner 对当前研究的启发 ReasoningEvolve 迁移｜从 Forward-Only Passes 把前向激活角度集中度用到在线适应：逐层裁剪低贡献成分，记录精度、时延与显存 延续｜Forward-Only Passes 留下深层LLM扩展性未验证：在7B与32B模型对比LoRA，测适应收益、吞吐和显存 EvalEvolve 迁移｜从 Mind2Act World 把能力拆分诊断用到具身评测：分别测推理、动作与闭环，并报告组合能力缺口 延续｜TuringSpace 留下模型固守错误视觉判断的问题：对比强制重看与原流程，测信念纠正率和成功率 EnvironmentEvolve 迁移｜从 TuringSpace 把程序化交互验证码用到环境生成：按模型成功率调整布局难度，持续生成可验证任务 PhysicalEvolve 迁移｜从 Depth Pro 2 把时序稳定的度量深度用到机器人感知：对比普通单目深度，测抓取成功率与位姿抖动 NewModel 迁移｜从 WeMM-Video 把快答与显式推理双模式用到模型评测：对比固定模式和任务路由，测准确率与响应时延 迁移｜从 HiUni 把共享视觉骨干用到统一模型消融：同算力对比分离骨干，测理解、生成质量与推理成本 RobotEvolve 延续｜Mind2Act World 留下单项能力难以组合的问题：加入逐步环境反馈训练，对比开环策略，测恢复率与完成率">
+今日概览 推理时适应 Forward-Only Passes：以前向激活的角度集中度筛除低贡献权重分量，让模型无需反向传播即可低成本在线适配任务。 具身闭环 TuringSpace：用程序化交互验证码把空间判断绑定到点击拖拽行动，微调后任务成功率从1.6%升至33.1%。 Mind2Act World：把机器人测试拆成推理、动作和闭环组合三类，定位单项能力正常但协同失败的瓶颈。 ZeroVLN：用语义工具接口连接视觉判断与连续控制，无需微调视觉语言模型即可通过闭环强化学习掌握导航。 Depth Pro 2：以统一网络在原生分辨率生成深度图，同时解决单帧边界模糊和视频跨帧抖动。 多模态模型 WeMM-Video：统一训练音频与视觉，并按任务切换快速回答和显式推理，35B版本刷新开源音视频理解最佳成绩。 HiUni：让视觉理解与图像生成共享编码器和主干，仅在输出端恢复空间细节，减少任务专用计算。 可控生成 Coda-DaVinci：由智能体按任务选择三维场景代理的粒度并仿真复核，同时控制视频结构、运动和长时一致性。 热点延伸：AGI之后是什么、MC-Lens、PMD、EgoCaptioner、VODA 对当前研究的启发 ReasoningEvolve 迁移｜从 Forward-Only Passes 把角度集中度用于在线选秩：逐层裁剪SVD，测精度、时延和显存。 延续｜Forward-Only Passes 尚未验证深层LLM扩展性：对比逐层与全局选秩，测收益随层数的变化。 EvalEvolve 迁移｜从 Mind2Act World 把能力拆分诊断用于具身评测：分别报告推理、动作、闭环成功率及组合损失。 延续｜TuringSpace 暴露模型固守错误视觉信念：注入截图误读，统计纠错率、幻觉辩护率和恢复步数。 EnvironmentEvolve 迁移｜从 TuringSpace 把程序化验证码用于自动课程：按成功率调节遮挡、几何关系和操作链长度。 RobotEvolve 延续｜Mind2Act World 留下推理与动作耦合问题：对比开环、定步重规划和反馈触发重规划，测成功率与恢复率。 AgentTrainEvolve 迁移｜从 ZeroVLN 把语义工具接口用于具身RL：冻结视觉语言模型，只训练工具选择器和连续动作专家。 NewModel 迁移｜从 HiUni 把共享骨干用于统一视觉模型：对比共享与分离骨干的理解、生成质量及训练成本。 NewApply 延续｜Coda-DaVinci 留下长视频转场不稳问题：对比固定与自适应代理，测转场一致性和场景遵循率。">
   <meta itemprop="datePublished" content="2026-11-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-21T11:35:38+08:00">
-  <meta itemprop="wordCount" content="815">
+  <meta itemprop="dateModified" content="2026-11-21T11:36:15+08:00">
+  <meta itemprop="wordCount" content="902">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-21/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-21 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 在线适应 Forward-Only Passes：仅凭前向激活的方向集中度筛除低价值权重成分，让模型无需反向传播即可低成本适应在线任务。 具身闭环 TuringSpace：用程序化交互验证码把空间判断绑定到点击、拖拽和纠错，使微调后任务成功率从1.6%升至33.1%。 Mind2Act World：把机器人任务拆成推理、动作和闭环组合测试，定位失败究竟来自想错、做错还是无法边做边修正。 多模态模型 WeMM-Video：统一处理声音与画面，并按任务切换快速回答或显式推理，补齐开源模型的跨模态视频理解短板。 Depth Pro 2：用单一网络同时保持物体边界清晰和视频跨帧稳定，输出原始分辨率且尺度准确的深度图。 HiUni：让视觉理解与图像生成共享编码器和主干，仅在输出端分工，减少重复计算并保留细粒度空间信息。 热点延伸：AGI之后是什么、MC-Lens、PMD、EgoCaptioner 对当前研究的启发 ReasoningEvolve 迁移｜从 Forward-Only Passes 把前向激活角度集中度用到在线适应：逐层裁剪低贡献成分，记录精度、时延与显存 延续｜Forward-Only Passes 留下深层LLM扩展性未验证：在7B与32B模型对比LoRA，测适应收益、吞吐和显存 EvalEvolve 迁移｜从 Mind2Act World 把能力拆分诊断用到具身评测：分别测推理、动作与闭环，并报告组合能力缺口 延续｜TuringSpace 留下模型固守错误视觉判断的问题：对比强制重看与原流程，测信念纠正率和成功率 EnvironmentEvolve 迁移｜从 TuringSpace 把程序化交互验证码用到环境生成：按模型成功率调整布局难度，持续生成可验证任务 PhysicalEvolve 迁移｜从 Depth Pro 2 把时序稳定的度量深度用到机器人感知：对比普通单目深度，测抓取成功率与位姿抖动 NewModel 迁移｜从 WeMM-Video 把快答与显式推理双模式用到模型评测：对比固定模式和任务路由，测准确率与响应时延 迁移｜从 HiUni 把共享视觉骨干用到统一模型消融：同算力对比分离骨干，测理解、生成质量与推理成本 RobotEvolve 延续｜Mind2Act World 留下单项能力难以组合的问题：加入逐步环境反馈训练，对比开环策略，测恢复率与完成率">
+今日概览 推理时适应 Forward-Only Passes：以前向激活的角度集中度筛除低贡献权重分量，让模型无需反向传播即可低成本在线适配任务。 具身闭环 TuringSpace：用程序化交互验证码把空间判断绑定到点击拖拽行动，微调后任务成功率从1.6%升至33.1%。 Mind2Act World：把机器人测试拆成推理、动作和闭环组合三类，定位单项能力正常但协同失败的瓶颈。 ZeroVLN：用语义工具接口连接视觉判断与连续控制，无需微调视觉语言模型即可通过闭环强化学习掌握导航。 Depth Pro 2：以统一网络在原生分辨率生成深度图，同时解决单帧边界模糊和视频跨帧抖动。 多模态模型 WeMM-Video：统一训练音频与视觉，并按任务切换快速回答和显式推理，35B版本刷新开源音视频理解最佳成绩。 HiUni：让视觉理解与图像生成共享编码器和主干，仅在输出端恢复空间细节，减少任务专用计算。 可控生成 Coda-DaVinci：由智能体按任务选择三维场景代理的粒度并仿真复核，同时控制视频结构、运动和长时一致性。 热点延伸：AGI之后是什么、MC-Lens、PMD、EgoCaptioner、VODA 对当前研究的启发 ReasoningEvolve 迁移｜从 Forward-Only Passes 把角度集中度用于在线选秩：逐层裁剪SVD，测精度、时延和显存。 延续｜Forward-Only Passes 尚未验证深层LLM扩展性：对比逐层与全局选秩，测收益随层数的变化。 EvalEvolve 迁移｜从 Mind2Act World 把能力拆分诊断用于具身评测：分别报告推理、动作、闭环成功率及组合损失。 延续｜TuringSpace 暴露模型固守错误视觉信念：注入截图误读，统计纠错率、幻觉辩护率和恢复步数。 EnvironmentEvolve 迁移｜从 TuringSpace 把程序化验证码用于自动课程：按成功率调节遮挡、几何关系和操作链长度。 RobotEvolve 延续｜Mind2Act World 留下推理与动作耦合问题：对比开环、定步重规划和反馈触发重规划，测成功率与恢复率。 AgentTrainEvolve 迁移｜从 ZeroVLN 把语义工具接口用于具身RL：冻结视觉语言模型，只训练工具选择器和连续动作专家。 NewModel 迁移｜从 HiUni 把共享骨干用于统一视觉模型：对比共享与分离骨干的理解、生成质量及训练成本。 NewApply 延续｜Coda-DaVinci 留下长视频转场不稳问题：对比固定与自适应代理，测转场一致性和场景遵循率。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-21T11:35:38+08:00">
+    <meta property="article:modified_time" content="2026-11-21T11:36:15+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-21 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 在线适应 Forward-Only Passes：仅凭前向激活的方向集中度筛除低价值权重成分，让模型无需反向传播即可低成本适应在线任务。 具身闭环 TuringSpace：用程序化交互验证码把空间判断绑定到点击、拖拽和纠错，使微调后任务成功率从1.6%升至33.1%。 Mind2Act World：把机器人任务拆成推理、动作和闭环组合测试，定位失败究竟来自想错、做错还是无法边做边修正。 多模态模型 WeMM-Video：统一处理声音与画面，并按任务切换快速回答或显式推理，补齐开源模型的跨模态视频理解短板。 Depth Pro 2：用单一网络同时保持物体边界清晰和视频跨帧稳定，输出原始分辨率且尺度准确的深度图。 HiUni：让视觉理解与图像生成共享编码器和主干，仅在输出端分工，减少重复计算并保留细粒度空间信息。 热点延伸：AGI之后是什么、MC-Lens、PMD、EgoCaptioner 对当前研究的启发 ReasoningEvolve 迁移｜从 Forward-Only Passes 把前向激活角度集中度用到在线适应：逐层裁剪低贡献成分，记录精度、时延与显存 延续｜Forward-Only Passes 留下深层LLM扩展性未验证：在7B与32B模型对比LoRA，测适应收益、吞吐和显存 EvalEvolve 迁移｜从 Mind2Act World 把能力拆分诊断用到具身评测：分别测推理、动作与闭环，并报告组合能力缺口 延续｜TuringSpace 留下模型固守错误视觉判断的问题：对比强制重看与原流程，测信念纠正率和成功率 EnvironmentEvolve 迁移｜从 TuringSpace 把程序化交互验证码用到环境生成：按模型成功率调整布局难度，持续生成可验证任务 PhysicalEvolve 迁移｜从 Depth Pro 2 把时序稳定的度量深度用到机器人感知：对比普通单目深度，测抓取成功率与位姿抖动 NewModel 迁移｜从 WeMM-Video 把快答与显式推理双模式用到模型评测：对比固定模式和任务路由，测准确率与响应时延 迁移｜从 HiUni 把共享视觉骨干用到统一模型消融：同算力对比分离骨干，测理解、生成质量与推理成本 RobotEvolve 延续｜Mind2Act World 留下单项能力难以组合的问题：加入逐步环境反馈训练，对比开环策略，测恢复率与完成率">
+今日概览 推理时适应 Forward-Only Passes：以前向激活的角度集中度筛除低贡献权重分量，让模型无需反向传播即可低成本在线适配任务。 具身闭环 TuringSpace：用程序化交互验证码把空间判断绑定到点击拖拽行动，微调后任务成功率从1.6%升至33.1%。 Mind2Act World：把机器人测试拆成推理、动作和闭环组合三类，定位单项能力正常但协同失败的瓶颈。 ZeroVLN：用语义工具接口连接视觉判断与连续控制，无需微调视觉语言模型即可通过闭环强化学习掌握导航。 Depth Pro 2：以统一网络在原生分辨率生成深度图，同时解决单帧边界模糊和视频跨帧抖动。 多模态模型 WeMM-Video：统一训练音频与视觉，并按任务切换快速回答和显式推理，35B版本刷新开源音视频理解最佳成绩。 HiUni：让视觉理解与图像生成共享编码器和主干，仅在输出端恢复空间细节，减少任务专用计算。 可控生成 Coda-DaVinci：由智能体按任务选择三维场景代理的粒度并仿真复核，同时控制视频结构、运动和长时一致性。 热点延伸：AGI之后是什么、MC-Lens、PMD、EgoCaptioner、VODA 对当前研究的启发 ReasoningEvolve 迁移｜从 Forward-Only Passes 把角度集中度用于在线选秩：逐层裁剪SVD，测精度、时延和显存。 延续｜Forward-Only Passes 尚未验证深层LLM扩展性：对比逐层与全局选秩，测收益随层数的变化。 EvalEvolve 迁移｜从 Mind2Act World 把能力拆分诊断用于具身评测：分别报告推理、动作、闭环成功率及组合损失。 延续｜TuringSpace 暴露模型固守错误视觉信念：注入截图误读，统计纠错率、幻觉辩护率和恢复步数。 EnvironmentEvolve 迁移｜从 TuringSpace 把程序化验证码用于自动课程：按成功率调节遮挡、几何关系和操作链长度。 RobotEvolve 延续｜Mind2Act World 留下推理与动作耦合问题：对比开环、定步重规划和反馈触发重规划，测成功率与恢复率。 AgentTrainEvolve 迁移｜从 ZeroVLN 把语义工具接口用于具身RL：冻结视觉语言模型，只训练工具选择器和连续动作专家。 NewModel 迁移｜从 HiUni 把共享骨干用于统一视觉模型：对比共享与分离骨干的理解、生成质量及训练成本。 NewApply 延续｜Coda-DaVinci 留下长视频转场不稳问题：对比固定与自适应代理，测转场一致性和场景遵循率。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-21/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-20/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -104,8 +114,8 @@ RobotEvolve
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-21\/"
-    },"genre": "updates","wordcount":  815 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-21\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-21T11:35:38+08:00","publisher": {
+    },"genre": "updates","wordcount":  902 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-21\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-21T11:36:15+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -288,7 +298,7 @@ RobotEvolve
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-21 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-21">2026-11-21</time></span>&nbsp;<span title="更新于 2026-11-21 11:35:38"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-21">2026-11-21</time></span>&nbsp;<span title="815 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-21 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-21">2026-11-21</time></span>&nbsp;<span title="更新于 2026-11-21 11:36:15"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-21">2026-11-21</time></span>&nbsp;<span title="902 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -308,68 +318,78 @@ RobotEvolve
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>在线适应</strong>
+<li><strong>推理时适应</strong>
 <ul>
-<li><a href="#forward-only-passes">Forward-Only Passes</a>：仅凭前向激活的方向集中度筛除低价值权重成分，让模型无需反向传播即可低成本适应在线任务。</li>
+<li><a href="#forward-only-passes">Forward-Only Passes</a>：以前向激活的角度集中度筛除低贡献权重分量，让模型无需反向传播即可低成本在线适配任务。</li>
 </ul>
 </li>
 <li><strong>具身闭环</strong>
 <ul>
-<li><a href="#turingspace">TuringSpace</a>：用程序化交互验证码把空间判断绑定到点击、拖拽和纠错，使微调后任务成功率从1.6%升至33.1%。</li>
-<li><a href="#mind2act-world">Mind2Act World</a>：把机器人任务拆成推理、动作和闭环组合测试，定位失败究竟来自想错、做错还是无法边做边修正。</li>
+<li><a href="#turingspace">TuringSpace</a>：用程序化交互验证码把空间判断绑定到点击拖拽行动，微调后任务成功率从1.6%升至33.1%。</li>
+<li><a href="#mind2act-world">Mind2Act World</a>：把机器人测试拆成推理、动作和闭环组合三类，定位单项能力正常但协同失败的瓶颈。</li>
+<li><a href="#zerovln">ZeroVLN</a>：用语义工具接口连接视觉判断与连续控制，无需微调视觉语言模型即可通过闭环强化学习掌握导航。</li>
+<li><a href="#depth-pro-2">Depth Pro 2</a>：以统一网络在原生分辨率生成深度图，同时解决单帧边界模糊和视频跨帧抖动。</li>
 </ul>
 </li>
 <li><strong>多模态模型</strong>
 <ul>
-<li><a href="#wemm-video">WeMM-Video</a>：统一处理声音与画面，并按任务切换快速回答或显式推理，补齐开源模型的跨模态视频理解短板。</li>
-<li><a href="#depth-pro-2">Depth Pro 2</a>：用单一网络同时保持物体边界清晰和视频跨帧稳定，输出原始分辨率且尺度准确的深度图。</li>
-<li><a href="#hiuni">HiUni</a>：让视觉理解与图像生成共享编码器和主干，仅在输出端分工，减少重复计算并保留细粒度空间信息。</li>
+<li><a href="#wemm-video">WeMM-Video</a>：统一训练音频与视觉，并按任务切换快速回答和显式推理，35B版本刷新开源音视频理解最佳成绩。</li>
+<li><a href="#hiuni">HiUni</a>：让视觉理解与图像生成共享编码器和主干，仅在输出端恢复空间细节，减少任务专用计算。</li>
 </ul>
 </li>
-<li><strong>热点延伸</strong>：<a href="#agi-asi">AGI之后是什么</a>、<a href="#mc-lens">MC-Lens</a>、<a href="#pmd">PMD</a>、<a href="#egocaptioner">EgoCaptioner</a></li>
+<li><strong>可控生成</strong>
+<ul>
+<li><a href="#coda-davinci">Coda-DaVinci</a>：由智能体按任务选择三维场景代理的粒度并仿真复核，同时控制视频结构、运动和长时一致性。</li>
+</ul>
+</li>
+<li><strong>热点延伸</strong>：<a href="#agi-asi">AGI之后是什么</a>、<a href="#mc-lens">MC-Lens</a>、<a href="#pmd">PMD</a>、<a href="#egocaptioner">EgoCaptioner</a>、<a href="#voda">VODA</a></li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
 <li><strong>ReasoningEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#forward-only-passes">Forward-Only Passes</a> 把前向激活角度集中度用到在线适应：逐层裁剪低贡献成分，记录精度、时延与显存</li>
-<li>延续｜<a href="#forward-only-passes">Forward-Only Passes</a> 留下深层LLM扩展性未验证：在7B与32B模型对比LoRA，测适应收益、吞吐和显存</li>
+<li>迁移｜从 <a href="#forward-only-passes">Forward-Only Passes</a> 把角度集中度用于在线选秩：逐层裁剪SVD，测精度、时延和显存。</li>
+<li>延续｜<a href="#forward-only-passes">Forward-Only Passes</a> 尚未验证深层LLM扩展性：对比逐层与全局选秩，测收益随层数的变化。</li>
 </ul>
 </li>
 <li><strong>EvalEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#mind2act-world">Mind2Act World</a> 把能力拆分诊断用到具身评测：分别测推理、动作与闭环，并报告组合能力缺口</li>
-<li>延续｜<a href="#turingspace">TuringSpace</a> 留下模型固守错误视觉判断的问题：对比强制重看与原流程，测信念纠正率和成功率</li>
+<li>迁移｜从 <a href="#mind2act-world">Mind2Act World</a> 把能力拆分诊断用于具身评测：分别报告推理、动作、闭环成功率及组合损失。</li>
+<li>延续｜<a href="#turingspace">TuringSpace</a> 暴露模型固守错误视觉信念：注入截图误读，统计纠错率、幻觉辩护率和恢复步数。</li>
 </ul>
 </li>
 <li><strong>EnvironmentEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#turingspace">TuringSpace</a> 把程序化交互验证码用到环境生成：按模型成功率调整布局难度，持续生成可验证任务</li>
-</ul>
-</li>
-<li><strong>PhysicalEvolve</strong>
-<ul>
-<li>迁移｜从 <a href="#depth-pro-2">Depth Pro 2</a> 把时序稳定的度量深度用到机器人感知：对比普通单目深度，测抓取成功率与位姿抖动</li>
-</ul>
-</li>
-<li><strong>NewModel</strong>
-<ul>
-<li>迁移｜从 <a href="#wemm-video">WeMM-Video</a> 把快答与显式推理双模式用到模型评测：对比固定模式和任务路由，测准确率与响应时延</li>
-<li>迁移｜从 <a href="#hiuni">HiUni</a> 把共享视觉骨干用到统一模型消融：同算力对比分离骨干，测理解、生成质量与推理成本</li>
+<li>迁移｜从 <a href="#turingspace">TuringSpace</a> 把程序化验证码用于自动课程：按成功率调节遮挡、几何关系和操作链长度。</li>
 </ul>
 </li>
 <li><strong>RobotEvolve</strong>
 <ul>
-<li>延续｜<a href="#mind2act-world">Mind2Act World</a> 留下单项能力难以组合的问题：加入逐步环境反馈训练，对比开环策略，测恢复率与完成率</li>
+<li>延续｜<a href="#mind2act-world">Mind2Act World</a> 留下推理与动作耦合问题：对比开环、定步重规划和反馈触发重规划，测成功率与恢复率。</li>
+</ul>
+</li>
+<li><strong>AgentTrainEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#zerovln">ZeroVLN</a> 把语义工具接口用于具身RL：冻结视觉语言模型，只训练工具选择器和连续动作专家。</li>
+</ul>
+</li>
+<li><strong>NewModel</strong>
+<ul>
+<li>迁移｜从 <a href="#hiuni">HiUni</a> 把共享骨干用于统一视觉模型：对比共享与分离骨干的理解、生成质量及训练成本。</li>
+</ul>
+</li>
+<li><strong>NewApply</strong>
+<ul>
+<li>延续｜<a href="#coda-davinci">Coda-DaVinci</a> 留下长视频转场不稳问题：对比固定与自适应代理，测转场一致性和场景遵循率。</li>
 </ul>
 </li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 13 条</span><a href="#daily-featured">⭐ 重点 6</a><a href="#daily-related">🔬 相关 2</a><a href="#daily-hot">🔥 热点 5</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 13 条</span><a href="#daily-featured">⭐ 重点 8</a><a href="#daily-hot">🔥 热点 5</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">6 条</span></h2>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">8 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="forward-only-passes" class="summary-card daily-item">
   <h2 id="forward-only-passes-title" class="daily-item-title">Forward-Only Passes：角度集中度引导降秩</h2><p class="single-subtitle daily-item-summary">用前向激活的角度集中度定位并裁剪SVD分量，解决在线任务适应依赖反向传播、开销过高的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：测试时优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/reasoningevolve/">ReasoningEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理加速</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.10610" target="_blank" rel="noopener">https://arxiv.org/abs/2611.10610</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/WgJNWHiUImUiQmKu-mYevQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/WgJNWHiUImUiQmKu-mYevQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在在线LLM推理服务中借鉴角度集中度搜索机制，无需反向传播即可筛选降秩权重矩阵并进行低成本任务适应。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>模型前向激活的几何集中程度能够充当无需梯度的权重贡献信号，使内部权重适应与常规推理共享计算过程。</p>
@@ -418,6 +438,21 @@ RobotEvolve
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[Mind2Act World：面向机器人操作中具身认知、物理动作及心智—动作组合的诊断基准（45 ▲）](https://huggingface.co/papers/2611.26444?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-20)</div>
   </details></article>
+<article id="zerovln" class="summary-card daily-item">
+  <h2 id="zerovln-title" class="daily-item-title">ZeroVLN：语义工具调用免微调导航</h2><p class="single-subtitle daily-item-summary">用语义工具调用和闭环强化学习，在不微调视觉语言模型主体的情况下学习连续环境导航，同时保留通用视觉能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身规划</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E8%BF%81%E7%A7%BB/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;能力迁移</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.26414" target="_blank" rel="noopener">https://arxiv.org/abs/2611.26414</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在连续环境的具身导航系统中，可借鉴其语义工具接口与闭环强化学习机制，在保留基础视觉语言模型能力的同时训练导航策略。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>导航领域适配不必写入基础模型主体；将语义决策与连续控制解耦，可把专用能力集中在接口和动作专家中，从而兼顾任务性能与通用能力保留。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：让视觉语言模型学习连续环境导航时，既要形成有效的移动决策，又要避免破坏其原有的通用视觉能力。</li>
+<li><strong>旧法为何失效</strong>：传统分层视觉语言导航方法会在导航数据上监督微调模型主体，使其预测几何目标，可能大幅改变基础权重并导致通用视觉能力退化。</li>
+<li><strong>方法</strong>：ZeroVLN采用慢—快双策略框架，让视觉语言模型通过自然语言工具调用向动作专家传达移动意图；先训练动作专家执行请求，再用闭环强化学习联合优化高层决策与连续控制。</li>
+<li><strong>实验</strong>：在相同导航轨迹上训练，并在标准VLN-CE连续环境基准测试；其表现显著超过代表性的监督微调式分层方法，同时仅轻微改变视觉语言模型权重并基本保留通用能力。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[ZeroVLN：无需对 VLM 大脑进行监督式微调即可学习导航（21 ▲）](https://huggingface.co/papers/2611.26414?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-20)</div>
+  </details></article>
 <article id="wemm-video" class="summary-card daily-item">
   <h2 id="wemm-video-title" class="daily-item-title">WeMM-Video：全模态音视频联合推理</h2><p class="single-subtitle daily-item-summary">用统一音视频感知与双模式推理解决开源模型跨模态视频理解不足，35B版刷新开源最佳。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多模态推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频理解</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%80%E6%94%BE%E6%9D%83%E9%87%8D%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;开放权重模型</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.26409" target="_blank" rel="noopener">https://arxiv.org/abs/2611.26409</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在音视频问答、视频检索与内容分析系统中直接部署其不同规模模型，或复用双模式推理和多阶段后训练流程作为开源基线。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>全模态能力的关键不只是扩大参数规模，而是让音频与视觉在统一训练目标下协同感知，并按任务需要切换快速响应和显式推理。</p>
@@ -463,53 +498,23 @@ RobotEvolve
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[HiUni：在共享视觉空间中协调理解与生成（23 ▲）](https://huggingface.co/papers/2611.26107?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-20)</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">2 条 · 按研究项目分组</span></h2>
-          <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/" onclick="event.stopPropagation()">NewApply</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="coda-davinci" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Coda-DaVinci：任务自适应三维代理导视</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 视频生成 · <a href="https://arxiv.org/abs/2611.26595" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">用智能体按任务构建和仿真三维场景代理，解决视频生成中结构、运动与长时一致性难以同时控制的问题。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.26595" target="_blank" rel="noopener">https://arxiv.org/abs/2611.26595</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在可控视频生成或长视频制作系统中，借鉴其任务级路由、实体粒度选择和多智能体视觉复核机制来提升结构一致性与物理合理性。</p>
+<article id="coda-davinci" class="summary-card daily-item">
+  <h2 id="coda-davinci-title" class="daily-item-title">Coda-DaVinci：任务自适应三维代理导视</h2><p class="single-subtitle daily-item-summary">用智能体按任务构建和仿真三维场景代理，解决视频生成中结构、运动与长时一致性难以同时控制的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.26595" target="_blank" rel="noopener">https://arxiv.org/abs/2611.26595</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在可控视频生成或长视频制作系统中，借鉴其任务级路由、实体粒度选择和多智能体视觉复核机制来提升结构一致性与物理合理性。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>三维代理并非越精细越好，其最佳粒度取决于任务目标；显式结构控制与自然运动之间需要按实体和场景动态权衡。</p>
-</div><div class="daily-item-content"><ul>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
 <li><strong>问题</strong>：Code2Video 可用智能体编写的三维代理显式控制视频结构与动态，但代理粒度、物理仿真和提示词如何配置才能获得最佳质量仍不清楚。</li>
 <li><strong>旧法为何失效</strong>：固定粒度的代理无法兼顾自然运动与场景一致性，直接生成又缺少对结构和物理过程的明确约束。</li>
 <li><strong>方法</strong>：Coda-DaVinci 按任务选择代理引导或直接生成，并为不同实体调整建模粒度；其多智能体框架协调物理仿真与代理对齐提示，通过视觉检查、独立复核和资产保留引导修复。</li>
 <li><strong>实验</strong>：受控实验与盲测显示，粗粒度代理更利于自然运动，中粒度代理更利于一致性；方法在 VTR 指令遵循和 R2M 场景一致性上领先，并优于对比基线的视觉真实感与直接生成的物理合理性。</li>
 <li><strong>局限与后续</strong>：长视频仍存在转场稳定性不足和偏离场景设定的问题。</li>
 </ul>
-</div><details class="daily-item-notes">
+</div>
+    </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[Coda-DaVinci：借助 Code2Video 重新构想视频生成（32 ▲）](https://huggingface.co/papers/2611.26595?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-20)</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/" onclick="event.stopPropagation()">RobotEvolve</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="zerovln" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>ZeroVLN：语义工具调用免微调导航</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 具身规划 · <a href="https://arxiv.org/abs/2611.26414" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">用语义工具调用和闭环强化学习，在不微调视觉语言模型主体的情况下学习连续环境导航，同时保留通用视觉能力。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身规划</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E8%BF%81%E7%A7%BB/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;能力迁移</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.26414" target="_blank" rel="noopener">https://arxiv.org/abs/2611.26414</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在连续环境的具身导航系统中，可借鉴其语义工具接口与闭环强化学习机制，在保留基础视觉语言模型能力的同时训练导航策略。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>导航领域适配不必写入基础模型主体；将语义决策与连续控制解耦，可把专用能力集中在接口和动作专家中，从而兼顾任务性能与通用能力保留。</p>
-</div><div class="daily-item-content"><ul>
-<li><strong>问题</strong>：让视觉语言模型学习连续环境导航时，既要形成有效的移动决策，又要避免破坏其原有的通用视觉能力。</li>
-<li><strong>旧法为何失效</strong>：传统分层视觉语言导航方法会在导航数据上监督微调模型主体，使其预测几何目标，可能大幅改变基础权重并导致通用视觉能力退化。</li>
-<li><strong>方法</strong>：ZeroVLN采用慢—快双策略框架，让视觉语言模型通过自然语言工具调用向动作专家传达移动意图；先训练动作专家执行请求，再用闭环强化学习联合优化高层决策与连续控制。</li>
-<li><strong>实验</strong>：在相同导航轨迹上训练，并在标准VLN-CE连续环境基准测试；其表现显著超过代表性的监督微调式分层方法，同时仅轻微改变视觉语言模型权重并基本保留通用能力。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[ZeroVLN：无需对 VLM 大脑进行监督式微调即可学习导航（21 ▲）](https://huggingface.co/papers/2611.26414?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-20)</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group daily-group-hot" id="daily-hot" open>
+  </details></article>
+<details class="daily-group daily-group-hot" id="daily-hot" open>
             <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">5 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
             <div class="daily-group-body">
               <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="agi-asi" class="daily-row">
