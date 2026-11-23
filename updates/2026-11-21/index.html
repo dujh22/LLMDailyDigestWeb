@@ -27,7 +27,7 @@ Gemini 4 Hydrogen：将推理词元减少约52%，同时在两代ARC-AGI高难�
 今日概览 评测可信
 量表反转探针：审计评判方向偏差：用语义不变、数字方向相反的量表，揭示大模型评分常依赖数字先验而非真正理解规则。 预算配对反事实审计：让视觉智能体基于同一证据继续作答，分离看错区域、观察不足与最终回答错误。 Gemini 4 Hydrogen：将推理词元减少约52%，同时在两代ARC-AGI高难基准上保持或提高成绩。 经验与推理">
   <meta itemprop="datePublished" content="2026-11-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-21T11:52:31+08:00">
+  <meta itemprop="dateModified" content="2026-11-23T15:34:05+08:00">
   <meta itemprop="wordCount" content="1211">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-21/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
@@ -39,7 +39,7 @@ Gemini 4 Hydrogen：将推理词元减少约52%，同时在两代ARC-AGI高难�
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-21T11:52:31+08:00">
+    <meta property="article:modified_time" content="2026-11-23T15:34:05+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,7 @@ Gemini 4 Hydrogen：将推理词元减少约52%，同时在两代ARC-AGI高难�
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-21\/"
     },"genre": "updates","wordcount":  1211 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-21\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-21T11:52:31+08:00","publisher": {
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-21\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-23T15:34:05+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -244,7 +244,7 @@ Gemini 4 Hydrogen：将推理词元减少约52%，同时在两代ARC-AGI高难�
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-21 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-21">2026-11-21</time></span>&nbsp;<span title="更新于 2026-11-21 11:52:31"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-21">2026-11-21</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-20 15:12 ~ 2026-11-21 11:25（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-20 15:12 ~ 11-21 11:25
+      <div class="post-meta-line"><span title="发布于 2026-11-21 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-21">2026-11-21</time></span>&nbsp;<span title="更新于 2026-11-23 15:34:05"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-23">2026-11-23</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-20 15:12 ~ 2026-11-21 11:25（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-20 15:12 ~ 11-21 11:25
           </span>&nbsp;<span title="1211 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -604,21 +604,27 @@ Gemini 4 Hydrogen：将推理词元减少约52%，同时在两代ARC-AGI高难�
               </summary>
               <div class="daily-group-body"><details id="mind2act-world" class="daily-row">
   <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Mind2Act World：心智动作组合诊断</strong>
-      <span class="daily-row-meta">Hugging Face Papers · 评测基准 · <a href="https://arxiv.org/abs/2611.26444" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">用心智、动作及闭环组合三类任务，诊断机器人操作失败源于推理、执行还是能力组合。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.26444" target="_blank" rel="noopener">https://arxiv.org/abs/2611.26444</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在机器人操作系统中将其作为VLA、WAM或多模态智能体的诊断基准，分别定位状态记忆、动作执行与闭环组合瓶颈。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>机器人即使分别具备推理和动作能力，也可能因缺乏环境反馈驱动的持续耦合而在组合任务中大幅失效。</p>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>Mind2Act World：心智动作组合诊断</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 评测基准 · <a href="https://arxiv.org/abs/2611.26444" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/Mind2Act/Mind2Act_World" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a> · <a href="http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651075704&amp;idx=1&amp;sn=dd36e17788a25d918f6fbc5c3c0907cb&amp;chksm=85a17e5c3b420659cc57e6beb3172370da3db27aa2cf106c4060b889e6d2b43aa1b430a127dc&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">用知、行、闭环任务与逐回合首错归因，定位机器人长程操作失败来自推理、执行还是协同。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E8%AF%8A%E6%96%AD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程诊断</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.26444" target="_blank" rel="noopener">https://arxiv.org/abs/2611.26444</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/Mind2Act/Mind2Act_World" target="_blank" rel="noopener">https://github.com/Mind2Act/Mind2Act_World</a></div><div><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i><strong>数据集</strong>：<a href="https://huggingface.co/datasets/Mind2Act-World/mind2act-train" target="_blank" rel="noopener">https://huggingface.co/datasets/Mind2Act-World/mind2act-train</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651075704&amp;idx=1&amp;sn=dd36e17788a25d918f6fbc5c3c0907cb&amp;chksm=85a17e5c3b420659cc57e6beb3172370da3db27aa2cf106c4060b889e6d2b43aa1b430a127dc&amp;scene=0&amp;xtrack=1#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651075704&amp;idx=1&amp;sn=dd36e17788a25d918f6fbc5c3c0907cb&amp;chksm=85a17e5c3b420659cc57e6beb3172370da3db27aa2cf106c4060b889e6d2b43aa1b430a127dc&amp;scene=0&amp;xtrack=1#rd</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在机器人模型选型与迭代中直接运行该基准，以诊断卡定位最早失败环节，并定向补充断点演示、恢复数据或改进运动工具链。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>闭环成功率低不一定意味着知行协同机制薄弱，长程失败更常由不可靠的单步执行在流程中连续放大，因此应优先修复最早且最频繁的断点。</p>
 </div><div class="daily-item-content"><ul>
-<li><strong>问题</strong>：现有机器人操作评测难以判断失败究竟来自历史认知推理、物理动作执行，还是两种能力未能通过环境反馈有效组合。</li>
-<li><strong>旧法为何失效</strong>：已有基准要么在同一任务中混合评测推理与执行，要么将二者完全分开，无法单独诊断能力组合缺陷。</li>
-<li><strong>方法</strong>：Mind2Act World设置Mind、Act和Mind2Act三种视图，覆盖5个现实应用领域的30项模拟操作任务；每项任务含3档难度及Clean、Random两种场景，共180种配置，并用诊断工具将失败归因于心智、动作或二者组合。</li>
-<li><strong>实验</strong>：评测多模态智能体、视觉-语言-动作模型和世界动作模型；最强智能体在Mind和Act上的成功率分别为52.7%和39.0%，在Mind2Act上仅为12.0%。</li>
-<li><strong>局限与后续</strong>：单项能力无法自然迁移至闭环组合任务，如何通过环境反馈持续耦合推理与执行仍是主要开放问题。</li>
+<li><strong>问题</strong>：现有机器人操作评测难以判断失败究竟来自历史记忆与决策、物理动作执行，还是两种能力未能借助环境反馈有效协同，因而无法指导模型迭代。</li>
+<li><strong>旧法为何失效</strong>：传统基准要么混合或割裂评测推理与执行，要么将不同故障压缩为最终成功率；长程任务早期中断还会掩盖首个真正导致失败的环节。</li>
+<li><strong>方法</strong>：Mind2Act World设置Mind、Act和Mind2Act三类视图，覆盖5个现实应用领域的30项模拟任务；每项任务含3档难度及Clean、Random场景，共180种配置。基准记录阶段进展与关键事件，通过规则、大模型裁判和人工复核定位每回合首个不可挽回错误，并汇总为模型诊断卡。</li>
+<li><strong>实验</strong>：首批评测9个多模态Agent、视觉-语言-动作模型与世界动作模型，共56,700个仿真回合；最佳Agent在Mind、Act和Mind2Act上的成功率分别为52.7%、39.0%和12.0%，端到端策略的Mind2Act最高仅3.6%。首错分析显示物理执行是主要失败来源，协同错误仅占6%–11%。</li>
+<li><strong>局限与后续</strong>：诊断建议能否实际改善模型仍待复测；成功率统计暂停仿真时钟，未反映Agent单次调用11.0–35.6秒的现实延迟。后续计划推出Mini World、沙箱Agent评测及诊断—改进—复测闭环。</li>
 </ul>
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[Mind2Act World：面向机器人操作中具身认知、物理动作及心智—动作组合的诊断基准（45 ▲）](https://huggingface.co/papers/2611.26444?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-20)</div>
+    <div class="daily-item-notes-body">[Mind2Act World：面向机器人操作中具身认知、物理动作及心智—动作组合的诊断基准（45 ▲）](https://huggingface.co/papers/2611.26444?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-20)
+
+[合并自 2026-11-23 mind2act-world]
+标题：VLA/WAM已死，基模当立？Mind2Act World通用基准用「知行合一」角度为具身模型诊断进化方向
+来源：机器之心（微信公众号）
+链接：http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651075704&amp;idx=1&amp;sn=dd36e17788a25d918f6fbc5c3c0907cb&amp;chksm=85a17e5c3b420659cc57e6beb3172370da3db27aa2cf106c4060b889e6d2b43aa1b430a127dc&amp;scene=0&amp;xtrack=1#rd
+摘要：</div>
   </details></div>
 </details>
 <details id="turingspace" class="daily-row">
