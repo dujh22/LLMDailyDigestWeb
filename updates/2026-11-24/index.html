@@ -14,111 +14,108 @@
 
 递归改进
 
-MetaRSI/RSI²：用可演化的双轴调度同时改进数据、执行框架和模型，并以隔离验证与状态刷新防止自改进失控。
-RSI：用双循环把“改进方法本身”纳入反馈，解释固定优化流程为何封顶及可靠评估为何决定长期进步。
+MetaRSI/RSI²：让数据、执行框架和模型共同演化，并以不可改写的验证边界防止自改进规则固化或失控。
+RSI：用“优化任务—优化改进器”双循环解释固定改进流程为何触顶，并把持续进步转化为评估可靠性问题。
 
 
 执行系统
 
-HarnessDev：让模型先自主搭建执行框架再完成任务，联合检验循环管理、工具调用和错误恢复能力。
-HoH：以规划、开发、测试三智能体和双状态存储维持多日编码进度，最高性能达82.86%。
-SKILL.state：用规则、状态和观察组成的可执行状态替代不断增长的对话，降低长任务延迟并支持故障恢复。
-Duopra：把后端委派与直接工具调用统一成可训练动作，使智能体边对话边执行时的成功率由4.7%升至44.7%。
+HarnessDev：把评测拆成“自主搭建执行框架”和“实际运行”，测出模型管理循环、工具与错误恢复的真实能力。
+HoH：以规划、开发、测试三智能体分别维护代码事实与任务决策，使编码代理连续运行数天仍不丢进度。
+SKILL.state：用可执行的结构化状态替代不断增长的对话历史，同时降低长程任务延迟并支持故障恢复。
+Duopra：统一后台委派与直接工具调用并联合训练对话和执行，使全双工任务成功率从4.7%升至44.7%。
 
 
 模型与推理
 
-Declarative Attention：让模型在每步思考时声明需要查看的上下文范围，避免扫描全部缓存造成显存和延迟浪费。
-GLM-5.4：用权重共享循环层增加推理深度，并以分层缓存控制循环计算成本，同时支持视觉操控专业软件。
+Declarative Attention：让模型在每步思考时声明需要查看的上下文范围，避免反复扫描全部缓存。
+GLM-5.4：以权重共享循环层增加推理深度，并用分层缓存避免计算轮数带动部署成本等比例增长。
+MIM：先用代数变换消除密码攻击中的干扰变量，再生成可执行代码，将多类攻击从小时压缩到秒级。
 
 
-科学闭环
+科研闭环
 
-MIM：用代数变换消除密码攻击中的干扰项并自动生成代码，将多类攻击由小时级压缩至秒级。
-AI生物学：用模型、工具、湿实验和数据回流四层框架定位AI生物研发瓶颈，指出独有实验数据将比模型更稀缺。
-
-
-具身智能
-
-NoPeWorld：读取视频世界模型已有的隐藏状态，在执行前替换穿墙动作，将物理违规率从74%降至16%。
-ReSpaceBench：显式标注房间重访和环境变化，检验智能体能否跨多次访问辨认地点并更新空间记忆。
+AI生物学：用模型、工具、湿实验和数据回流四层框架定位研发瓶颈，揭示强模型时代实验能力反而更稀缺。
 
 
-热点延伸：Future-OPSD、RTC、StereoVLM
+物理智能
+
+NoPeWorld：直接从视频模型隐状态识别并替换穿墙动作，把物理违规率从74%降至16%。
+ReSpaceBench：显式标注房间重访与环境变化，检验智能体能否长期辨认同一地点并更新空间记忆。
+AgentRoboCritic：把机器人轨迹逐动作对齐局部意图，定位仅看最终成败无法发现的执行与恢复故障。
+
+
+热点延伸：Future-OPSD、RTC、StereoVLM、Uni3Sim、PURE
 
 对当前研究的启发
 
 Awesome-RSI
 
-迁移｜从 MetaRSI/RSI² 把工件新鲜度合约用于RSI调度：每轮拒绝过期状态，并隔离候选算子与裁判。
-延续｜RSI 留下评估噪声会筛错算子：注入分级噪声，对比单裁判与多裁判，测长期能力斜率和退化率。
+迁移｜从 MetaRSI/RSI² 把双轴调度用于RSI编排：独立变异数据、框架和模型，过期工件强制复评
+延续｜RSI 留下评估噪声会筛错改进器：设置多评委复核，统计长期增益、退化率与回滚率
 
 
 HarnessEvolve
 
-迁移｜从 HarnessDev 把“先造框架、再执行”用于评测：统一任务环境，比较成功率、恢复率与配置复现率。
-
-
-Groom
-
-迁移｜从 HarnessDev 把两阶段测试用于token归因：分开统计框架构建与运行，再细分规划、工具和恢复。
+迁移｜从 HarnessDev 把“先搭框架再运行”用于模型评测：比较固定与自建框架的成功率、耗时和恢复率
 
 
 CacheEvolve
 
-迁移｜从 Declarative Attention 把三档注意力声明用于缓存控制：训练逐步选档，测显存、延迟与准确率。
+迁移｜从 Declarative Attention 把三档注意力范围用于缓存管理：训练范围标记并测显存、延迟和准确率
 
 
 AutonomousAgentEvolve
 
-迁移｜从 HoH 把代码事实与任务决策分开持久化：每次运行后双通道存档，注入重启并测进度恢复率。
+迁移｜从 HoH 把代码事实与任务决策双状态用于常驻运行：分别持久化并做跨日中断恢复测试
 
 
 MemoryEvolve
 
-迁移｜从 SKILL.state 把规则、状态、观察分离用于长期记忆：对比完整对话，测延迟、正确率与故障恢复率。
-
-
-PhysicalEvolve
-
-迁移｜从 NoPeWorld 把隐状态安全预测头用于动作执行前检查：对比事后纠错，测违规率、误拦率和任务成功率。
-
-
-AgentTrainEvolve
-
-迁移｜从 Duopra 把委派与直接调用统一为动作空间：联合训练对话控制和工具执行，测纠正响应与任务成功率。
+迁移｜从 SKILL.state 把规则、状态、观察分离用于长期记忆：故障后重放并检查状态一致率
 
 
 ResearchEvolve
 
-迁移｜从 AI生物学 把实验数据回流用于科研闭环：串联模型、工具与湿实验，以命中率和迭代周期验收。
+迁移｜从 AI生物学 把湿实验回流接入科研闭环：记录假设到验证的周期、命中率与新增数据价值
+
+
+PhysicalEvolve
+
+迁移｜从 NoPeWorld 把隐状态安全预测头用于动作拦截：比较干预前后的违规率与任务成功率
+延续｜AgentRoboCritic 留下抓取对齐和恢复不稳：按失败类型测试真机恢复率、步数与损伤
+
+
+AgentTrainEvolve
+
+迁移｜从 Duopra 把委派纳入工具动作训练：联合优化对话控制，测任务成功率与纠错响应延迟
 
 
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-24 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 递归改进 MetaRSI/RSI²：用可演化的双轴调度同时改进数据、执行框架和模型，并以隔离验证与状态刷新防止自改进失控。 RSI：用双循环把“改进方法本身”纳入反馈，解释固定优化流程为何封顶及可靠评估为何决定长期进步。 执行系统 HarnessDev：让模型先自主搭建执行框架再完成任务，联合检验循环管理、工具调用和错误恢复能力。 HoH：以规划、开发、测试三智能体和双状态存储维持多日编码进度，最高性能达82.86%。 SKILL.state：用规则、状态和观察组成的可执行状态替代不断增长的对话，降低长任务延迟并支持故障恢复。 Duopra：把后端委派与直接工具调用统一成可训练动作，使智能体边对话边执行时的成功率由4.7%升至44.7%。 模型与推理 Declarative Attention：让模型在每步思考时声明需要查看的上下文范围，避免扫描全部缓存造成显存和延迟浪费。 GLM-5.4：用权重共享循环层增加推理深度，并以分层缓存控制循环计算成本，同时支持视觉操控专业软件。 科学闭环 MIM：用代数变换消除密码攻击中的干扰项并自动生成代码，将多类攻击由小时级压缩至秒级。 AI生物学：用模型、工具、湿实验和数据回流四层框架定位AI生物研发瓶颈，指出独有实验数据将比模型更稀缺。 具身智能 NoPeWorld：读取视频世界模型已有的隐藏状态，在执行前替换穿墙动作，将物理违规率从74%降至16%。 ReSpaceBench：显式标注房间重访和环境变化，检验智能体能否跨多次访问辨认地点并更新空间记忆。 热点延伸：Future-OPSD、RTC、StereoVLM 对当前研究的启发 Awesome-RSI 迁移｜从 MetaRSI/RSI² 把工件新鲜度合约用于RSI调度：每轮拒绝过期状态，并隔离候选算子与裁判。 延续｜RSI 留下评估噪声会筛错算子：注入分级噪声，对比单裁判与多裁判，测长期能力斜率和退化率。 HarnessEvolve 迁移｜从 HarnessDev 把“先造框架、再执行”用于评测：统一任务环境，比较成功率、恢复率与配置复现率。 Groom 迁移｜从 HarnessDev 把两阶段测试用于token归因：分开统计框架构建与运行，再细分规划、工具和恢复。 CacheEvolve 迁移｜从 Declarative Attention 把三档注意力声明用于缓存控制：训练逐步选档，测显存、延迟与准确率。 AutonomousAgentEvolve 迁移｜从 HoH 把代码事实与任务决策分开持久化：每次运行后双通道存档，注入重启并测进度恢复率。 MemoryEvolve 迁移｜从 SKILL.state 把规则、状态、观察分离用于长期记忆：对比完整对话，测延迟、正确率与故障恢复率。 PhysicalEvolve 迁移｜从 NoPeWorld 把隐状态安全预测头用于动作执行前检查：对比事后纠错，测违规率、误拦率和任务成功率。 AgentTrainEvolve 迁移｜从 Duopra 把委派与直接调用统一为动作空间：联合训练对话控制和工具执行，测纠正响应与任务成功率。 ResearchEvolve 迁移｜从 AI生物学 把实验数据回流用于科研闭环：串联模型、工具与湿实验，以命中率和迭代周期验收。">
+今日概览 递归改进 MetaRSI/RSI²：让数据、执行框架和模型共同演化，并以不可改写的验证边界防止自改进规则固化或失控。 RSI：用“优化任务—优化改进器”双循环解释固定改进流程为何触顶，并把持续进步转化为评估可靠性问题。 执行系统 HarnessDev：把评测拆成“自主搭建执行框架”和“实际运行”，测出模型管理循环、工具与错误恢复的真实能力。 HoH：以规划、开发、测试三智能体分别维护代码事实与任务决策，使编码代理连续运行数天仍不丢进度。 SKILL.state：用可执行的结构化状态替代不断增长的对话历史，同时降低长程任务延迟并支持故障恢复。 Duopra：统一后台委派与直接工具调用并联合训练对话和执行，使全双工任务成功率从4.7%升至44.7%。 模型与推理 Declarative Attention：让模型在每步思考时声明需要查看的上下文范围，避免反复扫描全部缓存。 GLM-5.4：以权重共享循环层增加推理深度，并用分层缓存避免计算轮数带动部署成本等比例增长。 MIM：先用代数变换消除密码攻击中的干扰变量，再生成可执行代码，将多类攻击从小时压缩到秒级。 科研闭环 AI生物学：用模型、工具、湿实验和数据回流四层框架定位研发瓶颈，揭示强模型时代实验能力反而更稀缺。 物理智能 NoPeWorld：直接从视频模型隐状态识别并替换穿墙动作，把物理违规率从74%降至16%。 ReSpaceBench：显式标注房间重访与环境变化，检验智能体能否长期辨认同一地点并更新空间记忆。 AgentRoboCritic：把机器人轨迹逐动作对齐局部意图，定位仅看最终成败无法发现的执行与恢复故障。 热点延伸：Future-OPSD、RTC、StereoVLM、Uni3Sim、PURE 对当前研究的启发 Awesome-RSI 迁移｜从 MetaRSI/RSI² 把双轴调度用于RSI编排：独立变异数据、框架和模型，过期工件强制复评 延续｜RSI 留下评估噪声会筛错改进器：设置多评委复核，统计长期增益、退化率与回滚率 HarnessEvolve 迁移｜从 HarnessDev 把“先搭框架再运行”用于模型评测：比较固定与自建框架的成功率、耗时和恢复率 CacheEvolve 迁移｜从 Declarative Attention 把三档注意力范围用于缓存管理：训练范围标记并测显存、延迟和准确率 AutonomousAgentEvolve 迁移｜从 HoH 把代码事实与任务决策双状态用于常驻运行：分别持久化并做跨日中断恢复测试 MemoryEvolve 迁移｜从 SKILL.state 把规则、状态、观察分离用于长期记忆：故障后重放并检查状态一致率 ResearchEvolve 迁移｜从 AI生物学 把湿实验回流接入科研闭环：记录假设到验证的周期、命中率与新增数据价值 PhysicalEvolve 迁移｜从 NoPeWorld 把隐状态安全预测头用于动作拦截：比较干预前后的违规率与任务成功率 延续｜AgentRoboCritic 留下抓取对齐和恢复不稳：按失败类型测试真机恢复率、步数与损伤 AgentTrainEvolve 迁移｜从 Duopra 把委派纳入工具动作训练：联合优化对话控制，测任务成功率与纠错响应延迟">
   <meta itemprop="datePublished" content="2026-11-24T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-24T11:47:40+08:00">
-  <meta itemprop="wordCount" content="1152">
+  <meta itemprop="dateModified" content="2026-11-24T11:51:51+08:00">
+  <meta itemprop="wordCount" content="1161">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-24/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-24 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归改进 MetaRSI/RSI²：用可演化的双轴调度同时改进数据、执行框架和模型，并以隔离验证与状态刷新防止自改进失控。 RSI：用双循环把“改进方法本身”纳入反馈，解释固定优化流程为何封顶及可靠评估为何决定长期进步。 执行系统 HarnessDev：让模型先自主搭建执行框架再完成任务，联合检验循环管理、工具调用和错误恢复能力。 HoH：以规划、开发、测试三智能体和双状态存储维持多日编码进度，最高性能达82.86%。 SKILL.state：用规则、状态和观察组成的可执行状态替代不断增长的对话，降低长任务延迟并支持故障恢复。 Duopra：把后端委派与直接工具调用统一成可训练动作，使智能体边对话边执行时的成功率由4.7%升至44.7%。 模型与推理 Declarative Attention：让模型在每步思考时声明需要查看的上下文范围，避免扫描全部缓存造成显存和延迟浪费。 GLM-5.4：用权重共享循环层增加推理深度，并以分层缓存控制循环计算成本，同时支持视觉操控专业软件。 科学闭环 MIM：用代数变换消除密码攻击中的干扰项并自动生成代码，将多类攻击由小时级压缩至秒级。 AI生物学：用模型、工具、湿实验和数据回流四层框架定位AI生物研发瓶颈，指出独有实验数据将比模型更稀缺。 具身智能 NoPeWorld：读取视频世界模型已有的隐藏状态，在执行前替换穿墙动作，将物理违规率从74%降至16%。 ReSpaceBench：显式标注房间重访和环境变化，检验智能体能否跨多次访问辨认地点并更新空间记忆。 热点延伸：Future-OPSD、RTC、StereoVLM 对当前研究的启发 Awesome-RSI 迁移｜从 MetaRSI/RSI² 把工件新鲜度合约用于RSI调度：每轮拒绝过期状态，并隔离候选算子与裁判。 延续｜RSI 留下评估噪声会筛错算子：注入分级噪声，对比单裁判与多裁判，测长期能力斜率和退化率。 HarnessEvolve 迁移｜从 HarnessDev 把“先造框架、再执行”用于评测：统一任务环境，比较成功率、恢复率与配置复现率。 Groom 迁移｜从 HarnessDev 把两阶段测试用于token归因：分开统计框架构建与运行，再细分规划、工具和恢复。 CacheEvolve 迁移｜从 Declarative Attention 把三档注意力声明用于缓存控制：训练逐步选档，测显存、延迟与准确率。 AutonomousAgentEvolve 迁移｜从 HoH 把代码事实与任务决策分开持久化：每次运行后双通道存档，注入重启并测进度恢复率。 MemoryEvolve 迁移｜从 SKILL.state 把规则、状态、观察分离用于长期记忆：对比完整对话，测延迟、正确率与故障恢复率。 PhysicalEvolve 迁移｜从 NoPeWorld 把隐状态安全预测头用于动作执行前检查：对比事后纠错，测违规率、误拦率和任务成功率。 AgentTrainEvolve 迁移｜从 Duopra 把委派与直接调用统一为动作空间：联合训练对话控制和工具执行，测纠正响应与任务成功率。 ResearchEvolve 迁移｜从 AI生物学 把实验数据回流用于科研闭环：串联模型、工具与湿实验，以命中率和迭代周期验收。">
+今日概览 递归改进 MetaRSI/RSI²：让数据、执行框架和模型共同演化，并以不可改写的验证边界防止自改进规则固化或失控。 RSI：用“优化任务—优化改进器”双循环解释固定改进流程为何触顶，并把持续进步转化为评估可靠性问题。 执行系统 HarnessDev：把评测拆成“自主搭建执行框架”和“实际运行”，测出模型管理循环、工具与错误恢复的真实能力。 HoH：以规划、开发、测试三智能体分别维护代码事实与任务决策，使编码代理连续运行数天仍不丢进度。 SKILL.state：用可执行的结构化状态替代不断增长的对话历史，同时降低长程任务延迟并支持故障恢复。 Duopra：统一后台委派与直接工具调用并联合训练对话和执行，使全双工任务成功率从4.7%升至44.7%。 模型与推理 Declarative Attention：让模型在每步思考时声明需要查看的上下文范围，避免反复扫描全部缓存。 GLM-5.4：以权重共享循环层增加推理深度，并用分层缓存避免计算轮数带动部署成本等比例增长。 MIM：先用代数变换消除密码攻击中的干扰变量，再生成可执行代码，将多类攻击从小时压缩到秒级。 科研闭环 AI生物学：用模型、工具、湿实验和数据回流四层框架定位研发瓶颈，揭示强模型时代实验能力反而更稀缺。 物理智能 NoPeWorld：直接从视频模型隐状态识别并替换穿墙动作，把物理违规率从74%降至16%。 ReSpaceBench：显式标注房间重访与环境变化，检验智能体能否长期辨认同一地点并更新空间记忆。 AgentRoboCritic：把机器人轨迹逐动作对齐局部意图，定位仅看最终成败无法发现的执行与恢复故障。 热点延伸：Future-OPSD、RTC、StereoVLM、Uni3Sim、PURE 对当前研究的启发 Awesome-RSI 迁移｜从 MetaRSI/RSI² 把双轴调度用于RSI编排：独立变异数据、框架和模型，过期工件强制复评 延续｜RSI 留下评估噪声会筛错改进器：设置多评委复核，统计长期增益、退化率与回滚率 HarnessEvolve 迁移｜从 HarnessDev 把“先搭框架再运行”用于模型评测：比较固定与自建框架的成功率、耗时和恢复率 CacheEvolve 迁移｜从 Declarative Attention 把三档注意力范围用于缓存管理：训练范围标记并测显存、延迟和准确率 AutonomousAgentEvolve 迁移｜从 HoH 把代码事实与任务决策双状态用于常驻运行：分别持久化并做跨日中断恢复测试 MemoryEvolve 迁移｜从 SKILL.state 把规则、状态、观察分离用于长期记忆：故障后重放并检查状态一致率 ResearchEvolve 迁移｜从 AI生物学 把湿实验回流接入科研闭环：记录假设到验证的周期、命中率与新增数据价值 PhysicalEvolve 迁移｜从 NoPeWorld 把隐状态安全预测头用于动作拦截：比较干预前后的违规率与任务成功率 延续｜AgentRoboCritic 留下抓取对齐和恢复不稳：按失败类型测试真机恢复率、步数与损伤 AgentTrainEvolve 迁移｜从 Duopra 把委派纳入工具动作训练：联合优化对话控制，测任务成功率与纠错响应延迟">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-24T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-24T11:47:40+08:00">
+    <meta property="article:modified_time" content="2026-11-24T11:51:51+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-24 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 递归改进 MetaRSI/RSI²：用可演化的双轴调度同时改进数据、执行框架和模型，并以隔离验证与状态刷新防止自改进失控。 RSI：用双循环把“改进方法本身”纳入反馈，解释固定优化流程为何封顶及可靠评估为何决定长期进步。 执行系统 HarnessDev：让模型先自主搭建执行框架再完成任务，联合检验循环管理、工具调用和错误恢复能力。 HoH：以规划、开发、测试三智能体和双状态存储维持多日编码进度，最高性能达82.86%。 SKILL.state：用规则、状态和观察组成的可执行状态替代不断增长的对话，降低长任务延迟并支持故障恢复。 Duopra：把后端委派与直接工具调用统一成可训练动作，使智能体边对话边执行时的成功率由4.7%升至44.7%。 模型与推理 Declarative Attention：让模型在每步思考时声明需要查看的上下文范围，避免扫描全部缓存造成显存和延迟浪费。 GLM-5.4：用权重共享循环层增加推理深度，并以分层缓存控制循环计算成本，同时支持视觉操控专业软件。 科学闭环 MIM：用代数变换消除密码攻击中的干扰项并自动生成代码，将多类攻击由小时级压缩至秒级。 AI生物学：用模型、工具、湿实验和数据回流四层框架定位AI生物研发瓶颈，指出独有实验数据将比模型更稀缺。 具身智能 NoPeWorld：读取视频世界模型已有的隐藏状态，在执行前替换穿墙动作，将物理违规率从74%降至16%。 ReSpaceBench：显式标注房间重访和环境变化，检验智能体能否跨多次访问辨认地点并更新空间记忆。 热点延伸：Future-OPSD、RTC、StereoVLM 对当前研究的启发 Awesome-RSI 迁移｜从 MetaRSI/RSI² 把工件新鲜度合约用于RSI调度：每轮拒绝过期状态，并隔离候选算子与裁判。 延续｜RSI 留下评估噪声会筛错算子：注入分级噪声，对比单裁判与多裁判，测长期能力斜率和退化率。 HarnessEvolve 迁移｜从 HarnessDev 把“先造框架、再执行”用于评测：统一任务环境，比较成功率、恢复率与配置复现率。 Groom 迁移｜从 HarnessDev 把两阶段测试用于token归因：分开统计框架构建与运行，再细分规划、工具和恢复。 CacheEvolve 迁移｜从 Declarative Attention 把三档注意力声明用于缓存控制：训练逐步选档，测显存、延迟与准确率。 AutonomousAgentEvolve 迁移｜从 HoH 把代码事实与任务决策分开持久化：每次运行后双通道存档，注入重启并测进度恢复率。 MemoryEvolve 迁移｜从 SKILL.state 把规则、状态、观察分离用于长期记忆：对比完整对话，测延迟、正确率与故障恢复率。 PhysicalEvolve 迁移｜从 NoPeWorld 把隐状态安全预测头用于动作执行前检查：对比事后纠错，测违规率、误拦率和任务成功率。 AgentTrainEvolve 迁移｜从 Duopra 把委派与直接调用统一为动作空间：联合训练对话控制和工具执行，测纠正响应与任务成功率。 ResearchEvolve 迁移｜从 AI生物学 把实验数据回流用于科研闭环：串联模型、工具与湿实验，以命中率和迭代周期验收。">
+今日概览 递归改进 MetaRSI/RSI²：让数据、执行框架和模型共同演化，并以不可改写的验证边界防止自改进规则固化或失控。 RSI：用“优化任务—优化改进器”双循环解释固定改进流程为何触顶，并把持续进步转化为评估可靠性问题。 执行系统 HarnessDev：把评测拆成“自主搭建执行框架”和“实际运行”，测出模型管理循环、工具与错误恢复的真实能力。 HoH：以规划、开发、测试三智能体分别维护代码事实与任务决策，使编码代理连续运行数天仍不丢进度。 SKILL.state：用可执行的结构化状态替代不断增长的对话历史，同时降低长程任务延迟并支持故障恢复。 Duopra：统一后台委派与直接工具调用并联合训练对话和执行，使全双工任务成功率从4.7%升至44.7%。 模型与推理 Declarative Attention：让模型在每步思考时声明需要查看的上下文范围，避免反复扫描全部缓存。 GLM-5.4：以权重共享循环层增加推理深度，并用分层缓存避免计算轮数带动部署成本等比例增长。 MIM：先用代数变换消除密码攻击中的干扰变量，再生成可执行代码，将多类攻击从小时压缩到秒级。 科研闭环 AI生物学：用模型、工具、湿实验和数据回流四层框架定位研发瓶颈，揭示强模型时代实验能力反而更稀缺。 物理智能 NoPeWorld：直接从视频模型隐状态识别并替换穿墙动作，把物理违规率从74%降至16%。 ReSpaceBench：显式标注房间重访与环境变化，检验智能体能否长期辨认同一地点并更新空间记忆。 AgentRoboCritic：把机器人轨迹逐动作对齐局部意图，定位仅看最终成败无法发现的执行与恢复故障。 热点延伸：Future-OPSD、RTC、StereoVLM、Uni3Sim、PURE 对当前研究的启发 Awesome-RSI 迁移｜从 MetaRSI/RSI² 把双轴调度用于RSI编排：独立变异数据、框架和模型，过期工件强制复评 延续｜RSI 留下评估噪声会筛错改进器：设置多评委复核，统计长期增益、退化率与回滚率 HarnessEvolve 迁移｜从 HarnessDev 把“先搭框架再运行”用于模型评测：比较固定与自建框架的成功率、耗时和恢复率 CacheEvolve 迁移｜从 Declarative Attention 把三档注意力范围用于缓存管理：训练范围标记并测显存、延迟和准确率 AutonomousAgentEvolve 迁移｜从 HoH 把代码事实与任务决策双状态用于常驻运行：分别持久化并做跨日中断恢复测试 MemoryEvolve 迁移｜从 SKILL.state 把规则、状态、观察分离用于长期记忆：故障后重放并检查状态一致率 ResearchEvolve 迁移｜从 AI生物学 把湿实验回流接入科研闭环：记录假设到验证的周期、命中率与新增数据价值 PhysicalEvolve 迁移｜从 NoPeWorld 把隐状态安全预测头用于动作拦截：比较干预前后的违规率与任务成功率 延续｜AgentRoboCritic 留下抓取对齐和恢复不稳：按失败类型测试真机恢复率、步数与损伤 AgentTrainEvolve 迁移｜从 Duopra 把委派纳入工具动作训练：联合优化对话控制，测任务成功率与纠错响应延迟">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-24/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-23/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -131,8 +128,8 @@ ResearchEvolve
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-24\/"
-    },"genre": "updates","wordcount":  1152 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-24\/","datePublished": "2026-11-24T00:00:00+08:00","dateModified": "2026-11-24T11:47:40+08:00","publisher": {
+    },"genre": "updates","wordcount":  1161 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-24\/","datePublished": "2026-11-24T00:00:00+08:00","dateModified": "2026-11-24T11:51:51+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -315,7 +312,7 @@ ResearchEvolve
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-24 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-24">2026-11-24</time></span>&nbsp;<span title="更新于 2026-11-24 11:47:40"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-24">2026-11-24</time></span>&nbsp;<span title="1152 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-24 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-24">2026-11-24</time></span>&nbsp;<span title="更新于 2026-11-24 11:51:51"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-24">2026-11-24</time></span>&nbsp;<span title="1161 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -337,93 +334,90 @@ ResearchEvolve
 <ul>
 <li><strong>递归改进</strong>
 <ul>
-<li><a href="#metarsi-rsi">MetaRSI/RSI²</a>：用可演化的双轴调度同时改进数据、执行框架和模型，并以隔离验证与状态刷新防止自改进失控。</li>
-<li><a href="#rsi">RSI</a>：用双循环把“改进方法本身”纳入反馈，解释固定优化流程为何封顶及可靠评估为何决定长期进步。</li>
+<li><a href="#metarsi-rsi">MetaRSI/RSI²</a>：让数据、执行框架和模型共同演化，并以不可改写的验证边界防止自改进规则固化或失控。</li>
+<li><a href="#rsi">RSI</a>：用“优化任务—优化改进器”双循环解释固定改进流程为何触顶，并把持续进步转化为评估可靠性问题。</li>
 </ul>
 </li>
 <li><strong>执行系统</strong>
 <ul>
-<li><a href="#harnessdev">HarnessDev</a>：让模型先自主搭建执行框架再完成任务，联合检验循环管理、工具调用和错误恢复能力。</li>
-<li><a href="#hoh">HoH</a>：以规划、开发、测试三智能体和双状态存储维持多日编码进度，最高性能达82.86%。</li>
-<li><a href="#skill-state">SKILL.state</a>：用规则、状态和观察组成的可执行状态替代不断增长的对话，降低长任务延迟并支持故障恢复。</li>
-<li><a href="#duopra">Duopra</a>：把后端委派与直接工具调用统一成可训练动作，使智能体边对话边执行时的成功率由4.7%升至44.7%。</li>
+<li><a href="#harnessdev">HarnessDev</a>：把评测拆成“自主搭建执行框架”和“实际运行”，测出模型管理循环、工具与错误恢复的真实能力。</li>
+<li><a href="#hoh">HoH</a>：以规划、开发、测试三智能体分别维护代码事实与任务决策，使编码代理连续运行数天仍不丢进度。</li>
+<li><a href="#skill-state">SKILL.state</a>：用可执行的结构化状态替代不断增长的对话历史，同时降低长程任务延迟并支持故障恢复。</li>
+<li><a href="#duopra">Duopra</a>：统一后台委派与直接工具调用并联合训练对话和执行，使全双工任务成功率从4.7%升至44.7%。</li>
 </ul>
 </li>
 <li><strong>模型与推理</strong>
 <ul>
-<li><a href="#declarative-attention">Declarative Attention</a>：让模型在每步思考时声明需要查看的上下文范围，避免扫描全部缓存造成显存和延迟浪费。</li>
-<li><a href="#glm-5-4">GLM-5.4</a>：用权重共享循环层增加推理深度，并以分层缓存控制循环计算成本，同时支持视觉操控专业软件。</li>
+<li><a href="#declarative-attention">Declarative Attention</a>：让模型在每步思考时声明需要查看的上下文范围，避免反复扫描全部缓存。</li>
+<li><a href="#glm-5-4">GLM-5.4</a>：以权重共享循环层增加推理深度，并用分层缓存避免计算轮数带动部署成本等比例增长。</li>
+<li><a href="#mim">MIM</a>：先用代数变换消除密码攻击中的干扰变量，再生成可执行代码，将多类攻击从小时压缩到秒级。</li>
 </ul>
 </li>
-<li><strong>科学闭环</strong>
+<li><strong>科研闭环</strong>
 <ul>
-<li><a href="#mim">MIM</a>：用代数变换消除密码攻击中的干扰项并自动生成代码，将多类攻击由小时级压缩至秒级。</li>
-<li><a href="#item-4">AI生物学</a>：用模型、工具、湿实验和数据回流四层框架定位AI生物研发瓶颈，指出独有实验数据将比模型更稀缺。</li>
+<li><a href="#item-4">AI生物学</a>：用模型、工具、湿实验和数据回流四层框架定位研发瓶颈，揭示强模型时代实验能力反而更稀缺。</li>
 </ul>
 </li>
-<li><strong>具身智能</strong>
+<li><strong>物理智能</strong>
 <ul>
-<li><a href="#nopeworld">NoPeWorld</a>：读取视频世界模型已有的隐藏状态，在执行前替换穿墙动作，将物理违规率从74%降至16%。</li>
-<li><a href="#respacebench">ReSpaceBench</a>：显式标注房间重访和环境变化，检验智能体能否跨多次访问辨认地点并更新空间记忆。</li>
+<li><a href="#nopeworld">NoPeWorld</a>：直接从视频模型隐状态识别并替换穿墙动作，把物理违规率从74%降至16%。</li>
+<li><a href="#respacebench">ReSpaceBench</a>：显式标注房间重访与环境变化，检验智能体能否长期辨认同一地点并更新空间记忆。</li>
+<li><a href="#agentrobocritic">AgentRoboCritic</a>：把机器人轨迹逐动作对齐局部意图，定位仅看最终成败无法发现的执行与恢复故障。</li>
 </ul>
 </li>
-<li><strong>热点延伸</strong>：<a href="#future-opsd">Future-OPSD</a>、<a href="#rtc">RTC</a>、<a href="#stereovlm">StereoVLM</a></li>
+<li><strong>热点延伸</strong>：<a href="#future-opsd">Future-OPSD</a>、<a href="#rtc">RTC</a>、<a href="#stereovlm">StereoVLM</a>、<a href="#uni3sim">Uni3Sim</a>、<a href="#pure">PURE</a></li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
 <li><strong>Awesome-RSI</strong>
 <ul>
-<li>迁移｜从 <a href="#metarsi-rsi">MetaRSI/RSI²</a> 把工件新鲜度合约用于RSI调度：每轮拒绝过期状态，并隔离候选算子与裁判。</li>
-<li>延续｜<a href="#rsi">RSI</a> 留下评估噪声会筛错算子：注入分级噪声，对比单裁判与多裁判，测长期能力斜率和退化率。</li>
+<li>迁移｜从 <a href="#metarsi-rsi">MetaRSI/RSI²</a> 把双轴调度用于RSI编排：独立变异数据、框架和模型，过期工件强制复评</li>
+<li>延续｜<a href="#rsi">RSI</a> 留下评估噪声会筛错改进器：设置多评委复核，统计长期增益、退化率与回滚率</li>
 </ul>
 </li>
 <li><strong>HarnessEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#harnessdev">HarnessDev</a> 把“先造框架、再执行”用于评测：统一任务环境，比较成功率、恢复率与配置复现率。</li>
-</ul>
-</li>
-<li><strong>Groom</strong>
-<ul>
-<li>迁移｜从 <a href="#harnessdev">HarnessDev</a> 把两阶段测试用于token归因：分开统计框架构建与运行，再细分规划、工具和恢复。</li>
+<li>迁移｜从 <a href="#harnessdev">HarnessDev</a> 把“先搭框架再运行”用于模型评测：比较固定与自建框架的成功率、耗时和恢复率</li>
 </ul>
 </li>
 <li><strong>CacheEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#declarative-attention">Declarative Attention</a> 把三档注意力声明用于缓存控制：训练逐步选档，测显存、延迟与准确率。</li>
+<li>迁移｜从 <a href="#declarative-attention">Declarative Attention</a> 把三档注意力范围用于缓存管理：训练范围标记并测显存、延迟和准确率</li>
 </ul>
 </li>
 <li><strong>AutonomousAgentEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#hoh">HoH</a> 把代码事实与任务决策分开持久化：每次运行后双通道存档，注入重启并测进度恢复率。</li>
+<li>迁移｜从 <a href="#hoh">HoH</a> 把代码事实与任务决策双状态用于常驻运行：分别持久化并做跨日中断恢复测试</li>
 </ul>
 </li>
 <li><strong>MemoryEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#skill-state">SKILL.state</a> 把规则、状态、观察分离用于长期记忆：对比完整对话，测延迟、正确率与故障恢复率。</li>
-</ul>
-</li>
-<li><strong>PhysicalEvolve</strong>
-<ul>
-<li>迁移｜从 <a href="#nopeworld">NoPeWorld</a> 把隐状态安全预测头用于动作执行前检查：对比事后纠错，测违规率、误拦率和任务成功率。</li>
-</ul>
-</li>
-<li><strong>AgentTrainEvolve</strong>
-<ul>
-<li>迁移｜从 <a href="#duopra">Duopra</a> 把委派与直接调用统一为动作空间：联合训练对话控制和工具执行，测纠正响应与任务成功率。</li>
+<li>迁移｜从 <a href="#skill-state">SKILL.state</a> 把规则、状态、观察分离用于长期记忆：故障后重放并检查状态一致率</li>
 </ul>
 </li>
 <li><strong>ResearchEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#item-4">AI生物学</a> 把实验数据回流用于科研闭环：串联模型、工具与湿实验，以命中率和迭代周期验收。</li>
+<li>迁移｜从 <a href="#item-4">AI生物学</a> 把湿实验回流接入科研闭环：记录假设到验证的周期、命中率与新增数据价值</li>
+</ul>
+</li>
+<li><strong>PhysicalEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#nopeworld">NoPeWorld</a> 把隐状态安全预测头用于动作拦截：比较干预前后的违规率与任务成功率</li>
+<li>延续｜<a href="#agentrobocritic">AgentRoboCritic</a> 留下抓取对齐和恢复不稳：按失败类型测试真机恢复率、步数与损伤</li>
+</ul>
+</li>
+<li><strong>AgentTrainEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#duopra">Duopra</a> 把委派纳入工具动作训练：联合优化对话控制，测任务成功率与纠错响应延迟</li>
 </ul>
 </li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 18 条</span><a href="#daily-featured">⭐ 重点 12</a><a href="#daily-related">🔬 相关 3</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 21 条</span><a href="#daily-featured">⭐ 重点 13</a><a href="#daily-related">🔬 相关 3</a><a href="#daily-hot">🔥 热点 5</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">12 条</span></h2>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">13 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="metarsi-rsi" class="summary-card daily-item">
   <h2 id="metarsi-rsi-title" class="daily-item-title">MetaRSI/RSI²：双轴元递归自改进</h2><p class="single-subtitle daily-item-summary">用可演化的双轴调度统一数据、脚手架与模型改进，解决RSI只改权重且规则固定的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-purpose"><strong>用途</strong><p>在AI能力迭代平台中借鉴其算子隔离、工件新鲜度合约和双轴调度，编排可验证的数据、脚手架与模型升级流程。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>递归自我改进能否持续取决于不可改写的验证边界和对过期自我认知的及时刷新，而非单纯扩大模型能力。</p>
@@ -449,6 +443,22 @@ MetaRSI真正的“Meta”(元)，体现在三层嵌套的改进层级上。
 RSI²双轴调度层：改“改系统的顺序和方法”，不直接改AI，而是决定下一步先调用哪个算子、按什么顺序组合。同时，还能优化每个算子自己的工作方法，比如复盘组该怎么定位问题，流程组该优先改什么。
 MetaRSI²元调度层：改“调度的规则”，每跑完一整个改进周期，元代理会回头看：之前的调度策略好不好、预算分配对不对、什么时候该停。然后更新调度规则，下一轮用更优的策略来跑。
 五条可证伪的递归自改进定律：自改进的边界，是校验的边界，不是能力的边界；自我认知会过期，重新描述是速率瓶颈；能力与载体无关，成本与载体强相关；信任由不可改写的部分度量；循环不创造能力，所有增益均为外部导入 。</div>
+  </details></article>
+<article id="rsi" class="summary-card daily-item">
+  <h2 id="rsi-title" class="daily-item-title">RSI：改进器自演化推导</h2><p class="single-subtitle daily-item-summary">用改进算子双循环解释固定流程为何封顶，以及递归改进为何仍需可靠评估才能持续变强。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>青稞社区</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/zzEywMh3iJRMCp2N0CPlrA?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/zzEywMh3iJRMCp2N0CPlrA?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在设计自改进智能体或训练闭环时，用该双循环框架拆分提出、评估与学习模块，并审计改进是否持久、是否反馈到改进机制本身。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>递归自我改进的关键不是重复优化系统，而是让改进算子进入反馈回路；这会解除固定上限，却也把持续进步转化为评估可靠性问题。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：区分只修订当前产物、把经验写入能力，以及连改进流程本身也持续更新的三种改进强度，并形式化递归自我改进的成立条件。</li>
+<li><strong>旧法为何失效</strong>：固定改进算子的迭代轨迹由起点和算子完全决定；在收缩假设下，能力趋向固定不动点，单轮收益呈几何衰减。</li>
+<li><strong>方法</strong>：用“系统状态—能力度量—改进算子”统一建模，再引入元改进算子与实验反馈形成双循环；并将每轮改进拆为提出者、评估者和学习者，映射到 Self-Refine、DGM、STaR、Self-Rewarding、Absolute Zero 与 AlphaEvolve。</li>
+<li><strong>实验</strong>：文章以代表系统验证框架，其中 DGM 通过版本档案和多路径探索，在约80代内将 SWE-bench 从20.0%提升至50.0%，Polyglot 从14.2%提升至30.7%。</li>
+<li><strong>局限与后续</strong>：改进算子发生变化不等于变得更好，算子变好也不保证单轮收益递增；反馈噪声和评估误差仍可能筛错候选并导致能力退化。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/zzEywMh3iJRMCp2N0CPlrA?scene=1</div>
   </details></article>
 <article id="harnessdev" class="summary-card daily-item">
   <h2 id="harnessdev-title" class="daily-item-title">HarnessDev：自建执行框架评测</h2><p class="single-subtitle daily-item-summary">用先构建再运行执行框架的两阶段测试，评估模型管理循环、调用工具和恢复错误的能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E6%81%A2%E5%A4%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行恢复</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a></p><div class="daily-item-purpose"><strong>用途</strong><p>在智能体开发与模型选型中，可将其作为基线，评估不同模型自主搭建和优化 Agent Harness 的能力。</p>
@@ -485,20 +495,6 @@ MetaRSI²元调度层：改“调度的规则”，每跑完一整个改进周�
 在生成最终回答时，模型每生成一个 Token 都需要读取全部上下文的 KV 缓存，即使它只需要关注其中很少的一部分词；现有方案大多采用外部打分的方式来决定保留哪些 Token，来降低资源开销，但解码过程的时间复杂度仍为 O(N)；
 ⭐️ DeepMind 提出一种「声明式注意力」的方案，模型能够在思维链（CoT）中自主选择当前需要的注意力作用范围，分为全局，聚焦，本地三种模式；在基本维持高准确的同时，显著减少了 Qwen 和 Gamma 模型的显存开销与推理延迟；</div>
   </details></article>
-<article id="mim" class="summary-card daily-item">
-  <h2 id="mim-title" class="daily-item-title">MIM：代数降维式自动密码分析</h2><p class="single-subtitle daily-item-summary">MiniMax披露内部模型MIM，用代数降维与可执行代码将多项密码攻击从小时级压缩至秒级。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：漏洞挖掘</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/%E6%9C%89%E8%B6%A3%E7%A0%94%E7%A9%B6/">有趣研究</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;网络安全</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/MiniMax-AI/Research/tree/main" target="_blank" rel="noopener">https://github.com/MiniMax-AI/Research/tree/main</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/teignXiJIxvg3iLjWXFjjA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/teignXiJIxvg3iLjWXFjjA</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在密码算法安全审计中复现其GitHub PoC，并将模2子格、矩阵转置等结构化降维技巧用作攻击设计基线。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>密码分析的关键突破往往不是增加暴力搜索算力，而是发现能消除干扰项、压缩未知空间的代数表述。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>是什么</strong>：MiniMax披露用于自动化密码分析的内部模型MIM，并发布8篇附可运行PoC的分析报告，覆盖后量子密码、哈希碰撞、签名伪造和密钥恢复等任务。</li>
-<li><strong>关键能力</strong>：MIM通过模2子格、矩阵转置等代数重构降低搜索维度和内存需求；据报告，其将TII McEliece挑战从9.2小时缩短至1.80～5.36秒，破解55个此前无解实例，并把LOCKER-I攻击所需内存从42 PB降至58 MB。</li>
-<li><strong>限制</strong>：MIM仍是未公开的内部模型，外界目前只能复现已发布PoC；相关结果不代表AES、RSA、SHA-256等现行主流密码标准已被攻破。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">有趣研究｜中国AI刷爆全球纪录！比Claude快四万倍，多个密码学难题被破解https://mp.weixin.qq.com/s/teignXiJIxvg3iLjWXFjjA</div>
-  </details></article>
 <article id="glm-5-4" class="summary-card daily-item">
   <h2 id="glm-5-4-title" class="daily-item-title">GLM-5.4：循环层扩展计算深度</h2><p class="single-subtitle daily-item-summary">智谱推出GLM-5.4，以循环层和原生视觉让用户通过代码操控视频、游戏、3D及工程软件。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/vWGTNdlOo976ZZoZ5vLECQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/vWGTNdlOo976ZZoZ5vLECQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在软件开发和数字内容生产中，可通过 GLM Coding Plan、ZCode 等平台调用其视觉与代码能力，自动操作专业工具完成长链路任务。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>在成熟基座的后训练阶段引入权重共享循环，可保留预训练知识并增加推理计算深度，而分层缓存共享能避免循环轮数导致部署成本同步倍增。</p>
@@ -513,21 +509,19 @@ MetaRSI²元调度层：改“调度的规则”，每跑完一整个改进周�
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">NewModel｜刚刚，GLM-5.4上线！全新的Loop Transformer架构亮相https://mp.weixin.qq.com/s/vWGTNdlOo976ZZoZ5vLECQ</div>
   </details></article>
-<article id="rsi" class="summary-card daily-item">
-  <h2 id="rsi-title" class="daily-item-title">RSI：改进器自演化推导</h2><p class="single-subtitle daily-item-summary">用改进算子双循环解释固定流程为何封顶，以及递归改进为何仍需可靠评估才能持续变强。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>青稞社区</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/zzEywMh3iJRMCp2N0CPlrA?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/zzEywMh3iJRMCp2N0CPlrA?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在设计自改进智能体或训练闭环时，用该双循环框架拆分提出、评估与学习模块，并审计改进是否持久、是否反馈到改进机制本身。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>递归自我改进的关键不是重复优化系统，而是让改进算子进入反馈回路；这会解除固定上限，却也把持续进步转化为评估可靠性问题。</p>
+<article id="mim" class="summary-card daily-item">
+  <h2 id="mim-title" class="daily-item-title">MIM：代数降维式自动密码分析</h2><p class="single-subtitle daily-item-summary">MiniMax披露内部模型MIM，用代数降维与可执行代码将多项密码攻击从小时级压缩至秒级。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：漏洞挖掘</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/%E6%9C%89%E8%B6%A3%E7%A0%94%E7%A9%B6/">有趣研究</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;网络安全</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/MiniMax-AI/Research/tree/main" target="_blank" rel="noopener">https://github.com/MiniMax-AI/Research/tree/main</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/teignXiJIxvg3iLjWXFjjA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/teignXiJIxvg3iLjWXFjjA</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在密码算法安全审计中复现其GitHub PoC，并将模2子格、矩阵转置等结构化降维技巧用作攻击设计基线。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>密码分析的关键突破往往不是增加暴力搜索算力，而是发现能消除干扰项、压缩未知空间的代数表述。</p>
 </div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
       <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：区分只修订当前产物、把经验写入能力，以及连改进流程本身也持续更新的三种改进强度，并形式化递归自我改进的成立条件。</li>
-<li><strong>旧法为何失效</strong>：固定改进算子的迭代轨迹由起点和算子完全决定；在收缩假设下，能力趋向固定不动点，单轮收益呈几何衰减。</li>
-<li><strong>方法</strong>：用“系统状态—能力度量—改进算子”统一建模，再引入元改进算子与实验反馈形成双循环；并将每轮改进拆为提出者、评估者和学习者，映射到 Self-Refine、DGM、STaR、Self-Rewarding、Absolute Zero 与 AlphaEvolve。</li>
-<li><strong>实验</strong>：文章以代表系统验证框架，其中 DGM 通过版本档案和多路径探索，在约80代内将 SWE-bench 从20.0%提升至50.0%，Polyglot 从14.2%提升至30.7%。</li>
-<li><strong>局限与后续</strong>：改进算子发生变化不等于变得更好，算子变好也不保证单轮收益递增；反馈噪声和评估误差仍可能筛错候选并导致能力退化。</li>
+<li><strong>是什么</strong>：MiniMax披露用于自动化密码分析的内部模型MIM，并发布8篇附可运行PoC的分析报告，覆盖后量子密码、哈希碰撞、签名伪造和密钥恢复等任务。</li>
+<li><strong>关键能力</strong>：MIM通过模2子格、矩阵转置等代数重构降低搜索维度和内存需求；据报告，其将TII McEliece挑战从9.2小时缩短至1.80～5.36秒，破解55个此前无解实例，并把LOCKER-I攻击所需内存从42 PB降至58 MB。</li>
+<li><strong>限制</strong>：MIM仍是未公开的内部模型，外界目前只能复现已发布PoC；相关结果不代表AES、RSA、SHA-256等现行主流密码标准已被攻破。</li>
 </ul>
 </div>
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/zzEywMh3iJRMCp2N0CPlrA?scene=1</div>
+    <div class="daily-item-notes-body">有趣研究｜中国AI刷爆全球纪录！比Claude快四万倍，多个密码学难题被破解https://mp.weixin.qq.com/s/teignXiJIxvg3iLjWXFjjA</div>
   </details></article>
 <article id="hoh" class="summary-card daily-item">
   <h2 id="hoh-title" class="daily-item-title">HoH：双状态长程编码代理</h2><p class="single-subtitle daily-item-summary">用规划、开发、测试三智能体与双状态通道，解决编码代理连续运行数天后进度失序的问题，性能最高达82.86%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：长程任务执行</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>未知</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/autonomousagentevolve/">AutonomousAgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E6%8C%81%E4%B9%85%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态持久化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a></p><div class="daily-item-purpose"><strong>用途</strong><p>在无人值守的软件开发系统中，可借鉴其规划—开发—测试分工及双状态持久化机制来执行多日编码任务。</p>
@@ -567,6 +561,20 @@ QA 测试员：验证功能正确，系统可用性，以及评估视觉效果�
 Google 提出了一种名为 SKILL.state 的新型智能体运行架构，目标是解决长周期任务中，因对话不断累积而导致的推理延迟和准确率下降问题；
 ⭐️ SKILL.state 通过显式的，结构化的「状态转移过程」，取代了传统的「历史对话追加」的模式；在每个步骤中，模型只能看到不可变的技能规范（任务规则），当前的结构化状态，和最新的观察结果，而中间推理过程会在状态更新后丢弃；
 在多个基准测试中，SKILL.state 显著提升了任务成功率，并表现出更强的稳定性和故障恢复能力</div>
+  </details></article>
+<article id="item-4" class="summary-card daily-item">
+  <h2 id="item-4-title" class="daily-item-title">AI生物学：湿实验重估研发壁垒</h2><p class="single-subtitle daily-item-summary">用模型分层、工具编排与实验闭环分析AI生物学，指出模型越强，湿实验与独有数据越稀缺。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技术趋势分析</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>RSI自进化</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%B9%BF%E5%AE%9E%E9%AA%8C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;湿实验</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;生物信息学</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/PMUx_4ydS6IY7T3uqDrI6Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/PMUx_4ydS6IY7T3uqDrI6Q</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在AI药物、蛋白质设计或组学研发系统中，借鉴其lab-in-the-loop框架配置模型、工具、实验验证和数据回流环节。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>模型能力提升不会消除物理实验壁垒，而会把竞争优势重新集中到高吞吐湿实验、独有样本和快速数据回流能力上。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：将姚顺雨关于模型分层、非文本模态、递归自我改进、规模效应与安全的判断映射到AI生物学，核心结论是研发瓶颈正转向湿实验、样本和高质量数据回流。</li>
+<li><strong>关键能力</strong>：提出“通用基础模型—专用小模型”的模型层级，以及由大模型编排专业工具、数据库和生物模型的路径；Biomni整合150个工具、105个软件包和59个数据库，Virtual Lab通过多智能体设计92个纳米抗体并完成实验验证。</li>
+<li><strong>限制</strong>：模型侧迭代可在小时级完成，但蛋白表达、细胞与动物实验仍受固定周期和吞吐量制约；小模型上的数据配方未必能迁移到大模型，开放生物模型也可能被后训练绕过安全措施。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">RSI自进化｜【生命科学】拆解姚顺雨清华分享的22条判断，及其在AI生物学中的对照与边界——大模型越强，湿实验越值钱https://mp.weixin.qq.com/s/PMUx_4ydS6IY7T3uqDrI6Q</div>
   </details></article>
 <article id="nopeworld" class="summary-card daily-item">
   <h2 id="nopeworld-title" class="daily-item-title">NoPeWorld：隐状态穿透防控</h2><p class="single-subtitle daily-item-summary">利用视频世界模型已有的隐藏状态识别并替换穿透障碍物的动作，将物理违规率从74%降至16%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：世界模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态表征</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.27963" target="_blank" rel="noopener">https://arxiv.org/abs/2611.27963</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在交互式视频世界模型或具身仿真系统中接入隐藏状态安全预测头，在执行前拦截并替换会穿透障碍物的动作。</p>
@@ -613,19 +621,21 @@ Google 提出了一种名为 SKILL.state 的新型智能体运行架构，目标
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[迷失在走廊中：跨重访持久空间记忆基准测试 (10 ▲)](https://huggingface.co/papers/2611.21485?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-23)</div>
   </details></article>
-<article id="item-4" class="summary-card daily-item">
-  <h2 id="item-4-title" class="daily-item-title">AI生物学：湿实验重估研发壁垒</h2><p class="single-subtitle daily-item-summary">用模型分层、工具编排与实验闭环分析AI生物学，指出模型越强，湿实验与独有数据越稀缺。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技术趋势分析</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>RSI自进化</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%B9%BF%E5%AE%9E%E9%AA%8C/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;湿实验</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;生物信息学</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/PMUx_4ydS6IY7T3uqDrI6Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/PMUx_4ydS6IY7T3uqDrI6Q</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在AI药物、蛋白质设计或组学研发系统中，借鉴其lab-in-the-loop框架配置模型、工具、实验验证和数据回流环节。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>模型能力提升不会消除物理实验壁垒，而会把竞争优势重新集中到高吞吐湿实验、独有样本和快速数据回流能力上。</p>
+<article id="agentrobocritic" class="summary-card daily-item">
+  <h2 id="agentrobocritic-title" class="daily-item-title">AgentRoboCritic：意图锚定动作级评测</h2><p class="single-subtitle daily-item-summary">用意图锚定的逐动作批评框架，解释前沿智能体直接控制机器人时如何成功、为何失败。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：过程评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程评估</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.26613" target="_blank" rel="noopener">https://arxiv.org/abs/2611.26613</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在机器人智能体评测与调试系统中借鉴意图锚定批评机制，对低层控制轨迹逐动作定位故障并分析恢复能力。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>评估直接机器人控制不能只看任务是否完成，动作与局部意图之间的偏差才是揭示物理执行瓶颈和闭环恢复能力的关键。</p>
 </div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
       <div class="daily-item-content"><ul>
-<li><strong>是什么</strong>：将姚顺雨关于模型分层、非文本模态、递归自我改进、规模效应与安全的判断映射到AI生物学，核心结论是研发瓶颈正转向湿实验、样本和高质量数据回流。</li>
-<li><strong>关键能力</strong>：提出“通用基础模型—专用小模型”的模型层级，以及由大模型编排专业工具、数据库和生物模型的路径；Biomni整合150个工具、105个软件包和59个数据库，Virtual Lab通过多智能体设计92个纳米抗体并完成实验验证。</li>
-<li><strong>限制</strong>：模型侧迭代可在小时级完成，但蛋白表达、细胞与动物实验仍受固定周期和吞吐量制约；小模型上的数据配方未必能迁移到大模型，开放生物模型也可能被后训练绕过安全措施。</li>
+<li><strong>问题</strong>：现有机器人控制基准只报告整轮成功率，无法解释多模态智能体的具体控制能力、恢复行为及失败原因。</li>
+<li><strong>旧法为何失效</strong>：回合级指标掩盖抓取、对齐等局部执行瓶颈，也无法区分不同失败模式下的恢复能力。</li>
+<li><strong>方法</strong>：提出 AgentRoboCritic，让策略智能体在每个低层数值动作旁声明局部意图，再由批评模型依据该意图评估动作结果与失败模式。</li>
+<li><strong>实验</strong>：在12个操作基准上开展动作级分析，并用400个带人工标注的动作验证批评模型；发布12,844个标注动作及微调后的 Muse-Glimmer-30B，其失败模式准确率由32.58%升至74.24%。</li>
+<li><strong>局限与后续</strong>：前沿智能体仍受抓取和对齐等物理执行能力限制，且对不同失败模式的闭环恢复能力不均衡。</li>
 </ul>
 </div>
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">RSI自进化｜【生命科学】拆解姚顺雨清华分享的22条判断，及其在AI生物学中的对照与边界——大模型越强，湿实验越值钱https://mp.weixin.qq.com/s/PMUx_4ydS6IY7T3uqDrI6Q</div>
+    <div class="daily-item-notes-body">[AgentRoboCritic：理解前沿智能体在直接机器人控制方面的能力 (7 ▲)](https://huggingface.co/papers/2611.26613?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-23)</div>
   </details></article>
 <h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">3 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
@@ -693,7 +703,7 @@ Google 提出了一种名为 SKILL.state 的新型智能体运行架构，目标
 </details>
 </div>
             </details><details class="daily-group daily-group-hot" id="daily-hot" open>
-            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">3 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">5 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
             <div class="daily-group-body">
               <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="future-opsd" class="daily-row">
   <summary>
@@ -747,6 +757,41 @@ Google 提出了一种名为 SKILL.state 的新型智能体运行架构，目标
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[StereoVLM：用于度量级 3D 空间推理的双目视觉语言模型 (7 ▲)](https://huggingface.co/papers/2611.27915?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-23)</div>
+  </details></div>
+</details>
+<details id="uni3sim" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>Uni3Sim：统一系统级推理仿真</strong>
+      <span class="daily-row-meta">机器之心 · 系统优化 · <a href="https://github.com/thu-nics/uni3sim" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a> · <a href="https://mp.weixin.qq.com/s/vd-B5XOk2JT1W50jn0zTwA" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">统一仿真计算、存储、互连与调度，低成本预判推理集群性能，吞吐误差低于5.2%。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：系统优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理加速</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E4%BB%BF%E7%9C%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学仿真</a><a href="/LLMDailyDigestWeb/topic/%E8%B5%84%E6%BA%90%E8%B0%83%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;资源调度</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%A1%86%E6%9E%B6%E5%8D%8F%E5%90%8C%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型与框架协同优化</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/thu-nics/uni3sim" target="_blank" rel="noopener">https://github.com/thu-nics/uni3sim</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/vd-B5XOk2JT1W50jn0zTwA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/vd-B5XOk2JT1W50jn0zTwA</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在大规模推理集群设计中直接使用其代码重放业务请求，部署前评估硬件配置、网络拓扑、缓存策略和模型部署方案。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>推理集群的局部硬件提速未必带来端到端收益，只有动态刻画计算、存储、互连与调度的耦合关系，才能可靠判断系统设计价值。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：Uni3Sim 是面向大规模推理服务的开源系统级仿真平台，可在硬件落地前重放真实请求，比较芯片、存储、互连、部署和调度方案。</li>
+<li><strong>关键能力</strong>：通过 ArchPrism、HBFrame、ProtoBridge 统一建模异构计算、分层存储及 Scale-Up/Scale-Out 互连，并接入 SGLang、vLLM 原生调度器；在 A800、C500、昇腾910B 等平台上，TTFT、TPOT、吞吐误差分别低于21.2%、9.4%、5.2%。</li>
+<li><strong>限制</strong>：目前主要针对给定软硬件配置预测服务性能，尚不能自动生成和优化设计方案；团队计划引入智能体或搜索算法，形成方案生成、仿真评估与迭代优化闭环。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">InfraEvolve｜为下一代智算系统搭建开放模拟实验室，清华、无问芯穹开源系统级仿真平台Uni3Sim https://mp.weixin.qq.com/s/vd-B5XOk2JT1W50jn0zTwA</div>
+  </details></div>
+</details>
+<details id="pure" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-1">★1</span> <strong>PURE：多粒度身份匹配诊断</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 评测基准 · <a href="https://arxiv.org/abs/2611.22343" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用分粒度、分能力诊断评测，揭示多模态模型在商品身份匹配中被总准确率掩盖的判断缺陷。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-1" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 1</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;真实世界基准测试</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%81%E6%8D%AE%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;证据推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.22343" target="_blank" rel="noopener">https://arxiv.org/abs/2611.22343</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在电商商品去重、目录对齐或多模态身份核验系统中，将 PURE 作为诊断基准，定位模型在不同匹配粒度和能力环节上的缺陷。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>身份匹配不是单一二分类能力，判断标准会随粒度改变，因此总准确率可能掩盖模型对正负样本和证据冲突的系统性偏差。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：身份是否匹配取决于目标粒度；两个商品可能基础设计相同，却因颜色或尺寸不同而不属于同一变体。</li>
+<li><strong>旧法为何失效</strong>：最终匹配准确率无法区分感知、理解、推理和基于证据判断等能力，也会掩盖模型在不同粒度下的错误模式。</li>
+<li><strong>方法</strong>：PURE 从真实电商匹配对构建 14 项任务、1,457 道多选题，并由两位领域专家核验，分别诊断感知、理解、推理和证据判断四类能力。</li>
+<li><strong>实验</strong>：评测十个近期多模态大模型，总分为 47.1%–86.0%；理解平均得分最高、证据判断最低，主要弱点是视觉差异定位和变体级规则判断。模态消融显示多模态证据总体有益，但模型也会错误识别匹配记录间的冲突。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[PURE：多粒度多模态身份匹配诊断基准 (6 ▲)](https://huggingface.co/papers/2611.22343?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-23)</div>
   </details></div>
 </details>
 </div>
