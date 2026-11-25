@@ -103,7 +103,7 @@ AutonomousAgentEvolve
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
 今日概览 可信自改进 Online Environment Repair：训练中异步修补被策略利用的验证漏洞，把奖励作弊率从36.9%降至0.06%。 Detection Gap：从正常运行轨迹学习故障监控器，补上自改进智能体能修复却发现不了自身故障的盲区。 DoppelVet：用证据完全匹配的对照更新回放行为，在没有安全标签时拦截有害记忆和技能。 SELFWRITE：让模型编程生成并递归合并自身的低秩权重修改，无需梯度即可持续提升数学能力。 评测闭环 RecurSciBench：用可执行、科学可验证的独立任务，检验科研智能体自我改进能否迁移到新任务和新领域。 Transport-Safe Evaluation：按各智能体的轨迹分布随机审计裁判，避免复用统一错误率造成排名偏差。 经验演化 ReHarness：根据任务结果反向修正实际调用过的历史经验，使经验库能在长期使用中持续纠错。 VISE：直接分析工具源码和执行轨迹修订技能说明，无需任务验证器也能提升成功率9.14至13.35个百分点。 E2L：按经验产生的梯度是否与目标更新一致来筛选训练材料，排除解题有效却妨碍参数学习的经验。 训练信号 RLVB：用真实答案后验奖励取证与提交时机，减少长任务中证据不足的提前猜答，准确率提升17.1%。 具身数据 RoboUniverse-10K：把真实操作视频自动转成万级可验证仿真任务，同时隔离评分逻辑以抑制背题和奖励作弊。 RynnVLA-Latent：用三维几何约束的潜在动作把3.01万小时无控制标签视频转成机器人预训练监督。 执行效率 JevAgentHarness：用专用快速模型选择有限动作，只把内容生成交给昂贵模型，成本最多降低49.6%。 LoomKV：以逐注意力头的3位编码无损压缩跨GPU、内存和SSD的KV缓存，扩大长请求服务容量。 常驻运行 Wactorz：以演员级故障隔离和状态保持迁移，让边缘智能体自修复时无需中断整个长期任务。 热点延伸：ViDecide 对当前研究的启发 Awesome-RSI 迁移｜从 DoppelVet 把“证据等价对照回放”用于更新准入：比较候选与对照行为后再持久化。 延续｜Detection Gap 留下故障发现能力未被单独评测：注入可修复故障，统计发现率、误报率和修复率。 AgentEvolve 迁移｜从 ReHarness 把结果反向修正用于经验库：仅更新本次检索项，并保留原轨迹供复核。 AgentTrainEvolve 迁移｜从 Online Environment Repair 把异步环境修补接入训练：监测异常高奖励并三重验证后热更新。 迁移｜从 RLVB 把后验置信度用于提交奖励：分别奖励有效取证、延迟猜答和证据充分后作答。 EvalEvolve 迁移｜从 RecurSciBench 把独立迁移评测用于RSI：分报源任务、新任务、新领域增益与局部退化。 延续｜Transport-Safe Evaluation 留下轨迹覆盖不足问题：逐系统分层抽样，报告置信区间与不可识别界。 RobotEvolve 延续｜RynnVLA-Latent 依赖估计几何与真机示教：对比几何噪声强度，测迁移成功率和示教需求量。 JevEvolve 迁移｜从 JevAgentHarness 把有限动作快路由用于工具选择：以轨迹长度、总成本和成功率联合训练。 AutonomousAgentEvolve 迁移｜从 Wactorz 把演员级隔离用于常驻Agent：分别持久化状态与代码，故障时只重启责任演员。">
   <meta itemprop="datePublished" content="2026-11-25T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-25T17:40:05+08:00">
+  <meta itemprop="dateModified" content="2026-11-25T17:43:51+08:00">
   <meta itemprop="wordCount" content="1236">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-25/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
@@ -114,7 +114,7 @@ AutonomousAgentEvolve
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-25T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-25T17:40:05+08:00">
+    <meta property="article:modified_time" content="2026-11-25T17:43:51+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -135,7 +135,7 @@ AutonomousAgentEvolve
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-25\/"
     },"genre": "updates","wordcount":  1236 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-25\/","datePublished": "2026-11-25T00:00:00+08:00","dateModified": "2026-11-25T17:40:05+08:00","publisher": {
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-25\/","datePublished": "2026-11-25T00:00:00+08:00","dateModified": "2026-11-25T17:43:51+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -318,7 +318,7 @@ AutonomousAgentEvolve
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-25 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-25">2026-11-25</time></span>&nbsp;<span title="更新于 2026-11-25 17:40:05"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-25">2026-11-25</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-24 11:36 ~ 2026-11-25 13:02（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-24 11:36 ~ 11-25 13:02
+      <div class="post-meta-line"><span title="发布于 2026-11-25 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-25">2026-11-25</time></span>&nbsp;<span title="更新于 2026-11-25 17:43:51"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-25">2026-11-25</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-24 11:36 ~ 2026-11-25 13:02（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-24 11:36 ~ 11-25 13:02
           </span>&nbsp;<span title="1236 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -428,7 +428,7 @@ AutonomousAgentEvolve
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 149 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 133</a><a href="#daily-hot">🔥 热点 1</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 152 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 136</a><a href="#daily-hot">🔥 热点 1</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">15 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="online-environment-repair" class="summary-card daily-item">
@@ -711,7 +711,7 @@ MIT &#43; Meta 的联合研究提出了ReHarness 的循环式架构，用于解�
 链接：https://arxiv.org/abs/2611.29619
 摘要：Most LLM agent frameworks build a crew that runs a task and exits. Physical environments (e.g., homes, labs, factory floors) need agents that stay up for months, survive their own bugs, and run on whatever hardware is already next to the sensors. We present Wactorz, an open-source runtime in which LLM-generated agents are long-lived, supervised actors: a planner turns a chat request into Python, compiles it into a new actor at runtime, and a supervisor restarts that actor alone, with its state intact, when it crashes. All coordination rides on MQTT, so agents can be spawned on, and live-migrated between, edge nodes such as a Raspberry Pi, and every internal event is a topic external systems can subscribe to. The recorded demo builds a camera-to-lamp automation from one chat request, adds a</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">133 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">136 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolve%E5%BA%94%E7%94%A8/" onclick="event.stopPropagation()">Evolve应用</a><span class="daily-count">3 条</span>
               </summary>
@@ -2312,7 +2312,7 @@ MIT &#43; Meta 的联合研究提出了ReHarness 的循环式架构，用于解�
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/" onclick="event.stopPropagation()">NewModel</a><span class="daily-count">5 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/" onclick="event.stopPropagation()">NewModel</a><span class="daily-count">6 条</span>
               </summary>
               <div class="daily-group-body"><details id="wemm-ecom" class="daily-row">
   <summary>
@@ -2374,49 +2374,66 @@ MIT &#43; Meta 的联合研究提出了ReHarness 的循环式架构，用于解�
 摘要：The ability to learn and generalize from limited experience, or sample efficiency, is a cornerstone of intelligence. How can we build language models that turn a few user interactions, a few snippets of unfamiliar code, or a handful of experimental results provided in context into knowledge that generalizes? Prior work has found that sleep, a process where the model performs $N$ recurrent forward passes to refine its representations of a chunk of context, can improve long-context reasoning (specifically, within SSM-attention hybrid models). We study whether this method also improves in-context adaptation on general, non-synthetic tasks for transformer language models. To this end, we pre-train language models up to 1.2B-parameters on up to 100B tokens with sleep mechanisms. Notably, longer</div>
   </details></div>
 </details>
-<details id="integral-deltanet" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>Integral DeltaNet：双状态自适应记忆</strong>
-      <span class="daily-row-meta">arXiv · 模型架构创新 · <a href="https://arxiv.org/abs/2611.32063" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">用快慢双状态保存不同时间尺度的信息，缓解固定状态线性注意力中的长期记忆碰撞。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E7%BA%BF%E6%80%A7%E6%B3%A8%E6%84%8F%E5%8A%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;线性注意力</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态表征</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E5%BA%A6%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长度泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.32063" target="_blank" rel="noopener">https://arxiv.org/abs/2611.32063</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在长上下文语言模型中借鉴其快慢双状态与自适应读取机制，以固定内存增强长期信息保留并维持高效训练和解码。</p>
+<section class="daily-cluster">
+      <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：模型架构创新 <span class="daily-count">3 条</span></h3><article id="integral-deltanet" class="summary-card daily-item daily-item-medium">
+  <h2 id="integral-deltanet-title" class="daily-item-title">Integral DeltaNet：双状态自适应记忆</h2><p class="single-subtitle daily-item-summary">用快慢双状态保存不同时间尺度的信息，缓解固定状态线性注意力中的长期记忆碰撞。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E7%BA%BF%E6%80%A7%E6%B3%A8%E6%84%8F%E5%8A%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;线性注意力</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态表征</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E5%BA%A6%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长度泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.32063" target="_blank" rel="noopener">https://arxiv.org/abs/2611.32063</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在长上下文语言模型中借鉴其快慢双状态与自适应读取机制，以固定内存增强长期信息保留并维持高效训练和解码。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>固定容量记忆的关键不只是控制写入冲突，还应同时保留快速更新状态的历史积分，使当前关联与长期证据能够按需互补。</p>
-</div><div class="daily-item-content"><ul>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
 <li><strong>问题</strong>：线性注意力将历史信息压缩进固定大小的循环状态，虽能实现线性时间计算，却会因记忆碰撞损害长上下文理解。</li>
 <li><strong>旧法为何失效</strong>：DeltaNet的增量规则和Gated DeltaNet的门控可减少碰撞，但更新时也可能丢弃未来预测仍需要的信息。</li>
 <li><strong>方法</strong>：Integral DeltaNet并行维护快速更新的delta状态与保留其加权历史的integral状态，在读取时自适应融合两者，并提供适合硬件高效训练的分块并行形式。</li>
 <li><strong>实验</strong>：从零训练3.4亿和13亿参数模型，分别使用150亿和1000亿个FineWeb-Edu词元；相较强循环基线，在语言建模、常识推理、真实与合成检索、长上下文理解和长度泛化上整体更优，并比较了训练吞吐、激活内存及解码延迟与内存。</li>
 </ul>
-</div><details class="daily-item-notes">
+</div>
+    </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">标题：Integral DeltaNet: Improved Linear Attention with Adaptive Memory Integration
 来源：arXiv
 链接：https://arxiv.org/abs/2611.32063
 摘要：Linear attention replaces softmax attention with a linear formulation, enabling linear-time computation with a fixed-size recurrent state instead of a growing key-value cache. These computational and memory advantages have attracted growing interest in linear attention for long-context language modeling. However, compressing past information into a fixed-size state causes memory collisions that hinder long-context understanding. Although DeltaNet mitigates memory collisions through delta-rule updates and Gated DeltaNet extends this approach with gating, these mechanisms may also discard information relevant to future predictions. To address this limitation, we introduce Integral DeltaNet, which maintains two complementary recurrent states: a fast-updating delta state that captures current </div>
-  </details></div>
-</details>
-<details id="deciform" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>DeciForm：答案空间结构感知决策</strong>
-      <span class="daily-row-meta">arXiv · 模型架构创新 · <a href="https://arxiv.org/abs/2611.29340" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">按答案空间的集合或数值结构设计编码与监督，解决统一决策模型易受候选顺序干扰和评分失准的问题。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%80%99%E9%80%89%E9%80%89%E6%8B%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;候选选择</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.29340" target="_blank" rel="noopener">https://arxiv.org/abs/2611.29340</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在统一承担分类、布尔判断和数值打分的决策系统中，可借鉴其候选隔离编码与十进制前缀监督机制进行联合适配。</p>
+  </details></article>
+<article id="deciform" class="summary-card daily-item daily-item-medium">
+  <h2 id="deciform-title" class="daily-item-title">DeciForm：答案空间结构感知决策</h2><p class="single-subtitle daily-item-summary">按答案空间的集合或数值结构设计编码与监督，解决统一决策模型易受候选顺序干扰和评分失准的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%80%99%E9%80%89%E9%80%89%E6%8B%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;候选选择</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.29340" target="_blank" rel="noopener">https://arxiv.org/abs/2611.29340</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在统一承担分类、布尔判断和数值打分的决策系统中，可借鉴其候选隔离编码与十进制前缀监督机制进行联合适配。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>统一输出接口不应意味着统一答案表征，决策模型的编码和监督必须匹配答案空间的集合、顺序与距离结构。</p>
-</div><div class="daily-item-content"><ul>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
 <li><strong>问题</strong>：统一处理候选选择、布尔判断和数值评分时，不同答案空间具有不同结构；分类候选是无序集合，而数值分数具有顺序与距离。</li>
 <li><strong>旧法为何失效</strong>：统一决策接口未显式区分这些结构，分类结果可能随候选重排而变化，数值监督也难以利用分数间的次序与距离。</li>
 <li><strong>方法</strong>：DeciForm采用无候选查询与隔离候选分支实现重排一致的分类，以log-spherical目标训练候选概率；数值评分使用十进制前缀读出，结合单值监督和区间加权累积监督，并通过共享适配器、任务私有残差和输出通道增益联合适配。</li>
 <li><strong>实验</strong>：在共享的15,000请求测试集上，DeciForm在Qwen和ModernBERT上均改善三类决策指标，并消除测试中的候选顺序翻转；对MIND-small适配一个epoch后，也提升了两个骨干模型的多正例新闻排序表现。</li>
 </ul>
-</div><details class="daily-item-notes">
+</div>
+    </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">标题：DeciForm: Incorporating Task Structure into Decision Models
 来源：arXiv
 链接：https://arxiv.org/abs/2611.29340
 摘要：Decision models unify candidate selection, Boolean judgment, and numerical scoring within a single model. Their answer spaces nevertheless carry different structures: classification candidates form an unordered set, while numerical scores have an intrinsic order and distance. We introduce Deciform, which incorporates these distinctions into computation and supervision. Candidate-free queries and isolated candidate branches support consistent classification under reordering. A log--spherical objective trains candidate probabilities, while a decimal-prefix readout combines individual-value and interval-weighted cumulative supervision for numerical scoring. Shared adapters, task-private residuals, and output-channel gains support joint adaptation. On a shared 15,000-request test set, Deciform</div>
+  </details></article>
+<div class="daily-cluster-rest">
+          <p class="daily-cluster-rest-label">同专题其余 1 条</p><details id="eeg-jev" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>EEG-Jev：单次前向统一脑电决策</strong>
+      <span class="daily-row-meta">arXiv · 模型架构创新 · <a href="https://arxiv.org/abs/2611.31875" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用带类型的单次前向读出统一脑电分类、命题判断与有序评分，并输出可校准概率。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%8C%BB%E7%96%97%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;医疗人工智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%B0%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;不确定性估计</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理加速</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31875" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31875</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在跨数据集脑电分析系统中借鉴其问题—答案规格和类型化读出接口，用同一检查点完成分类、概率判断与等级评分。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>统一脑电任务的关键不在于把所有结果转成文本，而在于标准化决策语义，使异构任务共享模型的同时保留可解释、可校准的概率输出。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：脑电分析包含候选选择、命题判断和有序评分等异构任务，需要一个模型输出含义明确且可校准的概率。</li>
+<li><strong>旧法为何失效</strong>：生成式读出难以直接提供统一的类型化决策结果，并带来额外推理延迟。</li>
+<li><strong>方法</strong>：输入脑电窗口、问题及答案规格，由同一检查点单次前向输出类型化结果；CHOICE 返回候选分布，NOUL 返回命题概率，SCORE 返回有序等级分布及期望值。</li>
+<li><strong>实验</strong>：模型在35个公开数据源的留出集上统一评测；运动想象平衡准确率54.08%，睡眠分期准确率70.45%，癫痫检测准确率72.11%、AUROC 0.825，0–10疼痛评分MAE为1.700。先验修正与温度缩放将两个任务的负对数似然分别从0.766降至0.606、从0.166降至0.019；相较同骨干生成式模型，批量为1时延迟由122.43毫秒降至63.11毫秒。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：EEG-Jev: A Unified Single-Pass Decision Model for EEG
+来源：arXiv
+链接：https://arxiv.org/abs/2611.31875
+摘要：EEG analysis spans choosing alternatives, judging statements, and rating ordered attributes, requiring calibratable probabilities with explicit meaning. We present EEG-Jev, a unified single-pass decision model for EEG. Given an EEG window, a question and an answer specification, one forward pass returns a typed readout: CHOICE gives a candidate distribution, NOUL a proposition probability, and SCORE an ordered-level distribution and expectation. One checkpoint is trained jointly and evaluated once on held-out splits of 35 public sources. Core raw outputs reach 54.08% balanced accuracy on Stieger2021 motor imagery, 70.45% on Sleep-EDF-SC sleep staging, 72.11% per window at threshold 0.5 on CHB-MIT seizure detection with 0.825 AUROC, and 1.700 MAE on 0-10 ds005292 pain ratings. Prior correct</div>
   </details></div>
 </details>
-</div>
+</div></section></div>
             </details><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/logicevolve/" onclick="event.stopPropagation()">LogicEvolve</a><span class="daily-count">1 条</span>
               </summary>
@@ -2948,7 +2965,7 @@ MIT &#43; Meta 的联合研究提出了ReHarness 的循环式架构，用于解�
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/" onclick="event.stopPropagation()">ResearchEvolve</a><span class="daily-count">2 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/" onclick="event.stopPropagation()">ResearchEvolve</a><span class="daily-count">3 条</span>
               </summary>
               <div class="daily-group-body"><details id="leannext" class="daily-row">
   <summary>
@@ -2990,6 +3007,27 @@ MIT &#43; Meta 的联合研究提出了ReHarness 的循环式架构，用于解�
 来源：arXiv
 链接：https://arxiv.org/abs/2611.31611
 摘要：Designing linear solvers for discretized partial differential equations requires problem-specific expertise. We present a multi-agent framework, in which language-model agents propose, critique, implement, and evaluate solver configurations assembled from Krylov methods, preconditioners, block factorizations, and neural operators. Inside the proposing agent, a non-dominated sorting genetic evolutionary algorithm evolves the population of meta-solvers toward the Pareto front of six measured quantities, so that one run returns a front of trade-offs rather than a single tuned solver. The system runs on small open-weight language models served on a single laptop, and we compare it with a single agent on four problems. For three-dimensional acoustic scattering and elasticity, it delivers 47 and</div>
+  </details></div>
+</details>
+<details id="item-151" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>物理机制构造：方程原生跨学科编译</strong>
+      <span class="daily-row-meta">arXiv · 机制发现 · <a href="https://arxiv.org/abs/2611.31653" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用方程原生系统编译跨论文、跨学科的机制部件，自动构造可实验检验的新物理机制。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：机制发现</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学发现</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自动化科学研究</a><a href="/LLMDailyDigestWeb/topic/%E6%9C%BA%E5%88%B6%E5%8F%91%E7%8E%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;机制发现</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学计算</a><a href="/LLMDailyDigestWeb/topic/%E7%A5%9E%E7%BB%8F%E7%AC%A6%E5%8F%B7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;神经符号人工智能</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31653" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31653</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在自动化科学发现系统中借鉴其方程原生构造机制，从论文推导中重组物理机制并生成可实验验证的候选设计。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>机制可被视为带边界与闭合条件的可组合方程部件，而组合失败本身能转化为缺失物理项的可计算线索。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：科学机制的方程、边界、参数和闭合条件常散落在推导的不同步骤中，难以被完整识别和跨学科复用。</li>
+<li><strong>旧法为何失效</strong>：读取文本或拟合单个公式的方法无法捕捉分布在多步推导中的完整机制及其适用条件。</li>
+<li><strong>方法</strong>：构建方程原生系统，读取约250万篇 arXiv 论文中的方程，并通过拆离、迁移、展开、组合与连接机制部件进行确定性构造；部件不匹配时，失败结果会显式给出缺失项的方程。</li>
+<li><strong>实验</strong>：系统将阈值反应器构造成可由弱信号写入的记忆，将振荡器经两个单独无效的改动构造成开关，并用节律调控化学物质量，同时给出实验检验条件。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Constructing physical mechanisms with artificial intelligence
+来源：arXiv
+链接：https://arxiv.org/abs/2611.31653
+摘要：Mechanisms recur across the sciences: the equation for heat in a solid also describes molecular diffusion or a Brownian particle. A mechanism is rarely written in one equation; its operation, boundaries, parameters and closures are stated at different steps of a derivation, where methods that read text or fit formulas miss it. We built an equation-native system that reads the equations of all 2.5 million arXiv manuscripts, and show that mechanisms can be compiled from them and constructed by deterministic calculation. A constructor detaches, transfers, unfolds, composes and joins their parts across disciplines; where parts do not fit, the failure is an equation for the missing term. Constructions turn a threshold reactor into a memory that a weak signal writes, an oscillator into a switch </div>
   </details></div>
 </details>
 </div>
@@ -3376,7 +3414,7 @@ MIT &#43; Meta 的联合研究提出了ReHarness 的循环式架构，用于解�
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/" onclick="event.stopPropagation()">MonitorEvolve</a><span class="daily-count">3 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/" onclick="event.stopPropagation()">MonitorEvolve</a><span class="daily-count">4 条</span>
               </summary>
               <div class="daily-group-body"><details id="clr" class="daily-row">
   <summary>
@@ -3442,6 +3480,27 @@ MIT &#43; Meta 的联合研究提出了ReHarness 的循环式架构，用于解�
 来源：arXiv
 链接：https://arxiv.org/abs/2611.29532
 摘要：Test-time learning (TTL) enables large language models to adapt to unlabeled inputs during deployment. The model updates a lightweight adapter by minimizing the next-token prediction loss on the input it receives. When these updates persist across conversation turns, every user query serves both as the request answered in the current turn and as adaptation data for later turns. By choosing the queries used for adaptation, an attacker can influence parameter updates and weaken safety alignment through ordinary interactions with a TTL chat service. To demonstrate this risk, we introduce Progressive Test-Time Adaptation Poisoning (P-TAP), a query-only multi-turn attack that jailbreaks the model by poisoning its session adapter through the service&#39;s own updates. A sequence of escalating advers</div>
+  </details></div>
+</details>
+<details id="item-152" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>可监控设计架构：危险能力分舱监控</strong>
+      <span class="daily-row-meta">arXiv · 模型架构创新 · <a href="https://arxiv.org/abs/2611.31610" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">通过隔离危险能力及其组合调用，在思维链不可读时仍能低成本发现策略性恶意推理。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/">MonitorEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%80%9D%E7%BB%B4%E9%93%BE%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;思维链安全</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全审计</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可解释性</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31610" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31610</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在前沿模型安全架构中借鉴危险能力分舱机制，对高风险组件的组合调用实施低成本监控或定向能力移除。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>安全监控不必依赖模型主动暴露推理文本，而可通过架构层面的能力边界，把危险行为转化为可观测的组件调用事件。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：前沿模型可能在没有可监控思维链的情况下完成复杂推理，且思维链正变得更难理解，使传统安全监控面临失效风险。</li>
+<li><strong>旧法为何失效</strong>：思维链监控依赖推理过程清晰可读，异步监控还会引入延迟；当模型隐藏或省略推理时，监控者难以及时识别策略性对抗行为。</li>
+<li><strong>方法</strong>：借鉴 GRAM、SGTM、DEMix、BTS 等架构，将危险能力分隔到可识别的组件中，重点监控危险能力与高风险推理类型的组合调用，并设计多种变体权衡监控成本与模型能力。</li>
+<li><strong>局限与后续</strong>：思维链未来是否仍可监控尚不明确，所提架构还需在不同权衡设置下验证；能力分舱也可进一步用于定向移除危险能力。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Monitorable-by-design architectures for a post-Astra world: a compartmentalization-based approach
+来源：arXiv
+链接：https://arxiv.org/abs/2611.31610
+摘要：Frontier models like GPT-6 Astra are increasingly able to do substantial reasoning without a monitorable chain of thought, chains of thought are becoming less legible, and are often monitored asynchronously to reduce cost. With the future of chain of thought monitoring unclear, it may be necessary to design LLMs with monitorability in mind. We propose a modification to existing LLM architectures based on GRAM, SGTM, DEMix, BTS, and similar methods to compartmentalize dangerous capabilities so that their use, especially in combination with dangerous reasoning types that may indicate strategic adversarial use, can be monitored more cheaply than chain of thought in a way that might outlast monitorable chain of thought. We propose several variants of this architecture designed to balance trade</div>
   </details></div>
 </details>
 </div>
