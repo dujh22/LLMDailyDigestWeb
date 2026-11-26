@@ -13,8 +13,8 @@
   <meta itemprop="name" content="EvolveLLM">
   <meta itemprop="description" content="EvolveLLM 研究方向：大语言模型（LLM）的自我进化 / 自我改进——在尽量少依赖人工标注的前提下，让基础模型持续提升自身能力。与聚焦&#34;推理&#34;的 [[EvolveLRM]] 互补，覆盖更通用的基础模型自进化。">
   <meta itemprop="datePublished" content="2026-08-12T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T17:14:46+08:00">
-  <meta itemprop="wordCount" content="1170">
+  <meta itemprop="dateModified" content="2026-11-26T17:53:43+08:00">
+  <meta itemprop="wordCount" content="4275">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/evolvellm/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="EvolveLLM">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-12T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T17:14:46+08:00">
+    <meta property="article:modified_time" content="2026-11-26T17:53:43+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evolvellm\/"
-    },"genre": "research","wordcount":  1170 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evolvellm\/","datePublished": "2026-08-12T00:00:00+08:00","dateModified": "2026-11-26T17:14:46+08:00","publisher": {
+    },"genre": "research","wordcount":  4275 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evolvellm\/","datePublished": "2026-08-12T00:00:00+08:00","dateModified": "2026-11-26T17:53:43+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -273,7 +273,166 @@
 <!-- human-only:end 自研经验 -->
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
-<p><em>（暂无，随日报自动积累）</em></p>
+<ol>
+<li><strong>可审计改进闭环</strong>：递归改进应记录知识状态与失败归因，以受控单变量实验、独立复核和跨周期评估决定合并；即时收益不能代表后续更新后仍有效。
+<ul>
+<li><a href="../../updates/2026-11-25/#glm-5-5-rsi">GLM-5.5：多模型后训练汇流式RSI</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#e2l">E2L：梯度对齐经验演化</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-17/#trainexplorer">TrainExplorer：规划解耦式后训练探索</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-17/#post-training-rsi">Post-Training RSI：后训练全栈递归</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-14/#no-second-run-rsi-801-30b-a3b">No Second Run：预训练RSI炼出801-30B-A3B模型</a> · 2026-11-14</li>
+<li><a href="../../updates/2026-11-12/#third-eye">Third Eye：递归自我改进的长期效用评估</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#ernie-evolve-5-5-flash">百度披露 ERNIE Evolve 递归自我改进进展，已用于文心 5.5 Flash 研发</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#recursa">Recursa：递归自我改进的基础模型系统</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#care">CARE：面向生产客服智能体的证据驱动递归自我改进</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-30/#rsi-master">RSI-Master：受控实验驱动的自主模型改进</a> · 2026-10-30</li>
+<li><a href="../../updates/2026-10-29/#rki">RKI：状态感知的递归知识改进框架</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>自适应任务刷新</strong>：零数据自训练宜生成可独立验证且位于当前未知边界的任务，并按有效优势与正确率刷新题池；只增加同质样本容易耗尽信号。
+<ul>
+<li><a href="../../updates/2026-11-17/#the-frontier-must-grow">The Frontier Must Grow：验证前沿扩展训练</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-10-31/#a-rsi">A-RSI：零数据多模态递归自我改进的自适应任务刷新</a> · 2026-10-31</li>
+</ul>
+</li>
+<li><strong>奖励准则共演化</strong>：开放任务中固定或仅看结果的奖励容易失真；应让准则随策略演化，用独立标签校准置信度，并审计类别盲点与中间错误固化。
+<ul>
+<li><a href="../../updates/2026-11-24/#sro">SRO：保真度诊断与投影解耦</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-23/#item-49">自幻觉记忆：后训练固化错误事实</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-20/#rlcdr">RLCDR：校准式决策奖励</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-20/#item-65">盲点迁移：评判偏见类别泛化</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-16/#item-18">临床AI评估即干预</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-06/#emoreward">EmoReward：情感视频生成的自进化奖励校准</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-05/#rcrl">RcRL：利用生成—验证鸿沟改进开放域强化学习</a> · 2026-11-05</li>
+<li><a href="../../updates/2026-11-02/#self-evolving-rubrics">Self-Evolving Rubrics：自进化准则驱动强化学习</a> · 2026-11-02</li>
+<li><a href="../../updates/2026-10-30/#race">RACE：策略与评分准则的奖励自适应协同演化</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>跨任务更新隔离</strong>：多任务自迭代中，共享参数会将局部更新耦合成策略坍缩或遗忘；宜先用适配器路由或并行学习器隔离，再受控合并。
+<ul>
+<li><a href="../../updates/2026-11-25/#cspd">CSPD：可组合软提示蒸馏</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-24/#dive">DiVE：小模型多样性递归改进</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-14/#item-46">奖励范围之外：多语言后训练中的能力漂移</a> · 2026-11-14</li>
+<li><a href="../../updates/2026-11-06/#recursa">Recursa：递归自我改进的基础模型系统</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-29/#rlvr">跨任务耦合驱动无监督 RLVR 策略坍缩</a> · 2026-10-29</li>
+<li><a href="../../updates/2026-10-29/#callm">CaLLM：基于非参数适配器路由的持续适应</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>巩固与能力回放</strong>：持续更新前后要用多接口区分读出错配与真实表征漂移；以行为门控、低曲率更新、历史预测或基础回放约束晋升，避免奖励外能力退化。
+<ul>
+<li><a href="../../updates/2026-11-25/#item-109">三接口持续学习诊断</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#instructreplay">InstructReplay：自答回放保留通用能力</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-20/#curvdelta">CurvDelta：低曲率约束式学习遗忘</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-16/#model-annealing">Model Annealing：历史自我回顾巩固</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-16/#g-cast">G-CAST：治理式持续自训练</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-15/#item-1">RL训练：大模型能力漂移</a> · 2026-11-15</li>
+<li><a href="../../updates/2026-11-14/#item-46">奖励范围之外：多语言后训练中的能力漂移</a> · 2026-11-14</li>
+<li><a href="../../updates/2026-11-12/#firegate">FireGate：持续强化学习微调前的行为变化界定</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#sft-aegis">特征干扰视角下的 SFT 普遍能力退化理论与 AEGIS 损失</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#item-14">在策略蒸馏用于强化学习后能力巩固的泛化局限</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-31/#google">Google「睡眠框架」缓解大模型灾难性遗忘</a> · 2026-10-31</li>
+<li><a href="../../updates/2026-10-30/#google">Google 为大模型引入「睡眠」机制，缓解灾难性遗忘</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>合成数据边界</strong>：递归回用合成数据会先侵蚀稀有知识并造成表征漂移；除多维审计和注入经核验的外部信息外，可在动力学平稳时用单代条件响应预警坍缩。
+<ul>
+<li><a href="../../updates/2026-11-25/#item-90">单代校准预测稀有模式坍缩</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-18/#item-59">自消费训练：稀疏特征解释性退化</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-12/#r-nyi">自训练中的有序 Rényi 熵交叉：丰富度不等于均匀度</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-05/#rogers">谁为模型复制的知识买单？Rogers 悖论下的模型坍缩</a> · 2026-11-05</li>
+<li><a href="../../updates/2026-10-30/#item-52">重新审视合成数据预预训练</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>选择性轨迹蒸馏</strong>：蒸馏与自主后训练宜只监督可教前缀、显著分歧或高质量决策，并用技能上下文过滤成功轨迹中的坏习惯；全量语义对齐未必最优，仍需能力回放。
+<ul>
+<li><a href="../../updates/2026-11-20/#automaster">AutoMaster：技能引导式自主后训练</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-19/#rsi-prime">RSI-Prime：决策级损失掩码训练</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-17/#b-opsd">B-OPSD：自生成简报蒸馏</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-12/#p-mopd">P²-MOPD：参数先验加速多教师在策略蒸馏</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#item-114">推测式自蒸馏实现高效知识内化</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#bopd">BOPD：自举式在策略蒸馏</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-08/#topsd">TOPSD：从可教前缀进行多语言推理蒸馏</a> · 2026-11-08</li>
+<li><a href="../../updates/2026-11-06/#shuffled-opsd">Shuffled OPSD：语义一致性何时损害在策略自蒸馏</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#item-14">在策略蒸馏用于强化学习后能力巩固的泛化局限</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-04/#o-pd">O³PD：仅基于排序的在策略蒸馏</a> · 2026-11-04</li>
+<li><a href="../../updates/2026-10-31/#youtu-parsing-omni">Youtu-Parsing-Omni：统一编码器与模式的全模态解析器</a> · 2026-10-31</li>
+<li><a href="../../updates/2026-10-31/#rise-rlvr">RISE：交错 RLVR 与在策略蒸馏实现递归自我改进</a> · 2026-10-31</li>
+</ul>
+</li>
+<li><strong>选择性测试时更新</strong>：推理与跨会话适应宜冻结主干，把查询相关更新写入快速权重、持久潜状态或固定容量适配器；临时干预应先验证再版本化。
+<ul>
+<li><a href="../../updates/2026-11-17/#clam">CLAM：单次前向权重记忆固化</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-14/#recursive-salm">Recursive SALM：基于持久潜在状态的预训练语言模型适配</a> · 2026-11-14</li>
+<li><a href="../../updates/2026-11-12/#ncp">NCP：验证器引导的权重空间控制策略优化</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-10-30/#latentweave">LatentWeave：面向多模态推理的测试时潜变量优化</a> · 2026-10-30</li>
+<li><a href="../../updates/2026-10-29/#select-ttt">Select-TTT：查询条件化的选择性快速权重更新</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>验证驱动测试扩展</strong>：测试时扩展不能把多数共识等同正确性；优先用独立检查器、校正奖励或易验证任务，并让后续尝试继承已验证推理，避免独立采样锁定早期错误。
+<ul>
+<li><a href="../../updates/2026-11-25/#tt-rsi">TT-RSI：测试时递归自我改进</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-17/#stone">STONE：踏脚石式无标签自蒸馏</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-12/#truer">TRUER：面向测试时强化学习的错误感知奖励校正</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#llm-2">实时捕获并纠正 LLM 推理错误</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#item-176">多数投票伪标签在测试时强化学习中的可靠性</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#item-143">核定律预测多数投票测试时强化学习的答案锁定</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#test-time-self-play">Test-Time Self-Play：无需验证器的测试时扩展</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#item-32">验证器引导的自一致性：不完美生成器与验证器下的测试时推理</a> · 2026-11-06</li>
+</ul>
+</li>
+<li><strong>外部语料自主学习</strong>：面对长篇外部语料，仅扩大上下文不足以形成能力；用导航检索配合细粒度过程奖励，才能训练知识定位、吸收与迁移。
+<ul>
+<li><a href="../../updates/2026-11-13/#item-7">强化学习激励大语言模型从长篇教材中自我学习</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-10-30/#item-61">强化学习激励大语言模型自主学习长篇教材</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>生产失败反馈闭环</strong>：真实交互反馈应先判别任务是否真正成功，再做故障归因；每次在策略更新须受累积能力契约和分阶段验证约束，避免噪声与新需求破坏旧行为。
+<ul>
+<li><a href="../../updates/2026-11-24/#finevo">FinEvo：同模自博弈递归改进</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-19/#learning-through-discernment">Learning through Discernment：辨别式反馈学习</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-16/#g-cast">G-CAST：治理式持续自训练</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-12/#drivefoundry">DriveFoundry：数据与模型协同演化的自动驾驶闭环框架</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#care">CARE：面向生产客服智能体的证据驱动递归自我改进</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-01/#item-1">百度搜索通过在线反馈闭环实现递归自我进化</a> · 2026-11-01</li>
+</ul>
+</li>
+<li><strong>多模态可靠自教学</strong>：无标签多模态自教学应估计各生成链的可靠性，或采用扰动—验证—修复闭环，避免多数投票和单向伪轨迹放大错误。
+<ul>
+<li><a href="../../updates/2026-11-06/#prove">PROVE：自博弈视觉-语言验证器的组合理解训练</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#prism">Prism：统一多模态模型的双向自教学</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-30/#timbre">Timbre：面向无标签多模态测试时强化学习的可靠性感知调和共识</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>权重编辑需可回滚</strong>：直接改写少量权重可低成本固化外部能力或修复故障，但收益可能来自数值痕迹或偶然搜索；应报告数值格式、做舍入对照与独立验证，并保留回滚版本。
+<ul>
+<li><a href="../../updates/2026-11-25/#weight-coding">Weight Coding：智能体直接编辑模型权重</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#selfwrite">SELFWRITE：无梯度自写权重编辑</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-24/#self-wsp">Self-WSP：权重空间自我编程</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-23/#weight-space-programming-icl">Weight-Space Programming：无梯度写入ICL</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-20/#keel">Keel：智能体改权消除视觉循环</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-20/#basersi">BaseRSI：免训练脚手架内化</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-19/#weight-space-programming">Weight Space Programming：低位痕迹引导权重修复</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-18/#self-rewriting">Self-Rewriting：无梯度自改权重</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-12/#tree-ising-ising">Tree-Ising：基于位级 Ising 编辑的语言模型修复</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#item-192">权重空间编程的能力、泛化与局限</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#ai-transformer">机制干预：AI动态改写Transformer架构实现自我改进</a> · 2026-11-12</li>
+</ul>
+</li>
+<li><strong>生命周期可监控性</strong>：能力提升、架构变更和自生成数据蒸馏会改变思维链与特征的可观测性；不能沿用旧监控器，须跨版本重测规避与解释失效。
+<ul>
+<li><a href="../../updates/2026-11-18/#item-59">自消费训练：稀疏特征解释性退化</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-12/#openai-cot">OpenAI：模型生命周期因素如何影响 CoT 可监控性</a> · 2026-11-12</li>
+</ul>
+</li>
+<li><strong>模型脚手架共演化</strong>：智能体改进不应只更新权重或固定脚手架；应联合迭代模型、训练数据与执行框架，并用升级后系统的反馈继续评估，稳定增益再内化。
+<ul>
+<li><a href="../../updates/2026-11-23/#coevobench">CoEvoBench：模型与脚手架协同演化</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-20/#piccolo">Piccolo：模型数据协同自进化</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-20/#evo-harness">Evo²：权重与Harness协同进化</a> · 2026-11-20</li>
+</ul>
+</li>
+</ol>
+<!-- experience-seen: 2026-10-29/35b-apex-35b-v1-0 2026-10-29/callm 2026-10-29/item-35 2026-10-29/oxr-1-3b-rsi 2026-10-29/rki 2026-10-29/rlvr 2026-10-29/select-ttt 2026-10-30/google 2026-10-30/item-52 2026-10-30/item-61 2026-10-30/latentweave 2026-10-30/mid-training 2026-10-30/race 2026-10-30/rsi-master 2026-10-30/timbre 2026-10-31/a-rsi 2026-10-31/google 2026-10-31/rise-rlvr 2026-10-31/youtu-parsing-omni 2026-11-01/item-1 2026-11-01/item-13 2026-11-02/self-evolving-rubrics 2026-11-03/astra-qwen 2026-11-04/o-pd 2026-11-05/801-30b-rsi 2026-11-05/rcrl 2026-11-05/rogers 2026-11-06/care 2026-11-06/compressionbench-llm 2026-11-06/emoreward 2026-11-06/item-116 2026-11-06/item-14 2026-11-06/item-22 2026-11-06/item-32 2026-11-06/prism 2026-11-06/prove 2026-11-06/recursa 2026-11-06/sft-aegis 2026-11-06/shuffled-opsd 2026-11-06/test-time-self-play 2026-11-06/weightloop 2026-11-08/topsd 2026-11-12/ai-transformer 2026-11-12/bopd 2026-11-12/drivefoundry 2026-11-12/ernie-evolve-5-5-flash 2026-11-12/firegate 2026-11-12/item-114 2026-11-12/item-143 2026-11-12/item-176 2026-11-12/item-192 2026-11-12/llm-10 2026-11-12/llm-2 2026-11-12/looped-ced-kv 2026-11-12/ncp 2026-11-12/openai-cot 2026-11-12/p-mopd 2026-11-12/r-nyi 2026-11-12/rsi 2026-11-12/third-eye 2026-11-12/tree-ising-ising 2026-11-12/truer 2026-11-13/item-14 2026-11-13/item-7 2026-11-14/item-46 2026-11-14/no-second-run-rsi-801-30b-a3b 2026-11-14/recursive-salm 2026-11-15/item-1 2026-11-16/g-cast 2026-11-16/item-18 2026-11-16/model-annealing 2026-11-17/b-opsd 2026-11-17/clam 2026-11-17/post-training-rsi 2026-11-17/stone 2026-11-17/the-frontier-must-grow 2026-11-17/trainexplorer 2026-11-18/item-59 2026-11-18/self-rewriting 2026-11-19/item-48 2026-11-19/learning-through-discernment 2026-11-19/rsi-prime 2026-11-19/toaster 2026-11-19/weight-space-programming 2026-11-20/automaster 2026-11-20/basersi 2026-11-20/curvdelta 2026-11-20/evo-harness 2026-11-20/item-65 2026-11-20/keel 2026-11-20/piccolo 2026-11-20/rlcdr 2026-11-20/self-replicating-language-models 2026-11-23/coevobench 2026-11-23/item-49 2026-11-23/openai-ai 2026-11-23/structure-over-scale 2026-11-23/weight-space-programming-icl 2026-11-24/dive 2026-11-24/finevo 2026-11-24/pbpt 2026-11-24/self-wsp 2026-11-24/sro 2026-11-25/cspd 2026-11-25/e2l 2026-11-25/elgo 2026-11-25/glm-5-5-rsi 2026-11-25/instructreplay 2026-11-25/item-109 2026-11-25/item-90 2026-11-25/selfwrite 2026-11-25/tt-rsi 2026-11-25/weight-coding -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架 / 资源仓库</strong></p>
@@ -298,7 +457,30 @@
 <ul>
 <li><a href="https://arxiv.org/abs/2601.05280"target="_blank" rel="external nofollow noopener noreferrer">On the Limits of Self-Improving in Large Language Models<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 自我改进的理论极限分析</li>
 </ul>
-</div><section class="page archive" style="margin-top:2rem;">
+</div><script>
+    (function(){
+      var h = document.getElementById('研究经验');
+      var items = [];
+      for(var el = h && h.nextElementSibling; el && el.tagName !== 'H2'; el = el.nextElementSibling){
+        if(el.tagName === 'OL') items = items.concat(Array.prototype.slice.call(el.children));
+      }
+      items.forEach(function(li){
+        var ul = li.querySelector(':scope > ul');
+        if(!ul) return;
+        var d = document.createElement('details');
+        d.className = 'exp-item';
+        var s = document.createElement('summary');
+        while(li.firstChild && li.firstChild !== ul) s.appendChild(li.firstChild);
+        var n = document.createElement('span');
+        n.className = 'exp-count';
+        n.textContent = ul.children.length + ' 项工作';
+        s.appendChild(n);
+        d.appendChild(s);
+        d.appendChild(ul);
+        li.appendChild(d);
+      });
+    })();
+    </script><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>三层框架 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-08-30/#self-evolving-rsi" class="archive-item-link">自进化（Self-evolving／RSI）三层框架与实践路径</a>

@@ -16,8 +16,8 @@
   <meta itemprop="description" content="GeneralizeEvolve 研究方向：自进化中的泛化——自进化带来的提升能否跨任务、跨分布迁移而非基准过拟合，以及测试时学习与持续学习如何不遗忘。
 研究范畴 自进化中的泛化（generalization in self-evolution）追问一个核心问题：模型 / Agent 通过自迭代获得的能力，究竟是真实的能力扩展，还是对训练分布与评测基准的记忆与过拟合。本方向涵盖：SFT 与 RL 后训练的泛化差异（“SFT 记忆、RL 泛化”）、RLVR 是否扩展了基座模型的推理边界、在线 RL 为何遗忘更少、无外部奖励的自信号学习（Intuitor 类）、测试时训练与自适应（TTT、SEAL 自生成微调数据）、测试时记忆与长上下文架构（Titans）、持续学习与灾难性遗忘、弱到强泛化，以及 ARC-AGI 类强调流体智能而非知识回忆的评测。社区关注的核心问题包括：如何在自进化闭环中设计分布外（OOD）与组合泛化的检验、如何区分&#34;学到的算法&#34;与&#34;记住的模式&#34;（grokking 现象）、持续自进化下能力增益与遗忘的权衡，以及测试时计算与测试时学习在多大程度上能替代参数规模。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T17:14:46+08:00">
-  <meta itemprop="wordCount" content="1076">
+  <meta itemprop="dateModified" content="2026-11-26T17:53:43+08:00">
+  <meta itemprop="wordCount" content="4381">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/generalizeevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="GeneralizeEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T17:14:46+08:00">
+    <meta property="article:modified_time" content="2026-11-26T17:53:43+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/"
-    },"genre": "research","wordcount":  1076 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T17:14:46+08:00","publisher": {
+    },"genre": "research","wordcount":  4381 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T17:53:43+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -273,7 +273,178 @@
 <!-- human-only:end 自研经验 -->
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
-<p><em>（暂无，随日报自动积累）</em></p>
+<ol>
+<li><strong>持续学习四维评测</strong>：持续学习不能只看末轮均值；应沿适应过程测可塑性、旧任务保持、跨任务干扰和迁移，并用域外任务及不同读出接口区分真遗忘与暂时错配。
+<ul>
+<li><a href="../../updates/2026-11-25/#vla">预训练VLA持续学习：分布外遗忘诊断</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#item-109">三接口持续学习诊断</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-20/#stability-gap">Stability Gap：持续强化学习稳定性缺口</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-13/#rsi-rsibench-data-s-gym">RSI 持续进步评测：从 RSIBench-Data 到 S³Gym</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-11-12/#continual-arc">Continual-ARC：衡量智能体终身技能习得</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-10-29/#deepmind">DeepMind：自演化智能体能否持续学习？</a> · 2026-10-29</li>
+<li><a href="../../updates/2026-10-29/#cle-llm">CLE：LLM 智能体长时程持续学习与经验学习基准</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>经验保留不等于迁移</strong>：经验能解题不等于可迁移或适合训练；应以重置、未见任务及对当前优化的边际贡献筛选，并回测旧任务终局质量。
+<ul>
+<li><a href="../../updates/2026-11-25/#stun-bench">STUN-Bench：真未见工具路由评测</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#e2l">E2L：梯度对齐经验演化</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#autoseco">AutoSECO：可迁移求解技能演化</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-23/#from-acting-to-learning">From Acting to Learning：优化器感知梯度选样</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-17/#sim">SIM：自改进记忆支持持续递归优化</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-17/#item-54">上下文与权重协同适应</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-12/#vla-knn">VLA 有多少能力来自 kNN 检索？</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#item-94">编程智能体能否在持续演化中避免遗忘？</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#continual-autoresearch">Continual AutoResearch：智能体能否跨任务持续学习</a> · 2026-11-06</li>
+</ul>
+</li>
+<li><strong>路由隔离任务干扰</strong>：任务规模扩大时，按原型或任务簇路由隔离的适配器、提示与记忆，比共享参数连续更新更稳；模块独立训练后还须验证接口兼容性。
+<ul>
+<li><a href="../../updates/2026-11-25/#item-105">独立蒸馏记忆检索策略</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#cspd">CSPD：可组合软提示蒸馏</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-20/#bispace">BiSpace：双空间解耦知识编辑</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-18/#ena">ENA：物理索引式专家记忆</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-17/#microfitting">Microfitting：文档隔离式缓存适配</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-03/#meta-routed-cl">Meta提出路由式持续学习架构Routed CL</a> · 2026-11-03</li>
+<li><a href="../../updates/2026-11-03/#care-300">CaRE：扩展至300+任务的持续学习架构</a> · 2026-11-03</li>
+<li><a href="../../updates/2026-10-29/#callm">CaLLM：基于非参数适配器路由的持续适应</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>更新前控险后巩固</strong>：持续更新前先界定行为变化及预算—回报覆盖风险，更新中约束参数几何，更新后用历史教师或回放巩固；晋升须验收域外累积能力。
+<ul>
+<li><a href="../../updates/2026-11-25/#instructreplay">InstructReplay：自答回放保留通用能力</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-20/#curvdelta">CurvDelta：低曲率约束式学习遗忘</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-18/#safe-ad">Safe AD：动态预算蒸馏与成本重加权</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-16/#g-cast">G-CAST：治理式持续自训练</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-12/#firegate">FireGate：持续强化学习微调前的行为变化界定</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#agentic-opd">Agentic-OPD：通过在策略蒸馏恢复智能体遗忘能力</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#item-14">在策略蒸馏用于强化学习后能力巩固的泛化局限</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#drap-ai">DRAP：面向物理 AI 持续学习的动力学风险自适应可塑性</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-31/#google">Google「睡眠框架」缓解大模型灾难性遗忘</a> · 2026-10-31</li>
+<li><a href="../../updates/2026-10-30/#google">Google 为大模型引入「睡眠」机制，缓解灾难性遗忘</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>选择性测试时适应</strong>：测试时更新须筛查样本、伪标签及会话历史的可靠性与恶意操纵，并核验代理目标对齐最终指标；优先用可控监督，在收益或安全性转负前停止。
+<ul>
+<li><a href="../../updates/2026-11-25/#p-tap">P-TAP：会话适配器渐进投毒</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-24/#rottt">RoTTT：旋转监督式测试时训练</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-19/#normal-only-tta">Normal-Only TTA：正常更新不保证检测增益</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-17/#specal">SpeCal：隐藏态谱双层校准</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-12/#truer">TRUER：面向测试时强化学习的错误感知奖励校正</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#scalar">SCALAR：控制时序伪标签边际以稳定在线测试时适应</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#item-201">无需训练的视觉语言模型主动测试时适应</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#item-176">多数投票伪标签在测试时强化学习中的可靠性</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#item-143">核定律预测多数投票测试时强化学习的答案锁定</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-03/#mira">MIRA：互信息引导的可靠测试时适应校准</a> · 2026-11-03</li>
+<li><a href="../../updates/2026-10-30/#timbre">Timbre：面向无标签多模态测试时强化学习的可靠性感知调和共识</a> · 2026-10-30</li>
+<li><a href="../../updates/2026-10-29/#portal">PORTAL：何时应在测试时干预？</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>相关记忆选择修订</strong>：在线记忆应按任务状态与效用选择写入层级、强度和位置，并用结果或反事实修订；显式管理版本、期限、衰减与拒答，避免旧经验污染。
+<ul>
+<li><a href="../../updates/2026-11-25/#xmind">XMind：跨记忆反事实复核</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#wasp">WASP：流式权重个性化</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-23/#navttt">NavTTT：导航条件式分层参数记忆</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-23/#loco-wam">LoCo-WAM：测试时训练延展长上下文</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-20/#item-76">F³：形适融经验利用</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-20/#item-63">参数记忆：可控持久与衰减</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-18/#experience-rot">Experience Rot：静默变更引发经验腐化</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-17/#reharness">ReHarness：反向修订式持续学习</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-06/#anchor">Anchor：跨层循环状态增强长上下文检索</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-02/#falcon">Falcon快速权重注意力实现持续学习</a> · 2026-11-02</li>
+<li><a href="../../updates/2026-10-29/#select-ttt">Select-TTT：查询条件化的选择性快速权重更新</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>先测可恢复能力边界</strong>：RLVR常提高已有路径采样率；训练前应以完整解支持度和原子技能覆盖定位边界，并估算能否采到足量成功事件，单测困难样本。
+<ul>
+<li><a href="../../updates/2026-11-20/#item-44">成功组数预测强化学习起飞</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-12/#item-140">基础能力状态如何预测强化学习后训练效果</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-08/#topsd">TOPSD：从可教前缀进行多语言推理蒸馏</a> · 2026-11-08</li>
+<li><a href="../../updates/2026-11-08/#sft">验证器强化学习相对 SFT 的边际价值评估</a> · 2026-11-08</li>
+<li><a href="../../updates/2026-11-06/#rlvr-4">RLVR只优化解题路径选择，未提升内在推理能力</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#rlvr">RLVR 训练中的首因偏差</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#resi-math">ReSI-Math：探索可恢复能力边界以高效提升数学推理</a> · 2026-11-06</li>
+</ul>
+</li>
+<li><strong>同时报告采样曲线</strong>：RLVR提升pass@1可能伴随覆盖坍缩和pass@k反转；应报告完整采样曲线，并用难度自适应正则或周期重置KL参考策略保持覆盖。
+<ul>
+<li><a href="../../updates/2026-11-12/#item-64">后训练策略优化理论：覆盖坍缩与参考策略重置</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#kappo-llm">KAPPO：控制 LLM 后训练中的策略锐化</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-30/#rlvr-pass-1-pass-k">RLVR 无免费午餐：pass@1 提升必付出 pass@k 代价</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>核验推理机制泛化</strong>：高分可能来自数据污染、验证器暴露、文本捷径或检索复用；应用污染校正、标准盲化、过程证据核验、模态消融和难度外推确认迁移机制。
+<ul>
+<li><a href="../../updates/2026-11-25/#item-63">多玩家社交游戏：可验证社会智能训练</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-24/#rdqa">RDQA：原始证据轨迹核验</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-18/#benchleaking">Benchleaking：基准污染校正评测</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-12/#vla-knn">VLA 有多少能力来自 kNN 检索？</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#item-106">示例解答会掩盖自生成训练数据中的规则组合能力成本</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-08/#item-32">学习任务还是学习验证器？具身自我改进中的标准暴露</a> · 2026-11-08</li>
+<li><a href="../../updates/2026-11-06/#rlvr-2">RLVR 推理策略并非都能泛化：可控方程求解案例</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-29/#rlvr-2">视频 RLVR 中的捷径放大与感知不确定性坍缩</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>后训练泛化看数据</strong>：“SFT记忆、RL泛化”并非定律；对齐预算后，数据来源、规模、解法与输出结构及评判器类别偏差更关键，窄域优化还须回放未奖励能力。
+<ul>
+<li><a href="../../updates/2026-11-23/#item-53">强化学习解耦推理形式与功能</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-23/#item-25">科学论证迁移：显式脚手架训练</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-20/#item-65">盲点迁移：评判偏见类别泛化</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-14/#item-46">奖励范围之外：多语言后训练中的能力漂移</a> · 2026-11-14</li>
+<li><a href="../../updates/2026-11-14/#item-35">强化学习后印度语言任务的增益与退化</a> · 2026-11-14</li>
+<li><a href="../../updates/2026-11-13/#rl-sft-sft">重新审视“RL 泛化、SFT 记忆”：SFT 数据的关键作用</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-11-08/#sft">验证器强化学习相对 SFT 的边际价值评估</a> · 2026-11-08</li>
+<li><a href="../../updates/2026-11-06/#sft-aegis">特征干扰视角下的 SFT 普遍能力退化理论与 AEGIS 损失</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#item-102">金融小型决策模型：专业化坍缩与混合语料修复</a> · 2026-11-06</li>
+</ul>
+</li>
+<li><strong>合成循环需外源刷新</strong>：递归使用模型生成数据会侵蚀稀有知识并传递隐性偏好；须持续注入独立核验信息，并以稀有知识和分布形态等多指标监测。
+<ul>
+<li><a href="../../updates/2026-11-13/#item-14">视觉语言模型中的潜意识学习与隐性偏好迁移</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-11-12/#r-nyi">自训练中的有序 Rényi 熵交叉：丰富度不等于均匀度</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-08/#item-46">批量生成具有意外副作用的训练数据</a> · 2026-11-08</li>
+<li><a href="../../updates/2026-11-05/#rogers">谁为模型复制的知识买单？Rogers 悖论下的模型坍缩</a> · 2026-11-05</li>
+</ul>
+</li>
+<li><strong>按交互预算训练</strong>：多轮RL主要增强错误恢复和长程韧性，且收益依赖交互预算；训练时混合预算，并按预算分层报告表现。
+<ul>
+<li><a href="../../updates/2026-11-05/#llm-3">多轮强化学习究竟提升了 LLM 智能体的什么能力？</a> · 2026-11-05</li>
+</ul>
+</li>
+<li><strong>脚手架能力回迁</strong>：脚手架可探索环境和挽救失败轨迹，但部署泛化依赖将其诱发的能力回迁到无辅助策略，而非永久依赖脚手架。
+<ul>
+<li><a href="../../updates/2026-11-24/#rlm-27b">RLM-27B：脚手架组合泛化</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-12/#item-68">自进化多模态智能体的跨场景综述与迁移分析</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-08/#item-41">表面之下：智能体演化中被忽视的可靠性、成本与迁移问题</a> · 2026-11-08</li>
+<li><a href="../../updates/2026-11-06/#harness-s">Harness-S：从同源脚手架学习实现可泛化智能体训练</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-29/#the-trinity">The Trinity：能力驱动的多模态智能体递归自我改进</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>增益归因控制成本</strong>：开发集增益应扣除选择噪声及额外交互、词元、时延与能耗，并区分加速收敛和提高上限；高分近饱和时优先比较单位任务成本。
+<ul>
+<li><a href="../../updates/2026-11-25/#sleep">Sleep：循环前向提升上下文适应</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#gemini-4-neon">Gemini 4 Neon：低成本高分推理</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-21/#gemini-4-hydrogen-token">Gemini 4 Hydrogen：半量Token高分推理</a> · 2026-11-21</li>
+<li><a href="../../updates/2026-11-16/#grokking">Grokking：顿悟不改训练能效走势</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-13/#rsi-rsibench-data-s-gym">RSI 持续进步评测：从 RSIBench-Data 到 S³Gym</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-11-12/#item-106">示例解答会掩盖自生成训练数据中的规则组合能力成本</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-10-29/#item-73">数据策展究竟提升上限还是加速训练？</a> · 2026-10-29</li>
+<li><a href="../../updates/2026-10-29/#bipa">BiPA：用二部归因重新评估智能体技能优化</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>抽象评测拆解瓶颈</strong>：流体智能评测应按未见规则、任务模式及长度与深度外推分级，并拆分感知、规划、记忆和表征瓶颈；总分提升不足以证明抽象迁移。
+<ul>
+<li><a href="../../updates/2026-11-25/#grokking">Grokking：训练前定位泛化子空间</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-24/#agrimanager">AgriManager：农业策略模式迁移评测</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-23/#orion">ORION：精确规范状态监督</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-20/#rigel-ladon">Rigel-Ladon：选项数准确率定律</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-06/#selfimprove-bench">SelfImprove-Bench：自改进智能体泛化能力评测</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#sarbloh-arc-agi-3">SARBLOH：空间感知主导 ARC-AGI-3 交互推理</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#conceptarc">规模化 ConceptARC：评估推理模型的概念理解</a> · 2026-11-06</li>
+</ul>
+</li>
+</ol>
+<!-- experience-seen: 2026-10-29/bipa 2026-10-29/callm 2026-10-29/cle-llm 2026-10-29/deepmind 2026-10-29/item-73 2026-10-29/portal 2026-10-29/rlvr-2 2026-10-29/select-ttt 2026-10-29/the-trinity 2026-10-30/google 2026-10-30/rlvr-pass-1-pass-k 2026-10-30/timbre 2026-10-31/google 2026-11-01/item-15 2026-11-02/falcon 2026-11-03/care-300 2026-11-03/meta-routed-cl 2026-11-03/mira 2026-11-05/item-35 2026-11-05/llm-3 2026-11-05/processprefbench 2026-11-05/rogers 2026-11-06/anchor 2026-11-06/conceptarc 2026-11-06/continual-autoresearch 2026-11-06/drap-ai 2026-11-06/harness-s 2026-11-06/item-102 2026-11-06/item-14 2026-11-06/item-94 2026-11-06/kappo-llm 2026-11-06/resi-math 2026-11-06/rlvr 2026-11-06/rlvr-2 2026-11-06/rlvr-4 2026-11-06/sarbloh-arc-agi-3 2026-11-06/selfimprove-bench 2026-11-06/sft-aegis 2026-11-06/streamduo 2026-11-06/ttt-consolidate 2026-11-08/item-19 2026-11-08/item-32 2026-11-08/item-41 2026-11-08/item-46 2026-11-08/sft 2026-11-08/topsd 2026-11-08/wildawm 2026-11-12/agentic-opd 2026-11-12/continual-arc 2026-11-12/firegate 2026-11-12/item-106 2026-11-12/item-140 2026-11-12/item-143 2026-11-12/item-176 2026-11-12/item-192 2026-11-12/item-201 2026-11-12/item-64 2026-11-12/item-68 2026-11-12/llm-10 2026-11-12/r-nyi 2026-11-12/rsi 2026-11-12/scalar 2026-11-12/truer 2026-11-12/vla-knn 2026-11-13/item-14 2026-11-13/rl-sft-sft 2026-11-13/rsi-rsibench-data-s-gym 2026-11-14/item-35 2026-11-14/item-46 2026-11-15/item-1 2026-11-16/g-cast 2026-11-16/grokking 2026-11-17/item-54 2026-11-17/item-56 2026-11-17/microfitting 2026-11-17/reharness 2026-11-17/sim 2026-11-17/specal 2026-11-18/benchleaking 2026-11-18/ena 2026-11-18/experience-rot 2026-11-18/gpt-6-2-astra 2026-11-18/safe-ad 2026-11-19/normal-only-tta 2026-11-19/option-grpo 2026-11-20/agnes-harness 2026-11-20/bispace 2026-11-20/curvdelta 2026-11-20/item-44 2026-11-20/item-63 2026-11-20/item-65 2026-11-20/item-76 2026-11-20/rigel-ladon 2026-11-20/stability-gap 2026-11-21/gemini-4-hydrogen-token 2026-11-23/from-acting-to-learning 2026-11-23/item-25 2026-11-23/item-53 2026-11-23/loco-wam 2026-11-23/navttt 2026-11-23/orion 2026-11-23/structure-over-scale 2026-11-24/agrimanager 2026-11-24/rdqa 2026-11-24/rlm-27b 2026-11-24/rottt 2026-11-25/autoseco 2026-11-25/cspd 2026-11-25/e2l 2026-11-25/gemini-4-neon 2026-11-25/grokking 2026-11-25/instructreplay 2026-11-25/item-105 2026-11-25/item-109 2026-11-25/item-63 2026-11-25/p-tap 2026-11-25/sleep 2026-11-25/stun-bench 2026-11-25/vla 2026-11-25/wasp 2026-11-25/xmind -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -302,7 +473,30 @@
 <li><a href="https://arxiv.org/abs/2201.02177"target="_blank" rel="external nofollow noopener noreferrer">Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 记忆到泛化的相变</li>
 <li><a href="https://arxiv.org/abs/2404.16789"target="_blank" rel="external nofollow noopener noreferrer">Continual Learning of Large Language Models: A Comprehensive Survey<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
 </ul>
-</div><section class="page archive" style="margin-top:2rem;">
+</div><script>
+    (function(){
+      var h = document.getElementById('研究经验');
+      var items = [];
+      for(var el = h && h.nextElementSibling; el && el.tagName !== 'H2'; el = el.nextElementSibling){
+        if(el.tagName === 'OL') items = items.concat(Array.prototype.slice.call(el.children));
+      }
+      items.forEach(function(li){
+        var ul = li.querySelector(':scope > ul');
+        if(!ul) return;
+        var d = document.createElement('details');
+        d.className = 'exp-item';
+        var s = document.createElement('summary');
+        while(li.firstChild && li.firstChild !== ul) s.appendChild(li.firstChild);
+        var n = document.createElement('span');
+        n.className = 'exp-count';
+        n.textContent = ul.children.length + ' 项工作';
+        s.appendChild(n);
+        d.appendChild(s);
+        d.appendChild(ul);
+        li.appendChild(d);
+      });
+    })();
+    </script><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>上下文学习 <sup>6</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#sleep" class="archive-item-link">Sleep：循环前向提升上下文适应</a>

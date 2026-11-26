@@ -13,8 +13,8 @@
   <meta itemprop="name" content="ReasoningEvolve">
   <meta itemprop="description" content="ReasoningEvolve 研究方向：推理中的自进化——“推理&#34;取双重含义：既指推理服务（inference）过程，让模型利用服务中的前向计算与真实交互持续自适应；也指思维推理（reasoning）过程，让模型在思考、求解、反思中不断改进自己的推理能力与推理策略。两者共同指向&#34;边推理、边进化”。">
   <meta itemprop="datePublished" content="2026-11-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T17:14:46+08:00">
-  <meta itemprop="wordCount" content="3228">
+  <meta itemprop="dateModified" content="2026-11-26T17:53:43+08:00">
+  <meta itemprop="wordCount" content="4755">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/reasoningevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="ReasoningEvolve">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-11-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T17:14:46+08:00">
+    <meta property="article:modified_time" content="2026-11-26T17:53:43+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/"
-    },"genre": "research","wordcount":  3228 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-26T17:14:46+08:00","publisher": {
+    },"genre": "research","wordcount":  4755 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-26T17:53:43+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -284,7 +284,105 @@
 <!-- human-only:end 自研经验 -->
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
-<p><em>（暂无，随日报自动积累）</em></p>
+<ol>
+<li><strong>无梯度能力写入</strong>：前向激活可充当贡献估计与任务向量；在线适配可采用局部、门控的权重改写，减少反传开销和行为干扰。
+<ul>
+<li><a href="../../updates/2026-11-24/#don-t-train-it-write-it">Don&rsquo;t Train It, Write It：智能体直写模型能力</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-23/#weight-space-programming-icl">Weight-Space Programming：无梯度写入ICL</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-21/#forward-only-passes">Forward-Only Passes：角度集中度引导降秩</a> · 2026-11-21</li>
+</ul>
+</li>
+<li><strong>测试时更新安全</strong>：测试时参数可作为离窗记忆，但监督宜来自可控变换等确定标签；用户交互驱动更新时，必须隔离并审计更新通道。
+<ul>
+<li><a href="../../updates/2026-11-25/#p-tap">P-TAP：会话适配器渐进投毒</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-24/#rottt">RoTTT：旋转监督式测试时训练</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-23/#loco-wam">LoCo-WAM：测试时训练延展长上下文</a> · 2026-11-23</li>
+</ul>
+</li>
+<li><strong>累积式自改进</strong>：独立重采样不会形成自进化；应继承前次尝试的有效步骤，并将异质失败抽象为可迁移经验或写回权重。
+<ul>
+<li><a href="../../updates/2026-11-25/#tt-rsi">TT-RSI：测试时递归自我改进</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#lce">LCE：失败模式多样性诊断</a> · 2026-11-25</li>
+</ul>
+</li>
+<li><strong>推理资源动态分配</strong>：缓存、注意力和推理深度不宜静态配置；用不确定性、冗余度与中间状态按层按样本分配计算，更易兼顾精度和延迟。
+<ul>
+<li><a href="../../updates/2026-11-25/#item-128">层级执行控制：中间状态驱动计算分配</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-23/#turnout">Turnout：自适应注意力切换</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-20/#rocokv">RoCoKV：置信冗余感知缓存压缩</a> · 2026-11-20</li>
+</ul>
+</li>
+<li><strong>最小充分推理状态</strong>：长链应压缩为对后续转移充分的紧凑状态；训练时以局部续写分布一致性检验充分性，并用精确执行语义抑制深度漂移。
+<ul>
+<li><a href="../../updates/2026-11-25/#trusuco">TruSuCo：局部续写驱动的状态压缩</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-24/#markovian-reasoning-llm">Markovian Reasoning LLM：结构化状态缓存压缩</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-23/#orion">ORION：精确规范状态监督</a> · 2026-11-23</li>
+</ul>
+</li>
+<li><strong>预算塑造停止策略</strong>：固定长度上限会被内化为停止策略并限制测试时扩展；稳定控制多个推理档位需状态级、档位专属监督。
+<ul>
+<li><a href="../../updates/2026-11-25/#item-56">推理强度训练：密集目标分离强度层级</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-20/#budget-internalization">Budget Internalization：固定预算内化约束</a> · 2026-11-20</li>
+</ul>
+</li>
+<li><strong>强化学习起飞条件</strong>：SFT可只建立输出结构，再由强化学习发现推理功能；但采样须产生足够多成功事件，才能推翻预训练先验。
+<ul>
+<li><a href="../../updates/2026-11-23/#item-53">强化学习解耦推理形式与功能</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-20/#item-44">成功组数预测强化学习起飞</a> · 2026-11-20</li>
+</ul>
+</li>
+<li><strong>策略多样性维护</strong>：对已会题目继续做离模探索并自蒸馏不同正确解，可将冗余正确奖励转成策略多样性，避免坍缩到单一路径。
+<ul>
+<li><a href="../../updates/2026-11-20/#roam-grpo">ROAM-GRPO：离模策略挖掘</a> · 2026-11-20</li>
+</ul>
+</li>
+<li><strong>局部信用分配</strong>：奖励应归因到造成结果的决策分叉、输出片段或模型模块，而非整段响应平均传播；熵排名和输出锚点可低成本定位。
+<ul>
+<li><a href="../../updates/2026-11-25/#mspo">MSPO：模块特定信用分配</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#anchorcredit">AnchorCredit：输出锚定式信用分配</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-23/#creditfilter">CreditFilter：熵秩校准的词元信用分配</a> · 2026-11-23</li>
+</ul>
+</li>
+<li><strong>优化信号共适应</strong>：固定奖励或训练策略代理会随实际轨迹失准；应交替校准奖励与策略，按执行风险收缩更新，并将结果信号蒸馏为词元级监督。
+<ul>
+<li><a href="../../updates/2026-11-25/#vopd">VOPD：验证器引导的稠密蒸馏</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#epro">EPRO：不完美预测下的鲁棒策略优化</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#elgo">ELGO：循环外推自教师强化学习</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-21/#pair-med">PAIR-MED：策略奖励交替优化</a> · 2026-11-21</li>
+</ul>
+</li>
+<li><strong>推理过程忠实性</strong>：答案正确或思维链可读都不能证明过程忠实；评测与监督应结合预测依赖和内部表征，检查真实决策路径。
+<ul>
+<li><a href="../../updates/2026-11-25/#clr">CLR：无痕隐藏目标推理</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#aprm">APRM：内部注意力过程奖励</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-24/#item-67">二维推理：语义图量化推理忠实与效率</a> · 2026-11-24</li>
+</ul>
+</li>
+<li><strong>外部能力内化</strong>：教师分布和工具观察可作为可撤除脚手架，经蒸馏内化为单遍评分或无工具感知，降低生成轨迹与工具调用成本。
+<ul>
+<li><a href="../../updates/2026-11-24/#tool-to-self">Tool-to-Self：视觉工具能力内化</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-20/#glide">GLiDE：推理蒸馏单遍决策</a> · 2026-11-20</li>
+</ul>
+</li>
+<li><strong>领域推理脚手架</strong>：领域推理不会仅靠规模自动迁移；应显式分解论证与证据需求，并借助工具反馈维持跨步骤语义连续性。
+<ul>
+<li><a href="../../updates/2026-11-23/#item-25">科学论证迁移：显式脚手架训练</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-21/#space-x">Space-X：证据链驱动空间自进化</a> · 2026-11-21</li>
+</ul>
+</li>
+<li><strong>参数适配几何</strong>：参数高效适配应优先设计可达更新流形，而非盲目增加参数量或名义秩；更新几何还需匹配预训练权重结构。
+<ul>
+<li><a href="../../updates/2026-11-23/#structure-over-scale">Structure Over Scale：结构化适配防秩坍缩</a> · 2026-11-23</li>
+</ul>
+</li>
+<li><strong>成本敏感评测</strong>：高难推理基准接近饱和后，应同时报告准确率、推理Token和单位任务成本；等精度下的计算压缩更能区分系统价值。
+<ul>
+<li><a href="../../updates/2026-11-25/#gemini-4-neon">Gemini 4 Neon：低成本高分推理</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-21/#gemini-4-hydrogen-token">Gemini 4 Hydrogen：半量Token高分推理</a> · 2026-11-21</li>
+</ul>
+</li>
+</ol>
+<!-- experience-seen: 2026-11-20/budget-internalization 2026-11-20/glide 2026-11-20/item-44 2026-11-20/roam-grpo 2026-11-20/rocokv 2026-11-21/claude-lean 2026-11-21/forward-only-passes 2026-11-21/gemini-4-hydrogen-token 2026-11-21/pair-med 2026-11-21/space-x 2026-11-23/alps-lab 2026-11-23/bel 2026-11-23/creditfilter 2026-11-23/item-25 2026-11-23/item-53 2026-11-23/loco-wam 2026-11-23/orion 2026-11-23/structure-over-scale 2026-11-23/turnout 2026-11-23/weight-space-programming-icl 2026-11-24/don-t-train-it-write-it 2026-11-24/future-opsd 2026-11-24/item-67 2026-11-24/markovian-reasoning-llm 2026-11-24/rottt 2026-11-24/rtc 2026-11-24/tool-to-self 2026-11-25/9-4 2026-11-25/anchorcredit 2026-11-25/aprm 2026-11-25/clr 2026-11-25/elgo 2026-11-25/epro 2026-11-25/gemini-4-neon 2026-11-25/item-128 2026-11-25/item-56 2026-11-25/lce 2026-11-25/mspo 2026-11-25/p-tap 2026-11-25/trusuco 2026-11-25/tt-rsi 2026-11-25/videcide 2026-11-25/vopd -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -335,7 +433,30 @@
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/WgJNWHiUImUiQmKu-mYevQ"target="_blank" rel="external nofollow noopener noreferrer">NeurIPS 2026 | 如何让LLM在推理中不断进化<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 机器之心对 <em>Efficient LLM Adaptation with Forward-Only Passes</em> 的中文解读，属于本方向&quot;推理服务&quot;一侧。需注意：论文方法是一次性的仅前向搜索与降秩，&ldquo;服务期间在线实时适应、持续进化&quot;是文末对未来应用的展望，而非论文已验证的结果</li>
 </ul>
-</div><section class="page archive" style="margin-top:2rem;">
+</div><script>
+    (function(){
+      var h = document.getElementById('研究经验');
+      var items = [];
+      for(var el = h && h.nextElementSibling; el && el.tagName !== 'H2'; el = el.nextElementSibling){
+        if(el.tagName === 'OL') items = items.concat(Array.prototype.slice.call(el.children));
+      }
+      items.forEach(function(li){
+        var ul = li.querySelector(':scope > ul');
+        if(!ul) return;
+        var d = document.createElement('details');
+        d.className = 'exp-item';
+        var s = document.createElement('summary');
+        while(li.firstChild && li.firstChild !== ul) s.appendChild(li.firstChild);
+        var n = document.createElement('span');
+        n.className = 'exp-count';
+        n.textContent = ul.children.length + ' 项工作';
+        s.appendChild(n);
+        d.appendChild(s);
+        d.appendChild(ul);
+        li.appendChild(d);
+      });
+    })();
+    </script><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>上下文压缩 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#trusuco" class="archive-item-link">TruSuCo：局部续写驱动的状态压缩</a>

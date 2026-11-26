@@ -16,8 +16,8 @@
   <meta itemprop="description" content="PromptEvolve 研究方向：提示自进化——系统提示 / 指令 / 示例 / 多阶段 LM 程序的自动优化与持续进化，以及智能体从执行反馈中自我改写提示的闭环。
 研究范畴 提示自进化（prompt self-evolution / automatic prompt optimization）把提示词视为可搜索、可学习、可版本化的&#34;软参数&#34;：在冻结模型权重的前提下，由模型自身或外层优化器依据任务反馈持续改写系统提示、指令措辞、推理模板、few-shot 示例乃至多阶段 LM 程序的全部提示集合。本方向涵盖：基于进化算法 / 束搜索的离散提示搜索（Promptbreeder、EvoPrompt、ProTeGi 类）、LLM-as-Optimizer 的元提示优化（OPRO、APE）、面向多阶段程序的编译式优化（DSPy / MIPRO）、以自然语言反馈为&#34;梯度&#34;的反思式进化（TextGrad、GEPA）、智能体在运行时把失败经验沉淀为提示 / 技能 / 记忆的自我改写（Reflexion、Voyager 类），以及提示与模型权重协同进化（提示优化 vs. 强化微调的样本效率对比）。社区关注的核心问题包括：提示优化是否能以远低于 RL 的 rollout 成本逼近甚至超过权重训练、自动演化的提示能否跨模型 / 跨任务迁移、如何在开发集上避免过拟合与&#34;评测钻空子&#34;、多阶段程序中各节点提示的信用分配，以及自演化提示的可审计性与安全边界。">
   <meta itemprop="datePublished" content="2026-10-08T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T17:14:46+08:00">
-  <meta itemprop="wordCount" content="1527">
+  <meta itemprop="dateModified" content="2026-11-26T17:53:43+08:00">
+  <meta itemprop="wordCount" content="2738">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/promptevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="PromptEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-08T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T17:14:46+08:00">
+    <meta property="article:modified_time" content="2026-11-26T17:53:43+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/promptevolve\/"
-    },"genre": "research","wordcount":  1527 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/promptevolve\/","datePublished": "2026-10-08T00:00:00+08:00","dateModified": "2026-11-26T17:14:46+08:00","publisher": {
+    },"genre": "research","wordcount":  2738 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/promptevolve\/","datePublished": "2026-10-08T00:00:00+08:00","dateModified": "2026-11-26T17:53:43+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -274,7 +274,84 @@
 <!-- human-only:end 自研经验 -->
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
-<p><em>（暂无，随日报自动积累）</em></p>
+<ol>
+<li><strong>评测先于搜索</strong>：优化停滞常源于评测分辨率不足或选择噪声；比较机制时须匹配采样、轮次、词元与成本，并用留出集确认增益。
+<ul>
+<li><a href="../../updates/2026-11-19/#resolution-hypothesis">Resolution Hypothesis：评测分辨率瓶颈</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-18/#dcps">DCPS：示例条件式提示搜索</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-10-29/#bipa">BiPA：用二部归因重新评估智能体技能优化</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>经验先策展</strong>：先筛选可靠任务并检索成功轨迹，避免噪声反馈污染更新；失败样本只有按模式归纳后才适合沉淀为经验。
+<ul>
+<li><a href="../../updates/2026-11-25/#lce">LCE：失败模式多样性诊断</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-10-29/#gepa-curator">GEPA-Curator：面向自改进智能体的经验策展学习</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>批量并行搜索</strong>：反思式优化应在同轮并行提出并评估多个候选，而非串行单候选，以改善墙钟时间、预算利用率和解质量。
+<ul>
+<li><a href="../../updates/2026-10-29/#gepa">批处理反思优化循环：并行候选让 GEPA 更快更优</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>约束搜索空间</strong>：冻结不可变契约并分离通用规则与角色策略，只开放必要编辑范围；这比无约束重写更可审计，也更少行为漂移。
+<ul>
+<li><a href="../../updates/2026-11-17/#splice">SPLICE：分块约束式提示演化</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-12/#finevolvekg">FinEvolveKG：面向金融知识图谱的可控可归因提示演化</a> · 2026-11-12</li>
+</ul>
+</li>
+<li><strong>评判提示持续校准</strong>：评判提示应视为持续维护的软件资产；监控用户与被评智能体的分布漂移，再用新交互闭环重校准。
+<ul>
+<li><a href="../../updates/2026-11-12/#autorefine">AutoRefine：基于工作流结果自动校准代码评判器</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#promptops-llm">PromptOps：LLM 评判系统的迭代提示优化</a> · 2026-11-06</li>
+</ul>
+</li>
+<li><strong>量规化优化接口</strong>：将目标拆成任务量规或专用误差信号，比单一总分更易定位修改；评测昂贵时可用世界模型预筛编辑。
+<ul>
+<li><a href="../../updates/2026-11-24/#item-47">教育AI提示精炼：情感认知双反馈</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-05/#legalevolver">LegalEvolver：量规引导自进化的法律判决预测智能体</a> · 2026-11-05</li>
+<li><a href="../../updates/2026-11-03/#rubricworld-llm">RubricWorld：世界模型引导的 LLM 评分规约优化</a> · 2026-11-03</li>
+</ul>
+</li>
+<li><strong>安全更新门禁</strong>：把攻击漏检等风险设为可认证硬约束；每次提示更新须经安全回归、复测和修复验证，失败默认拒绝并可回滚。
+<ul>
+<li><a href="../../updates/2026-11-19/#safe-personal-rsi">Safe Personal RSI：回滚修复式安全更新</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-17/#cps-crisp">CPS与CRISP：风险认证提示优化</a> · 2026-11-17</li>
+</ul>
+</li>
+<li><strong>先学技能再压缩</strong>：先在不惩罚长度时学会可靠技能，再以准确率护栏删减指令；从一开始惩罚词元更易牺牲能力。
+<ul>
+<li><a href="../../updates/2026-11-17/#efficientskill">EfficientSkill：准确率护栏式技能压缩</a> · 2026-11-17</li>
+</ul>
+</li>
+<li><strong>反馈器独立审计</strong>：更强评论器或可追溯门控都不保证更新有益；应以故障注入和隐藏留出集审计影响，并淘汰无效规则。
+<ul>
+<li><a href="../../updates/2026-11-25/#notary">Notary门控回顾环：规则准入效用验证</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-17/#critfault">CRITFAULT：评论器安全审计</a> · 2026-11-17</li>
+</ul>
+</li>
+<li><strong>脚手架整体演化</strong>：冻结权重时，可协同演化提示、工具、记忆、技能和更新器；对递归自改写须限定深度与可修改范围。
+<ul>
+<li><a href="../../updates/2026-11-20/#item-60">智能体脚手架演化：冻结策略领域适配</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-08/#item-53">长程角色扮演对话的递归自我改进</a> · 2026-11-08</li>
+</ul>
+</li>
+<li><strong>路由提示先优化</strong>：工具或能力路由受容量限制时，先优化路由提示可部分弥补模型不足，并在维持质量时减少下游调用开销。
+<ul>
+<li><a href="../../updates/2026-11-14/#item-30">小语言模型能力路由：容量与提示优化对质量和效率的影响</a> · 2026-11-14</li>
+</ul>
+</li>
+<li><strong>撤架后验收</strong>：训练脚手架应按撤除提示后的学生能力验收；由教师动态诊断瓶颈并生成策略，可避免只学会依赖脚手架。
+<ul>
+<li><a href="../../updates/2026-11-12/#autoscaffold-ai">AutoScaffold：AI 自动生成自适应训练脚手架</a> · 2026-11-12</li>
+</ul>
+</li>
+<li><strong>专家提示模块化</strong>：将专家能力蒸馏为可拼接软提示，可在不重训骨干的情况下增量扩展，并减少新专家对旧能力的干扰。
+<ul>
+<li><a href="../../updates/2026-11-25/#cspd">CSPD：可组合软提示蒸馏</a> · 2026-11-25</li>
+</ul>
+</li>
+</ol>
+<!-- experience-seen: 2026-10-29/bipa 2026-10-29/gepa 2026-10-29/gepa-curator 2026-11-03/rubricworld-llm 2026-11-05/legalevolver 2026-11-06/kernelseek-gpu 2026-11-06/promptops-llm 2026-11-08/item-53 2026-11-12/autorefine 2026-11-12/autoscaffold-ai 2026-11-12/finevolvekg 2026-11-14/item-30 2026-11-17/cps-crisp 2026-11-17/critfault 2026-11-17/efficientskill 2026-11-17/splice 2026-11-18/dcps 2026-11-19/resolution-hypothesis 2026-11-19/safe-personal-rsi 2026-11-20/item-60 2026-11-24/item-47 2026-11-25/cspd 2026-11-25/lce 2026-11-25/notary -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -304,7 +381,30 @@
 <li><a href="https://arxiv.org/abs/2402.02101"target="_blank" rel="external nofollow noopener noreferrer">Are Large Language Models Good Prompt Optimizers?<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 对 LLM 反思式提示优化有效性边界的审视</li>
 <li><a href="https://arxiv.org/abs/2502.16923"target="_blank" rel="external nofollow noopener noreferrer">A Systematic Survey of Automatic Prompt Optimization Techniques<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 自动提示优化方法综述</li>
 </ul>
-</div><section class="page archive" style="margin-top:2rem;">
+</div><script>
+    (function(){
+      var h = document.getElementById('研究经验');
+      var items = [];
+      for(var el = h && h.nextElementSibling; el && el.tagName !== 'H2'; el = el.nextElementSibling){
+        if(el.tagName === 'OL') items = items.concat(Array.prototype.slice.call(el.children));
+      }
+      items.forEach(function(li){
+        var ul = li.querySelector(':scope > ul');
+        if(!ul) return;
+        var d = document.createElement('details');
+        d.className = 'exp-item';
+        var s = document.createElement('summary');
+        while(li.firstChild && li.firstChild !== ul) s.appendChild(li.firstChild);
+        var n = document.createElement('span');
+        n.className = 'exp-count';
+        n.textContent = ul.children.length + ' 项工作';
+        s.appendChild(n);
+        d.appendChild(s);
+        d.appendChild(ul);
+        li.appendChild(d);
+      });
+    })();
+    </script><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>人工智能辅助编程 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-06/#kernelseek-gpu" class="archive-item-link">KernelSeek：问题驱动的 GPU 内核优化智能体</a>

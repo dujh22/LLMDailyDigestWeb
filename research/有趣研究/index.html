@@ -17,7 +17,7 @@
 研究范畴 有趣研究（interesting research watch）是本站的横向收集方向，与 NewModel 跟踪模型本身的变化、NewApply 跟踪能力落地不同，它不按技术栈划分，而是按&#34;是否值得多看一眼&#34;筛选：反直觉的实验设定（如把模型的知识截断到 1900 年、1930 年，检验它能否独立重现历史上的科学发现或编程能力）、AI 在数学与密码学等硬问题上的突破性结果、推理加速与端侧部署的工程奇招（动态投机解码、多 token 预测、单卡跑大模型）、世界模型与智能体的新评测基准、医疗等高风险场景的事实核查机制、新架构与新编程语言之争，以及产业侧的新产品形态与融资动向。本方向的定位是&#34;先收集、后归类&#34;：条目积累到一定规模、出现清晰主题后，拆分为独立的研究方向；与已有方向强相关的条目应同时打上对应方向的标签。">
   <meta itemprop="datePublished" content="2026-11-24T00:00:00+08:00">
   <meta itemprop="dateModified" content="2026-11-24T00:00:00+08:00">
-  <meta itemprop="wordCount" content="2043">
+  <meta itemprop="wordCount" content="2244">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/%E6%9C%89%E8%B6%A3%E7%A0%94%E7%A9%B6/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="有趣研究">
@@ -47,7 +47,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/%E6%9C%89%E8%B6%A3%E7%A0%94%E7%A9%B6\/"
-    },"genre": "research","wordcount":  2043 ,
+    },"genre": "research","wordcount":  2244 ,
     "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/%E6%9C%89%E8%B6%A3%E7%A0%94%E7%A9%B6\/","datePublished": "2026-11-24T00:00:00+08:00","dateModified": "2026-11-24T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -273,7 +273,24 @@
 <!-- human-only:end 自研经验 -->
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
-<p><em>（暂无，随日报自动积累）</em></p>
+<ol>
+<li><strong>结构化降维优先</strong>：密码分析等大搜索问题应先寻找可消除干扰项、压缩未知空间的代数表述，再考虑堆叠搜索算力。
+<ul>
+<li><a href="../../updates/2026-11-24/#mim">MIM：代数降维式自动密码分析</a> · 2026-11-24</li>
+</ul>
+</li>
+<li><strong>形式证明需语义审计</strong>：证明助手只能保证形式系统内推导成立；重大结论仍须人工核对定义、前提与原问题是否忠实对应。
+<ul>
+<li><a href="../../updates/2026-11-25/#vp-vnp-ai-lean">VP≠VNP：AI生成Lean证明</a> · 2026-11-25</li>
+</ul>
+</li>
+<li><strong>上下界闭合验证</strong>：复杂度指数须由匹配的上下界共同锁定；获得新界后，应沿既有归约检查其对相关问题时间界的连锁影响。
+<ul>
+<li><a href="../../updates/2026-11-25/#9-4">矩阵乘法指数：上下界锁定9/4</a> · 2026-11-25</li>
+</ul>
+</li>
+</ol>
+<!-- experience-seen: 2026-11-24/mim 2026-11-25/9-4 2026-11-25/vp-vnp-ai-lean -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>论文</strong></p>
@@ -320,7 +337,30 @@
 <li><a href="https://mp.weixin.qq.com/s/mbXlRXYH-6JbQ_b2EBPMNQ"target="_blank" rel="external nofollow noopener noreferrer">刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设」<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — Meta 开源 Muse Gadgets，开发者可自制 AI 外设</li>
 <li><a href="https://mp.weixin.qq.com/s/cR70sMJxwy91bldF6jRrng"target="_blank" rel="external nofollow noopener noreferrer">Kando AI完成数千万元种子轮融资，要做&quot;决策领域的Cursor&quot;｜涌现新项目<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — Kando AI 获数千万元种子轮，定位&quot;决策领域的 Cursor&quot;</li>
 </ul>
-</div><section class="page archive" style="margin-top:2rem;">
+</div><script>
+    (function(){
+      var h = document.getElementById('研究经验');
+      var items = [];
+      for(var el = h && h.nextElementSibling; el && el.tagName !== 'H2'; el = el.nextElementSibling){
+        if(el.tagName === 'OL') items = items.concat(Array.prototype.slice.call(el.children));
+      }
+      items.forEach(function(li){
+        var ul = li.querySelector(':scope > ul');
+        if(!ul) return;
+        var d = document.createElement('details');
+        d.className = 'exp-item';
+        var s = document.createElement('summary');
+        while(li.firstChild && li.firstChild !== ul) s.appendChild(li.firstChild);
+        var n = document.createElement('span');
+        n.className = 'exp-count';
+        n.textContent = ul.children.length + ' 项工作';
+        s.appendChild(n);
+        d.appendChild(s);
+        d.appendChild(ul);
+        li.appendChild(d);
+      });
+    })();
+    </script><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>形式化证明 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#vp-vnp-ai-lean" class="archive-item-link">VP≠VNP：AI生成Lean证明</a>

@@ -13,8 +13,8 @@
   <meta itemprop="name" content="InfraEvolve">
   <meta itemprop="description" content="InfraEvolve 研究方向：基础设施自进化——让 Agent 自己写出、验证并迭代推理引擎，把&#34;某个模型在某块卡上怎么跑最快&#34;从人工调优变成可自动搜索、可沉淀复用的进化闭环。">
   <meta itemprop="datePublished" content="2026-10-23T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T17:14:46+08:00">
-  <meta itemprop="wordCount" content="1690">
+  <meta itemprop="dateModified" content="2026-11-26T17:53:43+08:00">
+  <meta itemprop="wordCount" content="4503">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/infraevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="InfraEvolve">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-23T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T17:14:46+08:00">
+    <meta property="article:modified_time" content="2026-11-26T17:53:43+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/infraevolve\/"
-    },"genre": "research","wordcount":  1690 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/infraevolve\/","datePublished": "2026-10-23T00:00:00+08:00","dateModified": "2026-11-26T17:14:46+08:00","publisher": {
+    },"genre": "research","wordcount":  4503 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/infraevolve\/","datePublished": "2026-10-23T00:00:00+08:00","dateModified": "2026-11-26T17:53:43+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -270,7 +270,149 @@
 <!-- human-only:end 自研经验 -->
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
-<p><em>（暂无，随日报自动积累）</em></p>
+<ol>
+<li><strong>实机闭环搜索</strong>：算子和引擎优化应以真实硬件上的正确性、吞吐与时延作保留门槛；自动迭代已能稳定超过人工精调。
+<ul>
+<li><a href="../../updates/2026-11-20/#performance-factory-codex">Performance Factory：Codex自动修复性能回归</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-18/#claude-mythos-amd">Claude Mythos：三天自动适配AMD内核</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-17/#mobile-ai-factory">Mobile AI Factory：手机感知式模型定制</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-12/#infrarsi">InfraRSI：递归自我改进驱动训练基础设施优化</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#ernie-evolve-5-5-flash">百度披露 ERNIE Evolve 递归自我改进进展，已用于文心 5.5 Flash 研发</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#iquestrt-3-agent">IQuestRT 推理提速近 3 倍，Agent 两周反超人工精调</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-31/#forgekernel-deepseek-flashmla-9-8">ForgeKernel零样本自进化生成算子，性能超越DeepSeek FlashMLA 9.8%</a> · 2026-10-31</li>
+<li><a href="../../updates/2026-10-29/#forgekernel">ForgeKernel 登顶华为与英伟达算子评测榜</a> · 2026-10-29</li>
+<li><a href="../../updates/2026-10-29/#agent-sol-execbench-88">无问芯穹算子优化Agent斩获SOL-ExecBench 88项第一</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>独立验证门控</strong>：候选须经独立执行、数值及领域约束测试，评判器不得受修改者控制；高风险内核还需验证功能与内存行为等价。
+<ul>
+<li><a href="../../updates/2026-11-25/#glm-5-5-rsi">GLM-5.5：多模型后训练汇流式RSI</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-23/#edagoat-eda-gpu">EDAGoat：EDA约束验证式GPU优化</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-19/#ppa">芯片PPA优化：模型挖掘成熟设计余量</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-16/#callo-kv">Callo：失效KV投机解码</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-13/#autoassumption-ml">AutoAssumption：搜索算法假设以发现 ML 系统新算法</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-11-12/#infrarsi">InfraRSI：递归自我改进驱动训练基础设施优化</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#serverbench-llm">ServerBench：编码智能体设计专用 LLM 服务系统的评测基准</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#lark-lean-llm-gpu-kernel">LARK：用 Lean 形式化验证 LLM 生成的 GPU Kernel</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#compressionbench-llm">CompressionBench：编码智能体自主压缩 LLM 评测</a> · 2026-11-06</li>
+</ul>
+</li>
+<li><strong>跨栈联合优化</strong>：先建模引擎层级依赖和硬件能力，再联动算法、内核、通信与调度；单层最优常非端到端最优。
+<ul>
+<li><a href="../../updates/2026-11-24/#uni3sim">Uni3Sim：统一系统级推理仿真</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-19/#rsibench-infra">RSIBench-Infra：生产级基础设施优化评测</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-18/#xing-4">Xing 4：昇腾原生训推协同</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-14/#no-second-run-rsi-801-30b-a3b">No Second Run：预训练RSI炼出801-30B-A3B模型</a> · 2026-11-14</li>
+<li><a href="../../updates/2026-11-12/#infrarsi">InfraRSI：递归自我改进驱动训练基础设施优化</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#engineagent">EngineAgent：感知推理栈层级与硬件能力的端侧推理引擎智能体</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#iquestrt-3-agent">IQuestRT 推理提速近 3 倍，Agent 两周反超人工精调</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-30/#formulaic-ai">Formulaic：智能体驱动的 AI 基础设施软硬件协同设计</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>模型先验加实测</strong>：用成本模型或低成本代理缩小搜索域，再以周期性或在线实测纠偏，比纯穷举或纯模型决策更省预算。
+<ul>
+<li><a href="../../updates/2026-11-24/#uni3sim">Uni3Sim：统一系统级推理仿真</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-19/#qda">QDA：智能体闭环量化设计</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-12/#nccl-bot-nccl">NCCL-BOT：用在线多臂老虎机闭环优化 NCCL 成本决策</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#autoqs">AutoQS：大语言模型自动设计量化策略</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#specpilot">SpecPilot：面向投机解码的自主算法发现与系统优化</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-30/#formulaic-ai">Formulaic：智能体驱动的 AI 基础设施软硬件协同设计</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>经验持久化</strong>：把成功改写、失败轨迹及其来源和适用边界结构化沉淀；跨模型与后端检索并交叉不同机制，可减少从零试错和经验误用。
+<ul>
+<li><a href="../../updates/2026-11-25/#noevera">NoeVera：证据演化式配置搜索</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-25/#mosaic">MOSAIC：记忆组织式反模仿搜索</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-17/#compoundingkernel">CompoundingKernel：谱系归档式内核进化</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-13/#kernelmosaic-cuda-kernel">KernelMosaic：CUDA Kernel 生成数据集与智能体框架</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-11-12/#rtl">面向自主 RTL 与综合优化的基准和自改进智能体</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#infrarsi">InfraRSI：递归自我改进驱动训练基础设施优化</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#engineagent">EngineAgent：感知推理栈层级与硬件能力的端侧推理引擎智能体</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#modelblaster">ModelBlaster：跨模型、内核与硬件后端的学习增强优化智能体</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-29/#evolving-agent-teams">Evolving Agent Teams：可演化智能体团队突破优化局部最优</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>团队动态重组</strong>：固定多智能体分工易陷局部最优；由监督者诊断停滞、重组角色并保留独立验证更稳。
+<ul>
+<li><a href="../../updates/2026-11-12/#ernie-evolve-5-5-flash">百度披露 ERNIE Evolve 递归自我改进进展，已用于文心 5.5 Flash 研发</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#specpilot">SpecPilot：面向投机解码的自主算法发现与系统优化</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-10-29/#evolving-agent-teams">Evolving Agent Teams：可演化智能体团队突破优化局部最优</a> · 2026-10-29</li>
+</ul>
+</li>
+<li><strong>长程预算评测</strong>：固定时间、算力和成本，在条件匹配的真实负载上回放；受限任务单点超越不能外推为持续自改进，短测也会漏算搜索开销。
+<ul>
+<li><a href="../../updates/2026-11-20/#singularity-bench-ai">Singularity-Bench：AI研发设施自主构建</a> · 2026-11-20</li>
+<li><a href="../../updates/2026-11-19/#rsibench-infra">RSIBench-Infra：生产级基础设施优化评测</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-18/#re-reading-is-not-free">Re-Reading Is Not Free：缓存感知能耗估算</a> · 2026-11-18</li>
+<li><a href="../../updates/2026-11-17/#llms-for-ai-infrastructure">LLMs for AI Infrastructure：基础设施全生命周期综述</a> · 2026-11-17</li>
+<li><a href="../../updates/2026-11-16/#singularity-bench-ai">Singularity-Bench：AI基建自主构建评测</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-16/#ascendgym">AscendGYM：成本感知算子优化评测</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-14/#singularity-bench">Singularity-Bench：智能体能否自主构建智能体？</a> · 2026-11-14</li>
+<li><a href="../../updates/2026-11-12/#item-108">面向低成本智能体脚手架的系统优化</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#infrathon-ai">Infrathon：真实世界长程 AI 基础设施优化智能体基准</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-06/#serverbench-llm">ServerBench：编码智能体设计专用 LLM 服务系统的评测基准</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-05/#rsigym">RSIGym：面向递归自我改进的真实训练环境</a> · 2026-11-05</li>
+</ul>
+</li>
+<li><strong>端到端SLO调度</strong>：智能体服务应联合决定准入、放置、预填充路由和缓存去留；按端到端SLO优化比逐组件提利用率更可靠。
+<ul>
+<li><a href="../../updates/2026-11-23/#contexture">Contexture：工具感知式上下文驱逐</a> · 2026-11-23</li>
+<li><a href="../../updates/2026-11-13/#npu-kv">静态图 NPU 多模型智能体工作流中的 KV 缓存恢复与重计算</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-11-13/#evolving-infra-llm">Evolving Infra：面向智能体负载的自适应 LLM 服务</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-10-30/#tao-llm">TAO：面向 LLM 智能体服务的工具感知联合调度</a> · 2026-10-30</li>
+<li><a href="../../updates/2026-10-30/#dolphinrouting-pd">DolphinRouting：面向PD解耦推理服务的集群级二元路由</a> · 2026-10-30</li>
+</ul>
+</li>
+<li><strong>状态分叉复用</strong>：树状决策和并行 rollout 应精确分叉执行状态并共享公共前缀，避免复制工作区与重复预填充。
+<ul>
+<li><a href="../../updates/2026-11-12/#flide">Flide：以精确状态分叉加速决策推理</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#bunshinrl">BunshinRL：面向智能体强化学习的低内存工作空间分叉系统</a> · 2026-11-12</li>
+</ul>
+</li>
+<li><strong>免训练配置搜索</strong>：先搜索逐层稀疏、量化与缓存近似并设置精度门控；冻结权重常能换取显著推理收益。
+<ul>
+<li><a href="../../updates/2026-11-19/#qda">QDA：智能体闭环量化设计</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-12/#ridgefill-prefill">RidgeFill：免训练后层缓存填充加速 Prefill</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#autoqs">AutoQS：大语言模型自动设计量化策略</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-05/#seed">SEED：浅层编码生成深层记忆</a> · 2026-11-05</li>
+<li><a href="../../updates/2026-11-05/#llm">无需重训练的大规模混合 LLM 长上下文解码加速</a> · 2026-11-05</li>
+</ul>
+</li>
+<li><strong>低比特软硬协同</strong>：低比特KV缓存需联合设计量化误差、位操作和GPU流水线，单改数值格式难转化为端到端吞吐。
+<ul>
+<li><a href="../../updates/2026-11-25/#hopper-4-bit-kv">Hopper 4-bit KV解码：访存计算重叠</a> · 2026-11-25</li>
+<li><a href="../../updates/2026-11-12/#foscar-2-4-bit-kv-cache">FOSCAR：通过仿射折叠加速 2/4-bit KV Cache 解码注意力</a> · 2026-11-12</li>
+<li><a href="../../updates/2026-11-12/#bitdecoding-fp4-fp4-kv">BitDecoding-FP4：原生 FP4 KV 缓存解码</a> · 2026-11-12</li>
+</ul>
+</li>
+<li><strong>算法系统共搜索</strong>：对投机解码等部署敏感技术，应联合搜索算法参数、验证粒度与批处理策略，而非只调单个内核。
+<ul>
+<li><a href="../../updates/2026-11-24/#dissparse-top-p">DisSparse：流水化Top-p稀疏注意力</a> · 2026-11-24</li>
+<li><a href="../../updates/2026-11-19/#loopcache-kv">LoopCache：置信更新与循环KV缓存</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-16/#callo-kv">Callo：失效KV投机解码</a> · 2026-11-16</li>
+<li><a href="../../updates/2026-11-06/#specpilot">SpecPilot：面向投机解码的自主算法发现与系统优化</a> · 2026-11-06</li>
+<li><a href="../../updates/2026-11-06/#iquestrt-3-agent">IQuestRT 推理提速近 3 倍，Agent 两周反超人工精调</a> · 2026-11-06</li>
+</ul>
+</li>
+<li><strong>假设与问题引导</strong>：在关键节点先提出方向问题或待放宽假设，并用形式证明约束重推导，比直接反复改代码更省试错。
+<ul>
+<li><a href="../../updates/2026-11-13/#autoassumption-ml">AutoAssumption：搜索算法假设以发现 ML 系统新算法</a> · 2026-11-13</li>
+<li><a href="../../updates/2026-11-06/#kernelseek-gpu">KernelSeek：问题驱动的 GPU 内核优化智能体</a> · 2026-11-06</li>
+</ul>
+</li>
+<li><strong>反馈吞吐扩展</strong>：大规模并行搜索扩容前先提升正确性验证与稳定测速吞吐；候选生成快于反馈时，增加智能体只会堆积待测实验。
+<ul>
+<li><a href="../../updates/2026-11-17/#compoundingkernel">CompoundingKernel：谱系归档式内核进化</a> · 2026-11-17</li>
+</ul>
+</li>
+<li><strong>安全有状态沙箱</strong>：生产级编程智能体应以最小权限隔离不可信操作，并原生支持状态持久化、回滚、分岔和迁移；无状态执行不足以承载长程任务。
+<ul>
+<li><a href="../../updates/2026-11-19/#codex">Codex 沙箱：跨平台权限隔离</a> · 2026-11-19</li>
+<li><a href="../../updates/2026-11-18/#cubesandbox">CubeSandbox：状态化微虚拟机沙箱</a> · 2026-11-18</li>
+</ul>
+</li>
+</ol>
+<!-- experience-seen: 2026-10-29/agent-sol-execbench-88 2026-10-29/clawsgo-science-lean 2026-10-29/evolving-agent-teams 2026-10-29/forgekernel 2026-10-30/dolphinrouting-pd 2026-10-30/formulaic-ai 2026-10-30/glance 2026-10-30/tao-llm 2026-10-31/forgekernel-deepseek-flashmla-9-8 2026-11-03/thinker-sim 2026-11-05/llm 2026-11-05/rsigym 2026-11-05/seed 2026-11-06/compressionbench-llm 2026-11-06/halley-ai 2026-11-06/iquestrt-3-agent 2026-11-06/kernelseek-gpu 2026-11-06/lark-lean-llm-gpu-kernel 2026-11-06/modelblaster 2026-11-06/serverbench-llm 2026-11-06/specpilot 2026-11-08/hst-llm 2026-11-12/autoqs 2026-11-12/bitdecoding-fp4-fp4-kv 2026-11-12/bunshinrl 2026-11-12/engineagent 2026-11-12/ernie-evolve-5-5-flash 2026-11-12/flide 2026-11-12/foscar-2-4-bit-kv-cache 2026-11-12/infrarsi 2026-11-12/infrathon-ai 2026-11-12/item-108 2026-11-12/item-19 2026-11-12/item-27 2026-11-12/nccl-bot-nccl 2026-11-12/ridgefill-prefill 2026-11-12/rtl 2026-11-12/worldfoundry 2026-11-13/autoassumption-ml 2026-11-13/evolving-infra-llm 2026-11-13/kernelmosaic-cuda-kernel 2026-11-13/npu-kv 2026-11-14/no-second-run-rsi-801-30b-a3b 2026-11-14/singularity-bench 2026-11-16/ascendgym 2026-11-16/callo-kv 2026-11-16/paged-state-gated-deltanet 2026-11-16/singularity-bench-ai 2026-11-17/compoundingkernel 2026-11-17/llms-for-ai-infrastructure 2026-11-17/mobile-ai-factory 2026-11-18/claude-mythos-amd 2026-11-18/cubesandbox 2026-11-18/re-reading-is-not-free 2026-11-18/xing-4 2026-11-19/codex 2026-11-19/gemma-4-k-v-cache 2026-11-19/loopcache-kv 2026-11-19/ppa 2026-11-19/qda 2026-11-19/rsibench-infra 2026-11-20/performance-factory-codex 2026-11-20/singularity-bench-ai 2026-11-23/contexture 2026-11-23/ctrl-gpu 2026-11-23/edagoat-eda-gpu 2026-11-24/dissparse-top-p 2026-11-24/shirudo-ebpf 2026-11-24/uni3sim 2026-11-25/glm-5-5-rsi 2026-11-25/hopper-4-bit-kv 2026-11-25/loomkv-kv 2026-11-25/mosaic 2026-11-25/noevera -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -293,7 +435,30 @@
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/X0Ty_Ke_mtiACMcnSmDbpQ"target="_blank" rel="external nofollow noopener noreferrer">上海交大00后团队融资数千万，让Agent做定制的自进化推理引擎｜智能涌现首发<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 芯生代（上海交大人工智能学院李卓、郑雨杰，导师温颖、温睦宁）完成数千万元种子轮，投资方为启高资本、交大菡源母基金、元生创投。核心思路：给定&quot;模型 × 芯片 × 场景&quot;的具体组合，由 Agent 生成专用推理管线并在真实硬件上验证正确性与速度；EvoKernel 通过把试错经验沉淀为记忆，让 Ascend 上的算子生成正确率从 4% 提升到 83%，且无需重训或新标注。文中对标的智谱 RSI 工程化结果（GLM-5.3 驱动的 Infra Agent 在 10 万+ 国产加速卡集群上把端到端吞吐提升到基线约 3 倍）与前英伟达工程师创办的 INT21（用 Agent 群生成整套推理引擎）构成该方向的两条产业参照。</li>
 </ul>
-</div><section class="page archive" style="margin-top:2rem;">
+</div><script>
+    (function(){
+      var h = document.getElementById('研究经验');
+      var items = [];
+      for(var el = h && h.nextElementSibling; el && el.tagName !== 'H2'; el = el.nextElementSibling){
+        if(el.tagName === 'OL') items = items.concat(Array.prototype.slice.call(el.children));
+      }
+      items.forEach(function(li){
+        var ul = li.querySelector(':scope > ul');
+        if(!ul) return;
+        var d = document.createElement('details');
+        d.className = 'exp-item';
+        var s = document.createElement('summary');
+        while(li.firstChild && li.firstChild !== ul) s.appendChild(li.firstChild);
+        var n = document.createElement('span');
+        n.className = 'exp-count';
+        n.textContent = ul.children.length + ' 项工作';
+        s.appendChild(n);
+        d.appendChild(s);
+        d.appendChild(ul);
+        li.appendChild(d);
+      });
+    })();
+    </script><section class="page archive" style="margin-top:2rem;">
         <h2 class="single-title"><i class="fa-solid fa-diagram-project fa-fw" aria-hidden="true"></i>相关工作（按子主题自动聚合）</h2><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>世界模型 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-12/#worldfoundry" class="archive-item-link">WorldFoundry：面向世界智能的统一基础设施</a>
