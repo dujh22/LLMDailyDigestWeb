@@ -16,8 +16,8 @@
   <meta itemprop="description" content="ResearchEvolve 研究方向：研究自进化——AI 自主科研：让智能体自主提出假设、设计实验、迭代改进研究本身。
 研究范畴 研究自进化（research self-evolution / autonomous scientific discovery）让 AI 系统承担科研全流程或关键环节——文献调研、假设生成、实验设计与执行、结果分析、论文撰写与同行评审——并通过闭环反馈持续改进自身的科研能力。本方向涵盖：端到端 AI Scientist 系统、科研多智能体协作（研究员 / 评审 / 工程师角色分工）、假设生成与实验规划、自动机器学习研究（MLE / 科研代码自动化）、AI 同行评审与科研评测基准。社区关注的核心问题包括：如何保证自动产出研究的新颖性与正确性（而非平庸组合或错误结论）、实验闭环的可复现性与算力成本、AI 评审能否可靠替代人类质量把关、长周期科研目标如何分解与自我纠错，以及自主科研的学术伦理与署名规范。">
   <meta itemprop="datePublished" content="2026-08-30T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="5962">
+  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
+  <meta itemprop="wordCount" content="6083">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/researchevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="ResearchEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-30T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/researchevolve\/"
-    },"genre": "research","wordcount":  5962 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/researchevolve\/","datePublished": "2026-08-30T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  6083 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/researchevolve\/","datePublished": "2026-08-30T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -275,6 +275,7 @@
 <ol>
 <li><strong>形式化不替代审验</strong>：重大主张应公开源码、数据与机器可检验证据；形式化只保证编码链条，仍需外部专家核对命题、假设及原稿一致性。
 <ul>
+<li><a href="../../updates/2026-11-26/#openai-math-ai">OpenAI Math：AI批量生成数学证明</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#vp-vnp-ai-lean">VP≠VNP：AI生成Lean证明</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-24/#vp-vnp">VP≠VNP：平坦-收缩双路证明</a> · 2026-11-24</li>
 <li><a href="../../updates/2026-11-24/#lean">量子算法智能体：Lean验证式电路优化</a> · 2026-11-24</li>
@@ -306,8 +307,10 @@
 <li><a href="../../updates/2026-10-29/#ai2-llm">Ai2 发布新颖性评判基准，揭示 LLM 裁判高度不稳定</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>执行与控制评测</strong>：评测应采用真实任务、领域指标并执行产物，标明搜索与评价控制权；无逐步真值时用有效统计证据给出轨迹质量边界，并以捷径基线排除投机。
+<li><strong>执行与控制评测</strong>：评测应采用真实任务、领域指标并执行产物，标明搜索与评价控制权；验证应拆成可追溯证据义务，无逐步真值时用统计证据界定轨迹质量，并以捷径基线排除投机。
 <ul>
+<li><a href="../../updates/2026-11-26/#ree">REE：开放科研能力评测</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#agent-as-a-verifier">Agent-as-a-Verifier：证据证书式通用验证</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#recurscibench-rsi">RecurSciBench：科学RSI迁移评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-71">无真值智能体评测：e值轨迹质量估计</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-20/#twinlab-bench">TwinLab-Bench：真实实验室孪生评测</a> · 2026-11-20</li>
@@ -502,6 +505,8 @@
 </li>
 <li><strong>结构化假设搜索</strong>：开放发现应以机制、层级或知识缺口约束搜索，将机制写成带边界与闭合条件的可组合方程部件；依据拟合、证明、反例及组合失败迭代议程。
 <ul>
+<li><a href="../../updates/2026-11-26/#patternminer">PatternMiner：小模型解释驱动数学发现</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#ai-buckingham">AI Buckingham：跨区间量纲标度发现</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#item-151">物理机制构造：方程原生跨学科编译</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-20/#theorizer">Theorizer：文献证据驱动理论生成</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-20/#pro-agent">Pro² Agent：问题状态驱动科研</a> · 2026-11-20</li>
@@ -517,7 +522,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-18/axion-1-0-sft 2026-11-18/bred 2026-11-18/discoveryagent 2026-11-18/inventa 2026-11-18/matos 2026-11-18/sciresearch-eval 2026-11-18/sciworkbench 2026-11-18/turing-agent 2026-11-19/automodel 2026-11-19/colombo 2026-11-19/hypoloop 2026-11-19/item-15 2026-11-19/item-36 2026-11-19/makoborn 2026-11-19/mle-agents 2026-11-19/retriever-perceiver-reasoner 2026-11-19/stembench 2026-11-20/astra 2026-11-20/auto-alpha 2026-11-20/buggymle 2026-11-20/car 2026-11-20/deepquest 2026-11-20/epicompass 2026-11-20/openai-rsi 2026-11-20/openhagen-worlds 2026-11-20/piccolo 2026-11-20/pro-agent 2026-11-20/theorizer 2026-11-20/twinlab-bench 2026-11-21/claude-lean 2026-11-21/item-26 2026-11-21/sailsearch 2026-11-23/claude 2026-11-23/item-23 2026-11-23/item-25 2026-11-23/item-3 2026-11-23/item-7 2026-11-23/minimax 2026-11-23/navier-stokes-claude-lean 2026-11-24/item-4 2026-11-24/lean 2026-11-24/matharness 2026-11-24/mlevolver 2026-11-24/superintelligence-is-arriving-ai 2026-11-24/vp-vnp 2026-11-25/9-4 2026-11-25/beyond-accuracy 2026-11-25/gpt-6 2026-11-25/hfm 2026-11-25/item-151 2026-11-25/item-71 2026-11-25/leannext 2026-11-25/noevera 2026-11-25/pde 2026-11-25/phyevo-mic-rsi 2026-11-25/recurscibench-rsi 2026-11-25/tea-leaves 2026-11-25/vp-vnp-ai-lean -->
+<!-- experience-seen: 2026-11-19/automodel 2026-11-19/colombo 2026-11-19/hypoloop 2026-11-19/item-15 2026-11-19/item-36 2026-11-19/makoborn 2026-11-19/mle-agents 2026-11-19/retriever-perceiver-reasoner 2026-11-19/stembench 2026-11-20/astra 2026-11-20/auto-alpha 2026-11-20/buggymle 2026-11-20/car 2026-11-20/deepquest 2026-11-20/epicompass 2026-11-20/openai-rsi 2026-11-20/openhagen-worlds 2026-11-20/piccolo 2026-11-20/pro-agent 2026-11-20/theorizer 2026-11-20/twinlab-bench 2026-11-21/claude-lean 2026-11-21/item-26 2026-11-21/sailsearch 2026-11-23/claude 2026-11-23/item-23 2026-11-23/item-25 2026-11-23/item-3 2026-11-23/item-7 2026-11-23/minimax 2026-11-23/navier-stokes-claude-lean 2026-11-24/item-4 2026-11-24/lean 2026-11-24/matharness 2026-11-24/mlevolver 2026-11-24/superintelligence-is-arriving-ai 2026-11-24/vp-vnp 2026-11-25/9-4 2026-11-25/beyond-accuracy 2026-11-25/gpt-6 2026-11-25/hfm 2026-11-25/item-151 2026-11-25/item-71 2026-11-25/leannext 2026-11-25/noevera 2026-11-25/pde 2026-11-25/phyevo-mic-rsi 2026-11-25/recurscibench-rsi 2026-11-25/tea-leaves 2026-11-25/vp-vnp-ai-lean 2026-11-26/agent-as-a-verifier 2026-11-26/ai-buckingham 2026-11-26/openai-math-ai 2026-11-26/patternminer 2026-11-26/ree -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

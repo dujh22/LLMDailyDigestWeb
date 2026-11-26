@@ -16,8 +16,8 @@
   <meta itemprop="description" content="EvalEvolve 研究方向：进化式评测——随能力增长持续演化、抗污染的评测基准与方法。
 研究范畴 进化式评测（evolutionary / dynamic evaluation）针对静态基准易被污染、快速过时的问题，主张让基准与方法随模型能力增长持续演化、抗污染。本方向涵盖：持续更新的 live benchmarks、动态 / 等价变体评测、自动出题（auto-benchmaking）、抗污染机制，以及自进化基准框架。社区关注的核心问题包括：如何持续、低成本地产生高质量新题并标定难度、如何抵抗训练数据污染与基准泄漏、动态评测如何与真实世界能力对齐避免指标漂移，以及多模态 / Agent / 长周期任务的评测有效性。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="11696">
+  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
+  <meta itemprop="wordCount" content="12103">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/evalevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="EvalEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evalevolve\/"
-    },"genre": "research","wordcount":  11696 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evalevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  12103 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evalevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -298,9 +298,11 @@
 <li><a href="../../updates/2026-10-29/#gym-anything-rt">Gym-Anything-RT：视觉语言智能体实时交互评测基准</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>可执行答案验真</strong>：开放域任务优先采用程序验证器、形式证明或动态证据核查，分开判定答案、证据与合规；判分秘密与权限须置于智能体边界外，并允许规格等价解。
+<li><strong>可执行答案验真</strong>：开放域任务优先采用程序验证器、形式证明或动态证据核查，并分开判定答案、证据与合规；执行一致须用隐藏反事实实例排除巧合。判分秘密置于智能体边界外，并允许规格等价解。
 <ul>
 <li><a href="../../updates/2026-11-26/#lingsante-medguard">LingSante MedGuard：多专家医疗安全护栏</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#cf-reward">CF Reward：反事实执行防奖励作弊</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#agent-as-a-verifier">Agent-as-a-Verifier：证据证书式通用验证</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#stcg">STCG：检测过度规定测试</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#evicraft">EviCraft：证据闭包式具身评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#benchmint">BenchMint：任务与评分联合构建</a> · 2026-11-25</li>
@@ -333,8 +335,9 @@
 <li><a href="../../updates/2026-10-29/#livesearch">LiveSearch：以可执行验证代码构建金融搜索智能体实时评测基准</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>全过程证据审计</strong>：智能体评测不能只看最终成功率或把 CoT 当完整证据；应以只追加账本记录失败、决策、权限、环境与评分器版本，并保存可回放状态归因故障。
+<li><strong>全过程证据审计</strong>：智能体评测不能只看最终成功率或把 CoT 当完整证据；应以只追加账本保存可回放状态、权限、环境与版本。归因时先定位最早关键错误，再用局部证据诊断，避免整轨迹噪声。
 <ul>
+<li><a href="../../updates/2026-11-26/#recordroute">RecordRoute：定位引导的故障诊断</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-26/#autorlbench-rl">AutoRLBench：真实RL故障诊修评测</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#worldleague">WorldLeague：物理能动性统一评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-133">端点条件化过程增益评估</a> · 2026-11-25</li>
@@ -378,9 +381,11 @@
 <li><a href="../../updates/2026-10-29/#tracetrial-bench">TraceTrial-Bench：智能体运行框架可靠性与故障归因基准</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>难度与覆盖维护</strong>：题集应同时维护模型无关难度分布、场景单元与真实行为足迹的缺陷覆盖，并监测区分度、逐单元回归和参考答案上限；总分会掩盖短板与混杂。
+<li><strong>难度与覆盖维护</strong>：题集应维护模型无关难度、场景与语言条件、真实行为足迹的缺陷覆盖，并逐单元监测区分度和参考答案上限；跨语言须分别校准迁移与置信度。总分会掩盖短板与混杂。
 <ul>
 <li><a href="../../updates/2026-11-26/#robodojo-mirror">RoboDojo-Mirror：镜像反射鲁棒性评测</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#lost-in-translation">Lost in Translation：多语言决策校准</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#irtiqa">IRTIQA：自进化跨语言迁移评测</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#geodecisions">GeoDecisions：空间感知与地理偏差评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#asterism">ASTERISM：多图捷径审计与归因</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-24/#pure">PURE：多粒度身份匹配诊断</a> · 2026-11-24</li>
@@ -401,8 +406,10 @@
 <li><a href="../../updates/2026-10-31/#item-13">基准测试是难度分布的经验度量</a> · 2026-10-31</li>
 </ul>
 </li>
-<li><strong>长周期任务流</strong>：持续学习应在连续任务流中分测获取、使用、变更、修复、遗忘与迁移；须跨评估接口区分表征遗忘和读出错配，并检验记忆证据的新鲜度、情境、域外保留及可撤回性。
+<li><strong>长周期任务流</strong>：持续学习应在跨任务依赖流中分测知识更新、能力形成、技能组合、遗忘与迁移；持久状态或单项熟练不等于可复用演化，须检验兼容性、保持性、域外迁移与可撤回性。
 <ul>
+<li><a href="../../updates/2026-11-26/#item-39">软提示技能的组合兼容与保持</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#evolink-bench">EvoLink-Bench：长程依赖任务流评测</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#vla">预训练VLA持续学习：分布外遗忘诊断</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#robolivemem">RoboLiveMem：动静态配对记忆评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-117">保留观测历史应对惯例复现</a> · 2026-11-25</li>
@@ -473,8 +480,9 @@
 <li><a href="../../updates/2026-10-29/#gym-anything-rt">Gym-Anything-RT：视觉语言智能体实时交互评测基准</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>裁判稳定性审计</strong>：自动裁判需跨规则、提示、顺序、身份、模型与时间审计；模型比较应直接估计目标轨迹分布上的成对差值，并按证据权限校准，覆盖不足时只报告界。
+<li><strong>裁判稳定性审计</strong>：自动裁判需跨规则、提示、顺序、身份、模型与时间审计，并以人机分歧发现清单外偏差。模型比较应估计目标轨迹上的成对差值，按证据权限和决策影响校准；覆盖不足只报告界。
 <ul>
+<li><a href="../../updates/2026-11-26/#hub-j">HUB-J：人类偏好驱动偏差审计</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#transport-safe-evaluation">Transport-Safe Evaluation：轨迹感知的随时有效审计</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-133">端点条件化过程增益评估</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-123">暴露度预判奖励作弊</a> · 2026-11-25</li>
@@ -503,6 +511,8 @@
 </li>
 <li><strong>搜索确认分配预算</strong>：演化搜索应先保证评测能分辨并累积真实增益，再以匹配计算的基线、历史峰值和未见任务判断收益；低成本扩展候选后独立验证，且不向搜索暴露标准。
 <ul>
+<li><a href="../../updates/2026-11-26/#skillsbench">SkillsBench：技能增益的噪声感知审计</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#sealedloop">SealedLoop：环外密封评判</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#tea-leaves">Tea Leaves：早期曲线预测训练走势</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#recurscibench-rsi">RecurSciBench：科学RSI迁移评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-24/#schedule-rank-profile">Schedule, Rank, Profile：游戏智能体持续评测</a> · 2026-11-24</li>
@@ -542,8 +552,10 @@
 <li><a href="../../updates/2026-10-29/#ruharness">RuHarness：评判准则与智能体脚手架协同演化</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>多预算能力曲线</strong>：模型与架构排序会随任务时长、采样、推断设置、服务基底和资源预算改变；应报告能力—成本曲线与多档 pass@k，并用配对重复运行校验稳定性。
+<li><strong>多预算能力曲线</strong>：模型与架构排序会随任务时长、采样、服务基底和预算改变；应报告能力—成本曲线与多档 pass@k。扩大候选池会放大验证器噪声，须用配对重复运行检查净收益与稳定性。
 <ul>
+<li><a href="../../updates/2026-11-26/#cf-reward">CF Reward：反事实执行防奖励作弊</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#best-of-n-steering">Best-of-N Steering：验证误差放大奖励作弊</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#shellbench">ShellBench：真实日常智能体评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#s1arena-mm">S1Arena-MM：多模态快慢决策评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#prefill1">Prefill1：固定前缀单词元判决</a> · 2026-11-25</li>
@@ -583,6 +595,7 @@
 </li>
 <li><strong>科研流程实证化</strong>：科研智能体应分开评测创意、方向选择、判别性实验设计、审稿与执行，并以领域公认指标、可复现实验、原始证据复算或形式证明计分；自报结论不算证据。
 <ul>
+<li><a href="../../updates/2026-11-26/#ree">REE：开放科研能力评测</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#recurscibench-rsi">RecurSciBench：科学RSI迁移评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#beyond-accuracy">Beyond Accuracy：实验规划诊断评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-23/#item-23">非对称角色与信念差控制</a> · 2026-11-23</li>
@@ -637,6 +650,7 @@
 </li>
 <li><strong>代理指标须校准</strong>：低成本代理或参与训练、选择的评估器，须以真实下游成功、分布外迁移和机制消融校准，并审计误差方向；高估错误行为的缺口会被优化持续放大。
 <ul>
+<li><a href="../../updates/2026-11-26/#best-of-n-steering">Best-of-N Steering：验证误差放大奖励作弊</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#item-71">无真值智能体评测：e值轨迹质量估计</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-133">端点条件化过程增益评估</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-123">暴露度预判奖励作弊</a> · 2026-11-25</li>
@@ -714,8 +728,10 @@
 <li><a href="../../updates/2026-11-05/#lolbench">LoLBench：大型软件系统长程开发智能体评测</a> · 2026-11-05</li>
 </ul>
 </li>
-<li><strong>评测流水线回归</strong>：持续评测应把基准当软件，版本化数据、标签可用时点、评估器、环境与推断配置；隔离答案资产，控制与系统无关的状态，并以回归测试和自适应攻击复测。
+<li><strong>评测流水线回归</strong>：持续评测应把基准当软件，版本化数据、标签时点、评估器、环境与推断配置；隔离答案资产并控制无关状态。安全评测须用部署代表且保守的自适应攻击复测，其他能力用独立分布回归。
 <ul>
+<li><a href="../../updates/2026-11-26/#vfr">VFR：验证式失败驱动修复</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#item-23">攻击策略选择：代理策略误导监控评测</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#tgb">TGB节点亲和力：时点泄漏审计</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#tare">TARE：无内容状态归因审计</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#stcg">STCG：检测过度规定测试</a> · 2026-11-25</li>
@@ -752,7 +768,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/3d-gamedev-arena 2026-11-19/breath-dx 2026-11-19/done-but-still-working 2026-11-19/eva-rsi 2026-11-19/evidence-interpretation 2026-11-19/flcva 2026-11-19/forecastgym 2026-11-19/futurebench 2026-11-19/gandalf 2026-11-19/item-36 2026-11-19/item-49 2026-11-19/item-53 2026-11-19/l2c 2026-11-19/normal-only-tta 2026-11-19/resolution-hypothesis 2026-11-19/robobuilder 2026-11-19/rsibench-infra 2026-11-19/safe-personal-rsi 2026-11-19/stembench 2026-11-20/appsci-bench 2026-11-20/buggymle 2026-11-20/chronodossier 2026-11-20/compact-bench 2026-11-20/everydaybench 2026-11-20/frontieror 2026-11-20/item-65 2026-11-20/knowing-what-you-know 2026-11-20/openhagen-worlds 2026-11-20/rigel-ladon 2026-11-20/sage-evolve-preview 2026-11-20/singularity-bench-ai 2026-11-20/sirius-tiamat 2026-11-20/stability-gap 2026-11-20/strideworld 2026-11-20/twinlab-bench 2026-11-21/gemini-4-hydrogen-token 2026-11-21/item-21 2026-11-21/item-24 2026-11-21/mind2act-world 2026-11-21/turingspace 2026-11-23/altair-nidhogg 2026-11-23/astronautbench 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/groupassistbench 2026-11-23/item-10 2026-11-23/item-23 2026-11-23/memory-tax 2026-11-23/metr-3-6 2026-11-23/openai-ai 2026-11-23/so-arena 2026-11-23/splitbench 2026-11-24/agentrobocritic 2026-11-24/agrimanager 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/item-60 2026-11-24/item-67 2026-11-24/massys 2026-11-24/memanto 2026-11-24/nopeworld 2026-11-24/omnidecisionbench 2026-11-24/pure 2026-11-24/rdqa 2026-11-24/respacebench 2026-11-24/schedule-rank-profile 2026-11-25/antares-smaug 2026-11-25/asterism 2026-11-25/benchmint 2026-11-25/beyond-accuracy 2026-11-25/co-graft 2026-11-25/cua-see 2026-11-25/decision-models 2026-11-25/detection-gap 2026-11-25/evicraft 2026-11-25/gemini-4-neon 2026-11-25/geodecisions 2026-11-25/iclr-2026 2026-11-25/item-108 2026-11-25/item-109 2026-11-25/item-117 2026-11-25/item-123 2026-11-25/item-133 2026-11-25/item-136 2026-11-25/item-69 2026-11-25/item-71 2026-11-25/item-93 2026-11-25/lce 2026-11-25/mini-psych-agent 2026-11-25/prefill1 2026-11-25/recurscibench-rsi 2026-11-25/robolivemem 2026-11-25/robouniverse-10k 2026-11-25/s1arena-mm 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/stun-bench 2026-11-25/swapcert 2026-11-25/tare 2026-11-25/tea-leaves 2026-11-25/tgb 2026-11-25/transport-safe-evaluation 2026-11-25/vla 2026-11-25/worldleague 2026-11-26/autorlbench-rl 2026-11-26/lingsante-medguard 2026-11-26/robodojo-mirror -->
+<!-- experience-seen: 2026-11-19/3d-gamedev-arena 2026-11-19/breath-dx 2026-11-19/done-but-still-working 2026-11-19/eva-rsi 2026-11-19/evidence-interpretation 2026-11-19/flcva 2026-11-19/forecastgym 2026-11-19/futurebench 2026-11-19/gandalf 2026-11-19/item-36 2026-11-19/item-49 2026-11-19/item-53 2026-11-19/l2c 2026-11-19/normal-only-tta 2026-11-19/resolution-hypothesis 2026-11-19/robobuilder 2026-11-19/rsibench-infra 2026-11-19/safe-personal-rsi 2026-11-19/stembench 2026-11-20/appsci-bench 2026-11-20/buggymle 2026-11-20/chronodossier 2026-11-20/compact-bench 2026-11-20/everydaybench 2026-11-20/frontieror 2026-11-20/item-65 2026-11-20/knowing-what-you-know 2026-11-20/openhagen-worlds 2026-11-20/rigel-ladon 2026-11-20/sage-evolve-preview 2026-11-20/singularity-bench-ai 2026-11-20/sirius-tiamat 2026-11-20/stability-gap 2026-11-20/strideworld 2026-11-20/twinlab-bench 2026-11-21/gemini-4-hydrogen-token 2026-11-21/item-21 2026-11-21/item-24 2026-11-21/mind2act-world 2026-11-21/turingspace 2026-11-23/altair-nidhogg 2026-11-23/astronautbench 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/groupassistbench 2026-11-23/item-10 2026-11-23/item-23 2026-11-23/memory-tax 2026-11-23/metr-3-6 2026-11-23/openai-ai 2026-11-23/so-arena 2026-11-23/splitbench 2026-11-24/agentrobocritic 2026-11-24/agrimanager 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/item-60 2026-11-24/item-67 2026-11-24/massys 2026-11-24/memanto 2026-11-24/nopeworld 2026-11-24/omnidecisionbench 2026-11-24/pure 2026-11-24/rdqa 2026-11-24/respacebench 2026-11-24/schedule-rank-profile 2026-11-25/antares-smaug 2026-11-25/asterism 2026-11-25/benchmint 2026-11-25/beyond-accuracy 2026-11-25/co-graft 2026-11-25/cua-see 2026-11-25/decision-models 2026-11-25/detection-gap 2026-11-25/evicraft 2026-11-25/gemini-4-neon 2026-11-25/geodecisions 2026-11-25/iclr-2026 2026-11-25/item-108 2026-11-25/item-109 2026-11-25/item-117 2026-11-25/item-123 2026-11-25/item-133 2026-11-25/item-136 2026-11-25/item-69 2026-11-25/item-71 2026-11-25/item-93 2026-11-25/lce 2026-11-25/mini-psych-agent 2026-11-25/prefill1 2026-11-25/recurscibench-rsi 2026-11-25/robolivemem 2026-11-25/robouniverse-10k 2026-11-25/s1arena-mm 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/stun-bench 2026-11-25/swapcert 2026-11-25/tare 2026-11-25/tea-leaves 2026-11-25/tgb 2026-11-25/transport-safe-evaluation 2026-11-25/vla 2026-11-25/worldleague 2026-11-26/agent-as-a-verifier 2026-11-26/autorlbench-rl 2026-11-26/best-of-n-steering 2026-11-26/cf-reward 2026-11-26/evolink-bench 2026-11-26/hub-j 2026-11-26/irtiqa 2026-11-26/item-23 2026-11-26/item-39 2026-11-26/lingsante-medguard 2026-11-26/lost-in-translation 2026-11-26/recordroute 2026-11-26/ree 2026-11-26/robodojo-mirror 2026-11-26/sealedloop 2026-11-26/skillsbench 2026-11-26/vfr -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

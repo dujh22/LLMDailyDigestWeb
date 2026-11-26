@@ -13,8 +13,8 @@
   <meta itemprop="name" content="MonitorEvolve">
   <meta itemprop="description" content="MonitorEvolve 研究方向：监管自进化——当 AI 开始参与研发下一代 AI（“AI 造 AI”），让对它的监控、评估与外部审查机制随被监管系统一起演化，使人类在递归自我改进的飞轮中始终保有可核查的知情权与干预权。">
   <meta itemprop="datePublished" content="2026-11-20T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T17:53:43+08:00">
-  <meta itemprop="wordCount" content="3686">
+  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
+  <meta itemprop="wordCount" content="3893">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/monitorevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="MonitorEvolve">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T17:53:43+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/monitorevolve\/"
-    },"genre": "research","wordcount":  3686 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/monitorevolve\/","datePublished": "2026-11-20T00:00:00+08:00","dateModified": "2026-11-26T17:53:43+08:00","publisher": {
+    },"genre": "research","wordcount":  3893 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/monitorevolve\/","datePublished": "2026-11-20T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -321,8 +321,9 @@
 <li><a href="../../updates/2026-11-25/#clr">CLR：无痕隐藏目标推理</a> · 2026-11-25</li>
 </ul>
 </li>
-<li><strong>疑点驱动稀疏审计</strong>：审计预算有限且能力差距大时，优先让可信监控器定位具体疑点，再触发追问或人工审查。
+<li><strong>疑点驱动稀疏审计</strong>：审计预算有限或轨迹很长时，先定位最早关键疑点，再用局部证据追问、归因或人工审查；全轨迹上下文反而可能引入干扰。
 <ul>
+<li><a href="../../updates/2026-11-26/#recordroute">RecordRoute：定位引导的故障诊断</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#interrogation-protocols">Interrogation Protocols：追问式智能体监控</a> · 2026-11-25</li>
 </ul>
 </li>
@@ -336,8 +337,9 @@
 <li><a href="../../updates/2026-11-25/#evolutionary-ai-control">Evolutionary AI Control：演化种群安全证明</a> · 2026-11-25</li>
 </ul>
 </li>
-<li><strong>攻防共演监控器</strong>：面对持续产生的新型规避行为，监控器应与攻击策略交替训练并递进难度，而非依赖静态检测器。
+<li><strong>攻防共演监控器</strong>：监控器应与具部署代表性且偏保守的攻击策略交替训练并递进难度；弱攻击代理会制造虚假安全感。
 <ul>
+<li><a href="../../updates/2026-11-26/#item-23">攻击策略选择：代理策略误导监控评测</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-24/#io-ai">IO-AI：信息战攻防协同演化</a> · 2026-11-24</li>
 </ul>
 </li>
@@ -346,8 +348,18 @@
 <li><a href="../../updates/2026-11-24/#centry">CENTRY：快慢潜状态持续风险估计</a> · 2026-11-24</li>
 </ul>
 </li>
+<li><strong>证据导向监督</strong>：长期互审应奖励可验证、符合协议的证据，而非仅奖励结果；否则结果反馈会使合谋成为最优策略。
+<ul>
+<li><a href="../../updates/2026-11-26/#prove">PROVE：证据驱动的协议强化</a> · 2026-11-26</li>
+</ul>
+</li>
+<li><strong>环外密封验收</strong>：自我改进的升级判定应交给改进环不可见的独立评判器，并在未见环境中顺序检验，避免环内误差和迁移落差制造虚假进步。
+<ul>
+<li><a href="../../updates/2026-11-26/#sealedloop">SealedLoop：环外密封评判</a> · 2026-11-26</li>
+</ul>
+</li>
 </ol>
-<!-- experience-seen: 2026-11-20/driftguard 2026-11-20/openai 2026-11-21/item-26 2026-11-21/tether 2026-11-23/epistemic-guard 2026-11-23/metr-3-6 2026-11-23/openai-ai 2026-11-24/centry 2026-11-24/io-ai 2026-11-24/sro 2026-11-24/superintelligence-is-arriving-ai 2026-11-25/clr 2026-11-25/detection-gap 2026-11-25/doppelvet 2026-11-25/evolutionary-ai-control 2026-11-25/expguard 2026-11-25/interrogation-protocols 2026-11-25/item-123 2026-11-25/item-152 2026-11-25/item-29 2026-11-25/item-69 2026-11-25/p-tap 2026-11-25/siren -->
+<!-- experience-seen: 2026-11-20/driftguard 2026-11-20/openai 2026-11-21/item-26 2026-11-21/tether 2026-11-23/epistemic-guard 2026-11-23/metr-3-6 2026-11-23/openai-ai 2026-11-24/centry 2026-11-24/io-ai 2026-11-24/sro 2026-11-24/superintelligence-is-arriving-ai 2026-11-25/clr 2026-11-25/detection-gap 2026-11-25/doppelvet 2026-11-25/evolutionary-ai-control 2026-11-25/expguard 2026-11-25/interrogation-protocols 2026-11-25/item-123 2026-11-25/item-152 2026-11-25/item-29 2026-11-25/item-69 2026-11-25/p-tap 2026-11-25/siren 2026-11-26/item-23 2026-11-26/prove 2026-11-26/recordroute 2026-11-26/sealedloop -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架 / 文档</strong></p>

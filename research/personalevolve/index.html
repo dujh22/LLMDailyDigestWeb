@@ -16,8 +16,8 @@
   <meta itemprop="description" content="PersonalEvolve 研究方向：个性化 AI 的自主进化——为单个用户定制的模型 / Agent 依据个人数据与交互持续自我改进，而非依赖全网反馈的统一进化。
 研究范畴 个性化自进化（personalized self-evolution）研究&#34;为一个人服务的 AI&#34;如何自主变强：系统从单个用户的对话、偏好、示范、纠正与行为轨迹中学习，把经验沉淀为长期记忆、用户画像、个性化技能与参数适配，使模型对齐的粒度从&#34;全人类平均偏好&#34;下沉到&#34;这一个用户&#34;。本方向涵盖：个人 Agent 的长期记忆与画像进化、用户行为轨迹转训练信号（行为监督、轨迹蒸馏）、个性化偏好学习与 RLHF 变体、从少量样本推断用户价值与个性（persona / value inference）、用户级技能归纳与复用、个性化与通用能力的权衡（catastrophic personalization）、以及个性化带来的过拟合、谄媚、隐私与越权边界。社区关注的核心问题包括：如何在不污染通用能力的前提下做用户级适配、个人数据稀缺且含噪时如何稳健学习、个性化的长期效应如何度量、以及&#34;懂你&#34;与&#34;讨好你&#34;“替你决定&#34;之间的边界。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="3344">
+  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
+  <meta itemprop="wordCount" content="3438">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/personalevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="PersonalEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/personalevolve\/"
-    },"genre": "research","wordcount":  3344 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/personalevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  3438 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/personalevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -303,6 +303,7 @@
 </li>
 <li><strong>证据保真记忆</strong>：长期记忆应保留原始证据，并按事件、情感、时间等视图组织；检索预算和语义轴需随查询动态分配。
 <ul>
+<li><a href="../../updates/2026-11-26/#procedure-memory">Procedure Memory：情节驱动的程序记忆</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-20/#stark">STARK：事件作边的双图记忆</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-20/#chronodossier">ChronoDossier：长档案式时序记忆评测</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-18/#kv-ltm-kv">KV-LTM：会话KV缓存长期记忆</a> · 2026-11-18</li>
@@ -316,8 +317,10 @@
 <li><a href="../../updates/2026-10-30/#memsteer">MemSteer：从用户历史生成监督信号以优化智能体记忆</a> · 2026-10-30</li>
 </ul>
 </li>
-<li><strong>纠错沉淀资产</strong>：将纠正和工具失败提炼为带适用条件的规则、技能或工具，并在决策点注入和运行时验证，才能跨会话复用。
+<li><strong>纠错沉淀资产</strong>：将纠正、工具失败和反复选择提炼为带适用条件的程序或技能；在决策点按本地任务效用路由并运行时验证，才能跨会话或客户端复用。
 <ul>
+<li><a href="../../updates/2026-11-26/#procedure-memory">Procedure Memory：情节驱动的程序记忆</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#p-fedskill">P-FedSkill：个性化联邦技能学习</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-20/#brain">Brain：会话驱动的个性化技能演化</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-15/#deepseek-harness">DeepSeek Harness：可演化插件工作台</a> · 2026-11-15</li>
 <li><a href="../../updates/2026-11-14/#skill-adapter">Skill Adapter：通用技能的个性化适配与在线路由</a> · 2026-11-14</li>
@@ -375,6 +378,7 @@
 </li>
 <li><strong>谱系化隐私治理</strong>：个人原始上下文优先端侧保留；跨用户只共享按范围分级提炼的经验，撤回时须沿谱系清除提示、技能与学习状态并验证不可再用。
 <ul>
+<li><a href="../../updates/2026-11-26/#p-fedskill">P-FedSkill：个性化联邦技能学习</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-23/#item-45">跨载体隐私记忆治理</a> · 2026-11-23</li>
 <li><a href="../../updates/2026-11-12/#mixua">MixUA：面向多用户多智能体交互的多粒度记忆提取</a> · 2026-11-12</li>
 <li><a href="../../updates/2026-11-12/#deep-personalization">Deep Personalization：面向本地主动智能体的持续上下文观察</a> · 2026-11-12</li>
@@ -391,7 +395,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-18/kv-ltm-kv 2026-11-18/mpg-dpo 2026-11-18/regimecouncil 2026-11-18/remembered-as-brief 2026-11-18/train-after-you-measure 2026-11-19/item-1 2026-11-19/learning-through-discernment 2026-11-19/safe-personal-rsi 2026-11-20/brain 2026-11-20/chronodossier 2026-11-20/clonact 2026-11-20/habitusmem 2026-11-20/item-63 2026-11-20/stark 2026-11-23/item-45 2026-11-24/ai-twin 2026-11-24/hyperharness 2026-11-25/wasp -->
+<!-- experience-seen: 2026-11-19/item-1 2026-11-19/learning-through-discernment 2026-11-19/safe-personal-rsi 2026-11-20/brain 2026-11-20/chronodossier 2026-11-20/clonact 2026-11-20/habitusmem 2026-11-20/item-63 2026-11-20/stark 2026-11-23/item-45 2026-11-24/ai-twin 2026-11-24/hyperharness 2026-11-25/wasp 2026-11-26/p-fedskill 2026-11-26/procedure-memory -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

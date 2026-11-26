@@ -13,8 +13,8 @@
   <meta itemprop="name" content="PhysicalEvolve">
   <meta itemprop="description" content="PhysicalEvolve 研究方向：物理世界自进化——让 AI 在与真实物理世界的碰撞中持续改进对物理机制的建模、对物理系统的控制，以及自身的研究与改进方法，由物理环境而非人工标注充当最终裁判。">
   <meta itemprop="datePublished" content="2026-11-01T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="6806">
+  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
+  <meta itemprop="wordCount" content="6922">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/physicalevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="PhysicalEvolve">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-11-01T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/physicalevolve\/"
-    },"genre": "research","wordcount":  6806 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/physicalevolve\/","datePublished": "2026-11-01T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  6922 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/physicalevolve\/","datePublished": "2026-11-01T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -271,9 +271,11 @@
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
 <ol>
-<li><strong>偏差驱动模型修订</strong>：面对偏差，应先归因机制、方程、边界、参数、几何或接口，再并行验证，优先修复最早高频断点。机制可编译为带边界与闭合条件的方程部件，以组合失败定位缺失物理项。
+<li><strong>偏差驱动模型修订</strong>：面对偏差，先按物理区间归因机制、方程、边界、参数、几何或接口，再沿可解释路径受限编辑并验证；候选方程除量纲合法外，还须解释区间内观测依赖。
 <ul>
+<li><a href="../../updates/2026-11-26/#powerfix">PowerFix：物理引导迭代修复</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-26/#partagent">PartAgent：专家集成与闭环分割</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#ai-buckingham">AI Buckingham：跨区间量纲标度发现</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#roboada">RoboAda：计划保持式指令校正</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-151">物理机制构造：方程原生跨学科编译</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-21/#mind2act-world">Mind2Act World：心智动作组合诊断</a> · 2026-11-21</li>
@@ -335,8 +337,10 @@
 <li><a href="../../updates/2026-11-05/#enzymersi">EnzymeRSI：用于酶设计的双循环递归自我改进系统</a> · 2026-11-05</li>
 </ul>
 </li>
-<li><strong>验证器过拟合防控</strong>：自改进时不要暴露可被投机的精确评分规则；验证器须绑定任务契约和后续闭环结果，并用未暴露任务检验迁移。
+<li><strong>验证器过拟合防控</strong>：自改进时不要暴露可投机的精确评分规则；验证器须绑定任务契约、闭环结果与未见任务，并警惕扩大候选池放大评判噪声和奖励作弊。
 <ul>
+<li><a href="../../updates/2026-11-26/#sealedloop">SealedLoop：环外密封评判</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#best-of-n-steering">Best-of-N Steering：验证误差放大奖励作弊</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#robouniverse-10k">RoboUniverse-10K：万级可验证具身环境</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#evicraft">EviCraft：证据闭包式具身评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-19/#aerorsi">AeroRSI：续飞验证式递归自改进</a> · 2026-11-19</li>
@@ -381,8 +385,9 @@
 <li><a href="../../updates/2026-11-02/#go-3-preview">智元发布具身智能模型 GO-3 Preview</a> · 2026-11-02</li>
 </ul>
 </li>
-<li><strong>人机经验联合预训</strong>：用人类视频扩大语义与动作覆盖，再以异构机器人数据持续训练，可提升跨本体迁移，但需学习共享动作或空间表征。
+<li><strong>人机经验联合预训</strong>：用人类视频扩大语义与动作覆盖，再以异构机器人数据持续训练，可提升跨本体迁移；共享表征还应显式编码本体运动学及其与场景的关系。
 <ul>
+<li><a href="../../updates/2026-11-26/#omniact">OmniAct：运动学图驱动跨具身控制</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#rynnvla-latent">RynnVLA-Latent：几何潜动作预训练</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#native-lam">Native LAM：世界模型提炼潜在动作</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-19/#tcp4d-tcp">TCP4D：统一TCP跟踪与轨迹生成</a> · 2026-11-19</li>
@@ -460,7 +465,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/aerorsi 2026-11-19/data-to-valves 2026-11-19/forceharness 2026-11-19/heave-ho 2026-11-19/hypoloop 2026-11-19/item-40 2026-11-19/optics-as-code 2026-11-19/robobuilder 2026-11-19/tcp4d-tcp 2026-11-19/vanguard 2026-11-20/agnes-harness 2026-11-20/coachsi 2026-11-20/cyber-physical-rsi 2026-11-20/drift 2026-11-20/item-76 2026-11-20/laq 2026-11-21/depth-pro-2 2026-11-21/mind2act-world 2026-11-21/turingspace 2026-11-21/voda 2026-11-21/zerovln 2026-11-23/bel 2026-11-23/loco-wam 2026-11-23/ls-mbpo 2026-11-23/navttt 2026-11-24/agentrobocritic 2026-11-24/nopeworld 2026-11-24/respacebench 2026-11-24/scape 2026-11-24/stereovlm 2026-11-25/catway 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/gpt-6 2026-11-25/item-117 2026-11-25/item-151 2026-11-25/mxi-memicl 2026-11-25/nanoastra 2026-11-25/native-lam 2026-11-25/ovogo 2026-11-25/phyevo-mic-rsi 2026-11-25/plan4d-4d 2026-11-25/refocus 2026-11-25/roboada 2026-11-25/robouniverse-10k 2026-11-25/rynnvla-latent 2026-11-25/self-upgrading-embodied-agents 2026-11-25/videcide 2026-11-25/vla 2026-11-25/worldleague 2026-11-25/xmind 2026-11-26/partagent 2026-11-26/robodojo-mirror 2026-11-26/s-mind -->
+<!-- experience-seen: 2026-11-19/aerorsi 2026-11-19/data-to-valves 2026-11-19/forceharness 2026-11-19/heave-ho 2026-11-19/hypoloop 2026-11-19/item-40 2026-11-19/optics-as-code 2026-11-19/robobuilder 2026-11-19/tcp4d-tcp 2026-11-19/vanguard 2026-11-20/agnes-harness 2026-11-20/coachsi 2026-11-20/cyber-physical-rsi 2026-11-20/drift 2026-11-20/item-76 2026-11-20/laq 2026-11-21/depth-pro-2 2026-11-21/mind2act-world 2026-11-21/turingspace 2026-11-21/voda 2026-11-21/zerovln 2026-11-23/bel 2026-11-23/loco-wam 2026-11-23/ls-mbpo 2026-11-23/navttt 2026-11-24/agentrobocritic 2026-11-24/nopeworld 2026-11-24/respacebench 2026-11-24/scape 2026-11-24/stereovlm 2026-11-25/catway 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/gpt-6 2026-11-25/item-117 2026-11-25/item-151 2026-11-25/mxi-memicl 2026-11-25/nanoastra 2026-11-25/native-lam 2026-11-25/ovogo 2026-11-25/phyevo-mic-rsi 2026-11-25/plan4d-4d 2026-11-25/refocus 2026-11-25/roboada 2026-11-25/robouniverse-10k 2026-11-25/rynnvla-latent 2026-11-25/self-upgrading-embodied-agents 2026-11-25/videcide 2026-11-25/vla 2026-11-25/worldleague 2026-11-25/xmind 2026-11-26/ai-buckingham 2026-11-26/best-of-n-steering 2026-11-26/omniact 2026-11-26/partagent 2026-11-26/powerfix 2026-11-26/robodojo-mirror 2026-11-26/s-mind 2026-11-26/sealedloop -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架 / 项目</strong></p>

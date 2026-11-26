@@ -16,8 +16,8 @@
   <meta itemprop="description" content="PromptEvolve 研究方向：提示自进化——系统提示 / 指令 / 示例 / 多阶段 LM 程序的自动优化与持续进化，以及智能体从执行反馈中自我改写提示的闭环。
 研究范畴 提示自进化（prompt self-evolution / automatic prompt optimization）把提示词视为可搜索、可学习、可版本化的&#34;软参数&#34;：在冻结模型权重的前提下，由模型自身或外层优化器依据任务反馈持续改写系统提示、指令措辞、推理模板、few-shot 示例乃至多阶段 LM 程序的全部提示集合。本方向涵盖：基于进化算法 / 束搜索的离散提示搜索（Promptbreeder、EvoPrompt、ProTeGi 类）、LLM-as-Optimizer 的元提示优化（OPRO、APE）、面向多阶段程序的编译式优化（DSPy / MIPRO）、以自然语言反馈为&#34;梯度&#34;的反思式进化（TextGrad、GEPA）、智能体在运行时把失败经验沉淀为提示 / 技能 / 记忆的自我改写（Reflexion、Voyager 类），以及提示与模型权重协同进化（提示优化 vs. 强化微调的样本效率对比）。社区关注的核心问题包括：提示优化是否能以远低于 RL 的 rollout 成本逼近甚至超过权重训练、自动演化的提示能否跨模型 / 跨任务迁移、如何在开发集上避免过拟合与&#34;评测钻空子&#34;、多阶段程序中各节点提示的信用分配，以及自演化提示的可审计性与安全边界。">
   <meta itemprop="datePublished" content="2026-10-08T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="2738">
+  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
+  <meta itemprop="wordCount" content="2840">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/promptevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="PromptEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-08T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/promptevolve\/"
-    },"genre": "research","wordcount":  2738 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/promptevolve\/","datePublished": "2026-10-08T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  2840 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/promptevolve\/","datePublished": "2026-10-08T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -312,8 +312,9 @@
 <li><a href="../../updates/2026-11-03/#rubricworld-llm">RubricWorld：世界模型引导的 LLM 评分规约优化</a> · 2026-11-03</li>
 </ul>
 </li>
-<li><strong>安全更新门禁</strong>：把攻击漏检等风险设为可认证硬约束；每次提示更新须经安全回归、复测和修复验证，失败默认拒绝并可回滚。
+<li><strong>安全更新门禁</strong>：把风险设为硬约束，并从执行失误提炼可触发、可迁移的安全原则；每次更新仍须回归复测，失败即拒绝或回滚。
 <ul>
+<li><a href="../../updates/2026-11-26/#precept">PRECEPT：失误驱动的安全原则演化</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-19/#safe-personal-rsi">Safe Personal RSI：回滚修复式安全更新</a> · 2026-11-19</li>
 <li><a href="../../updates/2026-11-17/#cps-crisp">CPS与CRISP：风险认证提示优化</a> · 2026-11-17</li>
 </ul>
@@ -345,13 +346,19 @@
 <li><a href="../../updates/2026-11-12/#autoscaffold-ai">AutoScaffold：AI 自动生成自适应训练脚手架</a> · 2026-11-12</li>
 </ul>
 </li>
-<li><strong>专家提示模块化</strong>：将专家能力蒸馏为可拼接软提示，可在不重训骨干的情况下增量扩展，并减少新专家对旧能力的干扰。
+<li><strong>软提示组合验收</strong>：独立学会的软提示技能不可直接视为可拼接模块；入库前须检验组合兼容、原能力保持与跨模型迁移。
 <ul>
+<li><a href="../../updates/2026-11-26/#item-39">软提示技能的组合兼容与保持</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#cspd">CSPD：可组合软提示蒸馏</a> · 2026-11-25</li>
 </ul>
 </li>
+<li><strong>质量约束多样性</strong>：优化创意等分布属性时，应在质量门槛下选择差异化候选；只追求行为多样性会牺牲平均质量。
+<ul>
+<li><a href="../../updates/2026-11-26/#sepo">SEPO：演化系统提示集成</a> · 2026-11-26</li>
+</ul>
+</li>
 </ol>
-<!-- experience-seen: 2026-11-18/dcps 2026-11-19/resolution-hypothesis 2026-11-19/safe-personal-rsi 2026-11-20/item-60 2026-11-24/item-47 2026-11-25/cspd 2026-11-25/lce 2026-11-25/notary -->
+<!-- experience-seen: 2026-11-19/resolution-hypothesis 2026-11-19/safe-personal-rsi 2026-11-20/item-60 2026-11-24/item-47 2026-11-25/cspd 2026-11-25/lce 2026-11-25/notary 2026-11-26/item-39 2026-11-26/precept 2026-11-26/sepo 2026-11-26/vsft -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

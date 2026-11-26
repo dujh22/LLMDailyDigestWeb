@@ -16,8 +16,8 @@
   <meta itemprop="description" content="RobotEvolve 研究方向：具身智能自进化——机器人 / 具身 Agent 在仿真与真实环境中通过自主数据采集、自动奖励设计与 sim-to-real 迭代持续提升。
 研究范畴 具身智能自进化（embodied self-evolution）关注机器人与具身 Agent 如何在与物理（或高保真仿真）世界的交互中自主改进：由模型自己提出任务、生成场景与资产、设计奖励函数、采集与筛选轨迹，再回灌到视觉-语言-动作（VLA）基础模型的训练中，形成&#34;任务生成 → 仿真执行 → 数据回灌 → 模型更新 → sim-to-real 验证&#34;的闭环。本方向涵盖：VLA / 通用机器人基础模型、跨本体（cross-embodiment）数据与迁移、LLM 驱动的奖励与课程自动设计（Eureka 类）、生成式仿真与自动场景合成（RoboGen 类）、世界模型驱动的想象训练，以及具身 Agent 的技能库积累与长程规划。社区关注的核心问题包括：真实交互数据昂贵且不可无限扩展时如何让自进化闭环&#34;跑得起&#34;、仿真进化出的能力能否稳定迁移到真实机器人、自动奖励与自评是否会被策略作弊，以及如何度量具身能力的真实泛化而非在固定基准上过拟合。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="4218">
+  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
+  <meta itemprop="wordCount" content="4291">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/robotevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="RobotEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/robotevolve\/"
-    },"genre": "research","wordcount":  4218 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/robotevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  4291 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/robotevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -274,8 +274,9 @@
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
 <ol>
-<li><strong>双路径自进化</strong>：部署后应按修复范围分层：记忆、Harness、接口适配与小规模权重编辑用于快速纠错，缺失能力再做完整策略更新；后者须额外评测分布外能力保持。
+<li><strong>双路径自进化</strong>：部署后先用记忆、Harness与接口适配快速纠错，缺失能力再更新策略；脚手架验证的成功经验可蒸馏回权重，但须评测分布外能力保持。
 <ul>
+<li><a href="../../updates/2026-11-26/#roboevo">RoboEvo²：脚手架策略协同进化</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#vla">预训练VLA持续学习：分布外遗忘诊断</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#self-upgrading-embodied-agents">Self-Upgrading Embodied Agents：经验驱动权重自升级</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#roboada">RoboAda：计划保持式指令校正</a> · 2026-11-25</li>
@@ -343,8 +344,9 @@
 <li><a href="../../updates/2026-10-30/#huge">HuGe：基于自我中心经验的类人通用视觉-语言-动作模型</a> · 2026-10-30</li>
 </ul>
 </li>
-<li><strong>跨本体潜在空间</strong>：跨本体迁移应统一语义对齐的潜在动作或工具中心空间，并显式处理形态、动作参数化和控制频率差异，避免直接共享原始动作。
+<li><strong>跨本体潜在空间</strong>：跨本体迁移应统一语义对齐的潜在动作或工具中心空间，并以场景条件运动学结构显式处理形态、参数化和控制频率差异。
 <ul>
+<li><a href="../../updates/2026-11-26/#omniact">OmniAct：运动学图驱动跨具身控制</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#rynnvla-latent">RynnVLA-Latent：几何潜动作预训练</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#native-lam">Native LAM：世界模型提炼潜在动作</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-19/#tcp4d-tcp">TCP4D：统一TCP跟踪与轨迹生成</a> · 2026-11-19</li>
@@ -392,6 +394,8 @@
 </li>
 <li><strong>信息边界闭合</strong>：评测、工具与训练轨迹都须只使用部署时可见信息，并隔离评分逻辑；偏好奖励强搜索需配独立标准与校准正则，防止泄漏和优化验证器。
 <ul>
+<li><a href="../../updates/2026-11-26/#sealedloop">SealedLoop：环外密封评判</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#best-of-n-steering">Best-of-N Steering：验证误差放大奖励作弊</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#robouniverse-10k">RoboUniverse-10K：万级可验证具身环境</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#evicraft">EviCraft：证据闭包式具身评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#cgsi">CGSI：上下文对齐技能内化</a> · 2026-11-25</li>
@@ -425,7 +429,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/aerorsi 2026-11-19/heave-ho 2026-11-19/item-40 2026-11-19/robobuilder 2026-11-19/tcp4d-tcp 2026-11-20/coachsi 2026-11-20/drift 2026-11-20/hint-wam 2026-11-20/item-73 2026-11-20/laq 2026-11-21/mind2act-world 2026-11-21/zerovln 2026-11-23/embodied-harness 2026-11-23/loco-wam 2026-11-23/ls-mbpo 2026-11-23/navttt 2026-11-24/agentrobocritic 2026-11-24/nopeworld 2026-11-24/scape 2026-11-25/catway 2026-11-25/cgsi 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/item-117 2026-11-25/jko-grpo-wasserstein 2026-11-25/margin 2026-11-25/motion-mamba-2-0 2026-11-25/mxi-memicl 2026-11-25/nanoastra 2026-11-25/native-lam 2026-11-25/ovogo 2026-11-25/plan4d-4d 2026-11-25/refocus 2026-11-25/roboada 2026-11-25/roboharness-zero 2026-11-25/robolivemem 2026-11-25/robouniverse-10k 2026-11-25/rynnvla-latent 2026-11-25/self-upgrading-embodied-agents 2026-11-25/veritouch 2026-11-25/vla 2026-11-25/worldleague 2026-11-26/acap 2026-11-26/robodojo-mirror -->
+<!-- experience-seen: 2026-11-19/aerorsi 2026-11-19/heave-ho 2026-11-19/item-40 2026-11-19/robobuilder 2026-11-19/tcp4d-tcp 2026-11-20/coachsi 2026-11-20/drift 2026-11-20/hint-wam 2026-11-20/item-73 2026-11-20/laq 2026-11-21/mind2act-world 2026-11-21/zerovln 2026-11-23/embodied-harness 2026-11-23/loco-wam 2026-11-23/ls-mbpo 2026-11-23/navttt 2026-11-24/agentrobocritic 2026-11-24/nopeworld 2026-11-24/scape 2026-11-25/catway 2026-11-25/cgsi 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/item-117 2026-11-25/jko-grpo-wasserstein 2026-11-25/margin 2026-11-25/motion-mamba-2-0 2026-11-25/mxi-memicl 2026-11-25/nanoastra 2026-11-25/native-lam 2026-11-25/ovogo 2026-11-25/plan4d-4d 2026-11-25/refocus 2026-11-25/roboada 2026-11-25/roboharness-zero 2026-11-25/robolivemem 2026-11-25/robouniverse-10k 2026-11-25/rynnvla-latent 2026-11-25/self-upgrading-embodied-agents 2026-11-25/veritouch 2026-11-25/vla 2026-11-25/worldleague 2026-11-26/acap 2026-11-26/best-of-n-steering 2026-11-26/omniact 2026-11-26/robodojo-mirror 2026-11-26/roboevo 2026-11-26/sealedloop -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
