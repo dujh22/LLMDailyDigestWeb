@@ -170,5 +170,5 @@ $$
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: https://dujh22.github.io/LLMDailyDigestWeb/papers/training-free-looped-transformers/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/papers/%E6%9C%AA%E5%BD%92%E6%A1%A3/method/training-free-looped-transformers/  
 

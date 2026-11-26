@@ -388,5 +388,5 @@ RSIHub 的证据保障依赖于受信任的框架服务、主机保护及 Git/�
 ---
 
 > 作者: [LLM-DailyDigest](https://github.com/dujh22/LLM-DailyDigest)  
-> URL: https://dujh22.github.io/LLMDailyDigestWeb/papers/rsihub/  
+> URL: https://dujh22.github.io/LLMDailyDigestWeb/papers/harnessevolve/method/rsihub/  
 
