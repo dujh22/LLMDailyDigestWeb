@@ -8,27 +8,103 @@
     <title>2026-11-26 科研追新 - LLM-DailyDigest · 大模型研究日报</title><meta name="author" content="LLM-DailyDigest">
 <meta name="author-link" content="https://github.com/dujh22/LLM-DailyDigest">
 <meta name="description" content="
-当日精选（由提交工具自动创建）。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+当日精选（由提交工具自动创建）。
+
+今日概览
+
+经验自进化
+
+SIM：把每次修改的依据、预期和实测结果写入可续写记忆，使智能体能跨模型、跨数据集复用改进经验。
+Harness Learning：让小型提案模型依据执行反馈持续改写运行框架，使冻结模型跨任务平均超过大七倍的教师模型。
+
+
+系统演化
+
+EvolonAI：把国产芯片上的真实运行结果变成训练信号，自动优化算子、缓存和调度，替代逐平台人工调优。
+AutoRLBench：以真实强化学习训练事故检验诊断、归因和修复能力，揭示现有智能体整体通过率最高仅33.3%。
+NightWatch：用轻量监视器在主模型思考时持续追踪界面，避免智能体按过期截图误操作或空等。
+
+
+具身智能
+
+ACAP：让常驻编码智能体异步控制不同机器人部件，仅在物理依赖出现时协调，使任务耗时降低28.2%。
+RoboDojo-Mirror：用不改变任务的镜像场景暴露机器人混淆倒影与实体的问题，成功率最高下降62.5个百分点。
+S-Mind：用受监督的空间令牌融合多视图并转换观察视角，让多模态模型在内部形成三维场景表示。
+PartAgent：融合三维区域和多视图证据，再由智能体检查并修正分区，解决一次性部件分割难以纠错的问题。
+
+
+模型架构
+
+LoomFormer：按词元动态调整注意力头之间的信息路线，仅增加2%算力便提升不同规模模型的性能。
+Qwen-Image-HD：只训练局部图块，生成时结合邻域与压缩全局历史，降低4K图像成本并抑制重复条纹。
+
+
+
+对当前研究的启发
+
+MemoryEvolve
+
+迁移｜从 SIM 把“依据—预期—实测—结论”用到经验写入：按四字段存改动，检索时与代码共同返回
+延续｜SIM 未保存落选方案且检索成本未知：对比仅胜者与全候选记忆，测迁移成功率、token 和延迟
+
+
+HarnessEvolve
+
+迁移｜从 Harness Learning 把执行反馈用到框架优化：冻结主模型，由小模型改写框架并按任务得分迭代
+迁移｜从 NightWatch 把流式状态校验用到长程执行：对比快照、定时刷新和持续监视的误操作率与成本
+
+
+InfraEvolve
+
+迁移｜从 EvolonAI 把真实运行反馈用到推理栈搜索：联合优化算子、缓存和调度，按正确性、时延、吞吐择优
+
+
+EvalEvolve
+
+延续｜AutoRLBench 缺少无报错及后期故障：各新增20例，测根因定位率和修复通过率
+迁移｜从 RoboDojo-Mirror 把镜像变换用到动态评测：生成反射场景，统计成功率跌幅、误识别率和接触偏差
+
+
+RobotEvolve
+
+迁移｜从 ACAP 把部件级异步自治用到多臂控制：对比单智能体与固定分工，测成功率、碰撞和耗时
+
+
+PhysicalEvolve
+
+迁移｜从 PartAgent 把证据驱动纠错用到场景解析：融合二维视图与三维区域后复检重分，测IoU和修正轮数
+
+
+NewModel
+
+迁移｜从 LoomFormer 把逐词元头间路由用到架构实验：同参数同算力对比标准注意力的困惑度与吞吐
+
+
+
+" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-26 科研追新">
-  <meta itemprop="description" content="当日精选（由提交工具自动创建）。">
+  <meta itemprop="description" content="当日精选（由提交工具自动创建）。
+今日概览 经验自进化 SIM：把每次修改的依据、预期和实测结果写入可续写记忆，使智能体能跨模型、跨数据集复用改进经验。 Harness Learning：让小型提案模型依据执行反馈持续改写运行框架，使冻结模型跨任务平均超过大七倍的教师模型。 系统演化 EvolonAI：把国产芯片上的真实运行结果变成训练信号，自动优化算子、缓存和调度，替代逐平台人工调优。 AutoRLBench：以真实强化学习训练事故检验诊断、归因和修复能力，揭示现有智能体整体通过率最高仅33.3%。 NightWatch：用轻量监视器在主模型思考时持续追踪界面，避免智能体按过期截图误操作或空等。 具身智能 ACAP：让常驻编码智能体异步控制不同机器人部件，仅在物理依赖出现时协调，使任务耗时降低28.2%。 RoboDojo-Mirror：用不改变任务的镜像场景暴露机器人混淆倒影与实体的问题，成功率最高下降62.5个百分点。 S-Mind：用受监督的空间令牌融合多视图并转换观察视角，让多模态模型在内部形成三维场景表示。 PartAgent：融合三维区域和多视图证据，再由智能体检查并修正分区，解决一次性部件分割难以纠错的问题。 模型架构 LoomFormer：按词元动态调整注意力头之间的信息路线，仅增加2%算力便提升不同规模模型的性能。 Qwen-Image-HD：只训练局部图块，生成时结合邻域与压缩全局历史，降低4K图像成本并抑制重复条纹。 对当前研究的启发 MemoryEvolve 迁移｜从 SIM 把“依据—预期—实测—结论”用到经验写入：按四字段存改动，检索时与代码共同返回 延续｜SIM 未保存落选方案且检索成本未知：对比仅胜者与全候选记忆，测迁移成功率、token 和延迟 HarnessEvolve 迁移｜从 Harness Learning 把执行反馈用到框架优化：冻结主模型，由小模型改写框架并按任务得分迭代 迁移｜从 NightWatch 把流式状态校验用到长程执行：对比快照、定时刷新和持续监视的误操作率与成本 InfraEvolve 迁移｜从 EvolonAI 把真实运行反馈用到推理栈搜索：联合优化算子、缓存和调度，按正确性、时延、吞吐择优 EvalEvolve 延续｜AutoRLBench 缺少无报错及后期故障：各新增20例，测根因定位率和修复通过率 迁移｜从 RoboDojo-Mirror 把镜像变换用到动态评测：生成反射场景，统计成功率跌幅、误识别率和接触偏差 RobotEvolve 迁移｜从 ACAP 把部件级异步自治用到多臂控制：对比单智能体与固定分工，测成功率、碰撞和耗时 PhysicalEvolve 迁移｜从 PartAgent 把证据驱动纠错用到场景解析：融合二维视图与三维区域后复检重分，测IoU和修正轮数 NewModel 迁移｜从 LoomFormer 把逐词元头间路由用到架构实验：同参数同算力对比标准注意力的困惑度与吞吐">
   <meta itemprop="datePublished" content="2026-11-26T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:24:24+08:00">
-  <meta itemprop="wordCount" content="16">
+  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
+  <meta itemprop="wordCount" content="1052">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-26/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-26 科研追新">
-  <meta property="og:description" content="当日精选（由提交工具自动创建）。">
+  <meta property="og:description" content="当日精选（由提交工具自动创建）。
+今日概览 经验自进化 SIM：把每次修改的依据、预期和实测结果写入可续写记忆，使智能体能跨模型、跨数据集复用改进经验。 Harness Learning：让小型提案模型依据执行反馈持续改写运行框架，使冻结模型跨任务平均超过大七倍的教师模型。 系统演化 EvolonAI：把国产芯片上的真实运行结果变成训练信号，自动优化算子、缓存和调度，替代逐平台人工调优。 AutoRLBench：以真实强化学习训练事故检验诊断、归因和修复能力，揭示现有智能体整体通过率最高仅33.3%。 NightWatch：用轻量监视器在主模型思考时持续追踪界面，避免智能体按过期截图误操作或空等。 具身智能 ACAP：让常驻编码智能体异步控制不同机器人部件，仅在物理依赖出现时协调，使任务耗时降低28.2%。 RoboDojo-Mirror：用不改变任务的镜像场景暴露机器人混淆倒影与实体的问题，成功率最高下降62.5个百分点。 S-Mind：用受监督的空间令牌融合多视图并转换观察视角，让多模态模型在内部形成三维场景表示。 PartAgent：融合三维区域和多视图证据，再由智能体检查并修正分区，解决一次性部件分割难以纠错的问题。 模型架构 LoomFormer：按词元动态调整注意力头之间的信息路线，仅增加2%算力便提升不同规模模型的性能。 Qwen-Image-HD：只训练局部图块，生成时结合邻域与压缩全局历史，降低4K图像成本并抑制重复条纹。 对当前研究的启发 MemoryEvolve 迁移｜从 SIM 把“依据—预期—实测—结论”用到经验写入：按四字段存改动，检索时与代码共同返回 延续｜SIM 未保存落选方案且检索成本未知：对比仅胜者与全候选记忆，测迁移成功率、token 和延迟 HarnessEvolve 迁移｜从 Harness Learning 把执行反馈用到框架优化：冻结主模型，由小模型改写框架并按任务得分迭代 迁移｜从 NightWatch 把流式状态校验用到长程执行：对比快照、定时刷新和持续监视的误操作率与成本 InfraEvolve 迁移｜从 EvolonAI 把真实运行反馈用到推理栈搜索：联合优化算子、缓存和调度，按正确性、时延、吞吐择优 EvalEvolve 延续｜AutoRLBench 缺少无报错及后期故障：各新增20例，测根因定位率和修复通过率 迁移｜从 RoboDojo-Mirror 把镜像变换用到动态评测：生成反射场景，统计成功率跌幅、误识别率和接触偏差 RobotEvolve 迁移｜从 ACAP 把部件级异步自治用到多臂控制：对比单智能体与固定分工，测成功率、碰撞和耗时 PhysicalEvolve 迁移｜从 PartAgent 把证据驱动纠错用到场景解析：融合二维视图与三维区域后复检重分，测IoU和修正轮数 NewModel 迁移｜从 LoomFormer 把逐词元头间路由用到架构实验：同参数同算力对比标准注意力的困惑度与吞吐">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-26T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:24:24+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-26 科研追新">
-  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。">
+  <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
+今日概览 经验自进化 SIM：把每次修改的依据、预期和实测结果写入可续写记忆，使智能体能跨模型、跨数据集复用改进经验。 Harness Learning：让小型提案模型依据执行反馈持续改写运行框架，使冻结模型跨任务平均超过大七倍的教师模型。 系统演化 EvolonAI：把国产芯片上的真实运行结果变成训练信号，自动优化算子、缓存和调度，替代逐平台人工调优。 AutoRLBench：以真实强化学习训练事故检验诊断、归因和修复能力，揭示现有智能体整体通过率最高仅33.3%。 NightWatch：用轻量监视器在主模型思考时持续追踪界面，避免智能体按过期截图误操作或空等。 具身智能 ACAP：让常驻编码智能体异步控制不同机器人部件，仅在物理依赖出现时协调，使任务耗时降低28.2%。 RoboDojo-Mirror：用不改变任务的镜像场景暴露机器人混淆倒影与实体的问题，成功率最高下降62.5个百分点。 S-Mind：用受监督的空间令牌融合多视图并转换观察视角，让多模态模型在内部形成三维场景表示。 PartAgent：融合三维区域和多视图证据，再由智能体检查并修正分区，解决一次性部件分割难以纠错的问题。 模型架构 LoomFormer：按词元动态调整注意力头之间的信息路线，仅增加2%算力便提升不同规模模型的性能。 Qwen-Image-HD：只训练局部图块，生成时结合邻域与压缩全局历史，降低4K图像成本并抑制重复条纹。 对当前研究的启发 MemoryEvolve 迁移｜从 SIM 把“依据—预期—实测—结论”用到经验写入：按四字段存改动，检索时与代码共同返回 延续｜SIM 未保存落选方案且检索成本未知：对比仅胜者与全候选记忆，测迁移成功率、token 和延迟 HarnessEvolve 迁移｜从 Harness Learning 把执行反馈用到框架优化：冻结主模型，由小模型改写框架并按任务得分迭代 迁移｜从 NightWatch 把流式状态校验用到长程执行：对比快照、定时刷新和持续监视的误操作率与成本 InfraEvolve 迁移｜从 EvolonAI 把真实运行反馈用到推理栈搜索：联合优化算子、缓存和调度，按正确性、时延、吞吐择优 EvalEvolve 延续｜AutoRLBench 缺少无报错及后期故障：各新增20例，测根因定位率和修复通过率 迁移｜从 RoboDojo-Mirror 把镜像变换用到动态评测：生成反射场景，统计成功率跌幅、误识别率和接触偏差 RobotEvolve 迁移｜从 ACAP 把部件级异步自治用到多臂控制：对比单智能体与固定分工，测成功率、碰撞和耗时 PhysicalEvolve 迁移｜从 PartAgent 把证据驱动纠错用到场景解析：融合二维视图与三维区域后复检重分，测IoU和修正轮数 NewModel 迁移｜从 LoomFormer 把逐词元头间路由用到架构实验：同参数同算力对比标准注意力的困惑度与吞吐">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-26/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-25/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -41,8 +117,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-26\/"
-    },"genre": "updates","wordcount":  16 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-26\/","datePublished": "2026-11-26T00:00:00+08:00","dateModified": "2026-11-26T18:24:24+08:00","publisher": {
+    },"genre": "updates","wordcount":  1052 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-26\/","datePublished": "2026-11-26T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -214,7 +290,8 @@
   </div><nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/" title="LLM-DailyDigest · 大模型研究日报">主页</a></li><li class="breadcrumb-item"><a href="/LLMDailyDigestWeb/updates/" title="Updates">Updates</a></li><li class="breadcrumb-item active" aria-current="page">2026-11-26 科研追新</li>
     </ol>
-  </nav><main class="container"><aside class="toc" id="toc-auto"></aside>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     </aside>
@@ -224,15 +301,102 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-26 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-26">2026-11-26</time></span>&nbsp;<span title="更新于 2026-11-26 18:24:24"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-26">2026-11-26</time></span>&nbsp;<span title="16 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
-    </div><div
+      <div class="post-meta-line"><span title="发布于 2026-11-26 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-26">2026-11-26</time></span>&nbsp;<span title="更新于 2026-11-26 18:25:47"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-26">2026-11-26</time></span>&nbsp;<span title="1052 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#对当前研究的启发">对当前研究的启发</a></li>
+  </ul>
+</nav></div>
+      </div><div
       class="content"
       id="content"
       
       
     ><blockquote>
 <p>当日精选（由提交工具自动创建）。</p></blockquote>
-</div><section class="daily-items"><article id="sim" class="summary-card daily-item">
+<!-- daily-summary:start -->
+<h2 id="今日概览">今日概览</h2>
+<ul>
+<li><strong>经验自进化</strong>
+<ul>
+<li><a href="#sim">SIM</a>：把每次修改的依据、预期和实测结果写入可续写记忆，使智能体能跨模型、跨数据集复用改进经验。</li>
+<li><a href="#harness-learning">Harness Learning</a>：让小型提案模型依据执行反馈持续改写运行框架，使冻结模型跨任务平均超过大七倍的教师模型。</li>
+</ul>
+</li>
+<li><strong>系统演化</strong>
+<ul>
+<li><a href="#evolonai">EvolonAI</a>：把国产芯片上的真实运行结果变成训练信号，自动优化算子、缓存和调度，替代逐平台人工调优。</li>
+<li><a href="#autorlbench-rl">AutoRLBench</a>：以真实强化学习训练事故检验诊断、归因和修复能力，揭示现有智能体整体通过率最高仅33.3%。</li>
+<li><a href="#nightwatch">NightWatch</a>：用轻量监视器在主模型思考时持续追踪界面，避免智能体按过期截图误操作或空等。</li>
+</ul>
+</li>
+<li><strong>具身智能</strong>
+<ul>
+<li><a href="#acap">ACAP</a>：让常驻编码智能体异步控制不同机器人部件，仅在物理依赖出现时协调，使任务耗时降低28.2%。</li>
+<li><a href="#robodojo-mirror">RoboDojo-Mirror</a>：用不改变任务的镜像场景暴露机器人混淆倒影与实体的问题，成功率最高下降62.5个百分点。</li>
+<li><a href="#s-mind">S-Mind</a>：用受监督的空间令牌融合多视图并转换观察视角，让多模态模型在内部形成三维场景表示。</li>
+<li><a href="#partagent">PartAgent</a>：融合三维区域和多视图证据，再由智能体检查并修正分区，解决一次性部件分割难以纠错的问题。</li>
+</ul>
+</li>
+<li><strong>模型架构</strong>
+<ul>
+<li><a href="#loomformer">LoomFormer</a>：按词元动态调整注意力头之间的信息路线，仅增加2%算力便提升不同规模模型的性能。</li>
+<li><a href="#qwen-image-hd">Qwen-Image-HD</a>：只训练局部图块，生成时结合邻域与压缩全局历史，降低4K图像成本并抑制重复条纹。</li>
+</ul>
+</li>
+</ul>
+<h2 id="对当前研究的启发">对当前研究的启发</h2>
+<ul>
+<li><strong>MemoryEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#sim">SIM</a> 把“依据—预期—实测—结论”用到经验写入：按四字段存改动，检索时与代码共同返回</li>
+<li>延续｜<a href="#sim">SIM</a> 未保存落选方案且检索成本未知：对比仅胜者与全候选记忆，测迁移成功率、token 和延迟</li>
+</ul>
+</li>
+<li><strong>HarnessEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#harness-learning">Harness Learning</a> 把执行反馈用到框架优化：冻结主模型，由小模型改写框架并按任务得分迭代</li>
+<li>迁移｜从 <a href="#nightwatch">NightWatch</a> 把流式状态校验用到长程执行：对比快照、定时刷新和持续监视的误操作率与成本</li>
+</ul>
+</li>
+<li><strong>InfraEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#evolonai">EvolonAI</a> 把真实运行反馈用到推理栈搜索：联合优化算子、缓存和调度，按正确性、时延、吞吐择优</li>
+</ul>
+</li>
+<li><strong>EvalEvolve</strong>
+<ul>
+<li>延续｜<a href="#autorlbench-rl">AutoRLBench</a> 缺少无报错及后期故障：各新增20例，测根因定位率和修复通过率</li>
+<li>迁移｜从 <a href="#robodojo-mirror">RoboDojo-Mirror</a> 把镜像变换用到动态评测：生成反射场景，统计成功率跌幅、误识别率和接触偏差</li>
+</ul>
+</li>
+<li><strong>RobotEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#acap">ACAP</a> 把部件级异步自治用到多臂控制：对比单智能体与固定分工，测成功率、碰撞和耗时</li>
+</ul>
+</li>
+<li><strong>PhysicalEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#partagent">PartAgent</a> 把证据驱动纠错用到场景解析：融合二维视图与三维区域后复检重分，测IoU和修正轮数</li>
+</ul>
+</li>
+<li><strong>NewModel</strong>
+<ul>
+<li>迁移｜从 <a href="#loomformer">LoomFormer</a> 把逐词元头间路由用到架构实验：同参数同算力对比标准注意力的困惑度与吞吐</li>
+</ul>
+</li>
+</ul>
+<!-- daily-summary:end -->
+</div><section class="daily-items daily-tiered">
+          <nav class="daily-nav">
+            <span class="daily-nav-label">共 15 条</span><a href="#daily-featured">⭐ 重点 11</a><a href="#daily-related">🔬 相关 4</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">11 条</span></h2>
+          <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="sim" class="summary-card daily-item">
   <h2 id="sim-title" class="daily-item-title">SIM：经验记忆驱动持续改进</h2><p class="single-subtitle daily-item-summary">用可续写的自我改进记忆保存修改依据与结果，帮助智能体跨模型、跨数据集持续优化外部程序。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>机器之心</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/memoryevolve/">MemoryEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%B0%E5%BF%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体记忆</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我改进</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.18856" target="_blank" rel="noopener">https://arxiv.org/abs/2611.18856</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/BdT-t4JQivNji9OIax89-A" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/BdT-t4JQivNji9OIax89-A</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在需要跨模型或跨任务持续优化智能体 harness 的系统中，可借鉴 SIM 记录修改依据、预测与实测结果，并将其供后续优化器检索和修订。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>可迁移的自我改进资产不应只有最终代码，还应包含可审查的修改因果记录，使后续优化能区分应保留的原则与需适配的实现。</p>
 </div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
@@ -248,48 +412,6 @@
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">MemoryEvolve｜Google RSI 新作：跨模型、跨数据，如何让 Agent 带着经验持续自我改进？https://mp.weixin.qq.com/s/BdT-t4JQivNji9OIax89-A</div>
   </details></article>
-<article id="evolonai" class="summary-card daily-item">
-  <h2 id="evolonai-title" class="daily-item-title">EvolonAI：机器反馈驱动算力自进化</h2><p class="single-subtitle daily-item-summary">钱晨创立EvolonAI，用机器可验证的运行反馈训练Evolver，自动优化国产芯片上的模型推理。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>暗涌Waves</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/OP1zfX2rx0dlBU2oZsOLIQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/OP1zfX2rx0dlBU2oZsOLIQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在国产芯片、云平台或推理集群中，可与EvolonAI合作，用Evolver自动适配模型与硬件并优化算子、缓存和任务调度。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>AI基础设施能即时、客观地验证代码性能，因此可将每次真实运行结果直接转化为训练信号，成为递归自我改进的天然闭环环境。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>是什么</strong>：前商汤执行研究总监钱晨创立EvolonAI，并完成近亿元人民币种子轮融资，计划用自研Evolver模型自动运营AI算力。</li>
-<li><strong>关键能力</strong>：Evolver可读取日志、修改算子与运行软件、执行实验，并按实测性能评分、回滚和继续探索；目标是在不同模型与芯片组合上持续训练和优化推理效率，而非仅调整智能体脚手架。</li>
-<li><strong>限制</strong>：目前端到端流程主要由现有模型跑通，自研模型仍在训练；持续进化通常在四五轮后趋于饱和，对未见芯片和模型组合的泛化能力尚待验证。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">RSI创业｜Momenta领投，前商汤执行研究总监创业，押注AI for AI Infra https://mp.weixin.qq.com/s/OP1zfX2rx0dlBU2oZsOLIQ</div>
-  </details></article>
-<article id="gemini-4-neon" class="summary-card daily-item">
-  <h2 id="gemini-4-neon-title" class="daily-item-title">Gemini 4 Neon：长流程智能体优化</h2><p class="single-subtitle daily-item-summary">Google推出Gemini 4 Neon，主攻长流程智能体任务，以87.4分登顶LiveBench 2.0。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/DWkm7vUhp4avlz_tD4_8VQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/DWkm7vUhp4avlz_tD4_8VQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在浏览器操作、资料研究和编程智能体中将Neon作为候选模型，并结合专项得分与单任务成功成本进行模型路由。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体模型的总榜领先可能源于特定长流程能力，选型应同时匹配任务类型和成功任务成本，而非只看综合分数。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>是什么</strong>：Google推出面向长流程、重工具调用工作流的Gemini 4 Neon；其在LiveBench 2.0的471道题上获得87.4分，比Claude Fable 5.2和GPT-6.2 Astra高2.5分。</li>
-<li><strong>关键能力</strong>：浏览器操作、研究、编程和推理分项分别为95.6、94.5、89.7和89.6；单个成功任务成本为2.654美元，低于Fable 5.2的9.850美元，但高于Astra的1.941美元。</li>
-<li><strong>限制</strong>：Neon在Artificial Analysis智力指数中仅以61分排第三，且未领先所有代码基准；Plotly私有数据分析测试虽全部答对，但单次成本17.03美元，明显高于同样满分的Hydrogen 6.36美元。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">NewModel｜Gemini 4 Neon登顶LiveBench！长流程榜甩开Claude和GPT https://mp.weixin.qq.com/s/DWkm7vUhp4avlz_tD4_8VQ</div>
-  </details></article>
-<article id="agnes-harness" class="summary-card daily-item">
-  <h2 id="agnes-harness-title" class="daily-item-title">Agnes Harness：双系统经验复用</h2><p class="single-subtitle daily-item-summary">Agnes AI推出开源企业级智能体框架，让FDE连接业务与设备，并复用经过验证的交付经验。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>心兰</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%A4%8D%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验复用</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/AgnesAI-Labs/agnes-harness/tree/main" target="_blank" rel="noopener">https://github.com/AgnesAI-Labs/agnes-harness/tree/main</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/aPdk7uifWnz3e0o18RMzkQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/aPdk7uifWnz3e0o18RMzkQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在企业智能体交付中直接部署其开源代码，接入现有模型、MCP系统与设备，并将核验后的业务流程封装为版本化插件复用。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>企业智能体规模化交付的关键不只是增强模型能力，而是把高频决策下沉到本地，并将现场经验转化为受控、可验证的组织资产。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>是什么</strong>：Agnes Harness是面向前线部署工程师的开放式智能体运行与扩展框架，通过统一架构连接模型、工具、Skills、MCP业务系统及物理设备。</li>
-<li><strong>关键能力</strong>：采用大语言模型与9B决策模型Agnes Sys1的双系统分工，以测试时训练适配单次任务，并通过递归自我改进把验证有效的经验沉淀为版本化Skills和Playbook。机器狗仿真任务耗时缩短32.9%，自评中DeepPlanning得分87.07%、BigCodeBench-Hard V1通过率40.69%。</li>
-<li><strong>限制</strong>：现有成绩主要来自团队阶段性自评；跨客户复用插件前仍需适配规则、字段和权限并重新核验，否则可能不执行或产生错误结论。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">HarnessEvolve｜Agnes推出开源Agent神器Agnes Harness：专为FDE工程化交付而生https://mp.weixin.qq.com/s/aPdk7uifWnz3e0o18RMzkQ</div>
-  </details></article>
 <article id="harness-learning" class="summary-card daily-item">
   <h2 id="harness-learning-title" class="daily-item-title">Harness Learning：反馈驱动的框架元学习</h2><p class="single-subtitle daily-item-summary">训练4B提案者从执行反馈中迭代修改框架，让冻结模型跨任务提分，平均表现超过35B教师。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：脚手架演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>微信公众平台</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架演化</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E5%85%83%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;元学习</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/_HXvEUAzS0JE2vbdyTYL5g?scene=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/_HXvEUAzS0JE2vbdyTYL5g?scene=1</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在需要适配新任务的智能体系统中，可借鉴提案者与执行反馈闭环，在冻结基础模型时自动迭代运行框架代码。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体的适应能力可以外置为针对可执行框架的学习规则，跨任务提升不必依赖模型权重更新。</p>
@@ -304,6 +426,20 @@
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/_HXvEUAzS0JE2vbdyTYL5g?scene=1</div>
+  </details></article>
+<article id="evolonai" class="summary-card daily-item">
+  <h2 id="evolonai-title" class="daily-item-title">EvolonAI：机器反馈驱动算力自进化</h2><p class="single-subtitle daily-item-summary">钱晨创立EvolonAI，用机器可验证的运行反馈训练Evolver，自动优化国产芯片上的模型推理。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：递归自我改进</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>暗涌Waves</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/rsi%E5%88%9B%E4%B8%9A/">RSI创业</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/OP1zfX2rx0dlBU2oZsOLIQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/OP1zfX2rx0dlBU2oZsOLIQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在国产芯片、云平台或推理集群中，可与EvolonAI合作，用Evolver自动适配模型与硬件并优化算子、缓存和任务调度。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>AI基础设施能即时、客观地验证代码性能，因此可将每次真实运行结果直接转化为训练信号，成为递归自我改进的天然闭环环境。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：前商汤执行研究总监钱晨创立EvolonAI，并完成近亿元人民币种子轮融资，计划用自研Evolver模型自动运营AI算力。</li>
+<li><strong>关键能力</strong>：Evolver可读取日志、修改算子与运行软件、执行实验，并按实测性能评分、回滚和继续探索；目标是在不同模型与芯片组合上持续训练和优化推理效率，而非仅调整智能体脚手架。</li>
+<li><strong>限制</strong>：目前端到端流程主要由现有模型跑通，自研模型仍在训练；持续进化通常在四五轮后趋于饱和，对未见芯片和模型组合的泛化能力尚待验证。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">RSI创业｜Momenta领投，前商汤执行研究总监创业，押注AI for AI Infra https://mp.weixin.qq.com/s/OP1zfX2rx0dlBU2oZsOLIQ</div>
   </details></article>
 <article id="autorlbench-rl" class="summary-card daily-item">
   <h2 id="autorlbench-rl-title" class="daily-item-title">AutoRLBench：真实RL故障诊修评测</h2><p class="single-subtitle daily-item-summary">用真实强化学习事故评测智能体的诊断修复能力，最高整体通过率仅33.3%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>GAIR DAO</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%95%85%E9%9A%9C%E5%BD%92%E5%9B%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;故障归因</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/Thinking-Space/AutoRLBench" target="_blank" rel="noopener">https://github.com/Thinking-Space/AutoRLBench</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/vLofmaxMiJd77bGxG9ufcA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/vLofmaxMiJd77bGxG9ufcA</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在强化学习训练智能体或AI辅助研发系统中，可直接部署其代码作为诊断、根因定位和修复能力的评测基线。</p>
@@ -321,21 +457,6 @@
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/vLofmaxMiJd77bGxG9ufcA</div>
   </details></article>
-<article id="antom" class="summary-card daily-item">
-  <h2 id="antom-title" class="daily-item-title">Antom：序列表格图联合预训练</h2><p class="single-subtitle daily-item-summary">用序列、表格和图联合预训练支付行为与关系表示，跨业务迁移提升34.5%，线上损失率降低37.88%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多模态学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;风险控制</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.25403" target="_blank" rel="noopener">https://arxiv.org/abs/2611.25403</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在支付风控系统中借鉴三类数据统一预训练与任务路由机制，用少量标签快速迁移至新业务，并作为XGB或从头训练方案的替代基线。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>支付风控的跨域能力取决于能否统一沉淀行为与关系表征，这可使少标注新业务超过全标注从头训练。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：支付风险检测需要同时理解交易序列、表格属性和关系网络，并将已学能力迁移至不同业务及商户域。</li>
-<li><strong>旧法为何失效</strong>：从头训练依赖大量标注，跨业务复用能力有限；线上XGB方案的整体损失率仍有较大优化空间。</li>
-<li><strong>方法</strong>：构建约70亿参数的三合一Transformer，统一预训练序列、表格和图表示，并通过任务路由使每个任务仅激活约17亿参数；预训练主要使用蚂蚁国际内部支付数据。</li>
-<li><strong>实验</strong>：跨业务迁移较同架构从头训练提升目标指标34.5%；仅用25%标签便在不同商户域的AP和Recall@0.5%上超过全标签从头训练基线；在十亿级支付平台开展四个月线上实验，相对XGB-Online将整体损失率降低37.88%。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[Antom 三合一 Transformer：支付基础模型（101 ▲）](https://huggingface.co/papers/2611.25403?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
-  </details></article>
 <article id="nightwatch" class="summary-card daily-item">
   <h2 id="nightwatch-title" class="daily-item-title">NightWatch：主动流式界面感知</h2><p class="single-subtitle daily-item-summary">用轻量监视器持续追踪动态界面，解决计算机操作智能体因快照过时而误操作和空等的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：状态追踪</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%BF%BD%E8%B8%AA/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态追踪</a><a href="/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图形用户界面智能体</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.28947" target="_blank" rel="noopener">https://arxiv.org/abs/2611.28947</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在桌面、动态网页或移动端长程操作智能体中，可借鉴NightWatch的轻量流式监视器，在主模型推理期间持续校验界面状态并避免执行过时动作。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>动态环境中，决定何时重新感知与感知到什么同等重要，持续的低成本状态同步可比扩大决策模型更有效地缩小感知—动作间隙。</p>
@@ -350,21 +471,6 @@
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[别睡，保持警觉：面向计算机操作智能体的主动感知（94 ▲）](https://huggingface.co/papers/2611.28947?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
-  </details></article>
-<article id="loomformer" class="summary-card daily-item">
-  <h2 id="loomformer-title" class="daily-item-title">LoomFormer：逐词元动态重连电路</h2><p class="single-subtitle daily-item-summary">用纵向头间注意力动态重连每个词元的计算电路，以仅增2%算力获得跨规模性能提升。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;架构演化</a><a href="/LLMDailyDigestWeb/topic/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;机器学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.30634" target="_blank" rel="noopener">https://arxiv.org/abs/2611.30634</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/Caiyun-AI/LoomFormer" target="_blank" rel="noopener">https://github.com/Caiyun-AI/LoomFormer</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在语言模型架构研发中直接使用其代码，或借鉴纵向头间注意力与双流设计，在较低额外算力下增强模型能力。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>将计算控制与语义内容分流后，注意力头之间可以按词元动态组织电路，而无需依赖扩大模型或训练算力换取性能。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：让 Transformer 不再沿固定计算路径处理所有词元，而是能按词元动态调整注意力头之间的信息流。</li>
-<li><strong>旧法为何失效</strong>：标准架构主要依靠残差流传递各层输出，难以显式、动态地选择和组合先前注意力头的结果。</li>
-<li><strong>方法</strong>：提出 Loom Attention，将跨词元的横向注意力与跨先前注意力头输出的纵向注意力交织；以归一化、门控线性注意力读取逐词元矩阵记忆，并在 LoomFormer 中用向量流和矩阵流分别承载控制与内容。</li>
-<li><strong>实验</strong>：在语言建模及下游任务中，LoomFormer 匹配使用超过3倍训练算力的 Transformer，以及使用约1.7至2.8倍算力的残差流基线。LoomPythia-2.8B训练3000亿词元时仅增加2% FLOPs，下游平均增益约为mHC同规模版本的1.6倍，并在零样本下匹配、五样本下超过Pythia-12B。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[采用 Loom 注意力机制的 Transformer 可重连电路（86 ▲）](https://huggingface.co/papers/2611.30634?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
   </details></article>
 <article id="acap" class="summary-card daily-item">
   <h2 id="acap-title" class="daily-item-title">ACAP：异步多智能体机器人控制</h2><p class="single-subtitle daily-item-summary">用异步常驻编码智能体并行控制机器人部件，以动态协调处理物理依赖，任务耗时降低28.2%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多智能体系统</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31205" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31205</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在多臂或移动操作机器人系统中借鉴ACAP的异步控制组与动态协调机制，并将其作为单智能体控制和固定分工策略的对比基线。</p>
@@ -381,6 +487,21 @@
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[ACAP：用于高效机器人控制的异步编码智能体（62 ▲）](https://huggingface.co/papers/2611.31205?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
+  </details></article>
+<article id="robodojo-mirror" class="summary-card daily-item">
+  <h2 id="robodojo-mirror-title" class="daily-item-title">RoboDojo-Mirror：镜像反射鲁棒性评测</h2><p class="single-subtitle daily-item-summary">用镜像场景检验机器人操控策略的反射鲁棒性，成功率最高下降62.5个百分点。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;真实世界基准测试</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.33010" target="_blank" rel="noopener">https://arxiv.org/abs/2611.33010</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/iPPLab/robodojo-mirror" target="_blank" rel="noopener">https://github.com/iPPLab/robodojo-mirror</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在具身操控系统上线前直接使用 RoboDojo-Mirror 测试其镜面环境鲁棒性，并通过轨迹与接触记录诊断倒影误识别和空间错位。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>不改变任务本身的镜像反射就能系统性破坏多类机器人策略，说明视觉表象与物理实体的区分仍是具身空间理解的共同短板。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：现有机器人策略能否在物体出现镜像反射时可靠完成操控任务，此类视觉干扰是否会暴露具身空间理解缺陷。</li>
+<li><strong>旧法为何失效</strong>：常规评测很少纳入反射环境，因而无法发现策略将倒影当作真实目标、错误定位实体物体等失效模式。</li>
+<li><strong>方法</strong>：提出基于 RoboDojo 的 RoboDojo-Mirror，在保持任务目标、成功标准和策略检查点不变的情况下，对比无镜、单镜、双镜和镜面桌面条件，并用几何匹配的非反射面板排除纯碰撞因素。</li>
+<li><strong>实验</strong>：评测涵盖视觉-语言-动作模型、世界动作模型和智能体策略等5种策略；三类镜像条件下平均成功率下降10.8至56.7个百分点，镜面桌面条件最高下降62.5个百分点。50%至88%的镜像特有失败未记录机器人与面板接触，真实机器人上的 π₀.₅ 和 FastWAM 同样出现成功率下降。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[具身 AI 未能通过镜像测试：一面简单的镜子如何破坏机器人策略（27 ▲）](https://huggingface.co/papers/2611.33010?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
   </details></article>
 <article id="s-mind" class="summary-card daily-item">
   <h2 id="s-mind-title" class="daily-item-title">S-Mind：空间令牌内化多视图几何</h2><p class="single-subtitle daily-item-summary">用受监督的空间令牌融合多视图并变换观察视角，使多模态模型获得内生三维推理能力。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视觉推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/reasoningevolve/">ReasoningEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;空间智能</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E7%8A%B6%E6%80%81%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状态表征</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.28649" target="_blank" rel="noopener">https://arxiv.org/abs/2611.28649</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在具身智能或多视图视觉问答系统中借鉴空间令牌监督机制，内化三维场景表征并减少外部几何工具调用。</p>
@@ -412,35 +533,20 @@
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[PartAgent：通过专家集成与闭环优化实现智能体式 3D 部件分割（33 ▲）](https://huggingface.co/papers/2611.32554?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
   </details></article>
-<article id="lingsante-medguard" class="summary-card daily-item">
-  <h2 id="lingsante-medguard-title" class="daily-item-title">LingSante MedGuard：多专家医疗安全护栏</h2><p class="single-subtitle daily-item-summary">融合医疗护栏教师与六类能力专家，统一识别医疗回答中的安全、合规及伦理风险，27B版平均F1达87.4%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：医疗人工智能评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%8C%BB%E7%96%97%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;医疗人工智能</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AF%B9%E9%BD%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全对齐</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.25509" target="_blank" rel="noopener">https://arxiv.org/abs/2611.25509</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在医疗问答、临床决策支持或医疗智能体系统中部署该护栏，并用MedGuardBench评测回答的安全、合规、伦理及证据可靠性。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>可靠的医疗风险判断不是一般内容分类问题，而是必须把证据核验、规则适用和专科推理能力共同纳入统一验证过程。</p>
+<article id="loomformer" class="summary-card daily-item">
+  <h2 id="loomformer-title" class="daily-item-title">LoomFormer：逐词元动态重连电路</h2><p class="single-subtitle daily-item-summary">用纵向头间注意力动态重连每个词元的计算电路，以仅增2%算力获得跨规模性能提升。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;架构演化</a><a href="/LLMDailyDigestWeb/topic/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;机器学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.30634" target="_blank" rel="noopener">https://arxiv.org/abs/2611.30634</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/Caiyun-AI/LoomFormer" target="_blank" rel="noopener">https://github.com/Caiyun-AI/LoomFormer</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在语言模型架构研发中直接使用其代码，或借鉴纵向头间注意力与双流设计，在较低额外算力下增强模型能力。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>将计算控制与语义内容分流后，注意力头之间可以按词元动态组织电路，而无需依赖扩大模型或训练算力换取性能。</p>
 </div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
       <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：医疗问诊和临床决策支持中的风险判断不仅要识别有害内容，还需核对临床证据、计算结果及医疗规则的适用条件。</li>
-<li><strong>旧法为何失效</strong>：单一风险分类器难以同时完成医学规则理解、数值推理、多模态幻觉检测、智能体安全验证、风险定位和实体理解。</li>
-<li><strong>方法</strong>：将一个医疗护栏教师与六类医疗能力专家的监督整合进统一模型；先用教师生成示范进行离线监督微调，再针对学生自产回答实施多教师在策略蒸馏。</li>
-<li><strong>实验</strong>：公开包含11个风险检测子集的MedGuardBench；4B、9B和27B模型平均F1分别为82.3%、82.4%和87.4%，4B模型在启用检索的MedHallu与MedHALT-NOTA上平均准确率为73.9%，并提升证据一致性、来源可追溯性和规则引导解释质量。</li>
+<li><strong>问题</strong>：让 Transformer 不再沿固定计算路径处理所有词元，而是能按词元动态调整注意力头之间的信息流。</li>
+<li><strong>旧法为何失效</strong>：标准架构主要依靠残差流传递各层输出，难以显式、动态地选择和组合先前注意力头的结果。</li>
+<li><strong>方法</strong>：提出 Loom Attention，将跨词元的横向注意力与跨先前注意力头输出的纵向注意力交织；以归一化、门控线性注意力读取逐词元矩阵记忆，并在 LoomFormer 中用向量流和矩阵流分别承载控制与内容。</li>
+<li><strong>实验</strong>：在语言建模及下游任务中，LoomFormer 匹配使用超过3倍训练算力的 Transformer，以及使用约1.7至2.8倍算力的残差流基线。LoomPythia-2.8B训练3000亿词元时仅增加2% FLOPs，下游平均增益约为mHC同规模版本的1.6倍，并在零样本下匹配、五样本下超过Pythia-12B。</li>
 </ul>
 </div>
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[LingSante MedGuard 技术报告（30 ▲）](https://huggingface.co/papers/2611.25509?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
-  </details></article>
-<article id="robodojo-mirror" class="summary-card daily-item">
-  <h2 id="robodojo-mirror-title" class="daily-item-title">RoboDojo-Mirror：镜像反射鲁棒性评测</h2><p class="single-subtitle daily-item-summary">用镜像场景检验机器人操控策略的反射鲁棒性，成功率最高下降62.5个百分点。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测基准</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;真实世界基准测试</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.33010" target="_blank" rel="noopener">https://arxiv.org/abs/2611.33010</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/iPPLab/robodojo-mirror" target="_blank" rel="noopener">https://github.com/iPPLab/robodojo-mirror</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在具身操控系统上线前直接使用 RoboDojo-Mirror 测试其镜面环境鲁棒性，并通过轨迹与接触记录诊断倒影误识别和空间错位。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>不改变任务本身的镜像反射就能系统性破坏多类机器人策略，说明视觉表象与物理实体的区分仍是具身空间理解的共同短板。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：现有机器人策略能否在物体出现镜像反射时可靠完成操控任务，此类视觉干扰是否会暴露具身空间理解缺陷。</li>
-<li><strong>旧法为何失效</strong>：常规评测很少纳入反射环境，因而无法发现策略将倒影当作真实目标、错误定位实体物体等失效模式。</li>
-<li><strong>方法</strong>：提出基于 RoboDojo 的 RoboDojo-Mirror，在保持任务目标、成功标准和策略检查点不变的情况下，对比无镜、单镜、双镜和镜面桌面条件，并用几何匹配的非反射面板排除纯碰撞因素。</li>
-<li><strong>实验</strong>：评测涵盖视觉-语言-动作模型、世界动作模型和智能体策略等5种策略；三类镜像条件下平均成功率下降10.8至56.7个百分点，镜面桌面条件最高下降62.5个百分点。50%至88%的镜像特有失败未记录机器人与面板接触，真实机器人上的 π₀.₅ 和 FastWAM 同样出现成功率下降。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[具身 AI 未能通过镜像测试：一面简单的镜子如何破坏机器人策略（27 ▲）](https://huggingface.co/papers/2611.33010?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
+    <div class="daily-item-notes-body">[采用 Loom 注意力机制的 Transformer 可重连电路（86 ▲）](https://huggingface.co/papers/2611.30634?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
   </details></article>
 <article id="qwen-image-hd" class="summary-card daily-item">
   <h2 id="qwen-image-hd-title" class="daily-item-title">Qwen-Image-HD：分块自回归高清生成</h2><p class="single-subtitle daily-item-summary">用局部训练和分块自回归生成解决整幅4K图像训练成本高且易出现重复条纹的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：图像生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;扩散模型</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E5%B9%B6%E8%A1%8C%E6%90%9C%E7%B4%A2/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;并行搜索</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.32736" target="_blank" rel="noopener">https://arxiv.org/abs/2611.32736</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在4K海报、插画和壁纸生成系统中借鉴其局部图块训练、多尺度历史条件与波前并行调度，以降低训练和单图推理成本。</p>
@@ -457,7 +563,109 @@
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[Qwen-Image-HD：用于高清图像生成的自回归扩散模型（19 ▲）](https://huggingface.co/papers/2611.32736?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
   </details></article>
-</section></article></main><footer class="footer">
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">4 条 · 按研究项目分组</span></h2>
+          <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/" onclick="event.stopPropagation()">NewModel</a><span class="daily-count">3 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="gemini-4-neon" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Gemini 4 Neon：长流程智能体优化</strong>
+      <span class="daily-row-meta">新智元 · 模型发布 · <a href="https://mp.weixin.qq.com/s/DWkm7vUhp4avlz_tD4_8VQ" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">Google推出Gemini 4 Neon，主攻长流程智能体任务，以87.4分登顶LiveBench 2.0。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型发布</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>新智元</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/DWkm7vUhp4avlz_tD4_8VQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/DWkm7vUhp4avlz_tD4_8VQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在浏览器操作、资料研究和编程智能体中将Neon作为候选模型，并结合专项得分与单任务成功成本进行模型路由。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体模型的总榜领先可能源于特定长流程能力，选型应同时匹配任务类型和成功任务成本，而非只看综合分数。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：Google推出面向长流程、重工具调用工作流的Gemini 4 Neon；其在LiveBench 2.0的471道题上获得87.4分，比Claude Fable 5.2和GPT-6.2 Astra高2.5分。</li>
+<li><strong>关键能力</strong>：浏览器操作、研究、编程和推理分项分别为95.6、94.5、89.7和89.6；单个成功任务成本为2.654美元，低于Fable 5.2的9.850美元，但高于Astra的1.941美元。</li>
+<li><strong>限制</strong>：Neon在Artificial Analysis智力指数中仅以61分排第三，且未领先所有代码基准；Plotly私有数据分析测试虽全部答对，但单次成本17.03美元，明显高于同样满分的Hydrogen 6.36美元。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">NewModel｜Gemini 4 Neon登顶LiveBench！长流程榜甩开Claude和GPT https://mp.weixin.qq.com/s/DWkm7vUhp4avlz_tD4_8VQ</div>
+  </details></div>
+</details>
+<details id="antom" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Antom：序列表格图联合预训练</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 多模态学习 · <a href="https://arxiv.org/abs/2611.25403" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用序列、表格和图联合预训练支付行为与关系表示，跨业务迁移提升34.5%，线上损失率降低37.88%。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多模态学习</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;风险控制</a><a href="/LLMDailyDigestWeb/topic/%E8%B7%A8%E5%9F%9F%E6%B3%9B%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域泛化</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.25403" target="_blank" rel="noopener">https://arxiv.org/abs/2611.25403</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在支付风控系统中借鉴三类数据统一预训练与任务路由机制，用少量标签快速迁移至新业务，并作为XGB或从头训练方案的替代基线。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>支付风控的跨域能力取决于能否统一沉淀行为与关系表征，这可使少标注新业务超过全标注从头训练。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：支付风险检测需要同时理解交易序列、表格属性和关系网络，并将已学能力迁移至不同业务及商户域。</li>
+<li><strong>旧法为何失效</strong>：从头训练依赖大量标注，跨业务复用能力有限；线上XGB方案的整体损失率仍有较大优化空间。</li>
+<li><strong>方法</strong>：构建约70亿参数的三合一Transformer，统一预训练序列、表格和图表示，并通过任务路由使每个任务仅激活约17亿参数；预训练主要使用蚂蚁国际内部支付数据。</li>
+<li><strong>实验</strong>：跨业务迁移较同架构从头训练提升目标指标34.5%；仅用25%标签便在不同商户域的AP和Recall@0.5%上超过全标签从头训练基线；在十亿级支付平台开展四个月线上实验，相对XGB-Online将整体损失率降低37.88%。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Antom 三合一 Transformer：支付基础模型（101 ▲）](https://huggingface.co/papers/2611.25403?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
+  </details></div>
+</details>
+<details id="lingsante-medguard" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>LingSante MedGuard：多专家医疗安全护栏</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 医疗人工智能评测 · <a href="https://arxiv.org/abs/2611.25509" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">融合医疗护栏教师与六类能力专家，统一识别医疗回答中的安全、合规及伦理风险，27B版平均F1达87.4%。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：医疗人工智能评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%8C%BB%E7%96%97%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;医疗人工智能</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AF%B9%E9%BD%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全对齐</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型蒸馏</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.25509" target="_blank" rel="noopener">https://arxiv.org/abs/2611.25509</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在医疗问答、临床决策支持或医疗智能体系统中部署该护栏，并用MedGuardBench评测回答的安全、合规、伦理及证据可靠性。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>可靠的医疗风险判断不是一般内容分类问题，而是必须把证据核验、规则适用和专科推理能力共同纳入统一验证过程。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：医疗问诊和临床决策支持中的风险判断不仅要识别有害内容，还需核对临床证据、计算结果及医疗规则的适用条件。</li>
+<li><strong>旧法为何失效</strong>：单一风险分类器难以同时完成医学规则理解、数值推理、多模态幻觉检测、智能体安全验证、风险定位和实体理解。</li>
+<li><strong>方法</strong>：将一个医疗护栏教师与六类医疗能力专家的监督整合进统一模型；先用教师生成示范进行离线监督微调，再针对学生自产回答实施多教师在策略蒸馏。</li>
+<li><strong>实验</strong>：公开包含11个风险检测子集的MedGuardBench；4B、9B和27B模型平均F1分别为82.3%、82.4%和87.4%，4B模型在启用检索的MedHallu与MedHALT-NOTA上平均准确率为73.9%，并提升证据一致性、来源可追溯性和规则引导解释质量。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[LingSante MedGuard 技术报告（30 ▲）](https://huggingface.co/papers/2611.25509?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-25)</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/" onclick="event.stopPropagation()">HarnessEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="agnes-harness" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Agnes Harness：双系统经验复用</strong>
+      <span class="daily-row-meta">心兰 · 智能体框架 · <a href="https://github.com/AgnesAI-Labs/agnes-harness/tree/main" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a> · <a href="https://mp.weixin.qq.com/s/aPdk7uifWnz3e0o18RMzkQ" target="_blank" rel="noopener" onclick="event.stopPropagation()">原文</a></span>
+    </span><span class="daily-row-summary">Agnes AI推出开源企业级智能体框架，让FDE连接业务与设备，并复用经过验证的交付经验。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体框架</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>心兰</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E9%80%92%E5%BD%92%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;递归自我改进</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a><a href="/LLMDailyDigestWeb/topic/%E7%BB%8F%E9%AA%8C%E5%A4%8D%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;经验复用</a></p><div class="daily-item-resources"><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/AgnesAI-Labs/agnes-harness/tree/main" target="_blank" rel="noopener">https://github.com/AgnesAI-Labs/agnes-harness/tree/main</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/aPdk7uifWnz3e0o18RMzkQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/aPdk7uifWnz3e0o18RMzkQ</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在企业智能体交付中直接部署其开源代码，接入现有模型、MCP系统与设备，并将核验后的业务流程封装为版本化插件复用。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>企业智能体规模化交付的关键不只是增强模型能力，而是把高频决策下沉到本地，并将现场经验转化为受控、可验证的组织资产。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>是什么</strong>：Agnes Harness是面向前线部署工程师的开放式智能体运行与扩展框架，通过统一架构连接模型、工具、Skills、MCP业务系统及物理设备。</li>
+<li><strong>关键能力</strong>：采用大语言模型与9B决策模型Agnes Sys1的双系统分工，以测试时训练适配单次任务，并通过递归自我改进把验证有效的经验沉淀为版本化Skills和Playbook。机器狗仿真任务耗时缩短32.9%，自评中DeepPlanning得分87.07%、BigCodeBench-Hard V1通过率40.69%。</li>
+<li><strong>限制</strong>：现有成绩主要来自团队阶段性自评；跨客户复用插件前仍需适配规则、字段和权限并重新核验，否则可能不执行或产生错误结论。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">HarnessEvolve｜Agnes推出开源Agent神器Agnes Harness：专为FDE工程化交付而生https://mp.weixin.qq.com/s/aPdk7uifWnz3e0o18RMzkQ</div>
+  </details></div>
+</details>
+</div>
+            </details></section>
+        <script>
+        (function(){
+          
+          function reveal(){
+            var h = location.hash.slice(1);
+            if(!h) return;
+            try{ h = decodeURIComponent(h); }catch(e){   }
+            var el = document.getElementById(h);
+            if(!el) return;
+            var p = el;
+            while(p){ if(p.tagName === 'DETAILS') p.open = true; p = p.parentElement; }
+            el.scrollIntoView({block:'start'});
+          }
+          window.addEventListener('hashchange', reveal);
+          if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal();
+          document.querySelectorAll('[data-daily-toggle]').forEach(function(b){
+            b.addEventListener('click', function(){
+              var open = b.getAttribute('data-daily-toggle') === 'open';
+              document.querySelectorAll('.daily-tiered details').forEach(function(d){ d.open = open; });
+            });
+          });
+        })();
+        </script></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line visitor order-5">
     <span id="busuanzi_container_site_uv" title="总访客数"><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;访客 <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
     </span>

@@ -16,8 +16,8 @@
   <meta itemprop="description" content="NewApply 研究方向：新应用——模型能力向真实产品与业务流程落地的跟踪，关注&#34;能力如何变成可用的系统&#34;，而非单个模型的技术指标。
 研究范畴 新应用（new application watch）是本站的横向跟踪方向，与各 *Evolve 方向互补：*Evolve 关心方法如何自我改进，NewApply 关心这些方法进入真实场景后是否成立。本方向涵盖：智能体开发框架与编排层（多智能体对话、图式工作流、低代码平台）、端到端任务智能体（浏览器操作、桌面操作、软件工程、科研自动化）、本地部署与私有化推理栈、企业流程集成与 RPA 式自动化，以及垂直领域应用（编程、办公、金融、医疗、教育、客服）。社区关注的核心问题包括：demo 与生产的差距（长尾失败、错误累积、成本失控）、在开放环境中的可评测性（真实网站与真实桌面难以稳定复现）、人机责任边界与授权范围、私有化部署下的能力衰减，以及应用层价值究竟来自模型能力还是来自工程编排。">
   <meta itemprop="datePublished" content="2026-10-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T17:53:43+08:00">
-  <meta itemprop="wordCount" content="4136">
+  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
+  <meta itemprop="wordCount" content="4227">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/newapply/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="NewApply">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T17:53:43+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newapply\/"
-    },"genre": "research","wordcount":  4136 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newapply\/","datePublished": "2026-10-21T00:00:00+08:00","dateModified": "2026-11-26T17:53:43+08:00","publisher": {
+    },"genre": "research","wordcount":  4227 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newapply\/","datePublished": "2026-10-21T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -277,6 +277,7 @@
 <ol>
 <li><strong>生产级运行底座</strong>：智能体落地应以可替换运行底座统一工具、沙箱、持久状态与评测，并支持回滚、分岔和迁移，避免业务逻辑绑定单一模型。
 <ul>
+<li><a href="../../updates/2026-11-26/#agnes-harness">Agnes Harness：双系统经验复用</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#fin-rsi">Fin-RSI：统一金融技能与自改进</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-18/#cubesandbox">CubeSandbox：状态化微虚拟机沙箱</a> · 2026-11-18</li>
 <li><a href="../../updates/2026-11-18/#code-mode">Code Mode：脚本化工具编排</a> · 2026-11-18</li>
@@ -345,6 +346,8 @@
 </li>
 <li><strong>可审计任务闭环</strong>：高风险与工程智能体应把确定性计算同语义判断解耦，以可执行约束限定搜索，并内置溯源、动态验证、可证伪实验和权限控制。
 <ul>
+<li><a href="../../updates/2026-11-26/#partagent">PartAgent：专家集成与闭环分割</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#lingsante-medguard">LingSante MedGuard：多专家医疗安全护栏</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#lumimax">lumimax：深度证据链知识网络</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#gpt-6">GPT-6：通用推理设计蛋白质</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-23/#minimax">MiniMax密码分析：纸面攻击实战化</a> · 2026-11-23</li>
@@ -386,8 +389,9 @@
 <li><a href="../../updates/2026-11-08/#energybench">EnergyBench：欧洲电力市场日前预测实时评测基准</a> · 2026-11-08</li>
 </ul>
 </li>
-<li><strong>异构角色协作</strong>：角色的工具、知识源或时间尺度不同时，可用专业智能体并行协作，并以共享状态汇合结果。
+<li><strong>异构角色协作</strong>：角色的工具、知识源、部件或时间尺度不同时，可让专业智能体异步并行，仅在依赖出现时协调，并以共享状态汇合结果。
 <ul>
+<li><a href="../../updates/2026-11-26/#acap">ACAP：异步多智能体机器人控制</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-08/#pharmagents2">PharmAgents2：自主端到端药物发现系统</a> · 2026-11-08</li>
 <li><a href="../../updates/2026-11-06/#streamduo">StreamDuo：面向未知游戏的实时解说与研究智能体</a> · 2026-11-06</li>
 <li><a href="../../updates/2026-10-31/#vibegame-ai">VibeGame：AI 原生引擎与自进化智能体团队实现提示词生成游戏</a> · 2026-10-31</li>
@@ -429,7 +433,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-10-29/deepseek-harness-ai 2026-10-29/jevrec 2026-10-29/langchain-content-studio-harness 2026-10-29/microsoft-foundry-copilot-harness 2026-10-29/openai-gpt-6-1-terra-astra 2026-10-29/streamvibe 2026-10-29/worldcast 2026-10-30/anti-prompt 2026-10-30/epicoach 2026-10-30/proton-ai 2026-10-30/tao-llm 2026-10-30/taskframe 2026-10-31/vibegame-ai 2026-11-01/item-1 2026-11-03/epi2diff-llm 2026-11-03/spar-b2b 2026-11-03/system-1 2026-11-03/thinker-sim 2026-11-03/wefair 2026-11-03/wizard 2026-11-04/item-8 2026-11-04/northcua 2026-11-04/photoguider-360 2026-11-04/reviso 2026-11-04/uni-robot-agent-harness 2026-11-05/legalevolver 2026-11-05/openai-cyber-948-linux 2026-11-05/pandora 2026-11-06/decision-models 2026-11-06/el-agente-f-rmaco 2026-11-06/emoreward 2026-11-06/item-102 2026-11-06/item-147 2026-11-06/item-40 2026-11-06/openai-gpt-6-cyber 2026-11-06/streamduo 2026-11-08/edgar 2026-11-08/energybench 2026-11-08/fincosmos 2026-11-08/pharmagents2 2026-11-08/tailsteer 2026-11-12/finevolvekg 2026-11-12/item-113 2026-11-12/mrfoundry-mri 2026-11-12/pcbrouteagent-pcb 2026-11-12/slic 2026-11-12/trialjev 2026-11-12/video-coder 2026-11-13/google-deepmind-gemini-4-hydrogen 2026-11-13/item-40 2026-11-13/personal-agent 2026-11-14/3-0-rsi 2026-11-14/deepseek-api-chat-demo 2026-11-14/gpu 2026-11-15/deepseek-harness 2026-11-16/agent-written-heuristics 2026-11-17/item-67 2026-11-17/item-86 2026-11-17/s1mal 2026-11-18/allocflow 2026-11-18/claude-mythos-amd 2026-11-18/code-mode 2026-11-18/cubesandbox 2026-11-18/discoveryagent 2026-11-18/embedgym 2026-11-18/gemini 2026-11-18/gpt-6-2-astra 2026-11-18/matos 2026-11-19/data-to-valves 2026-11-19/item-49 2026-11-19/item-53 2026-11-19/item-54 2026-11-19/mle-agents 2026-11-19/optics-as-code 2026-11-19/ppa 2026-11-19/system-1 2026-11-20/code-world-model-2-0 2026-11-20/dots 2026-11-20/everydaybench 2026-11-20/performance-factory-codex 2026-11-20/playcraft 2026-11-20/prola 2026-11-21/coda-davinci 2026-11-23/edagoat-eda-gpu 2026-11-23/grok-bot 2026-11-23/jevrisk 2026-11-23/medicalrsi 2026-11-23/minimax 2026-11-23/monitor-api 2026-11-24/agrimanager 2026-11-24/autopilot 2026-11-24/finevo 2026-11-24/grok-bot 2026-11-24/item-4 2026-11-24/item-47 2026-11-24/semantic-pid-rsi-pid 2026-11-25/3agamefactory-motion 2026-11-25/embo-harness 2026-11-25/fin-rsi 2026-11-25/gpt-6 2026-11-25/lumimax 2026-11-25/needwise 2026-11-25/voyag 2026-11-25/wemm-ecom -->
+<!-- experience-seen: 2026-11-19/data-to-valves 2026-11-19/item-49 2026-11-19/item-53 2026-11-19/item-54 2026-11-19/mle-agents 2026-11-19/optics-as-code 2026-11-19/ppa 2026-11-19/system-1 2026-11-20/code-world-model-2-0 2026-11-20/dots 2026-11-20/everydaybench 2026-11-20/performance-factory-codex 2026-11-20/playcraft 2026-11-20/prola 2026-11-21/coda-davinci 2026-11-23/edagoat-eda-gpu 2026-11-23/grok-bot 2026-11-23/jevrisk 2026-11-23/medicalrsi 2026-11-23/minimax 2026-11-23/monitor-api 2026-11-24/agrimanager 2026-11-24/autopilot 2026-11-24/finevo 2026-11-24/grok-bot 2026-11-24/item-4 2026-11-24/item-47 2026-11-24/semantic-pid-rsi-pid 2026-11-25/3agamefactory-motion 2026-11-25/embo-harness 2026-11-25/fin-rsi 2026-11-25/gpt-6 2026-11-25/lumimax 2026-11-25/needwise 2026-11-25/voyag 2026-11-25/wemm-ecom 2026-11-26/acap 2026-11-26/agnes-harness 2026-11-26/antom 2026-11-26/lingsante-medguard 2026-11-26/partagent -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
