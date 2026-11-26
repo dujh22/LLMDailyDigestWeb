@@ -16,8 +16,8 @@
   <meta itemprop="description" content="GeneralizeEvolve 研究方向：自进化中的泛化——自进化带来的提升能否跨任务、跨分布迁移而非基准过拟合，以及测试时学习与持续学习如何不遗忘。
 研究范畴 自进化中的泛化（generalization in self-evolution）追问一个核心问题：模型 / Agent 通过自迭代获得的能力，究竟是真实的能力扩展，还是对训练分布与评测基准的记忆与过拟合。本方向涵盖：SFT 与 RL 后训练的泛化差异（“SFT 记忆、RL 泛化”）、RLVR 是否扩展了基座模型的推理边界、在线 RL 为何遗忘更少、无外部奖励的自信号学习（Intuitor 类）、测试时训练与自适应（TTT、SEAL 自生成微调数据）、测试时记忆与长上下文架构（Titans）、持续学习与灾难性遗忘、弱到强泛化，以及 ARC-AGI 类强调流体智能而非知识回忆的评测。社区关注的核心问题包括：如何在自进化闭环中设计分布外（OOD）与组合泛化的检验、如何区分&#34;学到的算法&#34;与&#34;记住的模式&#34;（grokking 现象）、持续自进化下能力增益与遗忘的权衡，以及测试时计算与测试时学习在多大程度上能替代参数规模。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-18T13:03:42+08:00">
-  <meta itemprop="wordCount" content="1038">
+  <meta itemprop="dateModified" content="2026-11-26T17:14:46+08:00">
+  <meta itemprop="wordCount" content="1076">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/generalizeevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="GeneralizeEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-18T13:03:42+08:00">
+    <meta property="article:modified_time" content="2026-11-26T17:14:46+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/"
-    },"genre": "research","wordcount":  1038 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-10-18T13:03:42+08:00","publisher": {
+    },"genre": "research","wordcount":  1076 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T17:14:46+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -239,6 +239,9 @@
     <li><a href="#研究范畴">研究范畴</a></li>
     <li><a href="#研究挑战">研究挑战</a></li>
     <li><a href="#自研项目">自研项目</a></li>
+    <li><a href="#自研洞察">自研洞察</a></li>
+    <li><a href="#自研经验">自研经验</a></li>
+    <li><a href="#研究经验">研究经验</a></li>
     <li><a href="#相关工作">相关工作</a></li>
   </ul>
 </nav></div>
@@ -260,6 +263,18 @@
 <li><a href="https://github.com/dujh22/EvolveLLM"target="_blank" rel="external nofollow noopener noreferrer">EvolveLLM<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 博士课题《Toward True ASI》承载仓库，自进化的泛化边界是综述《大语言模型复杂推理的自我进化机制》讨论的核心科学问题。</li>
 <li><a href="https://github.com/dujh22/CLUB-benchmark"target="_blank" rel="external nofollow noopener noreferrer">CLUB-benchmark (LogicEvolve)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 元数据驱动的可控逻辑推理任务生成，可按难度 / 规模 / 规则维度构造 OOD 测试，检验自进化带来的泛化。</li>
 </ul>
+<h2 id="自研洞察">自研洞察</h2>
+<!-- human-only:start 自研洞察｜仅限人类手动编辑：AI 与自动化流程不得修改，确需修改必须先询问人类并获得同意 -->
+<p><em>（待人工补充）</em></p>
+<!-- human-only:end 自研洞察 -->
+<h2 id="自研经验">自研经验</h2>
+<!-- human-only:start 自研经验｜仅限人类手动编辑：AI 与自动化流程不得修改，确需修改必须先询问人类并获得同意 -->
+<p><em>（待人工补充）</em></p>
+<!-- human-only:end 自研经验 -->
+<h2 id="研究经验">研究经验</h2>
+<!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
+<p><em>（暂无，随日报自动积累）</em></p>
+<!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
 <ul>

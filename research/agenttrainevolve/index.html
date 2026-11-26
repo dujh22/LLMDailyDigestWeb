@@ -16,8 +16,8 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
   <meta itemprop="description" content="AgentTrainEvolve 研究方向：Agent 训练侧自进化——通过多轮 Agentic RL、自博弈与自生成课程，让 Agent 的参数在与环境交互中持续进化。
 研究范畴 Agent 训练侧自进化（training-time agent self-evolution）关注如何把 Agent 在环境中的交互经验稳定地转化为参数更新：从早期的轨迹蒸馏 / 指令微调（AgentTuning），走向多轮、长程、带工具调用的 Agentic 强化学习，再到由 Agent 自己提出任务、构造课程、合成经验并自我博弈的零数据训练范式（Absolute Zero、SPIRAL、WebRL 的自进化在线课程）。本方向涵盖：面向 Agent 的 RL 训练框架与基础设施（verl、SkyRL、rLLM、Agent Lightning）、多轮交互下的信用分配与回合级奖励、自博弈与对抗式课程生成、经验合成与模拟环境放大（DreamGym 类）、训练-评测环境生态（AgentGym），以及 Agent RL 中的自进化动力学诊断（RAGEN 揭示的&#34;回声陷阱&#34;等失败模式）。社区关注的核心问题包括：长程稀疏奖励下训练是否稳定、自生成任务的难度与多样性如何自适应、训练出的能力能否跨环境迁移、以及 Agent RL 的算力与环境吞吐瓶颈如何突破。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-10-18T13:03:42+08:00">
-  <meta itemprop="wordCount" content="1147">
+  <meta itemprop="dateModified" content="2026-11-26T17:14:46+08:00">
+  <meta itemprop="wordCount" content="1185">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/agenttrainevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="AgentTrainEvolve">
@@ -27,7 +27,7 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-10-18T13:03:42+08:00">
+    <meta property="article:modified_time" content="2026-11-26T17:14:46+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agenttrainevolve\/"
-    },"genre": "research","wordcount":  1147 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agenttrainevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-10-18T13:03:42+08:00","publisher": {
+    },"genre": "research","wordcount":  1185 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agenttrainevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T17:14:46+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -239,6 +239,9 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
     <li><a href="#研究范畴">研究范畴</a></li>
     <li><a href="#研究挑战">研究挑战</a></li>
     <li><a href="#自研项目">自研项目</a></li>
+    <li><a href="#自研洞察">自研洞察</a></li>
+    <li><a href="#自研经验">自研经验</a></li>
+    <li><a href="#研究经验">研究经验</a></li>
     <li><a href="#相关工作">相关工作</a></li>
   </ul>
 </nav></div>
@@ -260,6 +263,18 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
 <li><a href="https://github.com/dujh22/EvolveLLM"target="_blank" rel="external nofollow noopener noreferrer">EvolveLLM<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 博士课题《Toward True ASI》承载仓库，训练侧自进化是《大语言模型复杂推理的自我进化机制》综述的核心路线之一。</li>
 <li><a href="https://github.com/dujh22/CLUB-benchmark"target="_blank" rel="external nofollow noopener noreferrer">CLUB-benchmark (LogicEvolve)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> — 复杂逻辑推理智能体评测与自进化平台，提供可程序化验证的任务族，可作为 Agent RL 训练环境。</li>
 </ul>
+<h2 id="自研洞察">自研洞察</h2>
+<!-- human-only:start 自研洞察｜仅限人类手动编辑：AI 与自动化流程不得修改，确需修改必须先询问人类并获得同意 -->
+<p><em>（待人工补充）</em></p>
+<!-- human-only:end 自研洞察 -->
+<h2 id="自研经验">自研经验</h2>
+<!-- human-only:start 自研经验｜仅限人类手动编辑：AI 与自动化流程不得修改，确需修改必须先询问人类并获得同意 -->
+<p><em>（待人工补充）</em></p>
+<!-- human-only:end 自研经验 -->
+<h2 id="研究经验">研究经验</h2>
+<!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
+<p><em>（暂无，随日报自动积累）</em></p>
+<!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
 <ul>
