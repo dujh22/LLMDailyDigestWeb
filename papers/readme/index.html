@@ -13,8 +13,8 @@
 本文件不会渲染到网站（hugo.toml 的 module.mounts excludeFiles）。" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="LLM-DailyDigest · 大模型研究日报">
   <meta itemprop="description" content="相关工作复现注册规范 目标：一次复现，终身复用。每个尝试复现的相关工作都在这里注册，网站「论文」页按研究展示进度、已完成项与下一步。 本文件不会渲染到网站（hugo.toml 的 module.mounts excludeFiles）。">
-  <meta itemprop="dateModified" content="2026-11-26T18:24:24+08:00">
-  <meta itemprop="wordCount" content="1662">
+  <meta itemprop="dateModified" content="2026-11-26T18:36:19+08:00">
+  <meta itemprop="wordCount" content="1892">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/papers/readme/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="LLM-DailyDigest · 大模型研究日报">
@@ -22,7 +22,7 @@
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="papers">
-    <meta property="article:modified_time" content="2026-11-26T18:24:24+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:36:19+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -41,8 +41,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/readme\/"
-    },"genre": "papers","wordcount":  1662 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/readme\/","dateModified": "2026-11-26T18:24:24+08:00","publisher": {
+    },"genre": "papers","wordcount":  1892 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/papers\/readme\/","dateModified": "2026-11-26T18:36:19+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -310,7 +310,18 @@
       </tr>
   </tbody>
 </table>
-<p>网站不会复制这些文件（<code>[build] publishResources = false</code>），工作页上的 <code>paper/</code>、<code>resources/</code>、<code>repro/</code> 按钮跳转到 GitHub 对应目录。</p>
+<h3 id="入库与网站展示">入库与网站展示</h3>
+<ul>
+<li><strong>GitHub</strong>：<code>paper/</code>、<code>resources/</code>、<code>repro/</code> 全部正常入库（PDF、代码、数据 / 模型索引都会上传）；只有 <code>cache/</code> 被 <code>.gitignore</code> 忽略。单文件超过 100 MB 时 GitHub 会拒收，这类文件放外链或下载脚本。</li>
+<li><strong>网站工作页</strong>：进度卡下方按 <code>paper/</code>、<code>resources/</code>、<code>repro/</code> 分组列出全部文件：
+<ul>
+<li>点 <strong>PDF</strong> → 站内直接在浏览器打开（构建时只发布 PDF，<code>publishResources = false</code> 保证代码等不被复制到站点）；旁边的 GitHub 图标跳仓库原文件；</li>
+<li>点 <strong>代码 / md / 配置等</strong> → 跳 GitHub 查看（带语法高亮、md 渲染）；</li>
+<li><code>resources/README.md</code>（资源索引）直接渲染在列表下方，不用点开；</li>
+<li>每个分组标题旁的 GitHub 图标跳对应目录。</li>
+</ul>
+</li>
+</ul>
 <h2 id="四进度口径">四、进度口径</h2>
 <p>由网站构建时自动计算（<code>layouts/partials/papers/progress.html</code>，<code>tools/repro.py check</code> 同口径）。里程碑<strong>依次累计</strong>，前一档没达成，后面的不计：</p>
 <table>

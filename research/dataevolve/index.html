@@ -16,8 +16,8 @@
   <meta itemprop="description" content="DataEvolve 研究方向：数据自进化——以数据为中心的自进化训练数据 / 合成与迭代。
 研究范畴 数据自进化（data-centric self-evolution）以&#34;数据&#34;为核心驱动，让模型自主生成、筛选、配比并迭代训练数据，从而在尽量少依赖人工标注的情况下持续提升。本方向涵盖：合成数据生成、指令进化（Evol-Instruct 类）、自奖励 / 自评判偏好数据、数据飞轮（data flywheel）、以数据为中心的 Agent 自进化。社区关注的核心问题包括：合成数据的质量 / 多样性 / 覆盖度如何度量与保证、自迭代是否会引发模型崩溃（model collapse）或分布坍缩、数据污染与配比对下游能力的边际影响，以及如何量化&#34;数据价值&#34;并据此做主动筛选。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:31:24+08:00">
-  <meta itemprop="wordCount" content="3663">
+  <meta itemprop="dateModified" content="2026-11-26T18:36:19+08:00">
+  <meta itemprop="wordCount" content="3802">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/dataevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="DataEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:31:24+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:36:19+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/dataevolve\/"
-    },"genre": "research","wordcount":  3663 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/dataevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:31:24+08:00","publisher": {
+    },"genre": "research","wordcount":  3802 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/dataevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:36:19+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -307,6 +307,7 @@
 </li>
 <li><strong>可验证闭环供数</strong>：递归训练应优先生成答案可独立验证、可修复的任务；验证闭环能在无教师场景下减少错误信号累积。
 <ul>
+<li><a href="../../updates/2026-11-26/#3dcodefactory-3d">3DCodeFactory：实机验证式3D数据合成</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#veritouch">VeriTouch：验证式视触觉轨迹合成</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#vade">VADE：专业源可验证任务合成</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#swe-gym-verified">SWE-Gym-Verified：执行证据式数据审计</a> · 2026-11-25</li>
@@ -361,8 +362,9 @@
 <li><a href="../../updates/2026-10-30/#item-52">重新审视合成数据预预训练</a> · 2026-10-30</li>
 </ul>
 </li>
-<li><strong>真实反馈驱动飞轮</strong>：将真实检索、操作和用户历史转成带证据监督并回流训练，可让数据分布随实际使用持续更新。
+<li><strong>真实反馈驱动飞轮</strong>：将真实检索、操作、用户历史与问答误差回流，可让数据或知识结构随使用更新；闭环问题须代表真实分布，生成问题收益未必迁移到人工问题。
 <ul>
+<li><a href="../../updates/2026-11-26/#knowledge-base-gradient-descent">Knowledge-Base Gradient Descent：问答驱动知识库重构</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-13/#item-26">知识在脚手架、可靠性在权重：无教师智能体协同演化</a> · 2026-11-13</li>
 <li><a href="../../updates/2026-11-12/#drivefoundry">DriveFoundry：数据与模型协同演化的自动驾驶闭环框架</a> · 2026-11-12</li>
 <li><a href="../../updates/2026-11-04/#northcua">NorthCUA：以规模化经验加速计算机操作智能体</a> · 2026-11-04</li>
@@ -370,8 +372,9 @@
 <li><a href="../../updates/2026-10-30/#memsteer">MemSteer：从用户历史生成监督信号以优化智能体记忆</a> · 2026-10-30</li>
 </ul>
 </li>
-<li><strong>自动闭环编排数据</strong>：数据选择、配比与训练配方不宜静态全量重训；可用评测闭环重编排，并以训练信号在线校准廉价代理，降低动态搜索成本。
+<li><strong>自动闭环编排数据</strong>：数据选择、配比与训练配方不宜静态全量重训；可用评测闭环重编排并在线校准代理，同时设机会配额，防止弱能力被效率反馈循环持续饿死。
 <ul>
+<li><a href="../../updates/2026-11-26/#feast">FEAST：公平高效自适应采样</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#daisy">DAiSy：自适应效用估计选数</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-20/#piccolo">Piccolo：模型数据协同自进化</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-16/#optimer">OptiMer：分布向量最优合并</a> · 2026-11-16</li>
@@ -404,8 +407,10 @@
 <li><a href="../../updates/2026-11-03/#simplelorif">SimpleLoRIF：沿梯度追溯安全性退化的训练数据</a> · 2026-11-03</li>
 </ul>
 </li>
-<li><strong>失败驱动反向供数</strong>：把可诊断弱项转成可控扰动或失真样本，训练修复器并将精修结果回灌，比无差别扩充更直接改善特定缺陷。
+<li><strong>失败驱动反向供数</strong>：把可诊断弱项或失败步骤转成定向分叉、扰动样本或修复轨迹；回灌前核验标签与捷径，回灌后用独立分布检查真实修复和跨任务退化。
 <ul>
+<li><a href="../../updates/2026-11-26/#vfr">VFR：验证式失败驱动修复</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#dart">DART：不确定性引导轨迹改写</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-20/#buggymle">BuggyMLE：可控注错扩展工程难度</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-17/#deloop">DeLoop：重复动作自监督脱环</a> · 2026-11-17</li>
 <li><a href="../../updates/2026-11-14/#physloop-llm">PhysLoop：以 LLM 物理认知驱动视频生成模型自我改进</a> · 2026-11-14</li>
@@ -414,7 +419,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/rsi-prime 2026-11-19/tabdag 2026-11-19/tcp4d-tcp 2026-11-20/automaster 2026-11-20/buggymle 2026-11-20/game2player 2026-11-20/logt 2026-11-20/piccolo 2026-11-21/egocaptioner 2026-11-23/from-acting-to-learning 2026-11-23/item-49 2026-11-24/thrifty 2026-11-25/daisy 2026-11-25/e2l 2026-11-25/glm-5-5-rsi 2026-11-25/item-20 2026-11-25/item-90 2026-11-25/swe-gym-verified 2026-11-25/vade 2026-11-25/veritouch 2026-11-26/thinkmorph-ssl -->
+<!-- experience-seen: 2026-11-19/rsi-prime 2026-11-19/tabdag 2026-11-19/tcp4d-tcp 2026-11-20/automaster 2026-11-20/buggymle 2026-11-20/game2player 2026-11-20/logt 2026-11-20/piccolo 2026-11-21/egocaptioner 2026-11-23/from-acting-to-learning 2026-11-23/item-49 2026-11-24/thrifty 2026-11-25/daisy 2026-11-25/e2l 2026-11-25/glm-5-5-rsi 2026-11-25/item-20 2026-11-25/item-90 2026-11-25/swe-gym-verified 2026-11-25/vade 2026-11-25/veritouch 2026-11-26/3dcodefactory-3d 2026-11-26/dart 2026-11-26/feast 2026-11-26/knowledge-base-gradient-descent 2026-11-26/thinkmorph-ssl 2026-11-26/vfr -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

@@ -16,8 +16,8 @@
   <meta itemprop="description" content="EvolveLRM 研究方向：大推理模型（LRM）的自我进化——通过 RL / 自我博弈等让推理模型持续提升。
 研究范畴 大推理模型（Large Reasoning Model, LRM）的自我进化，聚焦于通过强化学习 / 自我博弈 / 过程奖励 / 树搜索等范式，让&#34;System 2&#34;式长链推理模型在推理质量上持续提升。本方向涵盖：RL 后训练、自我博弈、过程 / 结果奖励、搜索增强训练、长思维链与推理时计算。社区关注的核心问题包括：RL 训练带来的能力提升能否泛化到分布外任务、奖励稀疏 / 奖励作弊与&#34;伪推理&#34;如何识别与缓解、探索—利用的平衡与思维链忠实度（faithfulness），以及训练效率与推理时算力的权衡。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="4190">
+  <meta itemprop="dateModified" content="2026-11-26T18:36:19+08:00">
+  <meta itemprop="wordCount" content="4233">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/evolvelrm/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="EvolveLRM">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:36:19+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evolvelrm\/"
-    },"genre": "research","wordcount":  4190 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evolvelrm\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  4233 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evolvelrm\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:36:19+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -274,6 +274,7 @@
 <ol>
 <li><strong>稀疏奖励先破零</strong>：困难题若整组采样全错，标准RLVR没有有效信号；先用相关易题、策略兼容引导或局部纠正制造足量成功事件，再逐步撤除辅助。
 <ul>
+<li><a href="../../updates/2026-11-26/#dart">DART：不确定性引导轨迹改写</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-20/#item-44">成功组数预测强化学习起飞</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-19/#ash">ASH：激活引导消除提示错配</a> · 2026-11-19</li>
 <li><a href="../../updates/2026-11-17/#stone">STONE：踏脚石式无标签自蒸馏</a> · 2026-11-17</li>
@@ -440,13 +441,14 @@
 <li><a href="../../updates/2026-10-30/#item-61">强化学习激励大语言模型自主学习长篇教材</a> · 2026-10-30</li>
 </ul>
 </li>
-<li><strong>群体基线检查偏差</strong>：奖励依赖同组答案时，GRPO相对基线会把协作目标扭成零和竞争；应采用无偏组目标并监控多数答案坍缩。
+<li><strong>群体估计控偏稳方差</strong>：奖励依赖同组答案时，GRPO基线会扭曲协作目标；应采用无偏组目标，并按悲观方差估计自适应调整组规模。
 <ul>
+<li><a href="../../updates/2026-11-26/#u-statistics-powered-llm-reasoning">U-Statistics-Powered LLM Reasoning：悲观估计自适应组规模</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-06/#grpo">群体依赖奖励下，GRPO会演变为零和锦标赛</a> · 2026-11-06</li>
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-18/conserved-verdicts 2026-11-18/gpt-6-2-astra 2026-11-18/lpc-mcts 2026-11-18/optimistic-verifiers 2026-11-19/ash 2026-11-19/eca 2026-11-19/option-grpo 2026-11-20/budget-internalization 2026-11-20/item-44 2026-11-20/item-65 2026-11-20/item-80 2026-11-20/multiagentbench 2026-11-20/openai-rsi 2026-11-20/rlcdr 2026-11-20/roam-grpo 2026-11-21/pair-med 2026-11-23/creditfilter 2026-11-23/ctrl-gpu 2026-11-23/dm-prm 2026-11-23/item-25 2026-11-23/item-49 2026-11-23/item-53 2026-11-23/sh-prm 2026-11-23/structure-over-scale 2026-11-24/pbpt 2026-11-24/thrifty 2026-11-25/anchorcredit 2026-11-25/aprm 2026-11-25/clr 2026-11-25/elgo 2026-11-25/epro 2026-11-25/item-123 2026-11-25/item-56 2026-11-25/mspo 2026-11-25/pmopd 2026-11-25/tt-rsi 2026-11-25/vopd -->
+<!-- experience-seen: 2026-11-19/ash 2026-11-19/eca 2026-11-19/option-grpo 2026-11-20/budget-internalization 2026-11-20/item-44 2026-11-20/item-65 2026-11-20/item-80 2026-11-20/multiagentbench 2026-11-20/openai-rsi 2026-11-20/rlcdr 2026-11-20/roam-grpo 2026-11-21/pair-med 2026-11-23/creditfilter 2026-11-23/ctrl-gpu 2026-11-23/dm-prm 2026-11-23/item-25 2026-11-23/item-49 2026-11-23/item-53 2026-11-23/sh-prm 2026-11-23/structure-over-scale 2026-11-24/pbpt 2026-11-24/thrifty 2026-11-25/anchorcredit 2026-11-25/aprm 2026-11-25/clr 2026-11-25/elgo 2026-11-25/epro 2026-11-25/item-123 2026-11-25/item-56 2026-11-25/mspo 2026-11-25/pmopd 2026-11-25/tt-rsi 2026-11-25/vopd 2026-11-26/dart 2026-11-26/u-statistics-powered-llm-reasoning -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

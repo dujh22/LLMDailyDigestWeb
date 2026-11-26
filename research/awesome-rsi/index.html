@@ -16,8 +16,8 @@
   <meta itemprop="description" content="Awesome-RSI 研究方向：**递归自我改进（Recursive Self-Improvement, RSI）**方向的精选资源与论文清单。
 研究范畴 递归自我改进（RSI）指一个系统能够持续改进自身，且其&#34;改进机制&#34;本身也被纳入改进对象，从而形成自指式的提升闭环。本方向涵盖：自我改进 Agent、自我重写 / 自我修复、LLM-as-a-Judge 自迭代、开放式 RSI 任务，以及面向 RSI 的治理与安全框架。社区关注的核心问题包括：自我改进能否持续近似单调地提升、是否存在上限或退化、自我奖励 / 自评判信号是否存在系统性偏差、如何度量&#34;改进&#34;本身以避免被优化目标作弊，以及 RSI 与对齐、可控性的协同。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="5898">
+  <meta itemprop="dateModified" content="2026-11-26T18:36:19+08:00">
+  <meta itemprop="wordCount" content="6007">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/awesome-rsi/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="Awesome-RSI">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-26T18:36:19+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/awesome-rsi\/"
-    },"genre": "research","wordcount":  5898 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/awesome-rsi\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  6007 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/awesome-rsi\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:36:19+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -295,6 +295,9 @@
 </li>
 <li><strong>评判器必须隔离</strong>：凡评估结果参与选模或训练，评判器都应按干预接受隔离审计；加入独立执行、人评、语义等价变换及证据匹配对照，排查迎合、方向偏差和定向误导。
 <ul>
+<li><a href="../../updates/2026-11-26/#sealedloop">SealedLoop：环外密封评判</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#hub-j">HUB-J：人类偏好驱动偏差审计</a> · 2026-11-26</li>
+<li><a href="../../updates/2026-11-26/#agent-as-a-verifier">Agent-as-a-Verifier：证据证书式通用验证</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#glm-5-5-rsi">GLM-5.5：多模型后训练汇流式RSI</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#doppelvet">DoppelVet：对照式更新安全验证</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-21/#item-21">量表反转探针：审计评判方向偏差</a> · 2026-11-21</li>
@@ -453,8 +456,9 @@
 <li><a href="../../updates/2026-11-05/#801-30b-rsi">801-30B：将 RSI 引入前沿预训练</a> · 2026-11-05</li>
 </ul>
 </li>
-<li><strong>权重空间更新</strong>：权重编辑或门控增量模块适合低成本局部修复，且可隔离部分副作用；效果仍可能依赖规模或数值痕迹，须做舍入对照、跨任务测试、安全审计和回退。
+<li><strong>权重空间更新</strong>：权重编辑或门控增量模块适合低成本局部修复，且可隔离部分副作用；效果可能来自数值痕迹或常规更新，须做舍入对照、标准基线、跨任务测试、安全审计和回退。
 <ul>
+<li><a href="../../updates/2026-11-26/#scalpel-and-brush">Scalpel and Brush：智能体稀疏权重编辑</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#selfwrite">SELFWRITE：无梯度自写权重编辑</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#self-upgrading-embodied-agents">Self-Upgrading Embodied Agents：经验驱动权重自升级</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-24/#self-wsp">Self-WSP：权重空间自我编程</a> · 2026-11-24</li>
@@ -474,6 +478,7 @@
 </li>
 <li><strong>持久更新治理</strong>：持久更新应经独立审计、安全回归与非劣效检验，默认拒绝失败版本并保留回退；自生成内容、权重编辑及种群跨代变化均按不可信输入处理。
 <ul>
+<li><a href="../../updates/2026-11-26/#sed">SED：单次注入毒化安全策略</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#self-upgrading-embodied-agents">Self-Upgrading Embodied Agents：经验驱动权重自升级</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#evolutionary-ai-control">Evolutionary AI Control：演化种群安全证明</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#doppelvet">DoppelVet：对照式更新安全验证</a> · 2026-11-25</li>
@@ -499,7 +504,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-18/elite 2026-11-18/jevrsi 2026-11-18/self-rewriting 2026-11-19/aerorsi 2026-11-19/eva-rsi 2026-11-19/guard 2026-11-19/item-15 2026-11-19/item-48 2026-11-19/resolution-hypothesis 2026-11-19/rsi-prime 2026-11-19/rsibench-infra 2026-11-19/safe-personal-rsi 2026-11-19/weight-space-programming 2026-11-20/agnes-harness 2026-11-20/basersi 2026-11-20/cyber-physical-rsi 2026-11-20/keel 2026-11-20/openai-rsi 2026-11-20/piccolo 2026-11-20/sage-evolve-preview 2026-11-20/self-replicating-language-models 2026-11-20/system-one-rsi 2026-11-21/agi-asi 2026-11-21/item-21 2026-11-23/alps-lab 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/medicalrsi 2026-11-23/openai-ai 2026-11-23/search-rsi 2026-11-24/2026-ai-rsi 2026-11-24/dive 2026-11-24/don-t-train-it-write-it 2026-11-24/finevo 2026-11-24/metarsi-rsi 2026-11-24/rsi 2026-11-24/self-wsp 2026-11-24/semantic-pid-rsi-pid 2026-11-24/sro 2026-11-24/superintelligence-is-arriving-ai 2026-11-25/detection-gap 2026-11-25/doppelvet 2026-11-25/evolutionary-ai-control 2026-11-25/fin-rsi 2026-11-25/glm-5-5-rsi 2026-11-25/habitats 2026-11-25/item-123 2026-11-25/phyevo-mic-rsi 2026-11-25/recurscibench-rsi 2026-11-25/self-upgrading-embodied-agents 2026-11-25/selfwrite 2026-11-25/tt-rsi -->
+<!-- experience-seen: 2026-11-19/aerorsi 2026-11-19/eva-rsi 2026-11-19/guard 2026-11-19/item-15 2026-11-19/item-48 2026-11-19/resolution-hypothesis 2026-11-19/rsi-prime 2026-11-19/rsibench-infra 2026-11-19/safe-personal-rsi 2026-11-19/weight-space-programming 2026-11-20/agnes-harness 2026-11-20/basersi 2026-11-20/cyber-physical-rsi 2026-11-20/keel 2026-11-20/openai-rsi 2026-11-20/piccolo 2026-11-20/sage-evolve-preview 2026-11-20/self-replicating-language-models 2026-11-20/system-one-rsi 2026-11-21/agi-asi 2026-11-21/item-21 2026-11-23/alps-lab 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/medicalrsi 2026-11-23/openai-ai 2026-11-23/search-rsi 2026-11-24/2026-ai-rsi 2026-11-24/dive 2026-11-24/don-t-train-it-write-it 2026-11-24/finevo 2026-11-24/metarsi-rsi 2026-11-24/rsi 2026-11-24/self-wsp 2026-11-24/semantic-pid-rsi-pid 2026-11-24/sro 2026-11-24/superintelligence-is-arriving-ai 2026-11-25/detection-gap 2026-11-25/doppelvet 2026-11-25/evolutionary-ai-control 2026-11-25/fin-rsi 2026-11-25/glm-5-5-rsi 2026-11-25/habitats 2026-11-25/item-123 2026-11-25/phyevo-mic-rsi 2026-11-25/recurscibench-rsi 2026-11-25/self-upgrading-embodied-agents 2026-11-25/selfwrite 2026-11-25/tt-rsi 2026-11-26/agent-as-a-verifier 2026-11-26/hub-j 2026-11-26/scalpel-and-brush 2026-11-26/sealedloop 2026-11-26/sed -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
