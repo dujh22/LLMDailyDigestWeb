@@ -523,7 +523,13 @@ EvolveLRM｜【重要】算法工程师要失业了？阿里和浙大联手提�
 摘要：（今日热度 856）强化学习的后训练过程正推动现代人工智能系统在推理与智能体能力方面的进步；然而，越来越多的研究表明，只有当强化学习被用于微调一个本身已具备较强能力的基础模型时，其效果才最为显著。我们由此提出疑问：当前主流的模型训练流程所产出的模型，是否真的最适合开展后续的强化学习？基于先前研究——该研究指出“覆盖度”（coverage）与“pass@K”指标可作为预测强化学习后性能的重要依据——我们设计了一种对监督微调（SFT）的简易改进方法，称为TailSFT：它在训练过程中主动过滤掉那些模型已能较好拟合的样本序列，从而将学习重心转向数据分布中建模不足的区域，即分布的“尾部”（tail）。我们通过受控实验与理论分析相结合的方式，为TailSFT的设计选择（尤其是所采用的具体过滤标准）提供了充分的合理性论证与实证验证。在OLMo-3 7B模型上，TailSFT在数学与编程类评测任务的pass@16指标上普遍取得提升，绝对增益最高达17%，且仅带来极小的额外计算开销。更重要的是，这些具有更高覆盖度的中间检查点，在后续采用GRPO算法进行强化学习时，稳定地转化为最高达4个百分点的pass@1绝对提升，充分证明TailSFT产出的检查点更适合作为强化学习的初始化起点。此外，我们还提出了一种轻量级诊断工具，用于快速识别TailSFT最可能发挥效用的训练场景。更广泛而言，本研究的结果启示我们应采取一种原则性强、阶段意识明确的模型研发范式：即在模型开发的每个中间阶段，其产出的检查点不应仅以自身性能为评判标准，而更应以其对后续训练阶段的支持效能为根本衡量依据。</div>
   </details></article>
 </section></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+    <div class="footer-container"><div class="footer-line visitor order-5">
+    <span id="busuanzi_container_site_uv" title="总访客数"><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;访客 <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+    </span>
+    <span id="busuanzi_container_site_pv" class="footer-divider" title="总访问量"><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;访问 <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+    </span>
+  </div>
+  <script defer src="https://events.vercount.one/js"></script><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">
               <a href="https://github.com/dujh22/LLM-DailyDigest"target="_blank" rel="external nofollow noopener noreferrer">LLM-DailyDigest</a></span></div><div class="footer-line statistics"></div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
