@@ -16,8 +16,8 @@
   <meta itemprop="description" content="NewModel 研究方向：新模型——基础模型新版本、新架构与新训练范式的跟踪与剖析，关注&#34;模型本身变了什么&#34;，而非某个自进化机制。
 研究范畴 新模型（new model watch）是本站的横向跟踪方向，与各 *Evolve 方向互补：*Evolve 关心&#34;如何让模型自己变强&#34;的方法论，NewModel 关心&#34;新发布的模型在架构、数据、训练配方与能力边界上到底改了什么&#34;。本方向涵盖：开源与闭源基础模型的新版本（通用 / 推理 / 多模态 / 小尺寸端侧）、注意力与序列建模架构创新（线性注意力、稀疏注意力、混合 Mamba-Transformer、循环记忆层）、MoE 稀疏化与专家路由设计、训练配方与优化器（数据配比、课程、Muon 类二阶优化、长上下文训练）、推理模型的后训练范式（RLVR、可验证奖励、测试时扩展），以及扩散语言模型等非自回归路线的进展。社区关注的核心问题包括：新架构的收益能否在同等算力下复现、benchmark 分数与真实能力之间的落差、开源权重与训练细节披露的不对称、模型谱系与蒸馏关系难以追溯，以及新模型发布节奏下如何做有效的横向对比而非简单刷榜。">
   <meta itemprop="datePublished" content="2026-10-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
-  <meta itemprop="wordCount" content="6189">
+  <meta itemprop="dateModified" content="2026-11-27T10:44:26+08:00">
+  <meta itemprop="wordCount" content="6211">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/newmodel/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="NewModel">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:44:26+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newmodel\/"
-    },"genre": "research","wordcount":  6189 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newmodel\/","datePublished": "2026-10-21T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
+    },"genre": "research","wordcount":  6211 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newmodel\/","datePublished": "2026-10-21T00:00:00+08:00","dateModified": "2026-11-27T10:44:26+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -350,6 +350,7 @@
 </li>
 <li><strong>中期训练重在调分布</strong>：扩长上下文或迁移领域时，应同步调整数据分布与学习率；即使目标统一，也要控制静态与在线数据配比。
 <ul>
+<li><a href="../../updates/2026-11-27/#sage-med">Sage-Med：渐进训练扩展医学多模态</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-25/#wemm-ecom">WeMM-Ecom：电商多模态混合思考</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-06/#item-102">金融小型决策模型：专业化坍缩与混合语料修复</a> · 2026-11-06</li>
 <li><a href="../../updates/2026-11-01/#item-13">单一算法统一训练基础模型</a> · 2026-11-01</li>
@@ -514,7 +515,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-20/alive 2026-11-20/beam-moe 2026-11-20/clover 2026-11-20/drift 2026-11-20/gemini-4-neon-genie-4 2026-11-20/glide 2026-11-20/hy4-moe 2026-11-20/jeveration 2026-11-21/depth-pro-2 2026-11-21/egocaptioner 2026-11-21/gemini-4-hydrogen-token 2026-11-21/hiuni 2026-11-21/hy4 2026-11-21/wemm-video 2026-11-23/lrsa 2026-11-23/memonce 2026-11-23/structure-over-scale 2026-11-24/cmhc 2026-11-24/don-t-train-it-write-it 2026-11-24/duopra 2026-11-24/glm-5-4 2026-11-24/gpt-6-2-sol 2026-11-24/hy-mt3 2026-11-24/inkling2mini 2026-11-24/markovian-reasoning-llm 2026-11-24/memt-1-0-pro 2026-11-25/deciform 2026-11-25/eeg-jev 2026-11-25/gemini-4-neon 2026-11-25/integral-deltanet 2026-11-25/item-152 2026-11-25/item-29 2026-11-25/leannext 2026-11-25/nanoastra 2026-11-25/native-lam 2026-11-25/pmopd 2026-11-25/sleep 2026-11-25/wemm-ecom 2026-11-26/aliceai-foundation 2026-11-26/antom 2026-11-26/gemini-4-neon 2026-11-26/gpt-6-2-sol 2026-11-26/lingsante-medguard 2026-11-26/loomformer 2026-11-26/qwen-image-hd 2026-11-26/s-mind 2026-11-26/ssa 2026-11-26/swgdn 2026-11-27/docseam 2026-11-27/dylomo-dit 2026-11-27/molt-kv -->
+<!-- experience-seen: 2026-11-20/alive 2026-11-20/beam-moe 2026-11-20/clover 2026-11-20/drift 2026-11-20/gemini-4-neon-genie-4 2026-11-20/glide 2026-11-20/hy4-moe 2026-11-20/jeveration 2026-11-21/depth-pro-2 2026-11-21/egocaptioner 2026-11-21/gemini-4-hydrogen-token 2026-11-21/hiuni 2026-11-21/hy4 2026-11-21/wemm-video 2026-11-23/lrsa 2026-11-23/memonce 2026-11-23/structure-over-scale 2026-11-24/cmhc 2026-11-24/don-t-train-it-write-it 2026-11-24/duopra 2026-11-24/glm-5-4 2026-11-24/gpt-6-2-sol 2026-11-24/hy-mt3 2026-11-24/inkling2mini 2026-11-24/markovian-reasoning-llm 2026-11-24/memt-1-0-pro 2026-11-25/deciform 2026-11-25/eeg-jev 2026-11-25/gemini-4-neon 2026-11-25/integral-deltanet 2026-11-25/item-152 2026-11-25/item-29 2026-11-25/leannext 2026-11-25/nanoastra 2026-11-25/native-lam 2026-11-25/pmopd 2026-11-25/sleep 2026-11-25/wemm-ecom 2026-11-26/aliceai-foundation 2026-11-26/antom 2026-11-26/gemini-4-neon 2026-11-26/gpt-6-2-sol 2026-11-26/lingsante-medguard 2026-11-26/loomformer 2026-11-26/qwen-image-hd 2026-11-26/s-mind 2026-11-26/ssa 2026-11-26/swgdn 2026-11-27/docseam 2026-11-27/dylomo-dit 2026-11-27/molt-kv 2026-11-27/sage-med -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架 / 模型权重</strong></p>

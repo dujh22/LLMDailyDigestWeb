@@ -16,8 +16,8 @@
   <meta itemprop="description" content="HarnessEvolve 研究方向：评测 harness 的演进——围绕 lm-evaluation-harness / SWE-bench 类工具的扩展与进化（本站已 fork 相关仓库）。
 研究范畴 评测 / Agent harness 的演进，围绕 lm-evaluation-harness、SWE-bench 类工具及其扩展与进化展开。harness（含 Agent-Computer Interface、运行环境、工具与提示约定）显著影响甚至主导模型在 Agent 任务上的表现，因此其工程化与标准化日益重要。本方向涵盖：harness engineering、ACI 设计、真实运行环境构建，以及 harness 效应的度量和披露。社区关注的核心问题包括：harness 设计在多大程度上改变了模型间的相对排名、如何标准化披露 harness 配置以保证可比与可复现、环境真实度（realism）与隔离 / 安全的权衡，以及动态 / 长周期环境下的 harness 演进。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
-  <meta itemprop="wordCount" content="7504">
+  <meta itemprop="dateModified" content="2026-11-27T10:44:26+08:00">
+  <meta itemprop="wordCount" content="7527">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/harnessevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="HarnessEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:44:26+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/"
-    },"genre": "research","wordcount":  7504 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
+    },"genre": "research","wordcount":  7527 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-27T10:44:26+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -498,6 +498,7 @@
 </li>
 <li><strong>统一适配层</strong>：用可插拔适配层统一训练、评测和部署接口，可在不改模型时复用不同 Agent 与环境并降低迁移偏差。
 <ul>
+<li><a href="../../updates/2026-11-27/#real2simlab">Real2SimLab：真实到仿真统一评测</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-26/#pax">Pax：插件化终端编码智能体</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-12/#worldfoundry">WorldFoundry：面向世界智能的统一基础设施</a> · 2026-11-12</li>
 <li><a href="../../updates/2026-11-04/#uni-robot-agent-harness">uni-robot-agent：面向开源机器人智能体的统一 Harness</a> · 2026-11-04</li>
@@ -567,7 +568,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/codex 2026-11-19/evidence-interpretation 2026-11-19/forceharness 2026-11-19/forecastgym 2026-11-19/graft 2026-11-19/guard 2026-11-19/item-36 2026-11-19/item-49 2026-11-19/l2c 2026-11-19/mobilegym-lite 2026-11-19/ragharnessdebugger-jev 2026-11-19/scaffold 2026-11-19/videonexus 2026-11-20/agnes-harness 2026-11-20/ahe-beta 2026-11-20/basersi 2026-11-20/everydaybench 2026-11-20/evo-harness 2026-11-20/harness 2026-11-20/item-60 2026-11-20/meta-rtl-rtl 2026-11-20/sage-evolve-preview 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/hookevo 2026-11-23/item-10 2026-11-23/medicalrsi 2026-11-23/roha-sgg 2026-11-23/splitbench 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/hoh 2026-11-24/hyperharness 2026-11-24/item-60 2026-11-24/massys 2026-11-24/matharness 2026-11-24/mlevolver 2026-11-24/rlm-27b 2026-11-25/agent 2026-11-25/agl-skill 2026-11-25/ai-harness 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/glm-5-5-rsi 2026-11-25/harness-rehearsal 2026-11-25/harness2 2026-11-25/harnessmm 2026-11-25/harnesspro 2026-11-25/item-108 2026-11-25/item-128 2026-11-25/item-136 2026-11-25/jevagentharness-jev 2026-11-25/mini-psych-agent 2026-11-25/online-environment-repair 2026-11-25/oo-harness 2026-11-25/reharness 2026-11-25/roboharness-zero 2026-11-25/rvlm-x 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/tare 2026-11-25/toolsmith 2026-11-25/transport-safe-evaluation 2026-11-25/video-relook 2026-11-26/agnes-harness 2026-11-26/autorlbench-rl 2026-11-26/delegent 2026-11-26/harness-learning 2026-11-26/home 2026-11-26/metaforge 2026-11-26/nightwatch 2026-11-26/pax 2026-11-26/report-inconsistency 2026-11-26/roboevo 2026-11-26/skillsbench 2026-11-26/transharness -->
+<!-- experience-seen: 2026-11-20/agnes-harness 2026-11-20/ahe-beta 2026-11-20/basersi 2026-11-20/everydaybench 2026-11-20/evo-harness 2026-11-20/harness 2026-11-20/item-60 2026-11-20/meta-rtl-rtl 2026-11-20/sage-evolve-preview 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/hookevo 2026-11-23/item-10 2026-11-23/medicalrsi 2026-11-23/roha-sgg 2026-11-23/splitbench 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/hoh 2026-11-24/hyperharness 2026-11-24/item-60 2026-11-24/massys 2026-11-24/matharness 2026-11-24/mlevolver 2026-11-24/rlm-27b 2026-11-25/agent 2026-11-25/agl-skill 2026-11-25/ai-harness 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/glm-5-5-rsi 2026-11-25/harness-rehearsal 2026-11-25/harness2 2026-11-25/harnessmm 2026-11-25/harnesspro 2026-11-25/item-108 2026-11-25/item-128 2026-11-25/item-136 2026-11-25/jevagentharness-jev 2026-11-25/mini-psych-agent 2026-11-25/online-environment-repair 2026-11-25/oo-harness 2026-11-25/reharness 2026-11-25/roboharness-zero 2026-11-25/rvlm-x 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/tare 2026-11-25/toolsmith 2026-11-25/transport-safe-evaluation 2026-11-25/video-relook 2026-11-26/agnes-harness 2026-11-26/autorlbench-rl 2026-11-26/delegent 2026-11-26/harness-learning 2026-11-26/home 2026-11-26/metaforge 2026-11-26/nightwatch 2026-11-26/pax 2026-11-26/report-inconsistency 2026-11-26/roboevo 2026-11-26/skillsbench 2026-11-26/transharness 2026-11-27/real2simlab -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
