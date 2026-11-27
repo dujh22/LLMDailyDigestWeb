@@ -16,8 +16,8 @@
   <meta itemprop="description" content="EvalEvolve 研究方向：进化式评测——随能力增长持续演化、抗污染的评测基准与方法。
 研究范畴 进化式评测（evolutionary / dynamic evaluation）针对静态基准易被污染、快速过时的问题，主张让基准与方法随模型能力增长持续演化、抗污染。本方向涵盖：持续更新的 live benchmarks、动态 / 等价变体评测、自动出题（auto-benchmaking）、抗污染机制，以及自进化基准框架。社区关注的核心问题包括：如何持续、低成本地产生高质量新题并标定难度、如何抵抗训练数据污染与基准泄漏、动态评测如何与真实世界能力对齐避免指标漂移，以及多模态 / Agent / 长周期任务的评测有效性。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:41:48+08:00">
-  <meta itemprop="wordCount" content="12193">
+  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
+  <meta itemprop="wordCount" content="12217">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/evalevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="EvalEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:41:48+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evalevolve\/"
-    },"genre": "research","wordcount":  12193 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evalevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-26T18:41:48+08:00","publisher": {
+    },"genre": "research","wordcount":  12217 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/evalevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -455,6 +455,7 @@
 </li>
 <li><strong>交互环境测适应</strong>：静态指令难以覆盖真实适应能力；应在实时交互中引入目标修订、外界扰动和证据冲突，评估恢复与重规划。
 <ul>
+<li><a href="../../updates/2026-11-27/#egousebench">EgoUseBench：动态第一人称任务评测</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-25/#s1arena-mm">S1Arena-MM：多模态快慢决策评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-24/#item-60">智能体恢复审计：公开报告证据评估</a> · 2026-11-24</li>
 <li><a href="../../updates/2026-11-24/#autopilot">AutoPILOT：实时游戏控制脚手架</a> · 2026-11-24</li>
@@ -772,7 +773,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/3d-gamedev-arena 2026-11-19/breath-dx 2026-11-19/done-but-still-working 2026-11-19/eva-rsi 2026-11-19/evidence-interpretation 2026-11-19/flcva 2026-11-19/forecastgym 2026-11-19/futurebench 2026-11-19/gandalf 2026-11-19/item-36 2026-11-19/item-49 2026-11-19/item-53 2026-11-19/l2c 2026-11-19/normal-only-tta 2026-11-19/resolution-hypothesis 2026-11-19/robobuilder 2026-11-19/rsibench-infra 2026-11-19/safe-personal-rsi 2026-11-19/stembench 2026-11-20/appsci-bench 2026-11-20/buggymle 2026-11-20/chronodossier 2026-11-20/compact-bench 2026-11-20/everydaybench 2026-11-20/frontieror 2026-11-20/item-65 2026-11-20/knowing-what-you-know 2026-11-20/openhagen-worlds 2026-11-20/rigel-ladon 2026-11-20/sage-evolve-preview 2026-11-20/singularity-bench-ai 2026-11-20/sirius-tiamat 2026-11-20/stability-gap 2026-11-20/strideworld 2026-11-20/twinlab-bench 2026-11-21/gemini-4-hydrogen-token 2026-11-21/item-21 2026-11-21/item-24 2026-11-21/mind2act-world 2026-11-21/turingspace 2026-11-23/altair-nidhogg 2026-11-23/astronautbench 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/groupassistbench 2026-11-23/item-10 2026-11-23/item-23 2026-11-23/memory-tax 2026-11-23/metr-3-6 2026-11-23/openai-ai 2026-11-23/so-arena 2026-11-23/splitbench 2026-11-24/agentrobocritic 2026-11-24/agrimanager 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/item-60 2026-11-24/item-67 2026-11-24/massys 2026-11-24/memanto 2026-11-24/nopeworld 2026-11-24/omnidecisionbench 2026-11-24/pure 2026-11-24/rdqa 2026-11-24/respacebench 2026-11-24/schedule-rank-profile 2026-11-25/antares-smaug 2026-11-25/asterism 2026-11-25/benchmint 2026-11-25/beyond-accuracy 2026-11-25/co-graft 2026-11-25/cua-see 2026-11-25/decision-models 2026-11-25/detection-gap 2026-11-25/evicraft 2026-11-25/gemini-4-neon 2026-11-25/geodecisions 2026-11-25/iclr-2026 2026-11-25/item-108 2026-11-25/item-109 2026-11-25/item-117 2026-11-25/item-123 2026-11-25/item-133 2026-11-25/item-136 2026-11-25/item-69 2026-11-25/item-71 2026-11-25/item-93 2026-11-25/lce 2026-11-25/mini-psych-agent 2026-11-25/prefill1 2026-11-25/recurscibench-rsi 2026-11-25/robolivemem 2026-11-25/robouniverse-10k 2026-11-25/s1arena-mm 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/stun-bench 2026-11-25/swapcert 2026-11-25/tare 2026-11-25/tea-leaves 2026-11-25/tgb 2026-11-25/transport-safe-evaluation 2026-11-25/vla 2026-11-25/worldleague 2026-11-26/agent-as-a-verifier 2026-11-26/autorlbench-rl 2026-11-26/best-of-n-steering 2026-11-26/cf-reward 2026-11-26/evolink-bench 2026-11-26/hub-j 2026-11-26/irtiqa 2026-11-26/item-23 2026-11-26/item-39 2026-11-26/item-86 2026-11-26/lingsante-medguard 2026-11-26/lost-in-translation 2026-11-26/medskill-e 2026-11-26/merlin-bench 2026-11-26/recordroute 2026-11-26/ree 2026-11-26/robodojo-mirror 2026-11-26/sealedloop 2026-11-26/skillsbench 2026-11-26/vfr -->
+<!-- experience-seen: 2026-11-20/appsci-bench 2026-11-20/buggymle 2026-11-20/chronodossier 2026-11-20/compact-bench 2026-11-20/everydaybench 2026-11-20/frontieror 2026-11-20/item-65 2026-11-20/knowing-what-you-know 2026-11-20/openhagen-worlds 2026-11-20/rigel-ladon 2026-11-20/sage-evolve-preview 2026-11-20/singularity-bench-ai 2026-11-20/sirius-tiamat 2026-11-20/stability-gap 2026-11-20/strideworld 2026-11-20/twinlab-bench 2026-11-21/gemini-4-hydrogen-token 2026-11-21/item-21 2026-11-21/item-24 2026-11-21/mind2act-world 2026-11-21/turingspace 2026-11-23/altair-nidhogg 2026-11-23/astronautbench 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/groupassistbench 2026-11-23/item-10 2026-11-23/item-23 2026-11-23/memory-tax 2026-11-23/metr-3-6 2026-11-23/openai-ai 2026-11-23/so-arena 2026-11-23/splitbench 2026-11-24/agentrobocritic 2026-11-24/agrimanager 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/item-60 2026-11-24/item-67 2026-11-24/massys 2026-11-24/memanto 2026-11-24/nopeworld 2026-11-24/omnidecisionbench 2026-11-24/pure 2026-11-24/rdqa 2026-11-24/respacebench 2026-11-24/schedule-rank-profile 2026-11-25/antares-smaug 2026-11-25/asterism 2026-11-25/benchmint 2026-11-25/beyond-accuracy 2026-11-25/co-graft 2026-11-25/cua-see 2026-11-25/decision-models 2026-11-25/detection-gap 2026-11-25/evicraft 2026-11-25/gemini-4-neon 2026-11-25/geodecisions 2026-11-25/iclr-2026 2026-11-25/item-108 2026-11-25/item-109 2026-11-25/item-117 2026-11-25/item-123 2026-11-25/item-133 2026-11-25/item-136 2026-11-25/item-69 2026-11-25/item-71 2026-11-25/item-93 2026-11-25/lce 2026-11-25/mini-psych-agent 2026-11-25/prefill1 2026-11-25/recurscibench-rsi 2026-11-25/robolivemem 2026-11-25/robouniverse-10k 2026-11-25/s1arena-mm 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/stun-bench 2026-11-25/swapcert 2026-11-25/tare 2026-11-25/tea-leaves 2026-11-25/tgb 2026-11-25/transport-safe-evaluation 2026-11-25/vla 2026-11-25/worldleague 2026-11-26/agent-as-a-verifier 2026-11-26/autorlbench-rl 2026-11-26/best-of-n-steering 2026-11-26/cf-reward 2026-11-26/evolink-bench 2026-11-26/hub-j 2026-11-26/irtiqa 2026-11-26/item-23 2026-11-26/item-39 2026-11-26/item-86 2026-11-26/lingsante-medguard 2026-11-26/lost-in-translation 2026-11-26/medskill-e 2026-11-26/merlin-bench 2026-11-26/recordroute 2026-11-26/ree 2026-11-26/robodojo-mirror 2026-11-26/sealedloop 2026-11-26/skillsbench 2026-11-26/vfr 2026-11-27/egousebench -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -1352,7 +1353,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体自进化 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-22/#verievolve" class="archive-item-link">VeriEvolve：评估器优先的工具智能体演化框架</a>
                 <span class="archive-item-date" title='2026-10-22'>10-22</span>&nbsp;<a href="https://arxiv.org/abs/2610.29005" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体评测 <sup>119</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体评测 <sup>120</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-27/#egousebench" class="archive-item-link">EgoUseBench：动态第一人称任务评测</a>
+                <span class="archive-item-date" title='2026-11-27'>11-27</span>&nbsp;<a href="https://arxiv.org/abs/2611.34466" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-26/#autorlbench-rl" class="archive-item-link">AutoRLBench：真实RL故障诊修评测</a>
                 <span class="archive-item-date" title='2026-11-26'>11-26</span>&nbsp;<a href="https://github.com/Thinking-Space/AutoRLBench" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-26/#merlin-bench" class="archive-item-link">Merlin-Bench：交互证明统一评测</a>

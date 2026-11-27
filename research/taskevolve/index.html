@@ -13,8 +13,8 @@
   <meta itemprop="name" content="TaskEvolve">
   <meta itemprop="description" content="TaskEvolve 研究方向：任务级自进化——智能体自主产出可运行的任务 / 作品（游戏、软件、交互式内容），再通过试玩、反思与修复持续迭代，使任务本身成为进化的载体。">
   <meta itemprop="datePublished" content="2026-10-22T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:25:47+08:00">
-  <meta itemprop="wordCount" content="2284">
+  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
+  <meta itemprop="wordCount" content="2396">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/taskevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="TaskEvolve">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-22T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:25:47+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/taskevolve\/"
-    },"genre": "research","wordcount":  2284 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/taskevolve\/","datePublished": "2026-10-22T00:00:00+08:00","dateModified": "2026-11-26T18:25:47+08:00","publisher": {
+    },"genre": "research","wordcount":  2396 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/taskevolve\/","datePublished": "2026-10-22T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -293,8 +293,9 @@
 <li><a href="../../updates/2026-11-06/#multi-step-swe">Multi-step SWE：编码智能体的长程持续开发评测</a> · 2026-11-06</li>
 </ul>
 </li>
-<li><strong>功能体验双验收</strong>：游戏等开放作品应先用功能测试守住可运行底线，再以跨熟练度试玩和真人偏好评价技巧成长与交互乐趣。
+<li><strong>功能体验双验收</strong>：游戏等开放作品应先以功能测试守住可运行底线，再将趣味拆成可诊断维度，结合跨熟练度试玩与真人偏好持续迭代。
 <ul>
+<li><a href="../../updates/2026-11-27/#play2evolve">Play2Evolve：趣味反馈驱动游戏演化</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-20/#playcraft">PlayCraft：基于游玩经验的游戏迭代</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-19/#3d-gamedev-arena">3D GameDev Arena：超长程游戏开发评测</a> · 2026-11-19</li>
 </ul>
@@ -327,8 +328,13 @@
 <li><a href="../../updates/2026-11-25/#habitats">Habitats：开放式智能体目标演化</a> · 2026-11-25</li>
 </ul>
 </li>
+<li><strong>多时钟感知验收</strong>：多媒体产物不能以代码无错代替感知正确；应在生成早期做局部隔离检查，并用多模态证据对齐画面、声音等时钟。
+<ul>
+<li><a href="../../updates/2026-11-27/#vibevideoagent">VibeVideoAgent：多时钟闭环感知</a> · 2026-11-27</li>
+</ul>
+</li>
 </ol>
-<!-- experience-seen: 2026-11-18/scenarioforge 2026-11-19/3d-gamedev-arena 2026-11-19/crossenv 2026-11-20/playcraft 2026-11-20/sigame 2026-11-23/search-rsi 2026-11-25/habitats 2026-11-25/margin -->
+<!-- experience-seen: 2026-11-20/playcraft 2026-11-20/sigame 2026-11-23/search-rsi 2026-11-25/habitats 2026-11-25/margin 2026-11-27/play2evolve 2026-11-27/vibevideoagent -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -404,7 +410,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体训练 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-29/#workfactory" class="archive-item-link">WorkFactory：将职业意图转化为可执行任务以规模化训练智能体</a>
                 <span class="archive-item-date" title='2026-10-29'>10-29</span>&nbsp;<a href="https://arxiv.org/abs/2610.37161" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/IQuestLab/WorkFactory" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/IQuestLab/WorkFactory" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>游戏生成 <sup>5</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>游戏生成 <sup>6</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-27/#play2evolve" class="archive-item-link">Play2Evolve：趣味反馈驱动游戏演化</a>
+                <span class="archive-item-date" title='2026-11-27'>11-27</span>&nbsp;<a href="https://arxiv.org/abs/2611.33457" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/showlab/Play2Evolve" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-20/#playcraft" class="archive-item-link">PlayCraft：基于游玩经验的游戏迭代</a>
                 <span class="archive-item-date" title='2026-11-20'>11-20</span>&nbsp;<a href="https://arxiv.org/abs/2611.26624" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-31/#vibegame-ai" class="archive-item-link">VibeGame：AI 原生引擎与自进化智能体团队实现提示词生成游戏</a>
@@ -431,6 +439,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自进化 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-27/#physevolve" class="archive-item-link">PhysEvolve：基于可执行世界验证的物理推理自进化</a>
                 <span class="archive-item-date" title='2026-10-27'>10-27</span>&nbsp;<a href="https://arxiv.org/abs/2610.34921" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视频生成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-27/#vibevideoagent" class="archive-item-link">VibeVideoAgent：多时钟闭环感知</a>
+                <span class="archive-item-date" title='2026-11-27'>11-27</span>&nbsp;<a href="https://arxiv.org/abs/2611.34237" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>评测审计 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-03/#item-30" class="archive-item-link">终端长程任务的真实深度测量与合成</a>
                 <span class="archive-item-date" title='2026-11-03'>11-03</span>&nbsp;<a href="https://arxiv.org/abs/2611.01927" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">

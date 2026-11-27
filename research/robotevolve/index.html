@@ -16,8 +16,8 @@
   <meta itemprop="description" content="RobotEvolve 研究方向：具身智能自进化——机器人 / 具身 Agent 在仿真与真实环境中通过自主数据采集、自动奖励设计与 sim-to-real 迭代持续提升。
 研究范畴 具身智能自进化（embodied self-evolution）关注机器人与具身 Agent 如何在与物理（或高保真仿真）世界的交互中自主改进：由模型自己提出任务、生成场景与资产、设计奖励函数、采集与筛选轨迹，再回灌到视觉-语言-动作（VLA）基础模型的训练中，形成&#34;任务生成 → 仿真执行 → 数据回灌 → 模型更新 → sim-to-real 验证&#34;的闭环。本方向涵盖：VLA / 通用机器人基础模型、跨本体（cross-embodiment）数据与迁移、LLM 驱动的奖励与课程自动设计（Eureka 类）、生成式仿真与自动场景合成（RoboGen 类）、世界模型驱动的想象训练，以及具身 Agent 的技能库积累与长程规划。社区关注的核心问题包括：真实交互数据昂贵且不可无限扩展时如何让自进化闭环&#34;跑得起&#34;、仿真进化出的能力能否稳定迁移到真实机器人、自动奖励与自评是否会被策略作弊，以及如何度量具身能力的真实泛化而非在固定基准上过拟合。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:41:48+08:00">
-  <meta itemprop="wordCount" content="4340">
+  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
+  <meta itemprop="wordCount" content="4396">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/robotevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="RobotEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:41:48+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/robotevolve\/"
-    },"genre": "research","wordcount":  4340 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/robotevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T18:41:48+08:00","publisher": {
+    },"genre": "research","wordcount":  4396 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/robotevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -295,8 +295,9 @@
 <li><a href="../../updates/2026-10-29/#genie-master">智元 Genie Master 在便利店跑通具身递归自我改进</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>潜在未来建模</strong>：未来建模应按用途选形态：需显式规划时联合生成视觉与稠密4D几何；部署控制时将分层潜在未来对齐动作分块，避免生成完整视频。
+<li><strong>潜在未来建模</strong>：未来建模应按用途选形态：显式规划联合生成视觉与稠密4D几何；部署控制将潜在未来对齐动作分块；仅需视觉鲁棒性时用训练期未来结构作辅助目标。
 <ul>
+<li><a href="../../updates/2026-11-27/#hog-wam">HOG-WAM：未来梯度监督增强视觉鲁棒性</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-25/#plan4d-4d">Plan4D：生成式可规划4D世界</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-23/#ls-mbpo">LS-MBPO：潜空间子块滚动强化</a> · 2026-11-23</li>
 <li><a href="../../updates/2026-11-20/#hint-wam">HINT-WAM：事后信息在策略自蒸馏</a> · 2026-11-20</li>
@@ -361,8 +362,9 @@
 <li><a href="../../updates/2026-10-30/#cel">清华联合无问芯穹、智元提出机器人群体经验学习范式 CEL</a> · 2026-10-30</li>
 </ul>
 </li>
-<li><strong>结构化经验复用</strong>：经验应按用途结构化：控制历史可压缩为可寻址状态，技能存为语义或因果动作块；会反复变化的惯例须保留原始观测，避免摘要丢失情境。
+<li><strong>结构化经验复用</strong>：经验应按用途结构化：控制历史压缩为可寻址状态，技能存为可组合、可调试的程序或语义动作块；易变惯例保留原始观测，避免摘要丢失情境。
 <ul>
+<li><a href="../../updates/2026-11-27/#pyrua-dex">PyRUA-Dex：编程智能体生成双手策略</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-25/#nanoastra">nanoAstra：语义动作建模与能力保持微调</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#mxi-memicl">MXI-MemICL：自检索交互记忆</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#motion-mamba-2-0">Motion Mamba 2.0：持久记忆式长时控制</a> · 2026-11-25</li>
@@ -431,7 +433,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/aerorsi 2026-11-19/heave-ho 2026-11-19/item-40 2026-11-19/robobuilder 2026-11-19/tcp4d-tcp 2026-11-20/coachsi 2026-11-20/drift 2026-11-20/hint-wam 2026-11-20/item-73 2026-11-20/laq 2026-11-21/mind2act-world 2026-11-21/zerovln 2026-11-23/embodied-harness 2026-11-23/loco-wam 2026-11-23/ls-mbpo 2026-11-23/navttt 2026-11-24/agentrobocritic 2026-11-24/nopeworld 2026-11-24/scape 2026-11-25/catway 2026-11-25/cgsi 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/item-117 2026-11-25/jko-grpo-wasserstein 2026-11-25/margin 2026-11-25/motion-mamba-2-0 2026-11-25/mxi-memicl 2026-11-25/nanoastra 2026-11-25/native-lam 2026-11-25/ovogo 2026-11-25/plan4d-4d 2026-11-25/refocus 2026-11-25/roboada 2026-11-25/roboharness-zero 2026-11-25/robolivemem 2026-11-25/robouniverse-10k 2026-11-25/rynnvla-latent 2026-11-25/self-upgrading-embodied-agents 2026-11-25/veritouch 2026-11-25/vla 2026-11-25/worldleague 2026-11-26/acap 2026-11-26/best-of-n-steering 2026-11-26/exploratory-midtraining 2026-11-26/item-83 2026-11-26/omniact 2026-11-26/robodojo-mirror 2026-11-26/roboevo 2026-11-26/sealedloop -->
+<!-- experience-seen: 2026-11-20/coachsi 2026-11-20/drift 2026-11-20/hint-wam 2026-11-20/item-73 2026-11-20/laq 2026-11-21/mind2act-world 2026-11-21/zerovln 2026-11-23/embodied-harness 2026-11-23/loco-wam 2026-11-23/ls-mbpo 2026-11-23/navttt 2026-11-24/agentrobocritic 2026-11-24/nopeworld 2026-11-24/scape 2026-11-25/catway 2026-11-25/cgsi 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/item-117 2026-11-25/jko-grpo-wasserstein 2026-11-25/margin 2026-11-25/motion-mamba-2-0 2026-11-25/mxi-memicl 2026-11-25/nanoastra 2026-11-25/native-lam 2026-11-25/ovogo 2026-11-25/plan4d-4d 2026-11-25/refocus 2026-11-25/roboada 2026-11-25/roboharness-zero 2026-11-25/robolivemem 2026-11-25/robouniverse-10k 2026-11-25/rynnvla-latent 2026-11-25/self-upgrading-embodied-agents 2026-11-25/veritouch 2026-11-25/vla 2026-11-25/worldleague 2026-11-26/acap 2026-11-26/best-of-n-steering 2026-11-26/exploratory-midtraining 2026-11-26/item-83 2026-11-26/omniact 2026-11-26/robodojo-mirror 2026-11-26/roboevo 2026-11-26/sealedloop 2026-11-27/hog-wam 2026-11-27/pyrua-dex -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -499,7 +501,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>上下文学习 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-12/#wicl" class="archive-item-link">WICL：面向智能体机器人操作的世界上下文学习</a>
                 <span class="archive-item-date" title='2026-11-12'>11-12</span>&nbsp;<a href="https://arxiv.org/abs/2611.12885" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/ArcheOne-AI/RoboScript" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>世界模型 <sup>26</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>世界模型 <sup>27</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-27/#hog-wam" class="archive-item-link">HOG-WAM：未来梯度监督增强视觉鲁棒性</a>
+                <span class="archive-item-date" title='2026-11-27'>11-27</span>&nbsp;<a href="https://arxiv.org/abs/2611.34811" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/iPPLab/HOG-WAM" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#plan4d-4d" class="archive-item-link">Plan4D：生成式可规划4D世界</a>
                 <span class="archive-item-date" title='2026-11-25'>11-25</span>&nbsp;<a href="https://arxiv.org/abs/2611.26516" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#native-lam" class="archive-item-link">Native LAM：世界模型提炼潜在动作</a>
@@ -624,7 +628,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>具身智能评估 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-27/#ebench" class="archive-item-link">EBench评测前沿智能体：从直接控制到策略调用</a>
                 <span class="archive-item-date" title='2026-10-27'>10-27</span>&nbsp;<a href="https://arxiv.org/abs/2610.35832" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>具身规划 <sup>15</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>具身规划 <sup>16</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-27/#pyrua-dex" class="archive-item-link">PyRUA-Dex：编程智能体生成双手策略</a>
+                <span class="archive-item-date" title='2026-11-27'>11-27</span>&nbsp;<a href="https://arxiv.org/abs/2611.33144" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#motion-mamba-2-0" class="archive-item-link">Motion Mamba 2.0：持久记忆式长时控制</a>
                 <span class="archive-item-date" title='2026-11-25'>11-25</span>&nbsp;<a href="https://arxiv.org/abs/2611.29897" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#roboharness-zero" class="archive-item-link">RoboHarness-Zero：规划控制解耦脚手架</a>

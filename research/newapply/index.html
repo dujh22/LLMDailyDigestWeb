@@ -16,8 +16,8 @@
   <meta itemprop="description" content="NewApply 研究方向：新应用——模型能力向真实产品与业务流程落地的跟踪，关注&#34;能力如何变成可用的系统&#34;，而非单个模型的技术指标。
 研究范畴 新应用（new application watch）是本站的横向跟踪方向，与各 *Evolve 方向互补：*Evolve 关心方法如何自我改进，NewApply 关心这些方法进入真实场景后是否成立。本方向涵盖：智能体开发框架与编排层（多智能体对话、图式工作流、低代码平台）、端到端任务智能体（浏览器操作、桌面操作、软件工程、科研自动化）、本地部署与私有化推理栈、企业流程集成与 RPA 式自动化，以及垂直领域应用（编程、办公、金融、医疗、教育、客服）。社区关注的核心问题包括：demo 与生产的差距（长尾失败、错误累积、成本失控）、在开放环境中的可评测性（真实网站与真实桌面难以稳定复现）、人机责任边界与授权范围、私有化部署下的能力衰减，以及应用层价值究竟来自模型能力还是来自工程编排。">
   <meta itemprop="datePublished" content="2026-10-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:41:48+08:00">
-  <meta itemprop="wordCount" content="4298">
+  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
+  <meta itemprop="wordCount" content="4333">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/newapply/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="NewApply">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:41:48+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newapply\/"
-    },"genre": "research","wordcount":  4298 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newapply\/","datePublished": "2026-10-21T00:00:00+08:00","dateModified": "2026-11-26T18:41:48+08:00","publisher": {
+    },"genre": "research","wordcount":  4333 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/newapply\/","datePublished": "2026-10-21T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -345,8 +345,9 @@
 <li><a href="../../updates/2026-11-04/#reviso">Reviso：面向视频字幕生成的优先级引导主动观察</a> · 2026-11-04</li>
 </ul>
 </li>
-<li><strong>可审计任务闭环</strong>：高风险与工程智能体应把确定性计算同语义判断解耦，以可执行约束限定搜索，并内置溯源、动态验证、可证伪实验和权限控制。
+<li><strong>可审计任务闭环</strong>：高风险、工程与多模态生成智能体应把执行正确性同语义或感知判断解耦，以可执行约束限定搜索，并内置局部证据、多时钟动态验证、溯源和权限控制。
 <ul>
+<li><a href="../../updates/2026-11-27/#vibevideoagent">VibeVideoAgent：多时钟闭环感知</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-26/#powerfix">PowerFix：物理引导迭代修复</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-26/#partagent">PartAgent：专家集成与闭环分割</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-26/#lingsante-medguard">LingSante MedGuard：多专家医疗安全护栏</a> · 2026-11-26</li>
@@ -437,7 +438,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/data-to-valves 2026-11-19/item-49 2026-11-19/item-53 2026-11-19/item-54 2026-11-19/mle-agents 2026-11-19/optics-as-code 2026-11-19/ppa 2026-11-19/system-1 2026-11-20/code-world-model-2-0 2026-11-20/dots 2026-11-20/everydaybench 2026-11-20/performance-factory-codex 2026-11-20/playcraft 2026-11-20/prola 2026-11-21/coda-davinci 2026-11-23/edagoat-eda-gpu 2026-11-23/grok-bot 2026-11-23/jevrisk 2026-11-23/medicalrsi 2026-11-23/minimax 2026-11-23/monitor-api 2026-11-24/agrimanager 2026-11-24/autopilot 2026-11-24/finevo 2026-11-24/grok-bot 2026-11-24/item-4 2026-11-24/item-47 2026-11-24/semantic-pid-rsi-pid 2026-11-25/3agamefactory-motion 2026-11-25/embo-harness 2026-11-25/fin-rsi 2026-11-25/gpt-6 2026-11-25/lumimax 2026-11-25/needwise 2026-11-25/voyag 2026-11-25/wemm-ecom 2026-11-26/acap 2026-11-26/agnes-harness 2026-11-26/anthropic-ai 2026-11-26/antom 2026-11-26/dots 2026-11-26/lingsante-medguard 2026-11-26/partagent 2026-11-26/pax 2026-11-26/powerfix -->
+<!-- experience-seen: 2026-11-20/code-world-model-2-0 2026-11-20/dots 2026-11-20/everydaybench 2026-11-20/performance-factory-codex 2026-11-20/playcraft 2026-11-20/prola 2026-11-21/coda-davinci 2026-11-23/edagoat-eda-gpu 2026-11-23/grok-bot 2026-11-23/jevrisk 2026-11-23/medicalrsi 2026-11-23/minimax 2026-11-23/monitor-api 2026-11-24/agrimanager 2026-11-24/autopilot 2026-11-24/finevo 2026-11-24/grok-bot 2026-11-24/item-4 2026-11-24/item-47 2026-11-24/semantic-pid-rsi-pid 2026-11-25/3agamefactory-motion 2026-11-25/embo-harness 2026-11-25/fin-rsi 2026-11-25/gpt-6 2026-11-25/lumimax 2026-11-25/needwise 2026-11-25/voyag 2026-11-25/wemm-ecom 2026-11-26/acap 2026-11-26/agnes-harness 2026-11-26/anthropic-ai 2026-11-26/antom 2026-11-26/dots 2026-11-26/lingsante-medguard 2026-11-26/partagent 2026-11-26/pax 2026-11-26/powerfix 2026-11-27/vibevideoagent -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -911,7 +912,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视觉推理 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-22/#s-agent-2-0" class="archive-item-link">S-Agent 2.0：通用编程智能体驱动的空间推理</a>
                 <span class="archive-item-date" title='2026-10-22'>10-22</span>&nbsp;<a href="https://arxiv.org/abs/2610.28354" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视频生成 <sup>4</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视频生成 <sup>5</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-27/#vibevideoagent" class="archive-item-link">VibeVideoAgent：多时钟闭环感知</a>
+                <span class="archive-item-date" title='2026-11-27'>11-27</span>&nbsp;<a href="https://arxiv.org/abs/2611.34237" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-21/#coda-davinci" class="archive-item-link">Coda-DaVinci：任务自适应三维代理导视</a>
                 <span class="archive-item-date" title='2026-11-21'>11-21</span>&nbsp;<a href="https://arxiv.org/abs/2611.26595" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-20/#code-world-model-2-0" class="archive-item-link">Code World Model 2.0：渐进强制流式视频</a>

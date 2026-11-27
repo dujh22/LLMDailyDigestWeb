@@ -16,7 +16,7 @@
   <meta itemprop="description" content="GeneralizeEvolve 研究方向：自进化中的泛化——自进化带来的提升能否跨任务、跨分布迁移而非基准过拟合，以及测试时学习与持续学习如何不遗忘。
 研究范畴 自进化中的泛化（generalization in self-evolution）追问一个核心问题：模型 / Agent 通过自迭代获得的能力，究竟是真实的能力扩展，还是对训练分布与评测基准的记忆与过拟合。本方向涵盖：SFT 与 RL 后训练的泛化差异（“SFT 记忆、RL 泛化”）、RLVR 是否扩展了基座模型的推理边界、在线 RL 为何遗忘更少、无外部奖励的自信号学习（Intuitor 类）、测试时训练与自适应（TTT、SEAL 自生成微调数据）、测试时记忆与长上下文架构（Titans）、持续学习与灾难性遗忘、弱到强泛化，以及 ARC-AGI 类强调流体智能而非知识回忆的评测。社区关注的核心问题包括：如何在自进化闭环中设计分布外（OOD）与组合泛化的检验、如何区分&#34;学到的算法&#34;与&#34;记住的模式&#34;（grokking 现象）、持续自进化下能力增益与遗忘的权衡，以及测试时计算与测试时学习在多大程度上能替代参数规模。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
+  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
   <meta itemprop="wordCount" content="4490">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/generalizeevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -48,7 +48,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/"
     },"genre": "research","wordcount":  4490 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -450,7 +450,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/normal-only-tta 2026-11-19/option-grpo 2026-11-20/agnes-harness 2026-11-20/bispace 2026-11-20/curvdelta 2026-11-20/item-44 2026-11-20/item-63 2026-11-20/item-65 2026-11-20/item-76 2026-11-20/rigel-ladon 2026-11-20/stability-gap 2026-11-21/gemini-4-hydrogen-token 2026-11-23/from-acting-to-learning 2026-11-23/item-25 2026-11-23/item-53 2026-11-23/loco-wam 2026-11-23/navttt 2026-11-23/orion 2026-11-23/structure-over-scale 2026-11-24/agrimanager 2026-11-24/rdqa 2026-11-24/rlm-27b 2026-11-24/rottt 2026-11-25/autoseco 2026-11-25/cspd 2026-11-25/e2l 2026-11-25/gemini-4-neon 2026-11-25/grokking 2026-11-25/instructreplay 2026-11-25/item-105 2026-11-25/item-109 2026-11-25/item-63 2026-11-25/p-tap 2026-11-25/sleep 2026-11-25/stun-bench 2026-11-25/vla 2026-11-25/wasp 2026-11-25/xmind 2026-11-26/grokking 2026-11-26/irtiqa 2026-11-26/item-34 2026-11-26/omniact 2026-11-26/prior 2026-11-26/shift-adapter 2026-11-26/transharness 2026-11-26/vfr -->
+<!-- experience-seen: 2026-11-20/agnes-harness 2026-11-20/bispace 2026-11-20/curvdelta 2026-11-20/item-44 2026-11-20/item-63 2026-11-20/item-65 2026-11-20/item-76 2026-11-20/rigel-ladon 2026-11-20/stability-gap 2026-11-21/gemini-4-hydrogen-token 2026-11-23/from-acting-to-learning 2026-11-23/item-25 2026-11-23/item-53 2026-11-23/loco-wam 2026-11-23/navttt 2026-11-23/orion 2026-11-23/structure-over-scale 2026-11-24/agrimanager 2026-11-24/rdqa 2026-11-24/rlm-27b 2026-11-24/rottt 2026-11-25/autoseco 2026-11-25/cspd 2026-11-25/e2l 2026-11-25/gemini-4-neon 2026-11-25/grokking 2026-11-25/instructreplay 2026-11-25/item-105 2026-11-25/item-109 2026-11-25/item-63 2026-11-25/p-tap 2026-11-25/sleep 2026-11-25/stun-bench 2026-11-25/vla 2026-11-25/wasp 2026-11-25/xmind 2026-11-26/grokking 2026-11-26/irtiqa 2026-11-26/item-34 2026-11-26/omniact 2026-11-26/prior 2026-11-26/shift-adapter 2026-11-26/transharness 2026-11-26/vfr 2026-11-27/i2vt -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -897,6 +897,9 @@
                 <span class="archive-item-date" title='2026-11-06'>11-06</span>&nbsp;<a href="https://arxiv.org/abs/2611.06793" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-29/#rlvr-2" class="archive-item-link">视频 RLVR 中的捷径放大与感知不确定性坍缩</a>
                 <span class="archive-item-date" title='2026-10-29'>10-29</span>&nbsp;<a href="https://arxiv.org/abs/2610.37211" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视频编辑 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-27/#i2vt" class="archive-item-link">I2VT：单帧迁移视频编辑能力</a>
+                <span class="archive-item-date" title='2026-11-27'>11-27</span>&nbsp;<a href="https://arxiv.org/abs/2611.34941" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>认知推理 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-22/#arcana" class="archive-item-link">ARCANA：抽象与远类比推理评测基准</a>
                 <span class="archive-item-date" title='2026-10-22'>10-22</span>&nbsp;<a href="https://arxiv.org/abs/2610.29271" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://github.com/density-11/arcana-test" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a>&nbsp;<a href="https://arcanacogtest.org/" target="_blank" rel="noopener" title="数据集"><i class="fa-solid fa-database fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
