@@ -16,8 +16,8 @@
   <meta itemprop="description" content="SystemEvolve 研究方向：AI 系统级自进化——不止改模型权重，而是让 Agent 系统的架构、工作流、工具链与自身代码成为被进化的对象。
 研究范畴 系统级自进化（system-level self-evolution）把优化对象从单个模型扩展到整个 AI 系统：Agent 的编排结构、工作流图、提示与工具配置、运行时 harness，乃至系统自身的源代码，都可以由系统自己提出修改、实验验证并择优保留，形成达尔文-哥德尔机式的开放式演化。本方向涵盖：自动化 Agent 系统设计（ADAS / AFlow 类元搜索）、以文本或执行轨迹为&#34;梯度&#34;的生成式优化（TextGrad / Trace / DSPy）、自指式递归自改进框架（Gödel Agent、Darwin Gödel Machine）、程序进化型发现系统（AlphaEvolve / ShinkaEvolve / OpenEvolve），以及系统演化的档案管理、分支选择与回滚机制。社区关注的核心问题包括：系统级改动的搜索空间巨大且不可微，如何高效评估与择优；进化出的系统是否只在基准上过拟合；自修改系统的可解释性、可审计性与安全边界；以及如何让&#34;改进改进机制本身&#34;的元层也被纳入闭环而不失控。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
-  <meta itemprop="wordCount" content="8326">
+  <meta itemprop="dateModified" content="2026-11-27T10:55:32+08:00">
+  <meta itemprop="wordCount" content="8374">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/systemevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="SystemEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:55:32+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/systemevolve\/"
-    },"genre": "research","wordcount":  8326 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/systemevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
+    },"genre": "research","wordcount":  8374 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/systemevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-27T10:55:32+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -332,6 +332,7 @@
 </li>
 <li><strong>执行反馈闭环</strong>：代码与基础设施进化应以真实执行、硬件约束和领域约束作适应度与硬门槛；扩大并行搜索前先扩展可靠测量吞吐。
 <ul>
+<li><a href="../../updates/2026-11-27/#tabbyml">TabbyML多智能体团队：契约驱动系统优化</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-25/#item-150">位置跳跃蒸馏：短训长服稀疏索引</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#hopper-4-bit-kv">Hopper 4-bit KV解码：访存计算重叠</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-23/#edagoat-eda-gpu">EDAGoat：EDA约束验证式GPU优化</a> · 2026-11-23</li>
@@ -414,6 +415,7 @@
 </li>
 <li><strong>评判准则协同演化</strong>：将提案、治理与评判置于独立边界；评判器可持续演化，但须以验证过的用户需求、类型契约和留出任务锚定真实目标。
 <ul>
+<li><a href="../../updates/2026-11-27/#tabbyml">TabbyML多智能体团队：契约驱动系统优化</a> · 2026-11-27</li>
 <li><a href="../../updates/2026-11-24/#metarsi-rsi">MetaRSI/RSI²：双轴元递归自改进</a> · 2026-11-24</li>
 <li><a href="../../updates/2026-11-20/#appsci-bench">AppSci-Bench：端到端智能体构建评测</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-20/#ahe-beta">AHE-Beta：需求中心式脚手架演化</a> · 2026-11-20</li>
@@ -596,7 +598,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-20/agnes-harness 2026-11-20/ahe-beta 2026-11-20/appsci-bench 2026-11-20/basersi 2026-11-20/clonact 2026-11-20/evo-harness 2026-11-20/frontierreplay 2026-11-20/harness 2026-11-20/item-60 2026-11-20/laq 2026-11-20/meta-rtl-rtl 2026-11-20/openai-rsi 2026-11-20/performance-factory-codex 2026-11-20/rocokv 2026-11-20/sirius-tiamat 2026-11-23/coevobench 2026-11-23/contexture 2026-11-23/ctrl-gpu 2026-11-23/edagoat-eda-gpu 2026-11-23/epistemic-guard 2026-11-23/hookevo 2026-11-23/lrsa 2026-11-23/medicalrsi 2026-11-23/memonce 2026-11-23/roha-sgg 2026-11-23/turnout 2026-11-24/cmhc 2026-11-24/declarative-attention 2026-11-24/dissparse-top-p 2026-11-24/dive 2026-11-24/hyperharness 2026-11-24/item-60 2026-11-24/massys 2026-11-24/metarsi-rsi 2026-11-24/nohaircache 2026-11-24/refinekv-kv 2026-11-24/semantic-pid-rsi-pid 2026-11-24/shirudo-ebpf 2026-11-24/skill-state 2026-11-25/agl-skill 2026-11-25/autoseco 2026-11-25/detection-gap 2026-11-25/dmc-5 2026-11-25/harness2 2026-11-25/harnesspro 2026-11-25/hopper-4-bit-kv 2026-11-25/item-128 2026-11-25/item-150 2026-11-25/leannext 2026-11-25/loomkv-kv 2026-11-25/mosaic 2026-11-25/motion-mamba-2-0 2026-11-25/nfa 2026-11-25/noevera 2026-11-25/prefill1 2026-11-25/toolsmith 2026-11-25/vise 2026-11-25/wactorz 2026-11-25/weight-coding 2026-11-26/dfly2 2026-11-26/dots 2026-11-26/harness-learning 2026-11-26/home 2026-11-26/item-87 2026-11-26/precept 2026-11-26/qwen-image-hd 2026-11-26/roboevo 2026-11-26/sim 2026-11-26/sports-agent 2026-11-26/transharness 2026-11-27/molt-kv -->
+<!-- experience-seen: 2026-11-20/agnes-harness 2026-11-20/ahe-beta 2026-11-20/appsci-bench 2026-11-20/basersi 2026-11-20/clonact 2026-11-20/evo-harness 2026-11-20/frontierreplay 2026-11-20/harness 2026-11-20/item-60 2026-11-20/laq 2026-11-20/meta-rtl-rtl 2026-11-20/openai-rsi 2026-11-20/performance-factory-codex 2026-11-20/rocokv 2026-11-20/sirius-tiamat 2026-11-23/coevobench 2026-11-23/contexture 2026-11-23/ctrl-gpu 2026-11-23/edagoat-eda-gpu 2026-11-23/epistemic-guard 2026-11-23/hookevo 2026-11-23/lrsa 2026-11-23/medicalrsi 2026-11-23/memonce 2026-11-23/roha-sgg 2026-11-23/turnout 2026-11-24/cmhc 2026-11-24/declarative-attention 2026-11-24/dissparse-top-p 2026-11-24/dive 2026-11-24/hyperharness 2026-11-24/item-60 2026-11-24/massys 2026-11-24/metarsi-rsi 2026-11-24/nohaircache 2026-11-24/refinekv-kv 2026-11-24/semantic-pid-rsi-pid 2026-11-24/shirudo-ebpf 2026-11-24/skill-state 2026-11-25/agl-skill 2026-11-25/autoseco 2026-11-25/detection-gap 2026-11-25/dmc-5 2026-11-25/harness2 2026-11-25/harnesspro 2026-11-25/hopper-4-bit-kv 2026-11-25/item-128 2026-11-25/item-150 2026-11-25/leannext 2026-11-25/loomkv-kv 2026-11-25/mosaic 2026-11-25/motion-mamba-2-0 2026-11-25/nfa 2026-11-25/noevera 2026-11-25/prefill1 2026-11-25/toolsmith 2026-11-25/vise 2026-11-25/wactorz 2026-11-25/weight-coding 2026-11-26/dfly2 2026-11-26/dots 2026-11-26/harness-learning 2026-11-26/home 2026-11-26/item-87 2026-11-26/precept 2026-11-26/qwen-image-hd 2026-11-26/roboevo 2026-11-26/sim 2026-11-26/sports-agent 2026-11-26/transharness 2026-11-27/molt-kv 2026-11-27/tabbyml -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -1070,7 +1072,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>算法模型化 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-19/#item-22" class="archive-item-link">算法模型化：将优化算法转化为可演化智能</a>
                 <span class="archive-item-date" title='2026-10-19'>10-19</span>&nbsp;<a href="https://arxiv.org/abs/2610.23161" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>系统优化 <sup>31</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>系统优化 <sup>32</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-27/#tabbyml" class="archive-item-link">TabbyML多智能体团队：契约驱动系统优化</a>
+                <span class="archive-item-date" title='2026-11-27'>11-27</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#item-128" class="archive-item-link">层级执行控制：中间状态驱动计算分配</a>
                 <span class="archive-item-date" title='2026-11-25'>11-25</span>&nbsp;<a href="https://arxiv.org/abs/2611.29519" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#noevera" class="archive-item-link">NoeVera：证据演化式配置搜索</a>
