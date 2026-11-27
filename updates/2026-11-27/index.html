@@ -14,98 +14,102 @@
 
 环境演化
 
-RepoFactory：用代码规模与结构指标替代昂贵的智能体求解反馈，低成本筛选并演化长程编程训练环境。
+RepoFactory：用代码规模与结构指标替代昂贵的智能体试跑，低成本迭代长程编程训练环境。
 
 
 任务演化
 
-Play2Evolve：让智能体按趣味维度试玩、诊断和修改游戏，解决作品能运行却不好玩的问题。
-VibeVideoAgent：用局部预览和多时钟证据在完整渲染前发现代码执行无法暴露的画面与音画同步缺陷。
+Play2Evolve：让智能体按趣味维度反复试玩、诊断和修改游戏，补足“能运行但不好玩”的质量反馈。
+VibeVideoAgent：用短片段预览和多时间轴证据，在完整渲染前发现代码检查捕捉不到的画面与音画同步缺陷。
 
 
-具身技能
+具身智能
 
-PyRUA-Dex：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量示范时自主生成控制策略。
+PyRUA-Dex：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量动作示范时生成机器人策略。
 
 
 高效架构
 
-MoLT：选择性复用不同深度和循环中的KV记忆，减少循环模型的重复计算并实现最高1.7倍词元效率。
-DyLoMo-DiT：以共享循环权重和稀疏专家扩充生成能力，并按噪声阶段动态分配计算以降低存储成本。
+MoLT：把注意力缓存变成跨层、跨循环可选择读取的记忆，减少循环模型的重复计算并提升最高1.7倍词元效率。
 
 
-多模态系统
+评测基建
 
-DocSEAM：在视觉编码阶段双向融合相邻页面，消除分页造成的信息断裂并增强跨页问答。
-EgoUseBench：用持续变化的第一人称观察检验操作智能体能否修正意图，揭示其成功率下降26.3%。
+EgoUseBench：用持续变化的第一人称观察替代固定指令，揭示操作智能体在动态任务中的成功率下降26.3%。
+Real2SimLab：以统一程序接口连接不同仿真方法和原生评分器，免去每套方法逐个适配基准。
 
 
-热点延伸：I2VT、HOG-WAM
+文档推理
+
+DocSEAM：在视觉编码阶段双向融合相邻页面，修复分页造成的信息断裂并增强跨页问答。
+
+
+热点延伸：I2VT、HOG-WAM、PixelMatte
 
 对当前研究的启发
 
 EnvironmentEvolve
 
-迁移｜从 RepoFactory 把实现范围、结构耦合度用于环境预筛：排序后仅对高分仓库运行智能体求解。
-延续｜RepoFactory 主要覆盖Python且首批环境未进化：扩展至JavaScript，比较进化前后求解率与迁移收益。
+迁移｜从 RepoFactory 把合理性、实现范围和结构耦合度用于环境筛选：按指标排序后抽样跑 Agent 验证相关性。
+延续｜RepoFactory 主要覆盖 Python 且首批环境未经进化：扩展到前端与 Java，对比进化前后成功率和迁移收益。
 
 
 TaskEvolve
 
-迁移｜从 Play2Evolve 把趣味拆成可诊断反馈用于作品验收：逐轮试玩、定位缺陷并验证修改增益。
-迁移｜从 VibeVideoAgent 把局部预览用于长程任务验收：每个里程碑检查画面、声音和时间轴证据。
+迁移｜从 Play2Evolve 把趣味性拆成可诊断反馈用于作品迭代：每轮试玩逐项评分，仅修改最低分维度。
+迁移｜从 VibeVideoAgent 把局部预览用于长程作品验收：分段检查画面、声音与时间轴，再决定是否完整渲染。
 
 
 RobotEvolve
 
-迁移｜从 PyRUA-Dex 把技能表示为可组合程序用于双手策略生成：与示范学习比较成功率和跨物体泛化。
+迁移｜从 PyRUA-Dex 把动作技能表示为可组合程序：多智能体探索技能后蒸馏入库，再随机化参数验证迁移。
 
 
 CacheEvolve
 
-迁移｜从 MoLT 把跨循环KV选择用于固定预算缓存：对比完整缓存和近期保留，测困惑度、延迟与显存。
-
-
-NewModel
-
-迁移｜从 DyLoMo-DiT 把噪声感知计算分配用于高效DiT：分阶段调整循环次数，测画质、时延和参数量。
+迁移｜从 MoLT 把 KV 视为可选择读取的循环记忆：训练门控器决定复用层级，评测困惑度、延迟与显存。
 
 
 EvalEvolve
 
-迁移｜从 EgoUseBench 把动态观察流用于操作评测：中途改变证据与意图，统计动作撤回率和最终成功率。
+延续｜EgoUseBench 暴露动态场景26.3%的成功率缺口：对比固定与增量观察，测重规划率、恢复时延和最终成功率。
+
+
+HarnessEvolve
+
+迁移｜从 Real2SimLab 把可执行程序作为统一评测契约：封装 Agent 接口并保留各基准原生评分器。
 
 
 ReasoningEvolve
 
-迁移｜从 DocSEAM 把相邻页双向融合用于长文档推理：对比独立分页编码，测跨页定位与问答准确率。
+迁移｜从 DocSEAM 把相邻页双向融合用于长文档推理：对比逐页编码，测跨页证据召回率和答案准确率。
 
 
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-27 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 环境演化 RepoFactory：用代码规模与结构指标替代昂贵的智能体求解反馈，低成本筛选并演化长程编程训练环境。 任务演化 Play2Evolve：让智能体按趣味维度试玩、诊断和修改游戏，解决作品能运行却不好玩的问题。 VibeVideoAgent：用局部预览和多时钟证据在完整渲染前发现代码执行无法暴露的画面与音画同步缺陷。 具身技能 PyRUA-Dex：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量示范时自主生成控制策略。 高效架构 MoLT：选择性复用不同深度和循环中的KV记忆，减少循环模型的重复计算并实现最高1.7倍词元效率。 DyLoMo-DiT：以共享循环权重和稀疏专家扩充生成能力，并按噪声阶段动态分配计算以降低存储成本。 多模态系统 DocSEAM：在视觉编码阶段双向融合相邻页面，消除分页造成的信息断裂并增强跨页问答。 EgoUseBench：用持续变化的第一人称观察检验操作智能体能否修正意图，揭示其成功率下降26.3%。 热点延伸：I2VT、HOG-WAM 对当前研究的启发 EnvironmentEvolve 迁移｜从 RepoFactory 把实现范围、结构耦合度用于环境预筛：排序后仅对高分仓库运行智能体求解。 延续｜RepoFactory 主要覆盖Python且首批环境未进化：扩展至JavaScript，比较进化前后求解率与迁移收益。 TaskEvolve 迁移｜从 Play2Evolve 把趣味拆成可诊断反馈用于作品验收：逐轮试玩、定位缺陷并验证修改增益。 迁移｜从 VibeVideoAgent 把局部预览用于长程任务验收：每个里程碑检查画面、声音和时间轴证据。 RobotEvolve 迁移｜从 PyRUA-Dex 把技能表示为可组合程序用于双手策略生成：与示范学习比较成功率和跨物体泛化。 CacheEvolve 迁移｜从 MoLT 把跨循环KV选择用于固定预算缓存：对比完整缓存和近期保留，测困惑度、延迟与显存。 NewModel 迁移｜从 DyLoMo-DiT 把噪声感知计算分配用于高效DiT：分阶段调整循环次数，测画质、时延和参数量。 EvalEvolve 迁移｜从 EgoUseBench 把动态观察流用于操作评测：中途改变证据与意图，统计动作撤回率和最终成功率。 ReasoningEvolve 迁移｜从 DocSEAM 把相邻页双向融合用于长文档推理：对比独立分页编码，测跨页定位与问答准确率。">
+今日概览 环境演化 RepoFactory：用代码规模与结构指标替代昂贵的智能体试跑，低成本迭代长程编程训练环境。 任务演化 Play2Evolve：让智能体按趣味维度反复试玩、诊断和修改游戏，补足“能运行但不好玩”的质量反馈。 VibeVideoAgent：用短片段预览和多时间轴证据，在完整渲染前发现代码检查捕捉不到的画面与音画同步缺陷。 具身智能 PyRUA-Dex：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量动作示范时生成机器人策略。 高效架构 MoLT：把注意力缓存变成跨层、跨循环可选择读取的记忆，减少循环模型的重复计算并提升最高1.7倍词元效率。 评测基建 EgoUseBench：用持续变化的第一人称观察替代固定指令，揭示操作智能体在动态任务中的成功率下降26.3%。 Real2SimLab：以统一程序接口连接不同仿真方法和原生评分器，免去每套方法逐个适配基准。 文档推理 DocSEAM：在视觉编码阶段双向融合相邻页面，修复分页造成的信息断裂并增强跨页问答。 热点延伸：I2VT、HOG-WAM、PixelMatte 对当前研究的启发 EnvironmentEvolve 迁移｜从 RepoFactory 把合理性、实现范围和结构耦合度用于环境筛选：按指标排序后抽样跑 Agent 验证相关性。 延续｜RepoFactory 主要覆盖 Python 且首批环境未经进化：扩展到前端与 Java，对比进化前后成功率和迁移收益。 TaskEvolve 迁移｜从 Play2Evolve 把趣味性拆成可诊断反馈用于作品迭代：每轮试玩逐项评分，仅修改最低分维度。 迁移｜从 VibeVideoAgent 把局部预览用于长程作品验收：分段检查画面、声音与时间轴，再决定是否完整渲染。 RobotEvolve 迁移｜从 PyRUA-Dex 把动作技能表示为可组合程序：多智能体探索技能后蒸馏入库，再随机化参数验证迁移。 CacheEvolve 迁移｜从 MoLT 把 KV 视为可选择读取的循环记忆：训练门控器决定复用层级，评测困惑度、延迟与显存。 EvalEvolve 延续｜EgoUseBench 暴露动态场景26.3%的成功率缺口：对比固定与增量观察，测重规划率、恢复时延和最终成功率。 HarnessEvolve 迁移｜从 Real2SimLab 把可执行程序作为统一评测契约：封装 Agent 接口并保留各基准原生评分器。 ReasoningEvolve 迁移｜从 DocSEAM 把相邻页双向融合用于长文档推理：对比逐页编码，测跨页证据召回率和答案准确率。">
   <meta itemprop="datePublished" content="2026-11-27T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
-  <meta itemprop="wordCount" content="861">
+  <meta itemprop="dateModified" content="2026-11-27T10:43:44+08:00">
+  <meta itemprop="wordCount" content="899">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-27/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-27 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 环境演化 RepoFactory：用代码规模与结构指标替代昂贵的智能体求解反馈，低成本筛选并演化长程编程训练环境。 任务演化 Play2Evolve：让智能体按趣味维度试玩、诊断和修改游戏，解决作品能运行却不好玩的问题。 VibeVideoAgent：用局部预览和多时钟证据在完整渲染前发现代码执行无法暴露的画面与音画同步缺陷。 具身技能 PyRUA-Dex：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量示范时自主生成控制策略。 高效架构 MoLT：选择性复用不同深度和循环中的KV记忆，减少循环模型的重复计算并实现最高1.7倍词元效率。 DyLoMo-DiT：以共享循环权重和稀疏专家扩充生成能力，并按噪声阶段动态分配计算以降低存储成本。 多模态系统 DocSEAM：在视觉编码阶段双向融合相邻页面，消除分页造成的信息断裂并增强跨页问答。 EgoUseBench：用持续变化的第一人称观察检验操作智能体能否修正意图，揭示其成功率下降26.3%。 热点延伸：I2VT、HOG-WAM 对当前研究的启发 EnvironmentEvolve 迁移｜从 RepoFactory 把实现范围、结构耦合度用于环境预筛：排序后仅对高分仓库运行智能体求解。 延续｜RepoFactory 主要覆盖Python且首批环境未进化：扩展至JavaScript，比较进化前后求解率与迁移收益。 TaskEvolve 迁移｜从 Play2Evolve 把趣味拆成可诊断反馈用于作品验收：逐轮试玩、定位缺陷并验证修改增益。 迁移｜从 VibeVideoAgent 把局部预览用于长程任务验收：每个里程碑检查画面、声音和时间轴证据。 RobotEvolve 迁移｜从 PyRUA-Dex 把技能表示为可组合程序用于双手策略生成：与示范学习比较成功率和跨物体泛化。 CacheEvolve 迁移｜从 MoLT 把跨循环KV选择用于固定预算缓存：对比完整缓存和近期保留，测困惑度、延迟与显存。 NewModel 迁移｜从 DyLoMo-DiT 把噪声感知计算分配用于高效DiT：分阶段调整循环次数，测画质、时延和参数量。 EvalEvolve 迁移｜从 EgoUseBench 把动态观察流用于操作评测：中途改变证据与意图，统计动作撤回率和最终成功率。 ReasoningEvolve 迁移｜从 DocSEAM 把相邻页双向融合用于长文档推理：对比独立分页编码，测跨页定位与问答准确率。">
+今日概览 环境演化 RepoFactory：用代码规模与结构指标替代昂贵的智能体试跑，低成本迭代长程编程训练环境。 任务演化 Play2Evolve：让智能体按趣味维度反复试玩、诊断和修改游戏，补足“能运行但不好玩”的质量反馈。 VibeVideoAgent：用短片段预览和多时间轴证据，在完整渲染前发现代码检查捕捉不到的画面与音画同步缺陷。 具身智能 PyRUA-Dex：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量动作示范时生成机器人策略。 高效架构 MoLT：把注意力缓存变成跨层、跨循环可选择读取的记忆，减少循环模型的重复计算并提升最高1.7倍词元效率。 评测基建 EgoUseBench：用持续变化的第一人称观察替代固定指令，揭示操作智能体在动态任务中的成功率下降26.3%。 Real2SimLab：以统一程序接口连接不同仿真方法和原生评分器，免去每套方法逐个适配基准。 文档推理 DocSEAM：在视觉编码阶段双向融合相邻页面，修复分页造成的信息断裂并增强跨页问答。 热点延伸：I2VT、HOG-WAM、PixelMatte 对当前研究的启发 EnvironmentEvolve 迁移｜从 RepoFactory 把合理性、实现范围和结构耦合度用于环境筛选：按指标排序后抽样跑 Agent 验证相关性。 延续｜RepoFactory 主要覆盖 Python 且首批环境未经进化：扩展到前端与 Java，对比进化前后成功率和迁移收益。 TaskEvolve 迁移｜从 Play2Evolve 把趣味性拆成可诊断反馈用于作品迭代：每轮试玩逐项评分，仅修改最低分维度。 迁移｜从 VibeVideoAgent 把局部预览用于长程作品验收：分段检查画面、声音与时间轴，再决定是否完整渲染。 RobotEvolve 迁移｜从 PyRUA-Dex 把动作技能表示为可组合程序：多智能体探索技能后蒸馏入库，再随机化参数验证迁移。 CacheEvolve 迁移｜从 MoLT 把 KV 视为可选择读取的循环记忆：训练门控器决定复用层级，评测困惑度、延迟与显存。 EvalEvolve 延续｜EgoUseBench 暴露动态场景26.3%的成功率缺口：对比固定与增量观察，测重规划率、恢复时延和最终成功率。 HarnessEvolve 迁移｜从 Real2SimLab 把可执行程序作为统一评测契约：封装 Agent 接口并保留各基准原生评分器。 ReasoningEvolve 迁移｜从 DocSEAM 把相邻页双向融合用于长文档推理：对比逐页编码，测跨页证据召回率和答案准确率。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-27T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
+    <meta property="article:modified_time" content="2026-11-27T10:43:44+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-27 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 环境演化 RepoFactory：用代码规模与结构指标替代昂贵的智能体求解反馈，低成本筛选并演化长程编程训练环境。 任务演化 Play2Evolve：让智能体按趣味维度试玩、诊断和修改游戏，解决作品能运行却不好玩的问题。 VibeVideoAgent：用局部预览和多时钟证据在完整渲染前发现代码执行无法暴露的画面与音画同步缺陷。 具身技能 PyRUA-Dex：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量示范时自主生成控制策略。 高效架构 MoLT：选择性复用不同深度和循环中的KV记忆，减少循环模型的重复计算并实现最高1.7倍词元效率。 DyLoMo-DiT：以共享循环权重和稀疏专家扩充生成能力，并按噪声阶段动态分配计算以降低存储成本。 多模态系统 DocSEAM：在视觉编码阶段双向融合相邻页面，消除分页造成的信息断裂并增强跨页问答。 EgoUseBench：用持续变化的第一人称观察检验操作智能体能否修正意图，揭示其成功率下降26.3%。 热点延伸：I2VT、HOG-WAM 对当前研究的启发 EnvironmentEvolve 迁移｜从 RepoFactory 把实现范围、结构耦合度用于环境预筛：排序后仅对高分仓库运行智能体求解。 延续｜RepoFactory 主要覆盖Python且首批环境未进化：扩展至JavaScript，比较进化前后求解率与迁移收益。 TaskEvolve 迁移｜从 Play2Evolve 把趣味拆成可诊断反馈用于作品验收：逐轮试玩、定位缺陷并验证修改增益。 迁移｜从 VibeVideoAgent 把局部预览用于长程任务验收：每个里程碑检查画面、声音和时间轴证据。 RobotEvolve 迁移｜从 PyRUA-Dex 把技能表示为可组合程序用于双手策略生成：与示范学习比较成功率和跨物体泛化。 CacheEvolve 迁移｜从 MoLT 把跨循环KV选择用于固定预算缓存：对比完整缓存和近期保留，测困惑度、延迟与显存。 NewModel 迁移｜从 DyLoMo-DiT 把噪声感知计算分配用于高效DiT：分阶段调整循环次数，测画质、时延和参数量。 EvalEvolve 迁移｜从 EgoUseBench 把动态观察流用于操作评测：中途改变证据与意图，统计动作撤回率和最终成功率。 ReasoningEvolve 迁移｜从 DocSEAM 把相邻页双向融合用于长文档推理：对比独立分页编码，测跨页定位与问答准确率。">
+今日概览 环境演化 RepoFactory：用代码规模与结构指标替代昂贵的智能体试跑，低成本迭代长程编程训练环境。 任务演化 Play2Evolve：让智能体按趣味维度反复试玩、诊断和修改游戏，补足“能运行但不好玩”的质量反馈。 VibeVideoAgent：用短片段预览和多时间轴证据，在完整渲染前发现代码检查捕捉不到的画面与音画同步缺陷。 具身智能 PyRUA-Dex：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量动作示范时生成机器人策略。 高效架构 MoLT：把注意力缓存变成跨层、跨循环可选择读取的记忆，减少循环模型的重复计算并提升最高1.7倍词元效率。 评测基建 EgoUseBench：用持续变化的第一人称观察替代固定指令，揭示操作智能体在动态任务中的成功率下降26.3%。 Real2SimLab：以统一程序接口连接不同仿真方法和原生评分器，免去每套方法逐个适配基准。 文档推理 DocSEAM：在视觉编码阶段双向融合相邻页面，修复分页造成的信息断裂并增强跨页问答。 热点延伸：I2VT、HOG-WAM、PixelMatte 对当前研究的启发 EnvironmentEvolve 迁移｜从 RepoFactory 把合理性、实现范围和结构耦合度用于环境筛选：按指标排序后抽样跑 Agent 验证相关性。 延续｜RepoFactory 主要覆盖 Python 且首批环境未经进化：扩展到前端与 Java，对比进化前后成功率和迁移收益。 TaskEvolve 迁移｜从 Play2Evolve 把趣味性拆成可诊断反馈用于作品迭代：每轮试玩逐项评分，仅修改最低分维度。 迁移｜从 VibeVideoAgent 把局部预览用于长程作品验收：分段检查画面、声音与时间轴，再决定是否完整渲染。 RobotEvolve 迁移｜从 PyRUA-Dex 把动作技能表示为可组合程序：多智能体探索技能后蒸馏入库，再随机化参数验证迁移。 CacheEvolve 迁移｜从 MoLT 把 KV 视为可选择读取的循环记忆：训练门控器决定复用层级，评测困惑度、延迟与显存。 EvalEvolve 延续｜EgoUseBench 暴露动态场景26.3%的成功率缺口：对比固定与增量观察，测重规划率、恢复时延和最终成功率。 HarnessEvolve 迁移｜从 Real2SimLab 把可执行程序作为统一评测契约：封装 Agent 接口并保留各基准原生评分器。 ReasoningEvolve 迁移｜从 DocSEAM 把相邻页双向融合用于长文档推理：对比逐页编码，测跨页证据召回率和答案准确率。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-27/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-26/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -118,8 +122,8 @@ ReasoningEvolve
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-27\/"
-    },"genre": "updates","wordcount":  861 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-27\/","datePublished": "2026-11-27T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
+    },"genre": "updates","wordcount":  899 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-27\/","datePublished": "2026-11-27T00:00:00+08:00","dateModified": "2026-11-27T10:43:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -302,7 +306,7 @@ ReasoningEvolve
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-27 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-27">2026-11-27</time></span>&nbsp;<span title="更新于 2026-11-27 10:41:52"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-27">2026-11-27</time></span>&nbsp;<span title="861 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-27 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-27">2026-11-27</time></span>&nbsp;<span title="更新于 2026-11-27 10:43:44"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-27">2026-11-27</time></span>&nbsp;<span title="899 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -324,78 +328,82 @@ ReasoningEvolve
 <ul>
 <li><strong>环境演化</strong>
 <ul>
-<li><a href="#repofactory">RepoFactory</a>：用代码规模与结构指标替代昂贵的智能体求解反馈，低成本筛选并演化长程编程训练环境。</li>
+<li><a href="#repofactory">RepoFactory</a>：用代码规模与结构指标替代昂贵的智能体试跑，低成本迭代长程编程训练环境。</li>
 </ul>
 </li>
 <li><strong>任务演化</strong>
 <ul>
-<li><a href="#play2evolve">Play2Evolve</a>：让智能体按趣味维度试玩、诊断和修改游戏，解决作品能运行却不好玩的问题。</li>
-<li><a href="#vibevideoagent">VibeVideoAgent</a>：用局部预览和多时钟证据在完整渲染前发现代码执行无法暴露的画面与音画同步缺陷。</li>
+<li><a href="#play2evolve">Play2Evolve</a>：让智能体按趣味维度反复试玩、诊断和修改游戏，补足“能运行但不好玩”的质量反馈。</li>
+<li><a href="#vibevideoagent">VibeVideoAgent</a>：用短片段预览和多时间轴证据，在完整渲染前发现代码检查捕捉不到的画面与音画同步缺陷。</li>
 </ul>
 </li>
-<li><strong>具身技能</strong>
+<li><strong>具身智能</strong>
 <ul>
-<li><a href="#pyrua-dex">PyRUA-Dex</a>：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量示范时自主生成控制策略。</li>
+<li><a href="#pyrua-dex">PyRUA-Dex</a>：让编程智能体探索、组合并精炼双手操作程序，在缺少高质量动作示范时生成机器人策略。</li>
 </ul>
 </li>
 <li><strong>高效架构</strong>
 <ul>
-<li><a href="#molt-kv">MoLT</a>：选择性复用不同深度和循环中的KV记忆，减少循环模型的重复计算并实现最高1.7倍词元效率。</li>
-<li><a href="#dylomo-dit">DyLoMo-DiT</a>：以共享循环权重和稀疏专家扩充生成能力，并按噪声阶段动态分配计算以降低存储成本。</li>
+<li><a href="#molt-kv">MoLT</a>：把注意力缓存变成跨层、跨循环可选择读取的记忆，减少循环模型的重复计算并提升最高1.7倍词元效率。</li>
 </ul>
 </li>
-<li><strong>多模态系统</strong>
+<li><strong>评测基建</strong>
 <ul>
-<li><a href="#docseam">DocSEAM</a>：在视觉编码阶段双向融合相邻页面，消除分页造成的信息断裂并增强跨页问答。</li>
-<li><a href="#egousebench">EgoUseBench</a>：用持续变化的第一人称观察检验操作智能体能否修正意图，揭示其成功率下降26.3%。</li>
+<li><a href="#egousebench">EgoUseBench</a>：用持续变化的第一人称观察替代固定指令，揭示操作智能体在动态任务中的成功率下降26.3%。</li>
+<li><a href="#real2simlab">Real2SimLab</a>：以统一程序接口连接不同仿真方法和原生评分器，免去每套方法逐个适配基准。</li>
 </ul>
 </li>
-<li><strong>热点延伸</strong>：<a href="#i2vt">I2VT</a>、<a href="#hog-wam">HOG-WAM</a></li>
+<li><strong>文档推理</strong>
+<ul>
+<li><a href="#docseam">DocSEAM</a>：在视觉编码阶段双向融合相邻页面，修复分页造成的信息断裂并增强跨页问答。</li>
+</ul>
+</li>
+<li><strong>热点延伸</strong>：<a href="#i2vt">I2VT</a>、<a href="#hog-wam">HOG-WAM</a>、<a href="#pixelmatte">PixelMatte</a></li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
 <li><strong>EnvironmentEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#repofactory">RepoFactory</a> 把实现范围、结构耦合度用于环境预筛：排序后仅对高分仓库运行智能体求解。</li>
-<li>延续｜<a href="#repofactory">RepoFactory</a> 主要覆盖Python且首批环境未进化：扩展至JavaScript，比较进化前后求解率与迁移收益。</li>
+<li>迁移｜从 <a href="#repofactory">RepoFactory</a> 把合理性、实现范围和结构耦合度用于环境筛选：按指标排序后抽样跑 Agent 验证相关性。</li>
+<li>延续｜<a href="#repofactory">RepoFactory</a> 主要覆盖 Python 且首批环境未经进化：扩展到前端与 Java，对比进化前后成功率和迁移收益。</li>
 </ul>
 </li>
 <li><strong>TaskEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#play2evolve">Play2Evolve</a> 把趣味拆成可诊断反馈用于作品验收：逐轮试玩、定位缺陷并验证修改增益。</li>
-<li>迁移｜从 <a href="#vibevideoagent">VibeVideoAgent</a> 把局部预览用于长程任务验收：每个里程碑检查画面、声音和时间轴证据。</li>
+<li>迁移｜从 <a href="#play2evolve">Play2Evolve</a> 把趣味性拆成可诊断反馈用于作品迭代：每轮试玩逐项评分，仅修改最低分维度。</li>
+<li>迁移｜从 <a href="#vibevideoagent">VibeVideoAgent</a> 把局部预览用于长程作品验收：分段检查画面、声音与时间轴，再决定是否完整渲染。</li>
 </ul>
 </li>
 <li><strong>RobotEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#pyrua-dex">PyRUA-Dex</a> 把技能表示为可组合程序用于双手策略生成：与示范学习比较成功率和跨物体泛化。</li>
+<li>迁移｜从 <a href="#pyrua-dex">PyRUA-Dex</a> 把动作技能表示为可组合程序：多智能体探索技能后蒸馏入库，再随机化参数验证迁移。</li>
 </ul>
 </li>
 <li><strong>CacheEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#molt-kv">MoLT</a> 把跨循环KV选择用于固定预算缓存：对比完整缓存和近期保留，测困惑度、延迟与显存。</li>
-</ul>
-</li>
-<li><strong>NewModel</strong>
-<ul>
-<li>迁移｜从 <a href="#dylomo-dit">DyLoMo-DiT</a> 把噪声感知计算分配用于高效DiT：分阶段调整循环次数，测画质、时延和参数量。</li>
+<li>迁移｜从 <a href="#molt-kv">MoLT</a> 把 KV 视为可选择读取的循环记忆：训练门控器决定复用层级，评测困惑度、延迟与显存。</li>
 </ul>
 </li>
 <li><strong>EvalEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#egousebench">EgoUseBench</a> 把动态观察流用于操作评测：中途改变证据与意图，统计动作撤回率和最终成功率。</li>
+<li>延续｜<a href="#egousebench">EgoUseBench</a> 暴露动态场景26.3%的成功率缺口：对比固定与增量观察，测重规划率、恢复时延和最终成功率。</li>
+</ul>
+</li>
+<li><strong>HarnessEvolve</strong>
+<ul>
+<li>迁移｜从 <a href="#real2simlab">Real2SimLab</a> 把可执行程序作为统一评测契约：封装 Agent 接口并保留各基准原生评分器。</li>
 </ul>
 </li>
 <li><strong>ReasoningEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#docseam">DocSEAM</a> 把相邻页双向融合用于长文档推理：对比独立分页编码，测跨页定位与问答准确率。</li>
+<li>迁移｜从 <a href="#docseam">DocSEAM</a> 把相邻页双向融合用于长文档推理：对比逐页编码，测跨页证据召回率和答案准确率。</li>
 </ul>
 </li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 10 条</span><a href="#daily-featured">⭐ 重点 8</a><a href="#daily-hot">🔥 热点 2</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 13 条</span><a href="#daily-featured">⭐ 重点 8</a><a href="#daily-related">🔬 相关 2</a><a href="#daily-hot">🔥 热点 3</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">8 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="repofactory" class="summary-card daily-item">
@@ -444,6 +452,36 @@ ReasoningEvolve
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[PyRUA-Dex：借助编程智能体学习灵巧双手操作的程序化策略（44 ▲）](https://huggingface.co/papers/2611.33144?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
   </details></article>
+<article id="molt-kv" class="summary-card daily-item">
+  <h2 id="molt-kv-title" class="daily-item-title">MoLT：KV记忆式循环复用</h2><p class="single-subtitle daily-item-summary">用跨深度与循环选择性复用KV记忆，缓解循环Transformer表达力提升伴随的效率损失，最高实现1.7倍词元效率。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E5%BE%AA%E7%8E%AF%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;循环计算</a><a href="/LLMDailyDigestWeb/topic/%E7%BC%93%E5%AD%98%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;缓存优化</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34923" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34923</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/hustvl/MoLT" target="_blank" rel="noopener">https://github.com/hustvl/MoLT</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在高效语言模型预训练或继续预训练中直接采用MoLT代码，利用KV循环记忆减少重复层遍历并兼顾模型质量与推理延迟。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>循环模型不必传递完整残差状态；将KV视为可选择读取的跨循环记忆，可以解除同位置串行依赖，使表达能力与计算效率不再必然冲突。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：循环Transformer通过跨循环共享层增强表达能力，但多次遍历会降低训练与推理效率，需要重新设计循环间传递的信息。</li>
+<li><strong>旧法为何失效</strong>：传统循环架构依赖残差流和同位置的跨循环状态，导致循环必须串行执行，限制并行训练及超出训练循环数的解码。</li>
+<li><strong>方法</strong>：MoLT以KV作为跨深度和循环的记忆；MoLT-R保留残差流并读取局部KV，MoLT-KV则从嵌入重启，结合当前循环局部KV与前序循环历史位置KV。U-MoLT进一步分离记忆构建和预测读出，跳过不影响预测的解码器遍历。</li>
+<li><strong>实验</strong>：在4000亿词元预训练中，U-MoLT在700M、1.5B稠密模型及3B MoE模型上优于OLMo3；700M模型验证交叉熵词元效率提升1.7倍，3B MoE的10领域困惑度降低0.75、10任务准确率提高2.1个百分点。对Qwen3.5-0.8B-Base继续预训练1000亿词元后，11个领域交叉熵均下降，平均词元效率提升1.4倍；约113M参数设置下推理延迟与非循环OLMo3相当。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[混合循环 Transformer（62 ▲）](https://huggingface.co/papers/2611.34923?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
+  </details></article>
+<article id="real2simlab" class="summary-card daily-item">
+  <h2 id="real2simlab-title" class="daily-item-title">Real2SimLab：真实到仿真统一评测</h2><p class="single-subtitle daily-item-summary">用统一的程序执行接口和原生评分器，解决真实到仿真方法跨基准评测需重复适配的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/infraevolve/">InfraEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据合成</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34849" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34849</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在视频到仿真系统中，将其作为统一评测与奖励标注基础设施，接入不同编程智能体和既有基准。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>以可执行仿真程序作为方法与基准之间的统一契约，可将跨基准适配从两两集成转化为平台级复用，同时保持原始评分标准。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：真实到仿真方法可从视频生成仿真程序，但不同基准的输入、交付物和评分流程各异，评测 N 个方法与 M 个基准需要 N×M 次集成。</li>
+<li><strong>旧法为何失效</strong>：各基准采用独立接口和流水线，方法开发者必须逐一适配，难以公平扩展评测并复用训练数据生产流程。</li>
+<li><strong>方法</strong>：Real2SimLab 统一运行方法生成的程序，并调用各基准原有评分器评价仿真结果；同时提供训练数据与奖励标注流水线，通过过滤基准已有视频避免数据污染。</li>
+<li><strong>实验</strong>：平台目前支持 47 个编程智能体、5 个非智能体方法和6个真实到仿真基准，并开源收录近300篇相关论文的 Awesome-Real2Sim 研究图谱。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Real2SimLab：真实到仿真的迁移统一平台（104 ▲）](https://huggingface.co/papers/2611.34849?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
+  </details></article>
 <article id="vibevideoagent" class="summary-card daily-item">
   <h2 id="vibevideoagent-title" class="daily-item-title">VibeVideoAgent：多时钟闭环感知</h2><p class="single-subtitle daily-item-summary">用隔离的短时多模态检查和多时钟证据反馈，解决代码视频运行无错却存在画面缺陷与音画不同步的问题。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视频生成</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/taskevolve/">TaskEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视频生成</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长程任务</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34237" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34237</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在代码驱动的视频制作智能体中接入其短时感知、紧凑证据反馈和最小预览协议，用于在完整渲染前发现画面与音画同步缺陷。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>代码执行正确性无法覆盖感知正确性，长程生成中的有效反馈应当早期、局部、证据化并与不同媒体时钟对齐。</p>
@@ -474,21 +512,6 @@ ReasoningEvolve
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[EgoUseBench：在不断变化的第一人称情境下评测计算机操作智能体（19 ▲)](https://huggingface.co/papers/2611.34466?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
   </details></article>
-<article id="molt-kv" class="summary-card daily-item">
-  <h2 id="molt-kv-title" class="daily-item-title">MoLT：KV记忆式循环复用</h2><p class="single-subtitle daily-item-summary">用跨深度与循环选择性复用KV记忆，缓解循环Transformer表达力提升伴随的效率损失，最高实现1.7倍词元效率。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/cacheevolve/">CacheEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E5%BE%AA%E7%8E%AF%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;循环计算</a><a href="/LLMDailyDigestWeb/topic/%E7%BC%93%E5%AD%98%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;缓存优化</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34923" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34923</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/hustvl/MoLT" target="_blank" rel="noopener">https://github.com/hustvl/MoLT</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在高效语言模型预训练或继续预训练中直接采用MoLT代码，利用KV循环记忆减少重复层遍历并兼顾模型质量与推理延迟。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>循环模型不必传递完整残差状态；将KV视为可选择读取的跨循环记忆，可以解除同位置串行依赖，使表达能力与计算效率不再必然冲突。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：循环Transformer通过跨循环共享层增强表达能力，但多次遍历会降低训练与推理效率，需要重新设计循环间传递的信息。</li>
-<li><strong>旧法为何失效</strong>：传统循环架构依赖残差流和同位置的跨循环状态，导致循环必须串行执行，限制并行训练及超出训练循环数的解码。</li>
-<li><strong>方法</strong>：MoLT以KV作为跨深度和循环的记忆；MoLT-R保留残差流并读取局部KV，MoLT-KV则从嵌入重启，结合当前循环局部KV与前序循环历史位置KV。U-MoLT进一步分离记忆构建和预测读出，跳过不影响预测的解码器遍历。</li>
-<li><strong>实验</strong>：在4000亿词元预训练中，U-MoLT在700M、1.5B稠密模型及3B MoE模型上优于OLMo3；700M模型验证交叉熵词元效率提升1.7倍，3B MoE的10领域困惑度降低0.75、10任务准确率提高2.1个百分点。对Qwen3.5-0.8B-Base继续预训练1000亿词元后，11个领域交叉熵均下降，平均词元效率提升1.4倍；约113M参数设置下推理延迟与非循环OLMo3相当。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[混合循环 Transformer（62 ▲）](https://huggingface.co/papers/2611.34923?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
-  </details></article>
 <article id="docseam" class="summary-card daily-item">
   <h2 id="docseam-title" class="daily-item-title">DocSEAM：双向跨页视觉编码</h2><p class="single-subtitle daily-item-summary">用相邻页面双向融合消除分页造成的视觉特征断裂，在五个多页文档问答基准上达到同规模开源模型最佳。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：多模态推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/reasoningevolve/">ReasoningEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%96%87%E6%A1%A3%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;文档推理</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉表征学习</a><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34420" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34420</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在多页合同、报告或论文问答系统中，将 DocSEAM 接入视觉编码器与语言模型之间，以增强跨页信息定位与推理。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>分页不应被视为文档的语义边界，在视觉表征阶段注入局部跨页连续性，比把跨页关联完全留给语言模型更稳健。</p>
@@ -504,23 +527,50 @@ ReasoningEvolve
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[DocSEAM：用于多页文档理解的双向跨页编码（27 ▲)](https://huggingface.co/papers/2611.34420?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
   </details></article>
-<article id="dylomo-dit" class="summary-card daily-item">
-  <h2 id="dylomo-dit-title" class="daily-item-title">DyLoMo-DiT：动态循环稀疏专家</h2><p class="single-subtitle daily-item-summary">用权重共享循环与稀疏专家扩充扩散网络容量，降低参数存储并按噪声水平动态分配计算。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;扩散模型</a><a href="/LLMDailyDigestWeb/topic/%E6%B7%B7%E5%90%88%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;混合专家模型</a><a href="/LLMDailyDigestWeb/topic/%E5%BE%AA%E7%8E%AF%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;循环计算</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.30844" target="_blank" rel="noopener">https://arxiv.org/abs/2611.30844</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在图像生成系统中借鉴权重共享循环、稀疏专家和噪声感知计算分配机制，构建低存储成本的 DiT 或作为高效架构基线。</p>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">2 条 · 按研究项目分组</span></h2>
+          <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/" onclick="event.stopPropagation()">NewModel</a><span class="daily-count">2 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="dylomo-dit" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>DyLoMo-DiT：动态循环稀疏专家</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 模型架构创新 · <a href="https://arxiv.org/abs/2611.30844" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用权重共享循环与稀疏专家扩充扩散网络容量，降低参数存储并按噪声水平动态分配计算。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;扩散模型</a><a href="/LLMDailyDigestWeb/topic/%E6%B7%B7%E5%90%88%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;混合专家模型</a><a href="/LLMDailyDigestWeb/topic/%E5%BE%AA%E7%8E%AF%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;循环计算</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉生成</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.30844" target="_blank" rel="noopener">https://arxiv.org/abs/2611.30844</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在图像生成系统中借鉴权重共享循环、稀疏专家和噪声感知计算分配机制，构建低存储成本的 DiT 或作为高效架构基线。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>生成网络的有效容量不必依赖更多独立权重，复用参数并按生成阶段分配计算可同时提升参数效率与计算效率。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
+</div><div class="daily-item-content"><ul>
 <li><strong>问题</strong>：扩散 Transformer 通常同时增加参数量和计算量来扩展容量，而混合专家架构虽保持单词元计算量，却仍需存储大量参数。</li>
 <li><strong>旧法为何失效</strong>：标准 DiT 的容量与参数、计算同步增长；DiT-MoE 增加专家后仍面临较高的参数存储成本。</li>
 <li><strong>方法</strong>：让中间层以权重共享方式循环执行，并由稀疏专家为不同词元分配容量；同时根据扩散噪声水平动态调整循环次数，在低噪声步骤投入更多计算。</li>
 <li><strong>实验</strong>：在 ImageNet 256×256、参数与计算预算匹配时，相比 DiT 将 FID 降低 11%–24%，相比 DiT-MoE 降低 36%–56%；文本到图像版本以 1.05B 活跃参数取得 0.714 GenEval，超过 FLUX.1 的 0.673，后者活跃参数为 12B。</li>
 </ul>
-</div>
-    </details><details class="daily-item-notes">
+</div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[DyLoMo-DiT：动态循环专家混合扩散 Transformer（55 ▲）](https://huggingface.co/papers/2611.30844?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
-  </details></article>
-<details class="daily-group daily-group-hot" id="daily-hot" open>
-            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">2 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
+  </details></div>
+</details>
+<details id="sage-med" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-2">★2</span> <strong>Sage-Med：渐进训练扩展医学多模态</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 医疗人工智能 · <a href="https://arxiv.org/abs/2611.34575" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用分阶段数据策展与渐进训练，解决医学模型扩容后视觉能力提升有限的问题，公开基准均分达58.26%。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：医疗人工智能</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%8C%BB%E7%96%97%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;医疗人工智能</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E6%95%B0%E6%8D%AE%E7%AD%96%E5%B1%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;数据策展</a><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34575" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34575</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在医学影像理解、报告生成和视觉定位系统中借鉴其分阶段数据策展与渐进训练方案，并将其作为医学多模态能力评测基线。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>医学多模态能力不会随参数规模自然增长，视觉专长的扩展更依赖数据质量与训练阶段之间的系统配合。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：医学多模态模型缺乏有效的规模扩展规律，增大参数量往往未能同步提升医学影像感知与临床任务能力。</li>
+<li><strong>旧法为何失效</strong>：现有医学多模态模型整体落后于前沿通用模型；扩容主要增强文本能力，开启推理模式也无法弥补视觉能力差距。</li>
+<li><strong>方法</strong>：构建35B参数、每次激活3B参数的Sage-Med-Preview，从3.227亿条候选记录中实施分阶段数据策展，并依次进行医学预训练、分阶段监督微调和自适应强化学习。</li>
+<li><strong>实验</strong>：与77个模型比较，覆盖238项临床任务、61个公开及13个私有多中心基准和40余种模态；在31个公开多模态基准上平均得分58.26%，超过Hulu-Med-235B-A22B的50.99%和Intern-S2-Preview的52.24%。</li>
+<li><strong>局限与后续</strong>：复杂医学推理和多步骤临床工作流仍有明显提升空间。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Sage-Med：扩展医学多模态智能（89 ▲）](https://huggingface.co/papers/2611.34575?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group daily-group-hot" id="daily-hot" open>
+            <summary class="daily-group-title"><h2 class="daily-tier-title">🔥 热点延伸 <span class="daily-count">3 条 · 当日热门但非主要研究方向，仍有启发</span></h2></summary>
             <div class="daily-group-body">
               <p class="daily-tier-hint">这些条目相关性判定为 0~1 分，是有意收录的当日热点；不进入重点与研究项目分组，点击标题展开。</p><details id="i2vt" class="daily-row">
   <summary>
@@ -556,6 +606,24 @@ ReasoningEvolve
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[HOG-WAM：通过未来梯度预测提升视觉鲁棒性（22 ▲)](https://huggingface.co/papers/2611.34811?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
+  </details></div>
+</details>
+<details id="pixelmatte" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-0">★0</span> <strong>PixelMatte：像素扩散高保真抠图</strong>
+      <span class="daily-row-meta">Hugging Face Papers · 扩散模型 · <a href="https://arxiv.org/abs/2611.34929" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用像素空间扩散先验直接预测透明度图，避免潜空间压缩损伤抠图边界，误差降低24%–44%。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-0" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 0</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：扩散模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newapply/">NewApply</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;扩散模型</a><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉表征学习</a><a href="/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%83%8F%E7%BC%96%E8%BE%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图像编辑</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34929" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34929</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在精细人像分割、影视合成和图像编辑系统中，可借鉴其空间对齐条件输入与高频边界校准机制构建高保真抠图模块。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>对高频精度敏感的视觉任务，保留像素空间生成先验比依赖压缩潜表示更重要，而且纯文本到图像预训练也能迁移出强图像条件能力。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：图像抠图需要像素级透明度与高频边界精度，但生成式先验难以兼顾语义理解和精细轮廓。</li>
+<li><strong>旧法为何失效</strong>：现有方法多依赖潜空间扩散，压缩表征及VAE重建会丢失高频细节，与精细抠图的像素级要求不匹配。</li>
+<li><strong>方法</strong>：PixelMatte改造预训练像素空间扩散Transformer，复用原生patch embedding，将输入图像、三分图和带噪alpha图编码为空间对齐的token，无需额外条件编码器或适配器；结合LayerShift与High-Pass Refiner校准区域透明度和边界。</li>
+<li><strong>实验</strong>：模型经像素级合成监督和真实图像微调后可单次前向预测；在四个基准、两个像素扩散骨干上，相比RenderMatte在P3M-500-NP和AM-2K将SAD及梯度误差降低24%–44%，并在AIM-500与RenderMatte-2K上取得有竞争力的结果。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[利用像素空间扩散 Transformer 实现高保真图像抠图（19 ▲)](https://huggingface.co/papers/2611.34929?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-26)</div>
   </details></div>
 </details>
 </div>
