@@ -16,8 +16,8 @@
   <meta itemprop="description" content="GeneralizeEvolve 研究方向：自进化中的泛化——自进化带来的提升能否跨任务、跨分布迁移而非基准过拟合，以及测试时学习与持续学习如何不遗忘。
 研究范畴 自进化中的泛化（generalization in self-evolution）追问一个核心问题：模型 / Agent 通过自迭代获得的能力，究竟是真实的能力扩展，还是对训练分布与评测基准的记忆与过拟合。本方向涵盖：SFT 与 RL 后训练的泛化差异（“SFT 记忆、RL 泛化”）、RLVR 是否扩展了基座模型的推理边界、在线 RL 为何遗忘更少、无外部奖励的自信号学习（Intuitor 类）、测试时训练与自适应（TTT、SEAL 自生成微调数据）、测试时记忆与长上下文架构（Titans）、持续学习与灾难性遗忘、弱到强泛化，以及 ARC-AGI 类强调流体智能而非知识回忆的评测。社区关注的核心问题包括：如何在自进化闭环中设计分布外（OOD）与组合泛化的检验、如何区分&#34;学到的算法&#34;与&#34;记住的模式&#34;（grokking 现象）、持续自进化下能力增益与遗忘的权衡，以及测试时计算与测试时学习在多大程度上能替代参数规模。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-28T16:55:05+08:00">
-  <meta itemprop="wordCount" content="4506">
+  <meta itemprop="dateModified" content="2026-11-28T17:43:37+08:00">
+  <meta itemprop="wordCount" content="4609">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/generalizeevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="GeneralizeEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-28T16:55:05+08:00">
+    <meta property="article:modified_time" content="2026-11-28T17:43:37+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/"
-    },"genre": "research","wordcount":  4506 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-28T16:55:05+08:00","publisher": {
+    },"genre": "research","wordcount":  4609 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/generalizeevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-28T17:43:37+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -274,8 +274,9 @@
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
 <ol>
-<li><strong>持续学习四维评测</strong>：持续学习不能只看末轮均值；应沿适应过程测可塑性、旧任务保持、跨任务干扰和迁移，并用域外任务及不同读出接口区分真遗忘与暂时错配。
+<li><strong>持续学习四维评测</strong>：持续学习不能只看末轮均值；应分时测行为与表征，并沿适应过程评估可塑性、保持、干扰和迁移，用域外任务及不同读出区分真遗忘与暂时错配。
 <ul>
+<li><a href="../../updates/2026-11-28/#item-21">双时间尺度遗忘：行为快抑制、表征慢漂移</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-25/#vla">预训练VLA持续学习：分布外遗忘诊断</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-109">三接口持续学习诊断</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-20/#stability-gap">Stability Gap：持续强化学习稳定性缺口</a> · 2026-11-20</li>
@@ -298,8 +299,10 @@
 <li><a href="../../updates/2026-11-06/#continual-autoresearch">Continual AutoResearch：智能体能否跨任务持续学习</a> · 2026-11-06</li>
 </ul>
 </li>
-<li><strong>路由隔离任务干扰</strong>：任务规模扩大时，按原型或任务簇路由隔离的适配器、提示与记忆，比共享参数连续更新更稳；模块独立训练后还须验证接口兼容性。
+<li><strong>路由隔离任务干扰</strong>：任务规模扩大或域持续漂移时，按原型、任务簇或域归属路由隔离适配器、提示、记忆与在线统计，比共享状态连续更新更稳；独立模块仍须验证接口兼容性。
 <ul>
+<li><a href="../../updates/2026-11-28/#dose">DOSE：概率域推断加权适应</a> · 2026-11-28</li>
+<li><a href="../../updates/2026-11-28/#adaptrouter">AdaptRouter：演化任务自适应路由</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-25/#item-105">独立蒸馏记忆检索策略</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#cspd">CSPD：可组合软提示蒸馏</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-20/#bispace">BiSpace：双空间解耦知识编辑</a> · 2026-11-20</li>
@@ -342,8 +345,9 @@
 <li><a href="../../updates/2026-10-29/#portal">PORTAL：何时应在测试时干预？</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>相关记忆选择修订</strong>：在线记忆应按任务状态与效用选择写入层级、强度和位置，并用结果或反事实修订；显式管理版本、期限、衰减与拒答，避免旧经验污染。
+<li><strong>相关记忆选择修订</strong>：在线记忆应按任务状态、效用及误差跨回合复现性决定写入层级、强度和持久性，并用结果或反事实修订；显式管理版本、期限、衰减与拒答，避免旧经验污染。
 <ul>
+<li><a href="../../updates/2026-11-28/#sft-jepa">sft-JEPA：快慢分治测试时训练</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-25/#xmind">XMind：跨记忆反事实复核</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#wasp">WASP：流式权重个性化</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-23/#navttt">NavTTT：导航条件式分层参数记忆</a> · 2026-11-23</li>
@@ -451,7 +455,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-21/gemini-4-hydrogen-token 2026-11-23/from-acting-to-learning 2026-11-23/item-25 2026-11-23/item-53 2026-11-23/loco-wam 2026-11-23/navttt 2026-11-23/orion 2026-11-23/structure-over-scale 2026-11-24/agrimanager 2026-11-24/rdqa 2026-11-24/rlm-27b 2026-11-24/rottt 2026-11-25/autoseco 2026-11-25/cspd 2026-11-25/e2l 2026-11-25/gemini-4-neon 2026-11-25/grokking 2026-11-25/instructreplay 2026-11-25/item-105 2026-11-25/item-109 2026-11-25/item-63 2026-11-25/p-tap 2026-11-25/sleep 2026-11-25/stun-bench 2026-11-25/vla 2026-11-25/wasp 2026-11-25/xmind 2026-11-26/grokking 2026-11-26/irtiqa 2026-11-26/item-34 2026-11-26/omniact 2026-11-26/prior 2026-11-26/shift-adapter 2026-11-26/transharness 2026-11-26/vfr 2026-11-27/i2vt 2026-11-28/rsi-2026 -->
+<!-- experience-seen: 2026-11-21/gemini-4-hydrogen-token 2026-11-23/from-acting-to-learning 2026-11-23/item-25 2026-11-23/item-53 2026-11-23/loco-wam 2026-11-23/navttt 2026-11-23/orion 2026-11-23/structure-over-scale 2026-11-24/agrimanager 2026-11-24/rdqa 2026-11-24/rlm-27b 2026-11-24/rottt 2026-11-25/autoseco 2026-11-25/cspd 2026-11-25/e2l 2026-11-25/gemini-4-neon 2026-11-25/grokking 2026-11-25/instructreplay 2026-11-25/item-105 2026-11-25/item-109 2026-11-25/item-63 2026-11-25/p-tap 2026-11-25/sleep 2026-11-25/stun-bench 2026-11-25/vla 2026-11-25/wasp 2026-11-25/xmind 2026-11-26/grokking 2026-11-26/irtiqa 2026-11-26/item-34 2026-11-26/omniact 2026-11-26/prior 2026-11-26/shift-adapter 2026-11-26/transharness 2026-11-26/vfr 2026-11-27/i2vt 2026-11-28/adaptrouter 2026-11-28/dose 2026-11-28/item-21 2026-11-28/rsi-2026 2026-11-28/sft-jepa -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

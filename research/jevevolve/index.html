@@ -16,8 +16,8 @@
   <meta itemprop="description" content="JevEvolve 研究方向：快决策模型自进化——以 Jev 为代表的低延迟结构化判断 / 决策模型，及其在智能体中&#34;快决策—慢思考&#34;分工的持续进化。
 研究范畴 快决策模型（Jev-style fast decision models）不生成开放式文本，而是对有限候选（动作、选项、路由目标）直接返回评分或概率，把单次决策压到百毫秒乃至几十毫秒级、成本压到普通推理调用的百分之一以下。本方向关注这类模型自身及其使用方式的自进化：如何从智能体交互日志中持续校准判断质量、如何自动学习&#34;哪些决策交给快模型、哪些升级到慢思考推理模型&#34;的路由边界、如何在动作选择 / 工具路由 / 上下文压缩 / 风险检查 / 结果评判等高频环节嵌入并迭代。社区关注的核心问题包括：跳过自回归 Decode、直接利用 Prefill 隐状态打分的推理脚手架设计，快决策与实时环境闭环（观察—决策—执行）的时延预算分配，以及&#34;不生成候选外内容&#34;与&#34;判断正确&#34;之间的评估鸿沟。">
   <meta itemprop="datePublished" content="2026-09-24T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
-  <meta itemprop="wordCount" content="5162">
+  <meta itemprop="dateModified" content="2026-11-28T17:43:37+08:00">
+  <meta itemprop="wordCount" content="5224">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/jevevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="JevEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-09-24T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
+    <meta property="article:modified_time" content="2026-11-28T17:43:37+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/jevevolve\/"
-    },"genre": "research","wordcount":  5162 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/jevevolve\/","datePublished": "2026-09-24T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
+    },"genre": "research","wordcount":  5224 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/jevevolve\/","datePublished": "2026-09-24T00:00:00+08:00","dateModified": "2026-11-28T17:43:37+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -314,6 +314,7 @@
 </li>
 <li><strong>轻量读出与蒸馏</strong>：冻结或复用生成骨干，再训练轻量读出或蒸馏多教师软分布，可把推理收益压入单遍评分并减少模型驻留。
 <ul>
+<li><a href="../../updates/2026-11-28/#pixelone">PixelOne：搜索教师空间蒸馏</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-20/#glide">GLiDE：推理蒸馏单遍决策</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-19/#system-1">System 1决策模型：冻结编码器对比答题</a> · 2026-11-19</li>
 <li><a href="../../updates/2026-11-16/#marimba-asr">Marimba：冻结ASR特征的语音决策</a> · 2026-11-16</li>
@@ -347,8 +348,10 @@
 <li><a href="../../updates/2026-10-29/#item-65">决策模型作为幻觉检测评判器</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>按需快慢路由</strong>：快慢路由不应固定：用校准置信度、停滞行为、中间状态与续推净收益决定升级，并按任务成功、轨迹长度、成本和延迟联合优化。
+<li><strong>按需快慢路由</strong>：训练路由器前先审计候选互补性、评分粒度和按题路由上限。确认有增益空间后，再按置信度、中间状态、续推净收益与专家成本持续更新边界。
 <ul>
+<li><a href="../../updates/2026-11-28/#rap">RAP：可路由性前置审计</a> · 2026-11-28</li>
+<li><a href="../../updates/2026-11-28/#adaptrouter">AdaptRouter：演化任务自适应路由</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-25/#jevagentharness-jev">JevAgentHarness：Jev嵌入式快速决策</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#item-128">层级执行控制：中间状态驱动计算分配</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-24/#adapt">ADAPT：成本感知求助后训练</a> · 2026-11-24</li>
@@ -477,7 +480,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/anys1 2026-11-19/flcva 2026-11-19/item-53 2026-11-19/item-54 2026-11-19/ragharnessdebugger-jev 2026-11-19/system-1 2026-11-19/vanguard 2026-11-20/agnes-harness 2026-11-20/drift 2026-11-20/glide 2026-11-20/item-80 2026-11-20/looproute 2026-11-20/mm-systemonebias 2026-11-20/piccolo 2026-11-20/rigel-ladon 2026-11-20/sirius-tiamat 2026-11-20/system-one-rsi 2026-11-23/altair-nidhogg 2026-11-23/dm-prm 2026-11-23/item-26 2026-11-23/jevrisk 2026-11-23/lever 2026-11-23/so-arena 2026-11-24/adapt 2026-11-24/molrejev 2026-11-24/omnidecisionbench 2026-11-25/antares-smaug 2026-11-25/catway 2026-11-25/deciform 2026-11-25/decision-models 2026-11-25/dknown-jev-2 2026-11-25/eeg-jev 2026-11-25/eegjev 2026-11-25/geodecisions 2026-11-25/item-128 2026-11-25/jev-2 2026-11-25/jevagentharness-jev 2026-11-25/jevbench 2026-11-25/needwise 2026-11-25/prefill1 2026-11-25/s1arena-mm 2026-11-25/tree-attention 2026-11-25/voyag 2026-11-26/lost-in-translation 2026-11-26/procedure-memory -->
+<!-- experience-seen: 2026-11-23/altair-nidhogg 2026-11-23/dm-prm 2026-11-23/item-26 2026-11-23/jevrisk 2026-11-23/lever 2026-11-23/so-arena 2026-11-24/adapt 2026-11-24/molrejev 2026-11-24/omnidecisionbench 2026-11-25/antares-smaug 2026-11-25/catway 2026-11-25/deciform 2026-11-25/decision-models 2026-11-25/dknown-jev-2 2026-11-25/eeg-jev 2026-11-25/eegjev 2026-11-25/geodecisions 2026-11-25/item-128 2026-11-25/jev-2 2026-11-25/jevagentharness-jev 2026-11-25/jevbench 2026-11-25/needwise 2026-11-25/prefill1 2026-11-25/s1arena-mm 2026-11-25/tree-attention 2026-11-25/voyag 2026-11-26/lost-in-translation 2026-11-26/procedure-memory 2026-11-28/adaptrouter 2026-11-28/pixelone 2026-11-28/rap -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

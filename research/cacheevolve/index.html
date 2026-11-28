@@ -13,8 +13,8 @@
   <meta itemprop="name" content="CacheEvolve">
   <meta itemprop="description" content="CacheEvolve 研究方向：缓存自进化——让推理记忆从&#34;随长度线性膨胀&#34;转向&#34;固定预算下自适应取舍&#34;，并自动学习记住什么、压缩什么、丢弃什么。">
   <meta itemprop="datePublished" content="2026-10-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
-  <meta itemprop="wordCount" content="4944">
+  <meta itemprop="dateModified" content="2026-11-28T17:43:37+08:00">
+  <meta itemprop="wordCount" content="5016">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/cacheevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="CacheEvolve">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
+    <meta property="article:modified_time" content="2026-11-28T17:43:37+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/cacheevolve\/"
-    },"genre": "research","wordcount":  4944 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/cacheevolve\/","datePublished": "2026-10-21T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
+    },"genre": "research","wordcount":  5016 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/cacheevolve\/","datePublished": "2026-10-21T00:00:00+08:00","dateModified": "2026-11-28T17:43:37+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -270,8 +270,9 @@
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
 <ol>
-<li><strong>混合记忆分工</strong>：长上下文中，用滑窗保留局部细节并重构循环更新样本，以快慢状态承载全局，再用锚点或内容记忆补检索，更能在恒定内存下维持关联与精度。
+<li><strong>混合记忆分工</strong>：长上下文用滑窗保留局部、快慢循环状态承载全局，并以锚点或内容记忆补检索；大容量循环模型可用树路由专家解耦容量与逐步延迟，由跨层状态控制重置。
 <ul>
+<li><a href="../../updates/2026-11-28/#yggdrasil">Yggdrasil：树路由循环专家</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#swgdn">SWGDN：滑窗增强键值更新</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#motion-mamba-2-0">Motion Mamba 2.0：持久记忆式长时控制</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#integral-deltanet">Integral DeltaNet：双状态自适应记忆</a> · 2026-11-25</li>
@@ -420,8 +421,10 @@
 <li><a href="../../updates/2026-11-08/#hst-llm">HST：混合线性注意力 LLM 的跨模型状态移交</a> · 2026-11-08</li>
 </ul>
 </li>
-<li><strong>快速权重在线学习</strong>：将循环快速权重视为在线学习器时，更新规则需做前缀对齐、归一化与选择性遗忘；分层线性写入可兼顾非线性表达和高效分块训练。
+<li><strong>快速权重在线学习</strong>：将循环快速权重视为在线学习器时，更新与传播需前缀对齐、归一化、选择性遗忘及非扩张约束；长距召回还需重复样本与上下文敏感损失定向激活。
 <ul>
+<li><a href="../../updates/2026-11-28/#stable-gated-deltanet-2">Stable Gated DeltaNet-2：对称擦除稳定循环状态</a> · 2026-11-28</li>
+<li><a href="../../updates/2026-11-28/#item-23">定向监督激活线性注意力召回</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-19/#toaster">Toaster：目标传播式非线性记忆</a> · 2026-11-19</li>
 <li><a href="../../updates/2026-11-19/#kra">KRA：协方差引导选择性遗忘</a> · 2026-11-19</li>
 <li><a href="../../updates/2026-11-02/#falcon">Falcon快速权重注意力实现持续学习</a> · 2026-11-02</li>
@@ -436,7 +439,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-20/clover 2026-11-20/compact-bench 2026-11-20/frontierreplay 2026-11-20/grepmem 2026-11-20/laq 2026-11-20/raa 2026-11-20/rocokv 2026-11-23/contexture 2026-11-23/lrsa 2026-11-23/memonce 2026-11-23/turnout 2026-11-24/declarative-attention 2026-11-24/dissparse-top-p 2026-11-24/markovian-reasoning-llm 2026-11-24/nohaircache 2026-11-24/refinekv-kv 2026-11-24/vaw 2026-11-25/dmc-5 2026-11-25/hopper-4-bit-kv 2026-11-25/integral-deltanet 2026-11-25/item-150 2026-11-25/item-93 2026-11-25/loomkv-kv 2026-11-25/motion-mamba-2-0 2026-11-25/nfa 2026-11-25/swapcert 2026-11-25/trusuco 2026-11-26/dfly2 2026-11-26/fbq 2026-11-26/item-87 2026-11-26/ssa 2026-11-26/swgdn 2026-11-27/molt-kv -->
+<!-- experience-seen: 2026-11-23/contexture 2026-11-23/lrsa 2026-11-23/memonce 2026-11-23/turnout 2026-11-24/declarative-attention 2026-11-24/dissparse-top-p 2026-11-24/markovian-reasoning-llm 2026-11-24/nohaircache 2026-11-24/refinekv-kv 2026-11-24/vaw 2026-11-25/dmc-5 2026-11-25/hopper-4-bit-kv 2026-11-25/integral-deltanet 2026-11-25/item-150 2026-11-25/item-93 2026-11-25/loomkv-kv 2026-11-25/motion-mamba-2-0 2026-11-25/nfa 2026-11-25/swapcert 2026-11-25/trusuco 2026-11-26/dfly2 2026-11-26/fbq 2026-11-26/item-87 2026-11-26/ssa 2026-11-26/swgdn 2026-11-27/molt-kv 2026-11-28/item-23 2026-11-28/stable-gated-deltanet-2 2026-11-28/yggdrasil -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

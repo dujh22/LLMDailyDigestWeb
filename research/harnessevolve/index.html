@@ -16,8 +16,8 @@
   <meta itemprop="description" content="HarnessEvolve 研究方向：评测 harness 的演进——围绕 lm-evaluation-harness / SWE-bench 类工具的扩展与进化（本站已 fork 相关仓库）。
 研究范畴 评测 / Agent harness 的演进，围绕 lm-evaluation-harness、SWE-bench 类工具及其扩展与进化展开。harness（含 Agent-Computer Interface、运行环境、工具与提示约定）显著影响甚至主导模型在 Agent 任务上的表现，因此其工程化与标准化日益重要。本方向涵盖：harness engineering、ACI 设计、真实运行环境构建，以及 harness 效应的度量和披露。社区关注的核心问题包括：harness 设计在多大程度上改变了模型间的相对排名、如何标准化披露 harness 配置以保证可比与可复现、环境真实度（realism）与隔离 / 安全的权衡，以及动态 / 长周期环境下的 harness 演进。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-28T16:55:05+08:00">
-  <meta itemprop="wordCount" content="7615">
+  <meta itemprop="dateModified" content="2026-11-28T17:43:37+08:00">
+  <meta itemprop="wordCount" content="7705">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/harnessevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="HarnessEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-28T16:55:05+08:00">
+    <meta property="article:modified_time" content="2026-11-28T17:43:37+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/"
-    },"genre": "research","wordcount":  7615 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-28T16:55:05+08:00","publisher": {
+    },"genre": "research","wordcount":  7705 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-28T17:43:37+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -276,6 +276,7 @@
 <ol>
 <li><strong>模型接口耦合</strong>：固定模型跨Harness比较会混淆接口上限与策略适配；应报告同接口横比、跨接口迁移矩阵及模型—Harness历代配对，而非只看同步升级。
 <ul>
+<li><a href="../../updates/2026-11-28/#ruibench">RUIBench：机器人接口可靠性评测</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-28/#coevo-rsi">CoEvo-RSI：模型与脚手架协同演化</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#roboevo">RoboEvo²：脚手架策略协同进化</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#shellbench">ShellBench：真实日常智能体评测</a> · 2026-11-25</li>
@@ -347,6 +348,7 @@
 </li>
 <li><strong>过程结果双验</strong>：工具型任务不能只验最终状态；流程、权限和证据义务应分别评分。模型自建Harness时还须分开验证构建与实际运行。
 <ul>
+<li><a href="../../updates/2026-11-28/#ruibench">RUIBench：机器人接口可靠性评测</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-24/#harnessdev">HarnessDev：自建执行框架评测</a> · 2026-11-24</li>
 <li><a href="../../updates/2026-11-20/#everydaybench">EverydayBench：活网交付质量评测</a> · 2026-11-20</li>
 <li><a href="../../updates/2026-11-19/#evidence-interpretation">Evidence Interpretation：检查证据边界判定</a> · 2026-11-19</li>
@@ -392,6 +394,7 @@
 </li>
 <li><strong>外置模块演化</strong>：冻结模型并外置提示、工具、记忆、观察策略和控制流可降低演化成本，单元须模块化可回滚。自主观察仅在补充证据高价值且模型能可靠利用时启用。
 <ul>
+<li><a href="../../updates/2026-11-28/#motubrain-2-0">Motubrain 2.0：世界动作模型协同编排</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#nightwatch">NightWatch：主动流式界面感知</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-26/#harness-learning">Harness Learning：反馈驱动的框架元学习</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#video-relook">Video-Relook：自适应时空观察</a> · 2026-11-25</li>
@@ -507,8 +510,9 @@
 <li><a href="../../updates/2026-10-30/#cmu-hermit-harness-rsi">CMU开源Hermit：统一Harness层RSI与持续学习框架</a> · 2026-10-30</li>
 </ul>
 </li>
-<li><strong>工具执行协议</strong>：Harness应显式处理交互、终止、退出码、超时、返回结构与授权边界；冲突需有低摩擦只读上报口，权限规则须模型可识别且执行层强制。
+<li><strong>工具执行协议</strong>：Harness应显式处理交互、终止、退出码、超时、返回结构与授权边界；冲突保留只读上报口，权限由执行层强制。安全审计反馈应最小披露，避免被串成攻击链。
 <ul>
+<li><a href="../../updates/2026-11-28/#conartist">Conartist：级联自适应提示注入</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#report-inconsistency">report_inconsistency：零成本上下文漂移检测</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#siren">Siren：弱沙盒越界评估</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-23/#splitbench">SplitBench：评测权限分离</a> · 2026-11-23</li>
@@ -572,7 +576,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/hookevo 2026-11-23/item-10 2026-11-23/medicalrsi 2026-11-23/roha-sgg 2026-11-23/splitbench 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/hoh 2026-11-24/hyperharness 2026-11-24/item-60 2026-11-24/massys 2026-11-24/matharness 2026-11-24/mlevolver 2026-11-24/rlm-27b 2026-11-25/agent 2026-11-25/agl-skill 2026-11-25/ai-harness 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/glm-5-5-rsi 2026-11-25/harness-rehearsal 2026-11-25/harness2 2026-11-25/harnessmm 2026-11-25/harnesspro 2026-11-25/item-108 2026-11-25/item-128 2026-11-25/item-136 2026-11-25/jevagentharness-jev 2026-11-25/mini-psych-agent 2026-11-25/online-environment-repair 2026-11-25/oo-harness 2026-11-25/reharness 2026-11-25/roboharness-zero 2026-11-25/rvlm-x 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/tare 2026-11-25/toolsmith 2026-11-25/transport-safe-evaluation 2026-11-25/video-relook 2026-11-26/agnes-harness 2026-11-26/autorlbench-rl 2026-11-26/delegent 2026-11-26/harness-learning 2026-11-26/home 2026-11-26/metaforge 2026-11-26/nightwatch 2026-11-26/pax 2026-11-26/report-inconsistency 2026-11-26/roboevo 2026-11-26/skillsbench 2026-11-26/transharness 2026-11-27/real2simlab 2026-11-28/coevo-rsi 2026-11-28/item-13 2026-11-28/os-omni 2026-11-28/rsi-2026 -->
+<!-- experience-seen: 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/hookevo 2026-11-23/item-10 2026-11-23/medicalrsi 2026-11-23/roha-sgg 2026-11-23/splitbench 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/hoh 2026-11-24/hyperharness 2026-11-24/item-60 2026-11-24/massys 2026-11-24/matharness 2026-11-24/mlevolver 2026-11-24/rlm-27b 2026-11-25/agent 2026-11-25/agl-skill 2026-11-25/ai-harness 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/glm-5-5-rsi 2026-11-25/harness-rehearsal 2026-11-25/harness2 2026-11-25/harnessmm 2026-11-25/harnesspro 2026-11-25/item-108 2026-11-25/item-128 2026-11-25/item-136 2026-11-25/jevagentharness-jev 2026-11-25/mini-psych-agent 2026-11-25/online-environment-repair 2026-11-25/oo-harness 2026-11-25/reharness 2026-11-25/roboharness-zero 2026-11-25/rvlm-x 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/tare 2026-11-25/toolsmith 2026-11-25/transport-safe-evaluation 2026-11-25/video-relook 2026-11-26/agnes-harness 2026-11-26/autorlbench-rl 2026-11-26/delegent 2026-11-26/harness-learning 2026-11-26/home 2026-11-26/metaforge 2026-11-26/nightwatch 2026-11-26/pax 2026-11-26/report-inconsistency 2026-11-26/roboevo 2026-11-26/skillsbench 2026-11-26/transharness 2026-11-27/real2simlab 2026-11-28/coevo-rsi 2026-11-28/conartist 2026-11-28/item-13 2026-11-28/motubrain-2-0 2026-11-28/os-omni 2026-11-28/rsi-2026 2026-11-28/ruibench -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>

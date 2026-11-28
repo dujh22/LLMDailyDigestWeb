@@ -16,8 +16,8 @@
   <meta itemprop="description" content="LogicEvolve 研究方向：大型语言模型的逻辑推理能力自我进化——让模型在逻辑 / 多步推理上持续自我改进。
 研究范畴 大型语言模型的逻辑推理能力自我进化，关注让模型在形式逻辑、多步 / 组合推理上持续自我改进。本方向涵盖：神经符号（neuro-symbolic）推理、逻辑推理基准、自我验证 / 自我校正，以及 System 1 → System 2 的能力跃迁。社区关注的核心问题包括：推理过程的逻辑忠实度（faithfulness）与可验证性、组合泛化与分布外泛化及推理鲁棒性、符号求解器 / 验证器如何与神经网络互补，以及自我进化是否会放大逻辑错误（幻觉沿推理链传播）。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-27T10:41:52+08:00">
-  <meta itemprop="wordCount" content="2887">
+  <meta itemprop="dateModified" content="2026-11-28T17:43:37+08:00">
+  <meta itemprop="wordCount" content="2933">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/logicevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="LogicEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-27T10:41:52+08:00">
+    <meta property="article:modified_time" content="2026-11-28T17:43:37+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/logicevolve\/"
-    },"genre": "research","wordcount":  2887 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/logicevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-27T10:41:52+08:00","publisher": {
+    },"genre": "research","wordcount":  2933 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/logicevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-28T17:43:37+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -278,6 +278,7 @@
 <ol>
 <li><strong>验证器反馈闭环</strong>：可形式化任务宜采用“生成—局部验证—约束反馈—修复”闭环；确定性检查器比笼统自我反思更能阻断错误传播。
 <ul>
+<li><a href="../../updates/2026-11-28/#verilogic">VeriLogic：可验证逻辑轨迹强化学习</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#fol-proof">FOL-Proof：确定性语义验证</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-12/#topoverus">TopoVerus：基于学习反例与课程奖励的形式化证明修复</a> · 2026-11-12</li>
 <li><a href="../../updates/2026-11-12/#llm-2">实时捕获并纠正 LLM 推理错误</a> · 2026-11-12</li>
@@ -288,6 +289,7 @@
 </li>
 <li><strong>分层过程奖励</strong>：长链强化学习应按子问题或证据阶段设置检查点并分配信用，以缩短有效奖励跨度，避免终局奖励掩盖早期错误。
 <ul>
+<li><a href="../../updates/2026-11-28/#verilogic">VeriLogic：可验证逻辑轨迹强化学习</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-03/#credo">CREDO：面向时序推理智能体的证据条件信用分配</a> · 2026-11-03</li>
 <li><a href="../../updates/2026-10-30/#h-r">H²R：基于分层提示奖励的数学推理强化学习</a> · 2026-10-30</li>
 </ul>
@@ -380,7 +382,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/colombo 2026-11-20/astra 2026-11-20/verifiable-logic 2026-11-21/claude-lean 2026-11-21/space-x 2026-11-23/claude 2026-11-23/item-7 2026-11-23/navier-stokes-claude-lean 2026-11-23/orion 2026-11-24/item-67 2026-11-24/lean 2026-11-24/vp-vnp 2026-11-25/9-4 2026-11-25/vp-vnp-ai-lean 2026-11-26/fol-proof 2026-11-26/merlin-bench 2026-11-26/openai-math-ai -->
+<!-- experience-seen: 2026-11-21/claude-lean 2026-11-21/space-x 2026-11-23/claude 2026-11-23/item-7 2026-11-23/navier-stokes-claude-lean 2026-11-23/orion 2026-11-24/item-67 2026-11-24/lean 2026-11-24/vp-vnp 2026-11-25/9-4 2026-11-25/vp-vnp-ai-lean 2026-11-26/fol-proof 2026-11-26/merlin-bench 2026-11-26/openai-math-ai 2026-11-28/verilogic -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
