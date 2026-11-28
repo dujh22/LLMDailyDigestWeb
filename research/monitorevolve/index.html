@@ -13,8 +13,8 @@
   <meta itemprop="name" content="MonitorEvolve">
   <meta itemprop="description" content="MonitorEvolve 研究方向：监管自进化——当 AI 开始参与研发下一代 AI（“AI 造 AI”），让对它的监控、评估与外部审查机制随被监管系统一起演化，使人类在递归自我改进的飞轮中始终保有可核查的知情权与干预权。">
   <meta itemprop="datePublished" content="2026-11-20T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-28T18:01:40+08:00">
-  <meta itemprop="wordCount" content="4073">
+  <meta itemprop="dateModified" content="2026-11-28T18:58:36+08:00">
+  <meta itemprop="wordCount" content="4094">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/monitorevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="MonitorEvolve">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-11-20T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-28T18:01:40+08:00">
+    <meta property="article:modified_time" content="2026-11-28T18:58:36+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/monitorevolve\/"
-    },"genre": "research","wordcount":  4073 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/monitorevolve\/","datePublished": "2026-11-20T00:00:00+08:00","dateModified": "2026-11-28T18:01:40+08:00","publisher": {
+    },"genre": "research","wordcount":  4094 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/monitorevolve\/","datePublished": "2026-11-20T00:00:00+08:00","dateModified": "2026-11-28T18:58:36+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -342,6 +342,7 @@
 <li><strong>攻防共演监控器</strong>：监控器应与具部署代表性的自适应攻击策略交替训练，并联合评测拦截决策与反馈披露；弱攻击代理或泄露线索的拒绝会制造虚假安全感。
 <ul>
 <li><a href="../../updates/2026-11-28/#fork">FORK：决策披露技能协同演化</a> · 2026-11-28</li>
+<li><a href="../../updates/2026-11-28/#conartist">Conartist：级联自适应提示注入</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#item-23">攻击策略选择：代理策略误导监控评测</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-24/#io-ai">IO-AI：信息战攻防协同演化</a> · 2026-11-24</li>
 </ul>
@@ -365,7 +366,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-21/item-26 2026-11-21/tether 2026-11-23/epistemic-guard 2026-11-23/metr-3-6 2026-11-23/openai-ai 2026-11-24/centry 2026-11-24/io-ai 2026-11-24/sro 2026-11-24/superintelligence-is-arriving-ai 2026-11-25/clr 2026-11-25/detection-gap 2026-11-25/doppelvet 2026-11-25/evolutionary-ai-control 2026-11-25/expguard 2026-11-25/interrogation-protocols 2026-11-25/item-123 2026-11-25/item-152 2026-11-25/item-29 2026-11-25/item-69 2026-11-25/p-tap 2026-11-25/siren 2026-11-26/item-23 2026-11-26/prove 2026-11-26/recordroute 2026-11-26/report-inconsistency 2026-11-26/sealedloop 2026-11-28/dapo-v 2026-11-28/fork 2026-11-28/item-28 2026-11-28/judiact 2026-11-28/step-grm -->
+<!-- experience-seen: 2026-11-21/item-26 2026-11-21/tether 2026-11-23/epistemic-guard 2026-11-23/metr-3-6 2026-11-23/openai-ai 2026-11-24/centry 2026-11-24/io-ai 2026-11-24/sro 2026-11-24/superintelligence-is-arriving-ai 2026-11-25/clr 2026-11-25/detection-gap 2026-11-25/doppelvet 2026-11-25/evolutionary-ai-control 2026-11-25/expguard 2026-11-25/interrogation-protocols 2026-11-25/item-123 2026-11-25/item-152 2026-11-25/item-29 2026-11-25/item-69 2026-11-25/p-tap 2026-11-25/siren 2026-11-26/item-23 2026-11-26/prove 2026-11-26/recordroute 2026-11-26/report-inconsistency 2026-11-26/sealedloop 2026-11-28/conartist 2026-11-28/dapo-v 2026-11-28/fork 2026-11-28/item-28 2026-11-28/judiact 2026-11-28/step-grm -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架 / 文档</strong></p>
@@ -442,9 +443,11 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励模型评测 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#item-123" class="archive-item-link">暴露度预判奖励作弊</a>
                 <span class="archive-item-date" title='2026-11-25'>11-25</span>&nbsp;<a href="https://arxiv.org/abs/2611.29651" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>安全评测 <sup>2</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>安全评测 <sup>3</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-28/#judiact" class="archive-item-link">JudiAct：证据驱动的分级干预</a>
                 <span class="archive-item-date" title='2026-11-28'>11-28</span>&nbsp;<a href="https://arxiv.org/abs/2611.28849" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#conartist" class="archive-item-link">Conartist：级联自适应提示注入</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span>&nbsp;<a href="https://arxiv.org/abs/2611.29977" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#siren" class="archive-item-link">Siren：弱沙盒越界评估</a>
                 <span class="archive-item-date" title='2026-11-25'>11-25</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>形式化验证 <sup>1</sup></h3><article class="archive-item">

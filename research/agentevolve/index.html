@@ -16,8 +16,8 @@ Agent 推理时自进化（inference-time / deployment-time agent self-evolution
   <meta itemprop="description" content="AgentEvolve 研究方向：Agent 推理时自进化——不改参数，Agent 在部署后通过反思、技能库、工作流记忆与上下文演化持续变强。
 研究范畴 Agent 推理时自进化（inference-time / deployment-time agent self-evolution）研究 Agent 在参数冻结的前提下如何随经验持续改进：把失败反思写回记忆（Reflexion）、把成功轨迹沉淀为可复用技能与工作流（Voyager 技能库、SkillWeaver、Agent Workflow Memory）、按需自造工具与 MCP 能力（Alita）、把经验以&#34;演化中的上下文 / 作弊表&#34;形式积累（Dynamic Cheatsheet、Agentic Context Engineering），乃至以免训练方式实现 GRPO 式的经验学习（Training-Free GRPO）。本方向涵盖：Agent 认知架构（CoALA）、经验记忆与检索、技能发现 / 验证 / 精炼闭环、自动工具构造、上下文与提示的在线演化、多 Agent 间的经验共享，以及推理时自进化与训练时自进化的互补与衔接。社区关注的核心问题包括：经验积累是否会带来&#34;上下文坍缩&#34;与噩梦式膨胀、自我反思信号的可靠性、技能库的泛化与过时淘汰机制、以及如何在不更新参数的情况下保证改进可持续并最终反哺训练。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-28T18:01:40+08:00">
-  <meta itemprop="wordCount" content="8059">
+  <meta itemprop="dateModified" content="2026-11-28T18:58:36+08:00">
+  <meta itemprop="wordCount" content="8076">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/agentevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="AgentEvolve">
@@ -27,7 +27,7 @@ Agent 推理时自进化（inference-time / deployment-time agent self-evolution
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-28T18:01:40+08:00">
+    <meta property="article:modified_time" content="2026-11-28T18:58:36+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@ Agent 推理时自进化（inference-time / deployment-time agent self-evolution
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agentevolve\/"
-    },"genre": "research","wordcount":  8059 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agentevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-28T18:01:40+08:00","publisher": {
+    },"genre": "research","wordcount":  8076 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agentevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-28T18:58:36+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -302,6 +302,7 @@ Agent 推理时自进化（inference-time / deployment-time agent self-evolution
 </li>
 <li><strong>外部状态优先演化</strong>：参数冻结时优先更新外部记忆与Harness；在可验证任务上可比测试时训练更省算力且更易部署。
 <ul>
+<li><a href="../../updates/2026-11-28/#motubrain-2-0">Motubrain 2.0：世界动作模型协同编排</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-25/#spatialcraft">SpatialCraft：经验技能双流自进化</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#harness2">Harness2：跨任务框架优化经验库</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-23/#embodied-harness">Embodied-Harness：经验驱动脚手架自改进</a> · 2026-11-23</li>
@@ -589,7 +590,7 @@ Agent 推理时自进化（inference-time / deployment-time agent self-evolution
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-21/space-x 2026-11-21/startv-agent 2026-11-23/alps-lab 2026-11-23/astronautbench 2026-11-23/bel 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/medicalrsi 2026-11-23/zhulong-se 2026-11-24/don-t-train-it-write-it 2026-11-24/engram 2026-11-24/evovim 2026-11-24/io-ai 2026-11-24/mlevolver 2026-11-24/scape 2026-11-24/semantic-pid-rsi-pid 2026-11-24/skilllens 2026-11-24/stride 2026-11-25/agl-skill 2026-11-25/autoseco 2026-11-25/detection-gap 2026-11-25/dmc-5 2026-11-25/doppelvet 2026-11-25/expguard 2026-11-25/fin-rsi 2026-11-25/habitats 2026-11-25/harness2 2026-11-25/harnessmm 2026-11-25/item-136 2026-11-25/item-64 2026-11-25/lce 2026-11-25/mmmem 2026-11-25/mxi-memicl 2026-11-25/notary 2026-11-25/reharness 2026-11-25/self-upgrading-embodied-agents 2026-11-25/sleep 2026-11-25/spatialcraft 2026-11-25/stun-bench 2026-11-25/toolsmith 2026-11-25/vise 2026-11-25/wactorz 2026-11-26/agnes-harness 2026-11-26/autorlbench-rl 2026-11-26/cogentic 2026-11-26/dualpm 2026-11-26/egse 2026-11-26/evolink-bench 2026-11-26/irtiqa 2026-11-26/item-39 2026-11-26/item-87 2026-11-26/knowledge-base-gradient-descent 2026-11-26/leto 2026-11-26/medskill-e 2026-11-26/metadecomp 2026-11-26/nightwatch 2026-11-26/p-fedskill 2026-11-26/partagent 2026-11-26/precept 2026-11-26/roboevo 2026-11-26/scalpel-and-brush 2026-11-26/sed 2026-11-26/sim 2026-11-26/skillsbench 2026-11-26/sports-agent 2026-11-26/vsft 2026-11-27/play2evolve 2026-11-28/autosft 2026-11-28/boundary-aware-policy-learning 2026-11-28/coevo-rsi 2026-11-28/fork 2026-11-28/kolpona 2026-11-28/metaskill 2026-11-28/soars -->
+<!-- experience-seen: 2026-11-21/space-x 2026-11-21/startv-agent 2026-11-23/alps-lab 2026-11-23/astronautbench 2026-11-23/bel 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/medicalrsi 2026-11-23/zhulong-se 2026-11-24/don-t-train-it-write-it 2026-11-24/engram 2026-11-24/evovim 2026-11-24/io-ai 2026-11-24/mlevolver 2026-11-24/scape 2026-11-24/semantic-pid-rsi-pid 2026-11-24/skilllens 2026-11-24/stride 2026-11-25/agl-skill 2026-11-25/autoseco 2026-11-25/detection-gap 2026-11-25/dmc-5 2026-11-25/doppelvet 2026-11-25/expguard 2026-11-25/fin-rsi 2026-11-25/habitats 2026-11-25/harness2 2026-11-25/harnessmm 2026-11-25/item-136 2026-11-25/item-64 2026-11-25/lce 2026-11-25/mmmem 2026-11-25/mxi-memicl 2026-11-25/notary 2026-11-25/reharness 2026-11-25/self-upgrading-embodied-agents 2026-11-25/sleep 2026-11-25/spatialcraft 2026-11-25/stun-bench 2026-11-25/toolsmith 2026-11-25/vise 2026-11-25/wactorz 2026-11-26/agnes-harness 2026-11-26/autorlbench-rl 2026-11-26/cogentic 2026-11-26/dualpm 2026-11-26/egse 2026-11-26/evolink-bench 2026-11-26/irtiqa 2026-11-26/item-39 2026-11-26/item-87 2026-11-26/knowledge-base-gradient-descent 2026-11-26/leto 2026-11-26/medskill-e 2026-11-26/metadecomp 2026-11-26/nightwatch 2026-11-26/p-fedskill 2026-11-26/partagent 2026-11-26/precept 2026-11-26/roboevo 2026-11-26/scalpel-and-brush 2026-11-26/sed 2026-11-26/sim 2026-11-26/skillsbench 2026-11-26/sports-agent 2026-11-26/vsft 2026-11-27/play2evolve 2026-11-28/autosft 2026-11-28/boundary-aware-policy-learning 2026-11-28/coevo-rsi 2026-11-28/fork 2026-11-28/kolpona 2026-11-28/metaskill 2026-11-28/motubrain-2-0 2026-11-28/soars -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -702,6 +703,9 @@ Agent 推理时自进化（inference-time / deployment-time agent self-evolution
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>元认知 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-12/#sage-taiyi" class="archive-item-link">Sage-Taiyi：面向科学发现的元认知架构</a>
                 <span class="archive-item-date" title='2026-11-12'>11-12</span>&nbsp;<a href="https://arxiv.org/abs/2611.12762" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>具身基础模型 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#motubrain-2-0" class="archive-item-link">Motubrain 2.0：世界动作模型协同编排</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>具身规划 <sup>3</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-12/#item-202" class="archive-item-link">智能体机器人自学习中的模型、技能、反馈与课程控制研究</a>
                 <span class="archive-item-date" title='2026-11-12'>11-12</span>&nbsp;<a href="https://arxiv.org/abs/2611.09030" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
@@ -1216,7 +1220,9 @@ Agent 推理时自进化（inference-time / deployment-time agent self-evolution
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自我改进 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-26/#precept" class="archive-item-link">PRECEPT：失误驱动的安全原则演化</a>
                 <span class="archive-item-date" title='2026-11-26'>11-26</span>&nbsp;<a href="https://arxiv.org/abs/2611.33519" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自进化 <sup>1</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自进化 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-25/#weight-coding" class="archive-item-link">Weight Coding：智能体直接编辑模型权重</a>
+                <span class="archive-item-date" title='2026-11-25'>11-25</span>&nbsp;<a href="https://arxiv.org/abs/2611.29613" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-24/#evoontology-data-agent" class="archive-item-link">EvoOntology：Data Agent 自动构建持续进化的本体层</a>
                 <span class="archive-item-date" title='2026-10-24'>10-24</span></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自进化框架 <sup>2</sup></h3><article class="archive-item">
