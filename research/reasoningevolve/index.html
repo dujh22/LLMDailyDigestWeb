@@ -13,8 +13,8 @@
   <meta itemprop="name" content="ReasoningEvolve">
   <meta itemprop="description" content="ReasoningEvolve 研究方向：推理中的自进化——“推理&#34;取双重含义：既指推理服务（inference）过程，让模型利用服务中的前向计算与真实交互持续自适应；也指思维推理（reasoning）过程，让模型在思考、求解、反思中不断改进自己的推理能力与推理策略。两者共同指向&#34;边推理、边进化”。">
   <meta itemprop="datePublished" content="2026-11-21T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-28T16:55:05+08:00">
-  <meta itemprop="wordCount" content="5047">
+  <meta itemprop="dateModified" content="2026-11-28T17:44:18+08:00">
+  <meta itemprop="wordCount" content="5183">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/reasoningevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="ReasoningEvolve">
@@ -23,7 +23,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-11-21T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-28T16:55:05+08:00">
+    <meta property="article:modified_time" content="2026-11-28T17:44:18+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/"
-    },"genre": "research","wordcount":  5047 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-28T16:55:05+08:00","publisher": {
+    },"genre": "research","wordcount":  5183 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/reasoningevolve\/","datePublished": "2026-11-21T00:00:00+08:00","dateModified": "2026-11-28T17:44:18+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -285,8 +285,9 @@
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
 <ol>
-<li><strong>无梯度能力写入</strong>：前向激活与可解析表示代数可直接驱动局部、门控的低秩改写；其上限取决于目标子空间可分性及冻结表征覆盖度。
+<li><strong>无梯度能力写入</strong>：无梯度写入不应盲搜：前向激活、可解析表示代数或任务不变性可约束局部改写与搜索方向；上限取决于目标子空间可分性及冻结表征覆盖度。
 <ul>
+<li><a href="../../updates/2026-11-28/#ars-vlm">ARS-VLM：视觉对齐增强随机搜索</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#vsft">vSFT：语言监督式测试时调优</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-26/#fwsp">FWSP：确定性前向权重编辑</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-24/#don-t-train-it-write-it">Don&rsquo;t Train It, Write It：智能体直写模型能力</a> · 2026-11-24</li>
@@ -294,8 +295,9 @@
 <li><a href="../../updates/2026-11-21/#forward-only-passes">Forward-Only Passes：角度集中度引导降秩</a> · 2026-11-21</li>
 </ul>
 </li>
-<li><strong>测试时更新安全</strong>：测试时参数可作为离窗记忆，但监督宜来自可控变换等确定标签；用户交互驱动更新时，必须隔离并审计更新通道。
+<li><strong>测试时更新安全</strong>：测试时参数可作离窗记忆；更新持久性应按误差的跨回合复现性分层，监督优先用确定标签，用户驱动通道须隔离审计。
 <ul>
+<li><a href="../../updates/2026-11-28/#sft-jepa">sft-JEPA：快慢分治测试时训练</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-25/#p-tap">P-TAP：会话适配器渐进投毒</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-24/#rottt">RoTTT：旋转监督式测试时训练</a> · 2026-11-24</li>
 <li><a href="../../updates/2026-11-23/#loco-wam">LoCo-WAM：测试时训练延展长上下文</a> · 2026-11-23</li>
@@ -343,6 +345,8 @@
 </li>
 <li><strong>局部信用分配</strong>：奖励应归因到造成结果的决策分叉、输出片段或模型模块，而非整段响应平均传播；熵排名和输出锚点可低成本定位。
 <ul>
+<li><a href="../../updates/2026-11-28/#verilogic">VeriLogic：可验证逻辑轨迹强化学习</a> · 2026-11-28</li>
+<li><a href="../../updates/2026-11-28/#saepo">SAEPO：稀疏自编码器引导信用分配</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#briar">BRIAR：分岔引导的信念平滑</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#mspo">MSPO：模块特定信用分配</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#anchorcredit">AnchorCredit：输出锚定式信用分配</a> · 2026-11-25</li>
@@ -357,8 +361,10 @@
 <li><a href="../../updates/2026-11-21/#pair-med">PAIR-MED：策略奖励交替优化</a> · 2026-11-21</li>
 </ul>
 </li>
-<li><strong>推理过程忠实性</strong>：答案正确或思维链可读都不能证明过程忠实；评测应结合预测依赖、内部表征，并对可形式化结果使用独立语义解析与可弃权确定性检查。
+<li><strong>推理过程忠实性</strong>：答案正确、思维链可读或口述置信度都不能证明过程忠实；应结合预测依赖、内部表征，并对可形式化中间状态作独立语义验证与可弃权检查。
 <ul>
+<li><a href="../../updates/2026-11-28/#verilogic">VeriLogic：可验证逻辑轨迹强化学习</a> · 2026-11-28</li>
+<li><a href="../../updates/2026-11-28/#item-28">置信度注入揭示自监控失效</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#fol-proof">FOL-Proof：确定性语义验证</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#clr">CLR：无痕隐藏目标推理</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#aprm">APRM：内部注意力过程奖励</a> · 2026-11-25</li>
@@ -393,7 +399,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-21/claude-lean 2026-11-21/forward-only-passes 2026-11-21/gemini-4-hydrogen-token 2026-11-21/pair-med 2026-11-21/space-x 2026-11-23/alps-lab 2026-11-23/bel 2026-11-23/creditfilter 2026-11-23/item-25 2026-11-23/item-53 2026-11-23/loco-wam 2026-11-23/orion 2026-11-23/structure-over-scale 2026-11-23/turnout 2026-11-23/weight-space-programming-icl 2026-11-24/don-t-train-it-write-it 2026-11-24/future-opsd 2026-11-24/item-67 2026-11-24/markovian-reasoning-llm 2026-11-24/rottt 2026-11-24/rtc 2026-11-24/tool-to-self 2026-11-25/9-4 2026-11-25/anchorcredit 2026-11-25/aprm 2026-11-25/clr 2026-11-25/elgo 2026-11-25/epro 2026-11-25/gemini-4-neon 2026-11-25/item-128 2026-11-25/item-56 2026-11-25/lce 2026-11-25/mspo 2026-11-25/p-tap 2026-11-25/trusuco 2026-11-25/tt-rsi 2026-11-25/videcide 2026-11-25/vopd 2026-11-26/briar 2026-11-26/cogentic 2026-11-26/dart 2026-11-26/dfly2 2026-11-26/fol-proof 2026-11-26/fwsp 2026-11-26/latent-merger-lora 2026-11-26/openai-math-ai 2026-11-26/s-mind 2026-11-26/thinkmorph-ssl 2026-11-26/u-statistics-powered-llm-reasoning 2026-11-26/vsft 2026-11-27/docseam 2026-11-28/solve-vision-with-code -->
+<!-- experience-seen: 2026-11-21/claude-lean 2026-11-21/forward-only-passes 2026-11-21/gemini-4-hydrogen-token 2026-11-21/pair-med 2026-11-21/space-x 2026-11-23/alps-lab 2026-11-23/bel 2026-11-23/creditfilter 2026-11-23/item-25 2026-11-23/item-53 2026-11-23/loco-wam 2026-11-23/orion 2026-11-23/structure-over-scale 2026-11-23/turnout 2026-11-23/weight-space-programming-icl 2026-11-24/don-t-train-it-write-it 2026-11-24/future-opsd 2026-11-24/item-67 2026-11-24/markovian-reasoning-llm 2026-11-24/rottt 2026-11-24/rtc 2026-11-24/tool-to-self 2026-11-25/9-4 2026-11-25/anchorcredit 2026-11-25/aprm 2026-11-25/clr 2026-11-25/elgo 2026-11-25/epro 2026-11-25/gemini-4-neon 2026-11-25/item-128 2026-11-25/item-56 2026-11-25/lce 2026-11-25/mspo 2026-11-25/p-tap 2026-11-25/trusuco 2026-11-25/tt-rsi 2026-11-25/videcide 2026-11-25/vopd 2026-11-26/briar 2026-11-26/cogentic 2026-11-26/dart 2026-11-26/dfly2 2026-11-26/fol-proof 2026-11-26/fwsp 2026-11-26/latent-merger-lora 2026-11-26/openai-math-ai 2026-11-26/s-mind 2026-11-26/thinkmorph-ssl 2026-11-26/u-statistics-powered-llm-reasoning 2026-11-26/vsft 2026-11-27/docseam 2026-11-28/ars-vlm 2026-11-28/item-28 2026-11-28/saepo 2026-11-28/sft-jepa 2026-11-28/solve-vision-with-code 2026-11-28/verilogic -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
