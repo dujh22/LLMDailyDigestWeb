@@ -12,116 +12,43 @@
 
 今日概览
 
-系统协同
 
-CoEvo-RSI：跨代搜索历史模型与脚手架的最佳组合，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。
+协同进化
 
-
-进化验证
-
+CoEvo-RSI：跨代保存并重组模型与脚手架版本，避免独立升级导致接口错配，使9B模型在垂直任务上超过大型模型。
 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真正可泛化的自我改进与基准过拟合。
-
-
-数据与训练
-
-AutoSFT：让执行、分析和合成智能体联合筛选、修复与生成微调数据，突破只调整样本比例的自动优化。
-AutoRL：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习的平台期、异常与中断。
-
-
-智能体评测
-
-OS-Omni：在六类真实平台的统一活态环境中评测长程操作，揭示最强智能体仍落后人类8.8个百分点。
-DRBench Pro：以知识树和证据化评分分别衡量深研报告的探索广度与链路深度，最佳覆盖率仅57.04%。
-Vernier：计算排行榜可辨别的最小分差，发现零样本时序预测榜单常无法可靠区分前十模型。
-
-
-可审计推理
-
-Solve Vision with Code：让编码智能体编写程序并渲染答案视频，以可检查的符号计算替代不稳定的直接像素生成。
-
-
-安全恢复
-
-数据库智能体错误损失分层评测：通过预置错误、权限分组和恢复演练，分离模型失误、访问控制与数据库恢复对事故损失的影响。
-
-
-实时生成
-
-ShowNow：在播放期间预计算不同动作的未来画面并细粒度提交，将交互世界模型延迟从620降至208毫秒。
-
-
-热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct
-
-对当前研究的启发
-
-HarnessEvolve
-
-迁移｜从 CoEvo-RSI 把跨代配对搜索用到版本选择：保留模型与脚手架档案，交叉组合后按任务得分和TIMR排序。
-延续｜CoEvo-RSI 留下开放环境泛化未验证：在OS-Omni对比最新版本直配与档案搜索，统计成功率和平台方差。
-
-
-Awesome-RSI
-
-迁移｜从 RSI 2026 把独立验证门槛用到RSI收录：要求等预算留出集、轨迹审计及原能力回归结果。
-
-
-GeneralizeEvolve
-
-延续｜RSI 2026 留下跨任务增益与能力保持问题：连续自改多轮，测留出任务迁移率和旧任务退化率。
-
-
-DataEvolve
-
-迁移｜从 AutoSFT 把六类数据动作加入数据飞轮：按失败类型自动筛选、修复、重标与合成样本。
-延续｜AutoSFT 留下零分能力和多智能体成本：等预算对比单体与多体，报告能力增益、API费和耗时。
-
-
-AgentTrainEvolve
-
-迁移｜从 AutoRL 把诊断—验证—回滚闭环用于长程RL：注入训练故障，对比静态配方的恢复率和最终奖励。
-
-
-EvalEvolve
-
-迁移｜从 Vernier 把最小可辨分差用于动态榜单：公开逐任务得分，仅在差异超过分辨率时报告排名。
-延续｜OS-Omni 留下跨平台迁移差距：固定模型和预算做六平台交叉测试，报告成功率与状态跟踪错误率。
-
-
-ResearchEvolve
-
-迁移｜从 DRBench Pro 把知识树用于深研验收：分别计算方向覆盖率、证据链深度和无来源断言率。
-
-
-ReasoningEvolve
-
-延续｜Solve Vision with Code 留下开源编码模型落差：同题对比开闭源智能体的得分、执行率与可审计性。
+AutoSFT：让执行、分析、合成智能体协作筛选、修复和生成微调数据，将IFEval最高推至81.58。
+AutoRL：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习训练的平台期与中断。
 
 
 
-" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
+评测方法" /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-28 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 系统协同 CoEvo-RSI：跨代搜索历史模型与脚手架的最佳组合，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。 进化验证 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真正可泛化的自我改进与基准过拟合。 数据与训练 AutoSFT：让执行、分析和合成智能体联合筛选、修复与生成微调数据，突破只调整样本比例的自动优化。 AutoRL：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习的平台期、异常与中断。 智能体评测 OS-Omni：在六类真实平台的统一活态环境中评测长程操作，揭示最强智能体仍落后人类8.8个百分点。 DRBench Pro：以知识树和证据化评分分别衡量深研报告的探索广度与链路深度，最佳覆盖率仅57.04%。 Vernier：计算排行榜可辨别的最小分差，发现零样本时序预测榜单常无法可靠区分前十模型。 可审计推理 Solve Vision with Code：让编码智能体编写程序并渲染答案视频，以可检查的符号计算替代不稳定的直接像素生成。 安全恢复 数据库智能体错误损失分层评测：通过预置错误、权限分组和恢复演练，分离模型失误、访问控制与数据库恢复对事故损失的影响。 实时生成 ShowNow：在播放期间预计算不同动作的未来画面并细粒度提交，将交互世界模型延迟从620降至208毫秒。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 HarnessEvolve 迁移｜从 CoEvo-RSI 把跨代配对搜索用到版本选择：保留模型与脚手架档案，交叉组合后按任务得分和TIMR排序。 延续｜CoEvo-RSI 留下开放环境泛化未验证：在OS-Omni对比最新版本直配与档案搜索，统计成功率和平台方差。 Awesome-RSI 迁移｜从 RSI 2026 把独立验证门槛用到RSI收录：要求等预算留出集、轨迹审计及原能力回归结果。 GeneralizeEvolve 延续｜RSI 2026 留下跨任务增益与能力保持问题：连续自改多轮，测留出任务迁移率和旧任务退化率。 DataEvolve 迁移｜从 AutoSFT 把六类数据动作加入数据飞轮：按失败类型自动筛选、修复、重标与合成样本。 延续｜AutoSFT 留下零分能力和多智能体成本：等预算对比单体与多体，报告能力增益、API费和耗时。 AgentTrainEvolve 迁移｜从 AutoRL 把诊断—验证—回滚闭环用于长程RL：注入训练故障，对比静态配方的恢复率和最终奖励。 EvalEvolve 迁移｜从 Vernier 把最小可辨分差用于动态榜单：公开逐任务得分，仅在差异超过分辨率时报告排名。 延续｜OS-Omni 留下跨平台迁移差距：固定模型和预算做六平台交叉测试，报告成功率与状态跟踪错误率。 ResearchEvolve 迁移｜从 DRBench Pro 把知识树用于深研验收：分别计算方向覆盖率、证据链深度和无来源断言率。 ReasoningEvolve 延续｜Solve Vision with Code 留下开源编码模型落差：同题对比开闭源智能体的得分、执行率与可审计性。">
+今日概览 协同进化
+CoEvo-RSI：跨代保存并重组模型与脚手架版本，避免独立升级导致接口错配，使9B模型在垂直任务上超过大型模型。 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真正可泛化的自我改进与基准过拟合。 AutoSFT：让执行、分析、合成智能体协作筛选、修复和生成微调数据，将IFEval最高推至81.58。 AutoRL：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习训练的平台期与中断。 评测方法">
   <meta itemprop="datePublished" content="2026-11-28T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-28T16:55:05+08:00">
-  <meta itemprop="wordCount" content="1137">
+  <meta itemprop="dateModified" content="2026-11-28T17:23:39+08:00">
+  <meta itemprop="wordCount" content="1114">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-28/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-28 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 系统协同 CoEvo-RSI：跨代搜索历史模型与脚手架的最佳组合，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。 进化验证 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真正可泛化的自我改进与基准过拟合。 数据与训练 AutoSFT：让执行、分析和合成智能体联合筛选、修复与生成微调数据，突破只调整样本比例的自动优化。 AutoRL：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习的平台期、异常与中断。 智能体评测 OS-Omni：在六类真实平台的统一活态环境中评测长程操作，揭示最强智能体仍落后人类8.8个百分点。 DRBench Pro：以知识树和证据化评分分别衡量深研报告的探索广度与链路深度，最佳覆盖率仅57.04%。 Vernier：计算排行榜可辨别的最小分差，发现零样本时序预测榜单常无法可靠区分前十模型。 可审计推理 Solve Vision with Code：让编码智能体编写程序并渲染答案视频，以可检查的符号计算替代不稳定的直接像素生成。 安全恢复 数据库智能体错误损失分层评测：通过预置错误、权限分组和恢复演练，分离模型失误、访问控制与数据库恢复对事故损失的影响。 实时生成 ShowNow：在播放期间预计算不同动作的未来画面并细粒度提交，将交互世界模型延迟从620降至208毫秒。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 HarnessEvolve 迁移｜从 CoEvo-RSI 把跨代配对搜索用到版本选择：保留模型与脚手架档案，交叉组合后按任务得分和TIMR排序。 延续｜CoEvo-RSI 留下开放环境泛化未验证：在OS-Omni对比最新版本直配与档案搜索，统计成功率和平台方差。 Awesome-RSI 迁移｜从 RSI 2026 把独立验证门槛用到RSI收录：要求等预算留出集、轨迹审计及原能力回归结果。 GeneralizeEvolve 延续｜RSI 2026 留下跨任务增益与能力保持问题：连续自改多轮，测留出任务迁移率和旧任务退化率。 DataEvolve 迁移｜从 AutoSFT 把六类数据动作加入数据飞轮：按失败类型自动筛选、修复、重标与合成样本。 延续｜AutoSFT 留下零分能力和多智能体成本：等预算对比单体与多体，报告能力增益、API费和耗时。 AgentTrainEvolve 迁移｜从 AutoRL 把诊断—验证—回滚闭环用于长程RL：注入训练故障，对比静态配方的恢复率和最终奖励。 EvalEvolve 迁移｜从 Vernier 把最小可辨分差用于动态榜单：公开逐任务得分，仅在差异超过分辨率时报告排名。 延续｜OS-Omni 留下跨平台迁移差距：固定模型和预算做六平台交叉测试，报告成功率与状态跟踪错误率。 ResearchEvolve 迁移｜从 DRBench Pro 把知识树用于深研验收：分别计算方向覆盖率、证据链深度和无来源断言率。 ReasoningEvolve 延续｜Solve Vision with Code 留下开源编码模型落差：同题对比开闭源智能体的得分、执行率与可审计性。">
+今日概览 协同进化
+CoEvo-RSI：跨代保存并重组模型与脚手架版本，避免独立升级导致接口错配，使9B模型在垂直任务上超过大型模型。 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真正可泛化的自我改进与基准过拟合。 AutoSFT：让执行、分析、合成智能体协作筛选、修复和生成微调数据，将IFEval最高推至81.58。 AutoRL：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习训练的平台期与中断。 评测方法">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-28T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-28T16:55:05+08:00">
+    <meta property="article:modified_time" content="2026-11-28T17:23:39+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-28 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 系统协同 CoEvo-RSI：跨代搜索历史模型与脚手架的最佳组合，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。 进化验证 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真正可泛化的自我改进与基准过拟合。 数据与训练 AutoSFT：让执行、分析和合成智能体联合筛选、修复与生成微调数据，突破只调整样本比例的自动优化。 AutoRL：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习的平台期、异常与中断。 智能体评测 OS-Omni：在六类真实平台的统一活态环境中评测长程操作，揭示最强智能体仍落后人类8.8个百分点。 DRBench Pro：以知识树和证据化评分分别衡量深研报告的探索广度与链路深度，最佳覆盖率仅57.04%。 Vernier：计算排行榜可辨别的最小分差，发现零样本时序预测榜单常无法可靠区分前十模型。 可审计推理 Solve Vision with Code：让编码智能体编写程序并渲染答案视频，以可检查的符号计算替代不稳定的直接像素生成。 安全恢复 数据库智能体错误损失分层评测：通过预置错误、权限分组和恢复演练，分离模型失误、访问控制与数据库恢复对事故损失的影响。 实时生成 ShowNow：在播放期间预计算不同动作的未来画面并细粒度提交，将交互世界模型延迟从620降至208毫秒。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 HarnessEvolve 迁移｜从 CoEvo-RSI 把跨代配对搜索用到版本选择：保留模型与脚手架档案，交叉组合后按任务得分和TIMR排序。 延续｜CoEvo-RSI 留下开放环境泛化未验证：在OS-Omni对比最新版本直配与档案搜索，统计成功率和平台方差。 Awesome-RSI 迁移｜从 RSI 2026 把独立验证门槛用到RSI收录：要求等预算留出集、轨迹审计及原能力回归结果。 GeneralizeEvolve 延续｜RSI 2026 留下跨任务增益与能力保持问题：连续自改多轮，测留出任务迁移率和旧任务退化率。 DataEvolve 迁移｜从 AutoSFT 把六类数据动作加入数据飞轮：按失败类型自动筛选、修复、重标与合成样本。 延续｜AutoSFT 留下零分能力和多智能体成本：等预算对比单体与多体，报告能力增益、API费和耗时。 AgentTrainEvolve 迁移｜从 AutoRL 把诊断—验证—回滚闭环用于长程RL：注入训练故障，对比静态配方的恢复率和最终奖励。 EvalEvolve 迁移｜从 Vernier 把最小可辨分差用于动态榜单：公开逐任务得分，仅在差异超过分辨率时报告排名。 延续｜OS-Omni 留下跨平台迁移差距：固定模型和预算做六平台交叉测试，报告成功率与状态跟踪错误率。 ResearchEvolve 迁移｜从 DRBench Pro 把知识树用于深研验收：分别计算方向覆盖率、证据链深度和无来源断言率。 ReasoningEvolve 延续｜Solve Vision with Code 留下开源编码模型落差：同题对比开闭源智能体的得分、执行率与可审计性。">
+今日概览 协同进化
+CoEvo-RSI：跨代保存并重组模型与脚手架版本，避免独立升级导致接口错配，使9B模型在垂直任务上超过大型模型。 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真正可泛化的自我改进与基准过拟合。 AutoSFT：让执行、分析、合成智能体协作筛选、修复和生成微调数据，将IFEval最高推至81.58。 AutoRL：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习训练的平台期与中断。 评测方法">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-28/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-27/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -134,8 +61,8 @@ ReasoningEvolve
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/"
-    },"genre": "updates","wordcount":  1137 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/","datePublished": "2026-11-28T00:00:00+08:00","dateModified": "2026-11-28T16:55:05+08:00","publisher": {
+    },"genre": "updates","wordcount":  1114 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/","datePublished": "2026-11-28T00:00:00+08:00","dateModified": "2026-11-28T17:23:39+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -318,7 +245,7 @@ ReasoningEvolve
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span title="更新于 2026-11-28 16:55:05"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span title="1137 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span title="更新于 2026-11-28 17:23:39"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span title="1114 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -338,98 +265,95 @@ ReasoningEvolve
 <!-- daily-summary:start -->
 <h2 id="今日概览">今日概览</h2>
 <ul>
-<li><strong>系统协同</strong>
+<li>
+<p><strong>协同进化</strong></p>
 <ul>
-<li><a href="#coevo-rsi">CoEvo-RSI</a>：跨代搜索历史模型与脚手架的最佳组合，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。</li>
-</ul>
-</li>
-<li><strong>进化验证</strong>
-<ul>
+<li><a href="#coevo-rsi">CoEvo-RSI</a>：跨代保存并重组模型与脚手架版本，避免独立升级导致接口错配，使9B模型在垂直任务上超过大型模型。</li>
 <li><a href="#rsi-2026">RSI 2026</a>：用自主性分级、独立留出集和轨迹审计，区分真正可泛化的自我改进与基准过拟合。</li>
+<li><a href="#autosft">AutoSFT</a>：让执行、分析、合成智能体协作筛选、修复和生成微调数据，将IFEval最高推至81.58。</li>
+<li><a href="#autorl">AutoRL</a>：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习训练的平台期与中断。</li>
 </ul>
 </li>
-<li><strong>数据与训练</strong>
+<li>
+<p><strong>评测方法</strong></p>
 <ul>
-<li><a href="#autosft">AutoSFT</a>：让执行、分析和合成智能体联合筛选、修复与生成微调数据，突破只调整样本比例的自动优化。</li>
-<li><a href="#autorl">AutoRL</a>：用多智能体在线诊断、低成本验证和可回滚热更新，自动修复强化学习的平台期、异常与中断。</li>
+<li><a href="#os-omni">OS-Omni</a>：在六类真实平台的统一活态环境中评测长程操作，发现最强智能体仍落后人类8.8个百分点。</li>
+<li><a href="#drbench-pro">DRBench Pro</a>：用知识树分别衡量研究报告覆盖多广、追索多深，最佳智能体知识覆盖率仅57.04%。</li>
+<li><a href="#vernier">Vernier</a>：计算榜单能够可靠区分的最小分差，揭示零样本时序预测前十名常无法统计区分。</li>
+<li><a href="#item-13">数据库智能体错误损失分层评测</a>：用预设错误、权限分组和恢复演练，拆分模型失误、护栏与回滚能力各自造成的损失。</li>
 </ul>
 </li>
-<li><strong>智能体评测</strong>
+<li>
+<p><strong>推理与架构</strong></p>
 <ul>
-<li><a href="#os-omni">OS-Omni</a>：在六类真实平台的统一活态环境中评测长程操作，揭示最强智能体仍落后人类8.8个百分点。</li>
-<li><a href="#drbench-pro">DRBench Pro</a>：以知识树和证据化评分分别衡量深研报告的探索广度与链路深度，最佳覆盖率仅57.04%。</li>
-<li><a href="#vernier">Vernier</a>：计算排行榜可辨别的最小分差，发现零样本时序预测榜单常无法可靠区分前十模型。</li>
+<li><a href="#solve-vision-with-code">Solve Vision with Code</a>：让编码智能体写程序渲染答案视频，以可检查计算替代不稳定的直接像素生成，最高得分0.923。</li>
+<li><a href="#stable-gated-deltanet-2">Stable Gated DeltaNet-2</a>：用对称擦除和受控写入抑制循环状态爆炸，同时改善长上下文信息检索。</li>
 </ul>
 </li>
-<li><strong>可审计推理</strong>
+<li>
+<p><strong>实时生成</strong></p>
 <ul>
-<li><a href="#solve-vision-with-code">Solve Vision with Code</a>：让编码智能体编写程序并渲染答案视频，以可检查的符号计算替代不稳定的直接像素生成。</li>
+<li><a href="#shownow">ShowNow</a>：播放时预计算不同动作的未来画面并细粒度提交，将交互世界模型延迟从620降至208毫秒。</li>
 </ul>
 </li>
-<li><strong>安全恢复</strong>
-<ul>
-<li><a href="#item-13">数据库智能体错误损失分层评测</a>：通过预置错误、权限分组和恢复演练，分离模型失误、访问控制与数据库恢复对事故损失的影响。</li>
-</ul>
+<li>
+<p><strong>热点延伸</strong>：<a href="#proxygenbench">ProxyGenBench</a>、<a href="#stateweaver">StateWeaver</a>、<a href="#boundary-aware-policy-learning">Boundary-Aware Policy Learning</a>、<a href="#judiact">JudiAct</a></p>
 </li>
-<li><strong>实时生成</strong>
-<ul>
-<li><a href="#shownow">ShowNow</a>：在播放期间预计算不同动作的未来画面并细粒度提交，将交互世界模型延迟从620降至208毫秒。</li>
-</ul>
-</li>
-<li><strong>热点延伸</strong>：<a href="#proxygenbench">ProxyGenBench</a>、<a href="#stateweaver">StateWeaver</a>、<a href="#boundary-aware-policy-learning">Boundary-Aware Policy Learning</a>、<a href="#judiact">JudiAct</a></li>
 </ul>
 <h2 id="对当前研究的启发">对当前研究的启发</h2>
 <ul>
-<li><strong>HarnessEvolve</strong>
+<li>
+<p><strong>AgentEvolve</strong></p>
 <ul>
-<li>迁移｜从 <a href="#coevo-rsi">CoEvo-RSI</a> 把跨代配对搜索用到版本选择：保留模型与脚手架档案，交叉组合后按任务得分和TIMR排序。</li>
-<li>延续｜<a href="#coevo-rsi">CoEvo-RSI</a> 留下开放环境泛化未验证：在OS-Omni对比最新版本直配与档案搜索，统计成功率和平台方差。</li>
+<li>迁移｜从 <a href="#coevo-rsi">CoEvo-RSI</a> 把跨代版本重组用于智能体迭代：归档模型、提示和工具配置，按任务得分搜索历史配对。</li>
+<li>延续｜<a href="#coevo-rsi">CoEvo-RSI</a> 尚未验证开放环境泛化：加入跨领域任务，对比线性升级与跨代重组的成功率和成本。</li>
 </ul>
 </li>
-<li><strong>Awesome-RSI</strong>
+<li>
+<p><strong>Awesome-RSI</strong></p>
 <ul>
-<li>迁移｜从 <a href="#rsi-2026">RSI 2026</a> 把独立验证门槛用到RSI收录：要求等预算留出集、轨迹审计及原能力回归结果。</li>
+<li>迁移｜从 <a href="#rsi-2026">RSI 2026</a> 把独立留出集和等算力预算用于RSI验证：逐轮记录泛化增益、能力保持率与轨迹异常。</li>
+<li>延续｜<a href="#rsi-2026">RSI 2026</a> 留下评估器可信度问题：用人工盲评和异构评估器对照，测一致率与奖励作弊率。</li>
 </ul>
 </li>
-<li><strong>GeneralizeEvolve</strong>
+<li>
+<p><strong>DataEvolve</strong></p>
 <ul>
-<li>延续｜<a href="#rsi-2026">RSI 2026</a> 留下跨任务增益与能力保持问题：连续自改多轮，测留出任务迁移率和旧任务退化率。</li>
+<li>延续｜<a href="#autosft">AutoSFT</a> 固定了模型、训练器和预算：做跨模型与多预算实验，比较收益、数据多样性和API成本。</li>
 </ul>
 </li>
-<li><strong>DataEvolve</strong>
+<li>
+<p><strong>AgentTrainEvolve</strong></p>
 <ul>
-<li>迁移｜从 <a href="#autosft">AutoSFT</a> 把六类数据动作加入数据飞轮：按失败类型自动筛选、修复、重标与合成样本。</li>
-<li>延续｜<a href="#autosft">AutoSFT</a> 留下零分能力和多智能体成本：等预算对比单体与多体，报告能力增益、API费和耗时。</li>
+<li>迁移｜从 <a href="#autorl">AutoRL</a> 把可回滚在线干预用于长周期RL：小流量验证配方后热更新，以恢复次数和最终回报验收。</li>
 </ul>
 </li>
-<li><strong>AgentTrainEvolve</strong>
+<li>
+<p><strong>EvalEvolve</strong></p>
 <ul>
-<li>迁移｜从 <a href="#autorl">AutoRL</a> 把诊断—验证—回滚闭环用于长程RL：注入训练故障，对比静态配方的恢复率和最终奖励。</li>
+<li>迁移｜从 <a href="#vernier">Vernier</a> 把最小可辨分差用于动态榜单：公开逐任务得分，并只报告超过统计分辨率的排名变化。</li>
+<li>迁移｜从 <a href="#drbench-pro">DRBench Pro</a> 把知识树用于科研智能体评测：分开统计方向覆盖率、证据链深度和引用正确率。</li>
 </ul>
 </li>
-<li><strong>EvalEvolve</strong>
+<li>
+<p><strong>ReasoningEvolve</strong></p>
 <ul>
-<li>迁移｜从 <a href="#vernier">Vernier</a> 把最小可辨分差用于动态榜单：公开逐任务得分，仅在差异超过分辨率时报告排名。</li>
-<li>延续｜<a href="#os-omni">OS-Omni</a> 留下跨平台迁移差距：固定模型和预算做六平台交叉测试，报告成功率与状态跟踪错误率。</li>
+<li>延续｜<a href="#solve-vision-with-code">Solve Vision with Code</a> 仅覆盖可符号验证任务：扩展到近似物理场景，对比程序解法与视频模型的正确率和可审计性。</li>
 </ul>
 </li>
-<li><strong>ResearchEvolve</strong>
+<li>
+<p><strong>CacheEvolve</strong></p>
 <ul>
-<li>迁移｜从 <a href="#drbench-pro">DRBench Pro</a> 把知识树用于深研验收：分别计算方向覆盖率、证据链深度和无来源断言率。</li>
-</ul>
-</li>
-<li><strong>ReasoningEvolve</strong>
-<ul>
-<li>延续｜<a href="#solve-vision-with-code">Solve Vision with Code</a> 留下开源编码模型落差：同题对比开闭源智能体的得分、执行率与可审计性。</li>
+<li>迁移｜从 <a href="#stable-gated-deltanet-2">Stable Gated DeltaNet-2</a> 把对称擦除用于固定预算循环记忆：测长序列状态范数、检索率和吞吐。</li>
 </ul>
 </li>
 </ul>
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 14 条</span><a href="#daily-featured">⭐ 重点 10</a><a href="#daily-hot">🔥 热点 4</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 15 条</span><a href="#daily-featured">⭐ 重点 11</a><a href="#daily-hot">🔥 热点 4</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
-          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">10 条</span></h2>
+          </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">11 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="coevo-rsi" class="summary-card daily-item">
   <h2 id="coevo-rsi-title" class="daily-item-title">CoEvo-RSI：模型与脚手架协同演化</h2><p class="single-subtitle daily-item-summary">用跨代档案搜索模型与脚手架的最佳配对，避免两者独立升级造成接口错配，让9B模型在垂直任务上超过大型模型。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：协同演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AI科技评论</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自演化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%A1%86%E6%9E%B6%E5%8D%8F%E5%90%8C%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型与框架协同优化</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%84%9A%E6%89%8B%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体脚手架</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2610.25078" target="_blank" rel="noopener">https://arxiv.org/abs/2610.25078</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/qQY-eKW4Ms4NRGCVA8GEyw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/qQY-eKW4Ms4NRGCVA8GEyw</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在智能体迭代系统中建立版本档案库，并用 TIMR 与任务得分跨代筛选模型和 Harness 配对，作为低成本协同优化方案。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体能力取决于模型与执行框架的匹配关系而非单个组件的新旧程度，保留并重组历史版本可能比线性升级更有效。</p>
@@ -493,6 +417,21 @@ ReasoningEvolve
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[用代码解决视觉问题：编码智能体的视觉推理能力强于视频模型（59 ▲）](https://huggingface.co/papers/2611.34813?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-27)</div>
+  </details></article>
+<article id="stable-gated-deltanet-2" class="summary-card daily-item">
+  <h2 id="stable-gated-deltanet-2-title" class="daily-item-title">Stable Gated DeltaNet-2：对称擦除稳定循环状态</h2><p class="single-subtitle daily-item-summary">用对称擦除与受控残差写入抑制长序列循环状态爆炸，同时提升长上下文检索能力。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型架构创新</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;长上下文</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34051" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34051</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在长上下文线性注意力模型中借鉴对称擦除和衰减写入机制，以稳定训练并作为循环状态架构的设计基线。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>循环模型的不稳定性不仅来自持续写入，非正规状态更新算子的方向增益也会在无新写入时累积并触发状态爆炸。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：Gated DeltaNet-2 在长上下文训练中容易失败，其固定大小的循环状态会随序列推进而失稳。</li>
+<li><strong>旧法为何失效</strong>：擦除操作的读取与修改方向不对称，形成非正规擦除算子；方向增益会跨词元累积，即使没有新写入也可能导致状态指数增长。</li>
+<li><strong>方法</strong>：Stable Gated DeltaNet-2 使用对称擦除保证状态传播非扩张，并以衰减调节的残差写入保持写入灵活性，同时保留分块并行计算；理论上将循环状态增长上界控制为 O(√T)。</li>
+<li><strong>实验</strong>：在约 16 亿参数模型上实现稳定训练；相比 GDN-2，循环设置下的 128K RULER 平均分提高 6.80 分，混合设置下九项下游任务平均准确率提高 0.62 分。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[Stable Gated DeltaNet-2：理解并缓解循环状态不稳定性（128 ▲）](https://huggingface.co/papers/2611.34051?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-27)</div>
   </details></article>
 <article id="autorl" class="summary-card daily-item">
   <h2 id="autorl-title" class="daily-item-title">AutoRL：多智能体自治强化学习</h2><p class="single-subtitle daily-item-summary">用分工协作的多智能体闭环，在线诊断、验证并修复容易退化或中断的强化学习训练。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-2" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 2</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体训练</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv cs.AI</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/">AgentTrainEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/autonomousagentevolve/">AutonomousAgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;强化学习</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体系统</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E6%81%A2%E5%A4%8D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行恢复</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.17790" target="_blank" rel="noopener">https://arxiv.org/abs/2611.17790</a></div><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/7WvZQ4uBttw3HkFvoa8MrQ?scene=1&amp;click_id=1179981389" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/7WvZQ4uBttw3HkFvoa8MrQ?scene=1&amp;click_id=1179981389</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在长周期大模型强化学习系统中，可借鉴其角色分工、低成本提案验证及热更新与检查点恢复机制，实现在线训练运维和配方优化。</p>
