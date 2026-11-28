@@ -16,8 +16,8 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
   <meta itemprop="description" content="AgentTrainEvolve 研究方向：Agent 训练侧自进化——通过多轮 Agentic RL、自博弈与自生成课程，让 Agent 的参数在与环境交互中持续进化。
 研究范畴 Agent 训练侧自进化（training-time agent self-evolution）关注如何把 Agent 在环境中的交互经验稳定地转化为参数更新：从早期的轨迹蒸馏 / 指令微调（AgentTuning），走向多轮、长程、带工具调用的 Agentic 强化学习，再到由 Agent 自己提出任务、构造课程、合成经验并自我博弈的零数据训练范式（Absolute Zero、SPIRAL、WebRL 的自进化在线课程）。本方向涵盖：面向 Agent 的 RL 训练框架与基础设施（verl、SkyRL、rLLM、Agent Lightning）、多轮交互下的信用分配与回合级奖励、自博弈与对抗式课程生成、经验合成与模拟环境放大（DreamGym 类）、训练-评测环境生态（AgentGym），以及 Agent RL 中的自进化动力学诊断（RAGEN 揭示的&#34;回声陷阱&#34;等失败模式）。社区关注的核心问题包括：长程稀疏奖励下训练是否稳定、自生成任务的难度与多样性如何自适应、训练出的能力能否跨环境迁移、以及 Agent RL 的算力与环境吞吐瓶颈如何突破。">
   <meta itemprop="datePublished" content="2026-10-18T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-26T18:37:25+08:00">
-  <meta itemprop="wordCount" content="6315">
+  <meta itemprop="dateModified" content="2026-11-28T16:55:05+08:00">
+  <meta itemprop="wordCount" content="6335">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/agenttrainevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="AgentTrainEvolve">
@@ -27,7 +27,7 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-10-18T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-26T18:37:25+08:00">
+    <meta property="article:modified_time" content="2026-11-28T16:55:05+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agenttrainevolve\/"
-    },"genre": "research","wordcount":  6315 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agenttrainevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-26T18:37:25+08:00","publisher": {
+    },"genre": "research","wordcount":  6335 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/agenttrainevolve\/","datePublished": "2026-10-18T00:00:00+08:00","dateModified": "2026-11-28T16:55:05+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -451,8 +451,9 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
 <li><a href="../../updates/2026-10-29/#workfactory">WorkFactory：将职业意图转化为可执行任务以规模化训练智能体</a> · 2026-10-29</li>
 </ul>
 </li>
-<li><strong>递归更新审计</strong>：每轮更新前后应审计能力骤降、表征多样性、验证器盲区及训练—执行错位；按梯度方差等不确定性调组规模或收缩更新，并监控作弊与退化。
+<li><strong>递归更新审计</strong>：每轮更新前后应审计能力骤降、表征多样性、验证器盲区及训练—执行错位；异常时由专门化监督验证并回滚或收缩更新，按不确定性调组规模。
 <ul>
+<li><a href="../../updates/2026-11-28/#autorl">AutoRL：多智能体自治强化学习</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#u-statistics-powered-llm-reasoning">U-Statistics-Powered LLM Reasoning：悲观估计自适应组规模</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#online-environment-repair">Online Environment Repair：在线修复验证环境</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#epro">EPRO：不完美预测下的鲁棒策略优化</a> · 2026-11-25</li>
@@ -505,7 +506,7 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-19/ash 2026-11-19/copd 2026-11-19/crossenv 2026-11-19/eca 2026-11-19/rsi-prime 2026-11-19/seed 2026-11-19/waterfall 2026-11-20/automaster 2026-11-20/buggymle 2026-11-20/depth-before-breadth 2026-11-20/evo-harness 2026-11-20/game2player 2026-11-20/item-73 2026-11-20/piccolo 2026-11-20/sage-evolve-preview 2026-11-20/stability-gap 2026-11-21/silicongym-eda 2026-11-21/zerovln 2026-11-23/ctrl-gpu 2026-11-23/dm-prm 2026-11-23/from-acting-to-learning 2026-11-23/search-rsi 2026-11-23/sh-prm 2026-11-23/weir 2026-11-24/adapt 2026-11-24/agrimanager 2026-11-24/duopra 2026-11-24/stride 2026-11-24/tool-to-self 2026-11-25/avalon-m1 2026-11-25/cgsi 2026-11-25/co-graft 2026-11-25/e2l 2026-11-25/epro 2026-11-25/fgl 2026-11-25/habitats 2026-11-25/harness-rehearsal 2026-11-25/item-20 2026-11-25/item-63 2026-11-25/jko-grpo-wasserstein 2026-11-25/mspo 2026-11-25/online-environment-repair 2026-11-25/refocus 2026-11-25/rlvb 2026-11-25/swe-gym-verified 2026-11-25/vade 2026-11-26/care-opd 2026-11-26/cf-reward 2026-11-26/cot-proxy 2026-11-26/feast 2026-11-26/maco-rl 2026-11-26/prior 2026-11-26/prove 2026-11-26/splice 2026-11-26/sports-agent 2026-11-26/u-statistics-powered-llm-reasoning 2026-11-26/vsft -->
+<!-- experience-seen: 2026-11-21/silicongym-eda 2026-11-21/zerovln 2026-11-23/ctrl-gpu 2026-11-23/dm-prm 2026-11-23/from-acting-to-learning 2026-11-23/search-rsi 2026-11-23/sh-prm 2026-11-23/weir 2026-11-24/adapt 2026-11-24/agrimanager 2026-11-24/duopra 2026-11-24/stride 2026-11-24/tool-to-self 2026-11-25/avalon-m1 2026-11-25/cgsi 2026-11-25/co-graft 2026-11-25/e2l 2026-11-25/epro 2026-11-25/fgl 2026-11-25/habitats 2026-11-25/harness-rehearsal 2026-11-25/item-20 2026-11-25/item-63 2026-11-25/jko-grpo-wasserstein 2026-11-25/mspo 2026-11-25/online-environment-repair 2026-11-25/refocus 2026-11-25/rlvb 2026-11-25/swe-gym-verified 2026-11-25/vade 2026-11-26/care-opd 2026-11-26/cf-reward 2026-11-26/cot-proxy 2026-11-26/feast 2026-11-26/maco-rl 2026-11-26/prior 2026-11-26/prove 2026-11-26/splice 2026-11-26/sports-agent 2026-11-26/u-statistics-powered-llm-reasoning 2026-11-26/vsft 2026-11-28/autorl -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -872,7 +873,9 @@ Agent 训练侧自进化（training-time agent self-evolution）关注如何把 
                 <span class="archive-item-date" title='2026-10-21'>10-21</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-10-18/#mai-gym-gui" class="archive-item-link">MAI-Gym：GUI 智能体评估与强化学习一体化平台</a>
                 <span class="archive-item-date" title='2026-10-18'>10-18</span>&nbsp;<a href="https://arxiv.org/abs/2610.20939" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体训练 <sup>28</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体训练 <sup>29</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#autorl" class="archive-item-link">AutoRL：多智能体自治强化学习</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span>&nbsp;<a href="https://arxiv.org/abs/2611.17790" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-26/#splice" class="archive-item-link">SPLICE：学习者条件选项拼接</a>
                 <span class="archive-item-date" title='2026-11-26'>11-26</span>&nbsp;<a href="https://arxiv.org/abs/2611.34777" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-26/#maco-rl" class="archive-item-link">Maco-RL：配额调度与三缓冲采样</a>

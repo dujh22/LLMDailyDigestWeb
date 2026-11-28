@@ -16,8 +16,8 @@
   <meta itemprop="description" content="HarnessEvolve 研究方向：评测 harness 的演进——围绕 lm-evaluation-harness / SWE-bench 类工具的扩展与进化（本站已 fork 相关仓库）。
 研究范畴 评测 / Agent harness 的演进，围绕 lm-evaluation-harness、SWE-bench 类工具及其扩展与进化展开。harness（含 Agent-Computer Interface、运行环境、工具与提示约定）显著影响甚至主导模型在 Agent 任务上的表现，因此其工程化与标准化日益重要。本方向涵盖：harness engineering、ACI 设计、真实运行环境构建，以及 harness 效应的度量和披露。社区关注的核心问题包括：harness 设计在多大程度上改变了模型间的相对排名、如何标准化披露 harness 配置以保证可比与可复现、环境真实度（realism）与隔离 / 安全的权衡，以及动态 / 长周期环境下的 harness 演进。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-27T10:44:26+08:00">
-  <meta itemprop="wordCount" content="7527">
+  <meta itemprop="dateModified" content="2026-11-28T16:55:05+08:00">
+  <meta itemprop="wordCount" content="7615">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/harnessevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="HarnessEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-27T10:44:26+08:00">
+    <meta property="article:modified_time" content="2026-11-28T16:55:05+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/"
-    },"genre": "research","wordcount":  7527 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-27T10:44:26+08:00","publisher": {
+    },"genre": "research","wordcount":  7615 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/harnessevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-28T16:55:05+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -274,8 +274,9 @@
 <h2 id="研究经验">研究经验</h2>
 <!-- research-experience:start｜随日报整备自动更新：每条经验是面向整个研究社区的洞察或方法论，后附支撑它的具体工作。可人工修订，下次自动更新会在此基础上增量合并 -->
 <ol>
-<li><strong>模型接口耦合</strong>：固定模型跨Harness比较会混淆接口上限与策略适配；应报告同接口横比、跨接口迁移矩阵及模型—Harness联合升级曲线。
+<li><strong>模型接口耦合</strong>：固定模型跨Harness比较会混淆接口上限与策略适配；应报告同接口横比、跨接口迁移矩阵及模型—Harness历代配对，而非只看同步升级。
 <ul>
+<li><a href="../../updates/2026-11-28/#coevo-rsi">CoEvo-RSI：模型与脚手架协同演化</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#roboevo">RoboEvo²：脚手架策略协同进化</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#shellbench">ShellBench：真实日常智能体评测</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-25/#harness-rehearsal">Harness Rehearsal：任务与接口能力解耦</a> · 2026-11-25</li>
@@ -363,6 +364,7 @@
 </li>
 <li><strong>自演化质量门</strong>：Harness自动改写应定位首个偏离点，观测与改进策略须随剩余错误更新。用因果回放、置换对照、旧能力回归、成本、留出集和序贯检验拒绝噪声获益与退化。
 <ul>
+<li><a href="../../updates/2026-11-28/#rsi-2026">RSI 2026：自我进化效果验证</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-26/#transharness">TransHarness：可迁移脚手架演化</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-26/#skillsbench">SkillsBench：技能增益的噪声感知审计</a> · 2026-11-26</li>
 <li><a href="../../updates/2026-11-25/#item-136">失效类型驱动的智能体干预</a> · 2026-11-25</li>
@@ -526,6 +528,7 @@
 </li>
 <li><strong>长程运行时架构</strong>：长程多任务Harness应分离路由与执行，分别持久化环境事实、决策与制品并支持恢复；压缩须单测下一步动作、权限和规则遵循。
 <ul>
+<li><a href="../../updates/2026-11-28/#os-omni">OS-Omni：跨平台长程操作评测</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-25/#roboharness-zero">RoboHarness-Zero：规划控制解耦脚手架</a> · 2026-11-25</li>
 <li><a href="../../updates/2026-11-24/#rlm-27b">RLM-27B：脚手架组合泛化</a> · 2026-11-24</li>
 <li><a href="../../updates/2026-11-24/#matharness">MatHarness：长程开放式科研编排</a> · 2026-11-24</li>
@@ -560,15 +563,16 @@
 <li><a href="../../updates/2026-10-30/#realcli-cli">RealCLI：统一评估 CLI 智能体的人机协作</a> · 2026-10-30</li>
 </ul>
 </li>
-<li><strong>故障恢复评测</strong>：受控注入故障并设置中性对照后，应以最终状态与关键过程而非动作逐字一致判定恢复，避免把无效建议误记为韧性。
+<li><strong>故障恢复评测</strong>：受控注入故障并设置中性对照后，应以最终状态、残余损失与关键过程判定恢复，重点衡量错误可撤销性，避免把无效建议误记为韧性。
 <ul>
+<li><a href="../../updates/2026-11-28/#item-13">数据库智能体错误损失分层评测</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-24/#item-60">智能体恢复审计：公开报告证据评估</a> · 2026-11-24</li>
 <li><a href="../../updates/2026-11-17/#agentfaultbench">AgentFaultBench：状态验证式故障恢复评测</a> · 2026-11-17</li>
 <li><a href="../../updates/2026-11-04/#retrace">ReTrace：以目标导向动作重放评测计算机操作智能体恢复能力</a> · 2026-11-04</li>
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-20/agnes-harness 2026-11-20/ahe-beta 2026-11-20/basersi 2026-11-20/everydaybench 2026-11-20/evo-harness 2026-11-20/harness 2026-11-20/item-60 2026-11-20/meta-rtl-rtl 2026-11-20/sage-evolve-preview 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/hookevo 2026-11-23/item-10 2026-11-23/medicalrsi 2026-11-23/roha-sgg 2026-11-23/splitbench 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/hoh 2026-11-24/hyperharness 2026-11-24/item-60 2026-11-24/massys 2026-11-24/matharness 2026-11-24/mlevolver 2026-11-24/rlm-27b 2026-11-25/agent 2026-11-25/agl-skill 2026-11-25/ai-harness 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/glm-5-5-rsi 2026-11-25/harness-rehearsal 2026-11-25/harness2 2026-11-25/harnessmm 2026-11-25/harnesspro 2026-11-25/item-108 2026-11-25/item-128 2026-11-25/item-136 2026-11-25/jevagentharness-jev 2026-11-25/mini-psych-agent 2026-11-25/online-environment-repair 2026-11-25/oo-harness 2026-11-25/reharness 2026-11-25/roboharness-zero 2026-11-25/rvlm-x 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/tare 2026-11-25/toolsmith 2026-11-25/transport-safe-evaluation 2026-11-25/video-relook 2026-11-26/agnes-harness 2026-11-26/autorlbench-rl 2026-11-26/delegent 2026-11-26/harness-learning 2026-11-26/home 2026-11-26/metaforge 2026-11-26/nightwatch 2026-11-26/pax 2026-11-26/report-inconsistency 2026-11-26/roboevo 2026-11-26/skillsbench 2026-11-26/transharness 2026-11-27/real2simlab -->
+<!-- experience-seen: 2026-11-23/benchmarks-last-exam 2026-11-23/coevobench 2026-11-23/embodied-harness 2026-11-23/hookevo 2026-11-23/item-10 2026-11-23/medicalrsi 2026-11-23/roha-sgg 2026-11-23/splitbench 2026-11-24/autopilot 2026-11-24/harnessdev 2026-11-24/hoh 2026-11-24/hyperharness 2026-11-24/item-60 2026-11-24/massys 2026-11-24/matharness 2026-11-24/mlevolver 2026-11-24/rlm-27b 2026-11-25/agent 2026-11-25/agl-skill 2026-11-25/ai-harness 2026-11-25/embo-harness 2026-11-25/evicraft 2026-11-25/glm-5-5-rsi 2026-11-25/harness-rehearsal 2026-11-25/harness2 2026-11-25/harnessmm 2026-11-25/harnesspro 2026-11-25/item-108 2026-11-25/item-128 2026-11-25/item-136 2026-11-25/jevagentharness-jev 2026-11-25/mini-psych-agent 2026-11-25/online-environment-repair 2026-11-25/oo-harness 2026-11-25/reharness 2026-11-25/roboharness-zero 2026-11-25/rvlm-x 2026-11-25/shellbench 2026-11-25/siren 2026-11-25/stcg 2026-11-25/tare 2026-11-25/toolsmith 2026-11-25/transport-safe-evaluation 2026-11-25/video-relook 2026-11-26/agnes-harness 2026-11-26/autorlbench-rl 2026-11-26/delegent 2026-11-26/harness-learning 2026-11-26/home 2026-11-26/metaforge 2026-11-26/nightwatch 2026-11-26/pax 2026-11-26/report-inconsistency 2026-11-26/roboevo 2026-11-26/skillsbench 2026-11-26/transharness 2026-11-27/real2simlab 2026-11-28/coevo-rsi 2026-11-28/item-13 2026-11-28/os-omni 2026-11-28/rsi-2026 -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -752,7 +756,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>分层防护 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-08-24/#clawsentry-llm" class="archive-item-link">ClawSentry：自主 LLM 智能体的渐进式多层安全监控</a>
                 <span class="archive-item-date" title='2026-08-24'>08-24</span>&nbsp;<a href="https://arxiv.org/abs/2608.21101" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>协同演化 <sup>12</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>协同演化 <sup>13</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#coevo-rsi" class="archive-item-link">CoEvo-RSI：模型与脚手架协同演化</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span>&nbsp;<a href="https://arxiv.org/abs/2610.25078" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-26/#roboevo" class="archive-item-link">RoboEvo²：脚手架策略协同进化</a>
                 <span class="archive-item-date" title='2026-11-26'>11-26</span>&nbsp;<a href="https://arxiv.org/abs/2611.34675" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-23/#coevobench" class="archive-item-link">CoEvoBench：模型与脚手架协同演化</a>
@@ -876,7 +882,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>奖励建模 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-02/#civharness-freeciv" class="archive-item-link">CivHarness：以回放反馈训练长程 Freeciv 智能体</a>
                 <span class="archive-item-date" title='2026-11-02'>11-02</span>&nbsp;<a href="https://arxiv.org/abs/2610.41264" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>安全评测 <sup>6</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>安全评测 <sup>7</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#item-13" class="archive-item-link">数据库智能体错误损失分层评测</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span>&nbsp;<a href="https://arxiv.org/abs/2611.30483" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#siren" class="archive-item-link">Siren：弱沙盒越界评估</a>
                 <span class="archive-item-date" title='2026-11-25'>11-25</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-14/#mobileprobe" class="archive-item-link">MobileProbe：基于轨迹感知注入的移动智能体自适应安全评测</a>
@@ -1187,7 +1195,9 @@
                 <span class="archive-item-date" title='2026-10-08'>10-08</span>&nbsp;<a href="https://github.com/microsoft/agent-lightning" target="_blank" rel="noopener" title="代码"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-09-14/#parpo" class="archive-item-link">PARPO：个性化智能体强化学习框架</a>
                 <span class="archive-item-date" title='2026-09-14'>09-14</span>&nbsp;<a href="https://arxiv.org/abs/2605.23382" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体评测 <sup>47</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体评测 <sup>48</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#os-omni" class="archive-item-link">OS-Omni：跨平台长程操作评测</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span>&nbsp;<a href="https://arxiv.org/abs/2611.34232" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-27/#real2simlab" class="archive-item-link">Real2SimLab：真实到仿真统一评测</a>
                 <span class="archive-item-date" title='2026-11-27'>11-27</span>&nbsp;<a href="https://arxiv.org/abs/2611.34849" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-26/#autorlbench-rl" class="archive-item-link">AutoRLBench：真实RL故障诊修评测</a>
@@ -1916,7 +1926,11 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>运行时防御 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-08-16/#hard-llm" class="archive-item-link">HARD：面向 LLM 智能体的自演化运行时防御</a>
                 <span class="archive-item-date" title='2026-08-16'>08-16</span>&nbsp;<a href="https://arxiv.org/abs/2608.12977" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>递归自我改进 <sup>49</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>递归自我改进 <sup>51</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#rsi-2026" class="archive-item-link">RSI 2026：自我进化效果验证</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span></article><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-26/#sim" class="archive-item-link">SIM：经验记忆驱动持续改进</a>
+                <span class="archive-item-date" title='2026-11-26'>11-26</span>&nbsp;<a href="https://arxiv.org/abs/2611.18856" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-25/#glm-5-5-rsi" class="archive-item-link">GLM-5.5：多模型后训练汇流式RSI</a>
                 <span class="archive-item-date" title='2026-11-25'>11-25</span></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-23/#embodied-harness" class="archive-item-link">Embodied-Harness：经验驱动脚手架自改进</a>

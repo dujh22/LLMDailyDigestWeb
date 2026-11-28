@@ -16,8 +16,8 @@
   <meta itemprop="description" content="SwarmEvolve 研究方向：多智能体群体的自进化——群体/社会模拟中的智能体协同与演化（本站已 fork casevo）。
 研究范畴 多智能体群体自进化（swarm / multi-agent self-evolution）研究由多个 LLM 智能体组成的群体如何通过交互、协作与竞争实现整体能力的持续演化，超越单体自改进的上限。本方向涵盖：多智能体协同自进化（角色分工、共同进化 / co-evolution）、群体社会模拟（社会规范、合作与博弈的涌现）、多智能体系统结构的自动优化（通信拓扑、协作网络的自进化）、群体智能基准评测。社区关注的核心问题包括：群体交互能否产生单体无法获得的进化信号、协作结构与通信协议如何自动演化而非人工设计、大规模社会模拟中涌现行为的可控性与可解释性、多智能体间能力与知识如何传播扩散，以及群体进化的评测基准与度量方法。">
   <meta itemprop="datePublished" content="2026-08-07T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-27T10:55:32+08:00">
-  <meta itemprop="wordCount" content="3374">
+  <meta itemprop="dateModified" content="2026-11-28T16:55:05+08:00">
+  <meta itemprop="wordCount" content="3393">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/research/swarmevolve/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="SwarmEvolve">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="research">
     <meta property="article:published_time" content="2026-08-07T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-27T10:55:32+08:00">
+    <meta property="article:modified_time" content="2026-11-28T16:55:05+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/swarmevolve\/"
-    },"genre": "research","wordcount":  3374 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/swarmevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-27T10:55:32+08:00","publisher": {
+    },"genre": "research","wordcount":  3393 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/research\/swarmevolve\/","datePublished": "2026-08-07T00:00:00+08:00","dateModified": "2026-11-28T16:55:05+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -373,6 +373,7 @@
 </li>
 <li><strong>可回退持续演化</strong>：允许智能体自改训练、工具和流程时，应持续监控并按状态触发可验证干预；扩展须版本化、沙箱验收和可回退。
 <ul>
+<li><a href="../../updates/2026-11-28/#autorl">AutoRL：多智能体自治强化学习</a> · 2026-11-28</li>
 <li><a href="../../updates/2026-11-16/#autorl">AutoRL：多智能体闭环强化学习</a> · 2026-11-16</li>
 <li><a href="../../updates/2026-11-14/#openjiuwen-rsi-agentos-agent">openJiuwen发布RSI原生AgentOS，支持Agent持续自我扩展</a> · 2026-11-14</li>
 <li><a href="../../updates/2026-11-02/#lobehub-super-agent">LobeHub 的 Super-agent 组织协作实验</a> · 2026-11-02</li>
@@ -397,7 +398,7 @@
 </ul>
 </li>
 </ol>
-<!-- experience-seen: 2026-11-20/item-73 2026-11-20/multiagentbench 2026-11-21/sailsearch 2026-11-23/item-23 2026-11-23/item-3 2026-11-24/lean 2026-11-24/massys 2026-11-25/avalon-m1 2026-11-25/evolutionary-ai-control 2026-11-25/item-63 2026-11-25/mimpa 2026-11-25/pde 2026-11-26/delegent 2026-11-26/prove 2026-11-27/tabbyml -->
+<!-- experience-seen: 2026-11-21/sailsearch 2026-11-23/item-23 2026-11-23/item-3 2026-11-24/lean 2026-11-24/massys 2026-11-25/avalon-m1 2026-11-25/evolutionary-ai-control 2026-11-25/item-63 2026-11-25/mimpa 2026-11-25/pde 2026-11-26/delegent 2026-11-26/prove 2026-11-27/tabbyml 2026-11-28/autorl 2026-11-28/stateweaver -->
 <!-- research-experience:end -->
 <h2 id="相关工作">相关工作</h2>
 <p><strong>代码 / 框架</strong></p>
@@ -787,7 +788,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体规模扩展 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-08-25/#apodex-1-1" class="archive-item-link">Apodex 1.1：面向复杂工作的智能体能力扩展</a>
                 <span class="archive-item-date" title='2026-08-25'>08-25</span>&nbsp;<a href="https://arxiv.org/abs/2608.23283" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
-            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体训练 <sup>1</sup></h3><article class="archive-item">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体训练 <sup>2</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#autorl" class="archive-item-link">AutoRL：多智能体自治强化学习</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span>&nbsp;<a href="https://arxiv.org/abs/2611.17790" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-11-16/#autorl" class="archive-item-link">AutoRL：多智能体闭环强化学习</a>
                 <span class="archive-item-date" title='2026-11-16'>11-16</span>&nbsp;<a href="https://arxiv.org/abs/2611.17790" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>智能体评测 <sup>9</sup></h3><article class="archive-item">
@@ -929,6 +932,9 @@
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>自适应防御 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-08-27/#llm" class="archive-item-link">自进化多智能体框架防御 LLM 越狱攻击</a>
                 <span class="archive-item-date" title='2026-08-27'>08-27</span>&nbsp;<a href="https://arxiv.org/abs/2608.26008" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>视频生成 <sup>1</sup></h3><article class="archive-item">
+                <a href="/LLMDailyDigestWeb/updates/2026-11-28/#stateweaver" class="archive-item-link">StateWeaver：故事状态转换协同</a>
+                <span class="archive-item-date" title='2026-11-28'>11-28</span>&nbsp;<a href="https://arxiv.org/abs/2611.34290" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
             <h3 class="group-title"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>记忆仲裁 <sup>1</sup></h3><article class="archive-item">
                 <a href="/LLMDailyDigestWeb/updates/2026-08-21/#item-55" class="archive-item-link">超越记忆多数票：多智能体记忆仲裁的潜在来源推理</a>
                 <span class="archive-item-date" title='2026-08-21'>08-21</span>&nbsp;<a href="https://arxiv.org/abs/2608.19701" target="_blank" rel="noopener" title="论文"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i></a></article></div><div style="margin:1rem 0;">
