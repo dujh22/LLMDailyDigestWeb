@@ -14,41 +14,41 @@
 
 协同进化
 
-CoEvo-RSI：跨代保存并重组模型与脚手架，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。
-MetaSkill：在具体技能之上增加可复用解题方法层，让智能体能跨任务重组技能并在失败后改换方法。
-Motubrain 2.0：用统一动作表示和可编辑执行框架，把视频经验迁移到机器人，并依据执行反馈规划、验证和纠错。
+CoEvo-RSI：跨代保存并重配模型与脚手架，避免各自升级后的接口错配，使9B模型胜过大型模型。
+RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真实自我改进与任务过拟合。
+AutoSFT：让执行、分析和合成智能体共同筛选、修复与扩增数据，突破单智能体只能调样本比例的限制。
 
 
-改进验证
+模型记忆
 
-RSI 2026：用自主性分级、独立留出集和等算力审计，区分真实的持续自我改进与对评测题的过拟合。
-置信度注入揭示自监控失效：注入反事实置信度后发现模型能按疑虑重做，却不能可靠发现自身错误，定位了自我纠错的检测瓶颈。
-RAP：先测量候选模型是否真的各有所长，再训练路由器，避免把偶然选对模型误判为可泛化的路由能力。
-
-
-数据与训练
-
-AutoSFT：让执行、分析和合成智能体协作筛选、修复与生成微调数据，突破单智能体只能调整样本比例的限制。
-SAEPO：用稀疏自编码器把最终成败拆成逐词奖惩，无需过程标注即可改善长推理的信用分配。
-Kolpona：定位并闭式编辑少数失败相关神经元，再用仿真筛选改动，无需训练便将RTL代码通过率提升至94.9%。
+Stable Gated DeltaNet-2：用对称擦除限制循环状态放大，使线性注意力可稳定训练至128K上下文。
+定向监督激活线性注意力召回：用句子重复和重点加权训练，释放线性注意力原本未被利用的远距离召回能力。
+BiDE-Mem：先拆解问题所需证据类型再组织可溯源记忆，解决检索相关却不足以作答的问题。
 
 
-长程状态
+评测监管
 
-Stable Gated DeltaNet-2：用对称擦除和受控写入限制循环状态放大，解决线性注意力处理长文本时状态爆炸的问题。
-定向监督激活线性注意力召回：用句子重复和上下文加权训练，激活线性注意力原本存在但常规训练未利用的远距离召回能力。
-BiDE-Mem：按问题所需的证据类型组织可追溯记忆，解决“检索内容相关却不足以回答”的问题，LongMemEval达91.80%。
-
-
-接口与安全
-
-RUIBench：统一比较机器人动作接口，证明仅更换交互形式就能把智能体成功率从45%提高到81%。
-Conartist：根据安全审计反馈自适应调整两阶段提示注入，揭示防护流程本身也可能被利用，攻击成功率最高66.67%。
+RAP：先测候选模型是否真有逐题互补性，避免把偶然路由收益误判为通用能力。
+置信度注入揭示自监控失效：用反事实置信度提示分离发现错误与修复错误，证明模型能被疑虑引导却难以自查。
+Conartist：根据安全审计反馈自适应串联两阶段提示注入，使电脑智能体护栏最高被绕过66.67%。
+FORK：让护栏与读取拒绝信息的攻击者共同演化，同时优化拦截边界和拒绝信息泄露。
 
 
-程序化视觉
+推理训练
 
-Solve Vision with Code：让编码智能体编程计算并渲染答案视频，以可检查程序替代不稳定的直接像素生成，最高得分0.923。
+SAEPO：用稀疏语义概念把最终成败拆成逐词奖惩，无需过程标注即可改善推理信用分配。
+Solve Vision with Code：让编码智能体编程渲染答案视频，以可检查程序替代不稳定的像素直接生成。
+
+
+具身系统
+
+Motubrain 2.0：以统一动作表示和执行反馈闭环，让机器人迁移视频经验并自主规划、验证和纠错。
+RUIBench：隔离比较机器人动作接口，发现仅更换接口即可把智能体成功率从45%提高到81%。
+
+
+代码改进
+
+Kolpona：用仿真结果定位并闭式编辑少数神经元，无需再训练便把27B模型的RTL通过率提升至94.9%。
 
 
 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct
@@ -57,67 +57,71 @@ Solve Vision with Code：让编码智能体编程计算并渲染答案视频，�
 
 AgentEvolve
 
-迁移｜从 CoEvo-RSI 把历史模型与脚手架重配用于版本迭代：存档每版配置与得分，跨代搜索最佳组合。
-迁移｜从 MetaSkill 把抽象解题方法用于技能库编排：先选方法再排技能，失败后分别重选方法或修复流程。
-
-
-Awesome-RSI
-
-迁移｜从 RSI 2026 把独立验证用于自改进验收：固定算力，对比改进前后留出集、跨任务收益和能力保持率。
-延续｜置信度注入揭示自监控失效 留下错误检测瓶颈：对比自报与外部置信信号，统计发现率、修复率和误改率。
+迁移｜从 CoEvo-RSI 把模型与脚手架版本配对用于迭代筛选：保留历史组合，按任务得分跨代重组。
 
 
 DataEvolve
 
-迁移｜从 AutoSFT 把多角色数据动作用于数据飞轮：按失败类型执行筛选、修复、重标和合成，并记录单动作增益。
+迁移｜从 AutoSFT 把六类数据动作用于SFT数据飞轮：按失败类型执行筛选、修复、重标和合成。
+
+
+Awesome-RSI
+
+延续｜RSI 2026 留下跨任务泛化与能力保持问题：等算力迭代五轮，测留出任务增益和旧任务退化。
+迁移｜从 置信度注入揭示自监控失效 把置信度当控制接口用于纠错评测：分别注入真假疑虑，测检错率与修复率。
 
 
 CacheEvolve
 
-迁移｜从 Stable Gated DeltaNet-2 把非扩张状态更新用于循环缓存：约束状态增益并监测长序列范数与召回率。
-迁移｜从 定向监督激活线性注意力召回 把重复句与加权损失用于长程训练：按距离分桶测复制和关联检索准确率。
+迁移｜从 Stable Gated DeltaNet-2 把状态非扩张约束用于缓存更新：监测谱范数、长程召回和128K训练稳定性。
 
 
-HarnessEvolve
+MemoryEvolve
 
-延续｜RUIBench 留下任务级执行验证缺口：加入多步终态检查，对比自报成功与真实成功，统计偏差和恢复率。
+迁移｜从 BiDE-Mem 把类型化需求用于记忆检索：先预测时序、多跳等约束，再按来源组装充分证据。
 
 
 EvalEvolve
 
-延续｜RAP 留下无法预审新模型组合的问题：逐批加入候选模型，以预测增益对比实测增益，报告相关性和误报率。
+迁移｜从 RAP 把可路由性审计用于多模型基准：分析逐题得分矩阵，并报告理论路由上限与实际增益。
+
+
+HarnessEvolve
+
+延续｜RUIBench 留下任务级执行验证缺口：比较单步检查、模型自报与终态验证的误报率和任务成功率。
+迁移｜从 Conartist 把级联注入用于Harness红队：开放审计反馈与附加动作，测攻击成功率和恢复率。
 
 
 EvolveLRM
 
-迁移｜从 SAEPO 把语义概念级信用用于结果奖励训练：接入GRPO，对比原始奖励的样本效率与分布外准确率。
+迁移｜从 SAEPO 把稀疏概念归因用于结果奖励训练：接入GRPO，对比样本效率、正确率和奖励作弊率。
 
 
 
 " /><meta name="keywords" content='LLM, 大模型, AI, 日报, 论文, 开源' />
   <meta itemprop="name" content="2026-11-28 科研追新">
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
-今日概览 协同进化 CoEvo-RSI：跨代保存并重组模型与脚手架，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。 MetaSkill：在具体技能之上增加可复用解题方法层，让智能体能跨任务重组技能并在失败后改换方法。 Motubrain 2.0：用统一动作表示和可编辑执行框架，把视频经验迁移到机器人，并依据执行反馈规划、验证和纠错。 改进验证 RSI 2026：用自主性分级、独立留出集和等算力审计，区分真实的持续自我改进与对评测题的过拟合。 置信度注入揭示自监控失效：注入反事实置信度后发现模型能按疑虑重做，却不能可靠发现自身错误，定位了自我纠错的检测瓶颈。 RAP：先测量候选模型是否真的各有所长，再训练路由器，避免把偶然选对模型误判为可泛化的路由能力。 数据与训练 AutoSFT：让执行、分析和合成智能体协作筛选、修复与生成微调数据，突破单智能体只能调整样本比例的限制。 SAEPO：用稀疏自编码器把最终成败拆成逐词奖惩，无需过程标注即可改善长推理的信用分配。 Kolpona：定位并闭式编辑少数失败相关神经元，再用仿真筛选改动，无需训练便将RTL代码通过率提升至94.9%。 长程状态 Stable Gated DeltaNet-2：用对称擦除和受控写入限制循环状态放大，解决线性注意力处理长文本时状态爆炸的问题。 定向监督激活线性注意力召回：用句子重复和上下文加权训练，激活线性注意力原本存在但常规训练未利用的远距离召回能力。 BiDE-Mem：按问题所需的证据类型组织可追溯记忆，解决“检索内容相关却不足以回答”的问题，LongMemEval达91.80%。 接口与安全 RUIBench：统一比较机器人动作接口，证明仅更换交互形式就能把智能体成功率从45%提高到81%。 Conartist：根据安全审计反馈自适应调整两阶段提示注入，揭示防护流程本身也可能被利用，攻击成功率最高66.67%。 程序化视觉 Solve Vision with Code：让编码智能体编程计算并渲染答案视频，以可检查程序替代不稳定的直接像素生成，最高得分0.923。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 AgentEvolve 迁移｜从 CoEvo-RSI 把历史模型与脚手架重配用于版本迭代：存档每版配置与得分，跨代搜索最佳组合。 迁移｜从 MetaSkill 把抽象解题方法用于技能库编排：先选方法再排技能，失败后分别重选方法或修复流程。 Awesome-RSI 迁移｜从 RSI 2026 把独立验证用于自改进验收：固定算力，对比改进前后留出集、跨任务收益和能力保持率。 延续｜置信度注入揭示自监控失效 留下错误检测瓶颈：对比自报与外部置信信号，统计发现率、修复率和误改率。 DataEvolve 迁移｜从 AutoSFT 把多角色数据动作用于数据飞轮：按失败类型执行筛选、修复、重标和合成，并记录单动作增益。 CacheEvolve 迁移｜从 Stable Gated DeltaNet-2 把非扩张状态更新用于循环缓存：约束状态增益并监测长序列范数与召回率。 迁移｜从 定向监督激活线性注意力召回 把重复句与加权损失用于长程训练：按距离分桶测复制和关联检索准确率。 HarnessEvolve 延续｜RUIBench 留下任务级执行验证缺口：加入多步终态检查，对比自报成功与真实成功，统计偏差和恢复率。 EvalEvolve 延续｜RAP 留下无法预审新模型组合的问题：逐批加入候选模型，以预测增益对比实测增益，报告相关性和误报率。 EvolveLRM 迁移｜从 SAEPO 把语义概念级信用用于结果奖励训练：接入GRPO，对比原始奖励的样本效率与分布外准确率。">
+今日概览 协同进化 CoEvo-RSI：跨代保存并重配模型与脚手架，避免各自升级后的接口错配，使9B模型胜过大型模型。 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真实自我改进与任务过拟合。 AutoSFT：让执行、分析和合成智能体共同筛选、修复与扩增数据，突破单智能体只能调样本比例的限制。 模型记忆 Stable Gated DeltaNet-2：用对称擦除限制循环状态放大，使线性注意力可稳定训练至128K上下文。 定向监督激活线性注意力召回：用句子重复和重点加权训练，释放线性注意力原本未被利用的远距离召回能力。 BiDE-Mem：先拆解问题所需证据类型再组织可溯源记忆，解决检索相关却不足以作答的问题。 评测监管 RAP：先测候选模型是否真有逐题互补性，避免把偶然路由收益误判为通用能力。 置信度注入揭示自监控失效：用反事实置信度提示分离发现错误与修复错误，证明模型能被疑虑引导却难以自查。 Conartist：根据安全审计反馈自适应串联两阶段提示注入，使电脑智能体护栏最高被绕过66.67%。 FORK：让护栏与读取拒绝信息的攻击者共同演化，同时优化拦截边界和拒绝信息泄露。 推理训练 SAEPO：用稀疏语义概念把最终成败拆成逐词奖惩，无需过程标注即可改善推理信用分配。 Solve Vision with Code：让编码智能体编程渲染答案视频，以可检查程序替代不稳定的像素直接生成。 具身系统 Motubrain 2.0：以统一动作表示和执行反馈闭环，让机器人迁移视频经验并自主规划、验证和纠错。 RUIBench：隔离比较机器人动作接口，发现仅更换接口即可把智能体成功率从45%提高到81%。 代码改进 Kolpona：用仿真结果定位并闭式编辑少数神经元，无需再训练便把27B模型的RTL通过率提升至94.9%。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 AgentEvolve 迁移｜从 CoEvo-RSI 把模型与脚手架版本配对用于迭代筛选：保留历史组合，按任务得分跨代重组。 DataEvolve 迁移｜从 AutoSFT 把六类数据动作用于SFT数据飞轮：按失败类型执行筛选、修复、重标和合成。 Awesome-RSI 延续｜RSI 2026 留下跨任务泛化与能力保持问题：等算力迭代五轮，测留出任务增益和旧任务退化。 迁移｜从 置信度注入揭示自监控失效 把置信度当控制接口用于纠错评测：分别注入真假疑虑，测检错率与修复率。 CacheEvolve 迁移｜从 Stable Gated DeltaNet-2 把状态非扩张约束用于缓存更新：监测谱范数、长程召回和128K训练稳定性。 MemoryEvolve 迁移｜从 BiDE-Mem 把类型化需求用于记忆检索：先预测时序、多跳等约束，再按来源组装充分证据。 EvalEvolve 迁移｜从 RAP 把可路由性审计用于多模型基准：分析逐题得分矩阵，并报告理论路由上限与实际增益。 HarnessEvolve 延续｜RUIBench 留下任务级执行验证缺口：比较单步检查、模型自报与终态验证的误报率和任务成功率。 迁移｜从 Conartist 把级联注入用于Harness红队：开放审计反馈与附加动作，测攻击成功率和恢复率。 EvolveLRM 迁移｜从 SAEPO 把稀疏概念归因用于结果奖励训练：接入GRPO，对比样本效率、正确率和奖励作弊率。">
   <meta itemprop="datePublished" content="2026-11-28T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-28T19:09:03+08:00">
-  <meta itemprop="wordCount" content="1398">
+  <meta itemprop="dateModified" content="2026-11-28T19:09:43+08:00">
+  <meta itemprop="wordCount" content="1250">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-28/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
   <meta property="og:title" content="2026-11-28 科研追新">
   <meta property="og:description" content="当日精选（由提交工具自动创建）。
-今日概览 协同进化 CoEvo-RSI：跨代保存并重组模型与脚手架，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。 MetaSkill：在具体技能之上增加可复用解题方法层，让智能体能跨任务重组技能并在失败后改换方法。 Motubrain 2.0：用统一动作表示和可编辑执行框架，把视频经验迁移到机器人，并依据执行反馈规划、验证和纠错。 改进验证 RSI 2026：用自主性分级、独立留出集和等算力审计，区分真实的持续自我改进与对评测题的过拟合。 置信度注入揭示自监控失效：注入反事实置信度后发现模型能按疑虑重做，却不能可靠发现自身错误，定位了自我纠错的检测瓶颈。 RAP：先测量候选模型是否真的各有所长，再训练路由器，避免把偶然选对模型误判为可泛化的路由能力。 数据与训练 AutoSFT：让执行、分析和合成智能体协作筛选、修复与生成微调数据，突破单智能体只能调整样本比例的限制。 SAEPO：用稀疏自编码器把最终成败拆成逐词奖惩，无需过程标注即可改善长推理的信用分配。 Kolpona：定位并闭式编辑少数失败相关神经元，再用仿真筛选改动，无需训练便将RTL代码通过率提升至94.9%。 长程状态 Stable Gated DeltaNet-2：用对称擦除和受控写入限制循环状态放大，解决线性注意力处理长文本时状态爆炸的问题。 定向监督激活线性注意力召回：用句子重复和上下文加权训练，激活线性注意力原本存在但常规训练未利用的远距离召回能力。 BiDE-Mem：按问题所需的证据类型组织可追溯记忆，解决“检索内容相关却不足以回答”的问题，LongMemEval达91.80%。 接口与安全 RUIBench：统一比较机器人动作接口，证明仅更换交互形式就能把智能体成功率从45%提高到81%。 Conartist：根据安全审计反馈自适应调整两阶段提示注入，揭示防护流程本身也可能被利用，攻击成功率最高66.67%。 程序化视觉 Solve Vision with Code：让编码智能体编程计算并渲染答案视频，以可检查程序替代不稳定的直接像素生成，最高得分0.923。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 AgentEvolve 迁移｜从 CoEvo-RSI 把历史模型与脚手架重配用于版本迭代：存档每版配置与得分，跨代搜索最佳组合。 迁移｜从 MetaSkill 把抽象解题方法用于技能库编排：先选方法再排技能，失败后分别重选方法或修复流程。 Awesome-RSI 迁移｜从 RSI 2026 把独立验证用于自改进验收：固定算力，对比改进前后留出集、跨任务收益和能力保持率。 延续｜置信度注入揭示自监控失效 留下错误检测瓶颈：对比自报与外部置信信号，统计发现率、修复率和误改率。 DataEvolve 迁移｜从 AutoSFT 把多角色数据动作用于数据飞轮：按失败类型执行筛选、修复、重标和合成，并记录单动作增益。 CacheEvolve 迁移｜从 Stable Gated DeltaNet-2 把非扩张状态更新用于循环缓存：约束状态增益并监测长序列范数与召回率。 迁移｜从 定向监督激活线性注意力召回 把重复句与加权损失用于长程训练：按距离分桶测复制和关联检索准确率。 HarnessEvolve 延续｜RUIBench 留下任务级执行验证缺口：加入多步终态检查，对比自报成功与真实成功，统计偏差和恢复率。 EvalEvolve 延续｜RAP 留下无法预审新模型组合的问题：逐批加入候选模型，以预测增益对比实测增益，报告相关性和误报率。 EvolveLRM 迁移｜从 SAEPO 把语义概念级信用用于结果奖励训练：接入GRPO，对比原始奖励的样本效率与分布外准确率。">
+今日概览 协同进化 CoEvo-RSI：跨代保存并重配模型与脚手架，避免各自升级后的接口错配，使9B模型胜过大型模型。 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真实自我改进与任务过拟合。 AutoSFT：让执行、分析和合成智能体共同筛选、修复与扩增数据，突破单智能体只能调样本比例的限制。 模型记忆 Stable Gated DeltaNet-2：用对称擦除限制循环状态放大，使线性注意力可稳定训练至128K上下文。 定向监督激活线性注意力召回：用句子重复和重点加权训练，释放线性注意力原本未被利用的远距离召回能力。 BiDE-Mem：先拆解问题所需证据类型再组织可溯源记忆，解决检索相关却不足以作答的问题。 评测监管 RAP：先测候选模型是否真有逐题互补性，避免把偶然路由收益误判为通用能力。 置信度注入揭示自监控失效：用反事实置信度提示分离发现错误与修复错误，证明模型能被疑虑引导却难以自查。 Conartist：根据安全审计反馈自适应串联两阶段提示注入，使电脑智能体护栏最高被绕过66.67%。 FORK：让护栏与读取拒绝信息的攻击者共同演化，同时优化拦截边界和拒绝信息泄露。 推理训练 SAEPO：用稀疏语义概念把最终成败拆成逐词奖惩，无需过程标注即可改善推理信用分配。 Solve Vision with Code：让编码智能体编程渲染答案视频，以可检查程序替代不稳定的像素直接生成。 具身系统 Motubrain 2.0：以统一动作表示和执行反馈闭环，让机器人迁移视频经验并自主规划、验证和纠错。 RUIBench：隔离比较机器人动作接口，发现仅更换接口即可把智能体成功率从45%提高到81%。 代码改进 Kolpona：用仿真结果定位并闭式编辑少数神经元，无需再训练便把27B模型的RTL通过率提升至94.9%。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 AgentEvolve 迁移｜从 CoEvo-RSI 把模型与脚手架版本配对用于迭代筛选：保留历史组合，按任务得分跨代重组。 DataEvolve 迁移｜从 AutoSFT 把六类数据动作用于SFT数据飞轮：按失败类型执行筛选、修复、重标和合成。 Awesome-RSI 延续｜RSI 2026 留下跨任务泛化与能力保持问题：等算力迭代五轮，测留出任务增益和旧任务退化。 迁移｜从 置信度注入揭示自监控失效 把置信度当控制接口用于纠错评测：分别注入真假疑虑，测检错率与修复率。 CacheEvolve 迁移｜从 Stable Gated DeltaNet-2 把状态非扩张约束用于缓存更新：监测谱范数、长程召回和128K训练稳定性。 MemoryEvolve 迁移｜从 BiDE-Mem 把类型化需求用于记忆检索：先预测时序、多跳等约束，再按来源组装充分证据。 EvalEvolve 迁移｜从 RAP 把可路由性审计用于多模型基准：分析逐题得分矩阵，并报告理论路由上限与实际增益。 HarnessEvolve 延续｜RUIBench 留下任务级执行验证缺口：比较单步检查、模型自报与终态验证的误报率和任务成功率。 迁移｜从 Conartist 把级联注入用于Harness红队：开放审计反馈与附加动作，测攻击成功率和恢复率。 EvolveLRM 迁移｜从 SAEPO 把稀疏概念归因用于结果奖励训练：接入GRPO，对比样本效率、正确率和奖励作弊率。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-28T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-28T19:09:03+08:00">
+    <meta property="article:modified_time" content="2026-11-28T19:09:43+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dujh22.github.io/images/logo.svg">
   <meta name="twitter:title" content="2026-11-28 科研追新">
   <meta name="twitter:description" content="当日精选（由提交工具自动创建）。
-今日概览 协同进化 CoEvo-RSI：跨代保存并重组模型与脚手架，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。 MetaSkill：在具体技能之上增加可复用解题方法层，让智能体能跨任务重组技能并在失败后改换方法。 Motubrain 2.0：用统一动作表示和可编辑执行框架，把视频经验迁移到机器人，并依据执行反馈规划、验证和纠错。 改进验证 RSI 2026：用自主性分级、独立留出集和等算力审计，区分真实的持续自我改进与对评测题的过拟合。 置信度注入揭示自监控失效：注入反事实置信度后发现模型能按疑虑重做，却不能可靠发现自身错误，定位了自我纠错的检测瓶颈。 RAP：先测量候选模型是否真的各有所长，再训练路由器，避免把偶然选对模型误判为可泛化的路由能力。 数据与训练 AutoSFT：让执行、分析和合成智能体协作筛选、修复与生成微调数据，突破单智能体只能调整样本比例的限制。 SAEPO：用稀疏自编码器把最终成败拆成逐词奖惩，无需过程标注即可改善长推理的信用分配。 Kolpona：定位并闭式编辑少数失败相关神经元，再用仿真筛选改动，无需训练便将RTL代码通过率提升至94.9%。 长程状态 Stable Gated DeltaNet-2：用对称擦除和受控写入限制循环状态放大，解决线性注意力处理长文本时状态爆炸的问题。 定向监督激活线性注意力召回：用句子重复和上下文加权训练，激活线性注意力原本存在但常规训练未利用的远距离召回能力。 BiDE-Mem：按问题所需的证据类型组织可追溯记忆，解决“检索内容相关却不足以回答”的问题，LongMemEval达91.80%。 接口与安全 RUIBench：统一比较机器人动作接口，证明仅更换交互形式就能把智能体成功率从45%提高到81%。 Conartist：根据安全审计反馈自适应调整两阶段提示注入，揭示防护流程本身也可能被利用，攻击成功率最高66.67%。 程序化视觉 Solve Vision with Code：让编码智能体编程计算并渲染答案视频，以可检查程序替代不稳定的直接像素生成，最高得分0.923。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 AgentEvolve 迁移｜从 CoEvo-RSI 把历史模型与脚手架重配用于版本迭代：存档每版配置与得分，跨代搜索最佳组合。 迁移｜从 MetaSkill 把抽象解题方法用于技能库编排：先选方法再排技能，失败后分别重选方法或修复流程。 Awesome-RSI 迁移｜从 RSI 2026 把独立验证用于自改进验收：固定算力，对比改进前后留出集、跨任务收益和能力保持率。 延续｜置信度注入揭示自监控失效 留下错误检测瓶颈：对比自报与外部置信信号，统计发现率、修复率和误改率。 DataEvolve 迁移｜从 AutoSFT 把多角色数据动作用于数据飞轮：按失败类型执行筛选、修复、重标和合成，并记录单动作增益。 CacheEvolve 迁移｜从 Stable Gated DeltaNet-2 把非扩张状态更新用于循环缓存：约束状态增益并监测长序列范数与召回率。 迁移｜从 定向监督激活线性注意力召回 把重复句与加权损失用于长程训练：按距离分桶测复制和关联检索准确率。 HarnessEvolve 延续｜RUIBench 留下任务级执行验证缺口：加入多步终态检查，对比自报成功与真实成功，统计偏差和恢复率。 EvalEvolve 延续｜RAP 留下无法预审新模型组合的问题：逐批加入候选模型，以预测增益对比实测增益，报告相关性和误报率。 EvolveLRM 迁移｜从 SAEPO 把语义概念级信用用于结果奖励训练：接入GRPO，对比原始奖励的样本效率与分布外准确率。">
+今日概览 协同进化 CoEvo-RSI：跨代保存并重配模型与脚手架，避免各自升级后的接口错配，使9B模型胜过大型模型。 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真实自我改进与任务过拟合。 AutoSFT：让执行、分析和合成智能体共同筛选、修复与扩增数据，突破单智能体只能调样本比例的限制。 模型记忆 Stable Gated DeltaNet-2：用对称擦除限制循环状态放大，使线性注意力可稳定训练至128K上下文。 定向监督激活线性注意力召回：用句子重复和重点加权训练，释放线性注意力原本未被利用的远距离召回能力。 BiDE-Mem：先拆解问题所需证据类型再组织可溯源记忆，解决检索相关却不足以作答的问题。 评测监管 RAP：先测候选模型是否真有逐题互补性，避免把偶然路由收益误判为通用能力。 置信度注入揭示自监控失效：用反事实置信度提示分离发现错误与修复错误，证明模型能被疑虑引导却难以自查。 Conartist：根据安全审计反馈自适应串联两阶段提示注入，使电脑智能体护栏最高被绕过66.67%。 FORK：让护栏与读取拒绝信息的攻击者共同演化，同时优化拦截边界和拒绝信息泄露。 推理训练 SAEPO：用稀疏语义概念把最终成败拆成逐词奖惩，无需过程标注即可改善推理信用分配。 Solve Vision with Code：让编码智能体编程渲染答案视频，以可检查程序替代不稳定的像素直接生成。 具身系统 Motubrain 2.0：以统一动作表示和执行反馈闭环，让机器人迁移视频经验并自主规划、验证和纠错。 RUIBench：隔离比较机器人动作接口，发现仅更换接口即可把智能体成功率从45%提高到81%。 代码改进 Kolpona：用仿真结果定位并闭式编辑少数神经元，无需再训练便把27B模型的RTL通过率提升至94.9%。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 AgentEvolve 迁移｜从 CoEvo-RSI 把模型与脚手架版本配对用于迭代筛选：保留历史组合，按任务得分跨代重组。 DataEvolve 迁移｜从 AutoSFT 把六类数据动作用于SFT数据飞轮：按失败类型执行筛选、修复、重标和合成。 Awesome-RSI 延续｜RSI 2026 留下跨任务泛化与能力保持问题：等算力迭代五轮，测留出任务增益和旧任务退化。 迁移｜从 置信度注入揭示自监控失效 把置信度当控制接口用于纠错评测：分别注入真假疑虑，测检错率与修复率。 CacheEvolve 迁移｜从 Stable Gated DeltaNet-2 把状态非扩张约束用于缓存更新：监测谱范数、长程召回和128K训练稳定性。 MemoryEvolve 迁移｜从 BiDE-Mem 把类型化需求用于记忆检索：先预测时序、多跳等约束，再按来源组装充分证据。 EvalEvolve 迁移｜从 RAP 把可路由性审计用于多模型基准：分析逐题得分矩阵，并报告理论路由上限与实际增益。 HarnessEvolve 延续｜RUIBench 留下任务级执行验证缺口：比较单步检查、模型自报与终态验证的误报率和任务成功率。 迁移｜从 Conartist 把级联注入用于Harness红队：开放审计反馈与附加动作，测攻击成功率和恢复率。 EvolveLRM 迁移｜从 SAEPO 把稀疏概念归因用于结果奖励训练：接入GRPO，对比样本效率、正确率和奖励作弊率。">
 <meta name="application-name" content="LLM-DailyDigest">
 <meta name="apple-mobile-web-app-title" content="LLM-DailyDigest"><meta name="theme-color" data-light="#ffffff" data-dark="#1a1b26" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/LLMDailyDigestWeb/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-28/" /><link rel="prev" href="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-27/" /><link rel="stylesheet" href="/LLMDailyDigestWeb/css/style.min.css"><link rel="preload" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/LLMDailyDigestWeb/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/LLMDailyDigestWeb/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
@@ -130,8 +134,8 @@ EvolveLRM
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/"
-    },"genre": "updates","wordcount":  1398 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/","datePublished": "2026-11-28T00:00:00+08:00","dateModified": "2026-11-28T19:09:03+08:00","publisher": {
+    },"genre": "updates","wordcount":  1250 ,
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/","datePublished": "2026-11-28T00:00:00+08:00","dateModified": "2026-11-28T19:09:43+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -314,8 +318,8 @@ EvolveLRM
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span title="更新于 2026-11-28 19:09:03"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-27 10:25 ~ 2026-11-28 16:49（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-27 10:25 ~ 11-28 16:49
-          </span>&nbsp;<span title="1398 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2026-11-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span title="更新于 2026-11-28 19:09:43"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-27 10:25 ~ 2026-11-28 16:49（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-27 10:25 ~ 11-28 16:49
+          </span>&nbsp;<span title="1250 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></div>
@@ -337,41 +341,41 @@ EvolveLRM
 <ul>
 <li><strong>协同进化</strong>
 <ul>
-<li><a href="#coevo-rsi">CoEvo-RSI</a>：跨代保存并重组模型与脚手架，避免独立升级造成接口错配，使9B模型在垂直任务上超过大型模型。</li>
-<li><a href="#metaskill">MetaSkill</a>：在具体技能之上增加可复用解题方法层，让智能体能跨任务重组技能并在失败后改换方法。</li>
-<li><a href="#motubrain-2-0">Motubrain 2.0</a>：用统一动作表示和可编辑执行框架，把视频经验迁移到机器人，并依据执行反馈规划、验证和纠错。</li>
+<li><a href="#coevo-rsi">CoEvo-RSI</a>：跨代保存并重配模型与脚手架，避免各自升级后的接口错配，使9B模型胜过大型模型。</li>
+<li><a href="#rsi-2026">RSI 2026</a>：用自主性分级、独立留出集和轨迹审计，区分真实自我改进与任务过拟合。</li>
+<li><a href="#autosft">AutoSFT</a>：让执行、分析和合成智能体共同筛选、修复与扩增数据，突破单智能体只能调样本比例的限制。</li>
 </ul>
 </li>
-<li><strong>改进验证</strong>
+<li><strong>模型记忆</strong>
 <ul>
-<li><a href="#rsi-2026">RSI 2026</a>：用自主性分级、独立留出集和等算力审计，区分真实的持续自我改进与对评测题的过拟合。</li>
-<li><a href="#item-28">置信度注入揭示自监控失效</a>：注入反事实置信度后发现模型能按疑虑重做，却不能可靠发现自身错误，定位了自我纠错的检测瓶颈。</li>
-<li><a href="#rap">RAP</a>：先测量候选模型是否真的各有所长，再训练路由器，避免把偶然选对模型误判为可泛化的路由能力。</li>
+<li><a href="#stable-gated-deltanet-2">Stable Gated DeltaNet-2</a>：用对称擦除限制循环状态放大，使线性注意力可稳定训练至128K上下文。</li>
+<li><a href="#item-23">定向监督激活线性注意力召回</a>：用句子重复和重点加权训练，释放线性注意力原本未被利用的远距离召回能力。</li>
+<li><a href="#bide-mem">BiDE-Mem</a>：先拆解问题所需证据类型再组织可溯源记忆，解决检索相关却不足以作答的问题。</li>
 </ul>
 </li>
-<li><strong>数据与训练</strong>
+<li><strong>评测监管</strong>
 <ul>
-<li><a href="#autosft">AutoSFT</a>：让执行、分析和合成智能体协作筛选、修复与生成微调数据，突破单智能体只能调整样本比例的限制。</li>
-<li><a href="#saepo">SAEPO</a>：用稀疏自编码器把最终成败拆成逐词奖惩，无需过程标注即可改善长推理的信用分配。</li>
-<li><a href="#kolpona">Kolpona</a>：定位并闭式编辑少数失败相关神经元，再用仿真筛选改动，无需训练便将RTL代码通过率提升至94.9%。</li>
+<li><a href="#rap">RAP</a>：先测候选模型是否真有逐题互补性，避免把偶然路由收益误判为通用能力。</li>
+<li><a href="#item-28">置信度注入揭示自监控失效</a>：用反事实置信度提示分离发现错误与修复错误，证明模型能被疑虑引导却难以自查。</li>
+<li><a href="#conartist">Conartist</a>：根据安全审计反馈自适应串联两阶段提示注入，使电脑智能体护栏最高被绕过66.67%。</li>
+<li><a href="#fork">FORK</a>：让护栏与读取拒绝信息的攻击者共同演化，同时优化拦截边界和拒绝信息泄露。</li>
 </ul>
 </li>
-<li><strong>长程状态</strong>
+<li><strong>推理训练</strong>
 <ul>
-<li><a href="#stable-gated-deltanet-2">Stable Gated DeltaNet-2</a>：用对称擦除和受控写入限制循环状态放大，解决线性注意力处理长文本时状态爆炸的问题。</li>
-<li><a href="#item-23">定向监督激活线性注意力召回</a>：用句子重复和上下文加权训练，激活线性注意力原本存在但常规训练未利用的远距离召回能力。</li>
-<li><a href="#bide-mem">BiDE-Mem</a>：按问题所需的证据类型组织可追溯记忆，解决“检索内容相关却不足以回答”的问题，LongMemEval达91.80%。</li>
+<li><a href="#saepo">SAEPO</a>：用稀疏语义概念把最终成败拆成逐词奖惩，无需过程标注即可改善推理信用分配。</li>
+<li><a href="#solve-vision-with-code">Solve Vision with Code</a>：让编码智能体编程渲染答案视频，以可检查程序替代不稳定的像素直接生成。</li>
 </ul>
 </li>
-<li><strong>接口与安全</strong>
+<li><strong>具身系统</strong>
 <ul>
-<li><a href="#ruibench">RUIBench</a>：统一比较机器人动作接口，证明仅更换交互形式就能把智能体成功率从45%提高到81%。</li>
-<li><a href="#conartist">Conartist</a>：根据安全审计反馈自适应调整两阶段提示注入，揭示防护流程本身也可能被利用，攻击成功率最高66.67%。</li>
+<li><a href="#motubrain-2-0">Motubrain 2.0</a>：以统一动作表示和执行反馈闭环，让机器人迁移视频经验并自主规划、验证和纠错。</li>
+<li><a href="#ruibench">RUIBench</a>：隔离比较机器人动作接口，发现仅更换接口即可把智能体成功率从45%提高到81%。</li>
 </ul>
 </li>
-<li><strong>程序化视觉</strong>
+<li><strong>代码改进</strong>
 <ul>
-<li><a href="#solve-vision-with-code">Solve Vision with Code</a>：让编码智能体编程计算并渲染答案视频，以可检查程序替代不稳定的直接像素生成，最高得分0.923。</li>
+<li><a href="#kolpona">Kolpona</a>：用仿真结果定位并闭式编辑少数神经元，无需再训练便把27B模型的RTL通过率提升至94.9%。</li>
 </ul>
 </li>
 <li><strong>热点延伸</strong>：<a href="#proxygenbench">ProxyGenBench</a>、<a href="#stateweaver">StateWeaver</a>、<a href="#boundary-aware-policy-learning">Boundary-Aware Policy Learning</a>、<a href="#judiact">JudiAct</a></li>
@@ -380,40 +384,44 @@ EvolveLRM
 <ul>
 <li><strong>AgentEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#coevo-rsi">CoEvo-RSI</a> 把历史模型与脚手架重配用于版本迭代：存档每版配置与得分，跨代搜索最佳组合。</li>
-<li>迁移｜从 <a href="#metaskill">MetaSkill</a> 把抽象解题方法用于技能库编排：先选方法再排技能，失败后分别重选方法或修复流程。</li>
-</ul>
-</li>
-<li><strong>Awesome-RSI</strong>
-<ul>
-<li>迁移｜从 <a href="#rsi-2026">RSI 2026</a> 把独立验证用于自改进验收：固定算力，对比改进前后留出集、跨任务收益和能力保持率。</li>
-<li>延续｜<a href="#item-28">置信度注入揭示自监控失效</a> 留下错误检测瓶颈：对比自报与外部置信信号，统计发现率、修复率和误改率。</li>
+<li>迁移｜从 <a href="#coevo-rsi">CoEvo-RSI</a> 把模型与脚手架版本配对用于迭代筛选：保留历史组合，按任务得分跨代重组。</li>
 </ul>
 </li>
 <li><strong>DataEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#autosft">AutoSFT</a> 把多角色数据动作用于数据飞轮：按失败类型执行筛选、修复、重标和合成，并记录单动作增益。</li>
+<li>迁移｜从 <a href="#autosft">AutoSFT</a> 把六类数据动作用于SFT数据飞轮：按失败类型执行筛选、修复、重标和合成。</li>
+</ul>
+</li>
+<li><strong>Awesome-RSI</strong>
+<ul>
+<li>延续｜<a href="#rsi-2026">RSI 2026</a> 留下跨任务泛化与能力保持问题：等算力迭代五轮，测留出任务增益和旧任务退化。</li>
+<li>迁移｜从 <a href="#item-28">置信度注入揭示自监控失效</a> 把置信度当控制接口用于纠错评测：分别注入真假疑虑，测检错率与修复率。</li>
 </ul>
 </li>
 <li><strong>CacheEvolve</strong>
 <ul>
-<li>迁移｜从 <a href="#stable-gated-deltanet-2">Stable Gated DeltaNet-2</a> 把非扩张状态更新用于循环缓存：约束状态增益并监测长序列范数与召回率。</li>
-<li>迁移｜从 <a href="#item-23">定向监督激活线性注意力召回</a> 把重复句与加权损失用于长程训练：按距离分桶测复制和关联检索准确率。</li>
+<li>迁移｜从 <a href="#stable-gated-deltanet-2">Stable Gated DeltaNet-2</a> 把状态非扩张约束用于缓存更新：监测谱范数、长程召回和128K训练稳定性。</li>
 </ul>
 </li>
-<li><strong>HarnessEvolve</strong>
+<li><strong>MemoryEvolve</strong>
 <ul>
-<li>延续｜<a href="#ruibench">RUIBench</a> 留下任务级执行验证缺口：加入多步终态检查，对比自报成功与真实成功，统计偏差和恢复率。</li>
+<li>迁移｜从 <a href="#bide-mem">BiDE-Mem</a> 把类型化需求用于记忆检索：先预测时序、多跳等约束，再按来源组装充分证据。</li>
 </ul>
 </li>
 <li><strong>EvalEvolve</strong>
 <ul>
-<li>延续｜<a href="#rap">RAP</a> 留下无法预审新模型组合的问题：逐批加入候选模型，以预测增益对比实测增益，报告相关性和误报率。</li>
+<li>迁移｜从 <a href="#rap">RAP</a> 把可路由性审计用于多模型基准：分析逐题得分矩阵，并报告理论路由上限与实际增益。</li>
+</ul>
+</li>
+<li><strong>HarnessEvolve</strong>
+<ul>
+<li>延续｜<a href="#ruibench">RUIBench</a> 留下任务级执行验证缺口：比较单步检查、模型自报与终态验证的误报率和任务成功率。</li>
+<li>迁移｜从 <a href="#conartist">Conartist</a> 把级联注入用于Harness红队：开放审计反馈与附加动作，测攻击成功率和恢复率。</li>
 </ul>
 </li>
 <li><strong>EvolveLRM</strong>
 <ul>
-<li>迁移｜从 <a href="#saepo">SAEPO</a> 把语义概念级信用用于结果奖励训练：接入GRPO，对比原始奖励的样本效率与分布外准确率。</li>
+<li>迁移｜从 <a href="#saepo">SAEPO</a> 把稀疏概念归因用于结果奖励训练：接入GRPO，对比样本效率、正确率和奖励作弊率。</li>
 </ul>
 </li>
 </ul>
@@ -470,95 +478,6 @@ EvolveLRM
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">https://mp.weixin.qq.com/s/otwODaP4i6WavccJEt4XnQ?scene=1&amp;click_id=81121034</div>
-  </details></article>
-<article id="motubrain-2-0" class="summary-card daily-item">
-  <h2 id="motubrain-2-0-title" class="daily-item-title">Motubrain 2.0：世界动作模型协同编排</h2><p class="single-subtitle daily-item-summary">生数科技推出20B世界动作模型与智能体框架，让机器人迁移视频经验，并依靠执行反馈规划、验证和纠错。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AI工具集日报</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E8%BF%81%E7%A7%BB/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;能力迁移</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身基础模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体编排</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/_Js9SVdj3xO8qihqmeVmFA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/_Js9SVdj3xO8qihqmeVmFA</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>可在通用机器人系统中借鉴Canonical55统一动作表征和Harness分层闭环，组合任务规划、工具调用、结果验证与失败恢复，并将其作为具身操作基线。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>机器人能力的持续提升不必完全依赖更新模型权重，可编辑执行框架能把真实反馈转化为工具、技能和指令的迭代信号。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>是什么</strong>：Motubrain 2.0由20B参数世界动作模型与可编辑的Motubrain-Harness组成，统一建模文本、视频、动作和三维几何信息，连接任务规划、动作执行与结果验证。</li>
-<li><strong>关键能力</strong>：模型支持零样本泛化、少样本适配及ICL-WAM视频示范迁移，在六项机器人操作基准中获五项第一；Harness使4项真机任务成功率从22%升至91%，并在权重不变时经六轮迭代将10项家庭任务成功率从44%升至63%。</li>
-<li><strong>限制</strong>：L4自主智能与持续进化仍处于初步探索阶段，部分对比实验条件不完全一致；模型权重、训练部署工具及计划开放的1000小时真实操作数据尚未正式提供。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：生数科技推出 Agentic 物理世界通用模型 Motubrain 2.0
-来源：AI工具集日报（ai-bot.cn）
-链接：https://mp.weixin.qq.com/s/_Js9SVdj3xO8qihqmeVmFA
-摘要：（信源：生数科技）生数科技正式推出Motubrain 2.0，面向真实世界持续进化的 Agentic 物理世界通用模型。Motubrain 2.0 由 20B 参数世界动作模型与智能体编排框架 Motubrain-Harness 组成，在六项机器人操作基准中斩获五项第一，具备零样本泛化、少样本适配和视频示范迁移能力。</div>
-  </details></article>
-<article id="item-28" class="summary-card daily-item">
-  <h2 id="item-28-title" class="daily-item-title">置信度注入揭示自监控失效</h2><p class="single-subtitle daily-item-summary">用反事实置信度令牌分离错误监控与修复能力，发现模型会受疑虑引导，却无法识别自身错误。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：置信度评估</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/">MonitorEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/reasoningevolve/">ReasoningEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%B0%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;不确定性估计</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我反思</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31228" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31228</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在数学推理智能体中将外部错误检测结果转换为低置信度令牌以触发重思，并把该实验设计作为区分自监控与纠错能力的评测基线。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>模型口述的置信度更像操控后续行为的控制接口，而非忠实反映内部错误状态的自省信号，因此测试时纠错的主要瓶颈是错误检测而非修复能力。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：逐步输出数值置信度常被用于触发智能体回溯纠错，但这要求模型既能在推理现场识别错误，又能在感到不确定后修复错误。</li>
-<li><strong>旧法为何失效</strong>：现有做法把口述置信度同时视为错误测量与纠错控制信号，但错误发生时置信度仍高度饱和，且自我监控与受信号引导的控制能力可能彼此解耦。</li>
-<li><strong>方法</strong>：在模型能力边界内定位真实推理错误，再于错误位置反事实注入10%低置信度或95%高置信度标签，分别评估原生置信度的错误识别能力与外部不确定性信号的因果控制效果。</li>
-<li><strong>实验</strong>：评测Qwen2.5-7B、Llama-3.1-8B、Mistral-7B和Phi-4的15,200次数学解题，定位2,017个错误并生成27,568个反事实续写。自监控AUROC仅0.500至0.561，首次错误时置信度仍达95.1%至99.9%；注入低置信度使纠错率提高3.7至22.5个百分点，主动重思时最高达38.5%，但对正确步骤注入疑虑会使解题率最多下降22.8个百分点。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Language Models Steer on Injected Uncertainty Tokens, but Fail to Self-Monitor In Situ
-来源：arXiv
-链接：https://arxiv.org/abs/2611.31228
-摘要：Prompting language models to verbalize stepwise numerical confidence during generation is an increasingly popular approach for triggering backtracking and error correction in agentic reasoning. This strategy presupposes two capabilities: (1) in-situ monitoring fidelity (does confidence drop when an error occurs?) and (2) downstream steering control (does an uncertainty token causally steer the model to repair its error?). We evaluated four open-weights models (Qwen2.5-7B, Llama-3.1-8B, Mistral-7B, and Phi-4, 14.7B) across 15,200 math benchmark attempts, isolating 2,017 reasoning errors within each model&#39;s capability frontier. Applying 27,568 counterfactual continuations across these failure points, we demonstrate a consistent decoupling between monitoring and control. On monitoring, all fo</div>
-  </details></article>
-<article id="ruibench" class="summary-card daily-item">
-  <h2 id="ruibench-title" class="daily-item-title">RUIBench：机器人接口可靠性评测</h2><p class="single-subtitle daily-item-summary">用统一机器人接口基准隔离动作表达与交互形式的影响，仅更换接口就将前沿智能体成功率从45%提升至81%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E4%BD%9C%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动作表征</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31115" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31115</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在具身智能体开发中直接使用RUIBench和RUIKit比较动作接口，据此选择能降低决策负担并保留关键执行反馈的动作抽象与交互形式。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>机器人执行可靠性的上限不仅由模型能力决定，还取决于接口是否以更少决策保留足够反馈，而任务成功必须依据实际结果进行独立验证。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：基础模型虽能理解和推理复杂物理任务，却难以稳定转化为机器人执行；动作表达与执行接口如何影响可靠性长期缺少系统研究。</li>
-<li><strong>旧法为何失效</strong>：既有评测多关注模型、感知或控制能力，忽视动作抽象和交互形式引入的决策负担与反馈差异；单步动作检查也无法发现任务级失败和智能体误报成功。</li>
-<li><strong>方法</strong>：提出覆盖5类能力、含30个操控任务的RUIBench，并以RUIKit在共享感知与控制条件下组合6种动作抽象和2种交互形式，统一比较13种接口。</li>
-<li><strong>实验</strong>：仿真中仅改变接口，前沿智能体成功率便从45%升至81%，微调后的4B模型从13%升至47%；有效接口可减少不必要决策并保留关键反馈，但智能体常在执行实际失败时宣告成功。</li>
-<li><strong>局限与后续</strong>：接口收益会受智能体行为和物理不确定性影响，后续需引入超越单步动作检查的任务级验证机制，弥合自报成功与实际执行结果之间的缺口。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：RUIBench: What Makes a Good Robot-Use Interface?
-来源：arXiv
-链接：https://arxiv.org/abs/2611.31115
-摘要：Foundation models can reason about complex physical tasks, yet translating this intelligence into reliable robot execution remains challenging. We argue that a critical, often overlooked factor is the robot-use interface (RUI), which determines how agents express and execute physical actions. To systematically study its impact, we introduce RUIBench, comprising 30 manipulation tasks across five suites spanning world knowledge, in-context learning, discovery, dynamic interaction, and contact-rich manipulation. We further develop RUIKit, a unified framework that crosses six action abstractions with two interaction forms, yielding 13 interfaces under shared perception and control. In simulation, changing only the RUI shifts a frontier agent&#39;s success rate from 45% to 81%, and that of a fine-t</div>
-  </details></article>
-<article id="rap" class="summary-card daily-item">
-  <h2 id="rap-title" class="daily-item-title">RAP：可路由性前置审计</h2><p class="single-subtitle daily-item-summary">先审计基准与候选模型是否存在按题选模型的增益空间，避免将偶然的路由提升误判为普遍有效。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型路由</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E9%80%8F%E6%98%8E%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;评估透明度</a><a href="/LLMDailyDigestWeb/topic/%E5%80%99%E9%80%89%E9%80%89%E6%8B%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;候选选择</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全审计</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34825" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34825</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在比较或部署多模型路由系统前，用 RAP 审计候选模型得分矩阵，并将 RouteabilityBench 作为路由增益可信度的验证基线。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>路由效果首先是基准评分粒度与候选模型互补性共同决定的属性，缺少输入级优势差异时，再复杂的路由器也难以产生可泛化收益。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：模型路由只有在不同输入确实适合不同模型时才有意义，但现有评测常未验证基准与模型组合的“可路由性”，便直接比较路由器。</li>
-<li><strong>旧法为何失效</strong>：粗粒度评分会造成多个模型并列最优，且单一最佳模型可能已接近性能上限，使路由增益空间狭窄，并对模型组合与预测器选择高度敏感。</li>
-<li><strong>方法</strong>：提出事后审计协议 RAP 与可运行的 RouteabilityBench，在获得“基准—模型组合”得分矩阵后，检查并列最优、模型组合构成、潜在增益与统计显著性，再解释路由结果。</li>
-<li><strong>实验</strong>：覆盖 GPQA、MMLU-Pro、IFEval、Omni-MATH 四个基准和 66 个 LLM；扩大嵌入集合、降维、选择性拒答、聚类和更强回归器均未稳定超过单一最佳模型，明确正向证据主要集中于依赖模型组合的 Omni-MATH 设置。</li>
-<li><strong>局限与后续</strong>：该审计是基于完整得分矩阵的回顾性分析，不能预先认证尚未评测的模型组合；作者建议同时报告可路由性诊断、并列最优分析、组合构造细节及模型家族校正统计检验。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：Routeability Before Routing: Routeability Audit Protocol (RAP) and RouteabilityBench for Audited LLM Model Selection
-来源：arXiv
-链接：https://arxiv.org/abs/2611.34825
-摘要：LLM routing aims to choose, for each prompt, which model in a portfolio is most likely to answer correctly. This only makes sense when the benchmark contains enough prompt-specific variation for different models to be best on different inputs. On coarse-scored LLM benchmarks, however, many models often tie for the best score, and the single best model may already leave little room for improvement. We therefore propose a routeability-first audit, instantiated as RAP and RouteabilityBench, a runnable claim-verification package. The audit is retrospective: it runs once the benchmark-portfolio score matrix exists and before router comparisons are interpreted as general evidence, rather than certifying a portfolio that has not yet been evaluated. Across four benchmarks and 66 LLMs, generic rout</div>
-  </details></article>
-<article id="solve-vision-with-code" class="summary-card daily-item">
-  <h2 id="solve-vision-with-code-title" class="daily-item-title">Solve Vision with Code：程序合成式视觉推理</h2><p class="single-subtitle daily-item-summary">让编码智能体编程渲染答案视频，比直接生成像素的视频模型更可靠，最高得分0.923。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视觉推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/reasoningevolve/">ReasoningEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34813" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34813</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在可程序化求解的视觉任务中，可借鉴“智能体编程渲染视频”机制作为视频生成模型的推理基线或可审计替代方案。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>视觉媒介中的推理不必依赖原生像素生成，显式程序可将视觉理解转化为更可靠、可检查且可迁移的符号计算。</p>
-</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
-      <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：检验视频生成是否真是更可靠的视觉推理方式，并在相同输入、输出要求和评估器下与符号化程序合成进行公平比较。</li>
-<li><strong>旧法为何失效</strong>：视频模型通过像素去噪直接生成推理过程，结果难以显式检查；此前也缺少与程序化解法条件一致的对照实验。</li>
-<li><strong>方法</strong>：编码智能体仅根据首帧和自然语言提示编写程序、渲染答案视频，再由不做修改的规则评估器评分；同时区分从图像恢复可迁移方案的描绘式程序与依赖硬编码值的命题式程序。</li>
-<li><strong>实验</strong>：在含500个样本、覆盖五类认知任务的VBVR-Pro-Bench上，Codex、Claude Code和Gemini CLI分别取得0.923、0.894和0.893，均比最强视频模型高逾0.22；23个可运行开放权重模型中，GLM-5最高为0.572。</li>
-<li><strong>局限与后续</strong>：结论适用于可由首帧和提示计算答案、且具有符号真值的任务；开放权重编码模型整体仍明显落后于闭源编码智能体。</li>
-</ul>
-</div>
-    </details><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">[用代码解决视觉问题：编码智能体的视觉推理能力强于视频模型（59 ▲）](https://huggingface.co/papers/2611.34813?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-27)</div>
   </details></article>
 <article id="stable-gated-deltanet-2" class="summary-card daily-item">
   <h2 id="stable-gated-deltanet-2-title" class="daily-item-title">Stable Gated DeltaNet-2：对称擦除稳定循环状态</h2><p class="single-subtitle daily-item-summary">用对称擦除与衰减调节写入抑制递归状态指数增长，使线性注意力模型稳定训练至128K上下文。
@@ -651,6 +570,43 @@ EvolveLRM
 链接：https://arxiv.org/abs/2611.32088
 摘要：Long-term memory retrieval often returns query-relevant records, but relevance does not guarantee sufficient evidence: answering requires a set of records that jointly satisfies a question&#39;s factual, relational, temporal, and state constraints. We study this demand--evidence misalignment through MemPath, an interventional framework that diagnoses failures in memory access, demand coverage, and evidence utilization. Guided by this diagnosis, we propose BiDE-Mem, which represents questions as typed demands and uses them to guide retrieval and evidence organization. We formalize demand--evidence support; in the evaluated compact path, it is conveyed through provenance-aware evidence organization and Reader guidance rather than a separate generative four-state verification step. On LoCoMo, BiD</div>
   </details></article>
+<article id="rap" class="summary-card daily-item">
+  <h2 id="rap-title" class="daily-item-title">RAP：可路由性前置审计</h2><p class="single-subtitle daily-item-summary">先审计基准与候选模型是否存在按题选模型的增益空间，避免将偶然的路由提升误判为普遍有效。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：评测审计</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型路由</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E8%AF%84%E4%BC%B0%E9%80%8F%E6%98%8E%E5%BA%A6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;评估透明度</a><a href="/LLMDailyDigestWeb/topic/%E5%80%99%E9%80%89%E9%80%89%E6%8B%A9/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;候选选择</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全审计</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34825" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34825</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在比较或部署多模型路由系统前，用 RAP 审计候选模型得分矩阵，并将 RouteabilityBench 作为路由增益可信度的验证基线。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>路由效果首先是基准评分粒度与候选模型互补性共同决定的属性，缺少输入级优势差异时，再复杂的路由器也难以产生可泛化收益。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：模型路由只有在不同输入确实适合不同模型时才有意义，但现有评测常未验证基准与模型组合的“可路由性”，便直接比较路由器。</li>
+<li><strong>旧法为何失效</strong>：粗粒度评分会造成多个模型并列最优，且单一最佳模型可能已接近性能上限，使路由增益空间狭窄，并对模型组合与预测器选择高度敏感。</li>
+<li><strong>方法</strong>：提出事后审计协议 RAP 与可运行的 RouteabilityBench，在获得“基准—模型组合”得分矩阵后，检查并列最优、模型组合构成、潜在增益与统计显著性，再解释路由结果。</li>
+<li><strong>实验</strong>：覆盖 GPQA、MMLU-Pro、IFEval、Omni-MATH 四个基准和 66 个 LLM；扩大嵌入集合、降维、选择性拒答、聚类和更强回归器均未稳定超过单一最佳模型，明确正向证据主要集中于依赖模型组合的 Omni-MATH 设置。</li>
+<li><strong>局限与后续</strong>：该审计是基于完整得分矩阵的回顾性分析，不能预先认证尚未评测的模型组合；作者建议同时报告可路由性诊断、并列最优分析、组合构造细节及模型家族校正统计检验。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Routeability Before Routing: Routeability Audit Protocol (RAP) and RouteabilityBench for Audited LLM Model Selection
+来源：arXiv
+链接：https://arxiv.org/abs/2611.34825
+摘要：LLM routing aims to choose, for each prompt, which model in a portfolio is most likely to answer correctly. This only makes sense when the benchmark contains enough prompt-specific variation for different models to be best on different inputs. On coarse-scored LLM benchmarks, however, many models often tie for the best score, and the single best model may already leave little room for improvement. We therefore propose a routeability-first audit, instantiated as RAP and RouteabilityBench, a runnable claim-verification package. The audit is retrospective: it runs once the benchmark-portfolio score matrix exists and before router comparisons are interpreted as general evidence, rather than certifying a portfolio that has not yet been evaluated. Across four benchmarks and 66 LLMs, generic rout</div>
+  </details></article>
+<article id="item-28" class="summary-card daily-item">
+  <h2 id="item-28-title" class="daily-item-title">置信度注入揭示自监控失效</h2><p class="single-subtitle daily-item-summary">用反事实置信度令牌分离错误监控与修复能力，发现模型会受疑虑引导，却无法识别自身错误。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：置信度评估</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/">MonitorEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/reasoningevolve/">ReasoningEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%B0%E8%AE%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;不确定性估计</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a><a href="/LLMDailyDigestWeb/topic/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;自我反思</a><a href="/LLMDailyDigestWeb/topic/%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;测试时计算</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程评估</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31228" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31228</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在数学推理智能体中将外部错误检测结果转换为低置信度令牌以触发重思，并把该实验设计作为区分自监控与纠错能力的评测基线。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>模型口述的置信度更像操控后续行为的控制接口，而非忠实反映内部错误状态的自省信号，因此测试时纠错的主要瓶颈是错误检测而非修复能力。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：逐步输出数值置信度常被用于触发智能体回溯纠错，但这要求模型既能在推理现场识别错误，又能在感到不确定后修复错误。</li>
+<li><strong>旧法为何失效</strong>：现有做法把口述置信度同时视为错误测量与纠错控制信号，但错误发生时置信度仍高度饱和，且自我监控与受信号引导的控制能力可能彼此解耦。</li>
+<li><strong>方法</strong>：在模型能力边界内定位真实推理错误，再于错误位置反事实注入10%低置信度或95%高置信度标签，分别评估原生置信度的错误识别能力与外部不确定性信号的因果控制效果。</li>
+<li><strong>实验</strong>：评测Qwen2.5-7B、Llama-3.1-8B、Mistral-7B和Phi-4的15,200次数学解题，定位2,017个错误并生成27,568个反事实续写。自监控AUROC仅0.500至0.561，首次错误时置信度仍达95.1%至99.9%；注入低置信度使纠错率提高3.7至22.5个百分点，主动重思时最高达38.5%，但对正确步骤注入疑虑会使解题率最多下降22.8个百分点。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Language Models Steer on Injected Uncertainty Tokens, but Fail to Self-Monitor In Situ
+来源：arXiv
+链接：https://arxiv.org/abs/2611.31228
+摘要：Prompting language models to verbalize stepwise numerical confidence during generation is an increasingly popular approach for triggering backtracking and error correction in agentic reasoning. This strategy presupposes two capabilities: (1) in-situ monitoring fidelity (does confidence drop when an error occurs?) and (2) downstream steering control (does an uncertainty token causally steer the model to repair its error?). We evaluated four open-weights models (Qwen2.5-7B, Llama-3.1-8B, Mistral-7B, and Phi-4, 14.7B) across 15,200 math benchmark attempts, isolating 2,017 reasoning errors within each model&#39;s capability frontier. Applying 27,568 counterfactual continuations across these failure points, we demonstrate a consistent decoupling between monitoring and control. On monitoring, all fo</div>
+  </details></article>
 <article id="saepo" class="summary-card daily-item">
   <h2 id="saepo-title" class="daily-item-title">SAEPO：稀疏自编码器引导信用分配</h2><p class="single-subtitle daily-item-summary">用稀疏自编码器细化推理词元的奖惩归因，缓解仅靠最终答案反馈训练效率低的问题，数学任务最高提升6.63%。
 
@@ -683,23 +639,41 @@ EvolveLRM
 链接：https://arxiv.org/abs/2611.29936
 摘要：Reinforcement Learning with Verifiable Rewards (RLVR) has demonstrated strong performance in improving large language model (LLM) reasoning, yet its credit-assignment signal remains coarse. Outcome verifiers provide scalable supervision by judging whether a completed response is correct, but they do not directly indicate which intermediate reasoning tokens contribute to success or failure. As a result, policy optimization can be inefficient, especially when training base models directly from sparse outcome feedback. In this paper, we introduce SAEPO, a Sparse AutoEncoder-guided token-level credit assignment method for outcome-supervised Policy Optimization. Rather than treating correctness only as a rollout-level (sequence-level) signal, SAEPO uses a pretrained sparse autoencoder (SAE) to </div>
   </details></article>
-<article id="metaskill" class="summary-card daily-item">
-  <h2 id="metaskill-title" class="daily-item-title">MetaSkill：可复用方法驱动技能编排</h2><p class="single-subtitle daily-item-summary">用抽象解题方法统一编排并动态调整智能体技能，解决跨任务组合与失败修复难题，准确率提升3.51%至13.48%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技能优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%8A%80%E8%83%BD%E5%BA%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体技能库</a><a href="/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E7%BC%96%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;能力编排</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.29274" target="_blank" rel="noopener">https://arxiv.org/abs/2611.29274</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在需要跨领域组合多项技能或工具的智能体系统中，借鉴其双层编排机制生成中间目标、规划技能调用，并在失败后修复流程或重选解题方法。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>技能迁移的关键是将抽象解题结构独立为技能之上的控制层，使同一组技能能围绕不同任务对象动态重组。</p>
+<article id="motubrain-2-0" class="summary-card daily-item">
+  <h2 id="motubrain-2-0-title" class="daily-item-title">Motubrain 2.0：世界动作模型协同编排</h2><p class="single-subtitle daily-item-summary">生数科技推出20B世界动作模型与智能体框架，让机器人迁移视频经验，并依靠执行反馈规划、验证和纠错。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：具身基础模型</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>AI工具集日报</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/newmodel/">NewModel</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;世界模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%89%A7%E8%A1%8C%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体执行框架</a><a href="/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E8%BF%81%E7%A7%BB/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;能力迁移</a><a href="/LLMDailyDigestWeb/topic/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;持续学习</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身基础模型</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体编排</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-link fa-fw" aria-hidden="true"></i><strong>原文</strong>：<a href="https://mp.weixin.qq.com/s/_Js9SVdj3xO8qihqmeVmFA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/_Js9SVdj3xO8qihqmeVmFA</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>可在通用机器人系统中借鉴Canonical55统一动作表征和Harness分层闭环，组合任务规划、工具调用、结果验证与失败恢复，并将其作为具身操作基线。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>机器人能力的持续提升不必完全依赖更新模型权重，可编辑执行框架能把真实反馈转化为工具、技能和指令的迭代信号。</p>
 </div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
       <div class="daily-item-content"><ul>
-<li><strong>问题</strong>：可复用技能虽能提供专门操作流程，但智能体仍难以针对不同任务组织、调整技能，并在执行失败后有效修复。</li>
-<li><strong>旧法为何失效</strong>：直接注入解题方法无法确保其落实为中间目标和技能调用，也缺少依据执行反馈修复流程或重新选择方法的机制。</li>
-<li><strong>方法</strong>：MetaSkill采用双层框架；方法层从26种精选解题方法中选择方案，并将抽象角色绑定到具体任务对象，执行层据此确定中间目标、编排原生技能，并指导流程修复或方法重选。</li>
-<li><strong>实验</strong>：在89项SkillsBench任务和995个ToolHop样例的六种配置中均优于所评基线，相较最强基线准确率提升3.51%至13.48%；消融实验验证了显式方法引导和方法重选的贡献。</li>
+<li><strong>是什么</strong>：Motubrain 2.0由20B参数世界动作模型与可编辑的Motubrain-Harness组成，统一建模文本、视频、动作和三维几何信息，连接任务规划、动作执行与结果验证。</li>
+<li><strong>关键能力</strong>：模型支持零样本泛化、少样本适配及ICL-WAM视频示范迁移，在六项机器人操作基准中获五项第一；Harness使4项真机任务成功率从22%升至91%，并在权重不变时经六轮迭代将10项家庭任务成功率从44%升至63%。</li>
+<li><strong>限制</strong>：L4自主智能与持续进化仍处于初步探索阶段，部分对比实验条件不完全一致；模型权重、训练部署工具及计划开放的1000小时真实操作数据尚未正式提供。</li>
 </ul>
 </div>
     </details><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：MetaSkill: Reusable Problem-Solving Methods for Adaptive Skill Orchestration in LLM Agents
+    <div class="daily-item-notes-body">标题：生数科技推出 Agentic 物理世界通用模型 Motubrain 2.0
+来源：AI工具集日报（ai-bot.cn）
+链接：https://mp.weixin.qq.com/s/_Js9SVdj3xO8qihqmeVmFA
+摘要：（信源：生数科技）生数科技正式推出Motubrain 2.0，面向真实世界持续进化的 Agentic 物理世界通用模型。Motubrain 2.0 由 20B 参数世界动作模型与智能体编排框架 Motubrain-Harness 组成，在六项机器人操作基准中斩获五项第一，具备零样本泛化、少样本适配和视频示范迁移能力。</div>
+  </details></article>
+<article id="ruibench" class="summary-card daily-item">
+  <h2 id="ruibench-title" class="daily-item-title">RUIBench：机器人接口可靠性评测</h2><p class="single-subtitle daily-item-summary">用统一机器人接口基准隔离动作表达与交互形式的影响，仅更换接口就将前沿智能体成功率从45%提升至81%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：智能体评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/robotevolve/">RobotEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能评估</a><a href="/LLMDailyDigestWeb/topic/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;具身智能</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%AF%E9%9D%A0%E6%80%A7/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能可靠性</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体评估</a><a href="/LLMDailyDigestWeb/topic/%E5%8A%A8%E4%BD%9C%E8%A1%A8%E5%BE%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动作表征</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31115" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31115</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在具身智能体开发中直接使用RUIBench和RUIKit比较动作接口，据此选择能降低决策负担并保留关键执行反馈的动作抽象与交互形式。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>机器人执行可靠性的上限不仅由模型能力决定，还取决于接口是否以更少决策保留足够反馈，而任务成功必须依据实际结果进行独立验证。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：基础模型虽能理解和推理复杂物理任务，却难以稳定转化为机器人执行；动作表达与执行接口如何影响可靠性长期缺少系统研究。</li>
+<li><strong>旧法为何失效</strong>：既有评测多关注模型、感知或控制能力，忽视动作抽象和交互形式引入的决策负担与反馈差异；单步动作检查也无法发现任务级失败和智能体误报成功。</li>
+<li><strong>方法</strong>：提出覆盖5类能力、含30个操控任务的RUIBench，并以RUIKit在共享感知与控制条件下组合6种动作抽象和2种交互形式，统一比较13种接口。</li>
+<li><strong>实验</strong>：仿真中仅改变接口，前沿智能体成功率便从45%升至81%，微调后的4B模型从13%升至47%；有效接口可减少不必要决策并保留关键反馈，但智能体常在执行实际失败时宣告成功。</li>
+<li><strong>局限与后续</strong>：接口收益会受智能体行为和物理不确定性影响，后续需引入超越单步动作检查的任务级验证机制，弥合自报成功与实际执行结果之间的缺口。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：RUIBench: What Makes a Good Robot-Use Interface?
 来源：arXiv
-链接：https://arxiv.org/abs/2611.29274
-摘要：Reusable skills provide specialized procedures, but large language model (LLM) agents must still determine how to organize and adapt their use. We introduce MetaSkill, a two-layer framework for reusing problem-solving methods across tasks and domains. The method layer selects from 26 curated methods and binds abstract roles to task objects. The execution layer uses the instantiated method to identify intermediate objectives, coordinate native skills, and guide repair or method reselection. On 89 SkillsBench tasks and 995 ToolHop examples, MetaSkill outperforms the evaluated baselines in all six configurations, with accuracy gains of 3.51-13.48% over the strongest baseline. Ablations support explicit method-guided orchestration beyond direct method injection and further gains from method re</div>
+链接：https://arxiv.org/abs/2611.31115
+摘要：Foundation models can reason about complex physical tasks, yet translating this intelligence into reliable robot execution remains challenging. We argue that a critical, often overlooked factor is the robot-use interface (RUI), which determines how agents express and execute physical actions. To systematically study its impact, we introduce RUIBench, comprising 30 manipulation tasks across five suites spanning world knowledge, in-context learning, discovery, dynamic interaction, and contact-rich manipulation. We further develop RUIKit, a unified framework that crosses six action abstractions with two interaction forms, yielding 13 interfaces under shared perception and control. In simulation, changing only the RUI shifts a frontier agent&#39;s success rate from 45% to 81%, and that of a fine-t</div>
   </details></article>
 <article id="conartist" class="summary-card daily-item">
   <h2 id="conartist-title" class="daily-item-title">Conartist：级联自适应提示注入</h2><p class="single-subtitle daily-item-summary">用基于安全审计反馈自适应调整的两阶段提示注入，突破电脑操作智能体的安全护栏，最高攻击成功率达66.67%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：安全评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/">MonitorEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体安全</a><a href="/LLMDailyDigestWeb/topic/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;提示注入攻击</a><a href="/LLMDailyDigestWeb/topic/%E7%BA%A2%E9%98%9F%E6%B5%8B%E8%AF%95/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;红队测试</a><a href="/LLMDailyDigestWeb/topic/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图形用户界面智能体</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E9%93%BE%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具链安全</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.29977" target="_blank" rel="noopener">https://arxiv.org/abs/2611.29977</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在电脑操作智能体或智能体执行框架中，将Conartist作为红队测试基线，检查一致性约束、风险审计和工具调用链能否被多步骤提示注入绕过。</p>
@@ -719,6 +693,24 @@ EvolveLRM
 链接：https://arxiv.org/abs/2611.29977
 摘要：Harnesses secure Computer-Using Agents by enforcing security constraints and defending against prompt injection attacks. However, we find that two core security mechanisms of agent harnesses remain vulnerable. First, consistency checking prevents agents from deviating from legitimate user objectives, while attackers can bypass it by embedding malicious actions that appear logically consistent with legitimate task execution. Second, risk auditing proactively examines high-risk operations. Yet, the auditing process itself would introduce additional exploitable actions that violate security boundaries. To evaluate above defects we found, we propose Conartist, a cascaded adaptive prompt injection framework comprising two progressive stages. First, Conartist employs a goal-pollution strategy to</div>
   </details></article>
+<article id="fork" class="summary-card daily-item">
+  <h2 id="fork-title" class="daily-item-title">FORK：决策披露技能协同演化</h2><p class="single-subtitle daily-item-summary">让防护栏与能读取拒绝信息的攻击者共同演化，既帮助正常用户纠错，又避免泄露可利用的防护线索。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技能演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/">MonitorEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体安全</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AF%B9%E9%BD%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全对齐</a><a href="/LLMDailyDigestWeb/topic/%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;风险控制</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%9B%E5%8C%96%E6%90%9C%E7%B4%A2/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;进化搜索</a><a href="/LLMDailyDigestWeb/topic/%E5%8D%8F%E5%90%8C%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;协同演化</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作安全</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.33879" target="_blank" rel="noopener">https://arxiv.org/abs/2611.33879</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在智能体工具调用或动作审批系统中借鉴FORK的攻防协同演化机制，联合优化拦截决策与拒绝说明，构建可恢复且不泄露防护线索的安全防护栏。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>拒绝消息本身也是攻击面，因此防护栏不能只优化是否拦截，还须在自适应攻击下联合优化决策边界与信息披露程度。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：智能体防护栏的拒绝消息会被轨迹中的攻击者看到，需要既帮助授权用户从拒绝中恢复，又不提高自适应攻击成功率。</li>
+<li><strong>旧法为何失效</strong>：固定拒绝无法指导正常用户修正操作，详细解释却可能暴露防护边界；手写规则也难以预判攻击者如何持续探测决策并利用消息。</li>
+<li><strong>方法</strong>：FORK让防护栏的自然语言决策技能、披露技能与读取所有公开消息的攻击者共同演化，并以被利用的消息和过度宽松的决策为证据，无梯度修订自然语言技能库。</li>
+<li><strong>实验</strong>：在四个基准上评测；FORK-World中三个智能体的平均攻击成功率从78.4%降至14.1%，正常任务效用保持85%以上。在训练未见的MT-AgentRisk中，攻击成功率从70.6%降至9.1%，正常任务效用为93.1%。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：FORK: Co-Evolving Safe Disclosure and Decision Skills Against Attackers Who Read Every Refusal
+来源：arXiv
+链接：https://arxiv.org/abs/2611.33879
+摘要：When a guardrail rejects an LLM agent&#39;s action, its message reaches any attacker observing the trajectory: a fixed refusal leaves benign users unable to recover, whereas an explanation can tell the attacker what to try next. We study this as safe disclosure: explaining rejections so that authorized tasks recover without increasing adaptive attack success. Safe disclosure depends on both the decision and the message: what the guardrail blocks and what it reveals to the agent and the attacker. Because hand-written rules alone cannot anticipate how adaptive attackers probe decisions or use messages, we introduce FORK, which co-evolves a guardrail&#39;s natural-language decision and disclosure skills with an attacker that reads every public message. Each exploited message and permissive decision g</div>
+  </details></article>
 <article id="kolpona" class="summary-card daily-item">
   <h2 id="kolpona-title" class="daily-item-title">Kolpona：无梯度神经元编程</h2><p class="single-subtitle daily-item-summary">用闭式神经元编辑与仿真筛选修正RTL生成的反复失败模式，无需训练即可将27B模型通过率提升至94.9%。</p><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：神经元编程</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/codeevolve/">CodeEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/systemevolve/">SystemEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型开发</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E9%AA%8C%E8%AF%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行验证</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a><a href="/LLMDailyDigestWeb/topic/%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;执行反馈</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.33973" target="_blank" rel="noopener">https://arxiv.org/abs/2611.33973</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在低算力开放权重RTL生成系统中，可直接借鉴闭式神经元编辑与测试台仿真筛选机制，无需重新微调即可修正高频失败模式并提高代码通过率。</p>
 </div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>模型稳定的代码失败习惯可能集中在极少数可定位神经元中，经跨任务执行结果约束的局部权重编辑即可带来显著且跨编程语言迁移的改进。</p>
@@ -736,6 +728,22 @@ EvolveLRM
 来源：arXiv
 链接：https://arxiv.org/abs/2611.33973
 摘要：Open-weight large language models (LLMs) for register-transfer level (RTL) design are usually improved by fine-tuning on curated Verilog corpora, which needs large sets of verified designs and GPU training. We present Kolpona, an agentic framework that improves such models without gradient training. Its first component is neuron programming, a new form of weight-space programming (WSP) that writes single neurons in closed form into the weights to remove failure habits found on practice tasks, and keeps each edit only when testbench results on fresh tasks favour it. At inference time, tool-using agents propose designs, and a label-free selection stage delivers one design per task from the specification, the candidates and their simulations alone. On Qwen3.5-4B, edits to 16 neurons raise the</div>
+  </details></article>
+<article id="solve-vision-with-code" class="summary-card daily-item">
+  <h2 id="solve-vision-with-code-title" class="daily-item-title">Solve Vision with Code：程序合成式视觉推理</h2><p class="single-subtitle daily-item-summary">让编码智能体编程渲染答案视频，比直接生成像素的视频模型更可靠，最高得分0.923。</p><p class="post-meta-line daily-item-meta"><span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：视觉推理</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>Hugging Face Papers</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/reasoningevolve/">ReasoningEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E8%A7%86%E8%A7%89%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;视觉推理</a><a href="/LLMDailyDigestWeb/topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;人工智能辅助编程</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%A8%A1%E6%80%81/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多模态</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E6%8E%A8%E7%90%86/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;推理</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.34813" target="_blank" rel="noopener">https://arxiv.org/abs/2611.34813</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在可程序化求解的视觉任务中，可借鉴“智能体编程渲染视频”机制作为视频生成模型的推理基线或可审计替代方案。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>视觉媒介中的推理不必依赖原生像素生成，显式程序可将视觉理解转化为更可靠、可检查且可迁移的符号计算。</p>
+</div><details class="daily-item-content-fold"><summary>📄 详细内容</summary>
+      <div class="daily-item-content"><ul>
+<li><strong>问题</strong>：检验视频生成是否真是更可靠的视觉推理方式，并在相同输入、输出要求和评估器下与符号化程序合成进行公平比较。</li>
+<li><strong>旧法为何失效</strong>：视频模型通过像素去噪直接生成推理过程，结果难以显式检查；此前也缺少与程序化解法条件一致的对照实验。</li>
+<li><strong>方法</strong>：编码智能体仅根据首帧和自然语言提示编写程序、渲染答案视频，再由不做修改的规则评估器评分；同时区分从图像恢复可迁移方案的描绘式程序与依赖硬编码值的命题式程序。</li>
+<li><strong>实验</strong>：在含500个样本、覆盖五类认知任务的VBVR-Pro-Bench上，Codex、Claude Code和Gemini CLI分别取得0.923、0.894和0.893，均比最强视频模型高逾0.22；23个可运行开放权重模型中，GLM-5最高为0.572。</li>
+<li><strong>局限与后续</strong>：结论适用于可由首帧和提示计算答案、且具有符号真值的任务；开放权重编码模型整体仍明显落后于闭源编码智能体。</li>
+</ul>
+</div>
+    </details><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">[用代码解决视觉问题：编码智能体的视觉推理能力强于视频模型（59 ▲）](https://huggingface.co/papers/2611.34813?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-27)</div>
   </details></article>
 <h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">30 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
@@ -963,31 +971,6 @@ EvolveLRM
 来源：AIbase 快讯（aibase.com）
 链接：https://www.aibase.com/zh/news/32564
 摘要：OpenAI 11月24日发布预印本，宣称已证明矩阵乘法指数ω恰为9/4：10月先证ω≤9/4，此次再证ω≥9/4，上下界合拢。ω描述当n足够大时，两个n×n矩阵相乘的最优算法所需算术运算次数随n增长的渐进幂指数，也是所有可达复杂度指数的下确界。</div>
-  </details></div>
-</details>
-</div>
-            </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/" onclick="event.stopPropagation()">MonitorEvolve</a><span class="daily-count">1 条</span>
-              </summary>
-              <div class="daily-group-body"><details id="fork" class="daily-row">
-  <summary>
-    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>FORK：决策披露技能协同演化</strong>
-      <span class="daily-row-meta">arXiv · 技能演化 · <a href="https://arxiv.org/abs/2611.33879" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
-    </span><span class="daily-row-summary">让防护栏与能读取拒绝信息的攻击者共同演化，既帮助正常用户纠错，又避免泄露可利用的防护线索。</span></summary>
-  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技能演化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/">MonitorEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/swarmevolve/">SwarmEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体安全</a><a href="/LLMDailyDigestWeb/topic/%E6%8A%80%E8%83%BD%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;技能演化</a><a href="/LLMDailyDigestWeb/topic/%E5%AE%89%E5%85%A8%E5%AF%B9%E9%BD%90/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;安全对齐</a><a href="/LLMDailyDigestWeb/topic/%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;风险控制</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%9B%E5%8C%96%E6%90%9C%E7%B4%A2/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;进化搜索</a><a href="/LLMDailyDigestWeb/topic/%E5%8D%8F%E5%90%8C%E6%BC%94%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;协同演化</a><a href="/LLMDailyDigestWeb/topic/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C%E5%AE%89%E5%85%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;多智能体协作安全</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.33879" target="_blank" rel="noopener">https://arxiv.org/abs/2611.33879</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在智能体工具调用或动作审批系统中借鉴FORK的攻防协同演化机制，联合优化拦截决策与拒绝说明，构建可恢复且不泄露防护线索的安全防护栏。</p>
-</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>拒绝消息本身也是攻击面，因此防护栏不能只优化是否拦截，还须在自适应攻击下联合优化决策边界与信息披露程度。</p>
-</div><div class="daily-item-content"><ul>
-<li><strong>问题</strong>：智能体防护栏的拒绝消息会被轨迹中的攻击者看到，需要既帮助授权用户从拒绝中恢复，又不提高自适应攻击成功率。</li>
-<li><strong>旧法为何失效</strong>：固定拒绝无法指导正常用户修正操作，详细解释却可能暴露防护边界；手写规则也难以预判攻击者如何持续探测决策并利用消息。</li>
-<li><strong>方法</strong>：FORK让防护栏的自然语言决策技能、披露技能与读取所有公开消息的攻击者共同演化，并以被利用的消息和过度宽松的决策为证据，无梯度修订自然语言技能库。</li>
-<li><strong>实验</strong>：在四个基准上评测；FORK-World中三个智能体的平均攻击成功率从78.4%降至14.1%，正常任务效用保持85%以上。在训练未见的MT-AgentRisk中，攻击成功率从70.6%降至9.1%，正常任务效用为93.1%。</li>
-</ul>
-</div><details class="daily-item-notes">
-    <summary>📝 原始笔记（逐字保留）</summary>
-    <div class="daily-item-notes-body">标题：FORK: Co-Evolving Safe Disclosure and Decision Skills Against Attackers Who Read Every Refusal
-来源：arXiv
-链接：https://arxiv.org/abs/2611.33879
-摘要：When a guardrail rejects an LLM agent&#39;s action, its message reaches any attacker observing the trajectory: a fixed refusal leaves benign users unable to recover, whereas an explanation can tell the attacker what to try next. We study this as safe disclosure: explaining rejections so that authorized tasks recover without increasing adaptive attack success. Safe disclosure depends on both the decision and the message: what the guardrail blocks and what it reveals to the agent and the attacker. Because hand-written rules alone cannot anticipate how adaptive attackers probe decisions or use messages, we introduce FORK, which co-evolves a guardrail&#39;s natural-language decision and disclosure skills with an attacker that reads every public message. Each exploited message and permissive decision g</div>
   </details></div>
 </details>
 </div>
@@ -1380,6 +1363,31 @@ EvolveLRM
 来源：arXiv
 链接：https://arxiv.org/abs/2611.31964
 摘要：Hybrid physics-neural simulators embed neural networks in partial differential equation (PDE) solvers to model unresolved subgrid dynamics while preserving resolved physics and conservation laws. Because closure outputs feed back across time steps, single-step offline regression does not directly minimize multi-step rollout error, motivating online trajectory optimization. Solver backpropagation through time (BPTT) is the standard online solution when solver derivatives are available, yet many operational Fortran and C/C&#43;&#43; simulators expose only non-differentiable, forward-only interfaces. We introduce FORGE (Forward-Only Response and Gauss-Newton Estimation), an online framework that trains embedded networks from forward runs alone by decoupling exact network derivatives from black-box si</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/" onclick="event.stopPropagation()">AgentEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="metaskill" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>MetaSkill：可复用方法驱动技能编排</strong>
+      <span class="daily-row-meta">arXiv · 技能优化 · <a href="https://arxiv.org/abs/2611.29274" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用抽象解题方法统一编排并动态调整智能体技能，解决跨任务组合与失败修复难题，准确率提升3.51%至13.48%。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：技能优化</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/harnessevolve/">HarnessEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93%E6%8A%80%E8%83%BD%E5%BA%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体技能库</a><a href="/LLMDailyDigestWeb/topic/%E8%83%BD%E5%8A%9B%E7%BC%96%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;能力编排</a><a href="/LLMDailyDigestWeb/topic/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;任务规划</a><a href="/LLMDailyDigestWeb/topic/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;工具调用</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.29274" target="_blank" rel="noopener">https://arxiv.org/abs/2611.29274</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在需要跨领域组合多项技能或工具的智能体系统中，借鉴其双层编排机制生成中间目标、规划技能调用，并在失败后修复流程或重选解题方法。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>技能迁移的关键是将抽象解题结构独立为技能之上的控制层，使同一组技能能围绕不同任务对象动态重组。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：可复用技能虽能提供专门操作流程，但智能体仍难以针对不同任务组织、调整技能，并在执行失败后有效修复。</li>
+<li><strong>旧法为何失效</strong>：直接注入解题方法无法确保其落实为中间目标和技能调用，也缺少依据执行反馈修复流程或重新选择方法的机制。</li>
+<li><strong>方法</strong>：MetaSkill采用双层框架；方法层从26种精选解题方法中选择方案，并将抽象角色绑定到具体任务对象，执行层据此确定中间目标、编排原生技能，并指导流程修复或方法重选。</li>
+<li><strong>实验</strong>：在89项SkillsBench任务和995个ToolHop样例的六种配置中均优于所评基线，相较最强基线准确率提升3.51%至13.48%；消融实验验证了显式方法引导和方法重选的贡献。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：MetaSkill: Reusable Problem-Solving Methods for Adaptive Skill Orchestration in LLM Agents
+来源：arXiv
+链接：https://arxiv.org/abs/2611.29274
+摘要：Reusable skills provide specialized procedures, but large language model (LLM) agents must still determine how to organize and adapt their use. We introduce MetaSkill, a two-layer framework for reusing problem-solving methods across tasks and domains. The method layer selects from 26 curated methods and binds abstract roles to task objects. The execution layer uses the instantiated method to identify intermediate objectives, coordinate native skills, and guide repair or method reselection. On 89 SkillsBench tasks and 995 ToolHop examples, MetaSkill outperforms the evaluated baselines in all six configurations, with accuracy gains of 3.51-13.48% over the strongest baseline. Ablations support explicit method-guided orchestration beyond direct method injection and further gains from method re</div>
   </details></div>
 </details>
 </div>
