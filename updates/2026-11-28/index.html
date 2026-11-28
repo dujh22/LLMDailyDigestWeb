@@ -107,7 +107,7 @@ LogicEvolve
   <meta itemprop="description" content="当日精选（由提交工具自动创建）。
 今日概览 自进化方法 CoEvo-RSI：跨代保存并重组模型与执行脚手架，避免独立升级造成接口错配，使9B模型在垂直任务上超过更大模型。 RSI 2026：用自主性分级、独立留出集和轨迹审计，区分真正跨任务提升与自我修改后的过拟合。 AutoSFT：让执行、分析和合成智能体协作筛选、修复及生成微调数据，突破单智能体只能调整样本比例的限制。 可审计推理 Solve Vision with Code：让编码智能体编程渲染答案视频，以可检查程序替代不稳定的直接像素生成，最高得分0.923。 DAPO-V：把“错误是否容易被人发现”设为强化学习风险预算，避免准确率提升掩盖更隐蔽的多模态幻觉。 置信度注入揭示自监控失效：注入反事实置信度令牌分离错误检测与修复，发现模型能按疑虑重思，却不能可靠发现自身错误。 VeriLogic：把中间判断和证明转成可形式检查的训练对象，定位并修复最终答案正确率无法暴露的错误推理。 长程状态 Stable Gated DeltaNet-2：用对称擦除和受控写入约束循环状态增益，防止线性注意力在长上下文中数值爆炸。 BiDE-Mem：按问题所需证据类型组织可溯源记忆，解决检索结果相关却不足以完整作答的问题，LongMemEval达91.80%。 具身系统 Motubrain 2.0：以统一动作表征连接20B世界动作模型和反馈式脚手架，让机器人跨本体复用视频经验并从执行失败中恢复。 RUIBench：统一比较机器人动作接口，证明仅改变动作表达和反馈方式即可把执行成功率从45%提高到81%。 sft-JEPA：按误差持续时间分别进行回合内快速适应和跨回合慢速学习，使世界模型规划成功率最高提升22点。 评测审计 RAP：先从候选模型得分矩阵判断基准是否存在路由空间，避免把偶然选中强模型误报为路由能力。 代码优化 Kolpona：用闭式神经元编辑和仿真测试筛选替代训练，将27B模型的VerilogEval v2通过率提升至94.9%。 环境合成 GREMLIN：用随机参数化神经环境生成训练经验，摆脱人工游戏设计，并让学习规则在26款游戏上超过未训练教师。 热点延伸：ProxyGenBench、StateWeaver、Boundary-Aware Policy Learning、JudiAct 对当前研究的启发 AgentEvolve 迁移｜从 CoEvo-RSI 把跨代版本重组用于脚手架迭代：保留模型与Harness快照，交叉配对后按任务分和接口失败率筛选。 DataEvolve 迁移｜从 AutoSFT 把六类数据动作用于SFT数据闭环：按失败类型自动筛选、修复、重标和合成样本，再逐轮消融。 延续｜AutoSFT 尚未验证跨训练器和预算泛化：更换模型、训练器与预算，对比能力增益、耗时和API成本。 Awesome-RSI 迁移｜从 RSI 2026 把独立留出集和等算力审计用于RSI验收：逐轮测跨任务增益、能力保持率与轨迹违规率。 MonitorEvolve 迁移｜从 DAPO-V 把可验证性风险预算用于安全训练：按人类漏检率自适应惩罚难核验错误，并与纯准确率奖励对比。 CacheEvolve 迁移｜从 Stable Gated DeltaNet-2 把非扩张状态更新用于循环缓存：监测状态范数、长程召回率和分块训练吞吐。 EvalEvolve 迁移｜从 RAP 把可路由性审计用于模型路由评测：先计算模型互补度和并列最优率，再报告路由器相对神谕的差距。 延续｜RUIBench 缺少任务级验证：增加环境终态检查器，对比智能体自报与真实成功并统计误报率。 MemoryEvolve 迁移｜从 BiDE-Mem 把类型化需求用于记忆检索：先拆出人物、时间和因果约束，再测证据覆盖率与答案准确率。 LogicEvolve 迁移｜从 VeriLogic 把可验证中间状态用于逻辑RL：逐步调用求解器打分，对比仅用最终答案奖励的正确率与修复率。">
   <meta itemprop="datePublished" content="2026-11-28T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-11-28T17:43:37+08:00">
+  <meta itemprop="dateModified" content="2026-11-28T18:00:53+08:00">
   <meta itemprop="wordCount" content="1415">
   <meta itemprop="image" content="https://dujh22.github.io/images/logo.svg"><meta property="og:url" content="https://dujh22.github.io/LLMDailyDigestWeb/updates/2026-11-28/">
   <meta property="og:site_name" content="LLM-DailyDigest · 大模型研究日报">
@@ -118,7 +118,7 @@ LogicEvolve
   <meta property="og:type" content="article">
     <meta property="article:section" content="updates">
     <meta property="article:published_time" content="2026-11-28T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-28T17:43:37+08:00">
+    <meta property="article:modified_time" content="2026-11-28T18:00:53+08:00">
     <meta property="og:image" content="https://dujh22.github.io/images/logo.svg">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -139,7 +139,7 @@ LogicEvolve
       "@type": "WebPage",
       "@id": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/"
     },"genre": "updates","wordcount":  1415 ,
-    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/","datePublished": "2026-11-28T00:00:00+08:00","dateModified": "2026-11-28T17:43:37+08:00","publisher": {
+    "url": "https:\/\/dujh22.github.io\/LLMDailyDigestWeb\/updates\/2026-11-28\/","datePublished": "2026-11-28T00:00:00+08:00","dateModified": "2026-11-28T18:00:53+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -322,7 +322,7 @@ LogicEvolve
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/dujh22/LLM-DailyDigest" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     LLM-DailyDigest</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2026-11-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span title="更新于 2026-11-28 17:43:37"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-27 10:25 ~ 2026-11-28 16:49（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-27 10:25 ~ 11-28 16:49
+      <div class="post-meta-line"><span title="发布于 2026-11-28 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span title="更新于 2026-11-28 18:00:53"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2026-11-28">2026-11-28</time></span>&nbsp;<span class="daily-collect-window" title="本期推荐的采集时段：2026-11-27 10:25 ~ 2026-11-28 16:49（下一期默认从截止时间接续采集）"><i class="fa-solid fa-hourglass-half fa-fw me-1" aria-hidden="true"></i>采集 11-27 10:25 ~ 11-28 16:49
           </span>&nbsp;<span title="1415 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -436,7 +436,7 @@ LogicEvolve
 <!-- daily-summary:end -->
 </div><section class="daily-items daily-tiered">
           <nav class="daily-nav">
-            <span class="daily-nav-label">共 46 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 27</a><a href="#daily-hot">🔥 热点 4</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
+            <span class="daily-nav-label">共 49 条</span><a href="#daily-featured">⭐ 重点 15</a><a href="#daily-related">🔬 相关 30</a><a href="#daily-hot">🔥 热点 4</a><button type="button" class="daily-nav-btn" data-daily-toggle="open">全部展开</button>
             <button type="button" class="daily-nav-btn" data-daily-toggle="close">全部收起</button>
           </nav><h2 id="daily-featured" class="daily-tier-title">⭐ 重点条目 <span class="daily-count">15 条</span></h2>
           <p class="daily-tier-hint">由当日整备时的 LLM 从全部条目中挑选，完整展开。</p><article id="coevo-rsi" class="summary-card daily-item">
@@ -705,7 +705,7 @@ LogicEvolve
 链接：https://arxiv.org/abs/2611.33101
 摘要：Can randomly parameterized neural environments supply useful experience for learning a reinforcement learning algorithm? We investigate this question using DiscoRL&#39;s rule-discovery framework, replacing human-designed training games with sixteen selected neural environments. Each game combines bounded vector dynamics with a random strategy-based reward and an independent outcome reward. After 224.8 million agent-environment steps, we froze the teacher and trained fresh agents. DQN outscored GREMLIN on most games, both generated and human-designed. GREMLIN nevertheless outperformed the untrained teacher on all 26 games, showing that generated experience can improve a learning rule. It remains unclear whether this approach can yield a competitive rule with longer meta-training.</div>
   </details></article>
-<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">27 条 · 按研究项目分组</span></h2>
+<h2 id="daily-related" class="daily-tier-title">🔬 相关条目 <span class="daily-count">30 条 · 按研究项目分组</span></h2>
           <p class="daily-tier-hint">点击标题展开完整内容；同子主题 3 条以上合并为专题卡。</p><details class="daily-group" open>
               <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agenttrainevolve/" onclick="event.stopPropagation()">AgentTrainEvolve</a><span class="daily-count">1 条</span>
               </summary>
@@ -729,7 +729,7 @@ LogicEvolve
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/" onclick="event.stopPropagation()">EvalEvolve</a><span class="daily-count">6 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/" onclick="event.stopPropagation()">EvalEvolve</a><span class="daily-count">7 条</span>
               </summary>
               <div class="daily-group-body"><section class="daily-cluster">
       <h3 class="daily-cluster-title"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>专题：智能体评测 <span class="daily-count">3 条</span></h3><article id="memphis" class="summary-card daily-item daily-item-medium">
@@ -841,6 +841,27 @@ LogicEvolve
 </div><details class="daily-item-notes">
     <summary>📝 原始笔记（逐字保留）</summary>
     <div class="daily-item-notes-body">[AI 智能体在数据库中犯错时，什么决定了损失程度？（4 ▲）](https://huggingface.co/papers/2611.30483?utm_source=digest-papers&amp;utm_medium=email&amp;utm_campaign=2026-11-27)</div>
+  </details></div>
+</details>
+<details id="step-grm" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>STEP-GRM：监督生成式奖励评估过程</strong>
+      <span class="daily-row-meta">arXiv · 过程评测 · <a href="https://arxiv.org/abs/2611.32161" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">通过监督评分准则结构和逐项判断，解决奖励模型答对偏好却用不可靠分析事后解释的问题。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：过程评测</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evalevolve/">EvalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/evolvellm/">EvolveLLM</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/awesome-rsi/">Awesome-RSI</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/monitorevolve/">MonitorEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E5%A5%96%E5%8A%B1%E5%BB%BA%E6%A8%A1/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;奖励建模</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程评估</a><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型评估</a><a href="/LLMDailyDigestWeb/topic/%E8%BF%87%E7%A8%8B%E7%9B%91%E7%9D%A3/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;过程监督</a><a href="/LLMDailyDigestWeb/topic/%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;策略优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.32161" target="_blank" rel="noopener">https://arxiv.org/abs/2611.32161</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在偏好对齐或策略优化系统中借鉴STEP-GRM的准则结构与逐项监督机制，训练能提供可靠评价依据的奖励模型。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>评估过程是否显式可见与是否可信是两回事，只有对中间判断施加局部约束，可靠性才能传递到下游策略优化。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：生成式奖励模型虽会先生成批评、评分准则或中间分析，但最终偏好正确并不代表评估过程可靠。</li>
+<li><strong>旧法为何失效</strong>：仅监督最终结果时，模型可能依靠薄弱或缺乏依据的中间判断得到正确答案，使显式分析退化为事后合理化。</li>
+<li><strong>方法</strong>：STEP-GRM在常规偏好监督之外，为评分准则构建提供结构引导，并对各评价标准的局部判断实施监督。</li>
+<li><strong>实验</strong>：在标准奖励建模基准上取得较强表现，同时提高中间评估的一致性与正确性；其奖励信号还能改善下游策略优化效果。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Making Evaluation Explicit Is Not Enough: Supervising the Evaluation Process in Generative Reward Models
+来源：arXiv
+链接：https://arxiv.org/abs/2611.32161
+摘要：Generative reward models (GRMs) make language-model evaluation more explicit by generating critiques, rubrics, or intermediate analyses before predicting a final preference. However, explicit evaluation does not necessarily imply a reliable evaluation process: under outcome-only supervision, a model may reach the correct final preference while producing weak or unsupported intermediate judgments, turning the evaluation into a post-hoc rationalization. We introduce STEP-GRM, a framework that directly supervises the intermediate evaluation process of rubric-based GRMs. In addition to conventional preference supervision, STEP-GRM provides structural guidance for rubric construction and local supervision for criterion-level judgments, encouraging the model to learn not only the correct final p</div>
   </details></div>
 </details>
 </div>
@@ -1241,7 +1262,7 @@ LogicEvolve
 </details>
 </div>
             </details><details class="daily-group" open>
-              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/" onclick="event.stopPropagation()">ResearchEvolve</a><span class="daily-count">1 条</span>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/" onclick="event.stopPropagation()">ResearchEvolve</a><span class="daily-count">2 条</span>
               </summary>
               <div class="daily-group-body"><details id="casper" class="daily-row">
   <summary>
@@ -1262,6 +1283,27 @@ LogicEvolve
 来源：arXiv
 链接：https://arxiv.org/abs/2611.29902
 摘要：Accurately describing chemical reactions that involve strongly correlated electrons remains a major challenge in computational chemistry. Multireference electronic structure methods can address this challenge, but their application requires expert decisions that are di!cult to automate, particularly when the electronic structure changes as chemical bonds form and break. Here we introduce CASPER, an autonomously agentic workflow that performs multireference calculations along chemical reaction pathways. CASPER combines chemical knowledge, electronic structure calculations, and iterative assessment to identify chemically meaningful active spaces and maintain their consistency as bonds form and break. We demonstrate its capabilities on five transition-metal reactions, for which CASPER generat</div>
+  </details></div>
+</details>
+<details id="soars" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>SOARS：系统一辅助检索重排</strong>
+      <span class="daily-row-meta">arXiv · 推理效率 · <a href="https://arxiv.org/abs/2611.32917" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a></span>
+    </span><span class="daily-row-summary">用快速校准的系统一模型一次完成段落筛选与候选重排，提升深度搜索准确率并减少调用成本。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：推理效率</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/researchevolve/">ResearchEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/agentevolve/">AgentEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/jevevolve/">JevEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%99%BA%E8%83%BD%E4%BD%93/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;智能体</a><a href="/LLMDailyDigestWeb/topic/%E6%A3%80%E7%B4%A2%E9%87%8D%E6%8E%92/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;检索重排</a><a href="/LLMDailyDigestWeb/topic/%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;深度研究</a><a href="/LLMDailyDigestWeb/topic/%E6%90%9C%E7%B4%A2%E6%95%88%E7%8E%87/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;搜索效率</a><a href="/LLMDailyDigestWeb/topic/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;成本优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.32917" target="_blank" rel="noopener">https://arxiv.org/abs/2611.32917</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在深度研究或网页搜索智能体中借鉴 SOARS 的单次段落筛选与候选重排机制，以减少搜索调用并提高证据质量。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>智能体搜索无需依赖反复调用昂贵重排器，快速但经过校准的相关性判断也能同时改善证据质量与端到端效率。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：深度搜索智能体需要反复检索和推理，检索证据的相关性会直接影响最终答案质量。</li>
+<li><strong>旧法为何失效</strong>：现有重排器虽能改善检索效果，但在整条搜索轨迹中频繁调用会带来较高延迟与推理成本。</li>
+<li><strong>方法</strong>：SOARS 无需训练，利用 System One 模型快速估计并校准相关性；每一步在单次调用中结合原始问题和智能体生成的子查询，从长文档筛选相关段落并重排候选。</li>
+<li><strong>实验</strong>：在 BrowseComp-Plus 和 WebShaper 上测试六种 LLM；SOARS持续提高答案准确率和证据召回率，同时减少搜索调用、端到端延迟与成本。BrowseComp-Plus 上，GPT-5.4 Mini 准确率由 73.9% 提升至 84.7%，搜索调用由 23 次降至 14 次。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：SOARS: System One Assisted Reranking for Agentic Search
+来源：arXiv
+链接：https://arxiv.org/abs/2611.32917
+摘要：Deep search agents address complex information needs through iterative retrieval and reasoning, where the relevance of retrieved evidence influences downstream performance. Existing rerankers improve retrieval effectiveness but introduce substantial latency and cost when invoked throughout the search trajectory. We introduce SOARS, a training-free framework leveraging a System One model for fast, calibrated relevance estimation. At each search step, SOARS selects query-relevant passages from long documents and reranks candidates in a single call, jointly considering the original question and agent-generated sub-query. Across six LLM backbones on BrowseComp-Plus and WebShaper, SOARS consistently improves answer accuracy and evidence recall while reducing search calls, end-to-end latency, an</div>
   </details></div>
 </details>
 </div>
@@ -1313,6 +1355,31 @@ LogicEvolve
 来源：arXiv
 链接：https://arxiv.org/abs/2611.29238
 摘要：AI-driven game development holds the potential to transform diverse human inspirations into interactive experiences. However, existing systems and benchmarks primarily focus on explicit development specifications, with limited support for adapting multimodal references and evaluating actual gameplay experiences. We introduce GameAnything, an open-source agentic platform that transforms multimodal inspirations into playable extensions of existing games through iterative development. GameAnything integrates coding agents with an independent playtesting critic, persistent development state, and reusable experience memory to support continuous refinement. We further present GameAnything-Bench, a benchmark spanning diverse reference modalities, game creation objectives, and gaming environments,</div>
+  </details></div>
+</details>
+</div>
+            </details><details class="daily-group" open>
+              <summary class="daily-group-title"><i class="fa-solid fa-flask fa-fw me-1" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/" onclick="event.stopPropagation()">PhysicalEvolve</a><span class="daily-count">1 条</span>
+              </summary>
+              <div class="daily-group-body"><details id="forge" class="daily-row">
+  <summary>
+    <span class="daily-row-title"><span class="daily-score daily-score-3">★3</span> <strong>FORGE：仅前向黑箱仿真训练</strong>
+      <span class="daily-row-meta">arXiv · 模型训练 · <a href="https://arxiv.org/abs/2611.31964" target="_blank" rel="noopener" onclick="event.stopPropagation()">论文</a> · <a href="https://github.com/ChiyodaMomo01/FORGE" target="_blank" rel="noopener" onclick="event.stopPropagation()">代码</a></span>
+    </span><span class="daily-row-summary">用前向扰动估计仿真器响应，在不可微物理求解器中直接降低多步轨迹误差。</span></summary>
+  <div class="daily-row-body"><p class="post-meta-line daily-item-meta"><span class="daily-score daily-score-3" title="推荐判定相关性分（3 重点 / 2 相关 / 1 弱相关）">★ 3</span>&nbsp;<span><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>子主题：模型训练</span>&nbsp;<span><i class="fa-solid fa-rss fa-fw me-1" aria-hidden="true"></i>arXiv</span>&nbsp;<span class="post-research">&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/physicalevolve/">PhysicalEvolve</a>&nbsp;<i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i><a href="/LLMDailyDigestWeb/research/reasoningevolve/">ReasoningEvolve</a></span></p><p class="post-topics daily-item-topics"><a href="/LLMDailyDigestWeb/topic/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模型训练</a><a href="/LLMDailyDigestWeb/topic/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;科学计算</a><a href="/LLMDailyDigestWeb/topic/%E5%9C%A8%E7%BA%BF%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;在线学习</a><a href="/LLMDailyDigestWeb/topic/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;机器学习</a><a href="/LLMDailyDigestWeb/topic/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"><i class="fa-solid fa-tag fa-fw" aria-hidden="true"></i>&nbsp;系统优化</a></p><div class="daily-item-resources"><div><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i><strong>论文</strong>：<a href="https://arxiv.org/abs/2611.31964" target="_blank" rel="noopener">https://arxiv.org/abs/2611.31964</a></div><div><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i><strong>代码</strong>：<a href="https://github.com/ChiyodaMomo01/FORGE" target="_blank" rel="noopener">https://github.com/ChiyodaMomo01/FORGE</a></div></div><div class="daily-item-purpose"><strong>用途</strong><p>在仅暴露前向接口的遗留物理模拟器中直接调用 FORGE，在线训练嵌入式闭合网络并优化多步滚动轨迹。</p>
+</div><div class="daily-item-purpose daily-item-insight"><strong>启示</strong><p>嵌入式网络的可训练性并不依赖求解器梯度，只要能从前向扰动中辨识稳定且有界的时序响应。</p>
+</div><div class="daily-item-content"><ul>
+<li><strong>问题</strong>：混合物理—神经模拟器中的闭合网络会跨时间步影响后续状态，单步离线回归无法直接优化多步滚动误差；许多生产级 Fortran、C/C++ 求解器又只提供不可微的前向接口。</li>
+<li><strong>旧法为何失效</strong>：求解器 BPTT 依赖完整梯度，无法用于前向黑箱；无梯度优化、强化学习和模拟器代理方法则难以兼顾训练效率与轨迹精度。</li>
+<li><strong>方法</strong>：FORGE 将网络的精确导数与黑箱仿真动力学解耦。第一阶段沿输出正交的权重方向执行低维 Gauss-Newton 预热，并用末层校正抵消多层特征漂移；第二阶段扰动空间输出场，拟合增益有界的因果线性响应算子，求解正则化目标输出后通过网络反向传播更新全部权重。</li>
+<li><strong>实验</strong>：在相分离、反应扩散、流体与 MHD 湍流、海洋环流等五个二维和三维基准上，FORGE 将粗粒度求解器测试 MSE 降低二维 50%–96%、三维 70%，优于最强仅前向基线 16%–69%，并恢复求解器 BPTT 收益的 88%–98%。</li>
+</ul>
+</div><details class="daily-item-notes">
+    <summary>📝 原始笔记（逐字保留）</summary>
+    <div class="daily-item-notes-body">标题：Sounding the Black Box: Online Training of Embedded Neural Networks in Forward-Only Physical Simulators
+来源：arXiv
+链接：https://arxiv.org/abs/2611.31964
+摘要：Hybrid physics-neural simulators embed neural networks in partial differential equation (PDE) solvers to model unresolved subgrid dynamics while preserving resolved physics and conservation laws. Because closure outputs feed back across time steps, single-step offline regression does not directly minimize multi-step rollout error, motivating online trajectory optimization. Solver backpropagation through time (BPTT) is the standard online solution when solver derivatives are available, yet many operational Fortran and C/C&#43;&#43; simulators expose only non-differentiable, forward-only interfaces. We introduce FORGE (Forward-Only Response and Gauss-Newton Estimation), an online framework that trains embedded networks from forward runs alone by decoupling exact network derivatives from black-box si</div>
   </details></div>
 </details>
 </div>
